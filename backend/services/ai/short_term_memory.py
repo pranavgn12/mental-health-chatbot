@@ -1,0 +1,3 @@
+class ShortTermMemory:
+
+    pass
