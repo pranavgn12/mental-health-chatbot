@@ -1,0 +1,3535 @@
+CHATBOT STREAMING-INTEGRATION CODE DUMP
+Project root: /home/pranavgn/Desktop/mental-health-chatbot
+Note: .env files, virtual environments, databases, vector stores, and build output are excluded.
+====================================================================================================
+
+
+####################################################################################################
+FILE: backend/main.py
+####################################################################################################
+
+from fastapi import FastAPI
+from routers import auth
+from database import engine
+from models import Base
+from fastapi import Depends
+from fastapi.middleware.cors import CORSMiddleware
+from routers import chats
+from routers import messages
+from auth_utils import get_current_user
+
+# Create tables automatically
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(
+    title="Mental Health Chatbot API",
+    version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(
+    auth.router,
+    prefix="/auth",
+    tags=["Authentication"]
+)
+
+app.include_router(
+    chats.router,
+    prefix="/chats",
+    tags=["Chats"]
+)
+
+app.include_router(
+    messages.router,
+    prefix="/messages",
+    tags=["Messages"]
+)
+
+@app.get("/")
+def home():
+    return {
+        "status": "running",
+        "message": "Mental Health Chatbot Backend"
+    }
+
+
+@app.get("/health")
+def health_check():
+    return {
+        "status": "healthy"
+    }
+
+@app.get("/me")
+def me(
+    user=Depends(get_current_user)
+):
+    return user
+
+
+
+####################################################################################################
+FILE: backend/routers/messages.py
+####################################################################################################
+
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from pydantic import BaseModel
+
+from database import get_db
+from models import Message, Conversation
+from auth_utils import get_current_user
+from services.ai.orchestrator import AIOrchestrator
+
+router = APIRouter()
+
+
+class SendMessageRequest(BaseModel):
+
+    conversation_id: int
+    content: str
+
+
+@router.post("/send")
+def send_message(
+
+    request: SendMessageRequest,
+
+    db: Session = Depends(get_db),
+
+    user=Depends(get_current_user)
+
+):
+
+    conversation = db.query(Conversation).filter(
+
+        Conversation.id == request.conversation_id,
+
+        Conversation.user_id == user["user_id"]
+
+    ).first()
+
+    if not conversation:
+
+        raise HTTPException(
+
+            status_code=404,
+
+            detail="Conversation not found"
+
+        )
+
+    ##################################################
+    # Save User Message
+    ##################################################
+
+    user_message = Message(
+
+        conversation_id=request.conversation_id,
+
+        role="user",
+
+        content=request.content
+
+    )
+
+    db.add(user_message)
+
+    db.commit()
+
+    db.refresh(user_message)
+
+    ##################################################
+    # Load Conversation History
+    ##################################################
+
+    history = db.query(Message).filter(
+
+        Message.conversation_id == request.conversation_id
+
+    ).order_by(Message.id).all()
+
+    conversation_messages = []
+
+    for message in history:
+
+        conversation_messages.append({
+
+            "role": message.role,
+
+            "content": message.content
+
+        })
+
+    ##################################################
+    # AI Orchestrator
+    ##################################################
+
+    orchestrator = AIOrchestrator()
+    print("========== ORCHESTRATOR ==========")
+    print(orchestrator)
+    print(orchestrator.__dict__)
+    print("==================================")
+    
+    result = orchestrator.chat(
+
+        db=db,
+
+        user_id=user["user_id"],
+
+        conversation=conversation_messages,
+
+        latest_message=request.content,
+
+        current_title=conversation.title
+
+    )
+
+    reply = result["reply"]
+
+    new_title = result["title"]
+
+    episode = result["episode"]
+
+    ##################################################
+    # Save Assistant Message
+    ##################################################
+
+    assistant_message = Message(
+
+        conversation_id=request.conversation_id,
+
+        role="assistant",
+
+        content=reply
+
+    )
+
+    db.add(assistant_message)
+
+    db.commit()
+
+    db.refresh(assistant_message)
+
+    ##################################################
+    # Update Conversation Title
+    ##################################################
+
+    if new_title:
+
+        conversation.title = new_title
+
+        db.commit()
+
+        db.refresh(conversation)
+
+    ##################################################
+    # Response
+    ##################################################
+
+    return {
+
+        "user_message": {
+
+            "id": user_message.id,
+
+            "role": user_message.role,
+
+            "content": user_message.content
+
+        },
+
+        "assistant_message": {
+
+            "id": assistant_message.id,
+
+            "role": assistant_message.role,
+
+            "content": assistant_message.content
+
+        },
+
+        "conversation_title": conversation.title,
+
+        "episode_id": episode.episode_id if episode else None
+
+    }
+
+
+@router.get("/{conversation_id}")
+def get_messages(
+
+    conversation_id: int,
+
+    db: Session = Depends(get_db),
+
+    user=Depends(get_current_user)
+
+):
+
+    conversation = db.query(Conversation).filter(
+
+        Conversation.id == conversation_id,
+
+        Conversation.user_id == user["user_id"]
+
+    ).first()
+
+    if not conversation:
+
+        raise HTTPException(
+
+            status_code=404,
+
+            detail="Conversation not found"
+
+        )
+
+    messages = db.query(Message).filter(
+
+        Message.conversation_id == conversation_id
+
+    ).order_by(Message.id).all()
+
+    return messages
+
+####################################################################################################
+FILE: backend/routers/chats.py
+####################################################################################################
+
+from fastapi import (
+    APIRouter,
+    Depends
+)
+
+from sqlalchemy.orm import Session
+
+from database import get_db
+
+from models import Conversation
+
+from auth_utils import get_current_user
+
+from pydantic import BaseModel
+
+router = APIRouter()
+
+
+class CreateChatRequest(BaseModel):
+    title: str
+
+
+@router.post("/new")
+def create_chat(
+    request: CreateChatRequest,
+    db: Session = Depends(get_db),
+    user=Depends(get_current_user)
+):
+
+    chat = Conversation(
+        user_id=user["user_id"],
+        title=request.title
+    )
+
+    db.add(chat)
+
+    db.commit()
+
+    db.refresh(chat)
+
+    return {
+        "id": chat.id,
+        "user_id": chat.user_id,
+        "title": chat.title
+    }
+
+
+@router.get("/")
+def list_chats(
+    db: Session = Depends(get_db),
+    user=Depends(get_current_user)
+):
+
+    chats = db.query(
+        Conversation
+    ).filter(
+        Conversation.user_id == user["user_id"]
+    ).all()
+
+    return chats
+
+####################################################################################################
+FILE: backend/models.py
+####################################################################################################
+
+from sqlalchemy import (
+    Column,
+    Integer,
+    String,
+    Text,
+    ForeignKey
+)
+
+from database import Base
+
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
+from datetime import datetime
+
+
+
+class User(Base):
+
+    __tablename__ = "users"
+
+    id = Column(
+        Integer,
+        primary_key=True
+    )
+
+    username = Column(
+        String(50),
+        unique=True
+    )
+
+    email = Column(
+        String(100),
+        unique=True
+    )
+
+    password_hash = Column(
+        String(255)
+    )
+
+
+class Conversation(Base):
+
+    __tablename__ = "conversations"
+
+    id = Column(
+        Integer,
+        primary_key=True
+    )
+
+    user_id = Column(
+        Integer,
+        ForeignKey("users.id")
+    )
+
+    title = Column(String(255))
+
+    system_prompt = Column(Text)
+
+
+class Message(Base):
+
+    __tablename__ = "messages"
+
+    id = Column(
+        Integer,
+        primary_key=True
+    )
+
+    conversation_id = Column(
+        Integer,
+        ForeignKey("conversations.id")
+    )
+
+    role = Column(
+        String(20)
+    )
+
+    content = Column(Text)
+
+
+
+class Episode(Base):
+
+    __tablename__ = "episodes"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    episode_id = Column(String(20), unique=True, nullable=False)
+
+    user_id = Column(
+        Integer,
+        ForeignKey("users.id"),
+        nullable=False
+    )
+
+    title = Column(String(255), nullable=False)
+
+    summary = Column(Text, nullable=True)
+
+    status = Column(String(20), default="ACTIVE")
+
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    updated_at = Column(
+        DateTime,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow
+    )
+
+    closed_at = Column(DateTime, nullable=True)
+    
+    messages_since_last_mood = Column(
+        Integer,
+        default=0,
+        nullable=False
+    )
+
+    messages_since_last_reflection = Column(
+        Integer,
+        default=0,
+        nullable=False
+    )
+
+class EpisodeMood(Base):
+
+    __tablename__ = "episode_moods"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    episode_id = Column(
+        String(20),
+        ForeignKey("episodes.episode_id"),
+        nullable=False
+    )
+
+    mood = Column(
+        String(100),
+        nullable=False
+    )
+
+    created_at = Column(
+        DateTime,
+        default=datetime.utcnow
+    )
+
+class EpisodeReflection(Base):
+
+    __tablename__ = "episode_reflections"
+
+    id = Column(Integer, primary_key=True, index=True)
+    
+    episode_id = Column(
+        String(20),
+        ForeignKey("episodes.episode_id"),
+        nullable=False
+    )
+
+    reflection = Column(
+        Text,
+        nullable=False
+    )
+
+    created_at = Column(
+        DateTime,
+        default=datetime.utcnow
+    )
+
+class LongTermMemory(Base):
+
+    __tablename__ = "long_term_memory"
+
+    id = Column(
+
+        Integer,
+
+        primary_key=True,
+
+        autoincrement=True
+
+    )
+
+    user_id = Column(
+
+        Integer,
+
+        ForeignKey("users.id"),
+
+        nullable=False,
+
+        unique=True
+
+    )
+
+    memory = Column(
+
+        Text,
+
+        nullable=False
+
+    )
+
+    updated_at = Column(
+
+        DateTime,
+
+        default=datetime.utcnow,
+
+        onupdate=datetime.utcnow
+
+    )
+
+####################################################################################################
+FILE: backend/database.py
+####################################################################################################
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base
+
+from dotenv import load_dotenv
+
+import os
+
+load_dotenv()
+
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+
+DATABASE_URL = (
+    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}"
+    f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+)
+
+engine = create_engine(
+    DATABASE_URL,
+    echo=True
+)
+
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
+
+Base = declarative_base()
+
+
+def get_db():
+
+    db = SessionLocal()
+
+    try:
+        yield db
+
+    finally:
+        db.close()
+
+
+####################################################################################################
+FILE: backend/schemas.py
+####################################################################################################
+
+[FILE NOT FOUND]
+
+####################################################################################################
+FILE: backend/auth.py
+####################################################################################################
+
+from fastapi import APIRouter
+from pydantic import BaseModel
+
+router = APIRouter()
+
+
+class RegisterRequest(BaseModel):
+    username: str
+    email: str
+    password: str
+
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+
+
+@router.post("/register")
+def register(
+    request: RegisterRequest
+):
+    return {
+        "message": "Register endpoint"
+    }
+
+
+@router.post("/login")
+def login(
+    request: LoginRequest
+):
+    return {
+        "message": "Login endpoint"
+    }
+
+####################################################################################################
+FILE: backend/auth_utils.py
+####################################################################################################
+
+from datetime import datetime, timedelta
+
+from jose import jwt, JWTError
+
+from fastapi import Depends, HTTPException
+from fastapi.security import (
+    HTTPBearer,
+    HTTPAuthorizationCredentials
+)
+
+SECRET_KEY = "your-super-secret-key-change-this"
+
+ALGORITHM = "HS256"
+
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
+
+
+def create_access_token(data: dict):
+
+    to_encode = data.copy()
+
+    expire = datetime.utcnow() + timedelta(
+        minutes=ACCESS_TOKEN_EXPIRE_MINUTES
+    )
+
+    to_encode.update({
+        "exp": expire
+    })
+
+    return jwt.encode(
+        to_encode,
+        SECRET_KEY,
+        algorithm=ALGORITHM
+    )
+
+security = HTTPBearer()
+
+
+def get_current_user(
+    credentials: HTTPAuthorizationCredentials = Depends(security)
+):
+    try:
+
+        payload = jwt.decode(
+            credentials.credentials,
+            SECRET_KEY,
+            algorithms=[ALGORITHM]
+        )
+
+        return payload
+
+    except JWTError:
+
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid token"
+        )
+
+####################################################################################################
+FILE: backend/services/llm_provider.py
+####################################################################################################
+
+import os
+
+from dotenv import load_dotenv
+from groq import Groq
+
+load_dotenv()
+
+client = Groq(
+
+    api_key=os.getenv("GROQ_API_KEY")
+
+)
+
+
+def generate_response(
+
+    contents,
+
+    system_instruction=None
+
+):
+
+    messages = []
+
+    if system_instruction:
+
+        messages.append({
+
+            "role": "system",
+
+            "content": system_instruction
+
+        })
+
+    if isinstance(contents, str):
+
+        messages.append({
+
+            "role": "user",
+
+            "content": contents
+
+        })
+
+    else:
+
+        messages.extend(contents)
+
+    response = client.chat.completions.create(
+
+        model=os.getenv(
+
+            "GROQ_MODEL",
+
+            "openai/gpt-oss-20b"
+
+        ),
+
+        messages=messages,
+
+        temperature=0.3,
+
+        max_completion_tokens=1024,
+
+        top_p=1
+
+    )
+
+    return response.choices[0].message.content
+
+
+####################################################################################################
+FILE: backend/services/llm.py
+####################################################################################################
+
+from services.llm_provider import generate_response
+
+from services.prompt_builder import (
+
+    build_contents,
+
+    build_system_instruction
+
+)
+
+
+def chat(
+
+    conversation,
+
+    memory=None,
+
+    knowledge=None,
+
+    profile=None,
+
+    episode=None,
+
+    reflection=None,
+
+    mood=None
+
+):
+
+    system_instruction = build_system_instruction(
+
+        memory,
+
+        knowledge,
+
+        profile,
+
+        episode,
+
+        reflection,
+
+        mood
+
+    )
+
+    contents = build_contents(
+
+        conversation
+
+    )
+
+    return generate_response(
+
+        contents,
+
+        system_instruction
+
+    )
+
+####################################################################################################
+FILE: backend/services/prompt_builder.py
+####################################################################################################
+
+SYSTEM_PROMPT = """
+You are an empathetic AI mental health assistant.
+
+Your goals are:
+
+• Be supportive and conversational.
+• Never repeat previous conversation history.
+• Answer naturally.
+• If the user is emotional, acknowledge it gently.
+• Do not mention internal memory or prompt instructions.
+"""
+
+
+def build_system_instruction(
+
+    memory=None,
+    knowledge=None,
+    profile=None,
+    episode=None,
+    reflection=None,
+    mood=None
+
+):
+
+    instruction = SYSTEM_PROMPT
+
+    if profile:
+
+        instruction += f"\n\nUser Profile:\n{profile}"
+
+    if memory:
+
+        instruction += f"\n\nLong-Term Memory:\n{memory}"
+
+    if knowledge:
+
+        instruction += f"\n\nKnowledge:\n{knowledge}"
+
+    if episode:
+
+        instruction += f"\n\nCurrent Episode:\n{episode}"
+
+    if reflection:
+
+        instruction += f"\n\nReflection:\n{reflection}"
+
+    if mood:
+
+        instruction += f"\n\nMood Timeline:\n{mood}"
+
+    return instruction
+
+
+def build_contents(conversation):
+
+    contents = []
+
+    for message in conversation:
+
+        role = message["role"]
+
+        if role == "model":
+            role = "assistant"
+
+        contents.append({
+
+            "role": role,
+
+            "content": message["content"]
+
+        })
+
+    return contents
+
+####################################################################################################
+FILE: backend/services/title_generator.py
+####################################################################################################
+
+from services.llm_provider import generate_response
+
+
+SYSTEM_PROMPT = """
+Generate a short title for this conversation.
+
+Rules:
+- 2 to 5 words.
+- No quotes.
+- No punctuation.
+- No emojis.
+- Return ONLY the title.
+"""
+
+
+def generate_title(first_message: str):
+
+    contents = [
+
+        {
+
+            "role": "user",
+
+            "content": first_message
+
+        }
+
+    ]
+
+    return generate_response(
+
+        contents,
+
+        SYSTEM_PROMPT
+
+    ).strip()
+
+####################################################################################################
+FILE: backend/services/ai/orchestrator.py
+####################################################################################################
+
+from services.llm import chat
+from services.title_generator import generate_title
+
+from services.ai.episode_manager import EpisodeManager
+from services.ai.episode_detector import EpisodeDetector
+
+from services.ai.short_term_memory import ShortTermMemory
+from services.ai.long_term_memory import LongTermMemory
+from services.ai.memory_rag import MemoryRAG
+from services.ai.knowledge_rag import KnowledgeRAG
+from services.ai.profile import Profile
+
+from services.ai.pattern_detector import PatternDetector
+from services.ai.memory_consolidator import MemoryConsolidator
+
+from services.ai.mood_detector import MoodDetector
+from services.ai.reflection_generator import ReflectionGenerator
+
+from services.ai.episode_summarizer import EpisodeSummarizer
+
+from models import EpisodeReflection
+
+class AIOrchestrator:
+
+    def __init__(self):
+
+        self.episode_manager = EpisodeManager()
+        self.episode_detector = EpisodeDetector()
+
+        self.mood_detector = MoodDetector()
+        self.reflection_generator = ReflectionGenerator()
+
+        self.episode_summarizer = EpisodeSummarizer()
+
+        self.short_term_memory = ShortTermMemory()
+        self.long_term_memory = LongTermMemory()
+        self.memory_rag = MemoryRAG()
+        self.knowledge_rag = KnowledgeRAG()
+        self.profile = Profile()
+
+        self.pattern_detector = PatternDetector()
+        self.memory_consolidator = MemoryConsolidator()
+
+    def chat(
+
+        self,
+
+        db,
+
+        user_id,
+
+        conversation,
+
+        latest_message,
+
+        current_title
+
+    ):
+
+        ##################################################
+        # 1. Generate Conversation Title
+        ##################################################
+
+        title = None
+
+        if current_title == "New Conversation":
+
+            title = generate_title(
+
+                latest_message
+
+            )
+
+        ##################################################
+        # 2. Episode Lifecycle
+        ##################################################
+
+        episode = self.episode_manager.get_active_episode(
+
+            db,
+
+            user_id
+
+        )
+
+        decision = self.episode_detector.detect(
+
+            episode,
+
+            latest_message
+
+        )
+
+        if decision["action"] == "CREATE":
+
+            episode = self.episode_manager.create_episode(
+
+                db,
+
+                user_id,
+
+                decision["title"]
+
+            )
+
+        elif decision["action"] == "CLOSE":
+
+            if episode is not None:
+
+                ##################################################
+                # Generate Episode Summary
+                ##################################################
+
+                summary = self.episode_summarizer.summarize(
+
+                    conversation
+
+                )
+
+                ##################################################
+                # Save Episode Summary
+                ##################################################
+
+                self.episode_summarizer.save(
+
+                    db,
+
+                    episode,
+
+                    summary
+
+                )
+
+                ##################################################
+                # Load Previous Memory
+                ##################################################
+
+                previous_memory = self.memory_consolidator.load(
+
+                    db,
+
+                    user_id
+
+                )
+
+                ##################################################
+                # Load Episode Reflections
+                ##################################################
+
+                reflections = db.query(
+
+                    EpisodeReflection
+
+                ).filter(
+
+                    EpisodeReflection.episode_id == episode.episode_id
+
+                ).order_by(
+
+                    EpisodeReflection.created_at
+
+                ).all()
+
+                ##################################################
+                # Build Updated Memory
+                ##################################################
+
+                memory = self.memory_consolidator.consolidate(
+
+                    previous_memory,
+
+                    summary,
+
+                    reflections
+
+                )
+
+                ##################################################
+                # Save Long-Term Memory
+                ##################################################
+
+                self.memory_consolidator.save(
+
+                    db,
+
+                    user_id,
+
+                    memory
+
+                )
+
+                ##################################################
+                # Close Episode
+                ##################################################
+
+                self.episode_manager.close_episode(
+
+                    db,
+
+                    episode
+
+                )
+
+            episode = None
+
+        elif decision["action"] == "CONTINUE":
+
+            pass
+
+        elif decision["action"] == "NONE":
+
+            pass
+
+        ##################################################
+        # 3. Retrieve Profile
+        ##################################################
+
+        profile = None
+
+        ##################################################
+        # 4. Retrieve Long-Term Memory
+        ##################################################
+
+        long_term_memory = self.memory_consolidator.load(
+
+            db,
+
+            user_id
+
+        )
+
+        ##################################################
+        # 5. Retrieve Memory RAG
+        ##################################################
+
+
+
+        ##################################################
+        # 6. Retrieve Knowledge RAG
+        ##################################################
+
+        knowledge = self.knowledge_rag.retrieve(
+
+            latest_message
+
+        )
+
+        ##################################################
+        # 7. Chat with LLM
+        ##################################################
+
+        reply = chat(
+
+            conversation=conversation,
+
+            profile=profile,
+
+            memory=long_term_memory,
+
+            knowledge=knowledge,
+
+            episode=episode,
+
+            reflection=None,
+
+            mood=None
+
+        )
+
+        ##################################################
+        # 8. Mood Detection
+        ##################################################
+
+        if episode is not None:
+
+            self.mood_detector.update(
+
+                db,
+
+                episode,
+
+                conversation,
+
+                latest_message,
+
+                reply
+
+            )
+
+        ##################################################
+        # 9. Reflection Generation
+        ##################################################
+
+        if episode is not None:
+
+            self.reflection_generator.update(
+
+                db,
+
+                episode,
+
+                conversation,
+
+                latest_message,
+
+                reply
+
+            )
+
+        ##################################################
+        # 10. Future Background Tasks
+        ##################################################
+
+        # self.pattern_detector.detect(...)
+        # self.memory_consolidator.consolidate(...)
+
+        ##################################################
+        # 11. Response
+        ##################################################
+
+        return {
+
+            "reply": reply,
+
+            "title": title,
+
+            "episode": episode
+
+        }
+
+####################################################################################################
+FILE: backend/services/ai/episode_detector.py
+####################################################################################################
+
+from services.llm_provider import generate_response
+
+from services.ai.json_parser import JSONParser
+from services.ai.prompts.episode_detector_prompt import PROMPT
+
+
+class EpisodeDetector:
+
+    def __init__(self):
+
+        self.json_parser = JSONParser()
+
+    def detect(
+
+        self,
+
+        active_episode,
+
+        latest_message
+
+    ):
+
+        prompt = self.build_prompt(
+
+            active_episode,
+
+            latest_message
+
+        )
+
+        response = generate_response(
+
+            prompt
+
+        )
+
+        decision = self.json_parser.parse(
+
+            response
+
+        )
+
+        print("\n===== Episode Detector =====")
+        print(prompt)
+        print("---------------------------")
+        print(response)
+        print("===========================\n")
+
+        return decision
+
+    def build_prompt(
+
+        self,
+
+        active_episode,
+
+        latest_message
+
+    ):
+
+        ##################################################
+        # No Active Episode
+        ##################################################
+
+        if active_episode is None:
+
+            episode = "None"
+
+        ##################################################
+        # Active Episode
+        ##################################################
+
+        else:
+
+            episode = f"""
+Episode ID: {active_episode.episode_id}
+
+Title: {active_episode.title}
+
+Status: {active_episode.status}
+
+Summary:
+{active_episode.summary if active_episode.summary else "None"}
+"""
+
+        return PROMPT.format(
+
+            episode=episode,
+
+            message=latest_message
+
+        )
+
+####################################################################################################
+FILE: backend/services/ai/episode_manager.py
+####################################################################################################
+
+from datetime import datetime
+from uuid import uuid4
+
+from models import Episode
+
+
+class EpisodeManager:
+
+    def generate_episode_id(self):
+
+        return f"EP_{uuid4().hex[:8].upper()}"
+
+
+    def get_active_episode(self, db, user_id):
+
+        return db.query(Episode).filter(
+
+            Episode.user_id == user_id,
+
+            Episode.status == "ACTIVE"
+
+        ).first()
+
+
+    def create_episode(self, db, user_id, title):
+
+        episode = Episode(
+
+            episode_id=self.generate_episode_id(),
+
+            user_id=user_id,
+
+            title=title,
+
+            status="ACTIVE"
+
+        )
+
+        db.add(episode)
+
+        db.commit()
+
+        db.refresh(episode)
+
+        return episode
+
+
+    def update_summary(self, db, episode, summary):
+
+        episode.summary = summary
+
+        db.commit()
+
+        db.refresh(episode)
+
+        return episode
+
+
+    def close_episode(self, db, episode):
+
+        episode.status = "CLOSED"
+
+        episode.closed_at = datetime.utcnow()
+
+        db.commit()
+
+        db.refresh(episode)
+
+        return episode
+
+####################################################################################################
+FILE: backend/services/ai/episode_summarizer.py
+####################################################################################################
+
+from services.llm_provider import generate_response
+
+from services.ai.prompts.episode_summary_prompt import PROMPT
+
+
+class EpisodeSummarizer:
+
+    def summarize(
+
+        self,
+
+        conversation
+
+    ):
+
+        ##################################################
+        # Build Prompt
+        ##################################################
+
+        prompt = self.build_prompt(
+
+            conversation
+
+        )
+
+        ##################################################
+        # LLM
+        ##################################################
+
+        summary = generate_response(
+
+            prompt
+
+        ).strip()
+
+        print("\n===== Episode Summary =====")
+        print(summary)
+        print("===========================\n")
+
+        return summary
+
+    def build_prompt(
+
+        self,
+
+        conversation
+
+    ):
+
+        ##################################################
+        # Conversation
+        ##################################################
+
+        conversation_text = ""
+
+        for message in conversation:
+
+            role = message["role"].capitalize()
+
+            conversation_text += f"{role}: {message['content']}\n"
+
+        ##################################################
+        # Prompt
+        ##################################################
+
+        return PROMPT.format(
+
+            conversation=conversation_text
+
+        )
+
+    def save(
+
+        self,
+
+        db,
+
+        episode,
+
+        summary
+
+    ):
+
+        ##################################################
+        # Save Summary
+        ##################################################
+
+        episode.summary = summary
+
+        db.commit()
+
+        db.refresh(
+
+            episode
+
+        )
+
+        print("\n===== Episode Summary Saved =====")
+
+        print(
+
+            episode.summary
+
+        )
+
+        print("===============================\n")
+
+####################################################################################################
+FILE: backend/services/ai/json_parser.py
+####################################################################################################
+
+import json
+
+
+class JSONParser:
+
+    def parse(self, response):
+
+        try:
+
+            print("Raw response:")
+            print(repr(response))
+
+            result = json.loads(response)
+
+            print("Parsed:", result)
+
+            return result
+
+        except Exception as e:
+
+            print("JSON Parse Error:", e)
+            print("Response was:")
+            print(repr(response))
+
+            return {
+
+                "action": "CONTINUE",
+
+                "title": None,
+
+                "reason": "Invalid JSON returned by LLM.",
+
+                "confidence": 0.0
+
+            }
+
+####################################################################################################
+FILE: backend/services/ai/mood_detector.py
+####################################################################################################
+
+from services.llm_provider import generate_response
+
+from services.ai.json_parser import JSONParser
+from services.ai.prompts.mood_prompt import PROMPT
+
+from models import EpisodeMood
+
+class MoodDetector:
+
+    def __init__(self):
+
+        self.json_parser = JSONParser()
+
+    def update(
+
+        self,
+
+        db,
+
+        episode,
+
+        conversation,
+
+        latest_message,
+
+        reply
+
+    ):
+
+        ##################################################
+        # Increment Counter
+        ##################################################
+
+        episode.messages_since_last_mood += 1
+
+        db.commit()
+
+        db.refresh(episode)
+
+        ##################################################
+        # Wait until enough messages
+        ##################################################
+
+        if episode.messages_since_last_mood < 3:
+
+            return
+
+        ##################################################
+        # Reset Counter
+        ##################################################
+
+        episode.messages_since_last_mood = 0
+
+        db.commit()
+
+        db.refresh(episode)
+
+        ##################################################
+        # Load Previous Moods
+        ##################################################
+
+        previous_moods = db.query(EpisodeMood).filter(
+
+            EpisodeMood.episode_id == episode.episode_id
+
+        ).order_by(
+
+            EpisodeMood.created_at
+
+        ).all()
+
+        ##################################################
+        # Build Prompt
+        ##################################################
+
+        prompt = self.build_prompt(
+
+            episode,
+
+            previous_moods,
+
+            conversation,
+
+            latest_message,
+
+            reply
+
+        )
+
+        ##################################################
+        # Gemini
+        ##################################################
+
+        response = generate_response(
+
+            prompt
+
+        )
+
+        print("\n===== Mood Detector =====")
+        print(prompt)
+        print("-------------------------")
+        print(response)
+        
+        ##################################################
+        # Parse JSON
+        ##################################################
+
+        decision = self.json_parser.parse(
+
+            response
+
+        )
+
+        print(decision)
+        print("=========================\n")
+
+        ##################################################
+        # No Mood
+        ##################################################
+
+        if decision["mood"] is None:
+
+            return
+
+        ##################################################
+        # Duplicate Mood
+        ##################################################
+
+        if len(previous_moods) > 0:
+
+            latest_mood = previous_moods[-1].mood
+
+            if latest_mood == decision["mood"]:
+
+                return
+
+        ##################################################
+        # Save Mood
+        ##################################################
+
+        self.save(
+
+            db,
+
+            episode,
+
+            decision["mood"]
+
+        )
+
+        pass
+
+    def build_prompt(
+
+        self,
+
+        episode,
+
+        previous_moods,
+
+        conversation,
+
+        latest_message,
+
+        reply
+
+    ):
+
+        ##################################################
+        # Episode
+        ##################################################
+
+        episode_text = f"""
+    Episode ID: {episode.episode_id}
+
+    Title: {episode.title}
+
+    Status: {episode.status}
+
+    Summary:
+    {episode.summary if episode.summary else "None"}
+    """
+
+        ##################################################
+        # Previous Mood Timeline
+        ##################################################
+
+        if len(previous_moods) == 0:
+
+            moods_text = "None"
+
+        else:
+
+            moods_text = ""
+
+            for mood in previous_moods:
+
+                moods_text += f"{mood.created_at} - {mood.mood}\n"
+
+        ##################################################
+        # Conversation
+        ##################################################
+
+        conversation_text = ""
+
+        for message in conversation:
+
+            role = message["role"].capitalize()
+
+            conversation_text += f"{role}: {message['content']}\n"
+
+        ##################################################
+        # Final Prompt
+        ##################################################
+
+        return PROMPT.format(
+
+            episode=episode_text,
+
+            moods=moods_text,
+
+            conversation=conversation_text,
+
+            message=latest_message,
+
+            reply=reply
+
+        )
+
+        pass
+
+    def save(
+
+        self,
+
+        db,
+
+        episode,
+
+        mood
+
+    ):
+
+        new_mood = EpisodeMood(
+
+            episode_id=episode.episode_id,
+
+            mood=mood
+
+        )
+
+        db.add(
+
+            new_mood
+
+        )
+
+        db.commit()
+
+        db.refresh(
+
+            new_mood
+
+        )
+
+        print("\n===== Mood Saved =====")
+
+        print(
+
+            new_mood.mood
+
+        )
+
+        print(
+
+            new_mood.created_at
+
+        )
+
+        print("======================\n")
+
+####################################################################################################
+FILE: backend/services/ai/reflection_generator.py
+####################################################################################################
+
+from services.llm_provider import generate_response
+
+from services.ai.json_parser import JSONParser
+from services.ai.prompts.reflection_prompt import PROMPT
+
+from models import EpisodeReflection
+
+
+class ReflectionGenerator:
+
+    def __init__(self):
+
+        self.json_parser = JSONParser()
+
+    def update(
+
+        self,
+
+        db,
+
+        episode,
+
+        conversation,
+
+        latest_message,
+
+        reply
+
+    ):
+
+        ##################################################
+        # Increment Counter
+        ##################################################
+
+        episode.messages_since_last_reflection += 1
+
+        db.commit()
+
+        db.refresh(episode)
+
+        ##################################################
+        # Wait until enough messages
+        ##################################################
+
+        if episode.messages_since_last_reflection < 5:
+
+            return
+
+        ##################################################
+        # Reset Counter
+        ##################################################
+
+        episode.messages_since_last_reflection = 0
+
+        db.commit()
+
+        db.refresh(episode)
+
+        ##################################################
+        # Load Previous Reflections
+        ##################################################
+
+        previous_reflections = db.query(EpisodeReflection).filter(
+
+            EpisodeReflection.episode_id == episode.episode_id
+
+        ).order_by(
+
+            EpisodeReflection.created_at
+
+        ).all()
+
+        ##################################################
+        # Build Prompt
+        ##################################################
+
+        prompt = self.build_prompt(
+
+            episode,
+
+            previous_reflections,
+
+            conversation,
+
+            latest_message,
+
+            reply
+
+        )
+
+        ##################################################
+        # LLM
+        ##################################################
+
+        response = generate_response(
+
+            prompt
+
+        )
+
+        print("\n===== Reflection Generator =====")
+        print(prompt)
+        print("-------------------------------")
+        print(response)
+
+        ##################################################
+        # Parse JSON
+        ##################################################
+
+        decision = self.json_parser.parse(
+
+            response
+
+        )
+
+        print(decision)
+        print("===============================\n")
+
+        ##################################################
+        # No Reflection
+        ##################################################
+
+        if decision["reflection"] is None:
+
+            return
+
+        ##################################################
+        # Duplicate Reflection
+        ##################################################
+
+        if len(previous_reflections) > 0:
+
+            latest_reflection = previous_reflections[-1].reflection
+
+            if latest_reflection.strip().lower() == decision["reflection"].strip().lower():
+
+                return
+
+        ##################################################
+        # Save Reflection
+        ##################################################
+
+        self.save(
+
+            db,
+
+            episode,
+
+            decision["reflection"]
+
+        )
+
+    def build_prompt(
+
+        self,
+
+        episode,
+
+        previous_reflections,
+
+        conversation,
+
+        latest_message,
+
+        reply
+
+    ):
+
+        ##################################################
+        # Episode
+        ##################################################
+
+        episode_text = f"""
+Episode ID: {episode.episode_id}
+
+Title: {episode.title}
+
+Status: {episode.status}
+
+Summary:
+{episode.summary if episode.summary else "None"}
+"""
+
+        ##################################################
+        # Previous Reflections
+        ##################################################
+
+        if len(previous_reflections) == 0:
+
+            reflections_text = "None"
+
+        else:
+
+            reflections_text = ""
+
+            for reflection in previous_reflections:
+
+                reflections_text += (
+                    f"{reflection.created_at} - "
+                    f"{reflection.reflection}\n"
+                )
+
+        ##################################################
+        # Conversation
+        ##################################################
+
+        conversation_text = ""
+
+        for message in conversation:
+
+            role = message["role"].capitalize()
+
+            conversation_text += f"{role}: {message['content']}\n"
+
+        ##################################################
+        # Final Prompt
+        ##################################################
+
+        return PROMPT.format(
+
+            episode=episode_text,
+
+            reflections=reflections_text,
+
+            conversation=conversation_text,
+
+            message=latest_message,
+
+            reply=reply
+
+        )
+
+    def save(
+
+        self,
+
+        db,
+
+        episode,
+
+        reflection
+
+    ):
+
+        new_reflection = EpisodeReflection(
+
+            episode_id=episode.episode_id,
+
+            reflection=reflection
+
+        )
+
+        db.add(
+
+            new_reflection
+
+        )
+
+        db.commit()
+
+        db.refresh(
+
+            new_reflection
+
+        )
+
+        print("\n===== Reflection Saved =====")
+
+        print(
+
+            new_reflection.reflection
+
+        )
+
+        print(
+
+            new_reflection.created_at
+
+        )
+
+        print("============================\n")
+
+####################################################################################################
+FILE: backend/services/ai/pattern_detector.py
+####################################################################################################
+
+class PatternDetector:
+
+    pass
+
+####################################################################################################
+FILE: backend/services/ai/profile.py
+####################################################################################################
+
+class Profile:
+
+    pass
+
+####################################################################################################
+FILE: backend/services/ai/short_term_memory.py
+####################################################################################################
+
+class ShortTermMemory:
+
+    pass
+
+####################################################################################################
+FILE: backend/services/ai/long_term_memory.py
+####################################################################################################
+
+from models import EpisodeReflection
+
+from services.ai.memory_consolidator import MemoryConsolidator
+
+
+class LongTermMemory:
+
+    def __init__(self):
+
+        self.memory_consolidator = MemoryConsolidator()
+
+    def update(
+
+        self,
+
+        db,
+
+        user_id,
+
+        episode
+
+    ):
+
+        ##################################################
+        # Load Previous Memory
+        ##################################################
+
+        previous_memory = self.memory_consolidator.load(
+
+            db,
+
+            user_id
+
+        )
+
+        ##################################################
+        # Load Episode Reflections
+        ##################################################
+
+        reflections = db.query(
+
+            EpisodeReflection
+
+        ).filter(
+
+            EpisodeReflection.episode_id == episode.episode_id
+
+        ).order_by(
+
+            EpisodeReflection.created_at
+
+        ).all()
+
+        ##################################################
+        # Consolidate
+        ##################################################
+
+        memory = self.memory_consolidator.consolidate(
+
+            previous_memory,
+
+            episode.summary,
+
+            reflections
+
+        )
+
+        ##################################################
+        # Save
+        ##################################################
+
+        self.memory_consolidator.save(
+
+            db,
+
+            user_id,
+
+            memory
+
+        )
+
+        return memory
+
+    def retrieve(
+
+        self,
+
+        db,
+
+        user_id
+
+    ):
+
+        return self.memory_consolidator.load(
+
+            db,
+
+            user_id
+
+        )
+
+####################################################################################################
+FILE: backend/services/ai/memory_consolidator.py
+####################################################################################################
+
+from services.llm_provider import generate_response
+
+from services.ai.prompts.memory_consolidator_prompt import PROMPT
+
+from models import LongTermMemory
+
+from sqlalchemy.orm import Session
+
+
+class MemoryConsolidator:
+
+    def consolidate(
+
+        self,
+
+        previous_memory,
+
+        summary,
+
+        reflections
+
+    ):
+
+        ##################################################
+        # Build Prompt
+        ##################################################
+
+        prompt = self.build_prompt(
+
+            previous_memory,
+
+            summary,
+
+            reflections
+
+        )
+
+        ##################################################
+        # LLM
+        ##################################################
+
+        memory = generate_response(
+
+            prompt
+
+        ).strip()
+
+        print("\n===== Long-Term Memory =====")
+
+        print(
+
+            memory
+
+        )
+
+        print("============================\n")
+
+        return memory
+
+    def build_prompt(
+
+        self,
+
+        previous_memory,
+
+        summary,
+
+        reflections
+
+    ):
+
+        ##################################################
+        # Previous Memory
+        ##################################################
+
+        if previous_memory is None:
+
+            previous_memory = "None"
+
+        ##################################################
+        # Reflections
+        ##################################################
+
+        if len(reflections) == 0:
+
+            reflections_text = "None"
+
+        else:
+
+            reflections_text = ""
+
+            for reflection in reflections:
+
+                reflections_text += (
+
+                    f"- {reflection.reflection}\n"
+
+                )
+
+        ##################################################
+        # Prompt
+        ##################################################
+
+        return PROMPT.format(
+
+            memory=previous_memory,
+
+            summary=summary,
+
+            reflections=reflections_text
+
+        )
+
+    def load(
+
+        self,
+
+        db: Session,
+
+        user_id
+
+    ):
+
+        memory = db.query(
+
+            LongTermMemory
+
+        ).filter(
+
+            LongTermMemory.user_id == user_id
+
+        ).first()
+
+        if memory is None:
+
+            return None
+
+        return memory.memory
+
+    def save(
+
+        self,
+
+        db: Session,
+
+        user_id,
+
+        memory
+
+    ):
+
+        existing = db.query(
+
+            LongTermMemory
+
+        ).filter(
+
+            LongTermMemory.user_id == user_id
+
+        ).first()
+
+        ##################################################
+        # Update Existing Memory
+        ##################################################
+
+        if existing:
+
+            existing.memory = memory
+
+            db.commit()
+
+            db.refresh(
+
+                existing
+
+            )
+
+            print("\n===== Long-Term Memory Updated =====")
+
+            print(
+
+                existing.memory
+
+            )
+
+            print("====================================\n")
+
+            return
+
+        ##################################################
+        # Create New Memory
+        ##################################################
+
+        new_memory = LongTermMemory(
+
+            user_id=user_id,
+
+            memory=memory
+
+        )
+
+        db.add(
+
+            new_memory
+
+        )
+
+        db.commit()
+
+        db.refresh(
+
+            new_memory
+
+        )
+
+        print("\n===== Long-Term Memory Created =====")
+
+        print(
+
+            new_memory.memory
+
+        )
+
+        print("====================================\n")
+
+####################################################################################################
+FILE: backend/services/ai/memory_rag.py
+####################################################################################################
+
+class MemoryRAG:
+
+    pass
+
+####################################################################################################
+FILE: backend/services/ai/knowledge_rag.py
+####################################################################################################
+
+import chromadb
+
+from chromadb.utils.embedding_functions import (
+    SentenceTransformerEmbeddingFunction
+)
+
+
+class KnowledgeRAG:
+
+    def __init__(self):
+
+        embedding_function = SentenceTransformerEmbeddingFunction(
+
+            model_name="BAAI/bge-small-en-v1.5"
+
+        )
+
+        client = chromadb.PersistentClient(
+
+            path="vector_db"
+
+        )
+
+        self.collection = client.get_collection(
+
+            name="knowledge",
+
+            embedding_function=embedding_function
+
+        )
+
+        ##################################################
+        # Similarity Threshold
+        ##################################################
+
+        self.threshold = 0.60
+
+    def retrieve(
+
+        self,
+
+        query
+
+    ):
+
+        ##################################################
+        # Search
+        ##################################################
+
+        results = self.collection.query(
+
+            query_texts=[query],
+
+            n_results=3,
+
+            include=[
+
+                "documents",
+
+                "distances"
+
+            ]
+
+        )
+
+        documents = results["documents"][0]
+
+        distances = results["distances"][0]
+
+        ##################################################
+        # Nothing Retrieved
+        ##################################################
+
+        if len(documents) == 0:
+
+            return None
+
+        ##################################################
+        # Best Match Too Far
+        ##################################################
+
+        if distances[0] > self.threshold:
+
+            print("\n===== Knowledge RAG =====")
+            print("No relevant knowledge found.")
+            print(f"Distance: {distances[0]:.3f}")
+            print("=========================\n")
+
+            return None
+
+        ##################################################
+        # Build Knowledge
+        ##################################################
+
+        knowledge = ""
+
+        for document, distance in zip(
+
+            documents,
+
+            distances
+
+        ):
+
+            if distance <= self.threshold:
+
+                knowledge += document
+
+                knowledge += "\n\n"
+
+        ##################################################
+        # Debug
+        ##################################################
+
+        print("\n===== Knowledge Retrieved =====")
+
+        print(
+
+            knowledge
+
+        )
+
+        print("Distances:", distances)
+
+        print("===============================\n")
+
+        return knowledge.strip()
+
+####################################################################################################
+FILE: backend/services/ai/__init__.py
+####################################################################################################
+
+[FILE NOT FOUND]
+
+####################################################################################################
+FILE: backend/services/__init__.py
+####################################################################################################
+
+[FILE NOT FOUND]
+
+####################################################################################################
+FILE: backend/routers/__init__.py
+####################################################################################################
+
+
+
+####################################################################################################
+FILE: backend/services/ai/prompts/episode_detector_prompt.py
+####################################################################################################
+
+PROMPT = """
+You are an Episode Detection AI for a mental health assistant.
+
+Your task is to determine what should happen to the user's episode based on the current active episode and the latest user message.
+
+Current Active Episode
+----------------------
+
+{episode}
+
+Latest User Message
+-------------------
+
+{message}
+
+Possible Actions
+----------------
+
+CREATE
+- The user has started discussing a meaningful new life problem that deserves its own episode.
+
+CONTINUE
+- The user is still discussing the current active episode.
+
+CLOSE
+- The user clearly indicates that the current episode has been resolved or is no longer affecting them.
+
+NONE
+- No episode should be created because the message is casual conversation, greetings, factual questions, jokes, or does not describe a meaningful personal issue.
+
+Rules
+-----
+
+• Choose exactly ONE action.
+• If there is an active episode, choose only CONTINUE or CLOSE.
+• If there is NO active episode, choose only CREATE or NONE.
+• CREATE only when the latest user message clearly introduces a meaningful personal issue that should be tracked.
+• Do NOT create episodes for greetings, casual conversation, factual questions, jokes, or general chat.
+• CLOSE only when the user clearly indicates that the current problem has been resolved or is no longer affecting them.
+• If uncertain, prefer CONTINUE (when an active episode exists) or NONE (when no active episode exists).
+• For CREATE, generate a short episode title (2–5 words).
+• For CONTINUE, CLOSE, and NONE, the title must be null.
+• Return ONLY valid JSON.
+• Do NOT include markdown.
+• Do NOT include explanations outside the JSON.
+
+Return exactly this format:
+
+{{
+    "action": "NONE",
+    "title": null,
+    "reason": "Brief explanation.",
+    "confidence": 0.97
+}}
+
+Example (CREATE):
+
+{{
+    "action": "CREATE",
+    "title": "Interview Anxiety",
+    "reason": "The user is discussing persistent anxiety about an upcoming interview.",
+    "confidence": 0.98
+}}
+
+Example (CONTINUE):
+
+{{
+    "action": "CONTINUE",
+    "title": null,
+    "reason": "The user is still discussing the same issue.",
+    "confidence": 0.98
+}}
+
+Example (CLOSE):
+
+{{
+    "action": "CLOSE",
+    "title": null,
+    "reason": "The user clearly stated that the problem has been resolved.",
+    "confidence": 0.99
+}}
+
+Example (NONE):
+
+{{
+    "action": "NONE",
+    "title": null,
+    "reason": "The message does not introduce a meaningful personal issue.",
+    "confidence": 0.99
+}}
+"""
+
+####################################################################################################
+FILE: backend/services/ai/prompts/episode_summarizer_prompt.py
+####################################################################################################
+
+[FILE NOT FOUND]
+
+####################################################################################################
+FILE: backend/services/ai/prompts/mood_detector_prompt.py
+####################################################################################################
+
+[FILE NOT FOUND]
+
+####################################################################################################
+FILE: backend/services/ai/prompts/reflection_prompt.py
+####################################################################################################
+
+PROMPT = """
+You are a Reflection Generation AI for a mental health assistant.
+
+Your task is to determine whether the user has reached a meaningful new personal insight during the conversation.
+
+Current Episode
+---------------
+
+{episode}
+
+Previous Reflections
+--------------------
+
+{reflections}
+
+Conversation
+------------
+
+{conversation}
+
+Latest User Message
+-------------------
+
+{message}
+
+Latest Assistant Reply
+----------------------
+
+{reply}
+
+Rules
+-----
+
+• Only generate a reflection if the user has gained a meaningful new insight.
+• A reflection should capture realizations, perspective shifts, coping strategies, or understanding of themselves.
+• Do NOT repeat previous reflections.
+• Do NOT summarize the conversation.
+• If there is no meaningful new insight, return null.
+• Return ONLY valid JSON.
+• Do NOT use markdown.
+• Do NOT explain your reasoning.
+
+Return exactly one of these formats:
+
+{{
+    "reflection": "The user realized that preparing before interviews significantly reduces anxiety."
+}}
+
+OR
+
+{{
+    "reflection": null
+}}
+"""
+
+####################################################################################################
+FILE: backend/services/ai/prompts/memory_consolidator_prompt.py
+####################################################################################################
+
+PROMPT = """
+You are a Long-Term Memory Consolidation AI for a mental health assistant.
+
+Your task is to update the user's long-term memory.
+
+Previous Long-Term Memory
+-------------------------
+
+{memory}
+
+Closed Episode Summary
+----------------------
+
+{summary}
+
+Episode Reflections
+-------------------
+
+{reflections}
+
+Rules
+-----
+
+• Update the user's long-term memory using the new information.
+
+• Merge new information with the existing memory.
+
+• Remove duplicate information.
+
+• Keep only information that will remain useful in future conversations.
+
+• Prefer remembering:
+  - recurring struggles
+  - personality traits
+  - coping strategies that consistently help
+  - long-term goals
+  - important relationships
+  - lasting preferences
+  - meaningful personal insights
+
+• Do NOT remember:
+  - temporary moods
+  - one-time events
+  - dates
+  - small talk
+  - short-lived details
+
+• If new information contradicts older information, keep the newer and more accurate version.
+
+• Keep the memory concise.
+
+• Maximum 15 bullet points.
+
+• Each bullet should be one short sentence.
+
+• Return ONLY the updated long-term memory.
+
+Example:
+
+• The user tends to overthink before important evaluations.
+• Preparation and structured planning consistently reduce the user's anxiety.
+• The user values academic and professional success.
+• Open communication helps the user resolve interpersonal conflicts.
+"""
+
+####################################################################################################
+FILE: frontend/src/services/api.js
+####################################################################################################
+
+import axios from "axios";
+
+const api = axios.create({
+
+    baseURL: "http://127.0.0.1:8000"
+
+});
+
+api.interceptors.request.use(
+
+    (config) => {
+
+        const token = localStorage.getItem("token");
+
+        if (token) {
+
+            config.headers.Authorization = `Bearer ${token}`;
+
+        }
+
+        return config;
+
+    }
+
+);
+
+export default api;
+
+####################################################################################################
+FILE: frontend/src/services/messages.js
+####################################################################################################
+
+import api from "./api";
+
+export async function getMessages(conversationId) {
+
+    const response = await api.get(
+
+        `/messages/${conversationId}`
+
+    );
+
+    return response.data;
+
+}
+
+export async function sendMessage(
+
+    conversation_id,
+
+    content
+
+) {
+
+    const response = await api.post(
+
+        "/messages/send",
+
+        {
+
+            conversation_id,
+
+            content
+
+        }
+
+    );
+
+    return response.data;
+
+}
+
+####################################################################################################
+FILE: frontend/src/services/chat.js
+####################################################################################################
+
+import api from "./api";
+
+export async function getChats() {
+
+    const response = await api.get("/chats");
+
+    return response.data;
+
+}
+
+export async function createChat(title) {
+
+    const response = await api.post(
+
+        "/chats/new",
+
+        {
+
+            title
+
+        }
+
+    );
+
+    return response.data;
+
+}
+
+####################################################################################################
+FILE: frontend/src/hooks/useChat.js
+####################################################################################################
+
+import { useContext } from "react";
+
+import { AppContext } from "../context/AppContext";
+
+import { getChats, createChat } from "../services/chat";
+import { getMessages, sendMessage } from "../services/messages";
+
+export default function useChat() {
+
+    const {
+
+        chatList,
+        setChatList,
+
+        selectedChatId,
+        setSelectedChatId,
+
+        messages,
+        setMessages
+
+    } = useContext(AppContext);
+
+
+    async function loadChats() {
+
+        try {
+
+            const chats = await getChats();
+
+            setChatList(chats);
+
+            if (chats.length > 0 && selectedChatId === null) {
+
+                await openChat(chats[0].id);
+
+            }
+
+        }
+
+        catch (err) {
+
+            console.error(err);
+
+        }
+
+    }
+
+
+    async function openChat(chatId) {
+
+        try {
+
+            setSelectedChatId(chatId);
+
+            const history = await getMessages(chatId);
+
+            setMessages(history);
+
+        }
+
+        catch (err) {
+
+            console.error(err);
+
+        }
+
+    }
+
+
+    async function newChat() {
+
+        try {
+
+            const chat = await createChat("New Conversation");
+
+            setChatList(prev => [
+
+                chat,
+
+                ...prev
+
+            ]);
+
+            setSelectedChatId(chat.id);
+
+            setMessages([]);
+
+        }
+
+        catch (err) {
+
+            console.error(err);
+
+        }
+
+    }
+
+
+    async function send(text) {
+
+        if (!selectedChatId || !text.trim()) return;
+
+        try {
+
+            const response = await sendMessage(
+
+                selectedChatId,
+
+                text
+
+            );
+
+            if (response.conversation_title) {
+
+                setChatList(prev =>
+
+                    prev.map(chat =>
+
+                        chat.id === selectedChatId
+
+                            ? {
+
+                                ...chat,
+
+                                title: response.conversation_title
+
+                            }
+
+                            : chat
+
+                    )
+
+                );
+
+            }
+
+            const history = await getMessages(
+
+                selectedChatId
+
+            );
+
+            setMessages(history);
+
+        }
+
+        catch (err) {
+
+            console.error(err);
+
+        }
+
+    }
+
+
+    return {
+
+        chatList,
+
+        selectedChatId,
+
+        messages,
+
+        loadChats,
+
+        openChat,
+
+        newChat,
+
+        send
+
+    };
+
+}
+
+####################################################################################################
+FILE: frontend/src/context/AppContext.jsx
+####################################################################################################
+
+import { createContext, useState } from "react";
+
+export const AppContext = createContext();
+
+export function AppProvider({ children }) {
+
+    // Logged-in user
+    const [user, setUser] = useState(null);
+
+    // JWT (optional, since you're using localStorage)
+    const [token, setToken] = useState(
+        localStorage.getItem("token")
+    );
+
+    // Sidebar
+    const [chatList, setChatList] = useState([]);
+
+    // Currently selected chat
+    const [selectedChatId, setSelectedChatId] = useState(null);
+
+    // Messages of selected chat
+    const [messages, setMessages] = useState([]);
+
+    // Current LLM
+    const [model, setModel] = useState("Gemini");
+
+    // System Prompt
+    const [systemPrompt, setSystemPrompt] = useState("");
+
+    // Multimodal Toggle
+    const [multimodalEnabled, setMultimodalEnabled] = useState(true);
+
+    return (
+
+        <AppContext.Provider
+
+            value={{
+
+                user,
+                setUser,
+
+                token,
+                setToken,
+
+                chatList,
+                setChatList,
+
+                selectedChatId,
+                setSelectedChatId,
+
+                messages,
+                setMessages,
+
+                model,
+                setModel,
+
+                systemPrompt,
+                setSystemPrompt,
+
+                multimodalEnabled,
+                setMultimodalEnabled
+
+            }}
+
+        >
+
+            {children}
+
+        </AppContext.Provider>
+
+    );
+
+}
+
+####################################################################################################
+FILE: frontend/src/components/ChatWindow.jsx
+####################################################################################################
+
+import useChat from "../hooks/useChat";
+
+export default function ChatWindow() {
+
+    const {
+
+        chatList,
+
+        selectedChatId,
+
+        messages
+
+    } = useChat();
+
+
+    const selectedChat = chatList.find(
+
+        chat => chat.id === selectedChatId
+
+    );
+
+
+    return (
+
+        <div className="chat-window">
+
+            <div className="chat-header">
+
+                <h2>
+
+                    {
+
+                        selectedChat
+
+                            ? selectedChat.title
+
+                            : "Mental Health AI"
+
+                    }
+
+                </h2>
+
+            </div>
+
+
+            <div className="messages">
+
+                {
+
+                    messages.length === 0
+
+                        ?
+
+                        <div className="empty-chat">
+
+                            <h2>👋 Welcome</h2>
+
+                            <p>
+
+                                Start a conversation.
+
+                            </p>
+
+                        </div>
+
+                        :
+
+                        messages.map(message => (
+
+                            <div
+
+                                key={message.id}
+
+                                className={`message-row ${message.role}`}
+
+                            >
+
+                                <div className="bubble">
+
+                                    {message.content}
+
+                                </div>
+
+                            </div>
+
+                        ))
+
+                }
+
+            </div>
+
+        </div>
+
+    );
+
+}
+
+####################################################################################################
+FILE: frontend/src/components/MessageBubble.jsx
+####################################################################################################
+
+
+
+####################################################################################################
+FILE: frontend/src/components/MessageInput.jsx
+####################################################################################################
+
+import { useState } from "react";
+
+import { Paperclip, Mic, SendHorizontal } from "lucide-react";
+
+import useChat from "../hooks/useChat";
+
+export default function MessageInput() {
+
+    const [text, setText] = useState("");
+
+    const { send } = useChat();
+
+    async function handleSend() {
+
+        if (!text.trim()) return;
+
+        await send(text);
+
+        setText("");
+
+    }
+
+    function handleKeyDown(e) {
+
+        if (e.key === "Enter" && !e.shiftKey) {
+
+            e.preventDefault();
+
+            handleSend();
+
+        }
+
+    }
+
+    return (
+
+        <div className="message-input">
+
+            <button>
+
+                <Paperclip size={20} />
+
+            </button>
+
+            <input
+
+                type="text"
+
+                placeholder="Message Mental Health AI..."
+
+                value={text}
+
+                onChange={(e) => setText(e.target.value)}
+
+                onKeyDown={handleKeyDown}
+
+            />
+
+            <button>
+
+                <Mic size={20} />
+
+            </button>
+
+            <button onClick={handleSend}>
+
+                <SendHorizontal size={20} />
+
+            </button>
+
+        </div>
+
+    );
+
+}
+
+====================================================================================================
+SUMMARY: included 37 files; missing 5 files.
+Missing optional paths:
+  - backend/schemas.py
+  - backend/services/ai/__init__.py
+  - backend/services/__init__.py
+  - backend/services/ai/prompts/episode_summarizer_prompt.py
+  - backend/services/ai/prompts/mood_detector_prompt.py

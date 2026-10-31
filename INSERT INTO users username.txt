@@ -1,0 +1,6 @@
+INSERT INTO users (username, email, password_hash)
+VALUES (
+    'alice',
+    'alice@gmail.com',
+    '$2b$12$IdS632alP3Sv0uxQv7UINukUnu2pZL4LHWTsTvYVrJdE8T8E6zlEK'
+);

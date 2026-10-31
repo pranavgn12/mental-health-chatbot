@@ -1,17 +1,11 @@
-from fastapi import (
-    APIRouter,
-    Depends
-)
 
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+from pydantic import BaseModel
 
 from database import get_db
-
-from models import Conversation
-
+from models import Conversation, Message
 from auth_utils import get_current_user
-
-from pydantic import BaseModel
 
 router = APIRouter()
 
@@ -26,16 +20,13 @@ def create_chat(
     db: Session = Depends(get_db),
     user=Depends(get_current_user)
 ):
-
     chat = Conversation(
         user_id=user["user_id"],
         title=request.title
     )
 
     db.add(chat)
-
     db.commit()
-
     db.refresh(chat)
 
     return {
@@ -50,11 +41,41 @@ def list_chats(
     db: Session = Depends(get_db),
     user=Depends(get_current_user)
 ):
-
-    chats = db.query(
-        Conversation
-    ).filter(
+    chats = db.query(Conversation).filter(
         Conversation.user_id == user["user_id"]
     ).all()
 
     return chats
+
+
+@router.delete("/{chat_id}")
+def delete_chat(
+    chat_id: int,
+    db: Session = Depends(get_db),
+    user=Depends(get_current_user)
+):
+    # Only allow users to delete their own conversations.
+    chat = db.query(Conversation).filter(
+        Conversation.id == chat_id,
+        Conversation.user_id == user["user_id"]
+    ).first()
+
+    if not chat:
+        raise HTTPException(
+            status_code=404,
+            detail="Conversation not found"
+        )
+
+    # Delete the conversation's messages first.
+    db.query(Message).filter(
+        Message.conversation_id == chat_id
+    ).delete(synchronize_session=False)
+
+    db.delete(chat)
+    db.commit()
+
+    return {
+        "message": "Conversation deleted",
+        "id": chat_id
+    }
+

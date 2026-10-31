@@ -1,100 +1,284 @@
-from models import EpisodeReflection
+
+import json
+import logging
+
+from sqlalchemy.orm import Session
+
+from models import (
+    EpisodeReflection,
+    LongTermMemory as LongTermMemoryModel
+)
 
 from services.ai.memory_consolidator import MemoryConsolidator
+from services.ai.profile import Profile
+
+
+logger = logging.getLogger(__name__)
 
 
 class LongTermMemory:
 
     def __init__(self):
-
         self.memory_consolidator = MemoryConsolidator()
+        self.profile_generator = Profile()
+
+    # =====================================================
+    # UPDATE LONG-TERM MEMORY AND PROFILE
+    # =====================================================
 
     def update(
-
         self,
-
-        db,
-
+        db: Session,
         user_id,
-
         episode
-
     ):
 
-        ##################################################
-        # Load Previous Memory
-        ##################################################
+        if episode is None:
+            raise ValueError("Episode does not exist.")
 
-        previous_memory = self.memory_consolidator.load(
+        if episode.user_id != user_id:
+            raise ValueError(
+                "Episode does not belong to this user."
+            )
 
-            db,
+        if not episode.summary or not episode.summary.strip():
+            raise ValueError("Episode summary is empty.")
 
-            user_id
+        try:
 
-        )
+            print("\n========== LONG-TERM MEMORY UPDATE ==========")
+            print("User ID:", user_id)
+            print("Episode ID:", episode.episode_id)
 
-        ##################################################
-        # Load Episode Reflections
-        ##################################################
+            # -------------------------------------------------
+            # 1. LOAD EXISTING MEMORY RECORD
+            # -------------------------------------------------
 
-        reflections = db.query(
+            record = (
+                db.query(LongTermMemoryModel)
+                .filter(
+                    LongTermMemoryModel.user_id == user_id
+                )
+                .with_for_update()
+                .one_or_none()
+            )
 
-            EpisodeReflection
+            previous_memory = (
+                record.memory
+                if record and record.memory
+                else None
+            )
 
-        ).filter(
+            previous_themes = (
+                record.profile_themes
+                if record and isinstance(record.profile_themes, list)
+                else []
+            )
 
-            EpisodeReflection.episode_id == episode.episode_id
+            print("\nPrevious Long-Term Memory:")
+            print(previous_memory or "No previous memory.")
 
-        ).order_by(
+            print("\nPrevious Profile Themes:")
+            print(previous_themes)
 
-            EpisodeReflection.created_at
+            # -------------------------------------------------
+            # 2. LOAD EPISODE REFLECTIONS
+            # -------------------------------------------------
 
-        ).all()
+            reflections = (
+                db.query(EpisodeReflection)
+                .filter(
+                    EpisodeReflection.episode_id
+                    == episode.episode_id
+                )
+                .order_by(
+                    EpisodeReflection.created_at
+                )
+                .all()
+            )
 
-        ##################################################
-        # Consolidate
-        ##################################################
+            print(
+                "\nEpisode reflections:",
+                len(reflections)
+            )
 
-        memory = self.memory_consolidator.consolidate(
+            # -------------------------------------------------
+            # 3. CONSOLIDATE LONG-TERM MEMORY
+            # -------------------------------------------------
 
-            previous_memory,
+            updated_memory = self.memory_consolidator.consolidate(
+                previous_memory=previous_memory,
+                summary=episode.summary,
+                reflections=reflections
+            )
 
-            episode.summary,
+            if (
+                not isinstance(updated_memory, str)
+                or not updated_memory.strip()
+            ):
+                raise ValueError(
+                    "Memory consolidation returned empty memory."
+                )
 
-            reflections
+            updated_memory = updated_memory.strip()
 
-        )
+            print("\nUpdated Long-Term Memory:")
+            print(updated_memory)
 
-        ##################################################
-        # Save
-        ##################################################
+            # -------------------------------------------------
+            # 4. GENERATE PROFILE THEMES
+            # -------------------------------------------------
 
-        self.memory_consolidator.save(
+            # IMPORTANT:
+            # Profile generation must never prevent memory saving.
+            # If the LLM fails, retain the previous themes.
 
-            db,
+            updated_themes = previous_themes
 
-            user_id,
+            print("\nGenerating Profile Themes...")
 
-            memory
+            try:
 
-        )
+                generated_themes = self.profile_generator.generate(
+                    memory=updated_memory,
+                    previous_themes=previous_themes
+                )
 
-        return memory
+                if not isinstance(generated_themes, list):
+                    raise ValueError(
+                        "Profile generator did not return a list."
+                    )
+
+                # Only accept dictionary-based themes.
+                valid_themes = [
+                    theme
+                    for theme in generated_themes
+                    if isinstance(theme, dict)
+                ]
+
+                if generated_themes and not valid_themes:
+                    raise ValueError(
+                        "Profile generator returned no valid theme objects."
+                    )
+
+                # An empty list is allowed when there are no meaningful
+                # themes, but do not erase existing themes accidentally.
+                if valid_themes:
+                    # Verify that the result can be stored in a JSON column.
+                    json.dumps(valid_themes)
+
+                    updated_themes = valid_themes
+
+                elif previous_themes:
+                    logger.warning(
+                        "Profile generator returned no themes. "
+                        "Preserving previous themes for user %s.",
+                        user_id
+                    )
+
+                print("\nProfile Themes:")
+                print(updated_themes)
+
+            except Exception:
+
+                logger.exception(
+                    "Profile generation failed for user %s. "
+                    "Preserving previous themes.",
+                    user_id
+                )
+
+                updated_themes = previous_themes
+
+            # -------------------------------------------------
+            # 5. SAVE MEMORY AND THEMES TOGETHER
+            # -------------------------------------------------
+
+            if record is None:
+
+                record = LongTermMemoryModel(
+                    user_id=user_id,
+                    memory=updated_memory,
+                    profile_themes=updated_themes
+                )
+
+                db.add(record)
+
+            else:
+
+                record.memory = updated_memory
+                record.profile_themes = updated_themes
+
+            # Commit consolidated memory even if Profile generation failed.
+            db.commit()
+            db.refresh(record)
+
+            print("\n========== MEMORY UPDATE SUCCESS ==========")
+            print("Memory saved:", bool(record.memory))
+            print(
+                "Profile themes saved:",
+                len(record.profile_themes or [])
+            )
+            print("Updated at:", record.updated_at)
+            print("===========================================\n")
+
+            return record.memory
+
+        except Exception:
+
+            db.rollback()
+
+            logger.exception(
+                "Long-term memory update failed "
+                "for user %s, episode %s",
+                user_id,
+                getattr(episode, "episode_id", None)
+            )
+
+            raise
+
+    # =====================================================
+    # RETRIEVE LONG-TERM MEMORY
+    # =====================================================
 
     def retrieve(
-
         self,
-
-        db,
-
+        db: Session,
         user_id
-
     ):
 
-        return self.memory_consolidator.load(
-
-            db,
-
-            user_id
-
+        record = (
+            db.query(LongTermMemoryModel)
+            .filter(
+                LongTermMemoryModel.user_id == user_id
+            )
+            .one_or_none()
         )
+
+        if record is None:
+            return None
+
+        return record.memory
+
+    # =====================================================
+    # RETRIEVE PROFILE THEMES
+    # =====================================================
+
+    def retrieve_profile(
+        self,
+        db: Session,
+        user_id
+    ):
+
+        record = (
+            db.query(LongTermMemoryModel)
+            .filter(
+                LongTermMemoryModel.user_id == user_id
+            )
+            .one_or_none()
+        )
+
+        if record is None:
+            return []
+
+        return record.profile_themes or []
+

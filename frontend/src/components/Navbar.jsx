@@ -19,7 +19,7 @@ export default function Navbar({ toggleSidebar }) {
                     <PanelLeft size={20} />
                 </button>
 
-                <h2>Mental Health AI</h2>
+                <h2>AI Companion</h2>
 
             </div>
 
@@ -27,7 +27,7 @@ export default function Navbar({ toggleSidebar }) {
 
                 <button className="model-btn">
 
-                    Gemini
+                    gpt-oss-20b
 
                     <ChevronDown size={16} />
 
