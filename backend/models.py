@@ -1,4 +1,3 @@
-
 from datetime import datetime
 
 from sqlalchemy import (
@@ -8,7 +7,8 @@ from sqlalchemy import (
     Text,
     DateTime,
     ForeignKey,
-    JSON
+    JSON,
+    Float
 )
 
 from database import Base
@@ -95,6 +95,14 @@ class Message(Base):
         Text
     )
 
+    # Nullable for legacy messages and messages outside tracked episodes.
+    episode_id = Column(
+        String(20),
+        ForeignKey("episodes.episode_id"),
+        nullable=True,
+        index=True
+    )
+
 
 # =========================================================
 # EPISODE
@@ -134,7 +142,17 @@ class Episode(Base):
 
     status = Column(
         String(20),
-        default="ACTIVE"
+        default="ACTIVE",
+        nullable=False
+    )
+
+    # MySQL UNIQUE permits multiple NULLs. Setting this to user_id only
+    # while ACTIVE enforces at most one active episode per user.
+    active_user_id = Column(
+        Integer,
+        ForeignKey("users.id"),
+        unique=True,
+        nullable=True
     )
 
     created_at = Column(
@@ -190,6 +208,16 @@ class EpisodeMood(Base):
         String(100),
         nullable=False
     )
+
+    message_id = Column(
+        Integer,
+        ForeignKey("messages.id"),
+        nullable=True,
+        unique=True
+    )
+
+    confidence = Column(Float, nullable=True)
+    evidence = Column(Text, nullable=True)
 
     created_at = Column(
         DateTime,
@@ -282,3 +310,27 @@ class LongTermMemory(Base):
         onupdate=datetime.utcnow
     )
 
+
+
+
+
+
+# =========================================================
+# DETECTED PATTERNS
+# =========================================================
+
+class EpisodePattern(Base):
+    __tablename__ = "episode_patterns"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    pattern_id = Column(String(40), unique=True, nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
+    category = Column(String(80), nullable=False, default="general")
+    description = Column(Text, nullable=False)
+    confidence = Column(Float, nullable=False)
+    evidence = Column(JSON, nullable=False)
+    status = Column(String(20), nullable=False, default="ACTIVE")
+    first_seen_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    last_seen_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)

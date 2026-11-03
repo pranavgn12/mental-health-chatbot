@@ -1,4 +1,3 @@
-
 import json
 import logging
 
@@ -85,7 +84,8 @@ def send_message(
             user_id=user["user_id"],
             conversation=conversation_messages,
             latest_message=request.content,
-            current_title=conversation.title
+            current_title=conversation.title,
+            user_message_id=user_message.id
         )
 
         reply = result["reply"]
@@ -107,7 +107,8 @@ def send_message(
         assistant_message = Message(
             conversation_id=request.conversation_id,
             role="assistant",
-            content=reply
+            content=reply,
+            episode_id=(closed_episode_id or episode_id)
         )
 
         db.add(assistant_message)
@@ -141,7 +142,9 @@ def send_message(
 
             "closed_episode_id": closed_episode_id,
 
-            "long_term_memory_updated": long_term_memory_updated
+            "long_term_memory_updated": long_term_memory_updated,
+
+            "rag": result.get("rag") or {}
 
         }
 
@@ -258,7 +261,8 @@ def send_message_stream(
                 user_id=user_id,
                 conversation=conversation_messages,
                 latest_message=request.content,
-                current_title=current_title
+                current_title=current_title,
+                user_message_id=user_message_data["id"]
             ):
 
                 event_type = event.get("type")
@@ -304,7 +308,8 @@ def send_message_stream(
             assistant_message = Message(
                 conversation_id=conversation_id,
                 role="assistant",
-                content=reply
+                content=reply,
+                episode_id=(completion_metadata.get("closed_episode_id") or completion_metadata.get("episode_id"))
             )
 
             stream_db.add(assistant_message)
@@ -354,7 +359,9 @@ def send_message_stream(
 
                 "closed_episode_id": closed_episode_id,
 
-                "long_term_memory_updated": long_term_memory_updated
+                "long_term_memory_updated": long_term_memory_updated,
+
+                "rag": completion_metadata.get("rag") or {}
 
             })
 
@@ -419,3 +426,8 @@ def get_messages(
 
     return messages
 
+
+
+
+
+####################################################################################################

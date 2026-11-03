@@ -18,6 +18,11 @@ Episode Reflections
 
 {reflections}
 
+Established Patterns (cross-episode evidence)
+---------------------------------------------
+
+{patterns}
+
 Rules
 -----
 
@@ -29,6 +34,7 @@ Rules
 
 • Keep only information that will remain useful in future conversations.
 
+• Treat patterns as recurring only when supported by evidence across episodes. Do not convert tentative patterns into facts.
 • Prefer remembering:
   - recurring struggles
   - personality traits
@@ -62,3 +68,5 @@ Example:
 • The user values academic and professional success.
 • Open communication helps the user resolve interpersonal conflicts.
 """
+
+

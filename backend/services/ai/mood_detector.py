@@ -40,6 +40,7 @@ class MoodDetector:
         conversation,
         latest_message,
         reply,
+        message_id=None,
     ):
         """
         Call once for each new user turn, usually after the assistant
@@ -49,20 +50,37 @@ class MoodDetector:
         - The result is valid.
         - Confidence meets the threshold.
         - Supporting evidence is provided.
-        - The mood differs from the latest saved mood.
+        - The observation is linked to the exact user message.
+        - The mood differs from the latest saved mood in this episode.
+
+        Repeated consecutive labels are intentionally skipped; a later return
+        to an earlier mood is saved when it follows a different mood.
         """
 
         if not latest_message or not latest_message.strip():
             return
 
+        # A mood observation must be tied to one concrete user message.
+        # Without the message ID, we cannot make retries idempotent.
+        if message_id is None:
+            logger.warning("Skipping mood persistence: user message ID was not supplied.")
+            return
+
         try:
+            # Idempotency: a retry for the same message must not create a row.
+            existing = db.query(EpisodeMood).filter(
+                EpisodeMood.message_id == message_id
+            ).first()
+            if existing is not None:
+                return
+
             # Load the saved mood timeline.
             previous_moods = (
                 db.query(EpisodeMood)
                 .filter(
                     EpisodeMood.episode_id == episode.episode_id
                 )
-                .order_by(EpisodeMood.created_at.asc())
+                .order_by(EpisodeMood.created_at.asc(), EpisodeMood.id.asc())
                 .all()
             )
 
@@ -118,20 +136,23 @@ class MoodDetector:
             if not isinstance(evidence, str) or not evidence.strip():
                 return
 
-            # Do not add another database entry for the current mood.
-            if previous_moods:
-                latest_saved_mood = self._normalise_mood(
-                    previous_moods[-1].mood
+            # Store transitions, not repeated snapshots. A repeated mood on
+            # consecutive turns is not a new event and should not clutter the
+            # timeline. The next different mood will still be recorded.
+            if not self._is_transition(mood, previous_moods):
+                logger.debug(
+                    "Skipping unchanged mood %s for episode %s",
+                    mood, episode.episode_id
                 )
+                return
 
-                if latest_saved_mood == mood:
-                    return
-
-            # A genuine, sufficiently confident mood change.
             self.save(
                 db=db,
                 episode=episode,
                 mood=mood,
+                message_id=message_id,
+                confidence=confidence,
+                evidence=evidence.strip(),
             )
 
         except Exception:
@@ -142,6 +163,13 @@ class MoodDetector:
                 "Mood detection failed for episode %s",
                 getattr(episode, "episode_id", "unknown"),
             )
+
+    @staticmethod
+    def _is_transition(mood, previous_moods):
+        """True only when the predicted mood differs from the latest saved mood."""
+        if not previous_moods:
+            return True
+        return (previous_moods[-1].mood or "").strip().lower() != mood
 
     def _get_recent_context(
         self,
@@ -266,12 +294,15 @@ Summary: {episode.summary or "None"}
             reply=reply or "No assistant reply available.",
         )
 
-    def save(self, db, episode, mood):
-        """Persist one mood transition."""
+    def save(self, db, episode, mood, message_id=None, confidence=None, evidence=None):
+        """Persist a message-linked mood observation."""
 
         new_mood = EpisodeMood(
             episode_id=episode.episode_id,
             mood=mood,
+            message_id=message_id,
+            confidence=confidence,
+            evidence=evidence,
         )
 
         try:
@@ -288,3 +319,8 @@ Summary: {episode.summary or "None"}
         except Exception:
             db.rollback()
             raise
+
+
+
+
+####################################################################################################

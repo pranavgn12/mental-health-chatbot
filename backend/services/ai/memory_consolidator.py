@@ -1,4 +1,3 @@
-
 import logging
 
 from services.llm_provider import generate_response
@@ -11,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 class MemoryConsolidator:
 
-    def consolidate(self, previous_memory, summary, reflections):
+    def consolidate(self, previous_memory, summary, reflections, patterns=None):
 
         if not summary or not summary.strip():
             raise ValueError("Episode summary is empty.")
@@ -19,7 +18,8 @@ class MemoryConsolidator:
         prompt = self.build_prompt(
             previous_memory,
             summary,
-            reflections
+            reflections,
+            patterns or []
         )
 
         response = generate_response(prompt)
@@ -35,7 +35,7 @@ class MemoryConsolidator:
 
         return memory
 
-    def build_prompt(self, previous_memory, summary, reflections):
+    def build_prompt(self, previous_memory, summary, reflections, patterns=None):
 
         previous_memory = (
             previous_memory.strip()
@@ -54,10 +54,16 @@ class MemoryConsolidator:
         if not reflections_text:
             reflections_text = "No reflections available."
 
+        patterns_text = "\n".join(
+            f"- {p.description} (confidence: {p.confidence:.2f})"
+            for p in (patterns or []) if p.description
+        ) or "No established recurring patterns."
+
         return PROMPT.format(
             memory=previous_memory,
             summary=summary.strip(),
-            reflections=reflections_text
+            reflections=reflections_text,
+            patterns=patterns_text
         )
 
     def load(self, db: Session, user_id):
@@ -100,4 +106,7 @@ class MemoryConsolidator:
             db.rollback()
             logger.exception("Failed to save long-term memory.")
             raise
+
+
+
 

@@ -1,4 +1,3 @@
-
 import json
 import logging
 
@@ -6,6 +5,7 @@ from sqlalchemy.orm import Session
 
 from models import (
     EpisodeReflection,
+    EpisodePattern,
     LongTermMemory as LongTermMemoryModel
 )
 
@@ -103,13 +103,26 @@ class LongTermMemory:
             )
 
             # -------------------------------------------------
-            # 3. CONSOLIDATE LONG-TERM MEMORY
+            # 3. LOAD PERSISTENT PATTERNS
+            # -------------------------------------------------
+
+            patterns = (
+                db.query(EpisodePattern)
+                .filter(EpisodePattern.user_id == user_id,
+                        EpisodePattern.status == "ACTIVE")
+                .order_by(EpisodePattern.last_seen_at.desc())
+                .all()
+            )
+
+            # -------------------------------------------------
+            # 4. CONSOLIDATE LONG-TERM MEMORY
             # -------------------------------------------------
 
             updated_memory = self.memory_consolidator.consolidate(
                 previous_memory=previous_memory,
                 summary=episode.summary,
-                reflections=reflections
+                reflections=reflections,
+                patterns=patterns
             )
 
             if (
@@ -126,7 +139,7 @@ class LongTermMemory:
             print(updated_memory)
 
             # -------------------------------------------------
-            # 4. GENERATE PROFILE THEMES
+            # 5. GENERATE PROFILE THEMES
             # -------------------------------------------------
 
             # IMPORTANT:
@@ -190,7 +203,7 @@ class LongTermMemory:
                 updated_themes = previous_themes
 
             # -------------------------------------------------
-            # 5. SAVE MEMORY AND THEMES TOGETHER
+            # 6. SAVE MEMORY AND THEMES TOGETHER
             # -------------------------------------------------
 
             if record is None:
@@ -281,4 +294,7 @@ class LongTermMemory:
             return []
 
         return record.profile_themes or []
+
+
+
 

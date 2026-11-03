@@ -1,397 +1,157 @@
+import logging
 
-from services.llm import (
-    chat,
-    chat_stream as llm_chat_stream
-)
-
+from services.llm import chat as llm_chat, chat_stream as llm_chat_stream
 from services.title_generator import generate_title
-
 from services.ai.episode_manager import EpisodeManager
 from services.ai.episode_detector import EpisodeDetector
-
-from services.ai.short_term_memory import ShortTermMemory
 from services.ai.long_term_memory import LongTermMemory
 from services.ai.memory_rag import MemoryRAG
 from services.ai.knowledge_rag import KnowledgeRAG
-from services.ai.profile import Profile
-
 from services.ai.pattern_detector import PatternDetector
-
 from services.ai.mood_detector import MoodDetector
 from services.ai.reflection_generator import ReflectionGenerator
-
 from services.ai.episode_summarizer import EpisodeSummarizer
+from models import Message
+
+logger = logging.getLogger(__name__)
 
 
 class AIOrchestrator:
-
     def __init__(self):
-
         self.episode_manager = EpisodeManager()
         self.episode_detector = EpisodeDetector()
-
         self.mood_detector = MoodDetector()
         self.reflection_generator = ReflectionGenerator()
-
         self.episode_summarizer = EpisodeSummarizer()
-
-        self.short_term_memory = ShortTermMemory()
         self.long_term_memory = LongTermMemory()
-
         self.memory_rag = MemoryRAG()
         self.knowledge_rag = KnowledgeRAG()
-
-        self.profile = Profile()
-
         self.pattern_detector = PatternDetector()
 
-    # =====================================================
-    # EPISODE LIFECYCLE
-    # =====================================================
-
-    def _handle_episode_lifecycle(
-        self,
-        db,
-        user_id,
-        conversation,
-        latest_message,
-        episode,
-        decision
-    ):
-
-        long_term_memory_updated = False
-        closed_episode_id = None
-
-        action = decision.get("action")
-
-        # -------------------------------------------------
-        # CREATE EPISODE
-        # -------------------------------------------------
-
-        if action == "CREATE":
-
+    def _prepare_episode(self, db, user_id, latest_message, conversation=None):
+        episode = self.episode_manager.get_active_episode(db, user_id)
+        decision = self.episode_detector.detect(
+            episode, latest_message, recent_messages=conversation
+        )
+        action = decision.get("action") if isinstance(decision, dict) else None
+        if episode is None and action == "CREATE":
             episode = self.episode_manager.create_episode(
-                db,
-                user_id,
-                decision["title"]
+                db, user_id, decision.get("title") or "Untitled Episode"
             )
+        elif episode is not None and action not in {"CONTINUE", "CLOSE"}:
+            # Never create a second active episode. Fail safe to CONTINUE.
+            logger.warning("Unexpected episode action %r for active episode %s", action, episode.episode_id)
+            action = "CONTINUE"
+        elif episode is None and action != "CREATE":
+            action = "NONE"
+        return episode, action
 
-        # -------------------------------------------------
-        # CLOSE EPISODE
-        # -------------------------------------------------
+    def _assign_message(self, db, message_id, episode):
+        if message_id is None:
+            return
+        message = db.query(Message).filter(Message.id == message_id).one_or_none()
+        if message is not None:
+            message.episode_id = episode.episode_id if episode else None
+            db.commit()
 
-        elif action == "CLOSE":
+    def _finish_turn(self, db, user_id, episode, action, conversation,
+                     latest_message, reply, user_message_id):
+        if episode is None:
+            return None, False
 
-            if episode is not None:
-
-                print("\n========== CLOSING EPISODE ==========")
-                print("Episode:", episode.episode_id)
-
-                # 1. Generate episode summary.
-                summary = self.episode_summarizer.summarize(
-                    conversation
-                )
-
-                if not summary or not summary.strip():
-                    raise ValueError(
-                        "Episode summarization returned an empty summary."
-                    )
-
-                # 2. Save episode summary.
-                self.episode_summarizer.save(
-                    db,
-                    episode,
-                    summary
-                )
-
-                # 3. Update cumulative long-term memory.
-                # This method loads previous memory, retrieves
-                # reflections, consolidates and saves the result.
-
-                updated_memory = self.long_term_memory.update(
-                    db,
-                    user_id,
-                    episode
-                )
-
-                if not updated_memory or not updated_memory.strip():
-                    raise ValueError(
-                        "Long-term memory update failed."
-                    )
-
-                print("\nLong-term memory successfully updated.")
-
-                # 4. Preserve the closed episode ID.
-                closed_episode_id = episode.episode_id
-
-                # 5. Close episode only after memory is saved.
-                self.episode_manager.close_episode(
-                    db,
-                    episode
-                )
-
-                # 6. Notify the frontend through the response.
-                long_term_memory_updated = True
-
-                print("Episode closed:", closed_episode_id)
-                print("Long-term memory updated:", True)
-                print("====================================\n")
-
-            # No active episode remains after CLOSE.
-            episode = None
-
-        elif action == "CONTINUE":
-
-            pass
-
-        elif action == "NONE":
-
-            pass
-
-        return (
-            episode,
-            long_term_memory_updated,
-            closed_episode_id
+        self._assign_message(db, user_message_id, episode)
+        # Mood records are transition-level and linked to the exact user message.
+        self.mood_detector.update(
+            db, episode, conversation, latest_message, reply,
+            message_id=user_message_id
+        )
+        self.reflection_generator.update(
+            db, episode, conversation, latest_message, reply
         )
 
-    # =====================================================
-    # NON-STREAMING CHAT
-    # =====================================================
+        if action != "CLOSE":
+            return episode.episode_id, False
 
-    def chat(
-        self,
-        db,
-        user_id,
-        conversation,
-        latest_message,
-        current_title
-    ):
+        # CLOSE means this turn belongs to the old episode; finalize only
+        # after its mood and reflection have been processed.
+        rows = (db.query(Message).filter(Message.episode_id == episode.episode_id)
+                .order_by(Message.id).all())
+        episode_transcript = [
+            {"role": row.role, "content": row.content}
+            for row in rows if row.role in {"user", "assistant"}
+        ]
+        # Assistant response is not inserted by the router until after this
+        # method returns, so include it in the closing episode summary now.
+        episode_transcript.append({"role": "assistant", "content": reply})
+        summary = self.episode_summarizer.summarize(episode_transcript)
+        if not summary or not summary.strip():
+            raise ValueError("Episode summarization returned an empty summary.")
+        self.episode_summarizer.save(db, episode, summary)
 
-        # 1. Generate conversation title.
-        title = None
+        # Pattern detection compares this episode with earlier episodes and
+        # existing user patterns, then persists versionable pattern records.
+        try:
+            self.pattern_detector.detect_and_save(db, episode)
+        except Exception:
+            db.rollback()
+            logger.exception("Pattern detection failed for episode %s", episode.episode_id)
 
-        if current_title == "New Conversation":
+        updated_memory = self.long_term_memory.update(db, user_id, episode)
+        if not updated_memory or not updated_memory.strip():
+            raise ValueError("Long-term memory update failed.")
 
-            title = generate_title(
-                latest_message
-            )
+        closed_id = episode.episode_id
+        self.episode_manager.close_episode(db, episode)
+        return closed_id, True
 
-        # 2. Get active episode.
-        episode = self.episode_manager.get_active_episode(
-            db,
-            user_id
+    def chat(self, db, user_id, conversation, latest_message, current_title,
+             user_message_id=None):
+        title = generate_title(latest_message) if current_title == "New Conversation" else None
+        episode, action = self._prepare_episode(
+            db, user_id, latest_message, conversation=conversation
         )
-
-        # 3. Detect episode action.
-        decision = self.episode_detector.detect(
-            episode,
-            latest_message
+        self._assign_message(db, user_message_id, episode)
+        memory = self.long_term_memory.retrieve(db, user_id)
+        knowledge = self.knowledge_rag.retrieve(latest_message)
+        reply = llm_chat(conversation=conversation, profile=None, memory=memory,
+                     knowledge=knowledge, episode=episode, reflection=None, mood=None)
+        episode_id, memory_updated = self._finish_turn(
+            db, user_id, episode, action, conversation, latest_message,
+            reply, user_message_id
         )
-
-        # 4. Handle episode lifecycle.
-        (
-            episode,
-            long_term_memory_updated,
-            closed_episode_id
-        ) = self._handle_episode_lifecycle(
-            db=db,
-            user_id=user_id,
-            conversation=conversation,
-            latest_message=latest_message,
-            episode=episode,
-            decision=decision
-        )
-
-        # 5. Retrieve current long-term memory.
-        # This retrieves the newly updated memory when CLOSE occurred.
-        long_term_memory_text = self.long_term_memory.retrieve(
-            db,
-            user_id
-        )
-
-        # 6. Retrieve knowledge.
-        knowledge = self.knowledge_rag.retrieve(
-            latest_message
-        )
-
-        # 7. Generate assistant response.
-        reply = chat(
-            conversation=conversation,
-            profile=None,
-            memory=long_term_memory_text,
-            knowledge=knowledge,
-            episode=episode,
-            reflection=None,
-            mood=None
-        )
-
-        # 8. Mood detection.
-        if episode is not None:
-
-            self.mood_detector.update(
-                db,
-                episode,
-                conversation,
-                latest_message,
-                reply
-            )
-
-        # 9. Reflection generation.
-        if episode is not None:
-
-            self.reflection_generator.update(
-                db,
-                episode,
-                conversation,
-                latest_message,
-                reply
-            )
-
-        # 10. Return response.
         return {
-
-            "reply": reply,
-
-            "title": title,
-
-            "episode": episode,
-
-            "episode_id": (
-                episode.episode_id
-                if episode is not None
-                else None
-            ),
-
-            "closed_episode_id": closed_episode_id,
-
-            "long_term_memory_updated": long_term_memory_updated
-
+            "reply": reply, "title": title,
+            "episode": episode if action != "CLOSE" else None,
+            "episode_id": episode_id if action != "CLOSE" else None,
+            "closed_episode_id": episode_id if action == "CLOSE" else None,
+            "long_term_memory_updated": memory_updated,
         }
 
-    # =====================================================
-    # STREAMING CHAT
-    # =====================================================
-
-    def chat_stream(
-        self,
-        db,
-        user_id,
-        conversation,
-        latest_message,
-        current_title
-    ):
-
-        # 1. Generate conversation title.
-        title = None
-
-        if current_title == "New Conversation":
-
-            title = generate_title(
-                latest_message
-            )
-
-        # 2. Get active episode.
-        episode = self.episode_manager.get_active_episode(
-            db,
-            user_id
+    def chat_stream(self, db, user_id, conversation, latest_message,
+                    current_title, user_message_id=None):
+        title = generate_title(latest_message) if current_title == "New Conversation" else None
+        episode, action = self._prepare_episode(
+            db, user_id, latest_message, conversation=conversation
         )
-
-        # 3. Detect episode action.
-        decision = self.episode_detector.detect(
-            episode,
-            latest_message
+        self._assign_message(db, user_message_id, episode)
+        memory = self.long_term_memory.retrieve(db, user_id)
+        knowledge = self.knowledge_rag.retrieve(latest_message)
+        parts = []
+        for chunk in llm_chat_stream(conversation=conversation, profile=None,
+                                     memory=memory, knowledge=knowledge,
+                                     episode=episode, reflection=None, mood=None):
+            parts.append(chunk)
+            yield {"type": "chunk", "content": chunk}
+        reply = "".join(parts)
+        episode_id, memory_updated = self._finish_turn(
+            db, user_id, episode, action, conversation, latest_message,
+            reply, user_message_id
         )
-
-        # 4. Handle episode lifecycle.
-        (
-            episode,
-            long_term_memory_updated,
-            closed_episode_id
-        ) = self._handle_episode_lifecycle(
-            db=db,
-            user_id=user_id,
-            conversation=conversation,
-            latest_message=latest_message,
-            episode=episode,
-            decision=decision
-        )
-
-        # 5. Retrieve latest long-term memory.
-        long_term_memory_text = self.long_term_memory.retrieve(
-            db,
-            user_id
-        )
-
-        # 6. Retrieve knowledge.
-        knowledge = self.knowledge_rag.retrieve(
-            latest_message
-        )
-
-        # 7. Stream assistant response.
-        reply_parts = []
-
-        for chunk in llm_chat_stream(
-            conversation=conversation,
-            profile=None,
-            memory=long_term_memory_text,
-            knowledge=knowledge,
-            episode=episode,
-            reflection=None,
-            mood=None
-        ):
-
-            reply_parts.append(chunk)
-
-            yield {
-
-                "type": "chunk",
-
-                "content": chunk
-
-            }
-
-        # 8. Combine streamed response.
-        reply = "".join(reply_parts)
-
-        # 9. Mood detection.
-        if episode is not None:
-
-            self.mood_detector.update(
-                db,
-                episode,
-                conversation,
-                latest_message,
-                reply
-            )
-
-        # 10. Reflection generation.
-        if episode is not None:
-
-            self.reflection_generator.update(
-                db,
-                episode,
-                conversation,
-                latest_message,
-                reply
-            )
-
-        # 11. Send completion event.
-        # The frontend can now refresh the Profile.
         yield {
-
-            "type": "done",
-
-            "title": title,
-
-            "episode_id": (
-                episode.episode_id
-                if episode is not None
-                else None
-            ),
-
-            "closed_episode_id": closed_episode_id,
-
-            "long_term_memory_updated": long_term_memory_updated
-
+            "type": "done", "title": title,
+            "episode_id": episode_id if action != "CLOSE" else None,
+            "closed_episode_id": episode_id if action == "CLOSE" else None,
+            "long_term_memory_updated": memory_updated,
         }
 
+####################################################################################################
