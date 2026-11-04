@@ -59,6 +59,16 @@ _CURRENT_INFO_PHRASES = (
     "current guidelines",
 )
 
+_INFORMATION_REQUEST_PHRASES = (
+    "what ", "why ", "how ", "when ", "where ", "which ", "who ",
+    "can you ", "could you ", "would you ", "should i ", "is it ",
+    "are there ", "do i ", "does it ", "tell me ", "explain ",
+    "help me understand", "give me ", "suggest ", "recommend ",
+    "tips for ", "advice on ", "guidance on ", "techniques for ",
+    "strategies for ", "ways to ", "symptoms of ", "difference between ",
+    "research on ", "studies on ", "evidence about ",
+)
+
 
 def _parse_json(text):
     text = (text or "").strip()
@@ -101,6 +111,25 @@ class QueryAnalyzer:
             return self._no_rag("Empty query")
 
         immediate_danger = self._is_immediate_danger(query)
+        if immediate_danger:
+            return self._no_rag(
+                "Immediate-danger wording detected; skip background retrieval and follow the safety response path"
+            )
+
+        # Most chat turns are disclosures, updates, acknowledgements, or follow-ups.
+        # Do not spend an extra Groq request classifying those as RAG queries.
+        # Questions, requests for guidance, and time-sensitive requests still use
+        # the existing LLM router for nuanced local/web selection.
+        query_lower = query.casefold()
+        looks_information_seeking = (
+            self._requires_web(query)
+            or any(phrase in query_lower for phrase in _INFORMATION_REQUEST_PHRASES)
+        )
+        if not looks_information_seeking:
+            return self._no_rag(
+                "Conversational turn without an information-retrieval cue; skipped LLM routing"
+            )
+
         try:
             raw = generate_response(
                 [{"role": "user", "content": query}],

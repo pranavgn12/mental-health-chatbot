@@ -13,6 +13,7 @@ import {
     Brain,
     UserRound,
     FileText,
+    GitBranch,
     LoaderCircle,
     RefreshCw,
     Clock3,
@@ -34,6 +35,7 @@ const MEMORY_TABS = [
     { id: "moods", label: "Moods", icon: HeartPulse },
     { id: "reflections", label: "Reflections", icon: Brain },
     { id: "long-term-memory", label: "Long Term Memory", icon: FileText },
+    { id: "patterns", label: "Patterns", icon: GitBranch },
 ];
 
 const RESOURCE_CONFIG = {
@@ -43,6 +45,14 @@ const RESOURCE_CONFIG = {
 };
 
 const PROFILE_TONES = new Set(["amber", "green", "blue", "purple"]);
+
+const PATTERN_CATEGORIES = [
+    "trigger",
+    "coping",
+    "mood",
+    "behavior",
+    "general",
+];
 
 
 // =========================================================
@@ -292,6 +302,17 @@ function UserMemoryPanel({ onClose }) {
 
     const [profileData, setProfileData] = useState(null);
 
+    // Detected-pattern data and editor state. These must be declared
+    // before loadPatterns and the JSX that references them.
+    const [patterns, setPatterns] = useState([]);
+    const [editingPatternId, setEditingPatternId] = useState("");
+    const [savingPatternId, setSavingPatternId] = useState("");
+    const [patternDraft, setPatternDraft] = useState({
+        category: "general",
+        description: "",
+        status: "ACTIVE",
+    });
+
     const [memoryDraft, setMemoryDraft] = useState("");
     const [editingMemory, setEditingMemory] = useState(false);
     const [savingMemory, setSavingMemory] = useState(false);
@@ -329,6 +350,31 @@ function UserMemoryPanel({ onClose }) {
             } catch (err) {
                 setError(
                     err.message || "Could not load this section."
+                );
+            } finally {
+                if (!quiet) setLoading(false);
+            }
+        },
+        []
+    );
+
+
+    // -----------------------------------------------------
+    // LOAD DETECTED PATTERNS
+    // -----------------------------------------------------
+
+    const loadPatterns = useCallback(
+        async ({ quiet = false } = {}) => {
+            if (!quiet) setLoading(true);
+
+            setError("");
+
+            try {
+                const payload = await requestJson("/memory/patterns");
+                setPatterns(unwrapList(payload));
+            } catch (err) {
+                setError(
+                    err.message || "Could not load detected patterns."
                 );
             } finally {
                 if (!quiet) setLoading(false);
@@ -407,10 +453,12 @@ function UserMemoryPanel({ onClose }) {
             activeTab === "long-term-memory"
         ) {
             loadProfile();
+        } else if (activeTab === "patterns") {
+            loadPatterns();
         } else {
             loadTabData(activeTab);
         }
-    }, [activeTab, loadProfile, loadTabData]);
+    }, [activeTab, loadProfile, loadPatterns, loadTabData]);
 
 
     // Keep the editor synchronized with fetched memory unless the
@@ -605,6 +653,75 @@ function UserMemoryPanel({ onClose }) {
 
 
     // -----------------------------------------------------
+    // EDIT AND SAVE DETECTED PATTERNS
+    // -----------------------------------------------------
+
+    const startEditingPattern = pattern => {
+        setEditingPatternId(pattern.pattern_id);
+        setPatternDraft({
+            category: PATTERN_CATEGORIES.includes(pattern.category)
+                ? pattern.category
+                : "general",
+            description: pattern.description || "",
+            status: String(pattern.status || "ACTIVE").toUpperCase(),
+        });
+        setError("");
+        setNotice("");
+    };
+
+    const cancelEditingPattern = () => {
+        setEditingPatternId("");
+        setPatternDraft({
+            category: "general",
+            description: "",
+            status: "ACTIVE",
+        });
+        setError("");
+    };
+
+    const handleSavePattern = async patternId => {
+        if (!patternDraft.description.trim()) {
+            setError("Pattern description cannot be empty.");
+            return;
+        }
+
+        setSavingPatternId(patternId);
+        setError("");
+        setNotice("");
+
+        try {
+            const payload = await requestJson(
+                `/memory/patterns/${encodeURIComponent(patternId)}`,
+                {
+                    method: "PUT",
+                    body: JSON.stringify({
+                        category: patternDraft.category,
+                        description: patternDraft.description.trim(),
+                        status: patternDraft.status,
+                    }),
+                }
+            );
+
+            setPatterns(previous => previous.map(pattern =>
+                pattern.pattern_id === patternId
+                    ? { ...pattern, ...payload }
+                    : pattern
+            ));
+
+            setEditingPatternId("");
+            setNotice("Pattern updated successfully.");
+
+        } catch (err) {
+            setError(
+                err.message || "Could not update this pattern."
+            );
+        } finally {
+            setSavingPatternId("");
+        }
+    };
+
+
+    // -----------------------------------------------------
     // DERIVED DATA
     // -----------------------------------------------------
 
@@ -730,9 +847,11 @@ function UserMemoryPanel({ onClose }) {
 
                             <h3>{activeTabDetails.label}</h3>
 
-                            {RESOURCE_CONFIG[activeTab] && (
+                            {(RESOURCE_CONFIG[activeTab] || activeTab === "patterns") && (
                                 <span className="memory-record-count">
-                                    {currentRecords.length}
+                                    {activeTab === "patterns"
+                                        ? patterns.length
+                                        : currentRecords.length}
                                 </span>
                             )}
                         </div>
@@ -740,18 +859,25 @@ function UserMemoryPanel({ onClose }) {
                         {(
                             activeTab === "profile" ||
                             activeTab === "long-term-memory" ||
+                            activeTab === "patterns" ||
                             RESOURCE_CONFIG[activeTab]
                         ) && (
                             <button
                                 type="button"
                                 className="memory-refresh-button"
-                                onClick={() =>
-                                    activeTab === "profile" ||
-                                    activeTab === "long-term-memory"
-                                        ? loadProfile()
-                                        : loadTabData(activeTab)
-                                }
-                                disabled={loading || savingMemory}
+                                onClick={() => {
+                                    if (
+                                        activeTab === "profile" ||
+                                        activeTab === "long-term-memory"
+                                    ) {
+                                        loadProfile();
+                                    } else if (activeTab === "patterns") {
+                                        loadPatterns();
+                                    } else {
+                                        loadTabData(activeTab);
+                                    }
+                                }}
+                                disabled={loading || savingMemory || Boolean(savingPatternId)}
                                 title={
                                     activeTab === "profile" ||
                                     activeTab === "long-term-memory"
@@ -777,12 +903,18 @@ function UserMemoryPanel({ onClose }) {
 
                             <button
                                 type="button"
-                                onClick={() =>
-                                    activeTab === "profile" ||
-                                    activeTab === "long-term-memory"
-                                        ? loadProfile()
-                                        : loadTabData(activeTab)
-                                }
+                                onClick={() => {
+                                    if (
+                                        activeTab === "profile" ||
+                                        activeTab === "long-term-memory"
+                                    ) {
+                                        loadProfile();
+                                    } else if (activeTab === "patterns") {
+                                        loadPatterns();
+                                    } else {
+                                        loadTabData(activeTab);
+                                    }
+                                }}
                             >
                                 Try again
                             </button>
@@ -1171,6 +1303,219 @@ function UserMemoryPanel({ onClose }) {
                                     )}
                                 </div>
 
+                            </section>
+
+                        )
+
+                    ) : activeTab === "patterns" ? (
+
+                        loading && patterns.length === 0 ? (
+
+                            <div className="memory-status-state" role="status">
+                                <LoaderCircle
+                                    size={24}
+                                    className="memory-spinner"
+                                />
+                                <span>Loading detected patterns…</span>
+                            </div>
+
+                        ) : patterns.length === 0 ? (
+
+                            <div className="memory-empty-state">
+                                <GitBranch size={30} />
+                                <h4>No recurring patterns yet</h4>
+                                <p>
+                                    Patterns will appear here when the detector
+                                    finds recurring themes supported by evidence
+                                    across your episodes.
+                                </p>
+                            </div>
+
+                        ) : (
+
+                            <section className="memory-patterns-panel">
+                                <div className="memory-patterns-intro">
+                                    <div>
+                                        <span className="memory-profile-eyebrow">
+                                            DETECTED PATTERNS
+                                        </span>
+                                        <h4>Your recurring patterns</h4>
+                                        <p>
+                                            Review and edit the descriptions,
+                                            categories, and statuses. Confidence
+                                            and source evidence remain read-only
+                                            because they are produced by the detector.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="memory-patterns-list">
+                                    {patterns.map(pattern => {
+                                        const patternId = pattern.pattern_id;
+                                        const isEditing = editingPatternId === patternId;
+                                        const evidence = Array.isArray(pattern.evidence)
+                                            ? pattern.evidence
+                                            : [];
+                                        const confidence = Number(pattern.confidence);
+                                        const confidenceLabel = Number.isFinite(confidence)
+                                            ? `${Math.round(confidence * 100)}%`
+                                            : "Unavailable";
+                                        const status = String(
+                                            pattern.status || "ACTIVE"
+                                        ).toUpperCase();
+
+                                        return (
+                                            <article
+                                                className="memory-pattern-card"
+                                                key={patternId}
+                                            >
+                                                <div className="memory-pattern-topline">
+                                                    <div className="memory-pattern-meta">
+                                                        <span className="memory-pattern-category">
+                                                            {pattern.category || "general"}
+                                                        </span>
+                                                        <span className={`memory-pattern-status is-${status.toLowerCase()}`}>
+                                                            {status}
+                                                        </span>
+                                                    </div>
+
+                                                    <span className="memory-pattern-confidence">
+                                                        Confidence {confidenceLabel}
+                                                    </span>
+                                                </div>
+
+                                                {isEditing ? (
+                                                    <div className="memory-pattern-editor">
+                                                        <label className="memory-pattern-field">
+                                                            <span>Pattern description</span>
+                                                            <textarea
+                                                                value={patternDraft.description}
+                                                                onChange={event =>
+                                                                    setPatternDraft(previous => ({
+                                                                        ...previous,
+                                                                        description: event.target.value,
+                                                                    }))
+                                                                }
+                                                                rows={4}
+                                                                disabled={savingPatternId === patternId}
+                                                            />
+                                                        </label>
+
+                                                        <div className="memory-pattern-fields-row">
+                                                            <label className="memory-pattern-field">
+                                                                <span>Category</span>
+                                                                <select
+                                                                    value={patternDraft.category}
+                                                                    onChange={event =>
+                                                                        setPatternDraft(previous => ({
+                                                                            ...previous,
+                                                                            category: event.target.value,
+                                                                        }))
+                                                                    }
+                                                                    disabled={savingPatternId === patternId}
+                                                                >
+                                                                    {PATTERN_CATEGORIES.map(category => (
+                                                                        <option key={category} value={category}>
+                                                                            {category}
+                                                                        </option>
+                                                                    ))}
+                                                                </select>
+                                                            </label>
+
+                                                            <label className="memory-pattern-field">
+                                                                <span>Status</span>
+                                                                <select
+                                                                    value={patternDraft.status}
+                                                                    onChange={event =>
+                                                                        setPatternDraft(previous => ({
+                                                                            ...previous,
+                                                                            status: event.target.value,
+                                                                        }))
+                                                                    }
+                                                                    disabled={savingPatternId === patternId}
+                                                                >
+                                                                    <option value="ACTIVE">Active</option>
+                                                                    <option value="RESOLVED">Resolved</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+
+                                                        <div className="memory-pattern-actions">
+                                                            <button
+                                                                type="button"
+                                                                className="memory-pattern-cancel"
+                                                                onClick={cancelEditingPattern}
+                                                                disabled={savingPatternId === patternId}
+                                                            >
+                                                                Cancel
+                                                            </button>
+                                                            <button
+                                                                type="button"
+                                                                className="memory-pattern-save"
+                                                                onClick={() => handleSavePattern(patternId)}
+                                                                disabled={savingPatternId === patternId}
+                                                            >
+                                                                {savingPatternId === patternId
+                                                                    ? "Saving…"
+                                                                    : "Done"}
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <>
+                                                        <p className="memory-pattern-description">
+                                                            {pattern.description}
+                                                        </p>
+
+                                                        <div className="memory-pattern-dates">
+                                                            <span>
+                                                                First seen: {formatDate(pattern.first_seen_at)}
+                                                            </span>
+                                                            <span>
+                                                                Last seen: {formatDate(pattern.last_seen_at)}
+                                                            </span>
+                                                        </div>
+
+                                                        <div className="memory-pattern-actions">
+                                                            <button
+                                                                type="button"
+                                                                className="memory-pattern-edit"
+                                                                onClick={() => startEditingPattern(pattern)}
+                                                            >
+                                                                Edit pattern
+                                                            </button>
+                                                        </div>
+                                                    </>
+                                                )}
+
+                                                <details className="memory-pattern-evidence">
+                                                    <summary>
+                                                        Evidence ({evidence.length})
+                                                    </summary>
+                                                    {evidence.length === 0 ? (
+                                                        <p>No evidence was returned for this pattern.</p>
+                                                    ) : (
+                                                        <div className="memory-pattern-evidence-list">
+                                                            {evidence.map((entry, index) => (
+                                                                <div
+                                                                    className="memory-pattern-evidence-item"
+                                                                    key={`${entry?.episode_id || "episode"}-${index}`}
+                                                                >
+                                                                    <span>
+                                                                        {entry?.episode_id || "Episode"}
+                                                                    </span>
+                                                                    <p>
+                                                                        {entry?.detail || "No evidence detail available."}
+                                                                    </p>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </details>
+                                            </article>
+                                        );
+                                    })}
+                                </div>
                             </section>
 
                         )

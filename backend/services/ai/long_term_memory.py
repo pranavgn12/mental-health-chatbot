@@ -3,298 +3,129 @@ import logging
 
 from sqlalchemy.orm import Session
 
-from models import (
-    EpisodeReflection,
-    EpisodePattern,
-    LongTermMemory as LongTermMemoryModel
-)
-
-from services.ai.memory_consolidator import MemoryConsolidator
+from models import LongTermMemory as LongTermMemoryModel
+from services.ai.pattern_memory_analyzer import PatternMemoryAnalyzer
 from services.ai.profile import Profile
-
 
 logger = logging.getLogger(__name__)
 
 
 class LongTermMemory:
-
     def __init__(self):
-        self.memory_consolidator = MemoryConsolidator()
+        self.pattern_memory_analyzer = PatternMemoryAnalyzer()
         self.profile_generator = Profile()
 
-    # =====================================================
-    # UPDATE LONG-TERM MEMORY AND PROFILE
-    # =====================================================
+    def update(self, db: Session, user_id, episode):
+        """Update patterns and long-term memory with one LLM request.
 
-    def update(
-        self,
-        db: Session,
-        user_id,
-        episode
-    ):
-
+        Profile theme generation remains a separate, optional request after the
+        combined analysis. Pattern rows and the memory row are committed together.
+        """
         if episode is None:
             raise ValueError("Episode does not exist.")
-
         if episode.user_id != user_id:
-            raise ValueError(
-                "Episode does not belong to this user."
-            )
-
+            raise ValueError("Episode does not belong to this user.")
         if not episode.summary or not episode.summary.strip():
             raise ValueError("Episode summary is empty.")
 
         try:
-
-            print("\n========== LONG-TERM MEMORY UPDATE ==========")
-            print("User ID:", user_id)
-            print("Episode ID:", episode.episode_id)
-
-            # -------------------------------------------------
-            # 1. LOAD EXISTING MEMORY RECORD
-            # -------------------------------------------------
-
+            logger.info(
+                "Updating patterns and long-term memory for user=%s episode=%s",
+                user_id,
+                episode.episode_id,
+            )
             record = (
                 db.query(LongTermMemoryModel)
-                .filter(
-                    LongTermMemoryModel.user_id == user_id
-                )
+                .filter(LongTermMemoryModel.user_id == user_id)
                 .with_for_update()
                 .one_or_none()
             )
-
-            previous_memory = (
-                record.memory
-                if record and record.memory
-                else None
-            )
-
+            previous_memory = record.memory if record and record.memory else None
             previous_themes = (
                 record.profile_themes
                 if record and isinstance(record.profile_themes, list)
                 else []
             )
 
-            print("\nPrevious Long-Term Memory:")
-            print(previous_memory or "No previous memory.")
-
-            print("\nPrevious Profile Themes:")
-            print(previous_themes)
-
-            # -------------------------------------------------
-            # 2. LOAD EPISODE REFLECTIONS
-            # -------------------------------------------------
-
-            reflections = (
-                db.query(EpisodeReflection)
-                .filter(
-                    EpisodeReflection.episode_id
-                    == episode.episode_id
-                )
-                .order_by(
-                    EpisodeReflection.created_at
-                )
-                .all()
-            )
-
-            print(
-                "\nEpisode reflections:",
-                len(reflections)
-            )
-
-            # -------------------------------------------------
-            # 3. LOAD PERSISTENT PATTERNS
-            # -------------------------------------------------
-
-            patterns = (
-                db.query(EpisodePattern)
-                .filter(EpisodePattern.user_id == user_id,
-                        EpisodePattern.status == "ACTIVE")
-                .order_by(EpisodePattern.last_seen_at.desc())
-                .all()
-            )
-
-            # -------------------------------------------------
-            # 4. CONSOLIDATE LONG-TERM MEMORY
-            # -------------------------------------------------
-
-            updated_memory = self.memory_consolidator.consolidate(
+            # ONE LLM call returns both updated pattern candidates and memory.
+            # Pattern evidence is then grounded/validated in Python.
+            updated_memory = self.pattern_memory_analyzer.analyze_and_save(
+                db=db,
+                user_id=user_id,
+                episode=episode,
                 previous_memory=previous_memory,
-                summary=episode.summary,
-                reflections=reflections,
-                patterns=patterns
             )
-
-            if (
-                not isinstance(updated_memory, str)
-                or not updated_memory.strip()
-            ):
-                raise ValueError(
-                    "Memory consolidation returned empty memory."
-                )
-
+            if not updated_memory or not updated_memory.strip():
+                raise ValueError("Combined pattern/memory analysis returned empty memory.")
             updated_memory = updated_memory.strip()
 
-            print("\nUpdated Long-Term Memory:")
-            print(updated_memory)
-
-            # -------------------------------------------------
-            # 5. GENERATE PROFILE THEMES
-            # -------------------------------------------------
-
-            # IMPORTANT:
-            # Profile generation must never prevent memory saving.
-            # If the LLM fails, retain the previous themes.
-
+            # Profile generation intentionally remains separate. Failure here
+            # must not block saving the updated memory or patterns.
             updated_themes = previous_themes
-
-            print("\nGenerating Profile Themes...")
-
             try:
-
                 generated_themes = self.profile_generator.generate(
                     memory=updated_memory,
-                    previous_themes=previous_themes
+                    previous_themes=previous_themes,
                 )
-
                 if not isinstance(generated_themes, list):
-                    raise ValueError(
-                        "Profile generator did not return a list."
-                    )
-
-                # Only accept dictionary-based themes.
-                valid_themes = [
-                    theme
-                    for theme in generated_themes
-                    if isinstance(theme, dict)
-                ]
-
+                    raise ValueError("Profile generator did not return a list.")
+                valid_themes = [item for item in generated_themes if isinstance(item, dict)]
                 if generated_themes and not valid_themes:
-                    raise ValueError(
-                        "Profile generator returned no valid theme objects."
-                    )
-
-                # An empty list is allowed when there are no meaningful
-                # themes, but do not erase existing themes accidentally.
+                    raise ValueError("Profile generator returned no valid theme objects.")
                 if valid_themes:
-                    # Verify that the result can be stored in a JSON column.
-                    json.dumps(valid_themes)
-
+                    json.dumps(valid_themes)  # Ensure JSON-column serializability.
                     updated_themes = valid_themes
-
                 elif previous_themes:
-                    logger.warning(
-                        "Profile generator returned no themes. "
-                        "Preserving previous themes for user %s.",
-                        user_id
-                    )
-
-                print("\nProfile Themes:")
-                print(updated_themes)
-
+                    logger.warning("No valid profile themes returned; preserving existing themes.")
             except Exception:
-
                 logger.exception(
-                    "Profile generation failed for user %s. "
-                    "Preserving previous themes.",
-                    user_id
+                    "Profile generation failed for user %s; preserving previous themes.",
+                    user_id,
                 )
-
                 updated_themes = previous_themes
 
-            # -------------------------------------------------
-            # 6. SAVE MEMORY AND THEMES TOGETHER
-            # -------------------------------------------------
-
             if record is None:
-
                 record = LongTermMemoryModel(
                     user_id=user_id,
                     memory=updated_memory,
-                    profile_themes=updated_themes
+                    profile_themes=updated_themes,
                 )
-
                 db.add(record)
-
             else:
-
                 record.memory = updated_memory
                 record.profile_themes = updated_themes
 
-            # Commit consolidated memory even if Profile generation failed.
+            # Commits the pattern changes staged by PatternMemoryAnalyzer too.
             db.commit()
             db.refresh(record)
-
-            print("\n========== MEMORY UPDATE SUCCESS ==========")
-            print("Memory saved:", bool(record.memory))
-            print(
-                "Profile themes saved:",
-                len(record.profile_themes or [])
+            logger.info(
+                "Memory update complete for user=%s; profile_themes=%d",
+                user_id,
+                len(record.profile_themes or []),
             )
-            print("Updated at:", record.updated_at)
-            print("===========================================\n")
-
             return record.memory
 
         except Exception:
-
             db.rollback()
-
             logger.exception(
-                "Long-term memory update failed "
-                "for user %s, episode %s",
+                "Long-term memory update failed for user %s, episode %s",
                 user_id,
-                getattr(episode, "episode_id", None)
+                getattr(episode, "episode_id", None),
             )
-
             raise
 
-    # =====================================================
-    # RETRIEVE LONG-TERM MEMORY
-    # =====================================================
-
-    def retrieve(
-        self,
-        db: Session,
-        user_id
-    ):
-
+    def retrieve(self, db: Session, user_id):
         record = (
             db.query(LongTermMemoryModel)
-            .filter(
-                LongTermMemoryModel.user_id == user_id
-            )
+            .filter(LongTermMemoryModel.user_id == user_id)
             .one_or_none()
         )
+        return record.memory if record else None
 
-        if record is None:
-            return None
-
-        return record.memory
-
-    # =====================================================
-    # RETRIEVE PROFILE THEMES
-    # =====================================================
-
-    def retrieve_profile(
-        self,
-        db: Session,
-        user_id
-    ):
-
+    def retrieve_profile(self, db: Session, user_id):
         record = (
             db.query(LongTermMemoryModel)
-            .filter(
-                LongTermMemoryModel.user_id == user_id
-            )
+            .filter(LongTermMemoryModel.user_id == user_id)
             .one_or_none()
         )
-
-        if record is None:
-            return []
-
-        return record.profile_themes or []
-
-
-
-
+        return record.profile_themes or [] if record else []

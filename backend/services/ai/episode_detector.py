@@ -24,6 +24,16 @@ _UNCERTAINTY_PREFIX = re.compile(
     re.I,
 )
 
+_CLOSURE_REVIEW_CUES = re.compile(
+    r"\b(?:resolved|resolution|fixed|sorted|overcame|overcome|got over|"
+    r"moved on|moving on|past it|behind me|doesn't bother|does not bother|"
+    r"no longer|anymore|not anxious|not worried|not afraid|confident|"
+    r"comfortable|at ease|better|improved|at peace|accepting it|"
+    r"not an issue|fine now|okay now|another thing|different topic|"
+    r"different concern|new concern|unrelated)\b",
+    re.I,
+)
+
 
 class EpisodeDetector:
     def __init__(self):
@@ -41,6 +51,18 @@ class EpisodeDetector:
                     "reason": "The user explicitly stated that the active issue no longer affects them.",
                     "confidence": 0.96,
                     "detection_method": "explicit_resolution_rule",
+                }
+
+            # Most messages during an active episode are routine updates. They
+            # do not need another classification call: only messages containing
+            # plausible resolution or topic-transition cues are reviewed by the LLM.
+            if not _CLOSURE_REVIEW_CUES.search(latest_message or ""):
+                return {
+                    "action": "CONTINUE",
+                    "title": None,
+                    "reason": "No clear resolution cue; continue the active episode.",
+                    "confidence": 0.90,
+                    "detection_method": "deterministic_continue",
                 }
             prompt = self.build_prompt(active_episode, latest_message, recent_messages)
 
@@ -72,6 +94,10 @@ class EpisodeDetector:
             "title": title,
             "reason": str(decision.get("reason", ""))[:400],
         }
+
+    def is_explicit_resolution(self, active_episode, latest_message):
+        """Public wrapper used by the combined TurnAnalyzer."""
+        return self._explicit_resolution(active_episode, latest_message)
 
     def _explicit_resolution(self, active_episode, latest_message):
         message = " ".join((latest_message or "").strip().split())
@@ -137,3 +163,5 @@ Summary: {active_episode.summary or 'Not yet summarized'}
             message=latest_message or "",
             recent_context=recent_context,
         )
+
+

@@ -68,6 +68,11 @@ class Conversation(Base):
         Text
     )
 
+    # Rolling conversational context. Message rows remain the canonical history.
+    context_summary = Column(Text, nullable=True)
+    summary_through_message_id = Column(Integer, nullable=True)
+    summary_updated_at = Column(DateTime, nullable=True)
+
 
 # =========================================================
 # MESSAGE

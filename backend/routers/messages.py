@@ -10,6 +10,7 @@ from database import get_db, SessionLocal
 from models import Message, Conversation
 from auth_utils import get_current_user
 from services.ai.orchestrator import AIOrchestrator
+from services.conversation_context import build_conversation_context
 
 
 router = APIRouter()
@@ -63,18 +64,8 @@ def send_message(
         db.commit()
         db.refresh(user_message)
 
-        # 3. Load conversation history.
-        history = db.query(Message).filter(
-            Message.conversation_id == request.conversation_id
-        ).order_by(Message.id).all()
-
-        conversation_messages = [
-            {
-                "role": message.role,
-                "content": message.content
-            }
-            for message in history
-        ]
+        # 3. Build bounded conversational context (summary + recent messages).
+        conversation_messages = build_conversation_context(db, conversation)
 
         # 4. Run orchestrator.
         orchestrator = AIOrchestrator()
@@ -212,18 +203,8 @@ def send_message_stream(
     current_title = conversation.title
     user_id = user["user_id"]
 
-    # 3. Load conversation history.
-    history = db.query(Message).filter(
-        Message.conversation_id == conversation_id
-    ).order_by(Message.id).all()
-
-    conversation_messages = [
-        {
-            "role": message.role,
-            "content": message.content
-        }
-        for message in history
-    ]
+    # 3. Build bounded conversational context (summary + recent messages).
+    conversation_messages = build_conversation_context(db, conversation)
 
     # =====================================================
     # SSE EVENT GENERATOR

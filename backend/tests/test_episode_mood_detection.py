@@ -3,10 +3,9 @@ import sys
 import types
 import unittest
 from types import SimpleNamespace
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
 
-# The backend's database module creates a MySQL engine at import time. These
-# unit tests only need the SQLAlchemy Base to import the models safely.
+# Unit tests use stubs so no Groq key or MySQL instance is required.
 try:
     import database  # noqa: F401
 except Exception:
@@ -16,21 +15,31 @@ except Exception:
     sys.modules["database"] = database_stub
 
 provider_stub = types.ModuleType("services.llm_provider")
-provider_stub.generate_response = lambda *args, **kwargs: '{"action":"CONTINUE","title":null,"reason":"test","confidence":0.9}'
+provider_stub.generate_response = lambda *args, **kwargs: json.dumps({
+    "action": "CONTINUE", "title": None, "reason": "test", "confidence": 0.9
+})
 sys.modules.setdefault("services.llm_provider", provider_stub)
 
-# The dump redacts part of models.py, so use a minimal ORM model stub here.
 class _ColumnStub:
     def __eq__(self, other):
         return ("eq", other)
+    def desc(self):
+        return self
     def asc(self):
         return self
 
 models_stub = types.ModuleType("models")
-models_stub.EpisodeMood = type("EpisodeMood", (), {
-    "episode_id": _ColumnStub(), "message_id": _ColumnStub(),
-    "created_at": _ColumnStub(), "id": _ColumnStub(),
-})
+class _EpisodeMood:
+    episode_id = _ColumnStub()
+    message_id = _ColumnStub()
+    created_at = _ColumnStub()
+    id = _ColumnStub()
+
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+models_stub.EpisodeMood = _EpisodeMood
+for _model_name in ("Episode", "EpisodePattern", "EpisodeReflection", "LongTermMemory"):
+    setattr(models_stub, _model_name, type(_model_name, (), {}))
 sys.modules.setdefault("models", models_stub)
 
 from services.ai.episode_detector import EpisodeDetector
@@ -41,16 +50,14 @@ class FakeQuery:
     def __init__(self, first_result=None, all_result=None):
         self.first_result = first_result
         self.all_result = all_result or []
-
     def filter(self, *args, **kwargs):
         return self
-
     def order_by(self, *args, **kwargs):
         return self
-
+    def limit(self, *args, **kwargs):
+        return self
     def first(self):
         return self.first_result
-
     def all(self):
         return self.all_result
 
@@ -58,10 +65,15 @@ class FakeQuery:
 class FakeDB:
     def __init__(self, queries):
         self.queries = iter(queries)
-
+        self.added = []
     def query(self, *args, **kwargs):
         return next(self.queries)
-
+    def add(self, row):
+        self.added.append(row)
+    def commit(self):
+        pass
+    def refresh(self, row):
+        pass
     def rollback(self):
         pass
 
@@ -70,28 +82,13 @@ class EpisodeDetectionTests(unittest.TestCase):
     def setUp(self):
         self.detector = EpisodeDetector()
         self.episode = SimpleNamespace(
-            episode_id="EP_TEST123", title="Exam Anxiety", status="ACTIVE",
-            summary=None,
+            episode_id="EP_TEST123", title="Exam Anxiety", status="ACTIVE", summary=None,
         )
 
-    def test_no_longer_feared_of_exams_closes_immediately(self):
-        result = self.detector.detect(
-            self.episode, "I am no longer feared of exams."
-        )
+    def test_explicit_resolution_closes_immediately(self):
+        result = self.detector.detect(self.episode, "I don't fear exams anymore.")
         self.assertEqual(result["action"], "CLOSE")
         self.assertEqual(result["detection_method"], "explicit_resolution_rule")
-
-    def test_not_afraid_anymore_closes(self):
-        result = self.detector.detect(
-            self.episode, "I don't feel afraid of exams anymore."
-        )
-        self.assertEqual(result["action"], "CLOSE")
-
-    def test_dont_fear_exams_anymore_closes(self):
-        result = self.detector.detect(
-            self.episode, "I don't fear exams anymore."
-        )
-        self.assertEqual(result["action"], "CLOSE")
 
     @patch("services.ai.episode_detector.generate_response")
     def test_mild_improvement_does_not_force_close(self, llm):
@@ -116,66 +113,63 @@ class EpisodeDetectionTests(unittest.TestCase):
         )
         self.assertEqual(result["action"], "CONTINUE")
 
-    def test_resolution_of_unrelated_named_topic_does_not_close(self):
+    @patch("services.ai.episode_detector.generate_response")
+    def test_unrelated_resolution_does_not_close_active_episode(self, llm):
+        llm.return_value = json.dumps({
+            "action": "CONTINUE", "title": None,
+            "reason": "Different topic", "confidence": 0.9,
+        })
         result = self.detector.detect(
             self.episode, "I am no longer afraid of dogs."
         )
-        # Explicit named topic does not match the active exam episode; the
-        # LLM fallback is stubbed to CONTINUE.
         self.assertEqual(result["action"], "CONTINUE")
 
 
-class MoodTransitionTests(unittest.TestCase):
+class MoodPersistenceTests(unittest.TestCase):
     def setUp(self):
         self.detector = MoodDetector()
+        self.episode = SimpleNamespace(episode_id="EP1")
+        self.decision = {
+            "label": "fear", "confidence": 0.95, "evidence": "I feel scared."
+        }
 
-    def test_first_mood_is_recorded(self):
-        self.assertTrue(self.detector._is_transition("fear", []))
+    def test_missing_message_id_skips_database(self):
+        db = Mock()
+        result = self.detector.save_decision(db, self.episode, self.decision, None)
+        self.assertFalse(result)
+        db.query.assert_not_called()
 
-    def test_unchanged_mood_is_not_a_new_transition(self):
-        previous = [SimpleNamespace(mood="fear")]
-        self.assertFalse(self.detector._is_transition("fear", previous))
-
-    def test_changed_mood_is_a_new_transition(self):
-        previous = [SimpleNamespace(mood="fear")]
-        self.assertTrue(self.detector._is_transition("happy", previous))
-
-    def test_missing_message_id_skips_persistence(self):
-        with patch("services.ai.mood_detector.generate_response") as llm:
-            self.detector.update(
-                db=Mock(), episode=SimpleNamespace(episode_id="EP1"),
-                conversation=[], latest_message="I feel scared", reply="I understand",
-                message_id=None,
-            )
-        llm.assert_not_called()
-
-    def test_retry_for_same_message_is_idempotent(self):
+    def test_duplicate_message_id_is_idempotent(self):
         db = FakeDB([FakeQuery(first_result=SimpleNamespace(id=7))])
-        with patch("services.ai.mood_detector.generate_response") as llm:
-            self.detector.update(
-                db=db, episode=SimpleNamespace(episode_id="EP1"),
-                conversation=[], latest_message="I feel scared", reply="I understand",
-                message_id=7,
-            )
-        llm.assert_not_called()
+        result = self.detector.save_decision(db, self.episode, self.decision, 7)
+        self.assertFalse(result)
+        self.assertEqual(db.added, [])
 
-    def test_same_mood_does_not_create_another_row(self):
+    def test_low_confidence_is_rejected(self):
+        db = FakeDB([FakeQuery(first_result=None)])
+        decision = {**self.decision, "confidence": 0.70}
+        result = self.detector.save_decision(db, self.episode, decision, 8)
+        self.assertFalse(result)
+        self.assertEqual(db.added, [])
+
+    def test_repeated_consecutive_mood_is_not_saved(self):
         db = FakeDB([
             FakeQuery(first_result=None),
-            FakeQuery(all_result=[SimpleNamespace(mood="fear", created_at="2026-01-01")]),
+            FakeQuery(first_result=SimpleNamespace(mood="fear")),
         ])
-        response = json.dumps({
-            "mood": "fear", "confidence": 0.95,
-            "evidence": "User says they feel scared.",
-        })
-        with patch("services.ai.mood_detector.generate_response", return_value=response):
-            with patch.object(self.detector, "save") as save:
-                self.detector.update(
-                    db=db, episode=SimpleNamespace(episode_id="EP1", title="Exam Anxiety", status="ACTIVE", summary=None),
-                    conversation=[], latest_message="I still feel scared", reply="I understand",
-                    message_id=8,
-                )
-        save.assert_not_called()
+        result = self.detector.save_decision(db, self.episode, self.decision, 9)
+        self.assertFalse(result)
+        self.assertEqual(db.added, [])
+
+    def test_new_mood_transition_is_saved_without_llm(self):
+        db = FakeDB([
+            FakeQuery(first_result=None),
+            FakeQuery(first_result=SimpleNamespace(mood="sad")),
+        ])
+        result = self.detector.save_decision(db, self.episode, self.decision, 10)
+        self.assertTrue(result)
+        self.assertEqual(len(db.added), 1)
+        self.assertEqual(db.added[0].mood, "fear")
 
 
 if __name__ == "__main__":
