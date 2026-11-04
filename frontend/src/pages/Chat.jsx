@@ -12,6 +12,7 @@ import {
     HeartPulse,
     Brain,
     UserRound,
+    FileText,
     LoaderCircle,
     RefreshCw,
     Clock3,
@@ -32,6 +33,7 @@ const MEMORY_TABS = [
     { id: "episodes", label: "Episodes", icon: BookOpen },
     { id: "moods", label: "Moods", icon: HeartPulse },
     { id: "reflections", label: "Reflections", icon: Brain },
+    { id: "long-term-memory", label: "Long Term Memory", icon: FileText },
 ];
 
 const RESOURCE_CONFIG = {
@@ -290,6 +292,10 @@ function UserMemoryPanel({ onClose }) {
 
     const [profileData, setProfileData] = useState(null);
 
+    const [memoryDraft, setMemoryDraft] = useState("");
+    const [editingMemory, setEditingMemory] = useState(false);
+    const [savingMemory, setSavingMemory] = useState(false);
+
     const [selectedProfileThemeId, setSelectedProfileThemeId] =
         useState("");
 
@@ -396,12 +402,31 @@ function UserMemoryPanel({ onClose }) {
     // -----------------------------------------------------
 
     useEffect(() => {
-        if (activeTab === "profile") {
+        if (
+            activeTab === "profile" ||
+            activeTab === "long-term-memory"
+        ) {
             loadProfile();
         } else {
             loadTabData(activeTab);
         }
     }, [activeTab, loadProfile, loadTabData]);
+
+
+    // Keep the editor synchronized with fetched memory unless the
+    // user is actively editing and has unsaved changes.
+    useEffect(() => {
+        if (
+            activeTab === "long-term-memory" &&
+            !editingMemory
+        ) {
+            setMemoryDraft(profileData?.memory || "");
+        }
+    }, [
+        activeTab,
+        profileData?.memory,
+        editingMemory
+    ]);
 
 
     // -----------------------------------------------------
@@ -529,6 +554,57 @@ function UserMemoryPanel({ onClose }) {
 
 
     // -----------------------------------------------------
+    // SAVE EDITED LONG-TERM MEMORY
+    // -----------------------------------------------------
+
+    const handleSaveLongTermMemory = async () => {
+        setSavingMemory(true);
+        setError("");
+        setNotice("");
+
+        try {
+            const payload = await requestJson(
+                "/memory/profile",
+                {
+                    method: "PUT",
+                    body: JSON.stringify({
+                        memory: memoryDraft
+                    })
+                }
+            );
+
+            const savedMemory =
+                typeof payload?.memory === "string"
+                    ? payload.memory
+                    : memoryDraft;
+
+            setProfileData(previous => ({
+                memory: savedMemory,
+                themes: normalizeProfileThemes(
+                    payload?.themes ?? previous?.themes
+                ),
+                updated_at:
+                    payload?.updated_at ||
+                    previous?.updated_at ||
+                    null
+            }));
+
+            setMemoryDraft(savedMemory);
+            setEditingMemory(false);
+            setNotice("Long-term memory saved successfully.");
+
+        } catch (err) {
+            setError(
+                err.message ||
+                "Could not save long-term memory."
+            );
+        } finally {
+            setSavingMemory(false);
+        }
+    };
+
+
+    // -----------------------------------------------------
     // DERIVED DATA
     // -----------------------------------------------------
 
@@ -592,7 +668,7 @@ function UserMemoryPanel({ onClose }) {
 
                             <p>
                                 Manage your profile, episodes, moods,
-                                and insights
+                                reflections, and long-term memory
                             </p>
                         </div>
                     </div>
@@ -661,19 +737,24 @@ function UserMemoryPanel({ onClose }) {
                             )}
                         </div>
 
-                        {(activeTab === "profile" ||
-                            RESOURCE_CONFIG[activeTab]) && (
+                        {(
+                            activeTab === "profile" ||
+                            activeTab === "long-term-memory" ||
+                            RESOURCE_CONFIG[activeTab]
+                        ) && (
                             <button
                                 type="button"
                                 className="memory-refresh-button"
                                 onClick={() =>
-                                    activeTab === "profile"
+                                    activeTab === "profile" ||
+                                    activeTab === "long-term-memory"
                                         ? loadProfile()
                                         : loadTabData(activeTab)
                                 }
-                                disabled={loading}
+                                disabled={loading || savingMemory}
                                 title={
-                                    activeTab === "profile"
+                                    activeTab === "profile" ||
+                                    activeTab === "long-term-memory"
                                         ? "Refresh long-term memory"
                                         : "Refresh records"
                                 }
@@ -697,7 +778,8 @@ function UserMemoryPanel({ onClose }) {
                             <button
                                 type="button"
                                 onClick={() =>
-                                    activeTab === "profile"
+                                    activeTab === "profile" ||
+                                    activeTab === "long-term-memory"
                                         ? loadProfile()
                                         : loadTabData(activeTab)
                                 }
@@ -967,6 +1049,130 @@ function UserMemoryPanel({ onClose }) {
                                 )}
 
                             </section>
+                        )
+
+                    ) : activeTab === "long-term-memory" ? (
+
+                        (loading && !profileData) ? (
+
+                            <div
+                                className="memory-status-state"
+                                role="status"
+                            >
+                                <LoaderCircle
+                                    size={24}
+                                    className="memory-spinner"
+                                />
+
+                                <span>
+                                    Loading long-term memory…
+                                </span>
+                            </div>
+
+                        ) : error && !profileData ? (
+
+                            null
+
+                        ) : (
+
+                            <section className="memory-ltm-panel">
+
+                                <div className="memory-ltm-heading">
+                                    <div>
+                                        <span className="memory-profile-eyebrow">
+                                            CONSOLIDATED MEMORY
+                                        </span>
+
+                                        <h4>
+                                            What the assistant remembers
+                                        </h4>
+
+                                        <p>
+                                            This is your consolidated
+                                            long-term memory. You can
+                                            review and edit its contents.
+                                        </p>
+                                    </div>
+
+                                    {profileData?.updated_at && (
+                                        <span className="memory-profile-updated">
+                                            Updated{" "}
+                                            {formatDate(profileData.updated_at)}
+                                        </span>
+                                    )}
+                                </div>
+
+                                {editingMemory ? (
+
+                                    <textarea
+                                        className="memory-ltm-textarea"
+                                        value={memoryDraft}
+                                        onChange={event =>
+                                            setMemoryDraft(event.target.value)
+                                        }
+                                        placeholder="Your long-term memory will appear here..."
+                                        disabled={savingMemory}
+                                        spellCheck={true}
+                                    />
+
+                                ) : (
+
+                                    <div className="memory-ltm-text">
+                                        {profileData?.memory?.trim()
+                                            ? profileData.memory
+                                            : "No long-term memory has been saved yet."}
+                                    </div>
+
+                                )}
+
+                                <div className="memory-ltm-actions">
+                                    {editingMemory ? (
+                                        <>
+                                            <button
+                                                type="button"
+                                                className="memory-ltm-cancel"
+                                                disabled={savingMemory}
+                                                onClick={() => {
+                                                    setMemoryDraft(
+                                                        profileData?.memory || ""
+                                                    );
+                                                    setEditingMemory(false);
+                                                    setError("");
+                                                }}
+                                            >
+                                                Cancel
+                                            </button>
+
+                                            <button
+                                                type="button"
+                                                className="memory-ltm-done"
+                                                disabled={savingMemory}
+                                                onClick={handleSaveLongTermMemory}
+                                            >
+                                                {savingMemory
+                                                    ? "Saving..."
+                                                    : "Done"}
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <button
+                                            type="button"
+                                            className="memory-ltm-edit"
+                                            onClick={() => {
+                                                setMemoryDraft(
+                                                    profileData?.memory || ""
+                                                );
+                                                setEditingMemory(true);
+                                                setNotice("");
+                                            }}
+                                        >
+                                            Edit Memory
+                                        </button>
+                                    )}
+                                </div>
+
+                            </section>
+
                         )
 
                     ) : (

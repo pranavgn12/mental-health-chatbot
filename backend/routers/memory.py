@@ -1,6 +1,7 @@
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+from pydantic import BaseModel
 
 from database import get_db
 from models import (
@@ -13,7 +14,8 @@ from auth_utils import get_current_user
 
 
 router = APIRouter()
-
+class LongTermMemoryUpdate(BaseModel):
+    memory: str
 
 # =========================================================
 # HELPERS
@@ -90,6 +92,54 @@ def get_profile_memory(
         "updated_at": _date(record.updated_at)
     }
 
+
+@router.put("/profile")
+def update_profile_memory(
+    payload: LongTermMemoryUpdate,
+    db: Session = Depends(get_db),
+    user=Depends(get_current_user),
+):
+    """
+    Update the user's consolidated long-term memory.
+    Existing Profile themes are preserved.
+    """
+
+    user_id = _user_id(user)
+
+    record = (
+        db.query(LongTermMemory)
+        .filter(LongTermMemory.user_id == user_id)
+        .one_or_none()
+    )
+
+    try:
+        if record is None:
+            record = LongTermMemory(
+                user_id=user_id,
+                memory=payload.memory,
+                profile_themes=[]
+            )
+            db.add(record)
+        else:
+            record.memory = payload.memory
+
+        db.commit()
+        db.refresh(record)
+
+        themes = record.profile_themes or []
+
+        if not isinstance(themes, list):
+            themes = []
+
+        return {
+            "memory": record.memory or "",
+            "themes": themes,
+            "updated_at": _date(record.updated_at)
+        }
+
+    except Exception:
+        db.rollback()
+        raise
 
 # =========================================================
 # EPISODES

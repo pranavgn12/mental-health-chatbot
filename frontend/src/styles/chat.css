@@ -2388,3 +2388,127 @@ a.reference-item-title:hover {
         padding-left: 17px;
     }
 }
+
+/* =========================================
+ *  LONG-TERM MEMORY EDITOR
+ = *======================================== */
+
+.memory-ltm-panel {
+    width: 100%;
+    min-width: 0;
+}
+
+.memory-ltm-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.memory-ltm-heading h4 {
+    margin: 5px 0 6px;
+    color: #f2f2f5;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.memory-ltm-heading p {
+    margin: 0;
+    color: #a6a6b0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.memory-ltm-text {
+    min-height: 300px;
+    padding: 20px;
+    color: #dedee5;
+    background: #292929;
+    border: 1px solid #3b3b3b;
+    border-radius: 11px;
+    font-size: 13px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.memory-ltm-textarea {
+    display: block;
+    width: 100%;
+    min-height: 380px;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #ededf2;
+    background: #292929;
+    border: 1px solid #555568;
+    border-radius: 11px;
+    outline: none;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.memory-ltm-textarea:focus {
+    border-color: #8585a8;
+}
+
+.memory-ltm-textarea:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
+.memory-ltm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.memory-ltm-actions button {
+    min-height: 36px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+.memory-ltm-edit,
+.memory-ltm-done {
+    color: #fff;
+    background: #44445a;
+    border: 1px solid #5a5a75;
+}
+
+.memory-ltm-edit:hover,
+.memory-ltm-done:hover {
+    background: #53536e;
+}
+
+.memory-ltm-cancel {
+    color: #ccc;
+    background: #303030;
+    border: 1px solid #494949;
+}
+
+.memory-ltm-cancel:hover {
+    background: #3c3c3c;
+}
+
+.memory-ltm-actions button:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+@media (max-width: 600px) {
+    .memory-ltm-heading {
+        flex-direction: column;
+    }
+
+    .memory-ltm-textarea {
+        min-height: 300px;
+    }
+}
