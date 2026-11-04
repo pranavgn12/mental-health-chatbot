@@ -90,6 +90,8 @@ def send_message(
 
         reply = result["reply"]
         new_title = result.get("title")
+        rag_result = result.get("rag") or {}
+        references = rag_result.get("sources") or []
 
         # 5. Read episode and memory-update metadata.
         episode_id = result.get("episode_id")
@@ -108,7 +110,8 @@ def send_message(
             conversation_id=request.conversation_id,
             role="assistant",
             content=reply,
-            episode_id=(closed_episode_id or episode_id)
+            episode_id=(closed_episode_id or episode_id),
+            source_references=references
         )
 
         db.add(assistant_message)
@@ -133,7 +136,8 @@ def send_message(
             "assistant_message": {
                 "id": assistant_message.id,
                 "role": assistant_message.role,
-                "content": assistant_message.content
+                "content": assistant_message.content,
+                "references": assistant_message.source_references or []
             },
 
             "conversation_title": conversation.title,
@@ -144,7 +148,7 @@ def send_message(
 
             "long_term_memory_updated": long_term_memory_updated,
 
-            "rag": result.get("rag") or {}
+            "rag": rag_result
 
         }
 
@@ -305,11 +309,15 @@ def send_message_stream(
             reply = "".join(reply_parts)
 
             # 8. Save one complete assistant message.
+            rag_result = completion_metadata.get("rag") or {}
+            references = rag_result.get("sources") or []
+
             assistant_message = Message(
                 conversation_id=conversation_id,
                 role="assistant",
                 content=reply,
-                episode_id=(completion_metadata.get("closed_episode_id") or completion_metadata.get("episode_id"))
+                episode_id=(completion_metadata.get("closed_episode_id") or completion_metadata.get("episode_id")),
+                source_references=references
             )
 
             stream_db.add(assistant_message)
@@ -350,7 +358,8 @@ def send_message_stream(
                 "assistant_message": {
                     "id": assistant_message.id,
                     "role": assistant_message.role,
-                    "content": assistant_message.content
+                    "content": assistant_message.content,
+                    "references": assistant_message.source_references or []
                 },
 
                 "conversation_title": conversation_stream.title,
@@ -361,7 +370,7 @@ def send_message_stream(
 
                 "long_term_memory_updated": long_term_memory_updated,
 
-                "rag": completion_metadata.get("rag") or {}
+                "rag": rag_result
 
             })
 
@@ -424,7 +433,17 @@ def get_messages(
         Message.conversation_id == conversation_id
     ).order_by(Message.id).all()
 
-    return messages
+    return [
+        {
+            "id": message.id,
+            "conversation_id": message.conversation_id,
+            "role": message.role,
+            "content": message.content,
+            "episode_id": message.episode_id,
+            "references": message.source_references or [],
+        }
+        for message in messages
+    ]
 
 
 

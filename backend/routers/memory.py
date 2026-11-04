@@ -20,7 +20,18 @@ router = APIRouter()
 # =========================================================
 
 def _date(value):
-    return value.isoformat() if value else None
+    """Serialize timestamps with an explicit UTC timezone."""
+    if value is None:
+        return None
+
+    from datetime import timezone
+
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=timezone.utc)
+    else:
+        value = value.astimezone(timezone.utc)
+
+    return value.isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
 
 def _user_id(user):

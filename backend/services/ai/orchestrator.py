@@ -113,6 +113,12 @@ class AIOrchestrator:
         self._assign_message(db, user_message_id, episode)
         memory = self.long_term_memory.retrieve(db, user_id)
         knowledge = self.knowledge_rag.retrieve(latest_message)
+        rag_result = getattr(self.knowledge_rag, "last_result", None) or {}
+        rag_metadata = {
+            "used": bool(rag_result.get("used")),
+            "sources": rag_result.get("sources") or [],
+            "retrieval_status": rag_result.get("retrieval_status"),
+        }
         reply = llm_chat(conversation=conversation, profile=None, memory=memory,
                      knowledge=knowledge, episode=episode, reflection=None, mood=None)
         episode_id, memory_updated = self._finish_turn(
@@ -125,6 +131,7 @@ class AIOrchestrator:
             "episode_id": episode_id if action != "CLOSE" else None,
             "closed_episode_id": episode_id if action == "CLOSE" else None,
             "long_term_memory_updated": memory_updated,
+            "rag": rag_metadata,
         }
 
     def chat_stream(self, db, user_id, conversation, latest_message,
@@ -136,6 +143,12 @@ class AIOrchestrator:
         self._assign_message(db, user_message_id, episode)
         memory = self.long_term_memory.retrieve(db, user_id)
         knowledge = self.knowledge_rag.retrieve(latest_message)
+        rag_result = getattr(self.knowledge_rag, "last_result", None) or {}
+        rag_metadata = {
+            "used": bool(rag_result.get("used")),
+            "sources": rag_result.get("sources") or [],
+            "retrieval_status": rag_result.get("retrieval_status"),
+        }
         parts = []
         for chunk in llm_chat_stream(conversation=conversation, profile=None,
                                      memory=memory, knowledge=knowledge,
@@ -152,6 +165,7 @@ class AIOrchestrator:
             "episode_id": episode_id if action != "CLOSE" else None,
             "closed_episode_id": episode_id if action == "CLOSE" else None,
             "long_term_memory_updated": memory_updated,
+            "rag": rag_metadata,
         }
 
 ####################################################################################################

@@ -153,15 +153,21 @@ class QueryAnalyzer:
             return self._no_rag("Immediate-danger query; defer to the safety protocol")
 
         explicit_knowledge = any(phrase in q for phrase in (
-            "what is ",
-            "explain ",
-            "how do i ",
-            "how can i ",
-            "ways to ",
-            "techniques for ",
-            "symptoms of ",
-            "difference between ",
-        ))
+        "what is ",
+        "explain ",
+        "how does ",
+        "how do i ",
+        "how can i ",
+        "ways to ",
+        "techniques for ",
+        "symptoms of ",
+        "difference between ",
+        "research on ",
+        "studies on ",
+        "evidence about ",
+        "scientific evidence",
+        "papers on ",
+    ))
         use_web = self._requires_web(q)
         if not explicit_knowledge and not use_web:
             return self._no_rag("Fallback did not identify a clear knowledge or web-search need")

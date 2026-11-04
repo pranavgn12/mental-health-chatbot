@@ -103,6 +103,12 @@ class Message(Base):
         index=True
     )
 
+    # Selected RAG/web sources used for this assistant response.
+    source_references = Column(
+        JSON,
+        nullable=True
+    )
+
 
 # =========================================================
 # EPISODE

@@ -219,6 +219,23 @@ export default function useChat() {
                     else if (event.type === "done") {
                         completed = true;
 
+                        const completedReferences =
+                            event.assistant_message?.references ||
+                            event.rag?.sources ||
+                            [];
+
+                        setMessages(prev => {
+                            if (selectedChatIdRef.current !== chatId) {
+                                return prev;
+                            }
+
+                            return prev.map(message =>
+                                message.id === assistantTempId
+                                    ? { ...message, references: completedReferences }
+                                    : message
+                            );
+                        });
+
                         // Update conversation title.
                         if (event.conversation_title) {
                             setChatList(prev =>
