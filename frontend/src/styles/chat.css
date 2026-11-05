@@ -2770,3 +2770,13 @@ a.reference-item-title:hover {
     }
 }
 
+.model-name {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #2d2d2d;
+    color: white;
+    font-size: 13px;
+    white-space: nowrap;
+}
