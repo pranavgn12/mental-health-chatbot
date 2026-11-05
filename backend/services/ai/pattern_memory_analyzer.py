@@ -193,10 +193,14 @@ class PatternMemoryAnalyzer:
 
     def analyze_and_save(self, db, user_id, episode, previous_memory):
         context = self._build_pattern_context(db, episode)
-        prompt = PROMPT.format(
-            episode_sources=context["episode_sources"],
-            existing_patterns=context["existing_patterns_text"],
-            previous_memory=previous_memory or "No previous long-term memory.",
+        prompt = (
+            PROMPT
+            .replace("{episode_sources}", context["episode_sources"])
+            .replace("{existing_patterns}", context["existing_patterns_text"])
+            .replace(
+                "{previous_memory}",
+                previous_memory or "No previous long-term memory."
+            )
         )
 
         raw = generate_response(
