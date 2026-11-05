@@ -34,15 +34,23 @@ class LongTermMemory:
                 if record and isinstance(record.profile_themes, list) else []
             )
 
-            # Pattern failure is caught inside the analyzer. Memory generation
-            # is a separate request and falls back to previous_memory.
-            updated_memory = self.pattern_memory_analyzer.analyze_and_save(
+            # The analyzer stages independently validated pattern rows and
+            # returns either validated memory, the prior memory, or an empty
+            # string when the user has no durable memory yet.
+            generated_memory = self.pattern_memory_analyzer.analyze_and_save(
                 db=db, user_id=user_id, episode=episode,
                 previous_memory=previous_memory,
             )
+            updated_memory = (
+                generated_memory.strip()
+                if isinstance(generated_memory, str)
+                else (previous_memory or "").strip()
+            )
+            prior_text = (previous_memory or "").strip()
+            memory_changed = bool(updated_memory and updated_memory != prior_text)
 
             updated_themes = previous_themes
-            if updated_memory and updated_memory.strip():
+            if memory_changed:
                 try:
                     generated = self.profile_generator.generate(
                         memory=updated_memory, previous_themes=previous_themes,
@@ -56,18 +64,18 @@ class LongTermMemory:
                 except Exception:
                     logger.exception("Profile generation failed; preserving previous themes.")
 
-            if updated_memory and updated_memory.strip():
                 if record is None:
                     record = LongTermMemoryModel(
-                        user_id=user_id, memory=updated_memory.strip(),
+                        user_id=user_id, memory=updated_memory,
                         profile_themes=updated_themes,
                     )
                     db.add(record)
                 else:
-                    record.memory = updated_memory.strip()
+                    record.memory = updated_memory
                     record.profile_themes = updated_themes
 
-            # Commits validated pattern savepoint writes and memory if generated.
+            # Commit even when memory is empty/unchanged: valid pattern changes
+            # may have been staged by the analyzer and must not be discarded.
             db.commit()
             if record is not None:
                 db.refresh(record)

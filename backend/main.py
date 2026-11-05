@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-
+from services.llm_provider import MODEL
 from database import engine
 from models import Base
 from auth_utils import get_current_user
@@ -46,3 +46,6 @@ def health_check():
 def me(user=Depends(get_current_user)):
     return user
 
+@app.get("/model")
+def get_current_model():
+    return {"model": MODEL}

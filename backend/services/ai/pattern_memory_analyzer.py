@@ -85,6 +85,11 @@ TASK B — LONG-TERM MEMORY
 Update the previous memory using only durable facts directly supported by the
 current episode summary/reflections or already present in previous memory.
 
+An empty memory is VALID. If the previous-memory section is empty or says
+"No previous long-term memory." and this episode contains no durable fact,
+return an empty string for "memory". Do not invent a bullet just to fill the
+field. If previous memory exists but nothing should change, copy it unchanged.
+
 Keep:
 - durable preferences, goals, values, important relationships (only as stated),
   recurring difficulties supported across episodes, and coping approaches
@@ -183,7 +188,9 @@ Return ONLY one valid JSON object with exactly these top-level keys:
 }
 
 If no pattern qualifies, use "patterns": [].
-If no memory update is justified, copy previous memory unchanged.
+If no memory update is justified, copy previous memory unchanged. If no
+previous memory exists and no durable fact is supported, use "memory": "".
+Do not use the placeholder text "No previous long-term memory." as a user fact.
 Do not wrap JSON in Markdown fences. Do not include commentary.
 """
 
@@ -210,24 +217,68 @@ class PatternMemoryAnalyzer:
             response_format={"type": "json_object"},
         )
         result = self._parse_response(raw)
-        if not isinstance(result, dict) or set(result) != {"patterns", "memory"}:
-            raise ValueError("Combined analyzer returned an invalid JSON schema.")
+        if not isinstance(result, dict):
+            raise ValueError("Combined analyzer returned a non-object JSON response.")
 
-        patterns = result["patterns"]
-        memory = result["memory"]
+        # Pattern detection and memory consolidation are independent outcomes.
+        # An empty/invalid memory must never prevent valid patterns from being saved.
+        patterns = result.get("patterns", [])
         if not isinstance(patterns, list):
-            raise ValueError("Combined analyzer did not return a patterns list.")
-        if not isinstance(memory, str) or not memory.strip():
-            raise ValueError("Combined analyzer returned empty long-term memory.")
-        self._validate_memory_shape(memory)
+            logger.warning(
+                "Combined analyzer returned an invalid patterns value; skipping pattern updates."
+            )
+            patterns = None
 
-        # Validate every candidate before staging ANY pattern changes.
-        validated = self._validate_patterns(patterns[:MAX_OUTPUT_PATTERNS], context, episode)
-        if len(patterns) > MAX_OUTPUT_PATTERNS:
-            raise ValueError("Analyzer exceeded the maximum number of patterns.")
+        validated_patterns = []
+        if patterns is not None:
+            if len(patterns) > MAX_OUTPUT_PATTERNS:
+                logger.warning(
+                    "Combined analyzer returned %s patterns (maximum %s); skipping pattern updates.",
+                    len(patterns), MAX_OUTPUT_PATTERNS,
+                )
+            else:
+                try:
+                    validated_patterns = self._validate_patterns(patterns, context, episode)
+                except Exception:
+                    logger.exception(
+                        "Pattern candidate validation failed; preserving existing patterns."
+                    )
 
-        self._save_validated_patterns(db, episode, validated, context)
-        return memory.strip()
+        # Empty is a legitimate result when there is no previous memory and this
+        # episode contains no durable fact. With existing memory, an empty or
+        # malformed model field must preserve the previous value.
+        memory_value = result.get("memory")
+        updated_memory = previous_memory.strip() if isinstance(previous_memory, str) else ""
+        if isinstance(memory_value, str) and memory_value.strip():
+            candidate_memory = memory_value.strip()
+            try:
+                self._validate_memory_shape(candidate_memory)
+                updated_memory = candidate_memory
+            except Exception:
+                logger.exception(
+                    "Generated long-term memory failed validation; preserving previous memory."
+                )
+        elif memory_value not in ("", None):
+            logger.warning(
+                "Combined analyzer returned a non-string memory value; preserving previous memory."
+            )
+
+        # Persist validated patterns inside a SAVEPOINT. A pattern write failure
+        # rolls back only the pattern batch; the caller can still commit memory.
+        if validated_patterns:
+            try:
+                with db.begin_nested():
+                    self._save_validated_patterns(
+                        db, episode, validated_patterns, context
+                    )
+                    db.flush()
+            except Exception:
+                logger.exception(
+                    "Could not stage validated patterns for episode %s; preserving memory update.",
+                    getattr(episode, "episode_id", None),
+                )
+
+        return updated_memory
 
     def _build_pattern_context(self, db, episode):
         current_moods = (
