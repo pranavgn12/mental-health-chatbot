@@ -1,9 +1,11 @@
-"""Shared evidence-building and validation helpers for pattern analysis.
+"""Legacy evidence helpers retained for compatibility.
 
-Pattern detection is no longer an independent LLM stage. The combined
-PatternMemoryAnalyzer invokes the model once for patterns + long-term memory,
-then uses the helpers in this module to validate evidence before persistence.
+Current recurring-pattern analysis is implemented in PatternMemoryAnalyzer and
+uses episode summaries only; it does not read mood records, reflections, or
+original messages as pattern evidence.
 """
+
+
 
 
 def _build_episode_source(episode, moods, reflections):
