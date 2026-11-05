@@ -1,5 +1,4 @@
 
-
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -69,6 +68,49 @@ function normalizeMath(content) {
 }
 
 
+// Convert raw HTML <br> tags into Markdown break nodes.
+// This works inside GFM table cells without enabling arbitrary HTML.
+function remarkHtmlBreaks() {
+    return (tree) => {
+        function transform(node) {
+            if (!Array.isArray(node.children)) return;
+
+            const children = [];
+
+            for (const child of node.children) {
+                if (
+                    child.type === "html" &&
+                    typeof child.value === "string" &&
+                    /<br\s*\/?>/i.test(child.value)
+                ) {
+                    const parts = child.value.split(/(<br\s*\/?>)/gi);
+
+                    for (const part of parts) {
+                        if (!part) continue;
+
+                        if (/^<br\s*\/?>$/i.test(part)) {
+                            children.push({ type: "break" });
+                        } else {
+                            children.push({
+                                ...child,
+                                value: part
+                            });
+                        }
+                    }
+                } else {
+                    transform(child);
+                    children.push(child);
+                }
+            }
+
+            node.children = children;
+        }
+
+        transform(tree);
+    };
+}
+
+
 function normalizeReferences(value) {
     if (!Array.isArray(value)) return [];
 
@@ -104,7 +146,7 @@ function getDomain(value) {
 
 export default function ChatWindow() {
     console.log("CHATWINDOW COMPONENT RENDERED");
-    
+
     const { chatList, selectedChatId, messages } = useChat();
     const messagesEndRef = useRef(null);
     const [activeReferences, setActiveReferences] = useState(null);
@@ -156,15 +198,16 @@ export default function ChatWindow() {
                             !message.content?.trim();
 
                         const references = normalizeReferences(message.references);
-			
-			if (message.role === "assistant") {
-			    console.log("REFERENCES DEBUG:", {
-				messageId: message.id,
-				rawReferences: message.references,
-				normalizedReferences: references,
-				messageKeys: Object.keys(message)
-			    });
-			}
+
+                        if (message.role === "assistant") {
+                            console.log("REFERENCES DEBUG:", {
+                                messageId: message.id,
+                                rawReferences: message.references,
+                                normalizedReferences: references,
+                                messageKeys: Object.keys(message)
+                            });
+                        }
+
                         return (
                             <div
                                 key={message.id}
@@ -188,7 +231,8 @@ export default function ChatWindow() {
                                                     remarkPlugins={[
                                                         remarkGfm,
                                                         remarkMath,
-                                                        remarkBreaks
+                                                        remarkBreaks,
+                                                        remarkHtmlBreaks
                                                     ]}
                                                     rehypePlugins={[
                                                         rehypeKatex
@@ -258,14 +302,19 @@ export default function ChatWindow() {
                                 const domain = getDomain(reference.url);
 
                                 return (
-                                    <article className="reference-item" key={`${reference.source_type}-${reference.url || reference.source || title}-${index}`}>
+                                    <article
+                                        className="reference-item"
+                                        key={`${reference.source_type}-${reference.url || reference.source || title}-${index}`}
+                                    >
                                         <div className="reference-item-icon">
                                             {isWeb ? <Globe size={17} /> : <FileText size={17} />}
                                         </div>
+
                                         <div className="reference-item-body">
                                             <div className="reference-item-kind">
                                                 {isWeb ? "WEB SOURCE" : "LOCAL KNOWLEDGE BASE"}
                                             </div>
+
                                             {safeUrl ? (
                                                 <a
                                                     className="reference-item-title"
@@ -279,6 +328,7 @@ export default function ChatWindow() {
                                             ) : (
                                                 <div className="reference-item-title">{title}</div>
                                             )}
+
                                             <div className="reference-item-detail">
                                                 {isWeb
                                                     ? (domain || "Website")
@@ -297,3 +347,4 @@ export default function ChatWindow() {
         </div>
     );
 }
+

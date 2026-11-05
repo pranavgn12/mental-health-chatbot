@@ -1,12 +1,30 @@
-from services.llm_provider import (
-    generate_response,
-    generate_response_stream,
-)
-from services.prompt_builder import (
-    SYSTEM_PROMPT,
-    build_contents,
-    build_system_instruction,
-)
+"""Conversational LLM entry points."""
+
+from services.llm_provider import generate_response, generate_response_stream
+from services.prompt_builder import build_contents, build_system_instruction
+
+# Prompt instructions guide the usual length; this is a hard upper ceiling.
+CHAT_MAX_COMPLETION_TOKENS =2000
+
+
+def _build_chat_request(
+    conversation,
+    memory=None,
+    knowledge=None,
+    profile=None,
+    episode=None,
+    reflection=None,
+    mood=None,
+):
+    system_instruction = build_system_instruction(
+        memory=memory,
+        knowledge=knowledge,
+        profile=profile,
+        episode=episode,
+        reflection=reflection,
+        mood=mood,
+    )
+    return build_contents(conversation), system_instruction
 
 
 def chat(
@@ -18,20 +36,21 @@ def chat(
     reflection=None,
     mood=None,
 ):
-    """Generate a complete response from compact conversation context."""
-    stable_context = build_system_instruction(
+    """Generate one concise, non-streaming conversational response."""
+    contents, system_instruction = _build_chat_request(
+        conversation,
         memory=memory,
+        knowledge=knowledge,
         profile=profile,
         episode=episode,
         reflection=reflection,
         mood=mood,
     )
-    contents = build_contents(
-        conversation,
-        context=stable_context,
-        knowledge=knowledge,
+    return generate_response(
+        contents,
+        system_instruction,
+        max_completion_tokens=CHAT_MAX_COMPLETION_TOKENS,
     )
-    return generate_response(contents, SYSTEM_PROMPT)
 
 
 def chat_stream(
@@ -43,17 +62,18 @@ def chat_stream(
     reflection=None,
     mood=None,
 ):
-    """Stream the response using the same context layout as chat()."""
-    stable_context = build_system_instruction(
+    """Stream the same concise, safety-aware conversational response."""
+    contents, system_instruction = _build_chat_request(
+        conversation,
         memory=memory,
+        knowledge=knowledge,
         profile=profile,
         episode=episode,
         reflection=reflection,
         mood=mood,
     )
-    contents = build_contents(
-        conversation,
-        context=stable_context,
-        knowledge=knowledge,
+    yield from generate_response_stream(
+        contents,
+        system_instruction,
+        max_completion_tokens=CHAT_MAX_COMPLETION_TOKENS,
     )
-    yield from generate_response_stream(contents, SYSTEM_PROMPT)

@@ -97,7 +97,12 @@ def generate_response(
         raise
 
 
-def generate_response_stream(contents, system_instruction=None):
+def generate_response_stream(
+    contents,
+    system_instruction=None,
+    *,
+    max_completion_tokens=8000,
+):
     """Yield response text chunks; streaming usage is not logged by this helper."""
     messages = _build_messages(contents, system_instruction)
     caller = _caller_name()
@@ -107,7 +112,7 @@ def generate_response_stream(contents, system_instruction=None):
             model=MODEL,
             messages=messages,
             temperature=0.3,
-            max_completion_tokens=8000,
+            max_completion_tokens=max_completion_tokens,
             top_p=1,
             stream=True,
         )
