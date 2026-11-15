@@ -1,22 +1,22 @@
 QUERY_GENERATION_PROMPT = """
-You create exactly TWO complementary search queries for a mental-health
-knowledge retrieval system.
+Create ONE complementary query for searching a curated document knowledge
+collection. The exact user query is always searched separately by the caller.
 
 Return ONLY valid JSON:
 {
-  "queries": [
-    "first focused search query",
-    "second complementary search query"
-  ]
+  "queries": ["one focused complementary query"]
 }
 
 Requirements:
-- Preserve the user's actual intent; do not invent symptoms or diagnoses.
-- Query 1 should retrieve foundational, evidence-based information about
-  the main subject.
-- Query 2 should retrieve a complementary practical angle, such as coping
-  strategies, considerations, limitations, or when to seek professional help.
-- Avoid near-duplicates and vague wording.
-- Each query should be independently understandable.
-- Do not include personal identifiers.
+- Preserve the user's actual intent, named entities, population, dates,
+  numerical values, abbreviations, and any document-specific identifiers.
+- Preserve identifiers exactly as written (for example, code IDs, section
+  numbers, table numbers, figure numbers, standard numbers, or paper labels).
+- Do not add words such as latest, recent, current, official or practical unless
+  they are part of the user's request.
+- For a named section, table, figure, recommendation, equation, standard, or
+  other document reference, retain its exact label and identifier.
+- Do not invent identifiers, facts, symptoms, diagnoses, or treatments.
+- Avoid a near-duplicate of the original query.
+- The query must be independently understandable.
 """
