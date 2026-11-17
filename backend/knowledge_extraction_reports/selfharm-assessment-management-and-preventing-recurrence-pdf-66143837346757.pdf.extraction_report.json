@@ -1,0 +1,444 @@
+{
+  "report_schema_version": 2,
+  "source": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757.pdf",
+  "source_pages_detected": 76,
+  "raw_docling_chunks": 158,
+  "chunks_created": 133,
+  "chunk_type_counts": {
+    "figure": 2,
+    "text": 91,
+    "list": 40
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 11,
+    "median": 150,
+    "mean": 185.86,
+    "max": 448,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      2,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76
+    ],
+    "pages_without_chunks": [
+      3,
+      4,
+      5
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 76,
+    "coverage_ratio": 0.9605
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 160,
+    "page_headers": 75,
+    "page_footers": 85,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 76,
+    "predominantly_rotated_text_pages": [],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": []
+  },
+  "applied_page_rotations": [],
+  "document_level_warnings": [],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 25,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 3,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| Who is it for? .......................................................................................................................................... | 6 |\n| Recommendations ....................................................................................................................... | 7 |"
+    },
+    {
+      "source_chunk": 4,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| 1.1 Information and support .................................................................................................................. | 8 |\n| 1.2 Consent and confidentiality ........................................................................................................... | 10 |"
+    },
+    {
+      "source_chunk": 5,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| 1.3 Safeguarding .................................................................................................................................... | 11 |\n| 1.4 Involving family members and carers ............................................................................................ | 11 |\n| 1.5 Psychosocial assessment and care by mental health professionals ......................................... | 12 |"
+    },
+    {
+      "source_chunk": 6,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| 1.6 Risk assessment tools and scales ................................................................................................. | 16 |\n| 1.7 Assessment and care by healthcare professionals and social care practitioners .................... | 17 |\n| 1.8 Assessment and care by professionals from other sectors ........................................................ | 24 |"
+    },
+    {
+      "source_chunk": 7,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| 1.9 Admission to and discharge from hospital .................................................................................... | 27 |\n| 1.10 Initial aftercare after an episode of self-harm ............................................................................. | 29 |"
+    },
+    {
+      "source_chunk": 8,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| 1.11 Interventions for self-harm ............................................................................................................ | 30 |\n| 1.12 Supporting people to be safe after self-harm ............................................................................. | 34 |"
+    },
+    {
+      "source_chunk": 9,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| 1.13 Safer prescribing and dispensing ................................................................................................. | 35 |\n| 1.14 Training ........................................................................................................................................... | 36 |"
+    },
+    {
+      "source_chunk": 10,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| 1.15 Supervision ..................................................................................................................................... | 39 |\n| Terms used in this guideline .......................................................................................................40 | |"
+    },
+    {
+      "source_chunk": 11,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| Care plan ................................................................................................................................................ | 40 |\n| Cognitive behavioural therapy-informed psychological intervention .............................................. | 40 |"
+    },
+    {
+      "source_chunk": 12,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| Clinical observation ............................................................................................................................... | 40 |\n| Designated lead .................................................................................................................................... | 40 |"
+    },
+    {
+      "source_chunk": 13,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| Dialectic behavioural therapy for adolescents ................................................................................... | 41 |\n| Harm minimisation ................................................................................................................................. | 41 |"
+    },
+    {
+      "source_chunk": 14,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 6 |\n| - | - |\n| Mechanical restraint ............................................................................................................................. | 41 |\n| Psychosocial assessment .................................................................................................................... | 41 |"
+    }
+  ],
+  "exact_duplicate_chunks": [],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 1,
+      "source_chunk": 1,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Self-harm: assessment, management and preventing recurrence",
+      "token_count": 65,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Self-harm: assessment, management and preventing recurrence\nNICE guideline\nPublished: 7 September 2022\n[www.nice.org.uk/guidance/ng225](https://www.nice.org.uk/guidance/ng225)\n<!-- image -->"
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Your responsibility",
+      "token_count": 274,
+      "text": "Your responsibility\nThe recommendations in this guideline represent the view of NICE, arrived at after careful consideration of the evidence available. When exercising their judgement, professionals and practitioners are expected to take this guideline fully into account, alongside the individual needs, preferences and values of their patients or the people using their service. It is not mandatory to apply the recommendations, and the guideline does not override the responsibility to make decisions appropriate to the circumstances of the individual, in consultation with them and their families and carers or guardian.\nAll problems (adverse events) related to a medicine or medical device used for treatment or in a procedure should be reported to the Medicines and Healthcare products Regulatory Agency using the Yellow Card Scheme.\nLocal commissioners and providers of healthcare have a responsibility to enable the guideline to be applied when individual professionals and people using services wish to use it. They should do so in the context of local and national priorities for funding and developing services, and in light of their duties to have due regard to the need to eliminate unlawful discrimination, to advance equality of opportunity and to reduce health inequalities. Nothing in this guideline should be interpreted in a way that would be inconsistent with complying with those duties.\nCommissioners and providers have a responsibility to promote an environmentally sustainable health and care system and should assess and reduce the environmental impact of implementing NICE recommendations wherever possible."
+    },
+    {
+      "chunk": 4,
+      "page_start": 6,
+      "page_end": 6,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Who is it for?",
+      "token_count": 45,
+      "text": "Who is it for?\n- Healthcare professionals and social care practitioners, commissioners and providers\n- Staff in educational settings\n- Third sector organisations\n- The criminal justice system\n- People using self-harm services, their families and carers"
+    },
+    {
+      "chunk": 9,
+      "page_start": 10,
+      "page_end": 10,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1.2 Consent and confidentiality",
+      "token_count": 233,
+      "text": "1.2 Consent and confidentiality\n[Also see the Department of Health and Social Care's consensus statement on information sharing and suicide prevention.](https://www.gov.uk/government/publications/consensus-statement-for-information-sharing-and-suicide-prevention/information-sharing-and-suicide-prevention-consensus-statement)\n- 1.2.1 If staff working with people who self-harm need to discuss issues relating to capacity and consent, they should have access to:\n- specialist advice (for example, liaison psychiatry) at all times and\n- legal advice as needed.\n- 1.2.2 Staff working with people who self-harm should be aware of the benefits of involving the person's family and carers and sharing information, and should recognise the need to seek consent from the person as early as possible.\nFor a short explanation of why the committee made these recommendations and how they might affect practice, see the rationale and impact section on consent and confidentiality.\nFull details of the evidence and the committee's discussion are in evidence review C: consent, confidentiality and safeguarding."
+    },
+    {
+      "chunk": 18,
+      "page_start": 17,
+      "page_end": 18,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Principles for assessment and care by healthcare professionals and social care practitioners",
+      "token_count": 418,
+      "text": "Principles for assessment and care by healthcare professionals and social care practitioners\n- 1.7.1 When a person presents to a healthcare professional or social care practitioner following an episode of self-harm, the professional should:\n- establish the means of self-harm and, if accessible to the person, discuss removing this with therapeutic collaboration or negotiation, to keep the person safe\n- assess whether there are concerns about capacity, competence, consent or duty of care, and seek advice from a senior colleague or appropriate clinical support if necessary; be aware and accept that the person may have a different view and this needs to be taken into account\n- seek consent to liaise with those involved in the person's care (including family members and carers, as appropriate) to gather information to understand the context of and reasons for the self-harm\n- discuss with the person and their families or carers (as appropriate), their current support network, any safety plan or coping strategies.\n- 1.7.2 When a person presents to a healthcare professional or social care practitioner following an episode of self-harm, the professional should establish the following as soon as possible:\n- the severity of the injury and how urgently medical treatment is needed\n- the person's emotional and mental state, and level of distress\n- whether there is immediate concern about the person's safety\n- whether there are any safeguarding concerns\n- whether the person has a care plan\n- if there is a need to refer the person to a specialist mental health service for assessment.\n- 1.7.3 Carry out concurrent physical healthcare and the psychosocial assessment as soon as possible after a self-harm episode.\n- 1.7.4 For immediate first aid for self-poisoning, see the BNF's guidance on poisoning, emergency treatment, TOXBASE and the National Poisons Information Service.\n- 1.7.5 Do not use aversive treatment, punitive approaches or criminal justice approaches such as community protection notices, criminal behaviour orders or prosecution for high service use as an intervention for frequent self-harm episodes."
+    },
+    {
+      "chunk": 26,
+      "page_start": 24,
+      "page_end": 25,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Principles for assessment and care by professionals from other sectors",
+      "token_count": 343,
+      "text": "Principles for assessment and care by professionals from other sectors\n- 1.8.1 When a person who has self-harmed presents to a non-health professional, for example, a teacher or a member of staff in the criminal justice system, the nonhealth professional should:\n- treat the person with respect, dignity and compassion, with an awareness of cultural sensitivity\n- work collaboratively with the person to ensure that their views are taken into account when making decisions\n- address any immediate physical health needs resulting from the self-harm, in line with locally agreed policies; if necessary, call 111 or 999 or other external medical support\n- seek advice from a healthcare professional or social care practitioners, which may include referral to a healthcare or mental health service\n- ensure that the person is aware of sources of support such as local NHS urgent mental health helplines, local authority social care services, Samaritans, Combat Stress helpline, NHS111 and Childline, and that people know how to seek help promptly\n- address any safeguarding issues, or refer the person to the correct team for safeguarding.\n- 1.8.2 When a person presents to a non-health professional, for example, a teacher or a member of staff in the criminal justice system, the non-health professional should establish the following as soon as possible:\n- the severity of the injury and how urgently medical treatment is needed\n- the person's emotional and mental state, and level of distress\n- whether there is immediate concern about the person's safety\n- whether there are any safeguarding concerns\n- whether the person has a care plan\n- if there is a need to refer the person to a specialist mental health service for assessment."
+    },
+    {
+      "chunk": 35,
+      "page_start": 30,
+      "page_end": 30,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1.11 Interventions for self-harm",
+      "token_count": 104,
+      "text": "1.11 Interventions for self-harm\n- [Learning disabilities and behaviour that challenges](https://www.nice.org.uk/guidance/ng93)\n- [Mental health problems in people with learning disabilities](https://www.nice.org.uk/guidance/ng54)\n- [Obsessive-compulsive disorder and body dysmorphic disorder](https://www.nice.org.uk/guidance/cg31)"
+    },
+    {
+      "chunk": 44,
+      "page_start": 36,
+      "page_end": 38,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1.14 Training",
+      "token_count": 352,
+      "text": "1.14 Training\n- 1.14.1 Training for all staff who work with people of any age who self-harm should:\n- involve people who self-harm and, where appropriate, their families or carers, and staff in the planning, delivery and evaluation of training\n- be available in a range of formats, including interactive role play, online, faceto-face and through provision of resources\n- explore staff attitudes (including non-healthcare staff), values, beliefs and biases\n- be appropriate to the level of responsibility of the staff member\n- be provided on a regular and ongoing basis.\n- 1.14.2 All staff who work with people of any age who self-harm should have training specific to their role so that they can provide care and treatment outlined in this guideline. Training should cover:\n- the range of different behaviours that can be considered self-harm\n- treating and managing episodes of self-harm, including de-escalation using the least restrictive measures\n- discussing self-harm with the person in an open way to explore the reasons for each episode of self-harm\n- involving people who self-harm in all discussions and allowing sufficient time for decision making about their treatment and subsequent care\n- communicating compassionately and facilitating engagement with people who have self-harmed, including using active listening skills\n- being culturally competent through respecting and appreciating the cultural contexts of people's lives\n- education about the underlying factors, triggers or motives that may lead people to self-harm\n- education about the stigma and discrimination usually associated with selfharm and the need to avoid judgemental attitudes\n- recognising the impact of other diagnoses and comorbidities, and how they\ninteract with self-harm"
+    },
+    {
+      "chunk": 53,
+      "page_start": 41,
+      "page_end": 41,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Harm minimisation",
+      "token_count": 59,
+      "text": "Harm minimisation\nHarm minimisation is an approach to self-harm that accepts the person's continued urge to self-harm while aiming to keep long-term damage and frequency of injury to a minimum. It can include suggestions to avoid, delay or reduce self-harm."
+    },
+    {
+      "chunk": 62,
+      "page_start": 43,
+      "page_end": 43,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "2 Assessment in non-specialist settings",
+      "token_count": 23,
+      "text": "2 Assessment in non-specialist settings\nWhat are the most effective approaches to assessment in non-specialist settings?"
+    },
+    {
+      "chunk": 70,
+      "page_start": 46,
+      "page_end": 47,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Why the committee made the recommendations",
+      "token_count": 374,
+      "text": "Why the committee made the recommendations\nThere was evidence on the information that people who had self-harmed and their family members and carers want to receive, and how they want to receive it. The committee based the recommendations on the evidence, their knowledge and experience, and the NICE guidelines on patient experience in adult NHS mental health services, and patient experience in adult NHS services.\nMuch of the evidence on the information needs of people who had self-harmed was consistent with that of family and carers, who want information about self-harm to be shared with them. However, there was conflicting evidence about whether people want information to be shared with family members. The committee agreed that information should be available to the person's family and carers where appropriate and in agreement with the person.\nThere was evidence that family members and carers have additional information and support needs specific to their experience that are often unmet. The committee agreed that further information and support should be provided to family members and carers as appropriate.\nThere was evidence that people who had self-harmed and their family and carers perceived support (or a lack of it) based on how they had been communicated with, and that they value support from a range of sources. There was also evidence that people who had self-harmed value information that is specific to their circumstances, and the committee agreed that information should be tailored to the individual. The evidence also suggested that people and their family and carers find it difficult to get the information or support they need.\nThe committee discussed existing NICE guidelines that have important information about how to appropriately provide information and support to people and agreed that the guidelines are relevant for people who have self-harmed.\nThe recommendation that people from protected groups should have additional support was based on the committee's experience and knowledge that forms of discrimination are often causal factors for self-harm."
+    },
+    {
+      "chunk": 79,
+      "page_start": 49,
+      "page_end": 49,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Why the committee made the recommendations",
+      "token_count": 214,
+      "text": "Why the committee made the recommendations\nThere was conflicting evidence on if and how family members and carers should be involved in the support and treatment of people who have self-harmed. The evidence showed both potential harms and benefits, so the committee based the recommendations on the evidence and their own knowledge and experience.\nThe committee highlighted if the person has not given consent, family and carers can still share information with healthcare professionals, which can provide helpful insights to make a holistic assessment of, and base their professional judgements on, the needs of the person who has self-harmed.\nThere was evidence that people who had self-harmed and their family and carers value being able to communicate using non-verbal means. The committee agreed that this can encourage positive communication because it can often be difficult for the person to express their needs when they are very distressed. The use of non-verbal forms of communication can reduce the need for the person to explain how they are feeling, and help to build the initial therapeutic rapport and understanding of the person's needs."
+    },
+    {
+      "chunk": 88,
+      "page_start": 53,
+      "page_end": 53,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Assessment and care by healthcare professionals and social care practitioners",
+      "token_count": 24,
+      "text": "Assessment and care by healthcare professionals and social care practitioners\nRecommendations 1.7.1 to 1.7.27"
+    },
+    {
+      "chunk": 97,
+      "page_start": 58,
+      "page_end": 58,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Assessment and care by professionals from other sectors",
+      "token_count": 22,
+      "text": "Assessment and care by professionals from other sectors\nRecommendations 1.8.1 to 1.8.12"
+    },
+    {
+      "chunk": 106,
+      "page_start": 62,
+      "page_end": 62,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Initial aftercare after an episode of self-harm",
+      "token_count": 24,
+      "text": "Initial aftercare after an episode of self-harm\nRecommendations 1.10.1 and 1.10.2"
+    },
+    {
+      "chunk": 114,
+      "page_start": 66,
+      "page_end": 66,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Recommendations 1.11.11 to 1.11.13",
+      "token_count": 251,
+      "text": "Recommendations 1.11.11 to 1.11.13\nThere was no evidence, so the recommendations are based on the committee's knowledge and experience. They agreed there are benefits to providing advice on coping strategies. However, the lack of evidence meant they were unable to make any recommendations about the use of safer self-harm strategies, or to be more specific in the recommendations.\nThe committee agreed that harm minimisation strategies can be helpful when a person is working towards stopping self-harm but has not yet managed to do so. In these circumstances, it may be possible to discuss harm minimisation strategies with the person who has self-harmed; however, this should only be done as part of a therapeutic partnership where treatment is ongoing. The aim of these strategies should be to work towards stopping the self-harm, while minimising the harm before this is possible for the person. The committee also agreed that some harm minimisation strategies are not appropriate for all people who self-harm, depending on the person's care and support needs.\nThe committee made a recommendation for research on the experience, feasibility, acceptability and effectiveness of harm minimisation strategies for people who self-harm to better inform future guideline development."
+    },
+    {
+      "chunk": 123,
+      "page_start": 70,
+      "page_end": 70,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "How the recommendations might affect practice",
+      "token_count": 138,
+      "text": "How the recommendations might affect practice\nThese recommendations should improve safety for people after an episode of self-harm and improve person-centred care by involving people in decisions about safer prescribing practices.\nFor prescribers, these recommendations may mean that they review current prescriptions more routinely after an episode of self-harm with respect to the person's risks of toxicity from overdose. For primary healthcare professionals, these recommendations may increase communication with healthcare professionals from other settings, such as specialist mental health centres and specialist pharmacies when prescribing and reviewing medications. Improved communication between healthcare professionals should limit variations in prescribing practices and improve continuity of care.\nReturn to recommendations"
+    },
+    {
+      "chunk": 132,
+      "page_start": 76,
+      "page_end": 76,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Update information",
+      "token_count": 115,
+      "text": "Update information\nSeptember 2022: This guideline updates and replaces NICE guideline CG16 (published July 2004) and NICE guideline CG133 (published November 2011).\nMinor changes since publication\nAugust 2024: We have simplified the guideline by removing recommendations on general principles of care that are covered in other NICE guidelines (for example, the NICE guideline on service user experience in adult mental health).\nThis is a presentational change only, and no changes to practice are intended.\nISBN: 978-1-4731-4702-7"
+    }
+  ]
+}

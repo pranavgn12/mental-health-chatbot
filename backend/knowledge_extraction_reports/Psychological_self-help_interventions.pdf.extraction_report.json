@@ -1,0 +1,1148 @@
+{
+  "report_schema_version": 2,
+  "source": "Psychological\nself-help\ninterventions.pdf",
+  "source_pages_detected": 156,
+  "raw_docling_chunks": 338,
+  "chunks_created": 321,
+  "chunk_type_counts": {
+    "figure": 12,
+    "text": 136,
+    "list": 155,
+    "table": 15,
+    "form": 3
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 13,
+    "median": 158,
+    "mean": 189.35,
+    "max": 448,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      156
+    ],
+    "pages_without_chunks": [
+      2,
+      5,
+      6,
+      11,
+      12,
+      23,
+      24,
+      67,
+      68,
+      104,
+      154,
+      155
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 156,
+    "coverage_ratio": 0.9231
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 275,
+    "page_headers": 138,
+    "page_footers": 137,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 156,
+    "predominantly_rotated_text_pages": [
+      {
+        "page": 72,
+        "rotated_text_ratio": 0.972,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      },
+      {
+        "page": 73,
+        "rotated_text_ratio": 0.958,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      },
+      {
+        "page": 74,
+        "rotated_text_ratio": 0.965,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      },
+      {
+        "page": 75,
+        "rotated_text_ratio": 0.969,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      },
+      {
+        "page": 87,
+        "rotated_text_ratio": 0.945,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      },
+      {
+        "page": 88,
+        "rotated_text_ratio": 0.969,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      },
+      {
+        "page": 89,
+        "rotated_text_ratio": 0.947,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      },
+      {
+        "page": 90,
+        "rotated_text_ratio": 0.933,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      }
+    ],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": [
+      28,
+      140
+    ]
+  },
+  "applied_page_rotations": [
+    {
+      "page": 72,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    },
+    {
+      "page": 73,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    },
+    {
+      "page": 74,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    },
+    {
+      "page": 75,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    },
+    {
+      "page": 87,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    },
+    {
+      "page": 88,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    },
+    {
+      "page": 89,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    },
+    {
+      "page": 90,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    }
+  ],
+  "document_level_warnings": [
+    {
+      "type": "predominantly_rotated_text",
+      "page": 72,
+      "rotated_text_ratio": 0.972,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "predominantly_rotated_text",
+      "page": 73,
+      "rotated_text_ratio": 0.958,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "predominantly_rotated_text",
+      "page": 74,
+      "rotated_text_ratio": 0.965,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "predominantly_rotated_text",
+      "page": 75,
+      "rotated_text_ratio": 0.969,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "predominantly_rotated_text",
+      "page": 87,
+      "rotated_text_ratio": 0.945,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "predominantly_rotated_text",
+      "page": 88,
+      "rotated_text_ratio": 0.969,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "predominantly_rotated_text",
+      "page": 89,
+      "rotated_text_ratio": 0.947,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "predominantly_rotated_text",
+      "page": 90,
+      "rotated_text_ratio": 0.933,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 28
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 140
+    }
+  ],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 17,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 3,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| Acknowledgements. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vi | Acknowledgements. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . vi | |"
+    },
+    {
+      "source_chunk": 4,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| Acronyms and abbreviations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .viii | Acronyms and abbreviations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .viii | |\n| Background | Background | |"
+    },
+    {
+      "source_chunk": 5,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1 | 1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1 | |"
+    },
+    {
+      "source_chunk": 6,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 1.1 | About this manual. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1 | |\n| 1.2 | About self-help. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4 | |\n| Practical information for general delivery | Practical information for general delivery | |"
+    },
+    {
+      "source_chunk": 7,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 2. For | organizations: how to set up individually delivered self-help | . . . . . . . . . . . . . . 13 |\n| 2.1 | Plan for individually delivered self-help | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .13 |\n| 2.2 | Adapt for context and culture | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .21 |"
+    },
+    {
+      "source_chunk": 8,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 2.3 | Prepare the workforce | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .24 |\n| 2.4 | Helping people to access self-help. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .27 | |"
+    },
+    {
+      "source_chunk": 9,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 3. | Introduction to providing support in guided self-help. . . . . . . . . . . . . . . . . . . . . . . . . . . 31 | |\n| 3.1 | What does it mean to be a helper? | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .31 |\n| 3.2 | What helping skills do I need to be a helper?. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .36 | |"
+    },
+    {
+      "source_chunk": 10,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| How . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41 | How . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41 | |\n| 4. | to provide support to service users | |"
+    },
+    {
+      "source_chunk": 11,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 4.1 | Welcome contact | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .42 |\n| 4.2 | Regular support contacts. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .43 | |"
+    },
+    {
+      "source_chunk": 12,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 4.3 | End contact. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .44 | |\n| 4.4 | Ad hoc contact. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .45 | |"
+    },
+    {
+      "source_chunk": 13,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 4.5 | How to deal with unsuccessful contacts. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .45 | |\n| 4.6 | How to protect privacy during contacts | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .46 |"
+    },
+    {
+      "source_chunk": 14,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v | Preface. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .v |\n| - | - | - |\n| 4.7 | How do I write support messages? | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .47 |\n| 4.8 | How do I manage imminent risk of suicide and other immediate safety concerns? | . . . . . . .48 |\n| 4.9 | How do I deal with other challenges? . . . . . . . . . . . . | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 54 |"
+    }
+  ],
+  "exact_duplicate_chunks": [
+    {
+      "chunk_indices": [
+        139,
+        143
+      ],
+      "count": 2
+    }
+  ],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 4,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Psychological self-help interventions",
+      "token_count": 226,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Psychological self-help interventions\nDelivering self-help for individuals, featuring Step-by-Step and Doing What Matters in Times of Stress\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\nDelivering self-help for individuals, featuring Step-by-Step and Doing What Matters in Times of Stress\nGeneric field-trial version 1.0,\n2026 Series on Low-Intensity Psychological Interventions - 7\n<!-- image -->\nPsychological self-help interventions: delivering self-help for individuals, featuring Step-by-Step and Doing What Matters in Times of Stress\nISBN 978-92-4-012078-5 (electronic version)\nISBN 978-92-4-012079-2 (print version)"
+    },
+    {
+      "chunk": 3,
+      "source_chunk": 20,
+      "split_part": 0,
+      "page_start": 7,
+      "page_end": 7,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Preface",
+      "token_count": 373,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Preface\nMillions of people worldwide who experience mental health conditions do not have access to effective care. Self-help can help increase access to care in all countries. By providing structured psychological techniques that people can use in their own time, these interventions can empower individuals to manage stress and improve their mental health.\nEvidence shows that self-help interventions are effective, particularly for depression and anxiety, and these interventions are recommended by the World Health Organization (WHO). These interventions are likely to play a key role in expanding access to evidence-based mental health care in numerous countries. Because they can be delivered in person or remotely, with limited support from trained non-specialists, they have the potential to reach large numbers of people across diverse settings.\nThis manual is designed to support decision-makers and practitioners in planning and implementing both unguided and guided self-help. It includes information on two WHO-developed programmes - Step-by-Step and Doing What Matters in Times of Stress - which are delivered individually, both of which have been rigorously tested in randomized controlled trials (RCTs. Typically, these programmes are offered with brief weekly remote support (around 15 minutes of time) from a trained helper, though different models of delivery are also possible, such as no support or face-to-face support.\nStep-by-Step and Doing What Matters in Times of Stress have already been integrated into national services: both interventions have been scaled up nationwide in Thailand and Step-by-Step is available across Lebanon. These experiences, alongside strong research evidence, demonstrate the powerful contribution that self-help interventions can make to any mental health system. They offer a practical and effective way to bring care to more people, wherever they live.\nDr Jeremy Farrar Assistant Director-General Division of Health Promotion, Disease Prevention and Care\n\n<!-- image -->"
+    },
+    {
+      "chunk": 23,
+      "source_chunk": 40,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "1.2.1 What is self-help?",
+      "token_count": 232,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "1.2.1 What is self-help?\nThere are many ways to deliver self-help, but they all begin with providing information to a person that is interested in using the intervention. In unguided self-help this may be as simple as a health professional giving the person a book or access to a website, with a brief introduction to the content. In other settings, an informed consent procedure and assessment may be completed to determine if the person is suitable for the self-help intervention and presents with relevant symptoms. If suitable and interested, the person's journey then continues with access to the selfhelp materials. Completion of the self-help intervention ideally includes a final assessment to evaluate the intervention's outcome and, if needed, referral to further support. For guided self-help, the person receives brief but regular support contacts to help them on their journey (Figure 1.2 Example of a person's journey through individual guided self-help).\nFigure 1.2 Example of a person's journey through individual guided self-help (for a six-week intervention)\n\n<!-- image -->"
+    },
+    {
+      "chunk": 33,
+      "source_chunk": 50,
+      "split_part": 0,
+      "page_start": 25,
+      "page_end": 26,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "2.1 Plan for individually delivered self-help",
+      "token_count": 176,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "2.1 Plan for individually delivered self-help\nWHO's Psychological interventions implementation manual identifies seven key activities for planning psychological interventions (Figure 2.1 Seven key questions to address in an implementation plan).\nFigure 2.1 Seven key questions to address in an implementation plan\n\n<!-- image -->\nSource: WHO (29).\nIn this section we offer additional information on four of the activities, as these have specific considerations for self-help interventions. It is important to include multiple stakeholders, including community representatives (such as community leaders and people with mental health conditions) in the planning and implementation team.\nIt is recommended that an implementation plan be developed in the planning phase to ensure that all key questions are addressed (see Annex 1 of WHO's Psychological interventions implementation manual for a checklist of key activities in planning for the implementation of a psychological intervention)."
+    },
+    {
+      "chunk": 35,
+      "source_chunk": 52,
+      "split_part": 0,
+      "page_start": 28,
+      "page_end": 28,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "2.1.1 Intervention selection",
+      "token_count": 303,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "2.1.1 Intervention selection\nTable 2.1 Overview of SbS and DWM\n\n| | SbS (see Chapter 5) | DWM (see Chapter 6) |\n| - | - | - |\n| Target population | Adults with moderate to severe depressive symptoms. | Adults experiencing psychological distress of various levels of severity. |\n| Main therapeutic components | Behavioural activation, stress management and other techniques. | Acceptance and commitment therapy. DWM is the book component of Self-Help Plus (SH+) (31) and includes all of the same self-help techniques and content. It has subsequently been used and tested as a stand-alone individually delivered intervention. |\n| Format | Digital, but could be delivered in different formats, such as a book or video. | Digital and book, but could be delivered in different formats, such as a video. |\n| Length | Five modules. | Five modules. |\n| Guidance | One welcome contact and five weekly support contacts of 15 minutes per week. | Tested with both five weekly support contacts and three support contacts over five weeks of 15 minutes. |\n| Adaptation | SbS follows individual storylines developed for different genders and age groups, including a young person story. This helps it feel more personalized but increases the amount of content to adapt. | DWM follows a group of narrators explaining key concepts. Images are already adapted for multiple cultures and text is short, so the amount of adaptation required may be more limited. |"
+    },
+    {
+      "chunk": 36,
+      "source_chunk": 53,
+      "split_part": 0,
+      "page_start": 28,
+      "page_end": 28,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "2.1.1 Intervention selection",
+      "token_count": 312,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "2.1.1 Intervention selection\n| | SbS (see Chapter 5) | DWM (see Chapter 6) |\n| - | - | - |\n| Current strength of evidence | Two RCTs in Lebanon showed moderate effects on mental health outcomes that were maintained at three-month follow- up (10, 27). An RCT with an adapted version of SbS with Chinese students showed it effectively reduced depressive symptoms in the short term and improved psychological well-being in the longer term (19). One trial with an unguided version of SbS in Syrian refugees in Egypt showed small effects that remained at three-month follow-up (20), while another trial with the same population in Germany and Sweden did not find an effect (21). | One published pilot trial showing small to moderate pre-post effects on symptoms (22). Two published trials showing moderate pre-post effects on symptoms, as part of a stepped care trial (11, 23). One published pre-post (not RCT) paper on unguided DWM showed significant effects in reducing symptoms of depression, anxiety and distress and improved well-being in over 1400 students in Italy (33). |\n| Not suitable for people who: | … have a severe cognitive impairment, or are at imminent risk of suicide (for example, people with a plan to end their life). | … have a severe cognitive impairment, or are at imminent risk of suicide (for example, people with a plan to end their life). |"
+    },
+    {
+      "chunk": 42,
+      "source_chunk": 59,
+      "split_part": 0,
+      "page_start": 32,
+      "page_end": 33,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "2.1.4 Human resource needs",
+      "token_count": 423,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "2.1.4 Human resource needs\nWithin all delivery and support models you will need to consider your human resource needs. The simplest form of guided self-help (not explicitly covered in this manual) is for a service provider to give people access to the self-help material and then check in during routine appointments (covering some of the topics listed in section 4.2 Regular support contacts).\nTo implement SbS or DWM, you will need a team of people to carry out various tasks (Table 2.2). This team could comprise people already employed by the organization or those specifically hired to deliver individually delivered self-help.\nTable 2.2 Example tasks needed to implement a programme of guided self-help interventions using the WHO model described in this manual\n\n| Task | Example roles and responsibilities |\n| - | - |\n| Coordination | · Manage the programme of self-help · Assess the quality of the programme's implementation · Oversee the programme's administrative and operational elements (including monitoring and evaluation) · Ensure helpers are recruited and trained · Allocate helpers to service users at sign-up |\n| Providing support | · Give service users brief support and encouragement as they progress through the intervention · Maintain privacy · Respond to any safety or protection concerns, such as imminent risk of suicide · (See section 3.1 for more information on what it means to be a helper) |\n| Supervision | · Provide training and support to helpers · Ensure that support is delivered competently and safely · Follow up on any safety or protection concerns |\n| IT support (for digital intervention) | · Ensure hosting and maintenance of the intervention · Provide helpers and service users with technical support |\nWhen delivering interventions remotely, it is important to develop clear rules and practices (also called standard operating procedures) for how helpers contact service users and make case notes. For example, helpers should only contact service users using work devices, during working hours and in ways that ensure the safety and privacy both of themselves and of the people they are helping (that is, not making calls from home)."
+    },
+    {
+      "chunk": 84,
+      "source_chunk": 101,
+      "split_part": 0,
+      "page_start": 53,
+      "page_end": 54,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "4. How to provide support to service users",
+      "token_count": 290,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "4. How to provide support to service users\n- A welcome contact to introduce the person to the intervention and to introduce yourself as their helper if they are receiving guidance (see section 4.1 Welcome contact). You will provide the person with more details about the intervention and answer any questions or concerns they might have.\n- Regular support contacts (typically once a week) over several weeks (for example, five calls for DWM and SbS corresponding to the five sections or chapters in each intervention). Each contact follows the same format (see section 4.2 Regular support contacts). During these contacts, there are specific steps to follow if you identify a safety concern, if someone needs extra support with coping, or if other challenges arise (see sections 4.8 How do I manage imminent risk of suicide and other immediate safety concerns? and 4.9 How do I deal with other challenges?). If delivering Step-by-Step or Doing What Matters In Times of Stress, you will also refer to the specific information in chapters 5 and 6 during these calls.\n- End contact when the person finishes the intervention to evaluate effects and outcomes and to identify and address any remaining support needs (see section 4.3 End contact). This can be combined with the last regular support contact.\nFigure 4.1 Overall model for contacting and supporting service users (see relevant sections for more detail)\n\n<!-- image -->"
+    },
+    {
+      "chunk": 98,
+      "source_chunk": 115,
+      "split_part": 0,
+      "page_start": 60,
+      "page_end": 60,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 4.1 Helpful dos and don'ts for writing support messages",
+      "token_count": 277,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 4.1 Helpful dos and don'ts for writing support messages\n| Do … | Don't … |\n| - | - |\n| · reread and spellcheck your message before you hit \"send\"; · be clear, concrete and specific - ensure what you write is not ambiguous and not likely to be misunderstood; · be positive and supportive and give compliments, but only if they are genuine; · read the message aloud. This can help you hear how the message may sound to the person receiving it. If in doubt, ask a colleague or supervisor for feedback; · write in a way that is professional, caring and easy to understand for the service user. | · use technical language or jargon; · use abbreviations; · USE ALL CAPS; · overuse exclamation or question marks (for example, !!! or ???); · use humour or sarcasm, as these can easily be misunderstood; · use emojis, as this can be misunderstood and might come across as unprofessional; · be overly positive. While it is great to give some positive feedback, adding things like \"good job\", \"well done\" or \"great work\" after every sentence often comes across as patronizing or not genuine. Don't fake it, and don't overdo it. |"
+    },
+    {
+      "chunk": 105,
+      "source_chunk": 122,
+      "split_part": 0,
+      "page_start": 62,
+      "page_end": 62,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 4.2 Example warning signs that there may be an imminent safety concern",
+      "token_count": 394,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 4.2 Example warning signs that there may be an imminent safety concern\n| Indication of a safety concern | Example comments from the service user |\n| - | - |\n| Thoughts or plans of suicide, which may be either vague or explicit | · \"I just want to disappear.\" · \"What's the point in living?\" · \"I'm just a burden to others.\" · \"I have no reason to live.\" · \"No one will miss me when I'm gone.\" · \"I want to go to sleep and not wake up.\" · \"I probably will not end my life, but if something was to happen to me, I would be okay with it.\" · \"I just want to die.\" · \"It would be better for everyone if I just killed myself.\" · \"I have made a plan to die.\" · \"I recently got some rope to kill myself.\" · \"I have been looking for ways to kill myself.\" (For example, any comment suggesting the person has sought access to pesticides or firearms, stockpiled medications, or researched suicide online) · \"I've been putting things in order in case something happens to me.\" (For example, any comment suggesting the person has given away |\n| Attempts at self-harm or suicide | possessions or written a will) · \"Earlier this year I tried to end my life.\" · \"One time I took a lot of medication, hoping that I would not wake up.\" |\n| Severe emotional distress or hopelessness | · \"Things will never get better.\" · \"Life is pointless.\" · \"Nobody cares about me.\" |\n| Violent behaviour or extreme agitation | · \"I keep on getting into fights.\" · \"I can't control my anger.\" · \"My partner hit me.\" · \"My partner humiliated me.\" |"
+    },
+    {
+      "chunk": 106,
+      "source_chunk": 123,
+      "split_part": 0,
+      "page_start": 63,
+      "page_end": 63,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 4.2 Example warning signs that there may be an imminent safety concern",
+      "token_count": 234,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 4.2 Example warning signs that there may be an imminent safety concern\n| Indication of a safety concern | Example comments from the service user |\n| - | - |\n| Withdrawal or unwillingness to communicate | · \"I don't want to talk to you or anyone.\" · \"No one can help me.\" |\n| Sudden and severe changes in mood or behaviour patterns | · \"I've stopped eating.\" · \"I've not been sleeping.\" |\n| Reports of risk of harm from others or to others | · \"I had to go to the hospital because they beat me so badly.\" · \"I'm scared for my life.\" · \"I can't control my anger and am scared I'll hurt them.\" · \"My husband/wife is beating our children.\" |\nThe list of warning signs in Table 4.2 is not exhaustive, and there may also be other, culturally specific warning signs. It is important that helpers and organizations delivering guided self-help are supported by relevant professionals (such as mental health professionals) who can oversee and give guidance on safety procedures."
+    },
+    {
+      "chunk": 115,
+      "source_chunk": 132,
+      "split_part": 0,
+      "page_start": 71,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Welcome contact a",
+      "token_count": 28,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Welcome contact a\n<!-- image -->\n- Introduce SbS.\n- Learn how to remain grounded during times of stress."
+    },
+    {
+      "chunk": 116,
+      "source_chunk": 133,
+      "split_part": 0,
+      "page_start": 71,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Support contact 4",
+      "token_count": 13,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Support contact 4\n<!-- image -->"
+    },
+    {
+      "chunk": 118,
+      "source_chunk": 135,
+      "split_part": 0,
+      "page_start": 71,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Module 5 Remember, change takes time",
+      "token_count": 99,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Module 5 Remember, change takes time\n- Recap on how to identify warning signs and coping techniques.\n- a The welcome contact is also provided when SbS is delivered unguided and for people requesting messaging support (see section 4.1 for more information). Implementation experience shows that having a welcome contact may help increase engagement and use and increases understanding of the intervention.\n- b The end contact can be combined with support contact 5 or delivered separately.\n<!-- image -->"
+    },
+    {
+      "chunk": 119,
+      "source_chunk": 136,
+      "split_part": 0,
+      "page_start": 71,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Support contact 1",
+      "token_count": 13,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Support contact 1\n<!-- image -->"
+    },
+    {
+      "chunk": 121,
+      "source_chunk": 138,
+      "split_part": 0,
+      "page_start": 71,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Support contact 3",
+      "token_count": 13,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Support contact 3\n<!-- image -->"
+    },
+    {
+      "chunk": 122,
+      "source_chunk": 139,
+      "split_part": 0,
+      "page_start": 71,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Module 3 Be kind to yourself",
+      "token_count": 51,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Module 3 Be kind to yourself\n- Troubleshoot problems in completing exercises.\n- Enhance kindness to yourself.\nSupport contact 2\n<!-- image -->\n- Actively seek to improve your mood.\n- Break challenging activities up into manageable steps."
+    },
+    {
+      "chunk": 123,
+      "source_chunk": 140,
+      "split_part": 0,
+      "page_start": 72,
+      "page_end": 72,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 5.1 Overview of SbS skills and exercises",
+      "token_count": 333,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 5.1 Overview of SbS skills and exercises\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Grounding (Introduction) | Grounding brings us back to the present moment and unhooks us when we're caught up in emotional storms. | 1. Notice how you are feeling and what you are thinking. 2. Slow down and connect with your body by stretching, pushing your feet down, and focusing on your breathing. 3. Refocus on the world around you and what you are doing. | · When we are caught up in emotional storms (causing stress) and hooked by difficult thoughts and feelings, it is hard to do anything useful. Grounding can help us to refocus on what we need to do in a stressful situation. · Practising regularly, even when we are not very stressed, can help us to then use grounding in more difficult situations. |\n| Slow breathing (Module 1) | Like grounding, slow breathing helps us to reduce stress. | 1. Relax your body. Shake out your arms and legs and let them go floppy and loose. 2. Breathe in through your nose and out through your mouth. 3. Slow down your breathing. Try to take around three seconds to breathe in and three seconds to breathe out. | · Breathing can alter how stressed people feel. · We can use this technique whenever we feel overwhelmed or stressed. · Practise regularly because we know from experience that many people find it helpful. · Users may naturally prefer and use either grounding or slow breathing exercise. |"
+    },
+    {
+      "chunk": 124,
+      "source_chunk": 141,
+      "split_part": 0,
+      "page_start": 73,
+      "page_end": 73,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 5.1 Overview of SbS skills and exercises",
+      "token_count": 282,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 5.1 Overview of SbS skills and exercises\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Gratitude list (Module 1) | Making a gratitude list can help to improve mood. | 1. Think of things you are grateful for. These can be anything, big or small. 2. Write down three things you are grateful for. 3. Look at this list whenever you need to and be reminded of the things you are grateful for in your life. | · Focusing on things we are grateful for helps improve how we are feeling. · Regular practice is important. |\n| Small activities (Modules 1 and 2) | The small activities exercise shows us that what we do can have an impact on how we feel. | 1. Write down three small things you would normally enjoy doing. 2. Try to do one thing every day that you enjoy or used to enjoy. 3. As you do this, take a moment to notice your mood. After doing the activity, do you feel even the smallest bit better? | · When we are very sad or stressed, doing even the smallest activity might seem hard. Regularly doing something that makes us feel good, even if it is something small, can help reduce stress and improve mood. · With practice, doing small, pleasant activities can lead to bigger improvements in mood. |"
+    },
+    {
+      "chunk": 125,
+      "source_chunk": 142,
+      "split_part": 0,
+      "page_start": 74,
+      "page_end": 74,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 5.1 Overview of SbS skills and exercises",
+      "token_count": 264,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 5.1 Overview of SbS skills and exercises\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Breaking activities down (Module 2) | This exercise helps us break down more challenging activities into smaller more manageable steps. | 1. Think of an activity you would like to do that seems overwhelming. 2. Divide and schedule the activity into small and manageable steps. 3. Write down possible difficulties you might find when trying to do the scheduled activity, and how to overcome these. 4. Start trying to do the activity. | · It is common to find it hard to do activities when we do not feel well. · Anticipating when things will be difficult is also an important part of managing our stress. |\n| Mood tracking (Module 2) | Being aware of emotions and tracking them helps us notice patterns in how we feel, making it easier to understand what affects our mood. | 1. Notice how you are feeling. 2. Make a note of this using the Mood Tracker in the programme or in another way. 3. Add anything that is making you feel this way. | · It can be hard to understand why we feel a certain way. · Noticing and recording our mood or emotions can help us understand patterns. |"
+    },
+    {
+      "chunk": 126,
+      "source_chunk": 143,
+      "split_part": 0,
+      "page_start": 75,
+      "page_end": 75,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 5.1 Overview of SbS skills and exercises",
+      "token_count": 379,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 5.1 Overview of SbS skills and exercises\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Be kind to yourself (Module 3) | Being kind to ourselves means using kind words and actions with oneself. | 1. Unhook from unkind thoughts and feelings by noticing and naming them. 2. Speak to yourself kindly. You could also imagine filling one of your hands with kindness and placing it somewhere on your body where you feel pain. 3. Speak to others kindly and engage in kind actions. | · Being kind to ourselves gives us more energy to cope with stressful situations. · Being an encouraging friend to oneself is important in moments of doubt and distress. · It can also help us stay on the right track and keep up our positive activities. |\n| Social activities (Module 4) | Social activities help us to build social support and feel better. | 1. Think about social activities you might like to try, even if they seem difficult right now. 2. Try a social activity and notice how it affects your mood. | · It is important to spend time with others, even if it feels hard. · This is another way of breaking the \"sadness and withdrawal cycle\". · In general, seeing others helps us feel better. |\n| Warning signs (Module 5) | Knowing our warning signs, and how to cope with them, helps us to feel good again. | 1. Think about signs that show you are not coping well any more (these are your warning signs). 2. Write down a list of your warning signs. 3. Think of ways you can cope with your warning signs when they come up. | · It is common to feel worse again every once in a while. · Knowing our warning signs helps to do something to make ourselves feel better. |"
+    },
+    {
+      "chunk": 152,
+      "source_chunk": 169,
+      "split_part": 0,
+      "page_start": 86,
+      "page_end": 87,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Figure 6.1 Overview of DWM modules",
+      "token_count": 377,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Figure 6.1 Overview of DWM modules\n<!-- image -->\n- b The end contact can be combined with support contact 5 or delivered separately.\nTable 6.1 Overview of DWM skills and exercises\n\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Awareness exercise (Module 1) | The awareness exercise is sometimes called \"paying attention with curiosity\", which means paying full attention to whatever is happening right in front of us, without judging it as good or bad. | 1. Use your five senses to focus your full attention on an activity you are doing (such as eating, walking, cooking, cleaning, or talking or listening to someone). 2. Notice with curiosity what you can see, hear, touch, smell and taste. | · Paying attention with curiosity often helps us to focus on what we are doing and to do it better. · It can also help us to enjoy or appreciate what we are doing. |\n| Grounding (Module 1) | Grounding brings us back to the present moment and unhooks us when we're caught up in emotional storms (stress). | Steps for grounding: 1. Notice your thoughts and feelings. 2. Slow down and connect with your body by stretching, pushing your feet down and focusing on your breathing. 3. Refocus on the world around you and on what you are doing. | · When we are caught up in emotional storms (causing stress) and hooked by difficult thoughts and feelings, it is hard to do anything useful. Grounding can help us to refocus on what we need to do in a stressful situation. · Practising regularly, even when we are not very stressed, can help us to then use grounding in more difficult situations. |"
+    },
+    {
+      "chunk": 153,
+      "source_chunk": 170,
+      "split_part": 0,
+      "page_start": 88,
+      "page_end": 88,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Figure 6.1 Overview of DWM modules",
+      "token_count": 329,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Figure 6.1 Overview of DWM modules\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Unhooking (Module 2) | Like grounding, unhooking helps us to unhook from difficult thoughts and feelings. It is faster than grounding and can be done in just a few seconds. | 1. Notice a thought or feeling with curiosity. 2. Name the thought or feeling. 3. Refocus on the world around you and on what you are doing. | · Unhooking from difficult thoughts and feelings allows us to see them for what they are and reduces their control over our actions. · Like grounding, unhooking can help us to refocus on what we need to do and to act on our values. |\n| Acting on your values (Module 3) | Acting on our values means acting in line with our deepest desires for how we want to behave as human beings, what is important to us, what kind of person we want to be, and how we want to treat others. | 1. Choose the values that are most important to you (such as being kind, being supportive, being hard working). Only you can choose which values are most important to you; no one else can decide for you. 2. Pick one small action that would be in line with your values. This could be something you do, or something you say to someone. | · Acting on our values can give us a sense of purpose and meaning, even in stressful situations. |"
+    },
+    {
+      "chunk": 154,
+      "source_chunk": 171,
+      "split_part": 0,
+      "page_start": 89,
+      "page_end": 89,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Figure 6.1 Overview of DWM modules",
+      "token_count": 356,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Figure 6.1 Overview of DWM modules\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Values-guided problem solving (Module 3) | There are three approaches to any difficult situation: 1. leave; 2. change what can be changed, accept the pain that cannot be changed, and live by our values; 3. give up, lose touch with our values, and do things that do not help or make the situation worse. Values-guided problem solving focuses on option 2. | 1. Change what can be changed. Use your arms and legs and hands and feet and mouth to take action. Do whatever you can to improve your situation, no matter how small it might be. 2. Accept what cannot be changed. Use unhooking and grounding techniques to manage difficult thoughts and feelings. 3. Find other ways to live according to your values. | · Values-guided problem solving can empower us to take effective action in difficult and stressful situations. |\n| Being kind (Module 4) | Being kind means using kind words and actions with ourselves and with other people. | 1. Unhook from unkind thoughts and feelings by noticing and naming them. 2. Speak to yourself kindly. You could also imagine filling one of your hands with kindness and placing it somewhere on your body where you feel pain. 3. Speak to others kindly and engage in kind actions. | · Being kind to ourselves gives us more energy to cope with stressful situations and to help others. · Being kind to others can make a difference, even in very difficult situations. It can also give us a sense of connection, well-being and fulfilment. |"
+    },
+    {
+      "chunk": 155,
+      "source_chunk": 172,
+      "split_part": 0,
+      "page_start": 90,
+      "page_end": 91,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Figure 6.1 Overview of DWM modules",
+      "token_count": 201,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Figure 6.1 Overview of DWM modules\n| Skill | Summary | How to practise | Benefits of practice |\n| - | - | - | - |\n| Making room (Module 5) | Making room means allowing painful thoughts and feelings to come and go like the weather, instead of spending energy fighting them. | 1. Notice a difficult thought or feeling with curiosity. 2. Name the thought or feeling. 3. Allow painful thoughts or feelings to come and go, like the weather. Breathe into and around the feeling to make room for it. | · If we stop fighting with our thoughts and feelings and allow them to move through us, we will have more time and energy to act on our values. |\nThe rest of this chapter provides an overview of the content in each DWM module and gives tips for helpers on how to support service users, through example answers to likely questions. In all cases, make sure you personalize the content to each service user."
+    },
+    {
+      "chunk": 297,
+      "source_chunk": 314,
+      "split_part": 0,
+      "page_start": 146,
+      "page_end": 146,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Example supervision form for helpers from DWM guide",
+      "token_count": 250,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Example supervision form for helpers from DWM guide\n| Domain of information | Details |\n| - | - |\n| Background information | |\n| 1. Service user's age and gender | |\n| 2. Brief description of background (e.g. family, living situation), if available | |\n| 3. Brief description of main problems or stressors identified | |\n| 4. Number of contacts with the service user so far. Did the service user complete the module and do the exercises? | |\n| Supervision questions | |\n| 5. What questions or difficulties do you have with this service user that you would like help with? (e.g. about a particular problem the service user has, a DWM technique/exercise, a practical issue or a personal issue that the service user has mentioned) | - - - - |\n| 6. What has gone well so far? (e.g. did you feel particularly confident about how something went? Have you noticed the service user reporting any progress?) | - - |\n| Planning for the next call | Planning for the next call |\n| 7. Based on the received feedback, what is your plan for your next contact with the service user? | |"
+    },
+    {
+      "chunk": 299,
+      "source_chunk": 316,
+      "split_part": 0,
+      "page_start": 147,
+      "page_end": 147,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Pre-service planning",
+      "token_count": 59,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Pre-service planning\n1. Read and review the manual for guided selfhelp\n2. Read the intervention and practise the skills\nChecklist Date (if completed) Details\n- [ ] ☐ Completed\n- [ ] ☐ Not completed\n- [ ] ☐ Completed\n- [ ] ☐ Not completed"
+    },
+    {
+      "chunk": 300,
+      "source_chunk": 317,
+      "split_part": 0,
+      "page_start": 147,
+      "page_end": 147,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Welcome contact",
+      "token_count": 78,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Welcome contact\n1. Introduce the intervention ☐ Completed\n- [ ] ☐ Not completed\n2. Describe the helper's role ☐ Completed\n- [ ] ☐ Not completed\n3. Discuss confidentiality ☐ Completed\n- [ ] ☐ Not completed\n- [ ] ☐ Completed\n- [ ] ☐ Not completed\n4. Discuss the stress management online intervention\n5. Schedule a follow-up\n- [ ] ☐ Completed"
+    },
+    {
+      "chunk": 301,
+      "source_chunk": 318,
+      "split_part": 0,
+      "page_start": 147,
+      "page_end": 147,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Regular contacts",
+      "token_count": 80,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Regular contacts\n1. Greeting\n- [ ] ☐ Not completed\n- [ ] ☐ Completed\n2. Review service user's experience of the module\n3. Discuss practising the exercises and techniques\n- [ ] ☐ Not completed\n- [ ] ☐ Completed\n- [ ] ☐ Not completed\n- [ ] ☐ Completed\n- [ ] ☐ Not completed\n4. Schedule next meeting ☐ Completed\n- [ ] ☐ Not completed"
+    },
+    {
+      "chunk": 319,
+      "source_chunk": 336,
+      "split_part": 0,
+      "page_start": 153,
+      "page_end": 153,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Psychological self-help interventions",
+      "token_count": 226,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Psychological self-help interventions\n[Delivering self-help for individuals, featuring Step-by-Step and Doing What Matters in Times of Stress](https://doi.org/10.2471/B09738)\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n[https://doi.org/10.2471/B09738](https://doi.org/10.2471/B09738)\n[Web annex](https://doi.org/10.2471/B09738)\n[Step-by-Step](https://doi.org/10.2471/B09738)\n[A self-help intervention for depression](https://doi.org/10.2471/B09738)\n<!-- image -->"
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 4,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Psychological self-help interventions",
+      "token_count": 226,
+      "text": "Psychological self-help interventions\nDelivering self-help for individuals, featuring Step-by-Step and Doing What Matters in Times of Stress\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\n<!-- image -->\nDelivering self-help for individuals, featuring Step-by-Step and Doing What Matters in Times of Stress\nGeneric field-trial version 1.0,\n2026 Series on Low-Intensity Psychological Interventions - 7\n<!-- image -->\nPsychological self-help interventions: delivering self-help for individuals, featuring Step-by-Step and Doing What Matters in Times of Stress\nISBN 978-92-4-012078-5 (electronic version)\nISBN 978-92-4-012079-2 (print version)"
+    },
+    {
+      "chunk": 1,
+      "page_start": 4,
+      "page_end": 4,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "© World Health Organization 2026",
+      "token_count": 417,
+      "text": "© World Health Organization 2026\nSome rights reserved. This work is available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/licenses/by-nc-sa/3.0/igo).\nUnder the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes, provided the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion that WHO endorses any specific organization, products or services. The use of the WHO logo is not permitted. If you adapt the work, then you must license your work under the same or equivalent Creative Commons licence. If you create a translation of this work, you should add the following disclaimer along with the suggested citation: \"This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this translation. The original English edition shall be the binding and authentic edition\".\nAny mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation rules of the World Intellectual Property Organization (http://www.wipo.int/amc/en/mediation/rules/).\nSuggested citation. Psychological self-help interventions: delivering self-help for individuals, featuring Step-byStep and Doing What Matters in Times of Stress. Geneva: World Health Organization; 2026. Licence: CC BY-NCSA 3.0 IGO.\nCataloguing-in-Publication (CIP) data. CIP data are available at https://iris.who.int/.\nSales, rights and licensing. To purchase WHO publications, see https://www.who.int/publications/book-orders. To submit requests for commercial use and queries on rights and licensing, see https://www.who.int/copyright."
+    },
+    {
+      "chunk": 16,
+      "page_start": 14,
+      "page_end": 15,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1.1.2 Audience and structure",
+      "token_count": 305,
+      "text": "1.1.2 Audience and structure\nThis manual is written for:\n- programme managers in organizations who want to implement a self-help intervention; and\n- the helpers, supervisors and other workers who will be involved in its delivery.\nThe document is divided into four main parts, including the annexes (Figure 1.1 Content overview of this document). These are as follows: relevant information giving a general introduction to selfhelp interventions (Chapter 1. Introduction); practical information for setting up and providing individually delivered self-help interventions, which covers both guided and unguided interventions broadly (Chapter 2. For organizations: how to set up individually delivered self-help) and provides specific information that is used in running guided self-help interventions (Chapter 3. Introduction to providing support in guided self-help and Chapter 4. How to provide support to service users); information specific to setting up SbS and DWM (Chapter 5. Information for helpers delivering Step-by-Step and Chapter 6. Information for helpers delivering Doing What Matters in Times of Stress (DWM)); and annexes with scripts and other key tools for helpers.\nIf you are interested in setting up DWM or SbS as a guided intervention and want to know specifically how helpers deliver support in 15 minutes, you may want to start by reviewing Chapter 4. How to provide support to service users and then come back to the rest of the manual.\nFigure 1.1 Content overview of this document"
+    },
+    {
+      "chunk": 21,
+      "page_start": 15,
+      "page_end": 16,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "1.1.3 Approach to development",
+      "token_count": 267,
+      "text": "1.1.3 Approach to development\nThis document manual builds upon prior work involving testing and implementing the WHO psychological interventions Step-by-Step and Doing What Matters in Times of Stress. It originated from the need to develop resources for stakeholders to support implementation of WHO recommendations of self-help interventions for common mental health conditions. The development of both interventions and this manual was informed by an extensive literature review and consultation with experts. The process included focus group discussions, adaptation workshops, review of content by people with lived experience of mental health conditions, formative research and RCTs.\nThe guided self-help model presented in this manual has been rigorously tested through pilot trials, feasibility RCTs and definitive RCTs. The content draws from unpublished implementation manuals used in the various research trials. These findings have been updated to reflect further insights gained from WHO recommendations and from practical experience with delivering the interventions.\nThe Step-by-Step intervention material, included as web annex, was developed through an iterative process. Following an extensive literature review and expert consultations, an initial draft was created and subsequently reviewed by both experts and service users. Based on their feedback, revisions were made, and a first version of the intervention was piloted in Lebanon. Insights and feedback from this pilot and all other research phases were then incorporated into the final materials."
+    },
+    {
+      "chunk": 35,
+      "page_start": 28,
+      "page_end": 28,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "2.1.1 Intervention selection",
+      "token_count": 303,
+      "text": "2.1.1 Intervention selection\nTable 2.1 Overview of SbS and DWM\n\n| | SbS (see Chapter 5) | DWM (see Chapter 6) |\n| - | - | - |\n| Target population | Adults with moderate to severe depressive symptoms. | Adults experiencing psychological distress of various levels of severity. |\n| Main therapeutic components | Behavioural activation, stress management and other techniques. | Acceptance and commitment therapy. DWM is the book component of Self-Help Plus (SH+) (31) and includes all of the same self-help techniques and content. It has subsequently been used and tested as a stand-alone individually delivered intervention. |\n| Format | Digital, but could be delivered in different formats, such as a book or video. | Digital and book, but could be delivered in different formats, such as a video. |\n| Length | Five modules. | Five modules. |\n| Guidance | One welcome contact and five weekly support contacts of 15 minutes per week. | Tested with both five weekly support contacts and three support contacts over five weeks of 15 minutes. |\n| Adaptation | SbS follows individual storylines developed for different genders and age groups, including a young person story. This helps it feel more personalized but increases the amount of content to adapt. | DWM follows a group of narrators explaining key concepts. Images are already adapted for multiple cultures and text is short, so the amount of adaptation required may be more limited. |"
+    },
+    {
+      "chunk": 43,
+      "page_start": 33,
+      "page_end": 33,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "2.1.4 Human resource needs",
+      "token_count": 65,
+      "text": "2.1.4 Human resource needs\nEven when delivering self-help interventions remotely, it can be useful to have the team of helpers working in a centralized location to create a supportive atmosphere.\nFor information on how to prepare the team through recruitment, training and supervision, see section 2.3 Prepare the workforce."
+    },
+    {
+      "chunk": 64,
+      "page_start": 43,
+      "page_end": 43,
+      "content_type": "text",
+      "content_subtype": "callout",
+      "heading_path": "3. Introduction to providing support in guided self-help",
+      "token_count": 373,
+      "text": "3. Introduction to providing support in guided self-help\nThis chapter is primarily written for helpers who support people through a guided self-help intervention. Programme managers may also find it useful to get a thorough understanding of how helper guidance should work in practice.\nIn the sections that follow, we outline the general support model used in RCTs for SbS and DWM (10, 23). It assumes that, as in the trials, helpers will be non-specialists with limited or no previous experience of working in mental health care. Much of the information here may also be helpful to health care providers delivering guided self-help as part of routine appointments.\nAs with other parts of this manual, the advice given below can and should be adapted to specific organizational needs. For example, it assumes you are providing remote support, but can easily be adapted for in-person support. Similarly, it recommends weekly contacts with the helper, but implementing organizations may have good reason to change the frequency of contacts. For example, there is early evidence that DWM is effective with only three contacts (at the start, after two weeks and at the end) (22). Even if you are not planning to use SbS or DWM, you can use the advice in this manual to help plan and implement other evidence-based guided self-help.\nChapters 5 and 6 of this manual offer specific tips and tools on how to support people through SbS and DWM. A training manual for SbS and DWM helpers will be published by WHO and will give further information on how helpers should provide support for these interventions. 6\nNote for programme managers. Many sections in this chapter suggest that further information will be provided by the implementing organization. Please read through this chapter and adapt the approach to your setting before sharing any information with helpers."
+    },
+    {
+      "chunk": 85,
+      "page_start": 54,
+      "page_end": 55,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "4.1 Welcome contact",
+      "token_count": 314,
+      "text": "4.1 Welcome contact\nYour first contact with a service user is different to the others. It is a welcome call or message and happens after someone has signed up to the intervention. This contact is an opportunity to provide more information about the intervention, to introduce yourself and to establish how you will work together. This may help reduce drop-out later on. See Annex 1A. Summary of tasks for welcome contact for a summary of tasks for the welcome contact and Annex 1B. Example script and text for welcome contact for example scripts and text.\nDuring the welcome contact, you will:\n- welcome the person to the intervention and briefly introduce yourself;\n- tell them about the intervention (including that it requires practice between modules);\n- (for a guided intervention) explain what they can expect from you as a helper - tell them you are not a mental health specialist and explain what they can expect of you as their helper;\n- (if there is an option of guidance, but they have not chosen it) explain what the guidance is like and that they can always switch to the guidance option;\n- explain confidentiality and its limitations;\n- give them the opportunity to ask any questions;\n- (for a guided intervention) remind them of the day and time of your next contact; and\n- say goodbye.\nThe aim of the welcome contact is to introduce the person to the intervention and yourself, to manage expectations and to help them feel more at ease. Remember to read through any information given to you (such as referral information) before you make the welcome contact."
+    },
+    {
+      "chunk": 107,
+      "page_start": 63,
+      "page_end": 64,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "4.8.2 Use basic helping skills",
+      "token_count": 374,
+      "text": "4.8.2 Use basic helping skills\nStep 2 in the procedure for dealing with safety concerns is to use your basic helping skills to remind the service user about confidentiality, learn more about their situation and build trust.\nListen empathetically and non-judgementally, and validate the person's experience. For example:\n\"I'm glad you're sharing these things with me. Before we speak more, I want you to understand that everything you tell me will be kept private, unless you or someone else is in immediate danger. That means that I will not talk with your family or other people outside the [add name] team about what you have said, without your permission. But if I am very concerned that you or someone else is in immediate danger, my supervisor and I may need to speak with people outside the [add name] team to get you the best kind of help and ensure the safety of the people involved. This is because my role is to care about your welfare and safety.\"\nAdapt this example text according to the procedures of your organization and any national guidelines.\nTo learn more about the person's situation and build trust, you could ask questions such as:\n- \"Can you tell me a bit more about the situation?\"\n- \"What has happened to make you feel this way?\"\n- \"How is this situation affecting you?\"\n- \"What do you mean by that?\"\nDepending on the situation, you may need to assess imminent risk of suicide. Your organization should have a protocol for you to follow (see Annex 3A. Example protocol for assessing imminent risk of suicide for an example of what that might look like). If you have to ask about suicide and selfharm, make your questions clear and direct (Box 4.3 How to ask about suicide and self-harm)."
+    },
+    {
+      "chunk": 128,
+      "page_start": 76,
+      "page_end": 77,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "5.2.1 Overview of support contacts for SbS",
+      "token_count": 366,
+      "text": "5.2.1 Overview of support contacts for SbS\nThe following approach can be used when delivering SbS with support contacts (see Figure 5.1 Overview of SbS modules). Scripts are available in the annexes for live contacts and example text for messages for delayed contacts.\n1. Welcome contact. See section 4.1 Welcome contact for general information on the welcome contact. In SbS, the welcome contact can be combined with additional information to support the module \"Introduction: take the first steps\" (see section 5.2.2 Introduction: take the first steps). See Annex 1A. Summary of tasks for welcome contact for a summary of tasks for the welcome contact and Annex 1B. Example script and text for welcome contact for an example script and text.\n2. Support contacts. These are delivered weekly and are tailored to the specific SbS modules. Aim for 15 minutes per support contact.\n- For general information, see Chapter 4. How to provide support to service users.\n- See Annex 1C. Summary of tasks for regular support contact for a summary of tasks for regular support contacts and Annex 1D. Example script and text for regular support contact for an example script or message text.\n- Before each contact, review the additional information about the specific module covered in the contact and adapt sections 3 and 4 of the example script or text (Annex 1D. Example script and text for regular support contact) (see sections below).\n3. End contact. This contact can be integrated in the last support contact (module 5: \"Remember, change takes time\"). See section 4.3 End contact for general information, Annex 1E. Summary of tasks for end contact for a summary of tasks for the end contact and Annex 1F. Example script and text messages for end contact for an example script and text."
+    },
+    {
+      "chunk": 149,
+      "page_start": 84,
+      "page_end": 85,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "6.1 Overview",
+      "token_count": 411,
+      "text": "6.1 Overview\nDWM is a brief self-help intervention that is one part of WHO's group stress management intervention, Self-Help Plus (9, 31). DWM can also be delivered as an individual self-help intervention. It has been used in research trials as a web application (50) and found to be effective using five support contacts. In addition, the book version of DWM has been found to be effective in a pilot RCT (16) using three phone support contacts, and in a study in Iraq using three face-to-face support contacts (24). Results from unpublished field tests with over 500 people in Syrian Arab Republic and Türkiye showed significant reductions in distress for people using DWM.\nDWM is:\n- based on acceptance and commitment therapy and adapted for many settings;\n- intended as an intervention for managing stress and coping with adversity;\n- evaluated for use with people aged over 18 years;\n- designed to be completed over a short period of time;\n- practical, so that people can practise skills regularly on their own; and\n- illustrated, with accompanying audio recordings to support regular practice.\nDWM content is publicly available as an illustrated book in a number of languages (9), and in a more limited number of languages as a web app (https://dwmatters.eu). WHO has a translation and adaptation package available on request that contains all DWM content (text and illustrations) and supports new translations or implementations. 8\nDWM can be provided in different ways, including by lay providers with weekly support contacts and by primary health care providers with follow-up as part of routine appointments. It can also be provided as unguided self-help, by making the book or web app accessible to people.\nIn the book version of DWM, each chapter introduces a skill, summarizes key tools and activities, and provides guidance and audio exercises to help people practise them."
+    },
+    {
+      "chunk": 171,
+      "page_start": 97,
+      "page_end": 97,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "6.2.6 Module 5. Making room",
+      "token_count": 212,
+      "text": "6.2.6 Module 5. Making room\nModule 5 comprises five components.\n1. Introduction. Service users review the unhooking concept and are encouraged to keep practising.\n2. Making room for pain. Service users are introduced to the concept of making room using metaphors.\n3. Notice it, name it, and make room for it. Service users make room for difficult thoughts and feelings by noticing and naming them and allowing them to be present, instead of struggling to get rid of them. They practise this skill with an audio exercise.\n4. Being kind to yourself. Service users do a new audio exercise, imagining their hand filling with kindness and using that hand to pour kindness into any area of their body where they feel pain.\n5. What comes next. Service users are congratulated for completing DWM and are encouraged to continue practising the skills they have learnt at home. If relevant, remind people that they will be asked to fill out a questionnaire and share how they can access this."
+    },
+    {
+      "chunk": 192,
+      "page_start": 108,
+      "page_end": 108,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "3[A]. (If person has chosen guidance) Explain what the service user can expect of you as their helper",
+      "token_count": 53,
+      "text": "3[A]. (If person has chosen guidance) Explain what the service user can expect of you as their helper\nIf you are using live contacts, tell the person you will let them know when you have five minutes left for the support contact."
+    },
+    {
+      "chunk": 213,
+      "page_start": 117,
+      "page_end": 117,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1. Greeting",
+      "token_count": 63,
+      "text": "1. Greeting\n- \"I am contacting you today to give you some support on using [intervention name]. It's a chance for us to discuss your progress and help with anything that has been difficult in using it. I have [number of minutes] to discuss this with you today.\""
+    },
+    {
+      "chunk": 235,
+      "page_start": 124,
+      "page_end": 124,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Annex 2A. Service user experiences distress during a contact",
+      "token_count": 85,
+      "text": "Annex 2A. Service user experiences distress during a contact\nAnger, sadness or anxiety are normal human emotions. It is uncommon but it can happen that a service user becomes very distressed during a support contact. They may get angry, sad or worried. In some cases they may be very anxious (for example, experiencing an anxiety or panic attack where they find it hard to breathe or being anxious about a serious health problem)."
+    },
+    {
+      "chunk": 256,
+      "page_start": 131,
+      "page_end": 131,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "2. Look forward to next week",
+      "token_count": 83,
+      "text": "2. Look forward to next week\nTell them you look forward to picking things up with them at the same time next week.\nIn the case of delayed contacts, remind the person that you have [15 minutes] allocated to them each week, and ask them to prioritize the key things that they want to tell you that week. This will help you to spend your time on the most important elements."
+    },
+    {
+      "chunk": 277,
+      "page_start": 138,
+      "page_end": 138,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "If the service user wants to stop",
+      "token_count": 110,
+      "text": "If the service user wants to stop\nTell them it is okay to want to stop and try to understand more while not putting pressure on them.\n- \"I understand you want to stop and that's okay. I just want to understand better - what is it that you're unhappy about?\"\nChoose your response depending on their reason for wanting to stop (see other subsections of Annex 2. Troubleshooting templates). If they still want to stop the modules after you have talked to them, then accept their decision."
+    },
+    {
+      "chunk": 299,
+      "page_start": 147,
+      "page_end": 147,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Pre-service planning",
+      "token_count": 59,
+      "text": "Pre-service planning\n1. Read and review the manual for guided selfhelp\n2. Read the intervention and practise the skills\nChecklist Date (if completed) Details\n- [ ] ☐ Completed\n- [ ] ☐ Not completed\n- [ ] ☐ Completed\n- [ ] ☐ Not completed"
+    },
+    {
+      "chunk": 320,
+      "page_start": 156,
+      "page_end": 156,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "World Health Organization",
+      "token_count": 84,
+      "text": "World Health Organization\nMental Health and Substance Use Unit\nDepartment of Noncommunicable Diseases and Mental Health\nAvenue Appia 20\nCH-1211 Geneva 27\nSwitzerland\nEmail:\npsych\\_interventions@who.int\nWebsite:\n[https://www.who.int/health-topics/mental-health](https://www.who.int/health-topics/mental-health)"
+    }
+  ]
+}

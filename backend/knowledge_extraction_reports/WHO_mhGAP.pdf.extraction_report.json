@@ -1,0 +1,2436 @@
+{
+  "report_schema_version": 2,
+  "source": "WHO mhGAP.pdf",
+  "source_pages_detected": 184,
+  "raw_docling_chunks": 488,
+  "chunks_created": 487,
+  "chunk_type_counts": {
+    "figure": 14,
+    "text": 66,
+    "table": 74,
+    "list": 333
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 3,
+    "median": 201,
+    "mean": 224.36,
+    "max": 450,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      184
+    ],
+    "pages_without_chunks": [
+      2,
+      5,
+      6,
+      183
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 184,
+    "coverage_ratio": 0.9783
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 338,
+    "page_headers": 162,
+    "page_footers": 176,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 184,
+    "predominantly_rotated_text_pages": [],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": [
+      19,
+      20,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      113,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      164,
+      173
+    ]
+  },
+  "applied_page_rotations": [],
+  "document_level_warnings": [
+    {
+      "type": "probable_multi_column_layout",
+      "page": 19
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 20
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 34
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 35
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 36
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 37
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 38
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 39
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 40
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 41
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 42
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 43
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 44
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 45
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 46
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 47
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 48
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 49
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 50
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 51
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 52
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 53
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 54
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 55
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 56
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 57
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 58
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 59
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 60
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 61
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 62
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 63
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 64
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 65
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 66
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 67
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 68
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 69
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 70
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 71
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 72
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 73
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 74
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 75
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 76
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 77
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 78
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 79
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 80
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 81
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 82
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 83
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 84
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 85
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 86
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 87
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 88
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 89
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 90
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 91
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 92
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 93
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 94
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 95
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 96
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 97
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 98
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 99
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 100
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 101
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 102
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 103
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 104
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 105
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 106
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 107
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 108
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 109
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 110
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 111
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 113
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 115
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 116
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 117
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 118
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 119
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 120
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 121
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 122
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 123
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 124
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 125
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 126
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 127
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 128
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 129
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 130
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 131
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 132
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 133
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 134
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 135
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 136
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 137
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 139
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 140
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 141
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 142
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 143
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 144
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 145
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 146
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 147
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 148
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 149
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 150
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 151
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 152
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 153
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 154
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 155
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 156
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 157
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 158
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 159
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 160
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 161
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 162
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 164
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 173
+    }
+  ],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 2,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 4,
+      "page_numbers": [
+        5
+      ],
+      "text": "Contents\n| Acknowledgements | Acknowledgements | Acknowledgements | v |\n| - | - | - | - |\n| Abbreviations | Abbreviations | Abbreviations | vii |\n| Glossary | Glossary | Glossary | ix |\n| Executive summary | Executive summary | Executive summary | xvii |\n| 1. Introduction | 1. Introduction | 1. Introduction | 2 |\n| | 1.1 | Background and rationale | 2 |\n| | 1.2 | Aims and objectives | 3 |\n| | 1.3 | Target audience | 3 |\n| | 1.4 | Scope of the guideline | 3 |\n| 2. Methods | 2. Methods | 2. Methods | 4 |\n| | 2.1 | Contributors to the guideline | 4 |\n| | 2.2 | Declaration of interests | 5 |\n| | 2.3 | Identifying, appraising and synthesizing available evidence | 5 |\n| | 2.4 | Decision-making during the GDG meetings | 9 |\n| | 2.5 | Document preparation and peer review | 9 |\n| 3. Recommendations | 3. Recommendations | 3. Recommendations | 11 |\n| | 3.1 | Alcohol use disorders (ALC) | 12 |\n| | 3.2 | Anxiety (ANX) | 18 |\n| | 3.3 | Child and adolescent mental disorders (CAMH) | 28 |\n| | 3.4 | Conditions related to stress (STR) | 46 |\n| | 3.5 3.6 | Dementia (DEM) Depression (DEP) | 50 58 |\n| | 3.7 | Drug use disorders (DRU) | 64 |\n| | 3.8 | Epilepsy and seizures (EPI) | |\n| | | | 76 |\n| | 3.9 | Overarching areas (OVE) | 86 |\n| | 3.10 | Psychosis and bipolar disorder (PSY) | 88 |\n| | 3.11 | Self-harm and suicide (SUI) | 108 |"
+    },
+    {
+      "source_chunk": 5,
+      "page_numbers": [
+        6
+      ],
+      "text": "Contents\n| 4. | Publication | 112 |\n| - | - | - |\n| 4.1 | Publication and dissemination of the guideline | 112 |\n| 4.2 | Derivative products | 112 |\n| 4.3 | WHO model list of essential medicines (EML) | 112 |\n| 5. | \u0007Monitoring and evaluating the impact of the guideline | 113 |\n| 6. | Updating the evidence | 114 |\n| References | References | 115 |\n| Annex 1. Contributors to the guideline | Annex 1. Contributors to the guideline | 130 |\n| Annex 2. Managing declarations of interest and conflicts of interest | Annex 2. Managing declarations of interest and conflicts of interest | 145 |"
+    }
+  ],
+  "exact_duplicate_chunks": [],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 18,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "<!-- image -->\n<!-- image -->"
+    },
+    {
+      "chunk": 1,
+      "source_chunk": 1,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 4,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Mental Health Gap Action Programme (mhGAP) guideline for mental, neurological and substance use disorders",
+      "token_count": 175,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Mental Health Gap Action Programme (mhGAP) guideline for mental, neurological and substance use disorders\n<!-- image -->\n<!-- image -->\n<!-- image -->\nMental Health Gap Action Programme (mhGAP) guideline for mental, neurological and substance use disorders\nThis publication is the update of the documents published in 2010 entitled \"mhGAP intervention guide for mental, neurological and substance use disorders in non-specialized health settings: mental health Gap Action Programme (mhGAP)\" and in 2015 entitled \"Update of the Mental Health Gap Action Programme (mhGAP) guidelines for mental, neurological and substance use disorders, 2015\".\nISBN 978-92-4-008427-8 (electronic version)\nISBN 978-92-4-008428-5 (print version)"
+    },
+    {
+      "chunk": 9,
+      "source_chunk": 11,
+      "split_part": 0,
+      "page_start": 9,
+      "page_end": 9,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Abbreviations",
+      "token_count": 273,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Abbreviations\n| 3WV | third wave therapies |\n| - | - |\n| ADHD | attention deficit hyperactivity disorder |\n| ASM | antiseizure medicine |\n| BAT | behavioural activation therapy |\n| CBT | cognitive behavioural therapy |\n| CERQual | Confidence in the Evidence from Reviews of Qualitative Research |\n| CC | collaborative care |\n| CI | confidence interval |\n| DALY | disability-adjusted life-year |\n| DBT | dialectical behaviour therapy |\n| DLD | developmental language disorder |\n| DOI | declaration of interest |\n| DSM | Diagnostic and statistical manual of mental disorders |\n| DYN | brief psychodynamic therapy |\n| EMDR | eye movement desensitization and reprocessing |\n| ERG | External Review Group |\n| EtD | Evidence to Decision |\n| GAD | generalized anxiety disorder |\n| GDG | Guideline Development Group |\n| GRADE | Grading of Recommendations Assessment, Development and Evaluations |\n| GRC | Guidelines Review Committee (at WHO) |\n| HDD | heavy drinking days |\n| iCBT | internet-based CBT |\n| ICD | International statistical classification of diseases and related health problems |\n| IPT | interpersonal therapy |\n| IT | information technology |\n| LAI | long-acting injection |"
+    },
+    {
+      "chunk": 10,
+      "source_chunk": 12,
+      "split_part": 0,
+      "page_start": 10,
+      "page_end": 10,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Abbreviations",
+      "token_count": 207,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Abbreviations\n| LMIC | low- and middle-income country |\n| - | - |\n| LRT | life review therapy |\n| mhGAP | Mental Health Gap Action Programme |\n| MNS | mental, neurological and substance use |\n| NGO | nongovernmental organization |\n| NMA | network meta-analysis |\n| NSAID | non-steroidal anti-inflammatory drug |\n| PICO | population, intervention, comparator, outcome |\n| PST | problem-solving therapy |\n| PTSD | post-traumatic stress disorder |\n| RCT | randomized controlled trial |\n| SSRI | selective serotonin reuptake inhibitor |\n| SMD | standardized mean difference |\n| SUDEP | Sudden Unexpected Death in Epilepsy |\n| SUP | supportive counselling |\n| TAU | treatment as usual |\n| TB | tuberculosis |\n| TCA | tricyclic antidepressant |\n| TEG | Topic Expert Group |\n| WHO | World Health Organization |\nviii"
+    },
+    {
+      "chunk": 11,
+      "source_chunk": 13,
+      "split_part": 0,
+      "page_start": 11,
+      "page_end": 11,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 428,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Activities of daily living (ADLs) | A concept of functioning - activities of daily living are basic activities that are necessary for independent living, including eating, bathing and toileting. This concept has several assessment tools to determine an individual's ability to perform the activity with or without assistance. |\n| - | - |\n| Agitation | Marked restlessness and excessive motor activity, accompanied by anxiety. |\n| Akathisia | A subjective sense of restlessness, often accompanied by observed excessive movements (e.g. fidgety movements of the legs, rocking from foot to foot, pacing, inability to sit or stand still). |\n| Akinesia | The absence or lack of voluntary movement. A state of difficulty initiating movements or changing from one motor pattern to another that is associated with Parkinson's disease. |\n| Altered mental state | A changed level of awareness or mental state that falls short of unconsciousness which is often induced by substance intake or other mental or neurological conditions. Examples include confusion and disorientation. See delirium and confusional state. |\n| Alzheimer's disease | A primary degenerative cerebral disease of unknown etiology in the majority of cases with characteristic neuropathological and neurochemical features. The disorder is usually insidious in onset and develops slowly but steadily over a period of several years. |\n| Anticholinergic side-effects | Anticholinergic medicines block the effects of acetylcholine at muscarinic receptors. Anticholinergic side-effects include dryness of the mouth, urinary frequency or retention, palpitations and sinus tachycardia. |\n| Ataxia | Failure of muscular coordination. People with ataxia have problems with coordination because parts of the nervous system that control movement and balance are affected. Ataxia may affect the fingers, hands, arms, legs, body, speech and eye movements. |\n| Autonomy | The perceived ability to control, cope with and make personal decisions about how one lives on a daily basis, according to one's own rules and preferences. |"
+    },
+    {
+      "chunk": 12,
+      "source_chunk": 14,
+      "split_part": 0,
+      "page_start": 11,
+      "page_end": 12,
+      "content_type": "table",
+      "content_subtype": "callout",
+      "heading_path": "Glossary",
+      "token_count": 434,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\nNote: Some of these terms are not used in this guideline document but are used in the accompanying evidence profiles, which are available online.\n| Behavioural activation | Psychological treatment that focuses on improving mood by engaging again in activities that are task-oriented and used to be enjoyable, in spite of current low mood. It may be used as a stand-alone treatment, and it is also a component of cognitive behavioural therapy (CBT). |\n| - | - |\n| Bereavement | A process of loss, grief and recovery, usually associated with death. |\n| Cerebrovascular accident | A sudden disturbance of cerebral function attributable to vascular disease, principally thrombosis, haemorrhage or embolism. |\n| Cognitive | Mental processes associated with thinking. These include reasoning, remembering, judgement, problem-solving and planning. |\n| Cognitive behavioural therapy (CBT) | Psychological treatment that combines cognitive components (aimed at thinking differently, e.g. through identifying and challenging unrealistic negative thoughts) and behavioural components (aimed at doing things differently, e.g. by helping the person to do more rewarding activities). |\n| Comorbid, comorbidity | Describing diseases or disorders that exist simultaneously. |\n| Confidentiality | Privacy in the context of privileged communication (e.g. patient-doctor consultations) and medical records is safeguarded. |\n| Confusion, confusional state | A state of impaired consciousness associated with acute or chronic cerebral organic disease. Clinically, it is characterized by disorientation, slowness of mental processes with scanty association of ideas, apathy, lack of initiative, fatigue and poor attention. In mild confusional states, rational responses and behaviour may be provoked by examination, but more severe degrees of the disorder render the individual unable to retain contact with the environment. |\n| Contingency management therapy | A structured method of rewarding certain desired behaviours, such as attending treatment and avoiding harmful substance use. Rewards for desired behaviours are reduced over time as the natural rewards become established. |"
+    },
+    {
+      "chunk": 13,
+      "source_chunk": 15,
+      "split_part": 0,
+      "page_start": 12,
+      "page_end": 12,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 244,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Behavioural activation | Psychological treatment that focuses on improving mood by engaging again in activities that are task-oriented and used to be enjoyable, in spite of current low mood. It may be used as a stand-alone treatment, and it is also a component of cognitive behavioural therapy (CBT). |\n| - | - |\n| Convulsion, convulsive movement | Clinical or subclinical disturbance of cortical function due to a sudden, abnormal, excessive and disorganized discharge of brain cells (see seizure). Clinical manifestations include abnormal motor, sensory and psychic phenomena. |\n| Delirium | Transient fluctuating mental state characterized by disturbed attention (i.e. reduced ability to direct, focus, sustain and shift attention) and awareness (i.e. reduced orientation to the environment) that develops over a short period of time and tends to fluctuate during the course of a day. It is accompanied by (other) disturbances of perception, memory, thinking, emotions or psychomotor functions. It may result from acute organic causes such as infections, medication, metabolic abnormalities, substance intoxication or substance withdrawal. |"
+    },
+    {
+      "chunk": 14,
+      "source_chunk": 16,
+      "split_part": 0,
+      "page_start": 13,
+      "page_end": 13,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 386,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Delusion | Fixed belief that is contrary to available evidence. It cannot be changed by rational argument and it is not accepted by other members of the person's culture or subculture (i.e. it is not an aspect of religious faith). |\n| - | - |\n| Detoxification | The process by which an individual is withdrawn from the effects of a psychoactive substance. Also referring to a clinical procedure, the withdrawal process is carried out in a safe and effective manner, such that withdrawal symptoms are minimized. |\n| Disability | Any restriction or lack (resulting from an impairment) of ability to perform an activity in the manner, or within the range, considered to be normal for a human being. The term \"disability\" reflects the consequences of impairment in terms of functional performance and activity by the individual. |\n| Disinhibited behaviour, disinhibition | Lack of restraint manifested in disregard for social conventions, impulsivity and poor risk assessment. It can affect motor, emotional, cognitive and perceptual aspects of a person's functioning. |\n| Disorganized/disordered thinking | A disturbance in the associative thought process typically manifested in speech in which the person shifts suddenly from one topic to another that is unrelated or minimally related to the first. The individual gives no indication of being aware of the disconnectedness or illogicality of his or her thinking. |\n| Disorganized behaviour | Behaviour including posture, gait and other activity that is unpredictable or not goal-directed (e.g. shouting at strangers on the street). |\n| Distractibility | Difficulty concentrating and focusing on tasks; attention is easily diverted by extraneous stimuli. |\n| Dystonia | Sustained muscle contraction or involuntary movements that can lead to fixed abnormal postures. See tardive dyskinesia. |"
+    },
+    {
+      "chunk": 15,
+      "source_chunk": 17,
+      "split_part": 0,
+      "page_start": 13,
+      "page_end": 13,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 220,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Delusion | Fixed belief that is contrary to available evidence. It cannot be changed by rational argument and it is not accepted by other members of the person's culture or subculture (i.e. it is not an aspect of religious faith). |\n| - | - |\n| Eclampsia | Any condition affecting pregnant women, characterized by seizure or convulsions newly arising in pregnancy. The condition is often associated with pregnancy-induced hypertension, convulsions, seizure, anxiety, epigastric pain, severe headache, blurred vision, proteinuria and oedema that may occur during pregnancy, labour or the puerperium. |\n| Elevated mood | A positive mood state typically characterized by increased energy and self- esteem which may be out of proportion to the individual's life circumstances. |\n| Extrapyramidal side-effects/ symptoms (EPS) | Abnormalities in muscle movement, mostly caused by antipsychotic medication. These include muscle tremors, stiffness, spasms and/or akathisia. |"
+    },
+    {
+      "chunk": 16,
+      "source_chunk": 18,
+      "split_part": 0,
+      "page_start": 14,
+      "page_end": 14,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 390,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Family therapy | Counselling that entails multiple (usually more than six) planned sessions over a period of months. It should be delivered to individual families or groups of families, and should include the person living with mental illness, if feasible. It has supportive and educational or treatment functions. It often includes negotiated problem-solving or crisis management work. |\n| - | - |\n| Fits | Colloquial term for convulsions. See convulsion. |\n| Focal deficits | Neurological signs that are observable bodily phenomena or responses suggestive of the localization of a relatively circumscribed lesion of the nervous system. |\n| Hallucination | False perception of reality; seeing, hearing, feeling, smelling or tasting things that are not real. |\n| Hepatic encephalopathy | Abnormal mental state including drowsiness, confusion or coma caused by liver dysfunction. |\n| Hyperarousal | Intense and prolonged autonomic discharge accompanied by a state of frozen watchfulness and alertness to environmental stimuli. Such responses are seen most frequently in post-traumatic stress disorders (PTSDs) and often associated with substance use or withdrawal. |\n| Hypersensitivity reaction | Hypersensitivity reactions are adverse effects of pharmaceutical formulations (including active drugs and excipients) that clinically resemble allergy. It belongs to type B adverse drug reactions, which are defined by the World Health Organization (WHO) as the dose-independent, unpredictable, noxious and unintended response to a medicine taken at a dose normally used in humans. It covers many different clinical phenotypes with variable onset and severity. |\n| Idiosyncratic reaction | Individual, unpredictable and non-dose-dependent response to any substance: drowsiness or euphoria, flushing, carpopedal spasms, apnoea, etc. |"
+    },
+    {
+      "chunk": 17,
+      "source_chunk": 19,
+      "split_part": 0,
+      "page_start": 14,
+      "page_end": 14,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 248,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Family therapy | Counselling that entails multiple (usually more than six) planned sessions over a period of months. It should be delivered to individual families or groups of families, and should include the person living with mental illness, if feasible. It has supportive and educational or treatment functions. It often includes negotiated problem-solving or crisis management work. |\n| - | - |\n| Informed consent | The process by which the health worker discloses appropriate information to a person who can then make a voluntary choice to accept or refuse treatment. Informed consent includes a discussion of the following elements: the nature of the decision/procedure; reasonable alternatives to the proposed intervention; the relevant risks, benefits and uncertainties related to each alternative; assessment of the person's understanding; and the acceptance of the intervention by the person. |\n| Interpersonal therapy (IPT) | Psychological treatment that focuses on the link between depressive symptoms and interpersonal problems, especially those involving grief, disputes, life changes and social isolation. It is also known as interpersonal psychotherapy. |\n| Irritability, irritable mood | A mood state characterized by being easily annoyed and provoked to anger, out of proportion to the circumstances. |"
+    },
+    {
+      "chunk": 18,
+      "source_chunk": 20,
+      "split_part": 0,
+      "page_start": 15,
+      "page_end": 15,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 450,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Motivational enhancement therapy | A structured therapy (lasting up to four sessions) to help people with substance use disorders. It involves an approach to motivate change by using motivational interviewing techniques, i.e. engaging the person in a discussion about their substance use, including perceived benefits and harms in relation to the person's own values, avoiding arguing with the person if there is resistance, encouraging the person to decide for themselves what their goal may be. |\n| - | - |\n| Motor twitching | See convulsion. |\n| Neuroleptic malignant syndrome (NMS) | A rare but life-threatening condition caused by antipsychotic medication, which is characterized by fever, delirium, muscular rigidity and high blood pressure. |\n| Occupational therapy | Therapy designed to help individuals improve their independence in daily living activities through rehabilitation, exercises and the use of assistive devices. In addition, such therapy provides activities to promote growth, self-fulfilment and self-esteem. |\n| Oppositional behaviour | Markedly defiant, disobedient, provocative or spiteful behaviour that may be manifest in prevailing, persistent angry or irritable mood, often accompanied by severe temper outbursts or in headstrong, argumentative and defiant behaviour. |\n| Parent skills training | A family of treatment programmes that aims to change parenting behaviours and strengthen confidence in adoption of effective parenting strategies. It involves teaching parents emotional communication and positive parent-child interaction skills, and positive reinforcement methods to improve children's/ adolescents' behaviour and functioning. |\n| Polytherapy | Provision of more than one medicine at the same time for the same condition. |\n| Privacy | The state of being free from unsanctioned intrusion. For example, personal privacy in daily living activities (e.g. for clients in residential facilities) or confidential health records. |\n| Problem-solving counselling | Psychological treatment that involves the systematic use of problem identification and problem-solving techniques over a number of sessions. |\n| Pseudodementia | A disorder resembling dementia but not due to organic brain disease and potentially reversible by treatment; can manifest as symptoms of depression in some older adults."
+    },
+    {
+      "chunk": 19,
+      "source_chunk": 20,
+      "split_part": 1,
+      "page_start": 15,
+      "page_end": 15,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 3,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "|"
+    },
+    {
+      "chunk": 20,
+      "source_chunk": 21,
+      "split_part": 0,
+      "page_start": 15,
+      "page_end": 15,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 159,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Motivational enhancement therapy | A structured therapy (lasting up to four sessions) to help people with substance use disorders. It involves an approach to motivate change by using motivational interviewing techniques, i.e. engaging the person in a discussion about their substance use, including perceived benefits and harms in relation to the person's own values, avoiding arguing with the person if there is resistance, encouraging the person to decide for themselves what their goal may be. |\n| - | - |\n| Psychoeducation | The process of teaching people with mental, neurological and substance use (MNS) disorders and their carers/family members about the nature of the illness, including its likely cause, progression, consequences, prognosis, treatment and alternatives. |"
+    },
+    {
+      "chunk": 21,
+      "source_chunk": 22,
+      "split_part": 0,
+      "page_start": 16,
+      "page_end": 16,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 346,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| QT prolongation | A potential medication-induced side-effect of ventricular myocardial repolarization characterized by a prolonged QT interval on the electrocardiogram (ECG) that can lead to symptomatic ventricular arrhythmias and an increased risk of sudden cardiac death. |\n| - | - |\n| Racing thoughts | Rapid thought pattern with tangential movement from one idea to the next, often associated with mania or other mental illnesses. |\n| Relapse | A return to drinking or other drug use after a period of abstinence, often accompanied by reinstatement of dependence symptoms. The term is also used to indicate return of symptoms of MNS disorder after a period of recovery. |\n| Relaxation training | Involves training in techniques such as breathing exercises to elicit the relaxation response. |\n| Respiratory depression | Inadequate slow breathing rate, resulting in insufficient oxygen. Common causes include brain injury and intoxication (e.g. due to benzodiazepines). |\n| Respite care | Provision of temporary care in a health-care facility to a person normally cared for at home. |\n| Rigidity | Resistance to the passive movement of a limb that persists throughout its range. It is a symptom of parkinsonism. |\n| Seizure | Episode of brain malfunction due to disturbance of cortical function, resulting in sudden, abnormal, excessive and disorganized discharge of brain cells. Clinical manifestations include abnormal motor, sensory and psychic phenomena. |\n| Self-harm | Intentional self-inflicted poisoning or injury, which may or may not have a fatal intent or outcome. |"
+    },
+    {
+      "chunk": 22,
+      "source_chunk": 23,
+      "split_part": 0,
+      "page_start": 16,
+      "page_end": 16,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 275,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| QT prolongation | A potential medication-induced side-effect of ventricular myocardial repolarization characterized by a prolonged QT interval on the electrocardiogram (ECG) that can lead to symptomatic ventricular arrhythmias and an increased risk of sudden cardiac death. |\n| - | - |\n| Serotonin syndrome | Characterized by an excess of serotonin in the central nervous system, associated with the use of various agents, including selective serotonin reuptake inhibitors (SSRIs). Serotonin syndrome may result in muscle rigidity, myoclonus, agitation, confusion, hyperthermia, hyperreflexia, as well as dysautonomic symptoms, with a risk of shock with low peripheral vascular resistance, seizures, coma, rhabdomyolysis and/or disseminated intravascular coagulation (DIC). |\n| Slurred speech | Speech with indistinctive pronunciation. |\n| Social network | A construct of analytical sociology referring to the characteristics of social linkages among people as a means of understanding their behaviour, rather than focusing on the attributes of individuals. |\n| Social withdrawal | Inability of a person to engage in age-appropriate activities or interactions with his or her peers or family members. |"
+    },
+    {
+      "chunk": 23,
+      "source_chunk": 24,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 418,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Status epilepticus | Defined as 5 minutes or more of continuous clinical and/or electrographic seizure activity or recurrent seizure activity without recovery (returning to baseline) between seizures; it can be convulsive or non-convulsive. |\n| - | - |\n| Stevens-Johnson syndrome | Life-threatening skin condition characterized by painful skin peeling, ulcers, blisters and crusting of mucocutaneous tissues such as mouth, lips, throat, tongue, eyes and genitals, sometimes associated with fever. It is most often caused by a severe reaction to medications, especially antiseizure medicines. |\n| Stigma | A distinguishing mark establishing a demarcation between the stigmatized persona and others attributing negative characteristics to this person. The stigma attached to mental illness often leads to social exclusion and discrimination and creates an additional burden for the affected individual. |\n| Suicidal thoughts/ideation | Thoughts, ideas or ruminations about the possibility of ending one's life, ranging from thinking that one would be better off dead to formulation of elaborate plans. |\n| Tardive dyskinesia | This is dystonia characterized by twisting and sustained muscle spasms that affect regions of the head, neck, and occasionally, the back. It may not improve after stopping the antipsychotic medicine. |\n| Toxic epidermal necrolysis | Life-threatening skin peeling that is usually caused by a reaction to a medicine or infection. It is similar to but more severe than Stevens-Johnson syndrome. |\n| Tremor | Trembling or shaking movements, usually of the fingers, that is an involuntary oscillation of a body part. |\n| Valproic acid (sodium valproate) | See the WHO model list of essential medicines (EML). 1 The full medicine name, \"valproic acid (sodium valproate)\", is used in the recommendation text with the briefer term \"sodium valproate\" used in other sections of the recommendation. |"
+    },
+    {
+      "chunk": 24,
+      "source_chunk": 25,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 18,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Glossary",
+      "token_count": 138,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Glossary\n| Status epilepticus | Defined as 5 minutes or more of continuous clinical and/or electrographic seizure activity or recurrent seizure activity without recovery (returning to baseline) between seizures; it can be convulsive or non-convulsive. |\n| - | - |\n| Vitamin K deficiency disease of the newborn | Lack of vitamin K can cause severe bleeding in newborn babies usually immediately after birth but sometimes up to 6 months of age. Bleeding may be cutaneous, gastrointestinal, intracranial or mucosal. Maternal intake of antiseizure medicines is one of its causes. |\n<!-- image -->"
+    },
+    {
+      "chunk": 29,
+      "source_chunk": 30,
+      "split_part": 0,
+      "page_start": 20,
+      "page_end": 20,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of recommendations",
+      "token_count": 447,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of recommendations\nThis guideline includes 48 updated and new evidencebased recommendations related to MNS conditions. These are based on 30 updated PICO (population, intervention, comparator, outcome) questions that were included in the previous mhGAP guideline (2015), and 18 new PICO questions developed for this new edition of the guideline. For one other updated PICO question the evidence was insufficient to support an updated recommendation so the pre-existing recommendation continues to be endorsed; also for one other new PICO question there was insufficient evidence to support a new recommendation. The updated and new recommendations stand alongside\nTABLE 1. Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Alcohol use disorders (ALC) | Alcohol use disorders (ALC) |\n| ALC1 (update) | Baclofen should be considered for treatment of adults with alcohol dependence post-detoxification. Conditional recommendation. Moderate certainty of evidence. |\n| ALC2 (update) | Structured and standardized psychosocial interventions should be considered for the treatment of alcohol dependence. Conditional recommendation. Low certainty of evidence. |\n| ALC3 (new) | Digitally delivered interventions should be considered for adults with alcohol use disorders or with hazardous alcohol use. They should not replace provision of other forms of interventions and should ensure free and informed consent, safety, confidentiality, privacy and security. Conditional recommendation. Low certainty of evidence. |\n90 pre-existing guideline recommendations which were validated and continue to be endorsed in their current format.\nThe 48 updated and new recommendations and the 2 for which evidence was insufficient to support an updated or new recommendation are presented in Table 1, arranged among 11 modules: alcohol use disorders (ALC), anxiety (ANX), child and adolescent mental disorders (CAMH), conditions related to stress (STR), dementia (DEM), depression (DEP), drug use disorders (DRU), epilepsy and seizures (EPI), overarching areas (OVE), psychosis and bipolar disorder (PSY) and self-harm and suicide (SUI)."
+    },
+    {
+      "chunk": 30,
+      "source_chunk": 31,
+      "split_part": 0,
+      "page_start": 21,
+      "page_end": 21,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of recommendations",
+      "token_count": 406,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| ALC4 (new) | Combined psychosocial and pharmacological interventions should be offered for adults with alcohol dependence. Strong recommendation. Moderate certainty of evidence. |\n| Anxiety (ANX) | |\n| ANX1 (new) | Selective serotonin reuptake inhibitors (SSRIs) should be considered for adults with panic disorder. If SSRIs are not available, consider offering tricyclic antidepressants (TCAs). SSRIs should be considered for adults with generalized anxiety disorder (GAD). Conditional recommendation. Low certainty of evidence. |\n| ANX2 (new) | Brief, structured psychological interventions based on principles of cognitive behavioural therapy (CBT) should be offered for adults with generalized anxiety disorder (GAD) and/or panic disorder. Strong recommendation. Moderate certainty of evidence. |\n| ANX3 (new) | When brief, structured psychological interventions based on principles of cognitive behavioural therapy (CBT) are offered for adults with generalized anxiety disorder (GAD) and/or panic disorder, different delivery formats should be considered based on available resources as well as individual preferences, including: y individual and/or group face-to-face; y digital/online and/or face-to-face; y guided and/or unguided self-help; y specialist and/or non-specialist. Conditional recommendation. Low certainty of evidence. |\n| ANX4 (new) | Stress management techniques, namely relaxation and/or mindfulness training, should be considered for adults with generalized anxiety disorder (GAD) and/or panic disorder. Conditional recommendation. Low certainty of evidence. |\n| ANX5 (new) | Structured physical exercise should be considered for adults with generalized anxiety disorder (GAD) and/or panic disorder. Conditional recommendation. Very low certainty of evidence. |"
+    },
+    {
+      "chunk": 31,
+      "source_chunk": 32,
+      "split_part": 0,
+      "page_start": 21,
+      "page_end": 22,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of recommendations",
+      "token_count": 143,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| ANX6 (new) | Benzodiazepines are not recommended for the treatment of adults with generalized anxiety disorder (GAD) and/or panic disorder. For emergency management of acute and severe anxiety symptoms, benzodiazepines may be considered, but only as a short-term (3-7 days maximum) measure. Strong recommendation. Low certainty of evidence. |\n| ANX7 (new) | Collaborative care should be considered for adults with depression and/or anxiety and physical health conditions. Conditional recommendation. Low certainty of evidence. |"
+    },
+    {
+      "chunk": 32,
+      "source_chunk": 33,
+      "split_part": 0,
+      "page_start": 22,
+      "page_end": 22,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of recommendations",
+      "token_count": 415,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Child and adolescent mental disorders (CAMH) | Child and adolescent mental disorders (CAMH) |\n| CAMH1 (update) | For children 6 years old and above and adolescents who have an attention deficit hyperactivity disorder (ADHD) diagnosis, methylphenidate may be considered, provided that: y ADHD symptoms are still causing persistent significant impairment in at least one domain of functioning (education, interpersonal relationships, occupation), after the implementation of environmental modifications in schools, at home or in other relevant settings; y a careful assessment of the child/adolescent has been conducted; y the child/adolescent and the caregivers, as appropriate, have been informed about ADHD treatment options and supported in decision-making; y methylphenidate prescription is made by, or in consultation with, a specialist. Conditional recommendation. Low certainty of evidence. |\n| CAMH2 (new) | 2.1 Universally delivered psychosocial interventions that use curriculum-based, family- based, exercise-based methods and/or social and personal skills development to improve emotional regulation should be considered for promotion of psychosocial well-being in children. Conditional recommendation. Very low certainty of evidence. 2.2 Psychosocial interventions that include cognitive behavioural therapy (CBT), psychoeducation and family-focused treatment approaches should be offered to |\n| CAMH3 (new) | children whose parents have mental health conditions for the prevention of depression and anxiety. Strong recommendation. Low certainty of evidence. 3.1 Psychosocial interventions focused on social skills training and developmental behavioural approaches should be offered to improve development, well-being and functioning in children and adolescents with autism. Strong recommendation. Low certainty of evidence. |\n| | 3.2 Cognitive behavioural therapy (CBT) should be offered to children and adolescents with autism with anxiety. |"
+    },
+    {
+      "chunk": 33,
+      "source_chunk": 34,
+      "split_part": 0,
+      "page_start": 22,
+      "page_end": 22,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of recommendations",
+      "token_count": 105,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| | Strong recommendation. Moderate certainty of evidence. 3.3 Psychosocial interventions focused on social skills, cognitive and organizational skills training should be considered to improve development and functioning in children and |\n| | adolescents with attention deficit hyperactivity disorder (ADHD). Conditional (social skills training, cognitive interventions) and Strong (organizational skills training) recommendation. Moderate certainty of evidence. |"
+    },
+    {
+      "chunk": 34,
+      "source_chunk": 35,
+      "split_part": 0,
+      "page_start": 23,
+      "page_end": 23,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of recommendations",
+      "token_count": 413,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| CAMH3 (new) (continued) | 3.4 Beginning-to-read interventions should be offered to improve communication and academic performance in children with disorders of intellectual development. |\n| | Strong recommendation. Moderate certainty of evidence. |\n| | 3.5 Early communication interventions involving direct instruction approaches should be considered for improving expressive phonological skills and reducing stuttering for children with developmental speech disorders. |\n| | Conditional recommendation. Very low certainty of evidence. |\n| | 3.6 Psychosocial interventions using cognitive learning techniques to enhance communication and social competencies should be considered for children and adolescents with neurodevelopmental disabilities. |\n| | Conditional recommendation. Low certainty of evidence. |\n| | 3.7 Structured physical exercise should be considered to improve development, including social and communication development, and functioning in children and adolescents with autism. |\n| | Conditional recommendation. Low certainty of evidence. |\n| | 3.8 Structured physical exercise should be considered to improve motor skills and functioning, including attention and executive functioning, and reduce anxiety and problem behaviours in children and adolescents with attention deficit hyperactivity disorder (ADHD). |\n| | Conditional recommendation. Very low certainty of evidence. |\n| | 3.9 Specialized instructional techniques should be considered to improve academic performance, including writing skills, reading comprehension and maths, in children and adolescents with developmental learning disorders. |\n| | Conditional recommendation. Very low certainty of evidence. |\n| | 3.10 Task-oriented instruction should be considered to improve motor skills and task performance in children with developmental coordination disorders. |\n| | Conditional recommendation. Very low certainty of evidence. |\n| | 3.11 Structured physical exercise and activity should be offered to improve development outcomes, including motor skills and functioning, in children and adolescents with cerebral palsy. |\n| | Strong recommendation. Low certainty of evidence. |"
+    },
+    {
+      "chunk": 35,
+      "source_chunk": 36,
+      "split_part": 0,
+      "page_start": 24,
+      "page_end": 24,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 392,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| CAMH4 (new) | 4.1 Pharmacological interventions are not recommended in children and adolescents with anxiety disorders. Strong recommendation. Low certainty of evidence. 4.2 Antidepressant medicines are not recommended for the treatment of children 12 years of age and below with depressive episode/disorder. Strong recommendation. Low certainty of evidence. 4.3 If psychosocial interventions alone prove ineffective in adolescents (13-17 years) with moderate-to-severe depression, referral to or consultation with a specialist should be offered, to undertake a more comprehensive assessment and to explore initiation of |\n| Conditions related to stress (STR) | Conditions related to stress (STR) |\n| STR1 (update) | fluoxetine in combination with psychological treatments. Strong recommendation. Low certainty of evidence. Psychological interventions should be considered for adults with post-traumatic stress disorder (PTSD). Namely, these include: y individual face-to-face cognitive behavioural therapy (CBT) with a trauma focus; y group face-to-face CBT with a trauma focus; y digital/remote CBT with a trauma focus; y eye movement desensitization and reprocessing (EMDR); y stress management. Conditional recommendation. Low certainty of evidence. |\n| STR2 (update) | Psychological interventions should be offered for children and adolescents with post- traumatic stress disorder (PTSD). Namely, these include: y individual face-to-face cognitive behavioural therapy (CBT) with a trauma focus; y group face-to-face CBT with a trauma focus; y eye movement desensitization and reprocessing (EMDR). Strong recommendation. Moderate certainty of evidence. |"
+    },
+    {
+      "chunk": 36,
+      "source_chunk": 37,
+      "split_part": 0,
+      "page_start": 25,
+      "page_end": 25,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 351,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Dementia (DEM) | |\n| DEM1 (update) | 1.1 Psychosocial interventions - namely mindfulness-based interventions, multicomponent interventions, psychoeducation and psychotherapy/counselling - should be offered for carers of people living with dementia. Strong recommendation. Low certainty of evidence. 1.2 Respite care should be considered for carers of people living with dementia. Conditional recommendation. Low certainty of evidence. 1.3 Depression and anxiety in carers of people living with dementia should be assessed and treated in line with mhGAP recommendations for depression and anxiety. |\n| DEM2 | Strong recommendation. Low certainty of evidence. There was insufficient evidence to update the recommendation, so the existing recommendation remains valid. Psychological interventions - namely cognitive behavioural therapy (CBT), interpersonal therapy (IPT), structured counselling and behavioural activation therapy (BAT) - should be considered for people living with dementia and mild-to-moderate depression. Conditional recommendation. Low certainty of evidence. |\n| DEM3 (update) | 3.1 Physical activity interventions - namely physical exercise delivered 3-4 times per week for 30-45 minutes for more than 12 weeks - should be offered to people living with dementia. Strong recommendation. High certainty of evidence. 3.2 Non-pharmacological interventions - namely CBT, cognitive stimulation therapy and cognitive training (in alphabetical order) - should be considered for people living with dementia. Conditional recommendation. Low certainty of evidence. |"
+    },
+    {
+      "chunk": 37,
+      "source_chunk": 38,
+      "split_part": 0,
+      "page_start": 26,
+      "page_end": 26,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 396,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Depression (DEP) | |\n| DEP1 (update) | In adults with moderate-to-severe depression, citalopram, escitalopram, fluoxetine, fluvoxamine, paroxetine or sertraline (SSRIs) or amitriptyline (TCA) should be considered. Conditional recommendation. Very low certainty of evidence. |\n| DEP2 (update) | In adults with moderate-to-severe depression who have benefited from initial antidepressant treatment, continuation of the antidepressant treatment should be considered for at least six months after remission. Treatment should be regularly monitored, with special attention to treatment adherence, change in depressive symptoms and possible adverse effects. Conditional recommendation. Very low certainty of evidence. |\n| DEP3 (update) | Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV). Strong recommendation. Moderate certainty of evidence. |\n| DEP4 (update) | In adults with moderate-to-severe depression, psychological interventions or combined treatment should be considered based on individual preferences and careful consideration of the balance of benefits and harms. Antidepressant medicine alone for adults with depression (moderate to severe) should only be considered when psychological interventions are not available. Providers should keep in mind the possible adverse effects associated with antidepressant medicines, and individual preferences. Conditional recommendation. Low certainty of evidence. |"
+    },
+    {
+      "chunk": 38,
+      "source_chunk": 39,
+      "split_part": 0,
+      "page_start": 27,
+      "page_end": 27,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 388,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Drug use disorders (DRU) | Drug use disorders (DRU) |\n| DRU1 (update) | 1.1 Adults using cannabis should be offered screening and brief intervention. Brief intervention should comprise at least a single session, incorporating individualized feedback and advice on reducing or stopping cannabis consumption, and the offer of follow-up care. Strong recommendation. Very low certainty of evidence. 1.2 Adults using psychostimulants should be offered screening and brief intervention. Brief intervention should comprise at least a single session, incorporating individualized feedback and advice on reducing or stopping psychostimulant consumption, and the offer of follow-up care. Strong recommendation. Very low certainty of evidence. |\n| DRU2 (update) | 1.3 For adults with hazardous cannabis or psychostimulant use, or with disorders due to use of these substances who do not respond to brief interventions, referral for specialist intervention should be considered. Conditional recommendation. Very low certainty of evidence. Dexamphetamine, methylphenidate and modafinil are not recommended for the treatment of cocaine or stimulant use disorders due to safety concerns. |\n| DRU3 (update) | Conditional recommendation. Low certainty of evidence. Psychosocial interventions - namely cognitive behavioural therapy (CBT) and contingency management - should be offered to adults with cocaine and stimulant dependence. Strong recommendation. Low certainty of evidence. |\n| DRU4 (new) | Digital interventions should be considered for adults using drugs or with drug use disorders. They should not replace provision of other forms of interventions and should ensure informed consent, safety, confidentiality, privacy and security. Conditional recommendation. Very low certainty of evidence. |"
+    },
+    {
+      "chunk": 39,
+      "source_chunk": 40,
+      "split_part": 0,
+      "page_start": 27,
+      "page_end": 28,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 391,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| DRU5 (new) | Recovery-oriented services on a voluntary basis should be considered for adults with drug dependence. Namely, case management, long-term residential and continuing community care approaches, occupation-based therapies and peer support groups should be considered for recovery management of people with drug dependence. Conditional recommendation. Low certainty of evidence. |\n\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Epilepsy and seizures (EPI) | Epilepsy and seizures (EPI) |\n| EPI1 (update) | In adults with established status epilepticus, i.e. seizures persisting after two doses of benzodiazepines, either intravenous fosphenytoin, intravenous phenytoin, intravenous levetiracetam, intravenous phenobarbital or intravenous valproic acid (sodium valproate) should be considered with appropriate monitoring. The choice of these medicines depends on local resources, including availability and facilities for monitoring. Conditional recommendation. Low certainty of evidence. |\n| EPI2 (update) | In children with established status epilepticus, i.e. seizures persisting after two doses of benzodiazepines, intravenous fosphenytoin, intravenous phenytoin, intravenous levetiracetam, intravenous phenobarbital or intravenous valproic acid (sodium valproate) should be considered with appropriate monitoring. The choice of these medicines depends on local resources, including availability and facilities for monitoring. Conditional recommendation. Moderate certainty of evidence. |"
+    },
+    {
+      "chunk": 40,
+      "source_chunk": 41,
+      "split_part": 0,
+      "page_start": 28,
+      "page_end": 29,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 274,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| EPI3 (update) | 3.1 Generalized onset seizures: Monotherapy with lamotrigine or levetiracetam, or valproic acid (sodium valproate), should be offered as first-line treatment for generalized onset seizures in men/boys and women/girls who are not of childbearing potential. In women and girls of childbearing potential with generalized onset seizures, lamotrigine or levetiracetam should be offered as first-line monotherapy. If the first monotherapy is not successful for generalized onset seizures, an alternative first-line monotherapy should be tried. Valproic acid (sodium valproate) is not recommended in women and girls of childbearing potential owing to the high risk of birth defects and neurodevelopmental disorders in children exposed to valproic acid (sodium valproate) in the womb. If lamotrigine, levetiracetam and valproic acid (sodium valproate) are not available for generalized onset seizures, monotherapy with either phenytoin or phenobarbital can be considered. Strong recommendation. High certainty of evidence. |"
+    },
+    {
+      "chunk": 41,
+      "source_chunk": 42,
+      "split_part": 0,
+      "page_start": 29,
+      "page_end": 29,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 236,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| EPI3 (update) (continued) | 3.2 Focal onset seizures: Monotherapy with lamotrigine or levetiracetam should be offered as first-line treatment for focal onset seizures in children and adults with epilepsy. If neither lamotrigine nor levetiracetam are available, then carbamazepine should be used as an alternate first-line treatment for focal onset seizures in children and adults with epilepsy. If the first monotherapy is not successful for focal onset seizures, an alternative first-line monotherapy should be tried. Lacosamide should be offered as a second-line monotherapy for focal onset seizures if none of the first-line medicines are effective. If antiseizure medicine monotherapy is unsuccessful in people with generalized onset seizures or focal onset seizures, prompt referral should be made to a specialist for consideration of other treatment options. Strong recommendation. High certainty of evidence. |"
+    },
+    {
+      "chunk": 42,
+      "source_chunk": 43,
+      "split_part": 0,
+      "page_start": 29,
+      "page_end": 29,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 327,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| EPI4 (update) | 4.1 The efficacy of antiseizure medicines (ASMs) is not thought to differ in males and females. As such, this recommendation builds on EPI3 and focuses on the medicines that are now being preferentially recommended as therapeutic options. In women and girls with epilepsy who are of childbearing potential, lamotrigine or levetiracetam should be offered as first-line monotherapy for both generalized onset seizures and focal onset seizures. Women with epilepsy should have seizures controlled as well as possible with the minimum dose of ASMs taken in monotherapy, wherever possible. Valproic acid (sodium valproate) is not recommended in women and girls of childbearing potential because of potential harm to the fetus. Strong recommendation. Very low certainty of evidence. 4.2 Standard breastfeeding recommendations remain appropriate for women with epilepsy taking the ASMs included in this review (phenobarbital, phenytoin, valproic acid [sodium valproate], carbamazepine, lamotrigine, levetiracetam, topiramate, lacosamide). |\n| EPI5 (new) | Strong recommendation. Very low certainty of evidence. Nocturnal supervision should be considered for prevention of sudden unexpected death in epilepsy (SUDEP). Conditional recommendation. Very low certainty of evidence. |"
+    },
+    {
+      "chunk": 43,
+      "source_chunk": 44,
+      "split_part": 0,
+      "page_start": 30,
+      "page_end": 30,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 425,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Overarching areas (OVE) | Overarching areas (OVE) |\n| OVE1 (new) | Psychosocial interventions - namely psychoeducation using problem-solving and cognitive-behavioural approaches (either individual or family-based), self-help interventions and mutual support groups - should be considered for carers of persons with psychosis or bipolar disorder. Conditional recommendation. Moderate certainty (carers of persons with psychosis or bipolar disorder), very low certainty (carers of persons with substance use disorder) of evidence. |\n| Psychosis and bipolar disorder (PSY) | Psychosis and bipolar disorder (PSY) |\n| PSY1 (update) | 1.1 Oral antipsychotic medicines - namely aripiprazole, chlorpromazine, haloperidol, olanzapine, paliperidone, quetiapine, risperidone - should be offered for adults with a psychotic disorder (including schizophrenia), carefully balancing effectiveness, side- effects and individual preference. Strong recommendation. Moderate certainty of evidence. 1.2 Clozapine should be considered for adults with a treatment-resistant psychotic disorder (including schizophrenia) under mental health specialist supervision, carefully |\n| PSY2 (update) | balancing effectiveness, side-effects and individual preference. Conditional recommendation. Moderate certainty of evidence. Maintenance therapy with antipsychotic medicine for a minimum of 7-12 months should be offered in adults with a first episode of psychosis (including schizophrenia) in remission, carefully balancing effectiveness, side-effects and individual preference. Strong recommendation. Moderate certainty of evidence. |\n| PSY3 (update) | Maintenance therapy with mood stabilizers or antipsychotic medicines should be considered for at least six months for adults with bipolar disorder in remission, carefully balancing effectiveness, side-effects and individual preference. Conditional recommendation. Low certainty of evidence. |"
+    },
+    {
+      "chunk": 44,
+      "source_chunk": 45,
+      "split_part": 0,
+      "page_start": 30,
+      "page_end": 31,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 130,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| PSY4 (update) | Long-acting injection (LAI) antipsychotic medicines - namely fluphenazine, haloperidol, paliperidone, risperidone and zuclopenthixol - should be considered as an alternative to oral antipsychotic medicines for adults with psychotic disorders (including schizophrenia) requiring long-term treatment, carefully balancing effectiveness, side-effects and individual preference. Conditional recommendation. Moderate certainty of evidence. |"
+    },
+    {
+      "chunk": 45,
+      "source_chunk": 46,
+      "split_part": 0,
+      "page_start": 31,
+      "page_end": 31,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 398,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| PSY5 (update) | 5.1 Oral antipsychotic medicines - namely aripiprazole, olanzapine, paliperidone, quetiapine, risperidone - should be considered under specialist supervision for adolescents with psychotic disorders (including schizophrenia), carefully balancing effectiveness, side-effects and individual preference. Conditional recommendation. Low certainty of evidence. 5.2 Clozapine should be considered for adolescents with a treatment-resistant psychotic disorder (including schizophrenia) under specialist supervision, carefully balancing |\n| PSY6 (update) | effectiveness, side-effects and individual preference. Conditional recommendation. Low certainty of evidence. Psychotropic medicines (antipsychotic medicines, namely aripiprazole, olanzapine, quetiapine, risperidone; and mood stabilizers, namely lithium) should be considered under specialist supervision for adolescents with bipolar disorder (current episode manic), carefully balancing effectiveness, side-effects and individual preference. Conditional recommendation. Very low certainty of evidence. |\n| PSY7 (update) | 7.1 Oral antipsychotic medicines (namely aripiprazole, haloperidol, olanzapine, paliperidone or quetiapine) or mood stabilizers (namely carbamazepine, lithium, valproic acid [sodium valproate]) should be offered to adults with bipolar disorder (current episode mania), carefully balancing effectiveness, side-effects and individual preference. Strong recommendation. Low certainty of evidence. 7.2 Valproic acid (sodium valproate) should not be used in women and girls of childbearing potential, owing to the high risk of birth defects and neurodevelopmental disorders in |"
+    },
+    {
+      "chunk": 46,
+      "source_chunk": 47,
+      "split_part": 0,
+      "page_start": 31,
+      "page_end": 32,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 202,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| PSY8 (update) | babies in utero. Strong recommendation. Low certainty of evidence. 8.1 Mood stabilizers (namely carbamazepine, lithium, valproic acid [sodium valproate]) or oral antipsychotic medicines (namely aripiprazole, olanzapine, quetiapine) should be considered for maintenance treatment for adults with bipolar disorder in remission, carefully balancing effectiveness, side-effects and individual preference. Conditional recommendation. Low certainty of evidence. 8.2 Valproic acid (sodium valproate) should not be used in women and girls of childbearing potential with bipolar disorder in remission, owing to the high risk of birth defects and neurodevelopmental disorders in babies in utero. Strong recommendation. Low certainty of evidence. |"
+    },
+    {
+      "chunk": 47,
+      "source_chunk": 48,
+      "split_part": 0,
+      "page_start": 32,
+      "page_end": 32,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 424,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| PSY9 (update) | Fluoxetine, olanzapine, quetiapine, valproic acid (sodium valproate) or venlafaxine should be considered for adults with bipolar depression. If fluoxetine or venlafaxine are chosen, they should be co-administered with a mood stabilizer (namely quetiapine, olanzapine, carbamazepine, valproic acid [sodium valproate], lithium). Conditional recommendation. Very low certainty of evidence. |\n| PSY10 (update) | Treatment based on cognitive behavioural therapy (CBT) should be considered for adults with psychotic disorders (including schizophrenia) in the acute phase of the condition where sufficient specialist support is available. Conditional recommendation. Moderate certainty of evidence. |\n| PSY11 (update) | Psychosocial interventions - namely family interventions, family psychoeducation, psychoeducation and cognitive behavioural therapy (CBT) - should be offered to adults with psychosis (including schizophrenia) during the maintenance phase, either alone or in combination. Strong recommendation. Moderate certainty of evidence. |\n| PSY12 (update) | Individual psychological interventions - namely cognitive behavioural therapy (CBT), family psychoeducation, medicine adherence therapy, online psychoeducation or psychoeducation - should be considered as adjunctive to pharmacological interventions in the treatment of adults with bipolar disorder in remission. Conditional recommendation. Low certainty of evidence. |\n| Self-harm and suicide (SUI) | Self-harm and suicide (SUI) |\n| SUI1 (new) | Safety planning type-interventions, i.e. interventions based on principles of safety planning which are multicomponent or supplemented with follow-up or support, can be considered. Conditional recommendation. Very low certainty of evidence. |"
+    },
+    {
+      "chunk": 48,
+      "source_chunk": 49,
+      "split_part": 0,
+      "page_start": 32,
+      "page_end": 33,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 1. (continued) Summary of recommendations",
+      "token_count": 163,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 1. (continued) Summary of recommendations\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| SUI2 | The evidence regarding effectiveness of stand-alone media campaigns (to raise awareness and sensitize the general public about suicide and its prevention) in reducing deaths from suicide, suicide attempts and acts of self-harm is insufficient to make a recommendation. |\n| SUI3 (new) | Stand-alone digital interventions based on evidence-based interventions such as cognitive behavioural therapy (CBT), dialectical behaviour therapy (DBT), problem-solving therapy (PST) and mindfulness should be considered as support for persons with suicidal thoughts. Conditional recommendation. Low certainty of evidence. |\n<!-- image -->"
+    },
+    {
+      "chunk": 63,
+      "source_chunk": 64,
+      "split_part": 0,
+      "page_start": 38,
+      "page_end": 38,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "2.3.2 Appraising existing review questions and recommendations",
+      "token_count": 52,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "2.3.2 Appraising existing review questions and recommendations\nEvidence retrieval and synthesis followed the methods outlined in the WHO handbook for guideline development (10), as presented in Fig. 2.1.\n<!-- image -->"
+    },
+    {
+      "chunk": 69,
+      "source_chunk": 70,
+      "split_part": 0,
+      "page_start": 40,
+      "page_end": 40,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Quantitative evidence",
+      "token_count": 409,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Quantitative evidence\nThe GRADE approach to appraising the quality of quantitative evidence was used for all critical outcomes identified in the PICO questions, and a GRADE profile was prepared for each outcome within each key question. Accordingly, the certainty of evidence for each outcome was rated as \"high\", \"moderate\", \"low\" or \"very low\" based on the quality of the evidence (e.g. the types and sizes of studies conducted), as defined in Table 2.1. As a baseline, RCTs provide \"highquality\" evidence, while non-randomized trials and observational studies provide \"low-quality\" evidence. This baseline quality rating may then be downgraded based on consideration of study design limitations (risk of bias), inconsistency, imprecision, indirectness and publication bias. For observational studies, other considerations, such as magnitude of effect, could lead to upgrading of the rating if there are no limitations that indicated a need for downgrading. The systematic review teams and guideline methodologist retrieved, appraised and synthesized evidence according to the current WHO handbook for guideline development (10). Where possible, outcomes were presented as a meta-analysis. If this was not possible then a narrative synthesis was undertaken.\nTABLE 2.1 The GRADE Quality of Evidence grading\n\n| Quality level | Definition |\n| - | - |\n| High | We are very confident that the true effect lies close to that of the estimate of the effect. |\n| Moderate | We are moderately confident in the effect estimate: the true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantially different. |\n| Low | Our confidence in the effect estimate is limited: the true effect may be substantially different from the estimate of the effect. |\n| Very low | We have very little confidence in the effect estimate: the true effect is likely to be substantially different from the estimate of effect. |\nSource: WHO, 2014 (10)."
+    },
+    {
+      "chunk": 73,
+      "source_chunk": 74,
+      "split_part": 0,
+      "page_start": 41,
+      "page_end": 42,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "2.5 Document preparation and peer review",
+      "token_count": 390,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "2.5 Document preparation and peer review\nFollowing all the outlined processes, the Steering Group circulated draft recommendations to the GDG members for further comment. A full draft of the guideline document, including the recommendations and supporting evidence, was then sent to the ERG electronically for review to identify factual errors and to comment on clarity of language and considerations related to implementation, adaptation and contextual issues. The full draft was also shared with the Steering Group and GDG for any final comments. All comments from the Steering Group, GDG and ERG were collated by the coordinating team to revise the draft.\nTABLE 2.2 Descriptions of strong and conditional recommendations\n\n| Audience | Strong recommendation | Conditional recommendation |\n| - | - | - |\n| For people, individuals with lived experience, the public | Most individuals in this situation would want to pursue the recommended course of action and only a small proportion would not. | The majority of individuals in this situation would want to pursue the suggested course of action, but many would not. |\n| For health workers or delivery agents of an intervention | Most individuals should receive the recommended course of action. Adherence to this recommendation according to the guideline could be used as a quality criterion or performance indicator. Formal decision aids are not likely to be needed to help individuals make decisions consistent with their values and preferences. | Different choices will be appropriate for different people, and that each person must be helped to arrive at a management decision consistent with their values and preferences. Decision aids may be useful in helping individuals to make decisions consistent with their values and preferences. Clinicians should expect to spend more time with individuals when working towards a decision. |\n| For policy-makers | The recommendation can be adapted as policy in most situations. | Policy-making will require substantial debates and involvement of many stakeholders. Policies are also more likely to vary between regions. |\nSource: adapted from WHO, 2014 (10)."
+    },
+    {
+      "chunk": 74,
+      "source_chunk": 75,
+      "split_part": 0,
+      "page_start": 43,
+      "page_end": 43,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3. Recommendations",
+      "token_count": 281,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "3. Recommendations\nThis guideline includes 48 updated and new evidencebased recommendations related to MNS conditions. These are based on 30 updated PICO questions that were used for the previous mhGAP guideline (2015), and 18 new PICO questions developed for this new edition of the guideline. For one other updated research question the evidence was insufficient to support an updated recommendation so the pre-existing recommendation continues to be endorsed; also for one other new research question there was insufficient evidence to support a new recommendation. Fourteen recommendations/ questions (ALC1, ALC2, ALC3, ALC4, CAMH1, STR1, STR2, DRU1, DRU3, DRU4, EPI1, EPI2, OVE1, SUI3) were based on new/updated systematic reviews while the remaining recommendations were based on existing/ previously published systematic reviews.\nThe 48 updated and new recommendations are presented in this chapter by module (sections 3.1-3.11). For each recommendation, the relevant justification, remarks, research gaps and implementation considerations are also presented. The evidence profiles are available online.\nThe updated and new recommendations in this guideline stand alongside 90 pre-existing guideline recommendations which were validated and continue to be endorsed in their current format (7).\n<!-- image -->"
+    },
+    {
+      "chunk": 75,
+      "source_chunk": 76,
+      "split_part": 0,
+      "page_start": 44,
+      "page_end": 44,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "ALC1. In adults with alcohol dependence post-detoxification, is baclofen effective for relapse prevention and management of alcohol dependence?",
+      "token_count": 117,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "ALC1. In adults with alcohol dependence post-detoxification, is baclofen effective for relapse prevention and management of alcohol dependence?\n<!-- image -->\n8\n| Recommendation (update): | Baclofen should be considered for treatment of adults with alcohol dependence post-detoxification. | Baclofen should be considered for treatment of adults with alcohol dependence post-detoxification. |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Moderate |"
+    },
+    {
+      "chunk": 85,
+      "source_chunk": 86,
+      "split_part": 0,
+      "page_start": 46,
+      "page_end": 46,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "ALC3. In adults with alcohol use disorders or hazardous drinking, are digital interventions effective?",
+      "token_count": 92,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "ALC3. In adults with alcohol use disorders or hazardous drinking, are digital interventions effective?\nRecommendation (new):\nDigitally delivered interventions should be considered for adults with alcohol use disorders or with hazardous alcohol use. They should not replace provision of other forms of interventions and should ensure free and informed consent, safety, confidentiality, privacy and security.\n| Strength of recommendation: | Conditional |\n| - | - |\n| Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 91,
+      "source_chunk": 92,
+      "split_part": 0,
+      "page_start": 48,
+      "page_end": 48,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "ALC4. In adults with alcohol use disorders, are combined pharmacological and psychosocial interventions effective and safe?",
+      "token_count": 100,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "ALC4. In adults with alcohol use disorders, are combined pharmacological and psychosocial interventions effective and safe?\n| Recommendation (new): | Combined psychosocial and pharmacological interventions should be offered for adults with alcohol dependence. | Combined psychosocial and pharmacological interventions should be offered for adults with alcohol dependence. |\n| - | - | - |\n| | Strength of recommendation: | Strong |\n| | Certainty of evidence: | Moderate |"
+    },
+    {
+      "chunk": 97,
+      "source_chunk": 98,
+      "split_part": 0,
+      "page_start": 50,
+      "page_end": 50,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3.2 Anxiety (ANX)",
+      "token_count": 170,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "3.2 Anxiety (ANX)\nANX1. In adults with anxiety disorders (excluding social anxiety disorder and specific phobias), are antidepressants (tricyclic antidepressants [TCAs] and selective serotonin reuptake inhibitors [SSRIs]) effective and safe compared with treatment as usual, waitlist, no treatment, or alternative psychological or pharmacological treatments?\n<!-- image -->\nRecommendation (new):\nSelective serotonin reuptake inhibitors (SSRIs) should be considered for adults with panic disorder. If SSRIs are not available, consider offering tricyclic antidepressants (TCAs). SSRIs should be considered for adults with generalized anxiety disorder (GAD).\nStrength of recommendation:\nConditional\nCertainty of evidence:\nLow"
+    },
+    {
+      "chunk": 108,
+      "source_chunk": 109,
+      "split_part": 0,
+      "page_start": 53,
+      "page_end": 53,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "ANX3. For adults with anxiety disorders, what is the comparative effectiveness of different formats of psychological interventions?",
+      "token_count": 225,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "ANX3. For adults with anxiety disorders, what is the comparative effectiveness of different formats of psychological interventions?\n| Recommendation (new): | When brief, structured psychological interventions based on principles of cognitive behavioural therapy (CBT) are offered for adults with generalized anxiety disorder (GAD) and/or panic disorder, different delivery formats should be considered based on available resources as well as individual preferences, including: y individual and/or group face-to-face; y | When brief, structured psychological interventions based on principles of cognitive behavioural therapy (CBT) are offered for adults with generalized anxiety disorder (GAD) and/or panic disorder, different delivery formats should be considered based on available resources as well as individual preferences, including: y individual and/or group face-to-face; y |\n| - | - | - |\n| | digital/online and/or y guided and/or unguided y specialist and/or non-specialist. Strength of recommendation: | face-to-face; self-help; Conditional |\n| | Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 113,
+      "source_chunk": 114,
+      "split_part": 0,
+      "page_start": 55,
+      "page_end": 55,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "ANX4. Are stress management techniques better than (more effective than/as safe as) treatment as usual in adults with anxiety disorders (excluding social anxiety disorder and specific phobias)?",
+      "token_count": 139,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "ANX4. Are stress management techniques better than (more effective than/as safe as) treatment as usual in adults with anxiety disorders (excluding social anxiety disorder and specific phobias)?\n| Recommendation (new): | Stress management techniques, namely relaxation and/or mindfulness training, should be considered for adults with generalized anxiety disorder (GAD) and/or panic disorder. | Stress management techniques, namely relaxation and/or mindfulness training, should be considered for adults with generalized anxiety disorder (GAD) and/or panic disorder. |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 118,
+      "source_chunk": 119,
+      "split_part": 0,
+      "page_start": 56,
+      "page_end": 56,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "ANX5. Is advice on physical activity better than (more effective than/ as safe as) treatment as usual, waitlist, no treatment in adults with anxiety disorders (excluding social anxiety disorders and specific phobias)?",
+      "token_count": 127,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "ANX5. Is advice on physical activity better than (more effective than/ as safe as) treatment as usual, waitlist, no treatment in adults with anxiety disorders (excluding social anxiety disorders and specific phobias)?\n| Recommendation (new): | Structured physical exercise should be considered for adults with generalized anxiety disorder (GAD) and/or panic disorder. | Structured physical exercise should be considered for adults with generalized anxiety disorder (GAD) and/or panic disorder. |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Very low |"
+    },
+    {
+      "chunk": 133,
+      "source_chunk": 134,
+      "split_part": 0,
+      "page_start": 60,
+      "page_end": 60,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "CAMH1. What is the effectiveness and safety of pharmacological interventions for children with a diagnosis of attention deficit hyperactivity disorder (ADHD)?",
+      "token_count": 202,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "CAMH1. What is the effectiveness and safety of pharmacological interventions for children with a diagnosis of attention deficit hyperactivity disorder (ADHD)?\n<!-- image -->\n8\nRecommendation (update): For children 6 years old and above and adolescents who have an attention deficit hyperactivity disorder (ADHD) diagnosis, methylphenidate may be considered, provided that:\n- y ADHD symptoms are still causing persistent significant impairment in at least one domain of functioning (education, interpersonal relationships, occupation), after the implementation of environmental modifications in schools, at home or in other relevant settings;\n- y a careful assessment of the child/adolescent has been conducted;\n- y the child/adolescent and the caregivers, as appropriate, have been informed about ADHD treatment options and supported in decision-making;\n- y methylphenidate prescription is made by, or in consultation with, a specialist.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nLow"
+    },
+    {
+      "chunk": 141,
+      "source_chunk": 142,
+      "split_part": 0,
+      "page_start": 62,
+      "page_end": 62,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Research gaps",
+      "token_count": 210,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Research gaps\n- y Despite a substantial body of evidence on reducing emotional problems for all children ages 5-10, there is a need for strengthened intervention designs for this age group that are evaluated using rigorous study designs, and that include long-term follow-up data to ascertain lasting intervention effects.\n- y For aggressive, disruptive and oppositional behaviours, studies should measure behaviours outside the classroom.\n| Recommendation (new): | 2.2 Psychosocial interventions that include cognitive behavioural therapy (CBT), psychoeducation and family-focused treatment approaches should be offered to children whose parents have mental health conditions for prevention of depression and anxiety. | 2.2 Psychosocial interventions that include cognitive behavioural therapy (CBT), psychoeducation and family-focused treatment approaches should be offered to children whose parents have mental health conditions for prevention of depression and anxiety. |\n| - | - | - |\n| | Strength of recommendation: | Strong |\n| | Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 154,
+      "source_chunk": 155,
+      "split_part": 0,
+      "page_start": 65,
+      "page_end": 66,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Implementation considerations",
+      "token_count": 326,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Implementation considerations\n- y Adjustments to treatments in order to meet the needs of children and young people with autism may be needed. These may include greater use of written and visual information, more concrete and structured cognitive approaches, providing for short breaks and involvement of a carer in treatment sessions.\n- y These approaches should be implemented in the context of broader strategies focused on promoting inclusive and enabling environments for all, including children and young people with autism.\n- y Make reasonable adjustments or adaptations and provide visual supports if useful.\n- y Ensure that all children and young people with autism have full access to health- and social-care services, including mental health services.\n- y Promote access to information about treatment options suitable for the child or adolescent's needs and developmental level, and promote supported decision-making.\n- y Make arrangements to support children and adolescents with autism and their family and carers during times of increased need and transitions, such as puberty and starting or changing schools.\n| Recommendation (new): | 3.3 Psychosocial interventions focused on social skills, cognitive and organizational skills training should be considered to improve development and functioning in children and adolescents with attention deficit hyperactivity disorder (ADHD). | 3.3 Psychosocial interventions focused on social skills, cognitive and organizational skills training should be considered to improve development and functioning in children and adolescents with attention deficit hyperactivity disorder (ADHD). |\n| - | - | - |\n| | Strength of recommendation: | Conditional (social skills training, cognitive interventions) and Strong (organizational skills training) |\n| | Certainty of evidence: | Moderate |"
+    },
+    {
+      "chunk": 170,
+      "source_chunk": 171,
+      "split_part": 0,
+      "page_start": 69,
+      "page_end": 70,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Implementation considerations",
+      "token_count": 150,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Implementation considerations\n- y These interventions have been largely implemented in home- and clinic-based settings, by clinicians and trained specialists.\n- y Caregivers are often involved in treatment, either as participants or as individuals trained to deliver the intervention strategies in the absence of the primary intervention agent.\n| Recommendation (new): | 3.7 Structured physical exercise should be considered to improve development, including social and communication development, and functioning in children and adolescents with autism. | 3.7 Structured physical exercise should be considered to improve development, including social and communication development, and functioning in children and adolescents with autism. |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 174,
+      "source_chunk": 175,
+      "split_part": 0,
+      "page_start": 70,
+      "page_end": 71,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Implementation considerations",
+      "token_count": 312,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Implementation considerations\n- y Structured physical exercise programmes will be available in a variety of settings including educational, rehabilitation, recreation and other community settings.\n- y Adjustments to structured physical exercise programmes in order to meet the needs of children and adolescents with autism may be needed. These may include greater use of written and visual information, more concrete and structured approaches, providing for short breaks and involvement of a carer in treatment sessions.\n- y Make reasonable adjustments or adaptations and provide visual supports if useful.\n- y Ensure that all children and adolescents with autism have full access to health- and social-care services, including mental health services.\n- y Promote access to information about treatment options suitable for the child or adolescent's needs and developmental level, and promote supported decision-making.\n- y Make arrangements to support children and adolescents and their family and carers during times of increased need and transitions, such as puberty and starting or changing schools.\n| Recommendation (new): | 3.8 Structured physical exercise should be considered to improve motor skills and functioning, including attention and executive functioning, and reduce anxiety and problem behaviours in children and adolescents with attention deficit hyperactivity disorder (ADHD). | 3.8 Structured physical exercise should be considered to improve motor skills and functioning, including attention and executive functioning, and reduce anxiety and problem behaviours in children and adolescents with attention deficit hyperactivity disorder (ADHD). |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Very low |"
+    },
+    {
+      "chunk": 204,
+      "source_chunk": 205,
+      "split_part": 0,
+      "page_start": 78,
+      "page_end": 78,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "STR1. For adults with post-traumatic stress disorder (PTSD), are psychological interventions effective compared with treatment as usual, waitlist or no treatment?",
+      "token_count": 162,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "STR1. For adults with post-traumatic stress disorder (PTSD), are psychological interventions effective compared with treatment as usual, waitlist or no treatment?\n<!-- image -->\n8\n| Recommendation (update): | Psychological interventions should be considered for adults with post- traumatic stress disorder (PTSD). Namely, these include: y individual face-to-face cognitive behavioural therapy (CBT) with a trauma focus; 6 y group face-to-face CBT with | trauma focus; |\n| - | - | - |\n| | y digital/remote CBT with a y eye movement desensitization y stress management. Strength of recommendation: | trauma focus; and reprocessing Conditional |\n| | Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 210,
+      "source_chunk": 211,
+      "split_part": 0,
+      "page_start": 80,
+      "page_end": 80,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "STR2. For children and adolescents with PTSD, are psychological interventions effective compared with treatment as usual, waiting list or no treatment?",
+      "token_count": 216,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "STR2. For children and adolescents with PTSD, are psychological interventions effective compared with treatment as usual, waiting list or no treatment?\n| Recommendation (update): | Psychological interventions should be offered for children and adolescents with post-traumatic stress disorder (PTSD). Namely, these include: y individual face-to-face cognitive behavioural therapy (CBT) with a trauma focus; y group face-to-face CBT with a trauma focus; y eye movement desensitization and reprocessing (EMDR). | Psychological interventions should be offered for children and adolescents with post-traumatic stress disorder (PTSD). Namely, these include: y individual face-to-face cognitive behavioural therapy (CBT) with a trauma focus; y group face-to-face CBT with a trauma focus; y eye movement desensitization and reprocessing (EMDR). |\n| - | - | - |\n| | Strength of recommendation: | Strong |\n| | Certainty of evidence: | Moderate |"
+    },
+    {
+      "chunk": 215,
+      "source_chunk": 216,
+      "split_part": 0,
+      "page_start": 82,
+      "page_end": 82,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "DEM1. For carers of people with dementia, are psychosocial interventions effective in improving their outcomes?",
+      "token_count": 165,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "DEM1. For carers of people with dementia, are psychosocial interventions effective in improving their outcomes?\n<!-- image -->\n8\n- Recommendation (update): 1.1 Psychosocial interventions - namely mindfulness-based interventions, multicomponent interventions, psychoeducation and psychotherapy/ counselling - should be offered for carers of people living with dementia.\nStrength of recommendation:\nStrong\nCertainty of evidence:\nLow\n- 1.2 Respite care should be considered for carers of people living with dementia.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nLow\n- 1.3 Depression and anxiety in carers of people living with dementia should be assessed and treated in line with mhGAP recommendations for depression and anxiety.\nStrength of recommendation:\nStrong\nCertainty of evidence:\nLow"
+    },
+    {
+      "chunk": 237,
+      "source_chunk": 238,
+      "split_part": 0,
+      "page_start": 90,
+      "page_end": 90,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3.6 Depression (DEP)",
+      "token_count": 154,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "3.6 Depression (DEP)\nDEP1. Are antidepressants (tricyclic antidepressants [TCAs] and selective serotonin reuptake inhibitors [SSRIs]) better than (more effective than/as safe as) pill placebo/treatment as usual in adults with depressive episode/disorder?\n<!-- image -->\n8\nRecommendation (update):\nIn adults with moderate-to-severe depression, citalopram, escitalopram, fluoxetine, fluvoxamine, paroxetine or sertraline (SSRIs) or amitriptyline (TCA) should be considered.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nVery low"
+    },
+    {
+      "chunk": 258,
+      "source_chunk": 259,
+      "split_part": 0,
+      "page_start": 96,
+      "page_end": 96,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "DRU1. Are brief psychosocial interventions for people using cannabis or stimulants effective in reducing drug use, dependence and harm from drug use?",
+      "token_count": 226,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "DRU1. Are brief psychosocial interventions for people using cannabis or stimulants effective in reducing drug use, dependence and harm from drug use?\n<!-- image -->\n8\n- Recommendation (update): 1.1 Adults using cannabis should be offered screening and brief intervention. Brief intervention should comprise at least a single session, incorporating individualized feedback and advice on reducing or stopping cannabis consumption, and the offer of follow-up care.\nStrength of recommendation:\nStrong\nCertainty of evidence:\nVery low\n- 1.2 Adults using psychostimulants should be offered screening and brief intervention. Brief intervention should comprise at least a single session, incorporating individualized feedback and advice on reducing or stopping psychostimulant consumption, and the offer of follow-up care.\nStrength of recommendation:\nStrong\nCertainty of evidence:\nVery low\n- 1.3 For adults with hazardous cannabis or psychostimulant use, or with disorders due to use of these substances who do not respond to brief interventions, referral for specialist intervention should be considered.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nVery low"
+    },
+    {
+      "chunk": 265,
+      "source_chunk": 266,
+      "split_part": 0,
+      "page_start": 99,
+      "page_end": 99,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "DRU2. Are pharmacotherapies safe and effective for the treatment of cocaine or stimulant dependence?",
+      "token_count": 94,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "DRU2. Are pharmacotherapies safe and effective for the treatment of cocaine or stimulant dependence?\n| Recommendation (update): | Dexamphetamine, methylphenidate and modafinil are not recommended the treatment of cocaine or stimulant use disorders due to safety | for |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 292,
+      "source_chunk": 293,
+      "split_part": 0,
+      "page_start": 108,
+      "page_end": 108,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3.8 Epilepsy and seizures (EPI)",
+      "token_count": 202,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "3.8 Epilepsy and seizures (EPI)\nEPI1. In adults with established status epilepticus, i.e. seizures persisting after the first-line agent (benzodiazepine-resistant status epilepticus), which antiseizure medicines are associated with better clinical outcomes (stopping seizures and with less adverse effects)?\n<!-- image -->\nRecommendation (update):\nIn adults with established status epilepticus, i.e. seizures persisting after two doses of benzodiazepines, either intravenous fosphenytoin, intravenous phenytoin, intravenous levetiracetam, intravenous phenobarbital or intravenous valproic acid (sodium valproate) should be considered with appropriate monitoring. The choice of these medicines depends on local resources, including availability and facilities for monitoring.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nLow"
+    },
+    {
+      "chunk": 317,
+      "source_chunk": 318,
+      "split_part": 0,
+      "page_start": 116,
+      "page_end": 116,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "EPI5. Which interventions are effective in preventing epilepsy-related mortality, including sudden unexpected death of someone with epilepsy (SUDEP)?",
+      "token_count": 109,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "EPI5. Which interventions are effective in preventing epilepsy-related mortality, including sudden unexpected death of someone with epilepsy (SUDEP)?\n| Recommendation (new): | Nocturnal supervision should be considered for prevention of sudden unexpected death in epilepsy (SUDEP). | Nocturnal supervision should be considered for prevention of sudden unexpected death in epilepsy (SUDEP). |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Very low |"
+    },
+    {
+      "chunk": 322,
+      "source_chunk": 323,
+      "split_part": 0,
+      "page_start": 118,
+      "page_end": 118,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "OVE1. Are psychosocial interventions (i.e. psychoeducation, cognitive-behavioural therapy, counselling, self-help groups) for carers of persons with schizophrenia/psychosis/ schizophrenia spectrum disorder, bipolar disorder or substance use disorder effective compared with placebo/other controls?",
+      "token_count": 239,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "OVE1. Are psychosocial interventions (i.e. psychoeducation, cognitive-behavioural therapy, counselling, self-help groups) for carers of persons with schizophrenia/psychosis/ schizophrenia spectrum disorder, bipolar disorder or substance use disorder effective compared with placebo/other controls?\n<!-- image -->\n8\n| Recommendation (new): | Psychosocial interventions - namely psychoeducation using problem-solving and cognitive-behavioural approaches (either individual or family-based), self-help interventions and mutual support groups - should be considered for carers of persons with psychosis or bipolar disorder. | Psychosocial interventions - namely psychoeducation using problem-solving and cognitive-behavioural approaches (either individual or family-based), self-help interventions and mutual support groups - should be considered for carers of persons with psychosis or bipolar disorder. |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Moderate (carers of persons with psychosis or bipolar disorder), very low (carers of persons with substance use disorder) |"
+    },
+    {
+      "chunk": 328,
+      "source_chunk": 329,
+      "split_part": 0,
+      "page_start": 120,
+      "page_end": 120,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "PSY1. In adults with psychotic disorders (including schizophrenia) is antipsychotic medicine safe and effective?",
+      "token_count": 168,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "PSY1. In adults with psychotic disorders (including schizophrenia) is antipsychotic medicine safe and effective?\n<!-- image -->\nRecommendation (update): 1.1 Oral antipsychotic medicines - namely aripiprazole, chlorpromazine, haloperidol, olanzapine, paliperidone, quetiapine, risperidone - should be offered for adults with a psychotic disorder (including schizophrenia), carefully balancing effectiveness, side-effects and individual preference.\nStrength of recommendation:\nStrong\nCertainty of evidence:\nModerate\n1.2 Clozapine should be considered for adults with a treatment-resistant psychotic disorder (including schizophrenia) under mental health specialist supervision, carefully balancing effectiveness, side-effects and individual preference.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nModerate"
+    },
+    {
+      "chunk": 398,
+      "source_chunk": 399,
+      "split_part": 0,
+      "page_start": 140,
+      "page_end": 140,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "SUI1. Is safety planning better than treatment as usual for persons with thoughts or plans of self-harm in the last month or acts of self-harm in the last year?",
+      "token_count": 99,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "SUI1. Is safety planning better than treatment as usual for persons with thoughts or plans of self-harm in the last month or acts of self-harm in the last year?\n<!-- image -->\n8\nRecommendation (new):\nSafety planning type-interventions, i.e. interventions based on principles of safety planning which are multicomponent or supplemented with follow-up or support, can be considered.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nVery low"
+    },
+    {
+      "chunk": 404,
+      "source_chunk": 405,
+      "split_part": 0,
+      "page_start": 141,
+      "page_end": 142,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Research gaps",
+      "token_count": 340,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Research gaps\n- y There is a need for high-quality evaluations of media campaigns for the general population as well as targeted campaigns (e.g. on availability of help), with large enough sample sizes to assess the outcome measures of suicide and suicide attempts.\n- y Preference should be given to cluster randomized trials and quasi-experimental designs.\n- y Cultural adaptation when developing media campaigns is always needed.\n- y Benefits as well as potential harms (particularly when there is a lack of services) of media campaigns need to be addressed and assessed.\n- y There is need to develop and test public service announcements before they are used in a media campaign.\nSUI3. Are stand-alone digital interventions for the self-management of thoughts, plans or acts of self-harm among persons with thoughts or plans of self-harm in the last month or acts of self-harm in the last year effective in reducing deaths from suicide, suicide attempts, acts and thoughts of self-harm?\n| Recommendation (new): | Stand-alone digital interventions based on evidence-based interventions such as cognitive behavioural therapy (CBT), dialectical behaviour therapy (DBT), problem-solving therapy (PST) and mindfulness should be considered as support for persons with suicidal thoughts. | Stand-alone digital interventions based on evidence-based interventions such as cognitive behavioural therapy (CBT), dialectical behaviour therapy (DBT), problem-solving therapy (PST) and mindfulness should be considered as support for persons with suicidal thoughts. |\n| - | - | - |\n| | Strength of recommendation: | Conditional |\n| | Certainty of evidence: | Low |"
+    },
+    {
+      "chunk": 413,
+      "source_chunk": 414,
+      "split_part": 0,
+      "page_start": 146,
+      "page_end": 146,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "6. Updating the evidence",
+      "token_count": 118,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "6. Updating the evidence\nThe guideline will be updated five years after publication. The WHO Steering Group will continue to follow the research developments in the mhGAP module areas, particularly those questions for which no evidence was found and those that were supported by low-certainty evidence, where new recommendations or a change in the published recommendation may be warranted, respectively. Following publication and dissemination of the guideline, any concern about validity of any recommendation would be promptly communicated to the guideline implementers in addition to plans to update the recommendation.\n<!-- image -->"
+    },
+    {
+      "chunk": 462,
+      "source_chunk": 463,
+      "split_part": 0,
+      "page_start": 162,
+      "page_end": 162,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Guideline Development Group (GDG)",
+      "token_count": 246,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Guideline Development Group (GDG)\n| Name and title | Affiliation City, country | WHO region of residence | Expertise |\n| - | - | - | - |\n| Dr Ali Amza | Andrews Memorial Hospital Department of Medicine and Neurology, University of the West Indies Kingston Public Hospital Kingston, Jamaica | Americas | Epilepsy, clinical neurophysiology |\n| Professor Sawitri Assanangkornchai | Faculty of Medicine, Prince of Songkla University, Hat Yai, Thailand Thai Health Promotion Foundation, Bangkok, Thailand | South-East Asia | Substance use and addictive behaviour disorders, psychiatric and mental health epidemiology |\n| Corrado Barbui (Co-Chair and guideline methodologist) | WHO Collaborating Centre for Research and Training in Mental Health and Service Evaluation, University of Verona, Verona, Italy | Europe | Guideline methodology, evidence review and synthesis |\n| Professor Henry Brodaty | Dementia Centre for Research Collaboration, CHeBA (Centre for Healthy Brain Ageing) University of New South Wales Prince of Wales Hospital Sydney, Australia | Western Pacific | Cognitive health and ageing, dementia, particularly Alzheimer's disease, global approaches |"
+    },
+    {
+      "chunk": 463,
+      "source_chunk": 464,
+      "split_part": 0,
+      "page_start": 163,
+      "page_end": 163,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Guideline Development Group (GDG)",
+      "token_count": 329,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Guideline Development Group (GDG)\n| Name and title | Affiliation City, country | WHO region of residence | Expertise |\n| - | - | - | - |\n| Dr Vladimir Carli | Karolinska Institutet, Stockholm, Sweden: - National Centre for Suicide Research and Prevention of Mental Ill-Health, and - WHO Collaborating Centre for Research, Training and Methods Development in Suicide Prevention | Europe | Self-harm and suicide prevention, chair of International Association for Suicide Prevention Special Interest Group - Suicidal Behaviour in Adolescents |\n| Dr Odille Chang | School of Medical Sciences, Fiji National University, Suva, Fiji | Western Pacific | Capacity-building for mental health, development of a mental health mobile app for screening for depression and suicide risk, and art as a recovery tool |\n| Professor Pamela Collins | University of Washington, Seattle, United States of America (USA) | Americas | Global public health and global mental health research, education, training and capacity-building, and science policy leadership |\n| Professor Pim Cuijpers | Vrije Universiteit Amsterdam, Amsterdam, Netherlands (Kingdom of the) | Europe | Depression, meta-analysis of the efficacy of psychological interventions, scaling-up of treatment |\n| Professor Petrus J. de Vries | University of Cape Town, Cape Town, South Africa | Africa | Autism spectrum disorders in Africa and low-resource environments, tuberous sclerosis complex, adolescent health and health promotion |\n| Dr Palmira Fortunato dos Santos | Ministry of Health of Mozambique, Maputo, Mozambique | Africa | Mental health policy, evaluation, rehabilitation |"
+    },
+    {
+      "chunk": 464,
+      "source_chunk": 465,
+      "split_part": 0,
+      "page_start": 164,
+      "page_end": 164,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Guideline Development Group (GDG)",
+      "token_count": 355,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Guideline Development Group (GDG)\n| Name and title | Affiliation City, country | WHO region of residence | Expertise |\n| - | - | - | - |\n| Professor Chris Dowrick | University of Liverpool, Liverpool, United Kingdom of Great Britain and Northern Ireland Aintree Park Group Practice, Liverpool, United Kingdom University of Melbourne, Melbourne, Australia | Europe | Medically unexplained somatic complaints, mental health in primary care, guideline development (NICE) for depression |\n| Dr Julian Eaton | CBM Global Disability Inclusion, Amstelveen, Netherlands (Kingdom of the) London School of Hygiene and Tropical Medicine, London, United Kingdom | Europe | Mental health in low-income countries, human rights |\n| Dr Rabih El Chammay | Ministry of Public Health, Baabda, Lebanon Psychiatry Department, School of Medicine, Saint-Joseph University, Beirut, Lebanon Hotel-Dieu University Hospital, Beirut, Lebanon | Eastern Mediterranean | Public mental health and refugee mental health, policy |\n| Professor Cleusa Ferri | Department of Psychiatry, Escola Paulista de Medicina, Universidade Federal de São Paulo, São Paulo, Brazil | Americas | Dementia, epidemiology and care provision for late- life mental disorders in low-resource settings |\n| Professor Sandra Fortes | School of Medical Sciences, Rio de Janeiro State University Ministry of Health Rio de Janeiro, Brazil | Americas | Health policy, medically unexplained symptoms |\n| Dr Michael P. Hengartner | Zurich University of Applied Sciences, Zurich, Switzerland | Europe | Public mental health, psychiatric epidemiology and social psychiatry, psychopathology, applied biostatistics and quantitative methodology |"
+    },
+    {
+      "chunk": 465,
+      "source_chunk": 466,
+      "split_part": 0,
+      "page_start": 165,
+      "page_end": 165,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Guideline Development Group (GDG)",
+      "token_count": 413,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Guideline Development Group (GDG)\n| Name and title | Affiliation City, country | WHO region of residence | Expertise |\n| - | - | - | - |\n| Dr Asma Humayun | Ministry of Planning, Development and Special Initiatives, Islamabad, Pakistan | Eastern | Psychosocial aspects of health care in medical training and practice, scaling up mental health resources and de- stigmatizing mental health care in Pakistan |\n| Professor Nathalie Jette | Icahn School of Medicine at Mount Sinai, New York, USA | Americas | Adult epilepsy, health services research, epidemiology |\n| Dr Maria Elena Medina-Mora | School of Psychology, Mexican National Autonomous University Global Mental Health Research Centre, National Institute of Psychiatry | Americas | Methodologic, psychosocial, and epidemiological issues as they relate to addictions and mental health |\n| Professor Pratima Murthy | Mexico City, Mexico National Institute of Mental Health and Neurosciences, Bengaluru, India | South-East Asia | Alcohol and substance use, history of psychiatry, psychiatry and law, psychiatric training, neuropsychiatry |\n| Dr Dinah Nadera | Ateneo School of Medicine and Public Health, Pasig City, Philippines University of the Philippines Diliman, Quezon City, Philippines | Western Pacific | Research and capacity- building in mental health, mental health initiatives for government and civil society organizations in the areas of training, research, policy and legislation |\n| Professor Charles Newton | Kenya Medical Research Institute, Kilifi, Kenya University of Oxford, Oxford, United Kingdom | Africa | Paediatric epilepsy, epidemiology of epilepsy, neurodevelopmental disorders in LMICs |\n| Mr Michael Njenga | Users & Survivors of Psychiatry in Kenya (USPKenya), Nairobi, Kenya CBM Global Disability Inclusion, Amstelveen, Netherlands (Kingdom of the) | Africa | Expert by experience, disability rights activist and researcher |"
+    },
+    {
+      "chunk": 466,
+      "source_chunk": 467,
+      "split_part": 0,
+      "page_start": 166,
+      "page_end": 166,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Guideline Development Group (GDG)",
+      "token_count": 334,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Guideline Development Group (GDG)\n| Name and title | Affiliation City, country | WHO region of residence | Expertise |\n| - | - | - | - |\n| Professor Olayinka Omigbodun | University of Ibadan, Ibadan, Nigeria University College Hospital, Ibadan, Nigeria | Africa | Child and adolescent mental health, public mental health, mental health in primary care |\n| Professor Afarin Rahimi- Movaghar | Iranian National Center for Addiction Studies Tehran University of Medical Sciences Tehran, Iran (Islamic Republic of) | Eastern Mediterranean | Addiction, HIV, public health |\n| Professor Atif Rahman | University of Liverpool, Liverpool, United Kingdom | Europe | Child and adolescent mental health, global mental health, women's mental health, psychological interventions for mental disorders in LMICs, cultural issues in mental health care |\n| Professor Shekhar Saxena | Harvard T. H. Chan School of Public Health, Harvard University, Cambridge, USA | Americas | Prevention and management of mental, developmental, neurological and substance use disorders and suicide prevention |\n| Ms Charlene Sunkel (withdrew from GDG) | Global Mental Health Peer Network, Johannesburg, South Africa | Africa | Lived experience, Founder/ CEO of the Global Mental Health Peer Network, stigma, human rights |\n| Professor Sir Graham Thornicroft (Chair) | South London & Maudsley NHS Foundation Trust Centre for Global Mental Health & Centre for Implementation Science Institute of Psychiatry, Psychology and Neuroscience King's College London London, United Kingdom | Europe | Global mental health, guidelines development, mental health services research, mental health stigma |"
+    },
+    {
+      "chunk": 467,
+      "source_chunk": 468,
+      "split_part": 0,
+      "page_start": 167,
+      "page_end": 167,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Guideline Development Group (GDG)",
+      "token_count": 232,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Guideline Development Group (GDG)\n| Name and title | Affiliation City, country | WHO region of residence | Expertise |\n| - | - | - | - |\n| Dr Lakshmi Vijayakumar | Society for Networking, Empowerment & Holistic Action, New Delhi, India Department of Psychiatry, Voluntary Health Services, Chennai, India University of Melbourne, Melbourne, Australia | South-East Asia | Suicide prevention, global suicide research |\n| Professor Wang Huali | Peking University Institute of Mental Health, Beijing, China | Western Pacific | Dementia, late-life dementia, capacity-building, policy advocacy for aging mental health |\n| Ms Pichayanan (Peach) Wattanavitukul | Faculty of Medicine Ramathibodi Hospital, Mahidol University, Bangkok, Thailand Alzheimer's Disease and Related Disorder Association of Thailand, Bangkok, Thailand | South-East Asia | Carer of person with dementia |\n| Ms Enat Yewnetu | CareEpilepsy, Addis Ababa, Ethiopia | Africa | Lived experience, advocacy, founder and CEO of Pan- Africa NGO, stigma and social barriers |"
+    },
+    {
+      "chunk": 468,
+      "source_chunk": 469,
+      "split_part": 0,
+      "page_start": 168,
+      "page_end": 168,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Topic Expert Group (TEG) for each module",
+      "token_count": 389,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Topic Expert Group (TEG) for each module\n| Name and title | Affiliation City, country | WHO region of residence |\n| - | - | - |\n| Alcohol use disorders TEG and drug use disorders TEG | Alcohol use disorders TEG and drug use disorders TEG | Alcohol use disorders TEG and drug use disorders TEG |\n| Professor Sawitri Assanangkornchai | Faculty of Medicine, Prince of Songkla University, Hat Yai, Thailand Thai Health Promotion Foundation, Bangkok, Thailand | South-East Asia |\n| Professor Colin Drummond | Institute of Psychiatry, Psychology and Neuroscience, King's College London, London, United Kingdom | Europe |\n| Professor David Fiellin | Yale School of Medicine, New Haven, USA | Americas |\n| Professor Wei Hao | Central South University, Changsha, China | Western Pacific |\n| Professor Yasser Khazaal | Lausanne University, Lausanne University Hospital, Research Center, Lausanne, Switzerland | Europe |\n| Professor Evgeny Krupitsky | V.M. Bekhterev National Medical Reserach Center for Psychiatry, Saint Petersburg, Russian Federation | Europe |\n| Dr Elena Maria Medina-Mora | School of Psychology, Mexican National Autonomous University Global Mental Health Research Centre, National Institute of Psychiatry Mexico City, Mexico | Americas |\n| Professor Pratima Murthy | National Institute of Mental Health and Neuro Sciences, Bengaluru, India | South-East Asia |\n| Dr Afarin Rahimi-Movaghar | Iranian National Center for Addiction Studies Tehran University of Medical Sciences Tehran, Islamic Republic of Iran | Eastern Mediterranean |\n| Professor John Saunders | National Centre for Youth, Substance Use Research, University of Queensland, Brisbane, Australia | Western Pacific |\n| Dr Zukiswa Zingela | Dora Nginza Hospital, Eastern Cape Department of Health, Gqeberha, South Africa | Africa |"
+    },
+    {
+      "chunk": 469,
+      "source_chunk": 470,
+      "split_part": 0,
+      "page_start": 169,
+      "page_end": 169,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Topic Expert Group (TEG) for each module",
+      "token_count": 416,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Topic Expert Group (TEG) for each module\n| Name and title | Affiliation City, country | WHO region of residence |\n| - | - | - |\n| Anxiety disorders TEG | Anxiety disorders TEG | Anxiety disorders TEG |\n| Professor Pim Cuijpers | Vrije Universiteit Amsterdam, Amsterdam, Netherlands (Kingdom of the) | Europe |\n| Professor Atif Rahman | University of Liverpool, Liverpool, United Kingdom | Europe/Eastern Mediterranean |\n| Dr Piyanee Yobas | Alice Lee Centre for Nursing Studies, National University of Singapore, Singapore | South-East Asia |\n| Child and adolescent mental disorders TEG | Child and adolescent mental disorders TEG | Child and adolescent mental disorders TEG |\n| Professor Nicholas Allen | University of Oregon, Eugene, USA | Americas |\n| Professor Theresa Betancourt | Boston College School of Social Work, Boston, USA | Americas |\n| Professor Tony Charman | King's College London South London and Maudsley NHS Foundation Trust London, United Kingdom | Europe |\n| Professor Petrus J. de Vries | University of Cape Town, Cape Town, South Africa | Africa |\n| Professor Mark Jordans | University of Amsterdam, Amsterdam, Netherlands (Kingdom of the) Center for Global Mental Health, King's College London, London, United Kingdom War Child, Amsterdam, Netherlands (Kingdom of the) | Europe |\n| Dr Christian Kieling | Universidade Federal do Rio Grande do Sul, Porto Alegre, Brazil | Americas |\n| Conditions related to stress TEG | Conditions related to stress TEG | Conditions related to stress TEG |\n| Dr Ceren Acarturk | Koc University, Istanbul, Türkiye | Europe |\n| Professor Jonathan Bisson | Cardiff University School of Medicine, Cardiff, United Kingdom | Europe |\n| Professor Richard Bryant | School of Psychology, University of New South Wales, Sydney, Australia | Western Pacific |\n| Dr Marit Sijbrandij | Vrije Universitet, Amsterdam, Netherlands (Kingdom of the) | Europe |"
+    },
+    {
+      "chunk": 470,
+      "source_chunk": 471,
+      "split_part": 0,
+      "page_start": 170,
+      "page_end": 170,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Topic Expert Group (TEG) for each module",
+      "token_count": 402,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Topic Expert Group (TEG) for each module\n| Name and title | Affiliation City, country | WHO region of residence |\n| - | - | - |\n| Dementia TEG | | |\n| Professor Cleusa Ferri | Department of Psychiatry, Escola Paulista de Medicina, Universidade Federal de São Paulo, São Paulo, Brazil | Americas |\n| Professor Yun-Hee Jeon | University of Sydney, Sydney, Australia | Western Pacific |\n| Professor Miia Kivipelto | Karolinska Institutet, Stockholm, Sweden University of Eastern Finland, Kuopio, Finland | Europe |\n| Dr Deborah Oliviera | Department of Psychiatry, Medical School, Universidade Federal de São Paulo, São Paulo, Brazil | Americas |\n| Professor Shehan Williams | Faculty of Medicine, University of Kelaniya, Kelaniya, Sri Lanka | South-East Asia |\n| Depression TEG | | |\n| Professor Pim Cuijpers | Vrije Universiteit Amsterdam, Amsterdam, Netherlands (Kingdom of the) | Europe |\n| Dr Michael P. Hengartner | Zurich University of Applied Sciences, Zurich, Switzerland | Europe |\n| Professor Steve Pilling | National Collaborating Centre for Mental Health, London, United Kingdom | Europe |\n| Professor Pratap Sharan | All India Institute of Medical Sciences, New Delhi, India | South-East Asia |\n| Epilepsy and seizures TEG | | |\n| Mr Action Amos | International Bureau of Epilepsy, University of Edinburgh, Edinburgh, United Kingdom | Africa |\n| Professor Alla Guekht | Moscow Research and Clinical Center for Neuropsychiatry, Russian State Medical University, Moscow, Russian Federation | Europe |\n| Professor Nathalie Jette | Icahn School of Medicine at Mount Sinai, New York, USA | Americas |\n| Dr Arjune Sen | The John Radcliffe Hospital Nuffield Department of Clinical Neurosciences, University of Oxford Oxford, United Kingdom | Europe |"
+    },
+    {
+      "chunk": 471,
+      "source_chunk": 472,
+      "split_part": 0,
+      "page_start": 171,
+      "page_end": 171,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Topic Expert Group (TEG) for each module",
+      "token_count": 392,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Topic Expert Group (TEG) for each module\n| Name and title | Affiliation City, country | WHO region of residence |\n| - | - | - |\n| Professor Chahnez Triki | Department of Neurology, University of Sfax Hédi Chaker University Hospital Sfax, Tunisia | Eastern Mediterranean |\n| Other significant emotional and medical unexplained somatic complaints TEG | Other significant emotional and medical unexplained somatic complaints TEG | Other significant emotional and medical unexplained somatic complaints TEG |\n| Professor Chris Dowrick | University of Liverpool, Liverpool, United Kingdom Aintree Park Group Practice, Liverpool, United Kingdom University of Melbourne, Melbourne, Australia | Europe |\n| Professor Sandra Fortes | School of Medical Sciences, Rio de Janeiro State University Brazilian Health Ministry Rio de Janeiro, Brazil | Americas |\n| Professor Athula Sumathipala | Institute for Research and Development, Battaramulla, Sri Lanka Faculty of Medicine, Kotelawala Defence University, Colombo, Sri Lanka Keele University, Staffordshire, United Kingdom | South-East Asia/Europe |\n| Psychosis and bipolar disorders TEG | Psychosis and bipolar disorders TEG | Psychosis and bipolar disorders TEG |\n| Dr Anish Cherian | National Institute of Mental Health and Neuro Sciences, Bengaluru, India | South-East Asia |\n| Dr Adib Essali | Counties Manukau Health University of Auckland Auckland, New Zealand | Eastern Mediterranean/ Western Pacific |\n| Professor Oye Gureje | Department of Psychiatry, University College Hospital, Ibadan University of Ibadan Ibadan, Nigeria | Africa |\n| Dr Charlotte Hanlon | King's College London, London, United Kingdom Addis Ababa University, Addis Ababa, Ethiopia | Africa/Europe |\n| Professor Mario Maj | Department of Psychiatry, University of Naples, Naples, Italy | Europe |"
+    },
+    {
+      "chunk": 472,
+      "source_chunk": 473,
+      "split_part": 0,
+      "page_start": 172,
+      "page_end": 172,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the Topic Expert Group (TEG) for each module",
+      "token_count": 230,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the Topic Expert Group (TEG) for each module\n| Name and title | Affiliation City, country | WHO region of residence |\n| - | - | - |\n| Dr Giovani Ostuzzi | Department of Neuroscience, Biomedicine and Movement Sciences, Section of Psychiatry, University of Verona, Verona, Italy | Europe |\n| Dr Thara Rangaswamy | Schizophrenia Research Foundation (SCARF), Chennai, India | South-East Asia |\n| Ms Muffy Walker | International Bipolar Foundation, San Diego, USA | Americas |\n| Self-harm and suicide TEG | Self-harm and suicide TEG | Self-harm and suicide TEG |\n| Dr Vladimir Carli | Karolinska Institutet, Stockholm, Sweden: - National Centre for Suicide Research and Prevention of Mental Ill-Health - WHO Collaborating Centre for Research, Training and Methods Development in Suicide Prevention | Europe |\n| Dr Lai Fong Chan | Hospital Universiti Kebangsaan Malaysia, Kuala Lumpur, Malaysia | Western Pacific |\n| Professor Jane Pirkis | University of Melbourne, Melbourne, Australia | Western Pacific |"
+    },
+    {
+      "chunk": 473,
+      "source_chunk": 474,
+      "split_part": 0,
+      "page_start": 173,
+      "page_end": 173,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the External Review Group (ERG)",
+      "token_count": 313,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the External Review Group (ERG)\n| Name and title | Affiliation | WHO region of residence | Expertise |\n| - | - | - | - |\n| Dr Helal Uddin Ahmed | National Institute of Mental Health, Dhaka, Bangladesh | South-East Asia | Child and adolescent mental health |\n| Professor Kaarin Anstey | University of New South Wales, Sydney, Australia | Western Pacific | Dementia |\n| Professor Helen Herrman | Orygen, The National Centre of Excellence in Youth Mental Health, University of Melbourne, Melbourne, Australia | Western Pacific | Vulnerable and disengaged youth, community mental health, mental health promotion, gender |\n| Dr Lola Kola | WHO Collaborating Centre for Research and Training in Mental Health, Neurosciences and Drug and Alcohol Abuse, Department of Psychiatry College of Medicine, University of Ibadan, Ibadan, Nigeria BRiTE Center, Department of Psychiatry and Behavioral Sciences, University of | Africa | Global mental health |\n| Professor Crick Lund | Washington, Seattle, USA King's College London, United Kingdom University of Cape Town, Cape Town, South Africa | Europe and Africa | Mental health policy, service planning and the relationship between poverty and mental health in LMICs |\n| Professor David Ndetei | University of Nairobi, Nairobi, Kenya | Africa | Community mental health; incorporating mental health in treatment of chronic noncommunicable diseases such as cancer, diabetes and hypertension; mother- child health; early childhood development; school mental health including substance use and suicide. |"
+    },
+    {
+      "chunk": 474,
+      "source_chunk": 475,
+      "split_part": 0,
+      "page_start": 174,
+      "page_end": 174,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Members of the External Review Group (ERG)",
+      "token_count": 295,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Members of the External Review Group (ERG)\n| Name and title | Affiliation | WHO region of residence | Expertise |\n| - | - | - | - |\n| Dr Alfredo Pemjean | Secretariat for Public Health, Ministry of Health, Santiago, Chile | Americas | Mental health programme management |\n| Professor Pratap Sharan | All India Institute of Medical Sciences, New Delhi, India | South-East Asia | Adult psychiatry, public mental health, global mental health |\n| Dr Vandad Sharifi Senejani | Department of Psychiatry, Tehran University of Medical Sciences, Tehran, Islamic Republic of Iran | Eastern Mediterranean | Severe and enduring mental disorders, service implementation, clinical trials for treatment of psychosis and mood disorders |\n| Dr David Shiers | Psychosis Research Unit, Greater Manchester Mental Health Trust Division of Psychology and Mental Health, University of Manchester Manchester, United Kingdom | Europe | Carer, initiative to reduce the impact of schizophrenia, policy |\n| Dr Gagandeep Singh | Department of Neurology, Dayanand Medical College, Ludhiana, India | South-East Asia | Epilepsy and seizures |\n| Ms Sahar Vasquez | Mind Health Connect, Belize City, Belize | Americas | Lived experience, advocacy |\n| Professor Min Zhao | Shanghai Drug Abuse Treatment Center Shanghai Mental Health Center Shanghai Jiaotong University School of Medicine Shanghai, China | Western Pacific | Substance use disorders treatment and prevention, mental health and addiction |"
+    },
+    {
+      "chunk": 479,
+      "source_chunk": 480,
+      "split_part": 0,
+      "page_start": 177,
+      "page_end": 177,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Declared interests of the members of the Guideline Development Group (GDG)",
+      "token_count": 245,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Declared interests of the members of the Guideline Development Group (GDG)\n| Name and title | Declaration of interest | Conflict of interest and management |\n| - | - | - |\n| Dr Amza Ali | Employed and holds stocks, shares and a commercial interest in Psyence Group. | The Psyence group is a biotechnology company developing psychedelic therapies. The nature of the company was not considered to represent a conflict as psychedelic therapy is not included anywhere in mhGAP and was not a part of any of the PICO question discussions. No conflict of interest identified. |\n| Professor Sawitri Assanangkornchai | None | No conflict of interest identified. |\n| Professor Henry Brodaty | Employed by the University of New South Wales, Sydney. Payment for consultancy or advisory board membership for Biogen Pharmaceuticals, Cranbrook Care, Nutricia Australia, Roche, Skin2Neuron. Ongoing research support from Australia's National Health Medical Research Council (NHMRC) and the Commonwealth Department of Health (Australian Government). Honorary Advisor to Alzheimer's Disease International, Dementia Australia and Montefiore Homes, Sydney. | No conflict of interest identified. |"
+    },
+    {
+      "chunk": 480,
+      "source_chunk": 481,
+      "split_part": 0,
+      "page_start": 178,
+      "page_end": 178,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Declared interests of the members of the Guideline Development Group (GDG)",
+      "token_count": 407,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Declared interests of the members of the Guideline Development Group (GDG)\n| Name and title | Declaration of interest | Conflict of interest and management |\n| - | - | - |\n| Dr Vladimir Carli | Shareholder of Mental Health in Mind International AB. Senior lecturer at the Swedish National Centre for Suicide Research and Prevention, Karolinska Institute. | No conflict of interest identified. |\n| Dr Odille Chang | None | No conflict of interest identified. |\n| Professor Pamela Y. Collins | None | No conflict of interest identified. |\n| Professor Pim Cuijpers | None | No conflict of interest identified. |\n| Professor Petrus J. de Vries | On the executive committee of four international non-profit associations/societies that have a direct interest and focus on child and adolescent mental health and/or neurodevelopmental disabilities. | No conflict of interest identified. |\n| Professor Christopher Dowrick | Chair (unpaid) of World Organisation of Family Doctors (WONCA) Working Party for Mental Health 2016-2021. Research funding from English National Institute for Health Research and European Commission until 2020. Recent funding from Novartis and WONCA for primary care mental health educational activities. | No conflict of interest identified. |\n| Dr Julian Eaton | Employed by CBM Global and London School of Hygiene and Tropical Medicine (LSHTM) Centre for Global Mental Health. Unpaid involvement with the Inter-Agency Standing Committee (IASC), Mental Health Innovation Network (MHIN), research advisory groups (SPARK, HOPE, INDIGO) and journal boards (Global Mental Health, Intervention). These are all civil society, intergovernmental and research organizations involved in global | No conflict of interest identified. |\n| Dr Rabih El Chammay | mental health. None | No conflict of interest identified. |\n| Professor Cleusa P. Ferri | None | No conflict of interest identified. |\n| Professor Sandra Fortes | None | No conflict of interest identified. |"
+    },
+    {
+      "chunk": 481,
+      "source_chunk": 482,
+      "split_part": 0,
+      "page_start": 179,
+      "page_end": 179,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Declared interests of the members of the Guideline Development Group (GDG)",
+      "token_count": 420,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Declared interests of the members of the Guideline Development Group (GDG)\n| Name and title | Declaration of interest | Conflict of interest and management |\n| - | - | - |\n| Dr Michael P. Hengartner | None | No conflict of interest identified. |\n| Dr Asma Humayun | None | No conflict of interest identified. |\n| Professor Nathalie Jette | Chair of International League Against Epilepsy (ILAE) Standards and Best Practice Council, Bludhorn Professor of International Medicine (Research Chair), honorarium for role as associate editor of Epilepsia. | No conflict of interest identified. |\n| Dr Maria Elena Medina-Mora | None | No conflict of interest identified. |\n| Professor Pratima Murthy | None | No conflict of interest identified. |\n| Dr Dinah Nadera | Consulting, including service as a technical advisor and mhGAP trainer for CBM International. Pt 15 000 in 2019. Support (including honoraria) for being on a speaker's bureau, giving speeches or training for a commercial entity or other organization with an interest related to the subject of the meeting or work. Department of Health (Philippines) Region 13, Bangsamoro Autonomous Region of Muslim Mindanao (BARMM). Pt 12 000- 15 000. 2018 (Region13), 2019 (Region 13 | No conflict of interest identified. |\n| Professor Charles Newton | and BARMM), 2020 (BARMM). None | No conflict of interest identified. |\n| Mr Michael Njenga | Extensively worked in the area of human rights for persons with psychosocial disabilities in various capacities. Lead trainer for the Convention on the Rights of Persons with Disabilities (CRPD)/ Sustainable Development Goals (SDGs) Bridge cycles for the International Disability Alliance since the year 2016. Has given numerous talks in the area of human rights at WHO, CRPD Committee and various universities. | No conflict of interest identified. |\n| Professor Olayinka Omigbodun | None | No conflict of interest identified. |"
+    },
+    {
+      "chunk": 482,
+      "source_chunk": 483,
+      "split_part": 0,
+      "page_start": 180,
+      "page_end": 180,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Declared interests of the members of the Guideline Development Group (GDG)",
+      "token_count": 377,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Declared interests of the members of the Guideline Development Group (GDG)\n| Name and title | Declaration of interest | Conflict of interest and management |\n| - | - | - |\n| Dr Palmira Fortunato dos Santos | None | No conflict of interest identified. |\n| Professor Afarin Rahimi-Movaghar | None | No conflict of interest identified. |\n| Professor Atif Rahman | Employment at University of Liverpool, United Kingdom. Provided technical advice to the Human Development Research Foundation and Shifa Tameer-e- Millat University. Research funding from the National Institute of Health Research, United Kingdom; National Institute of Mental Health, USA; MRC, United Kingdom | No conflict of interest identified. |\n| Professor Shekhar Saxena | None | No conflict of interest identified. |\n| Ms Charlene Sunkel (member withdrew from GDG) | None | No conflict of interest identified. |\n| Professor Sir Graham Thornicroft | Board member, United for Global Mental Health. Board member, Mental Health and Human Rights (F-GIP). Board Chair, Implemental (formerly Maudsley International). Supported by the NIHR Applied Research Collaboration South London at King's College London NHS Foundation Trust, and by the NIHR Asset Global Health Unit award. The views expressed are those of the author(s) and not necessarily those of the United Kingdom's National Health Service (NHS), the NIHR or the Department of Health and Social Care. Supported by the Guy's and St Thomas' Charity for the On Trac project (EFT151101), and by the MRC in relation to the Emilia (MR/S001255/1) and Indigo Partnership (MR/R023697/1) awards. | No conflict of interest identified. |"
+    },
+    {
+      "chunk": 483,
+      "source_chunk": 484,
+      "split_part": 0,
+      "page_start": 181,
+      "page_end": 181,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Declared interests of the members of the Guideline Development Group (GDG)",
+      "token_count": 241,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Declared interests of the members of the Guideline Development Group (GDG)\n| Name and title | Declaration of interest | Conflict of interest and management |\n| - | - | - |\n| Dr Lakshmi Vijayakumar | Support from National Institute of Mental Health, US$ 7400 for project SPIRIT. Grand challenges Canada US$ 2500 for developing and implementing an e-learning programme for teachers to identify and support suicidal students in schools. | No conflict of interest identified. |\n| Professor Wang Huali | None | No conflict of interest identified. |\n| Ms Peach Wattanavitukul | None | No conflict of interest identified. |\n| Ms Enat Yewnetu | None | No conflict of interest identified. |\nDFID: Department for International Development; IASC: Inter-Agency Standing Committee; MRC: Medical Research Council (of UKRI); NHMRC: National Health Medical Research Council (Australia); NHS: National Health Service (United Kingdom); NIH: National Institutes of Health (USA); NIHR: National Institute for Health and Care Research (United Kingdom); UKRI: UK Research and Innovation (United Kingdom)."
+    },
+    {
+      "chunk": 484,
+      "source_chunk": 485,
+      "split_part": 0,
+      "page_start": 181,
+      "page_end": 181,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Declared interests of the members of the External Review Group (ERG)",
+      "token_count": 240,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Declared interests of the members of the External Review Group (ERG)\n| Name and title | Declaration of interest | Conflict of interest and management |\n| - | - | - |\n| Dr Helal Uddin Ahmed | None | No conflict of interest identified. |\n| Professor Kaarin Anstey | Ongoing research support from Australia's National Health Medical Research Council (NHMRC) for research on dementia risk assessment on dementia risk assessment and post-diagnostic case ($A 2 million). Honorarium ($A 300) for plenary talk on dementia epidemiology completed in 2023). | No conflict of interest identified. |\n| Professor Helen Herrman | President and officer, World Psychiatric Association, 2014-2020. | No conflict of interest identified. |\n| Dr Lola Kola | None | No conflict of interest identified. |\n| Professor Crick Lund | None | No conflict of interest identified. |\n| Professor David Ndetei | None | No conflict of interest identified. |\n| Dr Alfredo Pemjean | None | No conflict of interest identified. |\n| Professor Pratap Sharan | None | No conflict of interest identified. |"
+    },
+    {
+      "chunk": 485,
+      "source_chunk": 486,
+      "split_part": 0,
+      "page_start": 182,
+      "page_end": 184,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Declared interests of the members of the External Review Group (ERG)",
+      "token_count": 363,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Declared interests of the members of the External Review Group (ERG)\n| Name and title | Declaration of interest | Conflict of interest and management |\n| - | - | - |\n| Dr Vandad Sharifi Senejani | None | No conflict of interest identified. |\n| Dr Gagandeep Singh | Department of Biotechnology, Wellcome Trust India Alliance (Rs 9 99 00 000). Chairperson, International League Against Epilepsy, Primary Care Task Force. Epilepsy Telemetry Brief, WHO (Rs 500 000). | No conflict of interest identified. |\n| Dr David Shiers | Fee for attendance at National Clinical Audit of Psychosis at Royal College of Psychiatrists (£416 on two occasions in 2019-2020). Expert advisor to the National Institute for Health and Care Excellence (NICE), England. Honorary reader in early psychosis, University of Manchester. Honorary research consultant, Psychosis Research Trust, Greater Manchester Mental Health NHS Trust, Honorary Senior Research Fellow, Primary Care and Health Sciences, Keele University, Staffordshire. Lay member of NICE guideline development group NG181 (Rehabilitation for adults with complex psychosis) in 2019-2020 (£150 free per day for nine days in 2019/2020). Lecture on MSc course at University of London annually from 2016 (annual fee of £100-130 plus reimbursement of expenses). Royalty of £20 annually from Wiley Blackwell Publications for the 2010 publication Promoting recovery in early psychosis. Honorary co-applicant on research grants. | No conflict of interest identified. |\n| Ms Sahar Vasquez | None | No conflict of interest identified. |\n| Professor Min Zhao | None | No conflict of interest identified. |\n<!-- image -->\nFor more information, please contact:"
+    },
+    {
+      "chunk": 486,
+      "source_chunk": 487,
+      "split_part": 0,
+      "page_start": 184,
+      "page_end": 184,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "World Health Organization",
+      "token_count": 83,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "World Health Organization\nDepartment of Mental Health and Substance Use 20 Avenue Appia 1211 Geneva 27 Switzerland\nEmail: mhgap-info@who.int Website: https://www.who.int/teams/mental-health-and-substance-use/\n[www.who.int](https://www.who.int/)\n<!-- image -->"
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 18,
+      "text": "<!-- image -->\n<!-- image -->"
+    },
+    {
+      "chunk": 2,
+      "page_start": 4,
+      "page_end": 4,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "© World Health Organization 2023",
+      "token_count": 411,
+      "text": "© World Health Organization 2023\nSome rights reserved. This work is available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/licenses/by-nc-sa/3.0/igo).\nUnder the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes, provided the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion that WHO endorses any specific organization, products or services. The use of the WHO logo is not permitted. If you adapt the work, then you must license your work under the same or equivalent Creative Commons licence. If you create a translation of this work, you should add the following disclaimer along with the suggested citation: \"This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this translation. The original English edition shall be the binding and authentic edition\".\nAny mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation rules of the World Intellectual Property Organization (http://www.wipo.int/amc/en/mediation/rules/).\nSuggested citation. Mental Health Gap Action Programme (mhGAP) guideline for mental, neurological and substance use disorders. Geneva: World Health Organization; 2023. Licence: CC BY-NC-SA 3.0 IGO.\nCataloguing-in-Publication (CIP) data. CIP data are available at https://iris.who.int/.\nSales, rights and licensing. To purchase WHO publications, see https://www.who.int/publications/book-orders. To submit requests for commercial use and queries on rights and licensing, see https://www.who.int/copyright."
+    },
+    {
+      "chunk": 9,
+      "page_start": 9,
+      "page_end": 9,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Abbreviations",
+      "token_count": 273,
+      "text": "Abbreviations\n| 3WV | third wave therapies |\n| - | - |\n| ADHD | attention deficit hyperactivity disorder |\n| ASM | antiseizure medicine |\n| BAT | behavioural activation therapy |\n| CBT | cognitive behavioural therapy |\n| CERQual | Confidence in the Evidence from Reviews of Qualitative Research |\n| CC | collaborative care |\n| CI | confidence interval |\n| DALY | disability-adjusted life-year |\n| DBT | dialectical behaviour therapy |\n| DLD | developmental language disorder |\n| DOI | declaration of interest |\n| DSM | Diagnostic and statistical manual of mental disorders |\n| DYN | brief psychodynamic therapy |\n| EMDR | eye movement desensitization and reprocessing |\n| ERG | External Review Group |\n| EtD | Evidence to Decision |\n| GAD | generalized anxiety disorder |\n| GDG | Guideline Development Group |\n| GRADE | Grading of Recommendations Assessment, Development and Evaluations |\n| GRC | Guidelines Review Committee (at WHO) |\n| HDD | heavy drinking days |\n| iCBT | internet-based CBT |\n| ICD | International statistical classification of diseases and related health problems |\n| IPT | interpersonal therapy |\n| IT | information technology |\n| LAI | long-acting injection |"
+    },
+    {
+      "chunk": 26,
+      "page_start": 19,
+      "page_end": 19,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "The mhGAP guideline aims to:",
+      "token_count": 140,
+      "text": "The mhGAP guideline aims to:\n- provide up-to-date WHO guidance to facilitate delivery of MNS interventions by non-specialist health workers in LMICs;\n- assist with the scale-up of care for MNS disorders identified as conditions of high priority in LMICs; and\n- facilitate implementation of WHO action plans including the Comprehensive mental health action plan 2021-2030, the Intersectoral global action plan on epilepsy and other neurological disorders 2022-2031, the Global action plan on the public health response to dementia 2017-2025, and the Global alcohol action plan 2022-2030 by health-care planners and programme managers in LMICs."
+    },
+    {
+      "chunk": 32,
+      "page_start": 22,
+      "page_end": 22,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of recommendations",
+      "token_count": 415,
+      "text": "Summary of recommendations\nTABLE 1. (continued) Summary of recommendations\n\n| Module and recommendation number | Recommendation Strength of the recommendation and certainty of the evidence |\n| - | - |\n| Child and adolescent mental disorders (CAMH) | Child and adolescent mental disorders (CAMH) |\n| CAMH1 (update) | For children 6 years old and above and adolescents who have an attention deficit hyperactivity disorder (ADHD) diagnosis, methylphenidate may be considered, provided that: y ADHD symptoms are still causing persistent significant impairment in at least one domain of functioning (education, interpersonal relationships, occupation), after the implementation of environmental modifications in schools, at home or in other relevant settings; y a careful assessment of the child/adolescent has been conducted; y the child/adolescent and the caregivers, as appropriate, have been informed about ADHD treatment options and supported in decision-making; y methylphenidate prescription is made by, or in consultation with, a specialist. Conditional recommendation. Low certainty of evidence. |\n| CAMH2 (new) | 2.1 Universally delivered psychosocial interventions that use curriculum-based, family- based, exercise-based methods and/or social and personal skills development to improve emotional regulation should be considered for promotion of psychosocial well-being in children. Conditional recommendation. Very low certainty of evidence. 2.2 Psychosocial interventions that include cognitive behavioural therapy (CBT), psychoeducation and family-focused treatment approaches should be offered to |\n| CAMH3 (new) | children whose parents have mental health conditions for the prevention of depression and anxiety. Strong recommendation. Low certainty of evidence. 3.1 Psychosocial interventions focused on social skills training and developmental behavioural approaches should be offered to improve development, well-being and functioning in children and adolescents with autism. Strong recommendation. Low certainty of evidence. |\n| | 3.2 Cognitive behavioural therapy (CBT) should be offered to children and adolescents with autism with anxiety. |"
+    },
+    {
+      "chunk": 65,
+      "page_start": 39,
+      "page_end": 39,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "2.3.4 Systematic review methods",
+      "token_count": 155,
+      "text": "2.3.4 Systematic review methods\nEvidence to support this guideline was extracted from a number of sources by the evidence review and synthesis teams and the guideline methodologist working in collaboration with the Steering Group. Review teams developed standard protocols with clear review questions, criteria for identification of studies including search strategies for different bibliographic databases, methods for assessing risk of bias and a data analysis plan before embarking on the review. These protocols were reviewed and endorsed by the guideline methodologist, coordinating team and other members of the Steering Group, and the evidence from the reviews was retrieved according to standard operating procedures, format and timelines provided by the Steering Group. The systematic review methods used for each PICO question are detailed in the evidence profiles available online. 3"
+    },
+    {
+      "chunk": 97,
+      "page_start": 50,
+      "page_end": 50,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3.2 Anxiety (ANX)",
+      "token_count": 170,
+      "text": "3.2 Anxiety (ANX)\nANX1. In adults with anxiety disorders (excluding social anxiety disorder and specific phobias), are antidepressants (tricyclic antidepressants [TCAs] and selective serotonin reuptake inhibitors [SSRIs]) effective and safe compared with treatment as usual, waitlist, no treatment, or alternative psychological or pharmacological treatments?\n<!-- image -->\nRecommendation (new):\nSelective serotonin reuptake inhibitors (SSRIs) should be considered for adults with panic disorder. If SSRIs are not available, consider offering tricyclic antidepressants (TCAs). SSRIs should be considered for adults with generalized anxiety disorder (GAD).\nStrength of recommendation:\nConditional\nCertainty of evidence:\nLow"
+    },
+    {
+      "chunk": 130,
+      "page_start": 58,
+      "page_end": 59,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Remarks",
+      "token_count": 369,
+      "text": "Remarks\n- y The CC model generally adds one new team member to the medical team (a care manager) and includes coordinated consultation with mental health care providers. It typically involves:\n- a health-care team sharing tasks, with a care manager (a new role) coordinating care;\n- approaches to identifying people in need of support (through use of systematic screening or case identification);\n- implementation of evidence-based interventions (where psychological interventions can be delivered by the care manager or, where available, by a non-specialist counsellor);\n- administration of medicine, if indicated (by a general medical care provider);\n- monitoring of mental health symptoms by recording results of measurement tools in a basic registry that is regularly reviewed by the case manager to inform changes to care; and\n- a mental health care provider, who consults with the team and supervises the care manager and general medical care provider.\n- y Care managers often also facilitate access to community resources where indicated (e.g. housing or employment services).\n- y Physical health conditions concern both communicable and noncommunicable diseases.\n- y Conditionality in this recommendation is based solely on availability of resources. In settings where resources are available, CC should be implemented.\n- y Integrating mental health services into primary care settings and physical disease programmes through the CC model is an effective way of increasing access to mental health care, improving health outcomes and reducing stigma towards people with mental health conditions, particularly for populations where prevalence of mental disorders (e.g. depression) may be high.\n- y There is wide variation in how CC has been implemented as CC is a model of providing care, rather than an intervention in and of itself. Nonetheless, this model of care can be resource intensive, though it is feasible in LMIC settings when necessary resources are allocated."
+    },
+    {
+      "chunk": 162,
+      "page_start": 67,
+      "page_end": 68,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Implementation considerations",
+      "token_count": 185,
+      "text": "Implementation considerations\n- y Intervention sessions occurred in school settings. Research supports delivery of beginning-to-read intervention in school settings by specialists (special education teachers/researchers) and non-specialists (teacher assistants).\n- y Ensure that all children and young people with disorders of intellectual development have full access to health- and social-care services, including mental health services.\n- y Promote access to information about treatment options suitable for the child's needs and developmental level, and promote supported decision-making.\n- y Make arrangements to support children with disorders of intellectual development and their family and carers during times of increased need and transitions, such as puberty and starting or changing schools.\nRecommendation (new):\n3.5 Early communication interventions involving direct instruction approaches should be considered for improving expressive phonological skills and reducing stuttering for children with developmental speech disorders.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nVery low"
+    },
+    {
+      "chunk": 194,
+      "page_start": 75,
+      "page_end": 75,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Research gaps",
+      "token_count": 56,
+      "text": "Research gaps\n- y Additional evidence is required to establish the benefits and safety of prescribing pharmacological treatment for anxiety in children and adolescents in non-specialist settings.\n- y Almost all evidence refers to HICs. Further research is needed in LMICs."
+    },
+    {
+      "chunk": 227,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Research gaps",
+      "token_count": 187,
+      "text": "Research gaps\n- y No new systematic or primary evidence was available to assess the effectiveness of psychological interventions for people with dementia who have comorbid clinical depression for this update. This is likely a reflection of existing research design limitations rather than a lack of evidence for these interventions (e.g. specifically focusing on psychological interventions or therapies, rather than non-pharmacological interventions more broadly) in this specific sub-population (e.g. people with dementia and comorbid depression, rather than individuals with depressive symptoms).\n- y Instead, recent study designs and systematic reviews tend to evaluate the effectiveness of psychosocial interventions more broadly, such as cognitive,\npsychological and environmental interventions on treating depression and/or depressive symptoms. The evidence for those has been considered under the new PICO question for DEM3.\n- y None of the primary studies available on psychological interventions were carried out in LMICs."
+    },
+    {
+      "chunk": 259,
+      "page_start": 96,
+      "page_end": 97,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Justification",
+      "token_count": 352,
+      "text": "Justification\n- y Evidence was extracted from a systematic review by Arcadepani et al., 2023 (23 studies) 9 that was conducted to update an earlier systematic review by Chou et al., 2020 (20 studies) (142).\n- y In adults with cannabis use, brief interventions, in comparison with minimal intervention (or waitlist), show effect for: increasing abstinence at 3- to 4-month follow-up (RR = 2.08; 95% CI: 1.51 to 3.07; very low certainty); increasing abstinence at 6- to 12-month follow-up (RR = 1.58; 95% CI: 1.17 to 3.06; very low certainty).\nIn adults with psychostimulant use, brief interventions, in comparison with minimal intervention (or waitlist), show effect for: increasing abstinence at 6- to 12-months follow-up (RR = 1.25; 95% CI: 1.11 to 1.52; very low certainty).\n- y A strong recommendation was suggested despite very low certainty of evidence due to potential public health benefits of increasing identification of people who might benefit from simple advice and referral to treatment.\n- y Suggestion to separate cannabis and psychostimulants into two separate\n9 Arcadepani FB, Fidalgo TM, Bisaga A. Are brief psychosocial interventions for people using cannabis and/or stimulants effective in reducing drug use, dependence and harm from drug use? 2023 (in preparation).\nrecommendations/statements was made during a technical expert group meeting due to substantial differences in pharmacological effects, clinical manifestations and treatment approaches."
+    },
+    {
+      "chunk": 292,
+      "page_start": 108,
+      "page_end": 108,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3.8 Epilepsy and seizures (EPI)",
+      "token_count": 202,
+      "text": "3.8 Epilepsy and seizures (EPI)\nEPI1. In adults with established status epilepticus, i.e. seizures persisting after the first-line agent (benzodiazepine-resistant status epilepticus), which antiseizure medicines are associated with better clinical outcomes (stopping seizures and with less adverse effects)?\n<!-- image -->\nRecommendation (update):\nIn adults with established status epilepticus, i.e. seizures persisting after two doses of benzodiazepines, either intravenous fosphenytoin, intravenous phenytoin, intravenous levetiracetam, intravenous phenobarbital or intravenous valproic acid (sodium valproate) should be considered with appropriate monitoring. The choice of these medicines depends on local resources, including availability and facilities for monitoring.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nLow"
+    },
+    {
+      "chunk": 324,
+      "page_start": 118,
+      "page_end": 118,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Justification",
+      "token_count": 60,
+      "text": "Justification\n14 Sampogna G, Brohan E, Luciano M, Chowdhary N, Fiorillo A. Psychosocial interventions for carers of people with severe mental and substance use disorders: a systematic review and meta analysis. 2023 Eur Psychiatry (in press)."
+    },
+    {
+      "chunk": 356,
+      "page_start": 127,
+      "page_end": 127,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Justification",
+      "token_count": 408,
+      "text": "Justification\n- y The systematic review on bipolar depression in adolescents (DelBello et al., 2022) only identified studies for lurasidone, quetiapine, olanzapinefluoxetine combination. Systematic reviews about classical mood stabilizers and antidepressants were not identified. Lurasidone and olanzapinefluoxetine combination significantly improved depressive symptoms, while quetiapine did not. Olanzapine-fluoxetine combination showed more discontinuation due to adverse effects than placebo (OR = 3.31; 95% CI: 1.08 to 8.75). Lurasidone was similar to placebo and quetiapine showed significantly fewer discontinuations than placebo. In this review, olanzapine caused most weight gain (not summarized in the evidence profile).\n- y The search process identified one systematic review on acute bipolar mania in children and adolescents, Ciray et al., 2020 (11 RCTs, 1974 participants), that compared different medicines with placebo. Effect sizes by pooling all medicines were moderate (SMD = -0.61; 95% CI: -0.78 to -0.44). The certainty of evidence was moderate. In the single studies, almost all investigated medicines were superior to placebo (topiramate, olanzapine, risperidone, aripiprazole, ziprasidone, quetiapine, asenapine, lithium). The most efficacious medicine was risperidone. As expected, there were side-effects such as weightgain, prolactin increase, higher fasting glucose, etc.\n- y Children and adolescents are a particularly vulnerable group. Given the very limited evidence and known side-effects of antipsychotics from systematic reviews in adults, antipsychotic\nmedicines should only be given in a case-by-case manner by a specialist carefully balancing efficacy and side-effects."
+    },
+    {
+      "chunk": 389,
+      "page_start": 136,
+      "page_end": 137,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Implementation considerations",
+      "token_count": 230,
+      "text": "Implementation considerations\n- y Not all forms of psychological interventions may be available in LMICs.\n- y Attempts should be made to involve family and carers in maintenance treatment.\n- y Family psychoeducation, a relatively simple intervention that has been proven effective, should be offered in all settings.\n- y Differences in mental health infrastructure and resources should be considered.\n- y Variations in cultural context should be considered. There may be acceptability issues.\n- y Country adaptation and translation of training materials and tools for the provision of psychological interventions is essential.\n- y Face-to-face psychological interventions delivered by service providers is human resource-intensive as they require substantial provider time, training and supervision.\n- y Integrating the provision of psychological interventions into primary care provides many advantages, including more holistic health care, increased accessibility of mental health services for people in need of care, opportunities for reducing the stigma of mental health problems and reduced costs.\n- y For the safe implementation of psychological interventions for people with psychosis by non-specialized professionals, supervision by a\nmental health specialist is an important aspect that should be considered and planned prior to commencement (209)."
+    },
+    {
+      "chunk": 421,
+      "page_start": 149,
+      "page_end": 149,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "References",
+      "token_count": 417,
+      "text": "References\n37. van Dis EAM, van Veen SC, Hagenaars MA, Batelaan NM, Bockting CLH, van den Heuvel RM et al. Long-term outcomes of cognitive behavioral therapy for anxiety-related disorders: a systematic review and meta-analysis. JAMA Psychiatry. 2020;77(3):265-73 (https://doi.org/10.1001/ jamapsychiatry.2019.3986).\n38. Papola D, Purgato M, Gastaldon C, Bovo C, van Ommeren M, Barbui C et al. Psychological and social interventions for the prevention of mental disorders in people living in low- and middleincome countries affected by humanitarian crises. Cochrane Database Syst Rev. 2020;(9):CD012417.\n39. Barkowski S, Schwartze D, Strauss B, Burlingame GM, Rosendahl J. Efficacy of group psychotherapy for anxiety disorders: a systematic review and meta-analysis. Psychother Res. 2020;30(8):965-82 (https://doi.org/10.1080/10503307.2020.1729440).\n40. Pauley D, Cuijpers P, Papola D, Miguel C, Karyotaki E. Two decades of digital interventions for anxiety disorders: a systematic review and metaanalysis of treatment effectiveness. Psychol Med. 2023;53(2):567-79 (https://doi.org/10.1017/ S0033291721001999).\n41. Kim HS, Kim EJ. Effects of relaxation therapy on anxiety disorders: a systematic review and metaanalysis. Arch Psychiatr Nurs. 2018;32(2):278-84 (https://doi.org/10.1016/j.apnu.2017.11.015)."
+    },
+    {
+      "chunk": 454,
+      "page_start": 159,
+      "page_end": 159,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "References",
+      "token_count": 411,
+      "text": "References\n186. Maguire MJ, Jackson CF, Marson AG, Nevitt SJ. Treatments for the prevention of sudden unexpected death in epilepsy (SUDEP). Cochrane Database Syst Rev. 2020;(4):CD011792.\n187. Sveinsson O, Andersson T, Carlsson S, Tomson T. The incidence of SUDEP: a nationwide populationbased cohort study. Neurology. 2017;89(2):170-7 (https://doi.org/10.1212/WNL.0000000000004094).\n188. Kløvgaard M, Sabers A, Ryvlin P. Update on sudden unexpected death in epilepsy. Neurol Clin. 2022;40(4):741-54 (https://doi.org/10.1016/j. ncl.2022.06.001).\n189. Langan Y, Nashef L, Sander JW. Case-control study of SUDEP. Neurology. 2005;64(7):1131-3 (https:// doi.org/10.1212/01.WNL.0000156352.61328.CB).\n190. Cheng ST, Zhang F. A comprehensive meta-review of systematic reviews and meta-analyses on nonpharmacological interventions for informal dementia caregivers. BMC Geriatr. 2020;20(1):137 (https://doi.org/10.1186/s12877-020-01547-2).\n191. Ceraso A, Lin JJ, Schneider-Thoma J, Siafis S, Tardy M, Komossa K et al. Maintenance treatment with antipsychotic drugs for schizophrenia. Cochrane Database Syst Rev. 2020;(8):CD008016."
+    },
+    {
+      "chunk": 486,
+      "page_start": 184,
+      "page_end": 184,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "World Health Organization",
+      "token_count": 83,
+      "text": "World Health Organization\nDepartment of Mental Health and Substance Use 20 Avenue Appia 1211 Geneva 27 Switzerland\nEmail: mhgap-info@who.int Website: https://www.who.int/teams/mental-health-and-substance-use/\n[www.who.int](https://www.who.int/)\n<!-- image -->"
+    }
+  ]
+}

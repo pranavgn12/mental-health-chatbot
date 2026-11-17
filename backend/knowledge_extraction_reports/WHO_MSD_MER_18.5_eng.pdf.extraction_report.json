@@ -1,0 +1,1916 @@
+{
+  "report_schema_version": 2,
+  "source": "WHO_MSD_MER_18.5_eng.pdf",
+  "source_pages_detected": 140,
+  "raw_docling_chunks": 291,
+  "chunks_created": 290,
+  "chunk_type_counts": {
+    "figure": 46,
+    "text": 115,
+    "list": 80,
+    "table": 34,
+    "form": 15
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 5,
+    "median": 154.0,
+    "mean": 196.17,
+    "max": 450,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      140
+    ],
+    "pages_without_chunks": [
+      4,
+      8,
+      9,
+      136,
+      137,
+      138,
+      139
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 140,
+    "coverage_ratio": 0.95
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 267,
+    "page_headers": 133,
+    "page_footers": 134,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 140,
+    "predominantly_rotated_text_pages": [
+      {
+        "page": 104,
+        "rotated_text_ratio": 0.655,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      }
+    ],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": [
+      41,
+      47,
+      48,
+      118
+    ]
+  },
+  "applied_page_rotations": [
+    {
+      "page": 104,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    }
+  ],
+  "document_level_warnings": [
+    {
+      "type": "predominantly_rotated_text",
+      "page": 104,
+      "rotated_text_ratio": 0.655,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 41
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 47
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 48
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 118
+    }
+  ],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 2,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 13,
+      "page_numbers": [
+        9
+      ],
+      "text": "Contents\n| CHAPTER 1: BACKGROUND . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . | 8 |\n| - | - |\n| CHAPTER 2: THE PROBLEM MANAGEMENT PLUS (PM+) INTERVENTION . . . . . . . . . . . . . . . . . .15 | |\n| CHAPTER 3: BASIC HELPING SKILLS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .20 | |\n| CHAPTER 4: PM+ ASSESSMENTS . . . . . . . . . . . . . . . . . . . . . . . . . . | . . . . . . . . . . . . . 31 |\n| CHAPTER 5: UNDERSTANDING ADVERSITY AND THE PM+ INTERVENTION . . . . . . . . . . . . . . . . .37 | |\n| CHAPTER 6: MANAGING STRESS . . . . . . . . . . . . . . . . . . . . . . . . . . | . . . . . . . . . . . . . 42 |\n| CHAPTER 7: MANAGING PROBLEMS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .46 | |\n| CHAPTER 8: GET GOING, KEEP DOING . . . . . . . . . . . . . . . . . . . . . . . | . . . . . . . . . . . . . 56 |\n| CHAPTER 9: STRENGTHENING SOCIAL SUPPORT . . . . . . . . . . . . . . . . . | . . . . . . . . . . . . . 65 |\n| CHAPTER 10: STAYING WELL AND LOOKING FORWARD . . . . . . . . . . . . . . . . . . . . . . . . . . .70 | |"
+    },
+    {
+      "source_chunk": 14,
+      "page_numbers": [
+        9
+      ],
+      "text": "Contents\n| CHAPTER 1: BACKGROUND . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . | 8 |\n| - | - |\n| APPENDIX A: PRE-PM+ ASSESSMENT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .76 | |\n| APPENDIX B: DURING-PM+ ASSESSMENT . . . . . . . . . . . . . . . . . . . . . | . . . . . . . . . . . . . 87 |\n| APPENDIX C: POST-PM+ ASSESSMENT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .91 | |\n| APPENDIX D: ASSESSING AND RESPONDING TO THOUGHTS OF SUICIDE RISK . . . . . . . . . . . . . .95 | |\n| APPENDIX E: CLIENT HANDOUTS . . . . . . . . . . . . . . . . . . . . . . . . . . | . . . . . . . . . . . . . 97 |\n| APPENDIX F: IMAGINING HOW TO HELP OTHERS - CASE EXAMPLES . . . . . . | . . . . . . . . . . . . 103 |\n| APPENDIX G: PM+ INTERVENTION PROTOCOL | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 108 |"
+    }
+  ],
+  "exact_duplicate_chunks": [],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 10,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "<!-- image -->"
+    },
+    {
+      "chunk": 1,
+      "source_chunk": 1,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 2,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "PROBLEM MANAGEMENT PLUS (PM+)",
+      "token_count": 84,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "PROBLEM MANAGEMENT PLUS (PM+)\nIndividual psychological help for adults impaired by distress in communities exposed to adversity\nWHO generic field-trial version 1.1, 2018 Series on Low-Intensity Psychological Interventions - 2\n<!-- image -->\n<!-- image -->\nProblem Management Plus (PM+): individual psychological help for adults impaired by distress in communities exposed to adversity."
+    },
+    {
+      "chunk": 10,
+      "source_chunk": 9,
+      "split_part": 1,
+      "page_start": 6,
+      "page_end": 6,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Review",
+      "token_count": 5,
+      "warnings": [
+        "very_short_chunk_review_context"
+      ],
+      "text": "Toronto)."
+    },
+    {
+      "chunk": 20,
+      "source_chunk": 21,
+      "split_part": 0,
+      "page_start": 14,
+      "page_end": 14,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Example dialogues",
+      "token_count": 240,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Example dialogues\n<!-- image -->\nWe have included example dialogues - which need to be adapted for the local context - throughout the manual and Intervention Protocol. It is important to follow them as closely as possible. This is because the scripts include all the information that you may need for the client to understand a particular strategy. However, reading directly from the dialogues is not\nideal for building a good relationship with a client. You might find a more sensitive way of describing a strategy, and as a result moving away from the scripts can be acceptable. Also, you may want to include general examples when you are describing a common problem (e.g. as in Understanding Adversity) and how a particular strategy might be useful (e.g. Managing Stress to reduce anxiety). We suggest you use examples that are relevant and meaningful for the client and their problems.\nGrey boxes describe how to work with challenging client presentations (e.g. people affected by sexual violence) and clients living in difficult situations (e.g. conflict settings). It is especially important that you familiarize yourself with the material in these boxes before working with more difficult presentations or in more challenging contexts."
+    },
+    {
+      "chunk": 27,
+      "source_chunk": 28,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "THE PROBLEM MANAGEMENT PLUS (PM+) INTERVENTION",
+      "token_count": 211,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "THE PROBLEM MANAGEMENT PLUS (PM+) INTERVENTION\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · Get an overview of PM+ (e.g. structure of the intervention, order of strategies) · Learn a little about each PM+ strategy | · The whole intervention | · PM+ client handouts - Appendix E |\nProblem Management Plus (PM+) is the term used to describe the overall approach of this brief intervention. It combines the well-known strategies of problem-solving with certain behavioural strategies. The overall aim of PM+ is to build a client's ability to manage their own emotional distress and, when possible, to reduce their own practical problems. For this reason, the language used is similar to training or coaching approaches and PM+ avoids giving advice.\nEvery client will receive all of the PM+ strategies, in the order they are described in this manual."
+    },
+    {
+      "chunk": 38,
+      "source_chunk": 39,
+      "split_part": 0,
+      "page_start": 20,
+      "page_end": 21,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Presence of family or friends during PM+ sessions",
+      "token_count": 450,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Presence of family or friends during PM+ sessions\nThere may be times during PM+ when the client would like a trusted friend or family member to be with them. This can be very helpful for many clients, especially in helping them engage and practise strategies outside of the session. However, having extra people in a session can also be challenging. Some people might take over the session or be unhelpful (e.g. talking negatively to your client, criticizing PM+ strategies and so on). When other people the client trusts are involved in sessions, remember that you are not focusing on their problems. The role of the other person is to support your client with the strategies, such as Managing Stress and Get Going, Keep Doing.\nIn general, it may be very appropriate for a trusted family member or friend to attend all of Session 1 (after the PSYCHLOPS assessment 6 has been completed) to learn about the intervention and about the strategy Managing Stress. In addition, a trusted family member or friend may be invited to attend part of Session 3 to learn about Get Going, Keep Doing. In these sessions the person your client trusts can learn the particular strategies and might feel better equipped to support the client when they experience a future problem or become distressed. However, we would not expect this other person to act as the client's helper as they may not feel confident doing so. We encourage you not to include family and friends in Managing Problems (Session 2 and parts of Sessions 3, 4 and 5). This is because the client might feel that they cannot talk about particular problems they are having with that person in the room. Similarly, you should consider the advantages and disadvantages of having family or friends present during any assessment when you hope the client can share personal information.\n6 The PSYCHLOPS is an assessment measure included in the pre-PM+, during-PM+ and post-PM+ assessments. See Chapter 4 and Appendices A, B and C for more information.\n| In this chapter you learned | · About the PM+ Intervention, including some information on each strategy · About the structure of PM+ sessions · When to include trusted family members or friends |\n| - | - |"
+    },
+    {
+      "chunk": 39,
+      "source_chunk": 40,
+      "split_part": 0,
+      "page_start": 22,
+      "page_end": 22,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Chapter 3 BASIC HELPING SKILLS",
+      "token_count": 182,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Chapter 3 BASIC HELPING SKILLS\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · How to use basic helping skills to build good, trusting relationships with your clients · What to consider about the client-helper relationship · How to manage difficult problems that clients may present with | · You use these skills every time you speak with your clients | · None |\nBefore covering specific PM+ strategies, we will discuss basic helping skills, which focus on communication in the sessions and building a relationship with your client. Building a relationship based on trust and respect is essential for all forms of psychological support. In fact, these basic helping skills are the groundwork for PM+. The formal PM+ strategies are unlikely to be successful without you always using these skills."
+    },
+    {
+      "chunk": 51,
+      "source_chunk": 52,
+      "split_part": 0,
+      "page_start": 27,
+      "page_end": 27,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "A. The role of the helper",
+      "token_count": 429,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "A. The role of the helper\nFor some people, seeing a helper may be likened to admitting weakness. Because of this, they may have a difficult time getting involved in the intervention as a whole or parts of it. Others may see you as someone similar to a doctor or a traditional healer, and expect to be \"fixed\" or \"healed\" by you. It is important that throughout PM+ you normalize the client's feelings as well as educate them about your role.\nIn PM+, we encourage you to liken your role to that of a teacher (see the end of this section for some alternative metaphors).\n<!-- image -->\nTeachers provide information to students and help them learn. However, the teacher cannot sit an exam for the student or tell them what to write. They can only help prepare them for the exam as much as possible. It is up to the student to listen in class and study to do well in the exam. The student is ultimately responsible. Although you are an adult, it is the same with our relationship. I am going to teach you about some important and helpful strategies, but ultimately you are responsible for practising those strategies. I cannot do them for you. You might compare your everyday life to the exam a child will sit. You will be responsible for how well you apply the strategies in your everyday life. Nevertheless, I will support you and help prepare you to do the best you can.\nSimilarly, you should also emphasize to the client that you are both \"experts\" in the room. You may want to use a locally adapted example. You are the expert on emotions and how you can detect and reduce poor emotional well-being. The client is the expert on their own life, about which you will only know a little. The client is also the expert on their particular type of problem and how it affects their life. The aim is to bring together the two types of expertise. This is important for building the confidence of the client and dispelling any myth that your task is to \"fix\" the client's problems."
+    },
+    {
+      "chunk": 53,
+      "source_chunk": 54,
+      "split_part": 0,
+      "page_start": 28,
+      "page_end": 28,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "B. The reluctant client",
+      "token_count": 422,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "B. The reluctant client\nSome clients will initially feel hesitant about talking to you. This may be for a range of different reasons, such as:\n- lack of trust;\n- mental health problems being taboo;\n- psychological counselling being unknown in the culture;\n- a lack of understanding or misperceptions about what PM+ actually is;\n- a lack of understanding of your role as a helper;\n- being forced to attend PM+ by a family member;\n- feeling embarrassed about the experiences they have been exposed to;\n- feeling embarrassed about how they are coping now;\n- gender issues, such as speaking with someone of the opposite sex about personal things;\n- topics that are a sexual taboo.\nYou may find that with time and consistent use of the helping skills described here, many clients will begin to relax and open up. However, some clients may remain quite reluctant or shy. As a helper it is important that you discuss this with your supervisor. You should respect the fact that the client may not be ready to be completely open at the time of receiving PM+. There may be unknown reasons that contribute to this, and you may never know these reasons. These clients can be somewhat challenging to talk with, as they may not give you a lot of information. While you may want to gently and respectfully encourage clients to talk, you should never pressure them. This is especially true of clients with a suspected history of having experienced sexual assault or torture. It is important for you to show a readiness and openness to listen if they want to share private information about their distressing experiences, but the decision is entirely up to them. If a client refuses to talk further about a topic, it is important to your relationship with them that you respect this.\nFor instance, you may say:\n<!-- image -->\nS\nI can see that this is upsetting for you to talk about and I want to respect that. However, if you do want to return to talking about this topic, I want you to know that I am ready to listen to you at any time."
+    },
+    {
+      "chunk": 54,
+      "source_chunk": 55,
+      "split_part": 0,
+      "page_start": 29,
+      "page_end": 29,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "B. The reluctant client",
+      "token_count": 173,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "B. The reluctant client\nOr, you may find that a client appears very distressed while discussing a particular topic, but has not said that they do not want to talk about it. In this situation, you may want to say that it is okay to stop talking about this topic if they prefer that. Some clients may believe that there is an expectation that they have to do everything you suggest, including talking about sensitive and personal topics.\nFor instance, you may want to say:\n<!-- image -->\nYou seem very upset talking about this. I am very willing to listen to your story and help you talk about it but I want you to know that you can decide what we talk about, and if you need to stop at any point or if you do not want to talk about a particular part of the story, then this is okay."
+    },
+    {
+      "chunk": 64,
+      "source_chunk": 65,
+      "split_part": 0,
+      "page_start": 33,
+      "page_end": 33,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "PM+ ASSESSMENTS",
+      "token_count": 151,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "PM+ ASSESSMENTS\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · About the different assessments · How to carry out the necessary assessments · How to assess and respond to clients with plans to end their life in the near future | · Before (pre-intervention) and after (post-intervention) PM+ and at the beginning of every session (during- intervention) · Allow 60 minutes for the pre-PM+ assessment and 5 minutes for the during-PM+ assessment. | · All assessment protocols - Appendices A, B and C · Thoughts of suicide - Appendix D |"
+    },
+    {
+      "chunk": 69,
+      "source_chunk": 70,
+      "split_part": 0,
+      "page_start": 34,
+      "page_end": 35,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3. Tell them about confidentiality.",
+      "token_count": 412,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "3. Tell them about confidentiality.\n- Make sure that clients understand what information will be kept private and who this information will be shared with:\n- All information is kept private unless the client gives you permission to share it with someone else.\n- All information will be shared with your supervisor so they can make sure the client is being looked after and receiving the best care.\n- During assessment or PM+, if the client is believed to be at risk of ending their life or harming someone else, or they tell you about child abuse (e.g. physical or sexual abuse or neglect), you will have to let someone know, 10 even if the person does not consent to this.\n10 An appropriate response to thoughts, plans or attempts of suicide will depend on national laws and local resources, and you should take this into account during the adaptation phase. In all cases, the supervisor should be contacted immediately.\n<!-- image -->\nS\nBefore we begin today, I want you to understand that everything that is discussed in our sessions will be kept private. I will not be able to talk with any of your family or other people about you or what goes on in these sessions without your permission.\nHowever, there are some limits to this privacy that I want you to understand. If I am very concerned that you are at risk of ending your life or harming someone else, I will talk with you about how we can come up with a plan to keep you and others safe. This will usually mean that I need to talk with my supervisor and try to get you the best kind of help. (You will need to adapt this according to the laws of the country.) This is because my role is to care about your welfare and safety.\nI will also be speaking regularly with my supervisor about your progress. This supervisor has received special training in helping clients with emotional problems and they will be making sure that I am giving you the best care.\nDoes this make sense to you, or do you have any questions about your privacy?"
+    },
+    {
+      "chunk": 78,
+      "source_chunk": 79,
+      "split_part": 0,
+      "page_start": 37,
+      "page_end": 37,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "1. When a client is shy or reluctant to share information",
+      "token_count": 138,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "1. When a client is shy or reluctant to share information\nIt is important to respect the client at all times. If they appear to be nervous or uncomfortable about sharing information, do not pressure them to tell you personal information.\nIt can also be helpful to let the client know at the beginning that they do not have to answer your questions. It is important for the client to feel in charge of the session and not feel forced to provide information if they feel uncomfortable about doing so.\n<!-- image -->\nIf you don't feel comfortable answering any question I ask you, you don't have to answer. Just share with me what you are comfortable with."
+    },
+    {
+      "chunk": 79,
+      "source_chunk": 80,
+      "split_part": 0,
+      "page_start": 38,
+      "page_end": 38,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "2. When you need to stop a client from talking",
+      "token_count": 238,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "2. When you need to stop a client from talking\nThere will be times when you need to redirect a client who might be talking a lot about a topic that is not relevant to the assessment or if you need to get some specific information you do not have. It is important that you display warmth when prompting a client to move on.\nThe following dialogue is a suggestion for how you might sensitively change topics.\n<!-- image -->\nIt sounds like you are faced with a lot of difficulties at the moment. One thing I am most interested in hearing about at the moment though, is (ask next question) …\nSometimes you may need to be a little more direct with a client, especially if you are running out of time. It is important that you still communicate concern and warmth when doing this. For example:\n<!-- image -->\nI am very interested in hearing about this, but I do not want to run out of time. I still have a number of questions I need to ask you. Would it be okay if we went through those now and with the time we have left we can talk about these other concerns you have?"
+    },
+    {
+      "chunk": 81,
+      "source_chunk": 82,
+      "split_part": 0,
+      "page_start": 39,
+      "page_end": 39,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Chapter 5 PM+ INTERVENTION",
+      "token_count": 125,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Chapter 5 PM+ INTERVENTION\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · How to motivate your clients to take part in PM+ · How to give your clients information about common reactions to adversity | · Session 1 · Allow 20 minutes for \"What is PM+?\" education · Allow 30 minutes for \"What is Adversity?\" education | · \"Good and Less Good Reasons\" table (example in Chapter 5) |"
+    },
+    {
+      "chunk": 82,
+      "source_chunk": 83,
+      "split_part": 0,
+      "page_start": 39,
+      "page_end": 40,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Helping the client to understand and participate in PM+",
+      "token_count": 445,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Helping the client to understand and participate in PM+\nYou need to give the client a brief overview of what the intervention will be like and what you expect from them. It is important that you are warm in your delivery so you do not come across as strict or controlling, particularly when talking with the client about the importance of their attendance. However, you also want to emphasize to the client the importance of taking part in the intervention and that it is only effective if they attend and make the most of their time.\n<!-- image -->\nIn PM+ we will work together to learn some strategies that can help you to overcome the difficulties you have told me about today. Including today's session, there are five sessions. Sessions will happen once a week and will last up to 90 minutes. In these sessions I will teach you the different strategies and we will have time to practise them as well. Between our meetings I will encourage you to practise these strategies so you can start making changes to the problems in your life and learn how to become your own helper.\nThe strategies I will teach you will help you reduce and manage the problems you have told me are causing you the most distress (say what these problems are for the client). I will teach you strategies to help manage practical problems, improve your activity, reduce your feelings of stress and anxiety and improve your support. Each of these strategies has been found to be very helpful for people in situations similar to your own.\nIt will work best if you come to every session for the next five weeks. I understand that it can be difficult to come to sessions if you are feeling very anxious or depressed, or maybe you are physically unwell or you have family or community obligations. I would like to make an agreement with you that you will talk with me about this 12 instead of not showing up or avoiding sessions. This is because I want you to get the most out of our time together. And I don't want you to feel uncomfortable talking to me about problems with coming to the sessions. I will not be angry or upset. Does this sound okay to you? Do you see any difficulties with coming to all the sessions?"
+    },
+    {
+      "chunk": 85,
+      "source_chunk": 86,
+      "split_part": 0,
+      "page_start": 41,
+      "page_end": 41,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Good and less good reasons for joining PM+",
+      "token_count": 311,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Good and less good reasons for joining PM+\n| Good Reasons to Join PM+ (Advantages) | Less Good Reasons to Join PM+ (Disadvantages) |\n| - | - |\n| \"Lots of people have benefited from this intervention.\" | \"I also understand that it can be challenging for some people to join an intervention like this.\" |\n| · What do you think you will personally get out of PM+? · What might improve in your life if you join PM+? · What do you think you might be able to do that you cannot do now? - Household tasks (e.g. cleaning, cooking) - Self-care (e.g. getting out of bed, washing yourself, getting dressed) - Pleasant activities (e.g. spending time with friends, embroidery, rearing poultry) · If your emotional problems decrease, how might this be good for other areas in your life? - E.g. your relationships, your work, your other duties · How might your everyday life look if your emotional well-being improved? | · What are some of the problems for you in joining the intervention? · What will you have to give up or lose if you join PM+? · Will PM+ reduce your time with your family? · Will the intervention take you away from other important duties? Examples: · Time away from housework · Having to organize care for children · Could be doing casual work · Giving up personal time · Have to travel a distance to get to the PM+ sessions |"
+    },
+    {
+      "chunk": 88,
+      "source_chunk": 89,
+      "split_part": 0,
+      "page_start": 42,
+      "page_end": 42,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Understanding Adversity",
+      "token_count": 367,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Understanding Adversity\nThis part of the session is a chance for the client to hear about common reactions among people living in communities exposed to adversity. The emphasis is on normalizing the client's reactions in the context of hardship and stress - i.e. communicating that their reactions are understandable given what they are being exposed to and are not a sign that they are going crazy or that they are weak.\nIn giving the client information about adversity, you may want to include examples of emotional and practical problems that relate more closely to the client than those included in the dialogue. Your examples may be of previous clients who experienced similar problems (but leaving out their names) or examples you have from your knowledge of common problems and how particular strategies can help reduce those problems.\n<!-- image -->\nI would like to spend some time now talking to you about why you might be experiencing the problems we have just talked about and how this intervention can help you manage and overcome these kinds of problems.\nWhen people live in difficult circumstances and experience stressful events, most will usually experience a range of different emotions, like intense fear, grief, extreme sadness and excessive hopelessness. Some people even describe not feeling any emotions at all or feeling numb. Or the feelings you have described, such as (list some of the main emotions previously named), are also common.\nThere is a reason why people react that way. Our bodies are designed to keep us alive in lifethreatening situations. So when we think we are in danger, our bodies can respond by being extremely alert - this is so we can look out for danger and avoid it. Or our heart can beat very fast, our breathing might quicken, we might feel tense, etc. These reactions help us to run or fight if needed."
+    },
+    {
+      "chunk": 89,
+      "source_chunk": 90,
+      "split_part": 0,
+      "page_start": 42,
+      "page_end": 43,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Understanding Adversity",
+      "token_count": 402,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Understanding Adversity\nFor many people, these problems and reactions go away over time. But for some these feelings continue. They can then get in the way of us being able to do the things we need to do in our daily lives, like work at home or on a job. For example, long-lasting feelings of severe grief can cause people to isolate themselves from family and community members. Feelings of hopelessness can stop someone doing important tasks for survival. (If possible, give an example of how the client's problems have caused difficulties in their life.) Or as you described, …. In any of these examples, it is clear to see how over time these feelings might cause many disruptions in someone's life. In PM+, we have strategies to help you feel better. I expect that the strategies I will teach you in the next few weeks will be enough to help you feel better.\nSo, the first piece of information I would like you to learn today is that many people in your situation experience emotional and practical difficulties. So the problems you are experiencing are not a sign that you are weak, and you are not to blame for what you are experiencing. Actually, having survived very challenging experiences says something about how remarkable you are. You are also brave to discuss your experiences with me. I believe this is important for helping improve your own life. It is also important for the lives and futures of your family and your community. In fully taking part in this intervention, you can expect that you will be likely to feel better and be able to be a part of your family's and community's lives better than you are at the moment.\n| In this chapter you learned | · How to assess and improve a client's motivation to take part in PM+ · Alternative uses of the \"Good and Less Good Reasons\" table · How to give your client information about common reactions to adversity and \"normalize\" their reactions |\n| - | - |"
+    },
+    {
+      "chunk": 90,
+      "source_chunk": 91,
+      "split_part": 0,
+      "page_start": 44,
+      "page_end": 44,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Chapter 6 MANAGING STRESS",
+      "token_count": 126,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Chapter 6 MANAGING STRESS\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · The purpose of Managing Stress · The stress management technique in PM+: slow breathing · How to give information about slow breathing to your clients · How to teach slow breathing to your clients | · Sessions 1 to 4 · Allow about 20 minutes when introducing this strategy · Allow 10 minutes to practise at the end of Sessions 2-4 | · Managing Stress handout - Appendix E |"
+    },
+    {
+      "chunk": 93,
+      "source_chunk": 94,
+      "split_part": 0,
+      "page_start": 45,
+      "page_end": 45,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Instructions for slow breathing",
+      "token_count": 231,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Instructions for slow breathing\nThe following dialogue helps you explain the purpose of slow breathing to your clients. Where you can, add information that is relevant to your client's presenting problems (e.g. specific physical complaints they have, mentioning examples of times when they have become extremely stressed or anxious and so on): this will make the instructions more meaningful to the client. Before the client starts to focus on their breathing, get them to try to relax their body a little bit. This is especially helpful for clients who look tense. To do this you can ask them to relax their body or muscles by shaking out their arms and legs, making them floppy and loose. They can also roll their shoulders back or tilt their head to both sides.\nIdeally, you would like to help clients breathe at a rate of 10-12 breaths a minute. We use a basic counting strategy to help clients slow their breathing - three seconds to breathe in and three seconds to breathe out. If clients become stressed by trying to breathe exactly to the counts, this will not be helpful. Just encourage clients to try to breathe slowly.\n<!-- image -->"
+    },
+    {
+      "chunk": 95,
+      "source_chunk": 96,
+      "split_part": 0,
+      "page_start": 46,
+      "page_end": 46,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Instructions for slow breathing",
+      "token_count": 420,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Instructions for slow breathing\nNow, placing your hands on your stomach (belly), I want you to imagine you have a balloon in your stomach, and when you breathe in you are going to blow that balloon up, so your stomach will expand. And when you breathe out, the air in the balloon will also go out, so your stomach will flatten. Watch me first. I am going to exhale first to get all the air out of my stomach. (Demonstrate breathing from the stomach - try and exaggerate the pushing out and in of your stomach. Do this for at least five breaths.)\nOkay, so now you try to breathe from your stomach with me. Remember, we start by breathing out until all the air is out, then breathe in. If you can, try and breathe in through your nose and out through your mouth. (Practise with the client for at least two minutes.)\nGreat! Now the second step is to slow the rate of your breathing down. So we are going to take three seconds to breathe in and three seconds to breathe out. I will count for you.\nOkay, so breathe in, one, two, three. And breathe out, one, two, three. Do you notice how slowly I count? (Repeat this for approximately two minutes.)\nThat's great. Now when you practise on your own, don't be too concerned about trying to keep exactly to three seconds. Just try your best to slow your breathing down, remembering that when you are stressed you will breathe fast.\nOkay, so you try on your own for the next few minutes.\nAllow the client to practise trying to slow down their breathing on their own for at least two minutes. Try to count their breaths in and out so you can judge whether they are doing it too quickly. Afterwards, spend some time talking about any difficulties they had.\n<!-- image -->\nOkay, so how was it doing it on your own? Was it more difficult trying to keep your breathing to a slower rate?"
+    },
+    {
+      "chunk": 97,
+      "source_chunk": 98,
+      "split_part": 0,
+      "page_start": 47,
+      "page_end": 47,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Problems with slow breathing exercises",
+      "token_count": 442,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Problems with slow breathing exercises\nClients might present with a range of different problems when they try to practise slow breathing on their own. Below is a list of common problems they might encounter. Always speak with your supervisor about how to manage any problems or complaints a client has when practising any strategy.\n| Problem | Solution |\n| - | - |\n| The client is too concerned about breathing correctly (e.g. keeping to the three seconds in and out, breathing from their stomach). | · Encourage the client not to be worried about following the instructions exactly. · Help them to understand that the main aim is simply to slow their breathing down in the way that best suits them, even if it means that they are not keeping to the counts of three or even if they are not breathing from their stomach. · Once they have mastered how to slow their breathing down, they can try to use the counting or breathe from their stomach. |\n| The client cannot slow their breathing down when they are at the peak of their anxiety or stress. | · Say to the client that this would be very hard for anyone to do straight away, even a helper. · Spend some time helping the client to identify early signs that they are beginning to feel anxious or stressed so they can start slow breathing earlier. · If this is too difficult, help them to schedule specific times throughout the day to practise slow breathing so they learn how to use it before they get too anxious. |\n| Focusing on breathing makes the client speed up their breathing and feel more anxious. | · Help them to focus on a ticking clock and breathe to the count of the clock rather than focus only on the breathing (or a musical beat in a song). |\n| They might also experience feelings of light- headedness or dizziness, or feel they are losing control. | · Remind them that these sensations are safe and they are not losing control. · Encourage them to focus just on blowing all the air out (just the breathing out) and letting the in- breath come naturally (or by itself). · Then they can return to focusing on the whole process of breathing (in and out). |"
+    },
+    {
+      "chunk": 98,
+      "source_chunk": 99,
+      "split_part": 0,
+      "page_start": 47,
+      "page_end": 47,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Problems with slow breathing exercises",
+      "token_count": 55,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Problems with slow breathing exercises\n| In this chapter you learned | · Why Managing Stress is an important strategy · Who will benefit from this strategy · How to give information about slow breathing to your clients · How to teach Managing Stress to your clients |\n| - | - |"
+    },
+    {
+      "chunk": 99,
+      "source_chunk": 100,
+      "split_part": 0,
+      "page_start": 48,
+      "page_end": 48,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Chapter 7 MANAGING PROBLEMS",
+      "token_count": 153,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Chapter 7 MANAGING PROBLEMS\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · What types of problem this strategy is used for · What the steps are for Managing Problems, with a case example · Working with difficulties (e.g. clients who suggest unhelpful solutions, clients who are feeling hopeless) and avoiding giving advice | · Sessions 2-4 · Allow 70 minutes of Session 2 to introduce this strategy · Allow between 20 and 35 minutes for review in following sessions (see flowchart for specific times) | · Managing Problems handout - Appendix E · Activities calendar - Appendix E |"
+    },
+    {
+      "chunk": 116,
+      "source_chunk": 117,
+      "split_part": 0,
+      "page_start": 53,
+      "page_end": 53,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Overview of the steps in Managing Problems",
+      "token_count": 388,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Overview of the steps in Managing Problems\n<!-- image -->\n<!-- image -->\n<!-- image -->\n| Step | Description |\n| - | - |\n| 1. Listing problems <!-- image --> | · List problems as solvable (can be influenced or changed) and unsolvable (cannot be influenced or changed). |\n| 2. Choose a problem <!-- image --> | · Choose an easier (solvable) problem to start with. |\n| 3. Define <!-- image --> | · Choose the elements of the problem that are practical in nature and can be controlled or influenced to some extent. · Keep the explanation of the problem as specific and as brief as possible. · Try not to include more than one problem. · If a problem has many parts, break it down and deal with each part separately. |\n| 4. Brainstorm | · First, encourage the client to think of as many solutions to the problem as possible. Do not worry if the solutions are good or bad at this stage. · Think of what the client can do by themselves and also think of people who can help them manage parts of the problem. · Consider existing personal strengths, resources or support. · Try to encourage the client to come up with ideas rather than directly giving them solutions (remember the strategy of asking what they would say to a friend first, if you are tempted to give advice). |\n| 5. Decide and choose helpful strategies | · From the list of potential solutions, choose those that are most helpful to influencing the problem. · Helpful strategies have very few disadvantages for the client or others. · Helpful strategies can be carried out (e.g. the person has the financial means, other resources or ability to carry out the solution). · You can choose more than one solution. |"
+    },
+    {
+      "chunk": 117,
+      "source_chunk": 118,
+      "split_part": 0,
+      "page_start": 53,
+      "page_end": 53,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Overview of the steps in Managing Problems",
+      "token_count": 222,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Overview of the steps in Managing Problems\n| Step | Description |\n| - | - |\n| 6. Action plan Mww | · Develop a detailed plan of how and when the client will carry out the solutions. · Help them pick the day and time when they will do this. · Help them choose which solutions they will try first if there are more than one. · Discuss what resources (e.g. money, transport, another person and so on) they might need to carry out the plan. · Suggest aids to remind the client to carry out the plan (notes, calendar, plan activities to coincide with meals or other routine events). |\n| 7. Review <!-- image --> | · This step happens in the next session, after the client has attempted to carry out the plan. · Discuss what they did and what effect this had on the original problem. · Discuss any difficulties they had in acting on the plan. · Discuss and plan what they can do next week to continue to influence and manage the problem, given what they completed in the last week. |"
+    },
+    {
+      "chunk": 118,
+      "source_chunk": 119,
+      "split_part": 0,
+      "page_start": 54,
+      "page_end": 54,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Introducing Managing Problems",
+      "token_count": 287,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Introducing Managing Problems\n<!-- image -->\nS\nToday we are going to start with the problem you said is causing you the most concern. (Name it and check that the client still wants to work on this problem first.) Our starting point with any problem is to decide which parts of it are practical. (You may need to tell the client what parts are practical the first time.)\nThe strategy I am going to teach you today will help you with the practical parts of your problem. It is called Managing Problems. Our aim is to see what elements of the problem you can solve or influence. You might not always be able to solve the whole problem, but rather you might be able to influence it somewhat or change the way you are responding to the problem, which can help reduce negative feelings. (Specify with the client's negative feelings.)\nGo through each of the Managing Problems steps with the client. Be sure to explain clearly the aim of each step (use the Managing Problems handout to help you).\nFor example, you might say the following for Step 3, Brainstorming solutions:\n<!-- image -->\n3\nAt this point, all you want to do is come up with as many possible solutions to this problem as you can, no matter whether they are good or bad ideas. In the next step you will decide which solutions are most helpful to solving the problem."
+    },
+    {
+      "chunk": 121,
+      "source_chunk": 122,
+      "split_part": 0,
+      "page_start": 56,
+      "page_end": 57,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Case example",
+      "token_count": 443,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Case example\n| 4 SOLVABLE PROBLEMS Reduce fighting with my husband, improve my low mood <!-- image --> | 8 UNSOLVABLE PROBLEMS Get my husband a job and reduce my husband's anger <!-- image --> |\n| - | - |\n| CHOOSE A SOLVABLE PROBLEM? | Fighting with my husband each day |\n| DEFINE THE PROBLEM | I would like to reduce the number of arguments I have with my husband. We fight daily at the moment. |\n| POSSIBLE WAYS OF MANAGING THE PROBLEM (How can I solve or reduce the problem?) | · Do nothing - wait for him to get a job and see if it will improve. · Tell him he needs to see a community elder for help. · Tell him to try harder to look for a job. · I could look for a way to make money. · Talk with my friends about the problems - ask for their advice. · Ask my mother for advice. · Tell my husband I am not happy. · Leave him. |\n| HELPFUL SOLUTIONS | · Talk with my friends about the problem. Talk with Anne (a trusted friend) about the problem. She has had a similar problem with her husband and is more likely to understand the situation. · Ask my mother for advice. Only briefly mention the problem and ask what she would do. · Tell my husband I am not happy. |\n| PLAN (How to apply the solution you have chosen) | Tuesday: Visit Anne (trusted friend) at 10am after taking the children to school. Talk with her about the problem of fighting with my husband. Thursday: When visiting my mother, mention to her that I have been having some problems with my husband. Ask her what she would do in my situation. Saturday morning: Husband will be home. Mention to him that I have been feeling very unhappy because we have been fighting a lot. Wait for his response. |\n| REVIEW (After the plan has been completed) | |\nLoma wrote down some notes to remind herself to complete her plan over the next week.The following session she returned, having completed her tasks. The last row of the table (copied below) records her review."
+    },
+    {
+      "chunk": 122,
+      "source_chunk": 123,
+      "split_part": 0,
+      "page_start": 57,
+      "page_end": 57,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Case example",
+      "token_count": 383,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Case example\n| REVIEW (After the plan has been completed) | · Anne was very supportive. Although she did not have any new advice, speaking to her helped. I felt better afterwards and my mood improved a little. We also talked about other things that gave me a break from feeling sad all the time. · My mother said that I need to talk with my husband but be understanding of his frustration and not to blame him for losing his job. She helped me practise how I would talk to him, so I felt more confident. · I spoke to my husband the same evening because I felt confident about approaching him. He agreed with me, but we are still not sure what to do about it. · We still had two big fights this week, but this is less than before and we were better at discussing the problems afterwards because of the previous conversation we had had. |\n| - | - |\nIn this example, Loma did not completely solve her problem (fighting with her husband); however, she reduced the problem to some extent. Her actions did have an effect on the consequences of this problem, i.e. the effect the fighting was having on her mood - she improved her mood by talking to a trusted friend. In the same session, her helper used this information to emphasize the rationale of Get Going, Keep Doing (see Chapter 8). This helped Loma a lot in restarting activities she had stopped doing, and this improved her mood further.\nIn the same session, Loma and her helper discussed how she could continue to address the problem with her husband. They reviewed the previous potential solutions they had brainstormed to see if any of those might be helpful to try the following week. They also brainstormed some new solutions that might be helpful (in other words, they went through the Managing Problems process again, from Step 3)."
+    },
+    {
+      "chunk": 124,
+      "source_chunk": 125,
+      "split_part": 0,
+      "page_start": 58,
+      "page_end": 58,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "GET GOING, KEEP DOING",
+      "token_count": 125,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "GET GOING, KEEP DOING\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · What types of problems this strategy is suited to · How to introduce Get Going, Keep Doing · Examples of different activities to encourage clients to take part in | · Sessions 3 and 4 · Allow 35 minutes to introduce this strategy in Session 3 · Allow 20 minutes to review in Session 4 | · Get Going, Keep Doing handout - Appendix E · Activities calendar - Appendix E |"
+    },
+    {
+      "chunk": 125,
+      "source_chunk": 126,
+      "split_part": 0,
+      "page_start": 58,
+      "page_end": 59,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Background",
+      "token_count": 401,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Background\nWhere there is adversity, many people experience symptoms of depression. These can look different for different people, but depressive symptoms commonly include feelings of being easily tired, hopelessness, continuing low mood, lack of motivation or lack of enjoyment in activities that usually gave the person pleasure. Also, people often have a lot of physical complaints (e.g. aches and pains). Over time, many people will respond by withdrawing from their usual activities. This is also common among people who have experienced traumatic events or who are experiencing grief related to the loss of loved ones, job loss or loss of meaningful possessions.\nTypes of activities that people often stop or reduce include the following:\n- pleasant events (e.g. activities they used to enjoy);\n- social events;\n- essential activities for daily living, which include:\n- household duties (e.g. cleaning, tidying the house, food shopping and preparation, child-care tasks);\n- employment duties (e.g. reduced activity at work or in extreme cases no longer going to work regularly or at all);\n- looking after themselves (e.g. getting out of bed, washing regularly, changing clothes and eating regular meals).\nOver time they will develop a cycle of inactivity and low mood. This is often because a client who is feeling low will say, \"I will do xx when I feel like it.\" Unfortunately, withdrawing from these activities only causes the low mood to continue. The lower a person feels, the harder it is for them to start doing things again.\n<!-- image -->\nGet Going, Keep Doing aims to break this cycle and improve the client's mood by encouraging them to get involved again in pleasant and task-oriented activities in spite of their mood. 14 You will need to communicate to clients that they need to \"do first and the motivation or positive feelings will follow\", rather than wait until they feel motivated before starting an activity."
+    },
+    {
+      "chunk": 130,
+      "source_chunk": 131,
+      "split_part": 0,
+      "page_start": 61,
+      "page_end": 61,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "1. Introducing the inactivity cycle",
+      "token_count": 441,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "1. Introducing the inactivity cycle\nIn introducing Get Going, Keep Doing, be sure to relate the general information to the client's specific problems. In particular, talk about how you see the client's problems contributing to their current withdrawal from specific activities. Also show the client the Get Going, Keep Doing handout (Appendix E) when explaining the cycle.\nThe following is a standard introduction. You may want to add information that is relevant and specific to the client, or you may want to include more specific information after giving this introduction (e.g. \"Now what I have become aware of from what you have told me is that you have stopped doing…\"). It is a matter of what you feel most comfortable and confident with.\n<!-- image -->\nIt is very common for people who are exposed to hardship, loss and stressful life events to experience changes in their mood and to get tired easily. Over time, if a person's mood does not improve, they often begin to feel a lack of energy and motivation to do things they used to do quite easily. They may also start to find they no longer enjoy activities that used to give them pleasure. This can start a cycle where the person's mood gets lower, which leads to more withdrawal from activities, which results in a further lowering of mood and so on. (Draw this cycle, as above, for the client.)\nWe call this cycle the inactivity cycle. Unfortunately, this cycle of inactivity keeps you stuck in your low mood or grief. Often people will think, \"I will start doing things again when I feel better.\" Or they think that feeling energetic leads to getting active, but actually getting active leads to feeling energetic. So many people do not start feeling better until they get active. To break this cycle you need to start doing things again, even though you may not feel like it. Remember that many people do not start feeling better until they get active.\nFor many people it is starting the activity that is the hardest. But I can assure you that many people find that once they start doing activities it gets easier to keep going. 15"
+    },
+    {
+      "chunk": 134,
+      "source_chunk": 135,
+      "split_part": 0,
+      "page_start": 63,
+      "page_end": 63,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "2. Identify activities in which the client can begin to get involved again",
+      "token_count": 119,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "2. Identify activities in which the client can begin to get involved again\n<!-- image -->\nThinking about the things you used to do before you were feeling this way, what is one pleasant or enjoyable activity that you could start doing again or do more often? And thinking about when you were feeling better, what is one task, at home or at work, that you were doing regularly that you are no longer doing or that you do less? Great, so we will spend some time now scheduling in these tasks for you to start doing them again over the next week."
+    },
+    {
+      "chunk": 144,
+      "source_chunk": 145,
+      "split_part": 0,
+      "page_start": 67,
+      "page_end": 67,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Chapter 9 STRENGTHENING SOCIAL SUPPORT",
+      "token_count": 106,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Chapter 9 STRENGTHENING SOCIAL SUPPORT\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · What is meant by Strengthening Social Support · How to introduce this strategy to clients · How to encourage clients to strengthen social support | · Session 4 · Allow 30 minutes to introduce this strategy | · Strenghtening Social Support handout - Appendix E · Activities calendar - Appendix E |"
+    },
+    {
+      "chunk": 149,
+      "source_chunk": 150,
+      "split_part": 0,
+      "page_start": 69,
+      "page_end": 70,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Introducing social support to the client",
+      "token_count": 437,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Introducing social support to the client\nYou may show your client the Strengthening Social Support handout (Appendix E) while explaining the strategy.\n<!-- image -->\nStrengthening social support can mean different things to different people. For some people, it means sharing their difficulties and feelings with other people they trust. Or it might just be helpful spending time with friends or family and not talking about problems. For others, it might be asking to use resources from trusted people, such as tools or even knowledge that is needed to get something done. And for others still, it might mean connecting with community organizations or agencies to get support. These forms of social support can be very powerful in reducing difficulties and distress. Is there some way you think you might be able to strengthen your social support?\nHelp the client to decide in what way they want to strengthen their social support, e.g. by talking to someone, by getting more practical help, such as borrowing something, or connecting with another agency or community organization. If the client is not sure about strengthening their social support, even though you have reason to believe they need to, you may want to discuss this further.\n<!-- image -->\nMany people feel unsure about talking with others about their problems or asking others for help. One reason is because they are worried they will burden the other person with their problems. This is often not true. People will often share their own problems when they hear their friend tell them about their problems. Or they might ask for help in return. This might be because that friend is also experiencing similar problems. Rarely will one person only talk about their problems or only ask for help. It can also be helpful hearing other people's difficulties so you get some perspective on your own issues, especially if you think you are the only one experiencing a problem.\nAnother reason people do not get support from others is because they have no one they can trust. If you think you don't have anyone you can trust, shall we discuss more together on finding someone that you can trust?\nSpend some time talking with your client about people or services from whom they may feel comfortable getting some support."
+    },
+    {
+      "chunk": 153,
+      "source_chunk": 154,
+      "split_part": 0,
+      "page_start": 72,
+      "page_end": 72,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Chapter 10 STAYING WELL AND LOOKING FORWARD",
+      "token_count": 134,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Chapter 10 STAYING WELL AND LOOKING FORWARD\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · About the nature of emotional recovery · How clients can stay well · How to complete the post- intervention assessment · How to end the session and PM+ with your client | · Session 5 · Allow 30 minutes for Staying Well · Allow 20 minutes for Imagining How To Help Others · Allow 15 minutes for Looking Forward | · Case examples for How to Help Others - Appendix F · Post-intervention assessment - Appendix C |"
+    },
+    {
+      "chunk": 155,
+      "source_chunk": 156,
+      "split_part": 0,
+      "page_start": 73,
+      "page_end": 73,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Introducing Staying Well",
+      "token_count": 410,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Introducing Staying Well\nYou will introduce Staying Well in Session 5, the final session with your client. This will happen after you review the client's progress on all the strategies you have taught them so far (this should take about 30 minutes). You will have about 30 minutes to discuss Staying Well with the client before giving them the post-intervention assessment.\nThis session should be positive. So, start by praising the client for participating in PM+. You may want to ask them their views on how they have improved or not improved. Where possible, give examples of when the client has made important gains or shown considerable effort or courage (e.g. when they faced an unrealistic fear or developed a new trusting relationship with someone). These comments are meant to reinforce the client's confidence in practising the strategies by themselves and managing their own emotional problems.\nFor example:\n<!-- image -->\nAs you are aware, today is our last session and I want to start by congratulating you on reaching this stage. You have shown a lot of courage and effort to talk about some difficult topics and face these head-on. How do you feel about this being the last session? Are there areas that you think have improved since starting PM+? What about areas that have not improved? Do you have any ideas about what you can do to try to improve those areas?\nSecondly, you should encourage the client to continue practising the strategies to stay well. You might start by asking them to think about what they can do to stay well. You can also emphasise to the client that they have the handouts, which they can use to remind themselves of the strategies (see Appendix E).\nFor example:\nSo, we are going to talk about how you can stay well after finishing PM+. Do you have any ideas about what you can do to stay well?\nAn example where you might be clearer about what the client can do to stay well:\n<!-- image -->"
+    },
+    {
+      "chunk": 156,
+      "source_chunk": 157,
+      "split_part": 0,
+      "page_start": 73,
+      "page_end": 74,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Introducing Staying Well",
+      "token_count": 447,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Introducing Staying Well\nI like to think that PM+ is similar to learning a new language. I have coached you in learning some strategies to help you deal with different problems in your life. Just like learning a new language, though, you need to practise it every day if you want to speak it fluently. In the same way, if you practise these strategies as often as possible you will have a better chance of staying well. Also, if you face a difficult situation in the future, you will have a better chance of managing it well if you have been practising the strategies regularly.\nThere is nothing magical about this intervention. You have learned it all and can apply it to your life by yourself. You are your own helper now. And if you need any help remembering how to use the strategies, you have these handouts you can look back over. You might want to use these pictures or something else to put around your house to help remind you of the things you have learned here. Some people have stuck notes on their walls or put them in areas of the house where they spend most of their time so they never forget the strategies.\nSpend some time then talking about what specifically the client could do if they experience a severe stressful event or negative feelings in the future. Give the client the opportunity to tell you what they would do first. Help them be as detailed as possible in describing how they would respond (e.g. ask them for suggestions about ways they could improve their social support, rather than just saying, \"I will strengthen my social support\").\n<!-- image -->\nIt is not uncommon for clients to experience difficulties in the future. What do you think you can do the next time you experience a very difficult situation or notice negative feelings again? (Give specific examples relevant to the client, e.g. losing a job, conflict with a partner, feeling depressed and so on.)\nGive the client an opportunity to identify some ideas or talk about particular strategies first. You might need to prompt them to think about what specifically they found helpful in PM+ (in other words, what has already helped them to manage particular emotions and problems)."
+    },
+    {
+      "chunk": 158,
+      "source_chunk": 159,
+      "split_part": 0,
+      "page_start": 74,
+      "page_end": 74,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Imagining how to help others",
+      "token_count": 250,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Imagining how to help others\nFor many clients, it may also be helpful to make sure that they understand each of the strategies you have taught them. Spend about 20 minutes, using the case examples in Appendix F. Ask the client to imagine that each of these people were a close friend and to think about what strategy they would suggest their friend should practise. If clients find this task difficult, use it as an opportunity to teach them what strategies suit which problems. If clients prefer to talk about a real friend who is experiencing problems, use their example instead.\n<!-- image -->\nWhat we are going to do now is work together as helpers, so you can feel confident that you understand all the strategies in PM+ and when it is best to use them. So, I have some examples of different people here and I want you to imagine that this is a close friend or family member of yours. Once I have read the example, we will spend some time talking about how you might help them deal with their problems using any of the strategies you have learned. (Read the first example in Appendix F.)\nCan you make some suggestions as to which of the strategies you have learned might be most helpful to them?"
+    },
+    {
+      "chunk": 159,
+      "source_chunk": 160,
+      "split_part": 0,
+      "page_start": 75,
+      "page_end": 75,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Looking to the future",
+      "token_count": 279,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Looking to the future\nSometimes it can be helpful to discuss briefly (about 15 minutes) with a client what goals they have for themselves in the future. This can help clients consider how they might continue practising the strategies, for example by choosing other problems they want to address with PM+.\nOnce a client has identified a goal (or some goals), discuss how they might begin to tackle this goal. For example, what could be the first thing they do or what could they plan to do in the next few days, next week, next month and so on? The more concrete or specific the client's goals and plans, the easier it will be for them to carry them out.\n<!-- image -->\nS\nFinally, I would like to spend a little bit of time talking about how you might continue to practise the strategies you have learned in PM+ to achieve some goals you might have. Are there any current problems that you would like to deal with in the short term with any of the strategies?\n(If the client is having difficulties identifying any goals or problems they would like to deal with, you may want to refer back to their original list of problems from the assessment.)\nSo, thinking about this problem, what is the first thing you might be able to do to start solving or reducing the problem? When could you do this?"
+    },
+    {
+      "chunk": 161,
+      "source_chunk": 162,
+      "split_part": 0,
+      "page_start": 75,
+      "page_end": 77,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Ending Session 5 and PM+",
+      "token_count": 155,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Ending Session 5 and PM+\nTo end PM+, thank and congratulate the client again. Wish them luck with their recovery and remind them to keep working on their strategies. We recommend that you arrange to follow up with the client in several months' time to check on their progress. It may be helpful to check at this point whether the client is planning on relocating or moving out of the area.\n| In this chapter you learned | · What emotional recovery will look like for most clients · How clients can stay well and prevent a full return of emotional problems · How to complete the post-intervention assessment |\n| - | - |\nPM+: INDIVIDUAL PSYCHOLOGICAL HELP FOR ADULTS IMPAIRED BY DISTRESS IN COMMUNITIES EXPOSED TO ADVERSITY\n<!-- image -->"
+    },
+    {
+      "chunk": 165,
+      "source_chunk": 166,
+      "split_part": 0,
+      "page_start": 78,
+      "page_end": 79,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "PRE-PM+ ASSESSMENT",
+      "token_count": 320,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "PRE-PM+ ASSESSMENT\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n| Section | Contents |\n| - | - |\n| 1 | Introduction and verbal consent |\n| 2 | Demographic information |\n| 3 | PSYCHLOPS (before-intervention version) |\n| 4 | Measure of functioning |\n| 5 | Measure of emotional distress |\n| 6 | Assessment of thoughts of suicide |\n| 7 | Impairments possibly due to severe mental, neurological or substance use disorders |\n| 8 | Summary form and giving feedback |\nNote: Instructions in italics are to be read to the client."
+    },
+    {
+      "chunk": 166,
+      "source_chunk": 167,
+      "split_part": 0,
+      "page_start": 79,
+      "page_end": 79,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "1. INTRODUCTION AND VERBAL CONSENT",
+      "token_count": 402,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "1. INTRODUCTION AND VERBAL CONSENT\n<!-- image -->\nHello, my name is ……..…. I am from (organization name), and I understand that you are having some difficulties that I might be able to help you with. I'd like to tell you more about this intervention and you can decide if this is something that might be helpful for you.\nSome people experience stress or other psychological difficulties 16 that may affect their ability to carry out day-to-day tasks. An intervention has been developed that teaches people skills to cope with these difficulties better. This programme will take five weeks and I will be teaching you these skills.\nWhat we hope you will get out of the intervention are skills to deal with these problems. So the intervention is not about providing direct material support or money, but teaching important skills.\nIf you are interested in this intervention, I'd like to interview you now about how you are feeling and doing to see whether the intervention is suitable for you.\nBefore we start, it is important for you to know that everything you tell me during this interview is kept confidential. This means I cannot share this information with anyone other than my supervisor, or if you tell me it is okay to share it with someone, like a doctor or a nurse. However, I will have to write down your responses to the interview. The responses are then stored under lock and key in the office of (name of organization).\nThe only time I am allowed to break this confidentiality is if I believe you are at high risk of ending your life or hurting someone else. This is because it is my job to keep you safe. If I need to break confidentiality, I will talk to you about it first and then contact my supervisor. My supervisor is someone who is specifically trained to help people who are at risk of ending their life.\nWould you like to continue?\n16 The way these problems are described is likely to vary by context (adaptation issue)."
+    },
+    {
+      "chunk": 167,
+      "source_chunk": 168,
+      "split_part": 0,
+      "page_start": 80,
+      "page_end": 80,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "2. DEMOGRAPHIC INFORMATION",
+      "token_count": 63,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "2. DEMOGRAPHIC INFORMATION\n<!-- image -->\nS\nThank you for participating in the interview. Let me ask you the questions now. Please note that there are no right or wrong answers to these questions. Just be honest about how things are right now. I will start with some background questions."
+    },
+    {
+      "chunk": 168,
+      "source_chunk": 169,
+      "split_part": 0,
+      "page_start": 80,
+      "page_end": 80,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "2. DEMOGRAPHIC INFORMATION",
+      "token_count": 438,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "2. DEMOGRAPHIC INFORMATION\n| 1 | Record gender as observed | Female - Male | 1 - 2 |\n| - | - | - | - |\n| 2 | How old are you? | _______ years | _______ years |\n| 3 | How many years in all did you spend studying in school, college or university? | _______ years | _______ years |\n| 4 | What is your current marital status? (Select the single best option) | Never married | 1 |\n| 4 | What is your current marital status? (Select the single best option) | Currently married | 2 |\n| 4 | What is your current marital status? (Select the single best option) | Separated | 3 |\n| 4 | What is your current marital status? (Select the single best option) | Divorced | 4 |\n| 4 | What is your current marital status? (Select the single best option) | Widowed | 5 |\n| 4 | What is your current marital status? (Select the single best option) | Cohabiting | 6 |\n| 5a | Which describes your main work status best? (Select the single best option) | Paid work (see 5b) | 1 |\n| 5a | Which describes your main work status best? (Select the single best option) | Self-employed, such as owning a business or farming (see 5b) | 2 |\n| 5a | Which describes your main work status best? (Select the single best option) | Non-paid work, such as volunteer or charity | 3 |\n| 5a | Which describes your main work status best? (Select the single best option) | Student | 4 |\n| 5a | Which describes your main work status best? (Select the single best option) | Keeping house/homemaker | 5 |\n| 5a | Which describes your main work status best? (Select the single best option) | Retired | 6 |\n| 5a | Which describes your main work status best? (Select the single best option) | Unemployed (health reasons) | 7 |"
+    },
+    {
+      "chunk": 169,
+      "source_chunk": 170,
+      "split_part": 0,
+      "page_start": 80,
+      "page_end": 80,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "2. DEMOGRAPHIC INFORMATION",
+      "token_count": 143,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "2. DEMOGRAPHIC INFORMATION\n| 1 | Record gender as observed | Female - Male | 1 - 2 |\n| - | - | - | - |\n| 5a | Which describes your main work status best? (Select the single best option) | Unemployed (other reasons) | 8 |\n| 5a | Which describes your main work status best? (Select the single best option) | Other (specify)_______________ | 9 |\n| 5b | If the client is in paid work or self-employed, ask: What is your job? (What do you do for work?) (Write answer in space provided) | | |"
+    },
+    {
+      "chunk": 171,
+      "source_chunk": 172,
+      "split_part": 0,
+      "page_start": 81,
+      "page_end": 81,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 1",
+      "token_count": 85,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 1\n- a. Choose the problem that troubles you most. Record a brief summary of the client's description of the problem. If necessary, ask: \"Can you describe the problem to me?\" (Please write it in the box below.)\n- b. How much has it affected you over the last week? (Please tick one box below.)\n- [ ] Not at all\naffected       Severely affected"
+    },
+    {
+      "chunk": 172,
+      "source_chunk": 173,
+      "split_part": 0,
+      "page_start": 81,
+      "page_end": 82,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 2",
+      "token_count": 279,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 2\n- a. Choose another problem that troubles you. Record a brief summary of the client's description of the problem. If necessary, ask: \"Can you describe the problem to me?\" (Please write it in the box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\n- [ ] 5\n17 This questionnaire, reproduced with permission, is an adapted version of Version 5 of the Psychological Outcome Profiles Questionnaire (PSYCHLOPS). See www.psychlops.org. All rights reserved © 2010, Department of Primary Care and Public Health Sciences, King's College London. The adapted version used in this WHO publication is different in that (a) it does not ask when the person became concerned about the problem; (b) it asks how people have felt this last week rather than how they have felt in themselves this last week (Q4); (c) it probes for a problem description (Q1a and Q2a); and (d) it uses the word \"intervention\" rather than \"therapy\".\n- b. How much has it affected you over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\nNot at all affected       Severely affected"
+    },
+    {
+      "chunk": 173,
+      "source_chunk": 174,
+      "split_part": 0,
+      "page_start": 82,
+      "page_end": 82,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 3",
+      "token_count": 97,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 3\n- a. Choose one thing that is hard to do because of your problem (or problems). (Please write it in the box below.)\n- b. How hard has it been to do this thing over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\n- [ ] 4\n- [ ] 5\n- [ ] 5\nNot at all hard       Very hard"
+    },
+    {
+      "chunk": 174,
+      "source_chunk": 175,
+      "split_part": 0,
+      "page_start": 82,
+      "page_end": 82,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 4",
+      "token_count": 44,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 4\nHow have you felt this last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\nVery good       Very bad\n- [ ] 5"
+    },
+    {
+      "chunk": 178,
+      "source_chunk": 179,
+      "split_part": 0,
+      "page_start": 85,
+      "page_end": 85,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "6. ASSESSMENT OF THOUGHTS OF SUICIDE",
+      "token_count": 318,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "6. ASSESSMENT OF THOUGHTS OF SUICIDE\n<!-- image -->\nS\nWe have just been talking about different emotional difficulties that people can experience. Sometimes when people feel very sad and hopeless about their life, they have thoughts about their own death or even ending their own life. These thoughts are not uncommon and you should not feel ashamed about having such thoughts if you do. The following questions I have for you are about these kinds of thoughts. Is that okay with you? Can we continue with the interview?\n1. In the past month, have you had serious thoughts or a plan to end your life?\nYES\nNO\nIf yes, ask the client to describe their thoughts or plans. Write details here:\nIf the client responded \"no\" to Question 1, thank them for answering your questions and you can end the assessment.\nIf the client responded \"yes\" to Question 1, please continue with Question 2.\n2. What actions have you taken to end your life?\nPlease write details here:\n3. Do you plan to end your life in the next two weeks?\nYES\nNO\nUNSURE\nIf yes or unsure, ask client to describe their plan to you. Write details here:\nIf the client answers \"yes\" to Question 3, they have a plan to end their life in the near future and you must contact your supervisor immediately. Stay with the person while you do this. (See script below if needed.)\nIf you are unsure whether the client will end their life in the near future, tell them you would like to contact your supervisor to ask them follow-up questions."
+    },
+    {
+      "chunk": 179,
+      "source_chunk": 180,
+      "split_part": 0,
+      "page_start": 85,
+      "page_end": 85,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Script for people with a plan to end their life in the near future",
+      "token_count": 98,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Script for people with a plan to end their life in the near future\n<!-- image -->\nFrom what you have described to me, I am concerned about your safety. As I mentioned at the beginning of this interview, if I believe you are at risk of ending your life I must contact my supervisor. This is very important so we can get you the best kind of help for these problems as soon as possible. I am going to do this now, okay?"
+    },
+    {
+      "chunk": 180,
+      "source_chunk": 181,
+      "split_part": 0,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "7. IMPAIRMENTS POSSIBLY DUE TO SEVERE MENTAL, NEUROLOGICAL OR SUBSTANCE USE DISORDERS",
+      "token_count": 395,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "7. IMPAIRMENTS POSSIBLY DUE TO SEVERE MENTAL, NEUROLOGICAL OR SUBSTANCE USE DISORDERS\nThe following items are based on your observations and judgment of the client's behaviours. Do not ask the client any questions here. Circle yes or no to indicate your judgment and give details if needed.\n| Behaviour | Details |\n| - | - |\n| 1. Does the client understand you (even though they speak the same language or dialect)? (E.g. can they understand basic words, questions or follow instructions?) | YES / NO If no, give details: |\n| 2. Is the client able to follow what is happening in the assessment to a reasonable extent? (E.g. can they recall recently discussed topics, do they understand who you are and what you are doing with them, do they understand to some extent why you are asking them questions? Please consider if the client is so confused or drunk or high they cannot follow what is happening - then circle the response.) | YES / NO If no, give details: |\n| 3. Are the client's responses bizarre and/or highly unusual? (E.g. uses made-up words, long periods of staring into space, talks to him/herself, stories are very bizarre or unbelievable.) | YES / NO If yes, give details: |\n| 4. From the client's responses and behaviours, does it appear that they are not in touch with reality or what is happening in the assessment? (E.g. Delusions or firmly held beliefs or suspicions that do not make sense (they are bizarre) or are not realistic in the person's local context, unrealistic paranoia, such as a highly unrealistic belief that someone is trying to harm them.) | YES / NO If yes, give details: |\nConsider excluding a client from PM+ if you answered NO on questions 1 or 2, or YES on questions 3 or 4."
+    },
+    {
+      "chunk": 181,
+      "source_chunk": 182,
+      "split_part": 0,
+      "page_start": 87,
+      "page_end": 87,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "8. SUMMARY FORM AND GIVING FEEDBACK",
+      "token_count": 350,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "8. SUMMARY FORM AND GIVING FEEDBACK\n| CRITERIA | RESPONSE/ SCORE | EXCLUSION (Tick if response to any is YES) | RESPONSE FOR EXCLUDED CLIENTS | DATA ENTERED (SIGN/ DATE) |\n| - | - | - | - | - |\n| PSYCHLOPS total score | | | | |\n| Total score on MEASURE OF FUNCTIONING (e.g. WHO- DAS 2.0) 21 | | | Low scores on one of these two measures mean that PM+ is not indicated | |\n| Total score on MEASURE OF EMOTIONAL DISTRESS 22 | | | Low scores on one of these two measures mean that PM+ is not indicated | |\n| Is the client under 18 years? | YES / NO | | If person is under 18 and shows signs of mental health and psychosocial problems, link with a mental health service, social service or community protection network, as appropriate | |\n| Does the client have a plan to end their life in the next two weeks? | YES / NO | | Call your supervisor. Link with appropriate care | |\n| Does the client possibly have a severe mental, neurological or substance use disorder? (From observation - items 8.1-8.4.) | YES / NO | | Link with appropriate care | |\nCircle the appropriate decision based on the summary table above\n| INCLUDED | EXCLUDED |\n| - | - |\n| Give feedback (scripts on the next page) | Give feedback and refer on if necessary |\n\n21 In case the WHODAS is used, the person needs to score 17 or higher on WHODAS 2.0 to be included.\n\n22 If the PHQ-9 is used as measure of emotional distress, then the person needs to score 10 or higher to be included."
+    },
+    {
+      "chunk": 182,
+      "source_chunk": 183,
+      "split_part": 0,
+      "page_start": 88,
+      "page_end": 88,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "For clients with problems not suited to PM+ due to low levels of distress or impairment:",
+      "token_count": 288,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "For clients with problems not suited to PM+ due to low levels of distress or impairment:\n<!-- image -->\nThank you for your time. It seems that you are coping well enough with things at the moment, and so this intervention is not really something you need. I am very grateful to you for giving me your time and for being so honest with your answers. If you do feel that you require some help with psychological difficulties 23 in future, please let your (name of relevant person) know, and I may be able to help.\nFor clients with problems not suited to PM+ due to impairments possibly related to severe mental, neurological or substance use disorder:\n<!-- image -->\nThank you for your time and honest answers.\nIt seems you are experiencing difficulties that PM+ would not be able to help you with (name difficulty - e.g. unusual behaviours, fits, very severe problems with drinking or drugs). I would like to link you in with a service that would be better suited to helping you with these problems. Would that be okay?\nExplain clearly what you will do e.g. call the service to make an appointment for the client now or later, talk with your supervisor, call or revisit the client at a different time, etc. See script in Appendix D for responding to a client with a plan to end their life in the near future."
+    },
+    {
+      "chunk": 183,
+      "source_chunk": 184,
+      "split_part": 0,
+      "page_start": 88,
+      "page_end": 88,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Feedback for clients who are included (i.e. client meets all inclusion criteria)",
+      "token_count": 242,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Feedback for clients who are included (i.e. client meets all inclusion criteria)\n<!-- image -->\nThank you for these answers. It seems that you are having some problems in coping with (say the situations or problems the client has mentioned) at the moment, and so PM+ may help you. I would like to tell you more about PM+ so you can decide if you would like to receive this intervention. Is this okay? (Continue if client says it is okay.)\nPM+ involves meeting with me every week for five weeks. Our sessions will be approximately 90 minutes. What I hope you will get out of the intervention are skills to deal with (list some of the problems the client mentioned, e.g. stress, low mood, practical problems). So PM+ is not about providing direct material support or money, but teaching important skills.\nYou are free to decide to do the intervention or not, and you may decide to stop at any stage. Everything you tell me during the intervention is kept confidential, as I mentioned at the beginning of today.\n23 The way these problems are described to clients is likely to vary by context (adaptation issue)."
+    },
+    {
+      "chunk": 186,
+      "source_chunk": 187,
+      "split_part": 0,
+      "page_start": 89,
+      "page_end": 89,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 1",
+      "token_count": 138,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 1\nThis is the problem you said troubled you the most when we first asked.\n(Helper - please write it in the box below before the session.)\nHow much has it affected you over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\n5\nNot at all affected       Severely affected\n24 This questionnaire, reproduced with permission, is an adapted version of During-therapy Version 5 of the PSYCHLOPS. See www.psychlops.org. All rights reserved © 2010, Department of Primary Care and Public Health Sciences, King's College London."
+    },
+    {
+      "chunk": 187,
+      "source_chunk": 188,
+      "split_part": 0,
+      "page_start": 90,
+      "page_end": 90,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 2",
+      "token_count": 79,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 2\nThis is the other problem you said troubled you when we first asked.\n(Helper - please write it in the box below before the session.)\nHow much has it affected you over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\nNot at all affected       Severely affected"
+    },
+    {
+      "chunk": 188,
+      "source_chunk": 189,
+      "split_part": 0,
+      "page_start": 90,
+      "page_end": 90,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 3",
+      "token_count": 95,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 3\nThis is the thing you said was hard to do when we first asked.\n(Helper - please write it in the box below before the session.)\nHow hard has it been to do this thing over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\n- [ ] 4\n- [ ] 5\n- [ ] 5\nNot at all hard       Very hard"
+    },
+    {
+      "chunk": 189,
+      "source_chunk": 190,
+      "split_part": 0,
+      "page_start": 90,
+      "page_end": 90,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 4",
+      "token_count": 47,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 4\n- a. How have you felt this last week? (Please tick one box below.)\n- [ ] 0\nVery good       Very bad\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 5"
+    },
+    {
+      "chunk": 190,
+      "source_chunk": 191,
+      "split_part": 0,
+      "page_start": 91,
+      "page_end": 91,
+      "content_type": "table",
+      "content_subtype": "callout",
+      "heading_path": "b. Assessment of thoughts of suicide",
+      "token_count": 429,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "b. Assessment of thoughts of suicide\nNOTE: If client indicated 4 or 5 on Question 4a, or if they have a history of suicidal thoughts or plans while in PM+, complete assessment of thoughts of suicide. For all other clients, go to Question 5.\nNow I need to ask you some questions about your safety.\n| 1. In the past week have you had serious thoughts or a plan to end your life? | YES - If yes, ask the client to describe their thoughts or plans. Write details here: | YES - If yes, ask the client to describe their thoughts or plans. Write details here: | NO - If yes, ask the client to describe their thoughts or plans. Write details here: |\n| - | - | - | - |\n| If the client responded \"no\" to Question 1, you can end the assessment. If the client responded \"yes\" to Question 1, please continue with Question 2. | If the client responded \"no\" to Question 1, you can end the assessment. If the client responded \"yes\" to Question 1, please continue with Question 2. | If the client responded \"no\" to Question 1, you can end the assessment. If the client responded \"yes\" to Question 1, please continue with Question 2. | If the client responded \"no\" to Question 1, you can end the assessment. If the client responded \"yes\" to Question 1, please continue with Question 2. |\n| 2. What actions have you taken to end your life? | Please write details here: | Please write details here: | Please write details here: |\n| 3. Do you plan to end your life in the next two weeks? | YES | NO | UNSURE |\n| 3. Do you plan to end your life in the next two weeks? | If yes or unsure, ask the client to describe their plan to you. Write details here: | If yes or unsure, ask the client to describe their plan to you. Write details here: | If yes or unsure, ask the client to describe their plan to you. Write details here: |"
+    },
+    {
+      "chunk": 192,
+      "source_chunk": 193,
+      "split_part": 0,
+      "page_start": 92,
+      "page_end": 92,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 5",
+      "token_count": 106,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 5\n- a. Now that you are doing this intervention, you may have found that other problems have become important. If so, please tell me the one that troubles you most, or tell me if no other problems have become important.\n- b. How much have these other problems affected you over the last week?\n(Helper - please tick one box below, or leave blank if no other problems have become important.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\nNot at all affected       Severely affected"
+    },
+    {
+      "chunk": 193,
+      "source_chunk": 194,
+      "split_part": 0,
+      "page_start": 92,
+      "page_end": 92,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Comments (to be completed by the helper)",
+      "token_count": 168,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Comments (to be completed by the helper)\nPlease provide any comments you may want to record about the client, such as how they presented/acted in this session.\nTotal PSYCHLOPS before-intervention score: \\_ \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ 25\n- [ ] 3\n- [ ] 4\n- [ ] 5\n25 If both Q1 (Problem 1) and Q2 (Problem 2) have been completed, the total score is: Q1b + Q2b + Q3b + Q4. If Q1 (Problem 1) has been completed and Q2 (Problem 2) has been omitted, the total score is: (Q1b x 2) + Q3b + Q4."
+    },
+    {
+      "chunk": 196,
+      "source_chunk": 197,
+      "split_part": 0,
+      "page_start": 93,
+      "page_end": 93,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "POST-PM+ ASSESSMENT",
+      "token_count": 262,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "POST-PM+ ASSESSMENT\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n| Section Contents |\n| - |\n| 1 Introductions |\n| 2 PSYCHLOPS (post-intervention version) |\n| 3 Measure of functioning |\n| 4 Measure of emotional distress |\n| 5 Scoring summary form |"
+    },
+    {
+      "chunk": 197,
+      "source_chunk": 198,
+      "split_part": 0,
+      "page_start": 93,
+      "page_end": 93,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "1. Reason for assessment:",
+      "token_count": 16,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "1. Reason for assessment:\n<!-- image -->"
+    },
+    {
+      "chunk": 198,
+      "source_chunk": 199,
+      "split_part": 0,
+      "page_start": 93,
+      "page_end": 93,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "2. Confidentiality:",
+      "token_count": 146,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "2. Confidentiality:\n<!-- image -->\nS\nThank you for speaking with me today. The questions I have for you today will sound familiar to you, as they are the same questions I asked you before the intervention started. However, now we are interested in how you are doing after completing PM+.\nI would also like to remind you that, just as in our other sessions, everything you tell me remains private between my supervisor and me. If I believe you are at serious risk of harming yourself or someone else, I must tell my supervisor and link you in with people who can help you. This is because it is my responsibility to help you keep yourself safe. Does that make sense?"
+    },
+    {
+      "chunk": 200,
+      "source_chunk": 201,
+      "split_part": 0,
+      "page_start": 94,
+      "page_end": 94,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 1",
+      "token_count": 100,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 1\n- a. This is the problem you said troubled you the most when we first asked.\n(Helper - please write the first problem the client identified in the before-intervention PSYCHLOPS in the box below before the assessment.)\n- b. How much has it affected you over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\nNot at all affected       Severely affected"
+    },
+    {
+      "chunk": 201,
+      "source_chunk": 202,
+      "split_part": 0,
+      "page_start": 94,
+      "page_end": 95,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 2",
+      "token_count": 160,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 2\n- a. This is the other problem you said troubled you when we first asked.\n(Helper - please write the second problem the client identified in the before-intervention PSYCHLOPS in the box below before the assessment.)\n- [ ] 5\n26 This questionnaire, reproduced with permission, is an adapted version of Post-therapy Version 5 of the PSYCHLOPS. See www.psychlops.org. All rights reserved © 2010, Department of Primary Care and Public Health Sciences, King's College London.\n- b. How much has it affected you over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\nNot at all affected       Severely affected"
+    },
+    {
+      "chunk": 202,
+      "source_chunk": 203,
+      "split_part": 0,
+      "page_start": 95,
+      "page_end": 95,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 3",
+      "token_count": 117,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 3\n- a. This is the thing you said was hard to do when we first asked.\n(Helper - please write the client's answer to this question from the before-intervention PSYCHLOPS in the box below before the assessment.)\n- b. How hard has it been to do this thing over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\n- [ ] 4\n- [ ] 5\n- [ ] 5\nNot at all hard       Very hard"
+    },
+    {
+      "chunk": 203,
+      "source_chunk": 204,
+      "split_part": 0,
+      "page_start": 95,
+      "page_end": 95,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 4",
+      "token_count": 43,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 4\n- a. How have you felt this last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\nVery good       Very bad"
+    },
+    {
+      "chunk": 204,
+      "source_chunk": 205,
+      "split_part": 0,
+      "page_start": 95,
+      "page_end": 95,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 5",
+      "token_count": 87,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Question 5\nDuring the intervention, you may have found that other problems have become important. If so, how much have these problems affected you over the last week?\n(Please tick one box below, or leave blank if no other problems have become important.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\n- [ ] 5\nNot at all affected       Severely affected\n- [ ] 5"
+    },
+    {
+      "chunk": 205,
+      "source_chunk": 206,
+      "split_part": 0,
+      "page_start": 96,
+      "page_end": 96,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Question 6",
+      "token_count": 122,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Question 6\nCompared with when you started the intervention, how do you feel now? (Please tick one box below.)\n| Much better | Quite a lot better | A little better | About the same | A little worse | Much worse |\n| - | - | - | - | - | - |\n|  |  |  |  |  |  |\n| 1 | 2 | 3 | 4 | 5 | 6 |\nTotal PSYCHLOPS before-intervention score:\\_ \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ 27"
+    },
+    {
+      "chunk": 208,
+      "source_chunk": 209,
+      "split_part": 0,
+      "page_start": 96,
+      "page_end": 96,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "5. SCORING SUMMARY FORM",
+      "token_count": 166,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "5. SCORING SUMMARY FORM\nChecklist to ensure that you have completed all the measures.\n| MEASURE | SCORE | DATA ENTERED (SIGN/DATE) |\n| - | - | - |\n| PSYCHLOPS total score | | |\n| MEASURE OF FUNCTIONING total score | | |\n| MEASURE OF EMOTIONAL DISTRESS total score | | |\n\n27 If both Q1 (Problem 1) and Q2 (Problem 2) have been completed, the total score is: Q1b + Q2b + Q3b + Q4. If Q1 (Problem 1) has been completed and Q2 (Problem 2) has been omitted, the total score is: (Q1b x 2) + Q3b + Q4. In other words, the score of Q1b (Problem 1) is doubled."
+    },
+    {
+      "chunk": 215,
+      "source_chunk": 216,
+      "split_part": 0,
+      "page_start": 100,
+      "page_end": 100,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Practise Managing Stress",
+      "token_count": 15,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Practise Managing Stress\n<!-- image -->"
+    },
+    {
+      "chunk": 216,
+      "source_chunk": 217,
+      "split_part": 0,
+      "page_start": 101,
+      "page_end": 103,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Steps to Managing Problems",
+      "token_count": 88,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Steps to Managing Problems\n| | List Problems |\n| - | - |\n| | Choose a Problem |\n| | Define the Problem |\n| | Think of Ideas |\n| | Choose Ideas |\n| | Action Plan |\n| Jirk Proras DrTine THiAK Ideas (moose Artios | Review |\nGet Going Keep Doing: The Inactivity Cycle\n\n<!-- image -->\n<!-- image -->"
+    },
+    {
+      "chunk": 217,
+      "source_chunk": 218,
+      "split_part": 0,
+      "page_start": 104,
+      "page_end": 104,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Weekly Calendar",
+      "token_count": 135,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Weekly Calendar\n| Time | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY |\n| - | - | - | - | - | - | - | - |\n| Early morning 7am to 10am | | | | | | | |\n| Mid-morning 10am to 12noon | | | | | | | |\n| Lunchtime 12noon to 2pm | | | | | | | |\n| Afternoon 2pm to 5pm | | | | | | | |\n| Evening 5pm to 8pm | | | | | | | |\n| Late evening 8pm to 11pm | | | | | | | |"
+    },
+    {
+      "chunk": 234,
+      "source_chunk": 235,
+      "split_part": 0,
+      "page_start": 110,
+      "page_end": 110,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "1. Introductions and confidentiality (5 minutes)",
+      "token_count": 199,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "1. Introductions and confidentiality (5 minutes)\nIntroduce yourself to the client.\nRemind them about confidentiality.\nFor example, you might say:\n<!-- image -->\nS\nMy name is (name), and I am a (give title of your role, such as health or social worker). I will be working with you over the next five weeks as I guide you through this intervention. Before we begin talking about PM+ or some of your personal difficulties, I would like to remind you that everything you say in our sessions will be kept private. I cannot tell anyone, including your family, anything about what you say in sessions. The only time I can talk to someone about you is with my supervisor. They are someone who is specially trained and their task is to make sure that you are getting the best help from me. Secondly, if you are at very serious risk of ending your life I must talk with my supervisor so we can keep you safe."
+    },
+    {
+      "chunk": 235,
+      "source_chunk": 236,
+      "split_part": 0,
+      "page_start": 111,
+      "page_end": 111,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Additional dialogues for responding to specific client questions",
+      "token_count": 304,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Additional dialogues for responding to specific client questions\n- Explaining what the intervention is (what problems it will address):\n<!-- image -->\nPM+ is a brief intervention that aims to help you manage emotional problems, such as feelings of hopelessness, fear or sadness that are common for people living in difficult circumstances. It will also help you to manage practical problems, like looking for work, managing conflict with others, etc.\n- What is expected of them: assessments (specify the number of assessment you will be conducting e.g. pre-, post- and follow-up assessments), attending five sessions, home practice tasks (i.e. practising the strategies between sessions).\n- Explaining that you will not be supplying them with medication:\n<!-- image -->\nIn PM+ we will not be giving you any medication. We are interested in teaching you how to use strategies to help you with your emotional and practical problems that mean you do not need to take medication.\n- Explaining that they will not receive any compensation/material gains from participating:\n<!-- image -->\nIn PM+ you will be receiving help from me to improve your emotional and practical problems. We will not be giving you money or any other form of compensation for being involved. Is PM+ something you would still be interested in?\nNote: If you are able to provide the client with some form of compensation (e.g. travel costs), then specify this to them."
+    },
+    {
+      "chunk": 236,
+      "source_chunk": 237,
+      "split_part": 0,
+      "page_start": 112,
+      "page_end": 112,
+      "content_type": "figure",
+      "content_subtype": "callout",
+      "heading_path": "Key points to include:",
+      "token_count": 438,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Key points to include:\n- PM+ strategies help to manage practical problems (e.g. unemployment, housing problems, family conflict) and emotional problems (feelings of sadness, hopelessness, worry, stress and so on).\n- Five weekly sessions.\n- 90 minutes for each session.\n- Four strategies are taught.\n- PM+ works best if clients complete every session\n- To get the most out of PM+, clients should practise strategies between sessions.\n<!-- image -->\nS\nWe will work together to learn some strategies that can help you to overcome the difficulties you have told me about today. Including today's session, there are five sessions. Sessions will happen once a week and will last up to 90 minutes. In these sessions I will teach you the different strategies and we will have time to practise them as well. Between our meetings I will encourage you to practise these strategies so you can start making changes to problems in your life and learn how to become your own helper.\nThe strategies I will teach you will help you to reduce and manage the problems you have told me are causing you the most distress. (Specify what these problems are for the client.) I will teach you strategies to help manage practical problems, improve your activity, reduce your feelings of stress and anxiety and improve your support. Each of these strategies has been found to be very helpful for people in situations similar to your own.\nThe intervention works best if you come to every session for the next several weeks. I understand, though, that it can be difficult to come to sessions if you are feeling very anxious or depressed, or maybe you are physically unwell or you have family or community obligations. I would like to make an agreement with you that you will talk with me about this 29 instead of not showing up or avoiding sessions. This is because I want you to get the most out of our time together. And I don't want you to feel uncomfortable talking to me about problems with coming to the sessions. I will not be angry or upset. Does this sound okay to you? Do you see any difficulties with coming to all the sessions?"
+    },
+    {
+      "chunk": 238,
+      "source_chunk": 239,
+      "split_part": 0,
+      "page_start": 113,
+      "page_end": 113,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Good and Less Good Reasons for Joining PM+",
+      "token_count": 360,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Good and Less Good Reasons for Joining PM+\nChoose 1-2 questions from the table below to help the client think about the good and less good reasons for joining PM+.\n| Good Reasons to Join PM+ (Advantages) | Less Good Reasons to Join PM+ (Disadvantages) |\n| - | - |\n| \"Lots of people have benefited from this intervention.\" | \"I also understand that it can be challenging for some people to join a programme like this.\" |\n| · What do you think you will personally get out of this intervention? · What might improve in your life if you join PM+? · What do you think you might be able to do that you cannot do now? - Household tasks (e.g. cleaning, cooking) - Self-care (e.g. getting out of bed, washing yourself, getting dressed) - Pleasant activities (e.g. spending time with friends, embroidery, rearing poultry) · If your emotional problems decrease, how might this be good for other areas in your life? - E.g. your relationships, your work, your other duties · How might your everyday life look if your emotional well-being improved? | · What are some of the problems for you in joining PM+? · What will you have to give up or lose if you join PM+? · Will PM+ reduce your time with your family? · Will the intervention take you away from other important duties? Examples: · Time away from housework · Having to organize care for children · Could be doing casual work · Giving up personal time · Having to travel a distance to get to the PM+ sessions |\nSummarize the good and less good reasons for joining PM+:\n<!-- image -->\nS"
+    },
+    {
+      "chunk": 241,
+      "source_chunk": 242,
+      "split_part": 0,
+      "page_start": 114,
+      "page_end": 114,
+      "content_type": "figure",
+      "content_subtype": "callout",
+      "heading_path": "Key points to include:",
+      "token_count": 365,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Key points to include:\n- By adversity we mean any stressful or difficult life experience.\n- For example, living in poverty, having someone close to you become sick or die, being affected by natural disasters or war\n- People will experience a range of different reactions to adversity.\n- For example, intense fear, hopelessness, extreme sadness, tiredness, severe headaches\n- These feelings and reactions cause problems in peoples' lives.\n- For example, unable to get out of bed, difficulties completing daily routines like housework, conflict with family, not going out or enjoying pleasant activities any more\n- For most people these reactions decrease over time.\n- For some people, though, these feelings get stuck.\n- Learning strategies to manage these feelings can be helpful.\n<!-- image -->\nI would like to spend some time now talking to you about why you might be experiencing the problems we have just talked about and how this intervention can help you manage and overcome these kinds of problems.\nWhen people live in difficult circumstances and experience stressful events, most will usually experience a range of different emotions, like intense fear, grief, extreme sadness or excessive hopelessness. Some people even describe not feeling any emotions at all or feeling numb. Or the feelings you have described, such as (list some of the main emotions previously named), are also common.\nThere is a reason why people react that way. Our bodies are designed to keep us alive in lifethreatening situations. So when we think we are in danger, our bodies can respond by being extremely alert - this is so you can look out for danger and avoid it. Or our heart can beat very fast, our breathing might quicken, we might feel tense, etc. These reactions help us to run or fight if needed."
+    },
+    {
+      "chunk": 245,
+      "source_chunk": 246,
+      "split_part": 0,
+      "page_start": 116,
+      "page_end": 117,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Steps to follow:",
+      "token_count": 363,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Steps to follow:\n1. Give education: Managing Stress helps relax the body and calm the mind to reduce stress.\n2. Invite the client to release any tension in their body (shake arms and legs, roll shoulders back and so on).\n3. You will teach them a slow breathing exercise.\n4. Imagine a balloon inside the stomach and their task is to blow the balloon up (demonstrate with real balloon if possible).\n- That is, the stomach will expand when they breathe in.\n- We are aiming to not breathe with the chest (our breaths are more shallow from the chest).\n- Placing one hand on the stomach and one hand on the chest can help clients make sure they are breathing from the stomach and not the chest.\n5. Demonstrate stomach breathing for the client and then ask them to try it themselves for 2 minutes.\n6. Invite client to focus on slowing down breathing once they can breathe from their stomach.\n- Count 1, 2, 3 (timed in seconds) to breathe in and 1, 2, 3 to breathe out.\n7. Practise for at least two minutes while counting aloud for the client.\n8. Continue to practise for at least three minutes without counting aloud (ask client to count in their head or follow the sound of a clock or other rhythm).\n9. Discuss the client's experiences afterwards and manage any difficulties they had.\n<!-- image -->\nMany people exposed to hardship, danger and stressful life events complain of feeling overwhelmed by stress and anxiety. For some this can take the form of constantly having stressful thoughts fill their head. Others may experience stress or anxiety in a very physical way - they might feel tense or uptight all the time, find themselves breathing too quickly or that their heart is beating much"
+    },
+    {
+      "chunk": 247,
+      "source_chunk": 248,
+      "split_part": 0,
+      "page_start": 117,
+      "page_end": 118,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Steps to follow:",
+      "token_count": 300,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Steps to follow:\nOkay, so now you try to breathe from your stomach with me. Remember we start by breathing out until all the air is out, then breathe in. If you can, try and breathe in through your nose and out through your mouth. (Practise with the client for at least two minutes.)\nGreat! Now the second step is to slow the rate of your breathing down. So we are going to take three seconds to breathe in and three seconds to breathe out. I will count for you.\nOkay, so breathe in, 1, 2, 3. And breathe out, one, two, three. Do you notice how slowly I count? (Repeat this for approximately two minutes.)\nThat's great. Now when you practise on your own, don't be too concerned about trying to keep exactly to three seconds. Just try your best to slow your breathing down, remembering that when you are stressed you will breathe fast.\nOkay, so you try on your own for the next few minutes.\nAllow the client to practise trying to slow down their breathing on their own for at least two minutes. Try and count their breaths in and out so you can judge whether they are doing it too quickly. Afterwards, spend some time talking about any difficulties they had.\n<!-- image -->\nOkay, so how was it doing it on your own? Was it more difficult trying to keep your breathing to a slower rate?"
+    },
+    {
+      "chunk": 248,
+      "source_chunk": 249,
+      "split_part": 0,
+      "page_start": 118,
+      "page_end": 118,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Helpful hints for Managing Stress",
+      "token_count": 441,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Helpful hints for Managing Stress\nClients may present with a range of different problems when they try to practise slow breathing on their own. Below is a list of common problems they might encounter. Always speak with your supervisor about how to manage any problems or complaints a client has with practising any strategy.\n| Problem | Solution |\n| - | - |\n| The client is too concerned about doing it right (e.g. keeping to the three seconds in and out, breathing from their stomach). | · Encourage the client not to be worried about following the instructions exactly. · Help the client to understand that the main aim is simply to slow their breathing down in the way that best suits them, even if it means they are not keeping to the three counts or even if they are not breathing from their stomach. · Once they have mastered how to slow their breathing down, they can try to use the counting or breathe from their stomach. |\n| The client cannot slow their breathing down when they are at the peak of their anxiety or stress. | · Say to the client that this would be very hard for anyone to do straight way, even a helper. · Spend some time helping the client to identify early signs that they are beginning to feel anxious or stressed so they can start slow breathing earlier. · If this is too difficult, help them to schedule specific times throughout the day to practise slow breathing so they learn how to use it before they get too anxious. |\n| Focusing on breathing makes the client speed up their breathing and feel more anxious. | · Help them focus on a ticking clock and breathe to the count of the clock rather than focus only on the breathing (or a musical beat in a song). |\n| They might also experience feelings of light- headedness or dizziness, or feel they are losing control. | · Remind them that these sensations are safe and they are not losing control. · Encourage them to focus just on blowing all the air out (just the breathing out) and letting the in-breath come naturally (or by itself). · Then they can return to focusing on the whole process of breathing (in and out). |"
+    },
+    {
+      "chunk": 253,
+      "source_chunk": 254,
+      "split_part": 0,
+      "page_start": 121,
+      "page_end": 121,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Managing Problems steps",
+      "token_count": 340,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Managing Problems steps\n| Step | Description |\n| - | - |\n| 1. Listing problems | · List problems as solvable (can be influenced or changed) or unsolvable (cannot be influenced or changed). |\n| 2. Choose a problem | · Choose an easier (solvable) problem to start with. |\n| 3. Define | · Choose the elements of the problem that are practical in nature and can be controlled or influenced to some extent. · Keep the explanation of the problem as specific and as brief as possible. · Try not to include more than one problem. · If a problem has many parts, break it down and deal with each part separately. |\n| 4. Brainstorm | · First, encourage the client to think of as many possible solutions to the problem as they can. Do not worry if the solutions are good or bad at this stage. · Think of what the client can do by themselves and also think of people who can help them manage parts of the problem. · Consider existing personal strengths, resources or support. · Try to encourage the client to come up with ideas rather than directly giving them solutions (remember the strategy of asking what they would say to a |\n| 5. Decide and choose helpful strategies | friend first, if you are tempted to give advice!). · From the list of potential solutions, choose those that are most helpful to influencing the problem. · Helpful strategies have very few disadvantages for the client and others. · Helpful strategies can be carried out (e.g. the person has the financial means, other resources or ability to carry out the solution). · You can choose more than one solution here. |"
+    },
+    {
+      "chunk": 254,
+      "source_chunk": 255,
+      "split_part": 0,
+      "page_start": 121,
+      "page_end": 121,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Managing Problems steps",
+      "token_count": 211,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Managing Problems steps\n| Step | Description |\n| - | - |\n| 6. Action plan | · Develop a detailed plan for how and when the client will carry out the solution(s). · Help them pick the day and time when they will do this. · Help them choose which solutions they will try first if there are more than one. · Discuss what resources (e.g. money, transport, another person and so on) they might need to carry out the solution. · Suggest aids to remind the client to carry out the plan (notes, calendar, schedule activities to coincide with meals or other routine events). |\n| 7. Review | · This step happens in the next session, after the client has attempted to carry out the plan. · Discuss what they did and what affect this had on the original problem. · Discuss any difficulties they had in acting on the plan. · Discuss and plan what they can do next week to continue to influence and manage the problem, given what they completed in the last week. |"
+    },
+    {
+      "chunk": 255,
+      "source_chunk": 256,
+      "split_part": 0,
+      "page_start": 122,
+      "page_end": 122,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Introducing Managing Problems",
+      "token_count": 208,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Introducing Managing Problems\n<!-- image -->\nToday we are going to start with the problem you said is causing you the most concern. (Name it and check that the client still wants to work on this problem first.)\nOur starting point with any problem is to decide which parts of it are practical. (You may need to tell the client what part is practical the first time.)\nThe strategy I am going to teach you today will help you with the practical parts of your problem. It is called Managing Problems. Our aim is to see what elements of the problem you can solve or influence. You might not always be able to solve the whole problem, but rather you might be able to influence it somewhat or change the way you are responding to the problem, which can help reduce negative feelings. (Specify the client's negative feelings.)\nGo through each of the Managing Problems steps with the client. Be sure to explain clearly the aim of each step (use the Managing Problems handout to help you)."
+    },
+    {
+      "chunk": 262,
+      "source_chunk": 263,
+      "split_part": 0,
+      "page_start": 124,
+      "page_end": 125,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "What does this strategy target?",
+      "token_count": 75,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "What does this strategy target?\nIt targets the cycle of inactivity that clients get stuck in when they are doing fewer activities. This inactivity causes low mood to continue, and keeps them from engaging in tasks and activities. A client will often say, \"I will do xx when I feel like doing it.\"\n<!-- image -->"
+    },
+    {
+      "chunk": 265,
+      "source_chunk": 266,
+      "split_part": 0,
+      "page_start": 126,
+      "page_end": 126,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Introducing Get Going, Keep Doing",
+      "token_count": 446,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Introducing Get Going, Keep Doing\nWhen introducing the rationale behind Get Going, Keep Doing, be sure to relate the general information to the client's specific problems and presentation - i.e. talk about how you see the client's problems contributing to their current withdrawal from specific activities. Also show the client the Get Going, Keep Doing handout when explaining the cycle.\nThe following is a standard introduction. You may want to add information that is relevant and specific to the client. Alternatively, you may wish to include more specific information after giving this introduction (e.g. \"Now what I have become aware of from what you have told me is that you have stopped doing…\"). It is a matter of what you feel most comfortable and confident with.\n<!-- image -->\nIt is very common for people who are exposed to hardship, loss and stressful life events to experience changes in their mood and to get easily tired. Over time, if a person's mood does not improve, they often begin to feel a lack of energy and motivation to do things they used to do quite easily. They may also start to find that they no longer enjoy activities that used to give them pleasure. This can start a cycle where the person's mood gets lower, which leads to more withdrawal from activities, which results in a further lowering of mood and so on. (Draw the inactivity cycle, as above, for the client.)\nWe call this cycle the inactivity cycle. Unfortunately, this cycle of inactivity keeps you stuck in your low mood or grief. Often people will think, \"I will start doing things again when I feel better.\" Or they think that feeling energetic leads to getting active, but actually getting active leads to feeling energetic. So many people do not start feeling better until they get active. To break this cycle you need to start doing things again, even though you may not feel like it. Remember that many people do not start feeling better until they get active.\nFor many people it is starting the activity that is the hardest. But I can assure you that many people find that once they start doing activities it gets easier to keep going."
+    },
+    {
+      "chunk": 275,
+      "source_chunk": 276,
+      "split_part": 0,
+      "page_start": 129,
+      "page_end": 130,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Introducing Strengthening Social Support",
+      "token_count": 409,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Introducing Strengthening Social Support\nYou may show your client the Strengthening Social Support handout while explaining the strategy.\n<!-- image -->\nS\nStrengthening social support can mean different things to different people. For some people, it means sharing their difficulties and feelings with other people they trust. Or it might just be helpful spending time with friends or family and not talking about problems. For others, it might be asking to use resources from trusted people such as tools or even knowledge that is needed to get something done. And for others still, it might mean connecting with community organizations or agencies to get support. These forms of social support can be very powerful in reducing difficulties and distress. Is there some way you think you might be able to strengthen your social support?\nHelp the client to decide in what way they want to strengthen their social support.\n- For example, by talking to someone, by getting more practical help, such as borrowing something, or connecting with another agency or community organization.\nIf the client is not sure about strengthening their social support even though you have reason to believe they need to, you may want to discuss this further:\n<!-- image -->\nMany people feel unsure about talking with others about their problems or asking others for help. One reason is because they are worried they will burden the other person with their problems. This is often not true. People will often share problems when they hear their friends tell them about their own problems. Or they might ask for help in return. This might be because that friend is also experiencing similar problems. Rarely will one person only talk about their problems or only ask for help. It can also be helpful hearing other people's difficulties so you get some perspective on your own issues, especially if you think you are the only one experiencing a problem.\nAnother reason why people do not get support from others is because they have no one they can trust. If you think you don't have anyone you can trust, shall we discuss more together on finding someone that you can trust?"
+    },
+    {
+      "chunk": 281,
+      "source_chunk": 282,
+      "split_part": 0,
+      "page_start": 132,
+      "page_end": 132,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "2. Introducing Staying Well (30 minutes)",
+      "token_count": 135,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "2. Introducing Staying Well (30 minutes)\nBegin by congratulating or praising your client for participating in PM+ and for their efforts:\n<!-- image -->\nAs you are aware, today is our last session and I want to start by congratulating you on reaching this stage. You have shown a lot of courage and effort to talk about some difficult topics and to face these head-on. How do you feel about this being the last session? Are there areas that you think have improved since starting PM+? What about areas that have not improved? Do you have any ideas about what you can do to try to improve those areas?"
+    },
+    {
+      "chunk": 283,
+      "source_chunk": 284,
+      "split_part": 0,
+      "page_start": 133,
+      "page_end": 133,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "For example:",
+      "token_count": 397,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "For example:\n<!-- image -->\nSo, we are going to talk about how you can stay well after finishing this intervention. Do you have any ideas about what you can do to stay well?\nAn example where you might be clearer about what the client can do to stay well:\n<!-- image -->\nI like to think that this intervention is similar to learning a new language. I have coached you in learning some strategies to help you deal with different problems in your life. Just like learning a new language, though, you need to practise it every day if you want to speak it fluently. In the same way, if you practise these strategies as often as possible, you will have a better chance of staying well. Also, if you face a difficult situation in the future, you will have a better chance of managing it well if you have been practising the strategies regularly.\nThere is nothing magical about this intervention - you have learned it all and can apply it to your life by yourself. You are your own helper now. And if you need any help remembering how to use the strategies, you have these handouts you can look back over. You might want to use these pictures or something else to put around your house to help remind you of the things you have learned. Some people have stuck notes on their walls or put them in areas of the house where they spend most of their time so they never forget the strategies.\nSpend some time then talking about what specifically the client could do if they experienced a severe stressful event or negative feelings in the future. Give the client the opportunity to tell you what they would do first. Help them to be as detailed as possible in describing how they would respond (e.g. ask them for suggestions of ways they could improve their social support rather than just saying, \"I will strengthen my social support\").\n<!-- image -->"
+    },
+    {
+      "chunk": 285,
+      "source_chunk": 286,
+      "split_part": 0,
+      "page_start": 134,
+      "page_end": 134,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3. Imagining How to Help Others (20 minutes)",
+      "token_count": 244,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "3. Imagining How to Help Others (20 minutes)\nFor many clients, it is helpful to make sure that they understand each of the strategies you have taught them. Using the case examples in Appendix F, ask the client to imagine that each of these people were a close friend and think about what strategy they would suggest their friend should practise. If clients find this task difficult, use it as an opportunity to teach them what strategies suit which problems. If clients prefer to talk about a real friend who is experiencing problems, use their example instead.\n<!-- image -->\nWhat we are going to do now is work together as helpers so you can feel confident that you understand all the strategies and when it is best to use them. So, I have some examples of different people here and I want you to imagine that this is a close friend or family member of yours. Once I have read the example, we will spend some time talking about how you might help them deal with their problems using any of the strategies you have learned. (Read the first example in Appendix F.)\nCan you make some suggestions as to which of the strategies you have learned might be most helpful to them?"
+    },
+    {
+      "chunk": 286,
+      "source_chunk": 287,
+      "split_part": 0,
+      "page_start": 134,
+      "page_end": 134,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Aims:",
+      "token_count": 223,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Aims:\n- Help the client prepare for the future.\n- Help the client review goals not achieved or problems not improved in PM+.\n- Help the client think in what ways they would like to keep improving (i.e. name new goals).\n<!-- image -->\nS\nFinally, I would like to spend a little bit of time talking about how you might continue to practise the strategies you have learned to achieve some goals you might have. Are there any current problems that you would like to deal with in the short term with any of the strategies?\nIf the client is having difficulties identifying any goals or problems they would like to deal with, you may want to refer back to their original list of problems from the assessment.\n<!-- image -->\nSo thinking about this problem, what is the first thing you might be able to do to start solving or reducing the problem? When could you do this?\nHelp the client to develop an action plan - i.e. what they can start doing to continue to improve their well-being or manage their problems."
+    },
+    {
+      "chunk": 289,
+      "source_chunk": 290,
+      "split_part": 0,
+      "page_start": 140,
+      "page_end": 140,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "PROBLEM MANAGEMENT PLUS (PM+)",
+      "token_count": 33,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "PROBLEM MANAGEMENT PLUS (PM+)\nIndividual psychological help for adults impaired by distress in communities exposed to adversity\n<!-- image -->\nIV"
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 10,
+      "text": "<!-- image -->"
+    },
+    {
+      "chunk": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "© World Health Organization 2018",
+      "token_count": 423,
+      "text": "© World Health Organization 2018\nSome rights reserved. This work is available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/licenses/by-nc-sa/3.0/igo).\nUnder the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes, provided the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion that WHO endorses any specific organization, products or services. The use of the WHO logo is not permitted. If you adapt the work, then you must license your work under the same or equivalent Creative Commons licence. If you create a translation of this work, you should add the following disclaimer along with the suggested citation: \"This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this translation. The original English edition shall be the binding and authentic edition\".\nAny mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation rules of the World Intellectual Property Organization (http://www.wipo.int/amc/en/mediation/rules/).\nSuggested citation. Problem Management Plus (PM+): individual psychological help for adults impaired by distress in communities exposed to adversity (generic field-trial version 1.1). Geneva: World Health Organization; 2018. Licence: CC BY-NC-SA 3.0 IGO.\nCataloguing-in-Publication (CIP) data. CIP data are available at http://apps.who.int/iris.\nSales, rights and licensing. To purchase WHO publications, see https://www.who.int/publications/book-orders. To submit requests for commercial use and queries on rights and licensing, see https://www.who.int/copyright."
+    },
+    {
+      "chunk": 15,
+      "page_start": 10,
+      "page_end": 11,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "The Problem Management Plus (PM+) Intervention",
+      "token_count": 262,
+      "text": "The Problem Management Plus (PM+) Intervention\nThis is a reference manual to be used with training and under supervision. It includes an Intervention Protocol (Appendix G) that guides helpers on how to carry out each session. The manual includes detailed descriptions of each strategy and how you can best introduce them to your client. However, reading the manual is not enough to learn the strategies. The only way of learning how to be a helper using this manual is through practical training and supervision.\n1 WHO is in the process of testing a group version of this manual, called PM+ Group, which is also for adults. In addition, a version for young adolescents will be developed and tested.\n2 In communities with high levels of alcohol or other substance use problems, you may need to complement PM+ with brief interventions relevant for such problems.\n3 Following the terms used in the IASC (2007) Guidelines, PM+ involves \"focused psychosocial support\" (i.e. level 3 of the IASC intervention pyramid).\nThis needs to include:\n- (a) learning both basic helping skills and PM+ strategies;\n- (b) practising these skills and strategies through role-plays and with practice clients; and\n- (c) regular supervision when putting PM+ into practice with clients."
+    },
+    {
+      "chunk": 19,
+      "page_start": 13,
+      "page_end": 14,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Structure of this manual",
+      "token_count": 234,
+      "text": "Structure of this manual\nThe manual has three main parts.\n1. The first part describes:\n- Background to the manual (Chapter 1)\n- The PM+ Intervention (Chapter 2)\n- Basic Helping Skills (Chapter 3).\n2. The second part describes each of the main parts of the intervention, which are:\n- PM+ Assessments (Chapter 4)\n- Understanding Adversity and the PM+ Intervention (Chapter 5)\n- Managing Stress (Chapter 6)\n- Managing Problems (Chapter 7)\n- Get Going, Keep Doing (Chapter 8)\n- Strengthening Social Support (Chapter 9)\n- Staying Well (Chapter 10).\n3. The third part consists of the appendices, which include:\n- Assessment tools (consent procedures, pre-PM+, during-PM+ and post-PM+ assessments) (Appendices A, B and C)\n- Assessing and responding to thoughts of suicide (Appendix D)\n- Client handouts (Appendix E)\n- Case examples for imagining how to help others (Appendix F)\n- The Intervention Protocol (which is a job aid that describes the whole session-by-session intervention) (Appendix G)."
+    },
+    {
+      "chunk": 27,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "THE PROBLEM MANAGEMENT PLUS (PM+) INTERVENTION",
+      "token_count": 211,
+      "text": "THE PROBLEM MANAGEMENT PLUS (PM+) INTERVENTION\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · Get an overview of PM+ (e.g. structure of the intervention, order of strategies) · Learn a little about each PM+ strategy | · The whole intervention | · PM+ client handouts - Appendix E |\nProblem Management Plus (PM+) is the term used to describe the overall approach of this brief intervention. It combines the well-known strategies of problem-solving with certain behavioural strategies. The overall aim of PM+ is to build a client's ability to manage their own emotional distress and, when possible, to reduce their own practical problems. For this reason, the language used is similar to training or coaching approaches and PM+ avoids giving advice.\nEvery client will receive all of the PM+ strategies, in the order they are described in this manual."
+    },
+    {
+      "chunk": 39,
+      "page_start": 22,
+      "page_end": 22,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Chapter 3 BASIC HELPING SKILLS",
+      "token_count": 182,
+      "text": "Chapter 3 BASIC HELPING SKILLS\n| LEARN What will you learn in this chapter? | SESSION What session does this chapter link to? | WORKSHEETS What worksheets link to this chapter? |\n| - | - | - |\n| · How to use basic helping skills to build good, trusting relationships with your clients · What to consider about the client-helper relationship · How to manage difficult problems that clients may present with | · You use these skills every time you speak with your clients | · None |\nBefore covering specific PM+ strategies, we will discuss basic helping skills, which focus on communication in the sessions and building a relationship with your client. Building a relationship based on trust and respect is essential for all forms of psychological support. In fact, these basic helping skills are the groundwork for PM+. The formal PM+ strategies are unlikely to be successful without you always using these skills."
+    },
+    {
+      "chunk": 58,
+      "page_start": 30,
+      "page_end": 30,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1. Sexual assault and other forms of intimate traumatic experience",
+      "token_count": 374,
+      "text": "1. Sexual assault and other forms of intimate traumatic experience\nHelping people who are survivors of sexual violence or other forms of what we label here \"intimate forms of traumatic experience\" (e.g. sexual violence, torture and severe domestic violence) needs extra sensitivity, for four reasons:\n1. The survivor may not be safe, and the experiences may reoccur.\n2. The psychological experience of these events is usually extremely threatening or horrific. The survivor may experience traumatic stress and may seek to avoid reminders of the event.\n3. These events are often private and culturally taboo, making it difficult for survivors to share them and get support.\n4. Survivors can face stigma and rejection from their family or community if it becomes known what has happened to them.\nWhen survivors of other forms of adversity share their experiences with you, they often feel \"validated\" (in other words, you will show you understand that a traumatic experience has taken place). But survivors of intimate forms of traumatic experience are too often denied this validation, because they do not speak about it, are pressured to stay quiet or are simply not believed. Worse, their sense of dignity is further undermined when people joke about what has happened to them or blame them for it. Any rejection by family or community members is likely to cause further suffering (e.g. poverty). In many societies, the situation can be made worse when clients openly discuss sexual violence. So, when a client shares their story of an intimate traumatic experience with you, they are showing great courage in doing so. You need to be extra sensitive in your response to this. Your confidentiality is essential.\nThe needs of survivors of sexual violence are many. They will probably also suffer social, legal and physical health problems. You should let them know about other services and support for these other needs. 9"
+    },
+    {
+      "chunk": 77,
+      "page_start": 37,
+      "page_end": 37,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Challenges during assessment",
+      "token_count": 23,
+      "text": "Challenges during assessment\nThe following scripts can help you to manage people in need of additional attention during the assessment."
+    },
+    {
+      "chunk": 96,
+      "page_start": 46,
+      "page_end": 46,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Instructions for slow breathing",
+      "token_count": 154,
+      "text": "Instructions for slow breathing\nEncourage the client to practise this strategy regularly but also to practise it when they feel anxious or stressed. You will end every session with Managing Stress, but you may also choose to use it if you notice that your client is becoming stressed or anxious in the session. In these situations, ask the client if they are feeling anxious or stressed and whether they would feel comfortable if you stopped the conversation to practice Managing Stress together. Ask the client whether they would like to do it themselves or whether they would like you to lead them in it (i.e. count the breathing in and out).\nGive your client the Managing Stress handout (Appendix E) to remind them of how to practise the strategy between sessions."
+    },
+    {
+      "chunk": 116,
+      "page_start": 53,
+      "page_end": 53,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Overview of the steps in Managing Problems",
+      "token_count": 388,
+      "text": "Overview of the steps in Managing Problems\n<!-- image -->\n<!-- image -->\n<!-- image -->\n| Step | Description |\n| - | - |\n| 1. Listing problems <!-- image --> | · List problems as solvable (can be influenced or changed) and unsolvable (cannot be influenced or changed). |\n| 2. Choose a problem <!-- image --> | · Choose an easier (solvable) problem to start with. |\n| 3. Define <!-- image --> | · Choose the elements of the problem that are practical in nature and can be controlled or influenced to some extent. · Keep the explanation of the problem as specific and as brief as possible. · Try not to include more than one problem. · If a problem has many parts, break it down and deal with each part separately. |\n| 4. Brainstorm | · First, encourage the client to think of as many solutions to the problem as possible. Do not worry if the solutions are good or bad at this stage. · Think of what the client can do by themselves and also think of people who can help them manage parts of the problem. · Consider existing personal strengths, resources or support. · Try to encourage the client to come up with ideas rather than directly giving them solutions (remember the strategy of asking what they would say to a friend first, if you are tempted to give advice). |\n| 5. Decide and choose helpful strategies | · From the list of potential solutions, choose those that are most helpful to influencing the problem. · Helpful strategies have very few disadvantages for the client or others. · Helpful strategies can be carried out (e.g. the person has the financial means, other resources or ability to carry out the solution). · You can choose more than one solution. |"
+    },
+    {
+      "chunk": 135,
+      "page_start": 63,
+      "page_end": 63,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "3. Breaking down the task into smaller steps",
+      "token_count": 143,
+      "text": "3. Breaking down the task into smaller steps\nGiven the client's low mood, lack of energy or grief, it is important to break the overall task down into smaller and more manageable steps. Remember, this is so that the client does not feel overwhelmed with the task and to make sure that they experience some success in completing the task. This will encourage self-confidence and begin to influence their mood.\nFor example, \"cleaning your apartment or hut\" might be a major task. Breaking this task down by choosing small sections of the apartment or hut to clean (e.g. cooking area, sleeping area and so on) makes it more manageable and achievable for the client."
+    },
+    {
+      "chunk": 154,
+      "page_start": 72,
+      "page_end": 72,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Recovery and staying well",
+      "token_count": 363,
+      "text": "Recovery and staying well\nWhen we consider how people recover after treatment for a physical illness or injury, it is usually not perfectly smooth. People will experience varying levels of pain during this recovery. Some days will be better than others. But generally, if people practise the exercises or keep to the recovery plan their nurse or doctor has given them, they do get better.\nThe same process of recovery happens with emotional problems or illnesses. People are likely to experience \"ups and downs\" with their emotions in the same way that people recovering from physical illnesses and injuries do. Continuing to practise the strategies after finishing the intervention is important for staying well. This will help clients prevent a full return of their problems as well as strengthening their confidence in using the strategies. In this way, in the future when a problematic situation arises that causes distress, the client is more likely to be able to respond to it using these strategies.\nWhen clients do face other (new) adversity (e.g. the death of a loved one, loss of a job, illness, increased community violence and so on), it is normal for them to experience unpleasant feelings, such as sadness, anger, grief or worry. Remind clients that when these feelings do not interfere with the way they are functioning, the feelings might be considered normal. However, if a client does start to feel very distressed again and in a way that interferes with their daily functioning (in other words, going to work, looking after children and so on), it is important that they respond quickly by practising in one of the PM+ strategies (Managing Problems; Get Going, Keep Doing; Strengthening Social Support; or Managing Stress). Ask the client to look over their PM+ materials and start practising the appropriate strategies."
+    },
+    {
+      "chunk": 171,
+      "page_start": 81,
+      "page_end": 81,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 1",
+      "token_count": 85,
+      "text": "Question 1\n- a. Choose the problem that troubles you most. Record a brief summary of the client's description of the problem. If necessary, ask: \"Can you describe the problem to me?\" (Please write it in the box below.)\n- b. How much has it affected you over the last week? (Please tick one box below.)\n- [ ] Not at all\naffected       Severely affected"
+    },
+    {
+      "chunk": 173,
+      "page_start": 82,
+      "page_end": 82,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Question 3",
+      "token_count": 97,
+      "text": "Question 3\n- a. Choose one thing that is hard to do because of your problem (or problems). (Please write it in the box below.)\n- b. How hard has it been to do this thing over the last week? (Please tick one box below.)\n- [ ] 0\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [ ] 4\n- [ ] 4\n- [ ] 5\n- [ ] 5\nNot at all hard       Very hard"
+    },
+    {
+      "chunk": 193,
+      "page_start": 92,
+      "page_end": 92,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Comments (to be completed by the helper)",
+      "token_count": 168,
+      "text": "Comments (to be completed by the helper)\nPlease provide any comments you may want to record about the client, such as how they presented/acted in this session.\nTotal PSYCHLOPS before-intervention score: \\_ \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ 25\n- [ ] 3\n- [ ] 4\n- [ ] 5\n25 If both Q1 (Problem 1) and Q2 (Problem 2) have been completed, the total score is: Q1b + Q2b + Q3b + Q4. If Q1 (Problem 1) has been completed and Q2 (Problem 2) has been omitted, the total score is: (Q1b x 2) + Q3b + Q4."
+    },
+    {
+      "chunk": 212,
+      "page_start": 97,
+      "page_end": 97,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "3. Responding to a client with a plan to end their life in the near future:",
+      "token_count": 101,
+      "text": "3. Responding to a client with a plan to end their life in the near future:\n- Always contact your supervisor.\n- Create a secure and supportive environment.\n- Remove means of self-harm if possible.\n- Do not leave the person alone. Have carers or staff stay with the person at all times.\n- If possible, offer a separate, quiet room while waiting.\n- Attend to the client's mental state and emotional distress (i.e. with basic helping skills)."
+    },
+    {
+      "chunk": 231,
+      "page_start": 109,
+      "page_end": 109,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "2. Strengthening Social Support",
+      "token_count": 221,
+      "text": "2. Strengthening Social Support\nStrengthening Social Support might also help NAME manage her problems. Ask the client to think about why this might be a helpful strategy. Your client may have mentioned this strategy as part of Get Going, Keep Doing (e.g. they suggested that the client does a pleasant activity like seeing friends again). If this happens, tell the client that this is a good idea, but remind them that it might be better to discuss that activity as part of Strengthening Social Support and choose a different activity for Get Going, Keep Doing.\nAsk the client to tell you as much information about Strengthening Social Support as they can. Listen out for the following:\n- The different types of support, including sharing problems with others, asking for practical help, connecting with a specific agency to get support or information, and spending time with others not necessarily talking about problems.\n- Choosing someone they trust.\n- Building trust by sharing small pieces of information first.\nYou may also identify that once NAME starts to feel she is coping with her problems better, she may be able to respond with support to her husband."
+    },
+    {
+      "chunk": 250,
+      "page_start": 120,
+      "page_end": 120,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Session Aims:",
+      "token_count": 64,
+      "text": "Session Aims:\n1. During-intervention PSYCHLOPS assessment and general review (5 minutes)\n2. Introduce Managing Problems strategy and work through client's main problem (70 minutes)\n3. Practise Managing Stress (10 minutes)\n4. Set practice tasks and end the session (5 minutes)"
+    },
+    {
+      "chunk": 270,
+      "page_start": 128,
+      "page_end": 128,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "1. During PM+ assessment and general review (5 minutes)",
+      "token_count": 106,
+      "text": "1. During PM+ assessment and general review (5 minutes)\nGive the client the PSYCHLOPS assessment (during-intervention version; Appendix B). Using their responses, spend the first few minutes reviewing the past week. Discuss progress on any of the strategies.\nReview and discuss any questions they may have had about the previous session.\nReview and discuss the client's experience with practising Managing Stress over the past week. See \"Helpful hints\" table in Session 1 to respond to any difficulties they had."
+    },
+    {
+      "chunk": 289,
+      "page_start": 140,
+      "page_end": 140,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "PROBLEM MANAGEMENT PLUS (PM+)",
+      "token_count": 33,
+      "text": "PROBLEM MANAGEMENT PLUS (PM+)\nIndividual psychological help for adults impaired by distress in communities exposed to adversity\n<!-- image -->\nIV"
+    }
+  ]
+}

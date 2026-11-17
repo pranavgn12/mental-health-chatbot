@@ -1,0 +1,389 @@
+{
+  "report_schema_version": 2,
+  "source": "generalised-anxiety-disorder-and-panic-disorder-in-adults-management-pdf-35109387756997.pdf",
+  "source_pages_detected": 42,
+  "raw_docling_chunks": 73,
+  "chunks_created": 66,
+  "chunk_type_counts": {
+    "figure": 2,
+    "text": 20,
+    "list": 43,
+    "table": 1
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 11,
+    "median": 168.0,
+    "mean": 190.64,
+    "max": 444,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "pages_without_chunks": [
+      3
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 42,
+    "coverage_ratio": 0.9762
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 79,
+    "page_headers": 40,
+    "page_footers": 39,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 42,
+    "predominantly_rotated_text_pages": [],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": [
+      7
+    ]
+  },
+  "applied_page_rotations": [],
+  "document_level_warnings": [
+    {
+      "type": "probable_multi_column_layout",
+      "page": 7
+    }
+  ],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 7,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 3,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 4 |\n| - | - |\n| Who is it for? .......................................................................................................................................... | 4 |\n| Using this guideline ..................................................................................................................... | 5 |"
+    },
+    {
+      "source_chunk": 4,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 4 |\n| - | - |\n| Recommendations ....................................................................................................................... | 6 |\n| 1.1 Principles of care for people with generalised anxiety disorder (GAD) ...................................... | 6 |\n| 1.2 Stepped care for people with GAD ................................................................................................ | 6 |"
+    },
+    {
+      "source_chunk": 5,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 4 |\n| - | - |\n| 1.3 Stepped care for people with panic disorder ............................................................................... | 18 |\n| Recommendations for research ................................................................................................. | 29 |\n| 1 A comparison of the clinical and cost effectiveness of sertraline and CBT in people with GAD that has not responded to guided self-help and psychoeducation ................................................. | 29 |"
+    },
+    {
+      "source_chunk": 6,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 4 |\n| - | - |\n| 2 The clinical and cost effectiveness of 2 CBT-based low-intensity interventions (CCBT and guided bibliotherapy) compared with a waiting-list control for the treatment of GAD .................. | 30 |\n| 3 The effectiveness of physical activity compared with waiting-list control for the treatment of GAD ......................................................................................................................................................... | 31 |\n| 4 The effectiveness of chamomile and ginkgo biloba in the treatment of GAD ............................. | 32 |"
+    },
+    {
+      "source_chunk": 7,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 4 |\n| - | - |\n| 5 The clinical and cost effectiveness of a primary care-based collaborative care approach to improving the treatment of GAD compared with usual care ............................................................. | 33 |\n| 6 The clinical and cost effectiveness of 2 CBT-based low-intensity interventions (CCBT and guided bibliotherapy) compared with a waiting-list control for the treatment of panic disorder . | 34 |\n| Appendix: Assessing generalised anxiety disorder .................................................................36 | |"
+    },
+    {
+      "source_chunk": 8,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 4 |\n| - | - |\n| Context .........................................................................................................................................38 | |\n| Finding more information and committee details .....................................................................40 | |"
+    },
+    {
+      "source_chunk": 9,
+      "page_numbers": [
+        3,
+        4
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 4 |\n| - | - |\n| Update information ..................................................................................................................... | 41 |\nThis guideline replaces CG22 and ESUOM12.\nThis guideline partially replaces CG123.\nThis guideline is the basis of QS53."
+    }
+  ],
+  "exact_duplicate_chunks": [],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 1,
+      "source_chunk": 1,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Generalised anxiety disorder and panic disorder in adults: management",
+      "token_count": 71,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Generalised anxiety disorder and panic disorder in adults: management\nClinical guideline\nPublished: 26 January 2011\nLast updated: 15 June 2020\n[www.nice.org.uk/guidance/cg113](https://www.nice.org.uk/guidance/cg113)\n<!-- image -->"
+    },
+    {
+      "chunk": 9,
+      "source_chunk": 16,
+      "split_part": 0,
+      "page_start": 7,
+      "page_end": 7,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "The stepped-care model",
+      "token_count": 281,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "The stepped-care model\n| Focus of the intervention | Nature of the intervention |\n| - | - |\n| STEP 4: Complex treatment-refractory generalised anxiety disorder (GAD) and very marked functional impairment, such as self- neglect or a high risk of self-harm | Highly specialist treatment, such as complex drug and/or psychological treatment regimens; input from multi-agency teams, crisis services, day hospitals or inpatient care |\n| STEP 3: GAD with an inadequate response to step 2 interventions or marked functional impairment | Choice of a high-intensity psychological intervention (cognitive behavioural therapy [CBT]/applied relaxation) or a drug treatment |\n| STEP 2: Diagnosed GAD that has not improved after education and active monitoring in primary care | Low-intensity psychological interventions: individual non-facilitated self-help, individual guided self-help and psychoeducational groups |\n| STEP 1: All known and suspected presentations of GAD | Identification and assessment; education about GAD and treatment options; active monitoring |\nIndividual non-facilitated self-help: this is a self-administered intervention intended to treat GAD involving written or electronic self-help materials (usually a book or workbook). It is similar to individual guided self-help but usually with minimal therapist contact, for example an occasional short telephone call of no more than 5 minutes."
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Your responsibility",
+      "token_count": 274,
+      "text": "Your responsibility\nThe recommendations in this guideline represent the view of NICE, arrived at after careful consideration of the evidence available. When exercising their judgement, professionals and practitioners are expected to take this guideline fully into account, alongside the individual needs, preferences and values of their patients or the people using their service. It is not mandatory to apply the recommendations, and the guideline does not override the responsibility to make decisions appropriate to the circumstances of the individual, in consultation with them and their families and carers or guardian.\nAll problems (adverse events) related to a medicine or medical device used for treatment or in a procedure should be reported to the Medicines and Healthcare products Regulatory Agency using the Yellow Card Scheme.\nLocal commissioners and providers of healthcare have a responsibility to enable the guideline to be applied when individual professionals and people using services wish to use it. They should do so in the context of local and national priorities for funding and developing services, and in light of their duties to have due regard to the need to eliminate unlawful discrimination, to advance equality of opportunity and to reduce health inequalities. Nothing in this guideline should be interpreted in a way that would be inconsistent with complying with those duties.\nCommissioners and providers have a responsibility to promote an environmentally sustainable health and care system and should assess and reduce the environmental impact of implementing NICE recommendations wherever possible."
+    },
+    {
+      "chunk": 4,
+      "page_start": 4,
+      "page_end": 4,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Who is it for?",
+      "token_count": 40,
+      "text": "Who is it for?\n- Healthcare professionals\n- Adults with a working diagnosis of generalised anxiety disorder or panic disorder (with or without agoraphobia), and their families and carers"
+    },
+    {
+      "chunk": 9,
+      "page_start": 7,
+      "page_end": 7,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "The stepped-care model",
+      "token_count": 281,
+      "text": "The stepped-care model\n| Focus of the intervention | Nature of the intervention |\n| - | - |\n| STEP 4: Complex treatment-refractory generalised anxiety disorder (GAD) and very marked functional impairment, such as self- neglect or a high risk of self-harm | Highly specialist treatment, such as complex drug and/or psychological treatment regimens; input from multi-agency teams, crisis services, day hospitals or inpatient care |\n| STEP 3: GAD with an inadequate response to step 2 interventions or marked functional impairment | Choice of a high-intensity psychological intervention (cognitive behavioural therapy [CBT]/applied relaxation) or a drug treatment |\n| STEP 2: Diagnosed GAD that has not improved after education and active monitoring in primary care | Low-intensity psychological interventions: individual non-facilitated self-help, individual guided self-help and psychoeducational groups |\n| STEP 1: All known and suspected presentations of GAD | Identification and assessment; education about GAD and treatment options; active monitoring |\nIndividual non-facilitated self-help: this is a self-administered intervention intended to treat GAD involving written or electronic self-help materials (usually a book or workbook). It is similar to individual guided self-help but usually with minimal therapist contact, for example an occasional short telephone call of no more than 5 minutes."
+    },
+    {
+      "chunk": 13,
+      "page_start": 9,
+      "page_end": 10,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Assessment and education",
+      "token_count": 133,
+      "text": "Assessment and education\n- 1.2.10 Following assessment and diagnosis of GAD:\n- provide education about the nature of GAD and the options for treatment, including NICE's information for the public\n- monitor the person's symptoms and functioning (known as active monitoring).\nThis is because education and active monitoring may improve less severe presentations and avoid the need for further interventions. [2011]\n- 1.2.11 Discuss the use of over-the-counter medications and preparations with people with GAD. Explain the potential for interactions with other prescribed and overthe-counter medications and the lack of evidence to support their safe use. [2011]"
+    },
+    {
+      "chunk": 17,
+      "page_start": 13,
+      "page_end": 13,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "consents",
+      "token_count": 56,
+      "text": "consents\n- use routine outcome measures and ensure that the person with GAD is involved in reviewing the efficacy of the treatment. [2011]\n- 1.2.22 Consider providing all interventions in the preferred language of the person with GAD if possible. [2011]"
+    },
+    {
+      "chunk": 22,
+      "page_start": 16,
+      "page_end": 16,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Step 4: Complex, treatment-refractory GAD and very marked functional impairment or high risk of self-harm",
+      "token_count": 49,
+      "text": "Step 4: Complex, treatment-refractory GAD and very marked functional impairment or high risk of self-harm\n(Step 4 normally refers to community mental health teams but may include specialist services and specialist practitioners in primary care.)"
+    },
+    {
+      "chunk": 26,
+      "page_start": 18,
+      "page_end": 18,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Treatment and referral advice to help prevent relapse",
+      "token_count": 111,
+      "text": "Treatment and referral advice to help prevent relapse\n- 1.2.48 For people with a common mental health disorder who are at significant risk of relapse or have a history of recurrent problems, discuss with the person the treatments that might reduce the risk of recurrence. The choice of treatment or referral for treatment should be informed by the response to previous treatment, including residual symptoms, the consequences of relapse, any discontinuation symptoms when stopping medication, and the person's preference. [2011]"
+    },
+    {
+      "chunk": 30,
+      "page_start": 19,
+      "page_end": 20,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Comorbidities",
+      "token_count": 211,
+      "text": "Comorbidities\n- 1.3.4 The clinician should be alert to the common clinical situation of comorbidity, in particular, panic disorder with depression and panic disorder with substance misuse.\nBe aware when prescribing SSRIs of the need to ask about cocaine use when considering drug-drug interactions, and the need to avoid concurrent use of multiple serotonergic drugs. Follow the MHRA safety advice on citalopram. [2004, amended 2020]\n- 1.3.5 The main problem(s) to be treated should be identified through a process of discussion with the person. In determining the priorities of the comorbidities, the sequencing of the problems should be clarified. This can be helped by drawing up a timeline to identify when the various problems developed. By understanding when the symptoms developed, a better understanding of the relative priorities of the comorbidities can be achieved, and there is a better opportunity of\ndeveloping an effective intervention that fits the needs of the individual. [2004]"
+    },
+    {
+      "chunk": 35,
+      "page_start": 22,
+      "page_end": 22,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "General",
+      "token_count": 74,
+      "text": "General\n- 1.3.20 Benzodiazepines are associated with a less good outcome in the long term and should not be prescribed for the treatment of individuals with panic disorder. [2004]\n- 1.3.21 Sedating antihistamines or antipsychotics should not be prescribed for the treatment of panic disorder. [2004]"
+    },
+    {
+      "chunk": 39,
+      "page_start": 25,
+      "page_end": 25,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Also see recommendation 1.2.30 on SSRIs and SNRIs. [2004, amended 2020]",
+      "token_count": 279,
+      "text": "Also see recommendation 1.2.30 on SSRIs and SNRIs. [2004, amended 2020]\n- 1.3.31 All people prescribed antidepressants should be informed that, although the drugs are not associated with tolerance and craving, discontinuation/withdrawal symptoms may occur on stopping or missing doses or, occasionally, on reducing the dose of the drug. These symptoms are usually mild and self-limiting but occasionally can be severe, particularly if the drug is stopped abruptly. [2004]\n- 1.3.32 Healthcare professionals should inform people that the most commonly experienced discontinuation/withdrawal symptoms are dizziness, numbness and tingling, gastrointestinal disturbances (particularly nausea and vomiting), headache, sweating, anxiety and sleep disturbances. [2004]\n- 1.3.33 Healthcare professionals should inform people that they should seek advice from their medical practitioner if they experience significant discontinuation/ withdrawal symptoms. [2004]\n- 1.3.34 If discontinuation/withdrawal symptoms are mild, the practitioner should reassure the person and monitor symptoms. If severe symptoms are experienced after discontinuing an antidepressant, the practitioner should consider reintroducing it (or prescribing another from the same class that has a longer half-life) and gradually reducing the dose while monitoring symptoms. [2004]"
+    },
+    {
+      "chunk": 43,
+      "page_start": 27,
+      "page_end": 27,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Pharmacological interventions",
+      "token_count": 146,
+      "text": "Pharmacological interventions\n- 1.3.41 When a new medication is started, the efficacy and side-effects should be reviewed within 2 weeks of starting treatment and again at 4, 6 and 12 weeks. Follow the summary of product characteristics with respect to all other monitoring required. [2004]\n- 1.3.42 At the end of 12 weeks, an assessment of the effectiveness of the treatment should be made, and a decision made as to whether to continue or consider an alternative intervention. [2004]\n- 1.3.43 If medication is to be continued beyond 12 weeks, the individual should be reviewed at 8- to 12-week intervals, depending on clinical progress and individual circumstances. [2004]"
+    },
+    {
+      "chunk": 48,
+      "page_start": 30,
+      "page_end": 30,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "1 A comparison of the clinical and cost effectiveness of sertraline and CBT in people with GAD that has not responded to guided self-help and psychoeducation",
+      "token_count": 172,
+      "text": "1 A comparison of the clinical and cost effectiveness of sertraline and CBT in people with GAD that has not responded to guided self-help and psychoeducation\nBoth sertraline and CBT are efficacious in the treatment of GAD but their relative efficacy has not been compared. In a stepped-care model both CBT and sertraline are treatment options if step 2 interventions (guided self-help and/or psychoeducation) have not resulted in a satisfactory clinical response. At present, however, there are no randomised trial data to help prioritise next-step treatments and no information on how individuals with GAD may be matched to particular therapies. Clarification of the relative short- and longer-term benefits of sertraline and CBT would be helpful in guiding treatment."
+    },
+    {
+      "chunk": 52,
+      "page_start": 33,
+      "page_end": 34,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "5 The clinical and cost effectiveness of a primary care-based collaborative care approach to improving the treatment of GAD compared with usual care",
+      "token_count": 376,
+      "text": "5 The clinical and cost effectiveness of a primary care-based collaborative care approach to improving the treatment of GAD compared with usual care\nWhat are the benefits of a primary care-based collaborative care approach to improving the treatment of GAD compared with usual care?\nThis question should be addressed using a cluster randomised controlled design in which the clusters are GP practices and people with GAD are recruited following screening of consecutive attenders at participating GP practices. GPs in intervention practices should receive training in recognising GAD and providing both drug treatment and GP-delivered low-intensity psychological interventions (psychoeducation and non-facilitated self-help). Psychological wellbeing practitioners in intervention practices should provide these lowintensity psychological interventions and support GP-prescribed drug treatment by providing information about side effects, monitoring medication use and liaising about any changes to medication. They should also support the referral for CBT of participants whose symptoms have not improved following low-intensity interventions. Structured, practice-based protocols should define care pathways, the interventions to be provided by practitioners at each point in the care pathway and the mechanisms they should use to liaise about individual patients. In control practices, participants should receive care as usual from the GP, including referral for primary and secondary care psychological interventions or mental health services.\nOutcomes should be evaluated at 6 months with follow-up assessments continuing for up to 2 years to establish whether short-term benefits are maintained in the longer term. The outcomes chosen should include both observer- and participant-rated measures of clinical symptoms and functioning specific to GAD, and of quality of life. An economic analysis should also be carried out alongside the trial. The trial needs to be large enough to determine the presence or absence of clinically important effects and of any differences in costs between collaborative care and usual care.\nWhy the recommendation for research was made"
+    },
+    {
+      "chunk": 56,
+      "page_start": 36,
+      "page_end": 36,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Appendix: Assessing generalised anxiety disorder",
+      "token_count": 52,
+      "text": "Appendix: Assessing generalised anxiety disorder\nThe assessment of generalised anxiety disorder (GAD) is based on the criteria in DSM-IV. Assessment should include the number and severity of symptoms, duration of the current episode and course of the disorder."
+    },
+    {
+      "chunk": 61,
+      "page_start": 38,
+      "page_end": 38,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Context",
+      "token_count": 439,
+      "text": "Context\nGeneralised anxiety disorder (GAD) is 1 of a range of anxiety disorders that includes panic disorder (with and without agoraphobia), post-traumatic stress disorder, obsessive-compulsive disorder, social phobia, specific phobias (for example, of spiders) and acute stress disorder. Anxiety disorders can exist in isolation but more commonly occur with other anxiety and depressive disorders. This guideline covers both 'pure' GAD, in which no comorbidities are present, and the more typical presentation of GAD comorbid with other anxiety and depressive disorders in which GAD is the primary diagnosis.\nGAD is a common disorder, of which the central feature is excessive worry about a number of different events associated with heightened tension. A formal diagnosis using the DSM-IV classification system requires 2 major symptoms (excessive anxiety and worry about a number of events and activities, and difficulty controlling the worry) and 3 or more additional symptoms from a list of 6 (see the American Psychiatric Association: Diagnostic and Statistical Manual of Mental Disorders, 4th edition). Symptoms should be present for at least 6 months and should cause clinically significant distress or impairment in social, occupational or other important areas of functioning.\nAccording to the DSM-IV-TR, a fundamental characteristic of panic disorder is the presence of recurring, unforeseen panic attacks followed by at least 1 month of persistent worry about having another panic attack and concern about the consequences of a panic attack, or a significant change in behaviour related to the attacks (see the American Psychiatric Association: Diagnostic and Statistical Manual of Mental Disorders, 4th edition, text revision). At least 2 unexpected panic attacks are necessary for diagnosis and the attacks should not be accounted for by the use of a substance, a general medical condition or another psychological problem. Panic disorder can be diagnosed with or without agoraphobia.\nGAD and panic disorder vary in severity and complexity and this has implications for response to treatment. Therefore, it is important to consider symptom severity, duration, degree of distress, functional impairment, personal history and comorbidities when undertaking a diagnostic assessment."
+    },
+    {
+      "chunk": 65,
+      "page_start": 41,
+      "page_end": 42,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Minor changes since publication",
+      "token_count": 374,
+      "text": "Minor changes since publication\nApril 2026: We added a link to NICE's guideline on medicines associated with dependence or withdrawal symptoms to the box at the start of the recommendations section.\nMay 2024: We have simplified the guideline by removing recommendations on general principles of care that are covered in other NICE guidelines (for example, the NICE guideline on service user experience in adult mental health).\nThis is a presentational change only, and no changes to practice are intended.\nWe have also incorporated relevant recommendations from the NICE guideline on common mental health disorders, covering identification (see recommendation 1.2.2) and preventing relapse (see recommendation 1.2.48). These recommendations are marked [2011].\nJuly 2022: We added a link to the MHRA safety advice on pregabalin in pregnancy to recommendation 1.2.25.\nJune 2018: Recommendation 1.2.14 was amended with advice on cognitive behavioural therapy (CBT) to bring it in line with current best practice and other NICE guidance. Recommendation 1.2.27 was updated with a link to the newest evidence on use of Generalised anxiety disorder and panic disorder in adults: management (CG113)\nantipsychotics for treatment of generalised anxiety disorder. Recommendation 1.3.10 on low-intensity interventions for mild to moderate panic disorder and 1.3.13 on treatment for moderate to severe panic disorder were added, taken from the NICE guideline on common mental health problems. Recommendations in section 1.2 on stepped care for people with panic disorder were reordered.\nRecommendations marked [date 1, amended date 2] had an evidence review in date 1. The amended date means the intent of the recommendation has been changed without an evidence review.\nISBN: 978-1-4731-2854-5"
+    }
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "report_schema_version": 2,
+  "source": "posttraumatic-stress-disorder-pdf-66141601777861.pdf",
+  "source_pages_detected": 53,
+  "raw_docling_chunks": 117,
+  "chunks_created": 104,
+  "chunk_type_counts": {
+    "figure": 2,
+    "text": 70,
+    "list": 32
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 10,
+    "median": 115.0,
+    "mean": 149.53,
+    "max": 413,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      2,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53
+    ],
+    "pages_without_chunks": [
+      3,
+      4,
+      6
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 53,
+    "coverage_ratio": 0.9434
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 105,
+    "page_headers": 52,
+    "page_footers": 53,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 53,
+    "predominantly_rotated_text_pages": [],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": []
+  },
+  "applied_page_rotations": [],
+  "document_level_warnings": [],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 13,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 3,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| Who is it for? ........................................................................................................................................... | 5 |\n| Recommendations ....................................................................................................................... | 6 |"
+    },
+    {
+      "source_chunk": 4,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| 1.1 Recognition of post-traumatic stress disorder ............................................................................... | 8 |\n| 1.2 Assessment and coordination of care ............................................................................................ | 10 |"
+    },
+    {
+      "source_chunk": 5,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| 1.3 Access to care .................................................................................................................................. | 11 |\n| 1.4 Principles of care .............................................................................................................................. | 12 |"
+    },
+    {
+      "source_chunk": 6,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| 1.5 Language and culture ...................................................................................................................... | 14 |\n| 1.6 Management of PTSD in children, young people and adults ....................................................... | 14 |\n| 1.7 Care for people with PTSD and complex needs ............................................................................ | 24 |"
+    },
+    {
+      "source_chunk": 7,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| 1.8 Disaster planning .............................................................................................................................. | 25 |\n| Terms used in this guideline .................................................................................................................. | 25 |"
+    },
+    {
+      "source_chunk": 8,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| Recommendations for research ................................................................................................. | 28 |\n| Key recommendations for research ..................................................................................................... | 28 |"
+    },
+    {
+      "source_chunk": 9,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| Other recommendations for research .................................................................................................. | 29 |\n| Rationale and impact ................................................................................................................... | 31 |"
+    },
+    {
+      "source_chunk": 10,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| Supporting transitions between services ............................................................................................ | 31 |\n| Access to care ........................................................................................................................................ | 32 |"
+    },
+    {
+      "source_chunk": 11,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| Principles of care .................................................................................................................................... | 32 |\n| Planning treatment and supporting engagement ...............................................................................34 | |"
+    },
+    {
+      "source_chunk": 12,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| Active monitoring ................................................................................................................................... | 35 |\n| Psychologically-focused debriefing ..................................................................................................... | 36 |\n| Psychological interventions for the prevention of PTSD in children and young people .................36 | |"
+    },
+    {
+      "source_chunk": 13,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview ...................................................................................................................................... | 5 |\n| - | - |\n| Psychological interventions for the treatment of PTSD in children and young people ...................38 | |\n| Drug treatments for children and young people ................................................................................. | 39 |\n| Psychological interventions for the prevention of PTSD in adults ....................................................40 | |\n| Psychological interventions for the treatment of PTSD in adults ......................................................40 | |"
+    },
+    {
+      "source_chunk": 14,
+      "page_numbers": [
+        4
+      ],
+      "text": "Contents\n| Drug treatments in adults ...................................................................................................................... | 45 |\n| - | - |\n| Care for people with post-traumatic stress disorder and complex needs ....................................... | 47 |\n| Context .........................................................................................................................................48 | |\n| Finding more information and committee details .....................................................................50 | |"
+    }
+  ],
+  "exact_duplicate_chunks": [],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 1,
+      "source_chunk": 1,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Post-traumatic stress disorder",
+      "token_count": 57,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Post-traumatic stress disorder\nNICE guideline\nPublished: 5 December 2018\n[www.nice.org.uk/guidance/ng116](https://www.nice.org.uk/guidance/ng116)\n<!-- image -->"
+    },
+    {
+      "chunk": 64,
+      "source_chunk": 77,
+      "split_part": 0,
+      "page_start": 35,
+      "page_end": 35,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Active monitoring",
+      "token_count": 10,
+      "warnings": [
+        "very_short_chunk_review_context"
+      ],
+      "text": "Active monitoring\nRecommendation 1.6.4"
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Your responsibility",
+      "token_count": 274,
+      "text": "Your responsibility\nThe recommendations in this guideline represent the view of NICE, arrived at after careful consideration of the evidence available. When exercising their judgement, professionals and practitioners are expected to take this guideline fully into account, alongside the individual needs, preferences and values of their patients or the people using their service. It is not mandatory to apply the recommendations, and the guideline does not override the responsibility to make decisions appropriate to the circumstances of the individual, in consultation with them and their families and carers or guardian.\nAll problems (adverse events) related to a medicine or medical device used for treatment or in a procedure should be reported to the Medicines and Healthcare products Regulatory Agency using the Yellow Card Scheme.\nLocal commissioners and providers of healthcare have a responsibility to enable the guideline to be applied when individual professionals and people using services wish to use it. They should do so in the context of local and national priorities for funding and developing services, and in light of their duties to have due regard to the need to eliminate unlawful discrimination, to advance equality of opportunity and to reduce health inequalities. Nothing in this guideline should be interpreted in a way that would be inconsistent with complying with those duties.\nCommissioners and providers have a responsibility to promote an environmentally sustainable health and care system and should assess and reduce the environmental impact of implementing NICE recommendations wherever possible."
+    },
+    {
+      "chunk": 4,
+      "page_start": 5,
+      "page_end": 5,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Who is it for?",
+      "token_count": 84,
+      "text": "Who is it for?\n- Healthcare professionals\n- Other professionals who work with people at risk of or who have PTSD, including in criminal justice and education services and non-government organisations\n- Commissioners and providers, including directors of public health, NHS trust managers and managers in clinical commissioning groups\n- People at risk of or who have PTSD (including complex PTSD), their families and carers, and the public"
+    },
+    {
+      "chunk": 7,
+      "page_start": 8,
+      "page_end": 8,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "settings",
+      "token_count": 34,
+      "text": "settings\n- [transition from children's to adults' services.](https://www.nice.org.uk/guidance/ng43)"
+    },
+    {
+      "chunk": 14,
+      "page_start": 12,
+      "page_end": 13,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Peer support",
+      "token_count": 72,
+      "text": "Peer support\n- 1.4.1 Tell people about and help them access peer support groups if they want to and could benefit. Peer support groups should:\n- be facilitated by people with mental health training and supervision\n- be delivered in a way that reduces the risk of exacerbating symptoms\n- provide information and help to access services. [2018]"
+    },
+    {
+      "chunk": 21,
+      "page_start": 16,
+      "page_end": 16,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Full details of the evidence and the committee's discussion are in:",
+      "token_count": 411,
+      "text": "Full details of the evidence and the committee's discussion are in:\n- [evidence review A: psychological, psychosocial and other non-pharmacological interventions for the prevention of PTSD in children](https://www.nice.org.uk/guidance/ng116/evidence/evidence-review-a-psychological-psychosocial-and-other-nonpharmacological-interventions-for-the-prevention-of-ptsd-in-children-pdf-6602621005)\n- [evidence review B: psychological, psychosocial and other non-pharmacological interventions for the treatment of PTSD in children](https://www.nice.org.uk/guidance/ng116/evidence/evidence-review-b-psychological-psychosocial-and-other-nonpharmacological-interventions-for-the-treatment-of-ptsd-in-children-and-young-people-pdf-6602621006)\n- [evidence review C: psychological, psychosocial and other non-pharmacological interventions for the prevention of PTSD in adults](https://www.nice.org.uk/guidance/ng116/evidence/evidence-review-c-psychological-psychosocial-and-other-nonpharmacological-interventions-for-the-prevention-of-ptsd-in-adults-pdf-6602621007)\n- [evidence review D: psychological, psychosocial and other non-pharmacological interventions for the treatment of PTSD in adults.](https://www.nice.org.uk/guidance/ng116/evidence/evidence-review-d-psychological-psychosocial-and-other-nonpharmacological-interventions-for-the-treatment-of-ptsd-in-adults-pdf-6602621008)"
+    },
+    {
+      "chunk": 27,
+      "page_start": 20,
+      "page_end": 20,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Treatment for adults",
+      "token_count": 180,
+      "text": "Treatment for adults\n- 1.6.16 Offer an individual trauma-focused CBT intervention to adults with a diagnosis of PTSD or clinically important symptoms of PTSD who have presented more than 1 month after a traumatic event. These interventions include:\n- cognitive processing therapy\n- cognitive therapy for PTSD\n- narrative exposure therapy\n- prolonged exposure therapy. [2018]\n- 1.6.17 Trauma-focused CBT interventions for adults should:\n- be based on a validated manual\n- typically be provided over 8 to 12 sessions, but more if clinically indicated, for example if they have experienced multiple traumas\n- be delivered by trained practitioners with ongoing supervision\n- include psychoeducation about reactions to trauma, strategies for managing arousal and flashbacks, and safety planning\n- involve elaboration and processing of the trauma memories\n- involve processing trauma-related emotions, including shame, guilt, loss and"
+    },
+    {
+      "chunk": 34,
+      "page_start": 25,
+      "page_end": 25,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Active monitoring",
+      "token_count": 33,
+      "text": "Active monitoring\nAlso known as watchful waiting. This means regularly monitoring a person who has some symptoms but who is not currently having clinical intervention for the condition."
+    },
+    {
+      "chunk": 41,
+      "page_start": 28,
+      "page_end": 28,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Recommendations for research",
+      "token_count": 32,
+      "text": "Recommendations for research\nAs part of the 2018 update, the guideline committee removed the 2005 recommendations for research and replaced them with the recommendations for research below."
+    },
+    {
+      "chunk": 48,
+      "page_start": 31,
+      "page_end": 31,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Rationale and impact",
+      "token_count": 41,
+      "text": "Rationale and impact\nThese sections briefly explain why the committee made the recommendations and how they might affect practice. They link to details of the evidence and a full description of the committee's discussion."
+    },
+    {
+      "chunk": 55,
+      "page_start": 32,
+      "page_end": 32,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Principles of care",
+      "token_count": 17,
+      "text": "Principles of care\nRecommendations 1.4.1 to 1.4.5"
+    },
+    {
+      "chunk": 62,
+      "page_start": 34,
+      "page_end": 35,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Why the committee made the recommendations",
+      "token_count": 191,
+      "text": "Why the committee made the recommendations\nThe committee agreed it was important to use a holistic approach when planning treatment, for example by thinking about every aspect of a person's life that could be contributing to their continuing PTSD symptoms.\nThe committee agreed that any strategies for promoting engagement need to be based on an understanding that people with PTSD are often highly anxious about having treatment and frequently avoid it. This was supported by evidence that common reasons for not seeking help include worry about engaging with a therapist, fear of exacerbating symptoms and stigmatisation. People may also have difficult emotions, such as shame, linked to the trauma, which can stop them from engaging with treatment. The committee agreed that healthcare professionals need to understand these reasons so that they don't misinterpret why someone is not engaging and they know the best ways to help them - including by contacting them if they don't come for an arranged appointment."
+    },
+    {
+      "chunk": 69,
+      "page_start": 36,
+      "page_end": 36,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "How the recommendation might affect practice",
+      "token_count": 35,
+      "text": "How the recommendation might affect practice\nPsychologically-focused debriefing was not part of previously recommended practice so there should be no impact on practice.\nReturn to recommendation"
+    },
+    {
+      "chunk": 76,
+      "page_start": 39,
+      "page_end": 39,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Drug treatments for children and young people",
+      "token_count": 15,
+      "text": "Drug treatments for children and young people\nRecommendation 1.6.14"
+    },
+    {
+      "chunk": 82,
+      "page_start": 40,
+      "page_end": 40,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Psychological interventions for the treatment of PTSD in adults",
+      "token_count": 24,
+      "text": "Psychological interventions for the treatment of PTSD in adults\nRecommendations 1.6.16 to 1.6.23"
+    },
+    {
+      "chunk": 89,
+      "page_start": 44,
+      "page_end": 44,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "How the recommendations might affect practice",
+      "token_count": 93,
+      "text": "How the recommendations might affect practice\nThe committee acknowledged that there would be a cost associated with providing extra trauma-focused therapy sessions if they are needed (for example, for people who have experienced multiple traumas). Previous recommended practice was to consider more than 12 sessions for people after multiple incident trauma, or who have chronic disability or significant coexisting conditions or social problems. However, in clinical practice the provision of additional sessions is variable.\nReturn to recommendations"
+    },
+    {
+      "chunk": 96,
+      "page_start": 47,
+      "page_end": 47,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Why the committee made the recommendations",
+      "token_count": 122,
+      "text": "Why the committee made the recommendations\nThere was a lack of evidence on care for people with PTSD and complex needs, including people with coexisting conditions such as depression or substance misuse, so the committee used a formal consensus method to agree some overarching principles.\nThe evidence was limited on interventions for people who have complex PTSD, but it suggested that trauma-focused therapies could also benefit this group. Based on their clinical experience, the committee recommended modifications that may be needed to trauma-focused therapies to facilitate engagement for those with complex PTSD or other additional needs."
+    },
+    {
+      "chunk": 103,
+      "page_start": 52,
+      "page_end": 53,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Minor changes since publication",
+      "token_count": 108,
+      "text": "Minor changes since publication\nAugust 2024: We have simplified the guideline by removing recommendations on general principles of care that are covered in other NICE guidelines (for example, the NICE guideline on service user experience in adult mental health).\nThis is a presentational change only, and no changes to practice are intended.\nDecember 2022: We replaced the links in recommendation 1.3.2 with a link to new Crown Prosecution Service guidance on pre-trial therapy.\nISBN: 978-1-4731-3181-1"
+    }
+  ]
+}

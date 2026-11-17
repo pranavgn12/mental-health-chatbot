@@ -1,0 +1,858 @@
+{
+  "report_schema_version": 2,
+  "source": "depression-in-adults-treatment-and-management-pdf-66143832307909.pdf",
+  "source_pages_detected": 111,
+  "raw_docling_chunks": 184,
+  "chunks_created": 167,
+  "chunk_type_counts": {
+    "figure": 2,
+    "text": 88,
+    "list": 59,
+    "table": 18
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 11,
+    "median": 142,
+    "mean": 178.22,
+    "max": 450,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111
+    ],
+    "pages_without_chunks": [
+      3,
+      4,
+      30
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 111,
+    "coverage_ratio": 0.973
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 228,
+    "page_headers": 110,
+    "page_footers": 118,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 111,
+    "predominantly_rotated_text_pages": [],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": [
+      31,
+      33,
+      34,
+      35,
+      37,
+      41,
+      43,
+      44,
+      45,
+      46,
+      50,
+      51,
+      53,
+      55,
+      56,
+      57,
+      58
+    ]
+  },
+  "applied_page_rotations": [],
+  "document_level_warnings": [
+    {
+      "type": "probable_multi_column_layout",
+      "page": 31
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 33
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 34
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 35
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 37
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 41
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 43
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 44
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 45
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 46
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 50
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 51
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 53
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 55
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 56
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 57
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 58
+    }
+  ],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 17,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 3,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| Who is it for? ...................................................................................................................................... | 5 |\n| Recommendations ................................................................................................................... | 6 |"
+    },
+    {
+      "source_chunk": 4,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| 1.1 Principles of care .......................................................................................................................... | 8 |\n| 1.2 Recognition and assessment ..................................................................................................... | 8 |"
+    },
+    {
+      "source_chunk": 5,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| 1.3 Choice of treatments .................................................................................................................. | 13 |\n| 1.4 Delivery of treatments ................................................................................................................ | 14 |"
+    },
+    {
+      "source_chunk": 6,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| 1.5 Treatment for a new episode of less severe depression ......................................................... | 28 |\n| 1.6 Treatment for a new episode of more severe depression ....................................................... | 47 |\n| 1.7 Behavioural couples therapy for depression ............................................................................ | 61 |"
+    },
+    {
+      "source_chunk": 7,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| 1.8 Preventing relapse ....................................................................................................................... | 62 |\n| 1.9 Further-line treatment ................................................................................................................. | 65 |"
+    },
+    {
+      "source_chunk": 8,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| 1.10 Chronic depressive symptoms ................................................................................................. | 69 |\n| 1.11 Depression in people with a diagnosis of personality disorder ............................................. | 72 |\n| 1.12 Psychotic depression ................................................................................................................. | 73 |"
+    },
+    {
+      "source_chunk": 9,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| 1.13 Electroconvulsive therapy for depression ............................................................................... | 74 |\n| 1.14 Transcranial magnetic stimulation for depression .................................................................. | 76 |\n| 1.15 Treatment-resistant depression ............................................................................................... | 77 |"
+    },
+    {
+      "source_chunk": 10,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| 1.16 Access, coordination and delivery of care .............................................................................. | 77 |\n| Terms used in this guideline ............................................................................................................. | 83 |"
+    },
+    {
+      "source_chunk": 11,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| Recommendations for research ............................................................................................. | 88 |\n| Key recommendations for research ................................................................................................ | 88 |\n| Other recommendations for research ............................................................................................. | 90 |"
+    },
+    {
+      "source_chunk": 12,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| Rationale and impact ............................................................................................................... | 93 |\n| Choice of treatments ........................................................................................................................ | 93 |"
+    },
+    {
+      "source_chunk": 13,
+      "page_numbers": [
+        3
+      ],
+      "text": "Contents\n| Overview .................................................................................................................................. | 5 |\n| - | - |\n| Starting and stopping antidepressants ........................................................................................... | 93 |\n| Use of lithium as augmentation ....................................................................................................... | 94 |"
+    },
+    {
+      "source_chunk": 14,
+      "page_numbers": [
+        4
+      ],
+      "text": "Contents\n| Use of oral antipsychotics as augmentation .................................................................................. | 95 |\n| - | - |\n| Activities to help wellbeing .............................................................................................................. | 95 |\n| Treatment for a new episode of less severe depression .............................................................. | 96 |\n| Treatment for a new episode of more severe depression ............................................................ | 98 |"
+    }
+  ],
+  "exact_duplicate_chunks": [
+    {
+      "chunk_indices": [
+        116,
+        119,
+        122,
+        146,
+        152
+      ],
+      "count": 5
+    }
+  ],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 1,
+      "source_chunk": 1,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Depression in adults: treatment and management",
+      "token_count": 60,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Depression in adults: treatment and management\nNICE guideline\nPublished: 29 June 2022\n[www.nice.org.uk/guidance/ng222](https://www.nice.org.uk/guidance/ng222)\n<!-- image -->"
+    },
+    {
+      "chunk": 39,
+      "source_chunk": 56,
+      "split_part": 0,
+      "page_start": 31,
+      "page_end": 32,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 308,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Guided self- help | · Printed or digital materials that follow the principles of guided self- help including structured cognitive behavioural therapy (CBT), structured behavioural activation (BA), problem-solving or psychoeducation materials. These can be delivered in person, by telephone, or online. · Support from a trained practitioner who facilitates the self-help intervention, encourages completion and reviews progress and outcomes. · Usually consists of 6 to 8 structured regular sessions. | · Focuses on how thoughts, beliefs, attitudes, feelings and behaviour interact, and teaches coping skills to deal with things in life differently. · Goal-oriented and structured. · Focuses on resolving current issues. | · May suit people who do not like talking about their depression in a group. · Needs self- motivation and willingness to work alone (although regular support is provided). · Allows flexibility in terms of fitting sessions in around other commitments. · Need to consider access, and ability to engage with computer programme for digital formats. · Less capacity for individual adaptations |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | than individual psychological treatments. · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 40,
+      "source_chunk": 57,
+      "split_part": 0,
+      "page_start": 33,
+      "page_end": 34,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 434,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Group cognitive behavioural therapy (CBT) | · A group intervention delivered by 2 practitioners, at least 1 of whom has therapy- specific training and competence. · Usually consists of 8 regular sessions. · Usually 8 participants in the group. · Delivered in line with current treatment manuals. | · Focuses on how thoughts, beliefs, attitudes, feelings and behaviour interact, and teaches coping skills to deal with things in life differently. · Goal-oriented and structured. · Focuses on resolving current issues. | · May be helpful for people who can recognise negative thoughts or unhelpful patterns of behaviour they wish to change. · May allow peer support from others who may be having similar experiences. · Avoids potential side effects of medication. · The person will need to be willing to complete homework assignments. |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Group behavioural activation (BA) | · A group intervention delivered by 2 practitioners, at least 1 of whom has therapy- specific training and competence. · Usually consists of 8 regular sessions. · Usually 8 participants in the group. · Delivered in line with current treatment manuals. | · Focuses on identifying the link between an individual's activities and their mood. Helps the person to recognise patterns and plan practical changes that reduce avoidance and focus on behaviours that are linked to improved mood. · Goal-oriented and structured. · Focuses on resolving current issues. · Does not directly target thoughts and feelings. | · May be helpful for people whose depression has led to social withdrawal, doing fewer things, inactivity, or has followed a change of circumstances or routine. · May allow peer support from others who may be having similar experiences. · Avoids potential side effects of medication. · The person will need to be willing to complete homework assignments. |"
+    },
+    {
+      "chunk": 41,
+      "source_chunk": 58,
+      "split_part": 0,
+      "page_start": 35,
+      "page_end": 36,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 273,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Individual CBT | · Individual intervention delivered by a practitioner with therapy-specific training and competence. · Usually consists of 8 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Delivered in line with current treatment manuals. | · Focuses on how thoughts, beliefs, attitudes, feelings and behaviour interact, and teaches coping skills to deal with things in life differently. · Goal-oriented and structured. · Focuses on resolving current issues. | · May be helpful for people who can recognise negative thoughts or unhelpful patterns of behaviour they wish to change. · May suit people who do not like talking about their depression in a group. · No opportunity to receive peer support from others who may be having similar experiences. · Avoids potential side effects of medication. · The person will need to be willing to complete |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | homework assignments. |"
+    },
+    {
+      "chunk": 42,
+      "source_chunk": 59,
+      "split_part": 0,
+      "page_start": 37,
+      "page_end": 38,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 303,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Individual BA | · Individual intervention delivered by a practitioner with therapy-specific training and competence. · Usually consists of 8 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Delivered in line with current treatment manuals. | · Focuses on identifying the link between an individual's activities and their mood. Helps the person to recognise patterns and plan practical changes that reduce avoidance and focus on behaviours that are linked to improved mood. · Goal-oriented and structured. · Focuses on resolving current issues. · Does not directly target thoughts and feelings. | · May be helpful for people whose depression has led to social withdrawal, doing fewer things, inactivity, or has followed a change of circumstances or routine. · May suit people who do not like talking about their depression in a group. · No opportunity to receive peer support from others who may be having similar experiences. · Avoids potential side effects of medication. · The person |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | will need to be willing to complete homework assignments. |"
+    },
+    {
+      "chunk": 43,
+      "source_chunk": 60,
+      "split_part": 0,
+      "page_start": 39,
+      "page_end": 40,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 238,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Group exercise | · A group physical activity intervention provided by a trained practitioner. · Uses a physical activity programme specifically designed for people with depression. · Usually consists of more than 1 session per week for 10 weeks. · Usually 8 participants in the group. | · Includes moderate intensity aerobic exercise. · Does not directly target thoughts and feelings. | · May allow peer support from others who may be having similar experiences. · May need to be adapted if the person has physical health problems that make it difficult to exercise. · May need to be adapted to accommodate psychological aspects, for example anxiety or shame which may act as barriers to engagement. · Needs a considerable time commitment. · Can help with physical health too. |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 44,
+      "source_chunk": 61,
+      "split_part": 0,
+      "page_start": 41,
+      "page_end": 42,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 309,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Group mindfulness and meditation | · A group intervention provided preferably by 2 practitioners, at least 1 of whom has therapy- specific training and competence. · Uses a programme such as mindfulness-based cognitive therapy specifically designed for people with depression. · Usually consists of 8 regular sessions. · Usually, 8 to 15 participants in the group. | · Focus is on concentrating on the present, observing and sitting with thoughts and feelings and bodily sensations, and breathing exercises. · Involves increasing awareness and recognition of thoughts and feelings, rather than on changing them. · Does not directly help with relationship, employment or other stressors that may contribute to depression. | · May be helpful for people who want to develop a different perspective on negative thoughts, feelings or bodily sensations. · May be difficult for people experiencing intense or highly distressing thoughts, or who find focusing on the body difficult. · May allow peer support from others who may be having similar experiences. · Avoids potential side effects of medication. |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | · The person will need to be willing to complete homework assignments, including using mindfulness recordings at home in between sessions. |"
+    },
+    {
+      "chunk": 45,
+      "source_chunk": 62,
+      "split_part": 0,
+      "page_start": 43,
+      "page_end": 43,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 247,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Interpersonal psychotherapy (IPT) | · Individual intervention delivered by a practitioner with therapy-specific training and competence. · Usually consists of 8 to 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Delivered in line with current treatment manuals. | · Focus is on identifying how interpersonal relationships or circumstances are related to feelings of depression, exploring emotions and changing interpersonal responses. · Structured approach. · Focuses on resolving current issues. · The goal is to change relationship patterns rather than directly targeting associated depressive thoughts. | · May be helpful for people with depression associated with interpersonal difficulties, especially adjusting to transitions in relationships, loss, or changing interpersonal roles. · May suit people who do not like talking about their depression in a group. · Needs a willingness to examine interpersonal relationships. · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 46,
+      "source_chunk": 63,
+      "split_part": 0,
+      "page_start": 44,
+      "page_end": 44,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 262,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Selective serotonin reuptake inhibitors (SSRIs) | · A review, usually within 2 weeks, to check the person's symptoms are improving and for side effects. · A review 1 week after starting antidepressant medication if a new prescription is for a person aged 18 to 25 years or if there is a particular concern for risk of suicide. · Typically taken for at least 6 months (including after symptoms remit), with regular reviews. · See the recommendations on starting and stopping antidepressant medication for more details on regular monitoring, when reviews will happen during treatment, continuing treatment after remission to prevent relapse, and tapering over time to help prevent withdrawal symptoms. | · Modify neuronal transmission in the brain. | · Minimal time commitment although regular reviews needed (especially when starting and stopping treatment). · Benefits should be felt within 4 weeks. · There may be side effects from the medication, and some people may find it difficult to later stop antidepressant medication. |"
+    },
+    {
+      "chunk": 47,
+      "source_chunk": 64,
+      "split_part": 0,
+      "page_start": 45,
+      "page_end": 45,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 243,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Counselling | · Individual intervention delivered by a practitioner with therapy-specific training and competence. · Usually consists of 8 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Uses an empirically validated protocol developed specifically for depression. | · Focus is on emotional processing and finding emotional meaning, to help people find their own solutions and develop coping mechanisms. · Provides empathic listening, facilitated emotional exploration and encouragement. · Collaborative use of emotion focused activities to increase self- awareness, to help people gain greater understanding of themselves, their relationships, and their responses to others, but not specific advice to change behaviour. | · May be useful for people with psychosocial, relationship or employment problems contributing to their depression. · May suit people who do not like talking about their depression in a group. · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 48,
+      "source_chunk": 65,
+      "split_part": 0,
+      "page_start": 46,
+      "page_end": 47,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 384,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Short-term psychodynamic psychotherapy (STPP) | · Individual sessions delivered by a practitioner with therapy-specific training and competence. · Usually consists of 8 to 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Uses an empirically validated protocol developed specifically for depression. | · Focus is on recognising difficult feelings in significant relationships and stressful situations, and identifying how patterns can be repeated. · Both insight- oriented and affect focused. · Relationship between therapist and person with depression is included as a focus to help support working through key current conflicts. | · May be useful for people with emotional and developmental difficulties in relationships contributing to their depression. · May be less suitable for people who do not want to focus on their own feelings, or who do not wish or feel ready to discuss any close and/or family relationships. · May suit people who do not like talking about their depression in a group. · Focusing on painful experiences in close and/or family |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | relationships could initially be distressing. · Avoids potential side effects of medication. |\nFor a short explanation of why the committee made these recommendations and how they might affect practice, see the rationale and impact section on treatment for a new episode of less severe depression.\nFull details of the evidence and the committee's discussion are in evidence review B: treatment of a new episode of depression."
+    },
+    {
+      "chunk": 51,
+      "source_chunk": 68,
+      "split_part": 0,
+      "page_start": 49,
+      "page_end": 61,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 396,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\nTreatment options for more severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors For a short explanation of why the committee made this recommendation and how it might affect practice, see the rationale and impact section on treatment for a new episode of more severe depression.\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Combination of individual cognitive behavioural therapy (CBT) and an antidepressant | · A combination of individual CBT and a course of antidepressant medication (see details below). | · Combines the benefits of regular CBT sessions with a therapist and medication. | · Sessions with a therapist provide immediate support while the medication takes time to work or medication can be started immediately, and then CBT started as soon as possible afterwards to obtain combined effects. · There may be side effects from the medication, and some people may find it difficult to later stop antidepressant medication. |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Individual CBT | · Individual intervention delivered by a practitioner with therapy-specific training and competence. · Usually consists of 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Delivered in line with current treatment manuals. | · Focuses on how thoughts, beliefs, attitudes, feelings and behaviour interact, and teaches coping skills to deal with things in life differently. · Goal-oriented and structured. · Focuses on resolving current issues. | · May be helpful for people who can recognise negative thoughts or unhelpful patterns of behaviour they wish to change. · Avoids potential side effects of medication. · The person will need to be willing to complete homework assignments. |"
+    },
+    {
+      "chunk": 52,
+      "source_chunk": 69,
+      "split_part": 0,
+      "page_start": 51,
+      "page_end": 52,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 287,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Individual behavioural activation (BA) | · Individual intervention delivered by a practitioner with therapy-specific training and competence. · Usually consists of 12 to 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Delivered in line with current treatment manuals. | · Focuses on identifying the link between an individual's activities and their mood. Helps the person to recognise patterns and plan practical changes that reduce avoidance and focus on behaviours that are linked to improved mood. · Goal-oriented and structured. · Focuses on resolving current issues. · Does not directly target thoughts and feelings. | · May be helpful for people whose depression has led to social withdrawal, doing fewer things, inactivity, or has followed a change of circumstances or routine. · May suit people who do not like talking about their depression in a group. · No opportunity to receive peer support from others who may be having similar experiences. · Avoids potential side effects of medication. · The person will need to be willing to complete homework |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | assignments. |"
+    },
+    {
+      "chunk": 53,
+      "source_chunk": 70,
+      "split_part": 0,
+      "page_start": 53,
+      "page_end": 53,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 333,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Antidepressant medication | · A review, usually within 2 weeks, to check the person's symptoms are improving and for side effects. · A review 1 week after starting antidepressant medication if a new prescription is for a person aged 18 to 25 years or if there is a particular concern for risk of suicide. · Typically taken for at least 6 months (including after symptoms remit), with regular reviews. · Can be a selective serotonin reuptake inhibitor (SSRI), serotonin-norepinephrine reuptake inhibitor (SNRI), or other antidepressant if indicated based on previous clinical and treatment history. · See the recommendations on starting and stopping antidepressant medication for more details on regular monitoring, when | · SSRIs are generally well tolerated, have a good safety profile and should be considered as the first choice for most people. · Tricyclic antidepressant (TCAs) are dangerous in overdose, although lofepramine has the best safety profile. | · Choice of treatment will depend on preference for specific medication effects such as sedation, concomitant illnesses or medications, suicide risk and previous history of response to antidepressant medicines. · Minimal time commitment, although regular reviews needed (especially when starting and stopping treatment). · Benefits should be felt within 4 weeks. · There may be side effects from the medication, and some people may find it difficult to later |"
+    },
+    {
+      "chunk": 54,
+      "source_chunk": 71,
+      "split_part": 0,
+      "page_start": 54,
+      "page_end": 55,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 414,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Individual problem- | reviews will happen during treatment, continuing treatment after remission to prevent relapse, and tapering over time to help prevent withdrawal symptoms. | | stop antidepressant medication. |\n| solving | · Individual sessions delivered by a practitioner with therapy-specific training and competence. · Usually consists of 6 to 12 regular sessions. · Delivered in line with current treatment manuals. | · Focus is on identifying problems, generating alternative solutions, selecting the best option, developing a plan and evaluating whether it has helped solve the problem. · Goal-oriented and structured. · Focuses on resolving current issues. | · May be helpful for people who want to tackle current difficulties and improve future experiences. · Avoids potential side effects of medication. · The person will need to be willing to complete homework assignments. |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Counselling | · Individual sessions delivered by a practitioner with therapy-specific training and competence. · Usually consists of 12 to 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Uses an empirically validated protocol developed specifically for depression. | · Focus is on emotional processing and finding emotional meaning, to help people find their own solutions and develop coping mechanisms. · Provides empathic listening, facilitated emotional exploration and encouragement. · Collaborative use of emotion focused activities to increase self- awareness, to help people gain greater understanding of themselves, their relationships, and their responses to others, but not specific advice to change behaviour. | · May be useful for people with psychosocial, relationship or employment problems contributing to their depression. · May suit people who do not like talking about their depression in a group. · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 55,
+      "source_chunk": 72,
+      "split_part": 0,
+      "page_start": 56,
+      "page_end": 56,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 258,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Short-term psychodynamic psychotherapy (STPP) | · Individual sessions delivered by a practitioner with therapy-specific training and competence. · Usually consists of 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Uses an empirically validated protocol developed specifically for depression. | · Focus is on recognising difficult feelings in significant relationships and stressful situations, and identifying how patterns can be repeated. · Both insight- oriented and affect focused. · Relationship between therapist and person with depression is included as a focus to help support working through key current conflicts. | · May be useful for people with emotional and developmental difficulties in relationships contributing to their depression. · May be less suitable for people who do not want to focus on their own feelings, or who do not wish or feel ready to discuss any close and/or family relationships. · May suit people who do not like talking about their depression in a group. · Focusing on painful experiences in close and/or family relationships could initially be distressing. |"
+    },
+    {
+      "chunk": 56,
+      "source_chunk": 73,
+      "split_part": 0,
+      "page_start": 57,
+      "page_end": 57,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 230,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about · Avoids potential side effects of medication. |\n| - | - | - | - |\n| Interpersonal psychotherapy (IPT) | · Individual sessions delivered by a practitioner with therapy-specific training and competence. · Usually consists of 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Delivered in line with current treatment manuals. | · Focus is on identifying how interpersonal relationships or circumstances are related to feelings of depression, exploring emotions and changing interpersonal responses. · Structured approach. · Focuses on resolving current issues. · The goal is to change relationship patterns rather than directly targeting associated depressive thoughts. | · May be helpful for people with depression associated with interpersonal difficulties, especially adjusting to transitions in relationships, loss, or changing interpersonal roles. · May suit people who do not like talking about their depression in a group. · Needs a willingness to examine interpersonal relationships. · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 57,
+      "source_chunk": 74,
+      "split_part": 0,
+      "page_start": 58,
+      "page_end": 59,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 284,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Guided self- help | · Printed or digital materials that follow the principles of guided self- help including structured CBT, structured BA, problem-solving or psychoeducation materials. These can be delivered in person, by telephone, or online. · Support from a trained practitioner who facilitates the self-help intervention, encourages completion and reviews progress and outcome. · Support usually consists of 6 to 8 structured, regular sessions. | · Focuses on how thoughts, beliefs, attitudes, feelings and behaviour interact, and teaches coping skills to deal with things in life differently. · Goal-oriented and structured. · Focuses on resolving current issues. | · In more severe depression, the potential advantages of providing other treatment choices with more therapist contact should be carefully considered first. · Needs self- motivation and willingness to work alone (although regular support is provided). · Allows flexibility in terms of fitting sessions in around other commitments. · Need to consider access, and ability to engage with computer programme for digital formats. · Less capacity for individual |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | adaptations than individual psychological treatments. · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 58,
+      "source_chunk": 75,
+      "split_part": 0,
+      "page_start": 60,
+      "page_end": 61,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 262,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Group exercise | · A group physical activity intervention provided by a trained practitioner. · Uses a physical activity programme specifically designed for people with depression. · Usually consists of more than 1 session per week for 10 weeks. · Usually 8 participants in the group. | · Includes moderate intensity aerobic exercise. · Does not directly target thoughts and feelings. | · In more severe depression, the potential advantages of providing other treatment choices with more therapist contact should be carefully considered first. · May allow peer support from others who are may be having similar experiences. · May need to be adapted if the person has physical health problems that prevent exercise. · May need to be adapted to accommodate psychological aspects, for example anxiety or shame which may act as barriers to engagement. |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | · Needs a considerable time commitment. · Can help with physical health too. · Avoids potential side effects of medication. |\nFull details of the evidence and the committee's discussion are in evidence review B: treatment of a new episode of depression."
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 11,
+      "text": "<!-- image -->\nNICE"
+    },
+    {
+      "chunk": 2,
+      "page_start": 2,
+      "page_end": 2,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Your responsibility",
+      "token_count": 274,
+      "text": "Your responsibility\nThe recommendations in this guideline represent the view of NICE, arrived at after careful consideration of the evidence available. When exercising their judgement, professionals and practitioners are expected to take this guideline fully into account, alongside the individual needs, preferences and values of their patients or the people using their service. It is not mandatory to apply the recommendations, and the guideline does not override the responsibility to make decisions appropriate to the circumstances of the individual, in consultation with them and their families and carers or guardian.\nAll problems (adverse events) related to a medicine or medical device used for treatment or in a procedure should be reported to the Medicines and Healthcare products Regulatory Agency using the Yellow Card Scheme.\nLocal commissioners and providers of healthcare have a responsibility to enable the guideline to be applied when individual professionals and people using services wish to use it. They should do so in the context of local and national priorities for funding and developing services, and in light of their duties to have due regard to the need to eliminate unlawful discrimination, to advance equality of opportunity and to reduce health inequalities. Nothing in this guideline should be interpreted in a way that would be inconsistent with complying with those duties.\nCommissioners and providers have a responsibility to promote an environmentally sustainable health and care system and should assess and reduce the environmental impact of implementing NICE recommendations wherever possible."
+    },
+    {
+      "chunk": 4,
+      "page_start": 5,
+      "page_end": 5,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Who is it for?",
+      "token_count": 51,
+      "text": "Who is it for?\n- Healthcare professionals\n- Other professionals who have direct contact with, or provide health and other public services for, people with depression\n- Commissioners and providers of services for people with depression\n- People with depression, their families and carers"
+    },
+    {
+      "chunk": 11,
+      "page_start": 10,
+      "page_end": 11,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Risk assessment and management",
+      "token_count": 403,
+      "text": "Risk assessment and management\n- 1.2.8 Always ask people with depression directly about suicidal ideation and intent. If there is a risk of self-harm or suicide:\n- assess whether the person has adequate social support and is aware of\nsources of help\n- arrange help appropriate to the level of need\n- advise the person to seek further help if the situation deteriorates. [2009]\n- 1.2.9 If a person with depression presents considerable immediate risk to themselves or others, refer them urgently to specialist mental health services. [2009]\n- 1.2.10 Advise people with depression of the potential for increased agitation, anxiety and suicidal ideation in the initial stages of treatment. Check if they have any of these symptoms and:\n- ensure that the person knows how to seek help promptly\n- review the person's treatment if they develop marked and/or prolonged agitation. [2009]\n- 1.2.11 Advise a person with depression and their family or carer to be vigilant for mood changes, agitation, negativity and hopelessness, and suicidal ideation, and to contact their practitioner if concerned. This is particularly important during highrisk periods, such as starting or changing treatment and at times of increased personal stress. [2009, amended 2022]\n- 1.2.12 If a person with depression is assessed to be at risk of suicide:\n- do not withhold treatment for depression on the basis of their suicide risk\n- take into account toxicity in overdose if an antidepressant is prescribed, or the person is taking other medication, and if necessary limit the amount of medicine available\n- consider increasing the level of support provided, such as more frequent inperson, video call or telephone contact\n- consider referral to specialist mental health services.\nFor further advice on risk assessment, see the NICE guideline on self-harm. For further advice on medication, see the recommendations on antidepressant medication for people at risk of suicide. [2009, amended"
+    },
+    {
+      "chunk": 22,
+      "page_start": 19,
+      "page_end": 19,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Stopping antidepressant medication",
+      "token_count": 313,
+      "text": "Stopping antidepressant medication\n- unsteadiness, vertigo or dizziness\n- altered sensations (for example, electric shock sensations)\n- altered feelings (for example, irritability, anxiety, low mood tearfulness, panic attacks, irrational fears, confusion, or very rarely suicidal thoughts)\n- restlessness or agitation\n- problems sleeping\n- sweating\n- abdominal symptoms (for example, nausea)\n- palpitations, tiredness, headaches, and aches in joints and muscles. [2022]\n- 1.4.14 Explain to people taking antidepressant medication that:\n- withdrawal symptoms can be mild, may appear within a few days of reducing or stopping antidepressant medication, and usually go away within 1 to 2 weeks\n- withdrawal can sometimes be more difficult, with symptoms lasting longer (in some cases several weeks, and occasionally several months)\n- withdrawal symptoms can sometimes be severe, particularly if the antidepressant medication is stopped suddenly. [2022]\n- 1.4.15 Recognise that people may have fears and concerns about stopping their antidepressant medication (for example, the withdrawal effects they may experience, or that their depression will return) and may need support to withdraw successfully, particularly if previous attempts have led to withdrawal symptoms or have not been successful. This could include:\n- details of online or written resources that may be helpful\n- increased support from a clinician or therapist (for example, regular check-in phone calls, seeing them more frequently, providing advice about sleep hygiene). [2022]"
+    },
+    {
+      "chunk": 33,
+      "page_start": 27,
+      "page_end": 27,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Use of St John's Wort",
+      "token_count": 131,
+      "text": "Use of St John's Wort\n- 1.4.38 Although there is evidence that St John's Wort may be of benefit in less severe depression, healthcare professionals should:\n- advise people with depression of the different potencies of the preparations available and of the potential serious interactions of St John's Wort with other drugs\n- not prescribe or advise its use by people with depression because of uncertainty about appropriate doses, persistence of effect, variation in the nature of preparations and potential serious interactions with other drugs (including hormonal contraceptives, anticoagulants and anticonvulsants). [2009]"
+    },
+    {
+      "chunk": 39,
+      "page_start": 31,
+      "page_end": 32,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 308,
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Guided self- help | · Printed or digital materials that follow the principles of guided self- help including structured cognitive behavioural therapy (CBT), structured behavioural activation (BA), problem-solving or psychoeducation materials. These can be delivered in person, by telephone, or online. · Support from a trained practitioner who facilitates the self-help intervention, encourages completion and reviews progress and outcomes. · Usually consists of 6 to 8 structured regular sessions. | · Focuses on how thoughts, beliefs, attitudes, feelings and behaviour interact, and teaches coping skills to deal with things in life differently. · Goal-oriented and structured. · Focuses on resolving current issues. | · May suit people who do not like talking about their depression in a group. · Needs self- motivation and willingness to work alone (although regular support is provided). · Allows flexibility in terms of fitting sessions in around other commitments. · Need to consider access, and ability to engage with computer programme for digital formats. · Less capacity for individual adaptations |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | than individual psychological treatments. · Avoids potential side effects of medication. |"
+    },
+    {
+      "chunk": 44,
+      "page_start": 41,
+      "page_end": 42,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors",
+      "token_count": 309,
+      "text": "Treatment options for less severe depression in order of the committee's interpretation of their clinical and cost effectiveness and consideration of implementation factors\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Group mindfulness and meditation | · A group intervention provided preferably by 2 practitioners, at least 1 of whom has therapy- specific training and competence. · Uses a programme such as mindfulness-based cognitive therapy specifically designed for people with depression. · Usually consists of 8 regular sessions. · Usually, 8 to 15 participants in the group. | · Focus is on concentrating on the present, observing and sitting with thoughts and feelings and bodily sensations, and breathing exercises. · Involves increasing awareness and recognition of thoughts and feelings, rather than on changing them. · Does not directly help with relationship, employment or other stressors that may contribute to depression. | · May be helpful for people who want to develop a different perspective on negative thoughts, feelings or bodily sensations. · May be difficult for people experiencing intense or highly distressing thoughts, or who find focusing on the body difficult. · May allow peer support from others who may be having similar experiences. · Avoids potential side effects of medication. |\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| | | | · The person will need to be willing to complete homework assignments, including using mindfulness recordings at home in between sessions. |"
+    },
+    {
+      "chunk": 55,
+      "page_start": 56,
+      "page_end": 56,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Table 2",
+      "token_count": 258,
+      "text": "Table 2\n| Treatment | How is this delivered? | Key features | Other things to think about |\n| - | - | - | - |\n| Short-term psychodynamic psychotherapy (STPP) | · Individual sessions delivered by a practitioner with therapy-specific training and competence. · Usually consists of 16 regular sessions, although additional sessions may be needed for people with comorbid mental or physical health problems or complex social needs, or to address residual symptoms. · Uses an empirically validated protocol developed specifically for depression. | · Focus is on recognising difficult feelings in significant relationships and stressful situations, and identifying how patterns can be repeated. · Both insight- oriented and affect focused. · Relationship between therapist and person with depression is included as a focus to help support working through key current conflicts. | · May be useful for people with emotional and developmental difficulties in relationships contributing to their depression. · May be less suitable for people who do not want to focus on their own feelings, or who do not wish or feel ready to discuss any close and/or family relationships. · May suit people who do not like talking about their depression in a group. · Focusing on painful experiences in close and/or family relationships could initially be distressing. |"
+    },
+    {
+      "chunk": 66,
+      "page_start": 67,
+      "page_end": 67,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1.9 Further-line treatment",
+      "token_count": 380,
+      "text": "1.9 Further-line treatment\n- － increasing the dose of the current medication (within the licensed dose range) if the medication is well tolerated; be aware that higher doses of antidepressants may not be more effective and can increase the frequency and severity of side effects; ensure follow-up and frequent monitoring of symptoms and side effects after dose increases.\n- － switching to another medication in the same class (for example, another SSRI)\n- － switching to a medication of a different class (for example, an SSRI, SNRI, or in secondary care a TCA or MAOI); take into account that:\n- ◇ switching medication may mean cross-tapering is needed; see the NICE clinical knowledge summary on switching antidepressants\n- ◇ switching to or from an MAOI, or from one MAOI to another, will need to take place in, or with advice from, secondary care\n- ◇ TCAs are dangerous in overdose, although lofepramine has the best safety profile\n- changing to a combination of psychological therapy (for example, CBT, interpersonal psychotherapy [IPT] or STPP) and medication.\nConsider whether some of these decisions and treatments need other services to be involved (for example, specialist mental health services for advice on switching antidepressants). [2022]\n- 1.9.6 If a person's depression has had no or a limited response to treatment with a combination of antidepressant medication and psychological therapy, discuss further treatment options with the person and make a shared decision on how to proceed based on their clinical need and preferences. Options include:\n- switching to another psychological therapy\n- increasing the dose or switching to another antidepressant (see recommendation 1.9.5)\n- adding in another medication (see recommendation 1.9.9). [2022]"
+    },
+    {
+      "chunk": 77,
+      "page_start": 76,
+      "page_end": 76,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "1.14 Transcranial magnetic stimulation for depression",
+      "token_count": 57,
+      "text": "1.14 Transcranial magnetic stimulation for depression\n- 1.14.1 [See the NICE interventional procedures guidance on repetitive transcranial magnetic stimulation for depression.](https://www.nice.org.uk/guidance/ipg542)"
+    },
+    {
+      "chunk": 89,
+      "page_start": 84,
+      "page_end": 84,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "Collaborative care",
+      "token_count": 84,
+      "text": "Collaborative care\nCollaborative care requires that the service user and healthcare professional jointly identify problems and agree goals for treatments, and normally comprises:\n- case management which is supervised and supported by a senior mental health professional\n- close collaboration between primary and secondary physical health services and specialist mental health services in the delivery of services\n- the provision of a range of evidence-based treatments\n- the long-term coordination of care and follow up."
+    },
+    {
+      "chunk": 100,
+      "page_start": 88,
+      "page_end": 88,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "1 Stopping antidepressants",
+      "token_count": 143,
+      "text": "1 Stopping antidepressants\nWhat is the incidence and severity of withdrawal symptoms for antidepressant medication?\nFor a short explanation of why the committee made the recommendation for research, see the rationale section on starting and stopping antidepressants.\nFor full details of the evidence and the committee's discussion, see the evidence reviews for the NICE guideline on safe prescribing (evidence review A: patient information and support; evidence review B: prescribing strategies; evidence review C: safe withdrawal; evidence review D: withdrawal interventions; evidence review E: monitoring).\nFull details of the research recommendation have been added to evidence review B: treatment of a new episode of depression."
+    },
+    {
+      "chunk": 111,
+      "page_start": 93,
+      "page_end": 93,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Choice of treatments",
+      "token_count": 17,
+      "text": "Choice of treatments\nRecommendations 1.3.1 to 1.3.4"
+    },
+    {
+      "chunk": 122,
+      "page_start": 95,
+      "page_end": 95,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "How the recommendations might affect practice",
+      "token_count": 27,
+      "text": "How the recommendations might affect practice\nThe recommendations reflect current practice, but may reduce variation in practice across the NHS.\nReturn to recommendations"
+    },
+    {
+      "chunk": 133,
+      "page_start": 99,
+      "page_end": 99,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "How the recommendation might affect practice",
+      "token_count": 92,
+      "text": "How the recommendation might affect practice\nThe recommendation reflects current practice, but may reduce variation in practice across the NHS. Commissioners and services will need to ensure that a meaningful choice of all recommended therapies is available, and depending on current availability, this may need an increase in resource use. Initial consultations and assessment may need longer because of the need for detailed discussions to support informed choice, but a positive choice may improve engagement and outcomes.\nReturn to recommendations"
+    },
+    {
+      "chunk": 144,
+      "page_start": 103,
+      "page_end": 103,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Chronic depressive symptoms",
+      "token_count": 30,
+      "text": "Chronic depressive symptoms\nRecommendations 1.10.1 to 1.10.6, 1.10.8 and 1.10.9"
+    },
+    {
+      "chunk": 155,
+      "page_start": 106,
+      "page_end": 106,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "How the recommendations might affect practice",
+      "token_count": 59,
+      "text": "How the recommendations might affect practice\nModifying the way treatments are delivered to improve access for certain groups may mean modifications to services are needed, and may have resource implications. However, prompt and effective treatment of depression may lead to reduced health and social care costs in the longer term.\nReturn to recommendations"
+    },
+    {
+      "chunk": 166,
+      "page_start": 110,
+      "page_end": 111,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Minor changes since publication",
+      "token_count": 244,
+      "text": "Minor changes since publication\nDecember 2025: We amended the information on antidepressant medication in tables 1 and 2 to emphasise the need for regular reviews in relation to length of treatment and give details of when the first review should happen.\nOctober 2025: We amended recommendation 1.5.3 to clarify our advice on first-line treatment for less severe depression.\nSeptember 2024: We added links to relevant technology appraisal guidance in the sections on further-line treatment and treatment-resistant depression.\nMay 2024: We have simplified the guideline by removing recommendations on general principles of care that are covered in other NICE guidelines (for example, the NICE guideline on service user experience in adult mental health).\nThis is a presentational change only, and no changes to practice are intended.\nApril 2023: In recommendation 1.4.11 we clarified the timing of the first review after starting antidepressant medication for people aged 18 to 25 years or where there is a particular concern for risk of suicide.\nFebruary 2023: We made a correction to the terms used section for the DSM-5 definition of depression.\nISBN: 978-1-4731-4622-8"
+    }
+  ]
+}

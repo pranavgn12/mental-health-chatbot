@@ -1,0 +1,1462 @@
+{
+  "report_schema_version": 2,
+  "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+  "source_pages_detected": 96,
+  "raw_docling_chunks": 168,
+  "chunks_created": 169,
+  "chunk_type_counts": {
+    "figure": 26,
+    "text": 85,
+    "table": 15,
+    "list": 37,
+    "form": 6
+  },
+  "table_serializer": "markdown_compact",
+  "target_chunk_tokens": 450,
+  "embedding_model_max_tokens": 512,
+  "token_statistics": {
+    "min": 4,
+    "median": 223,
+    "mean": 230.24,
+    "max": 450,
+    "chunks_over_target": 0,
+    "chunks_over_model_limit": 0,
+    "overflow_chunks": []
+  },
+  "page_coverage": {
+    "pages_with_chunks": [
+      1,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96
+    ],
+    "pages_without_chunks": [
+      2,
+      5,
+      6,
+      7,
+      8
+    ],
+    "first_page_with_chunk": 1,
+    "last_page_with_chunk": 96,
+    "coverage_ratio": 0.9479
+  },
+  "furniture": {
+    "available": true,
+    "items_detected": 155,
+    "page_headers": 73,
+    "page_footers": 82,
+    "note": "Docling furniture items are reported separately. No arbitrary standalone numbers or content lines are deleted."
+  },
+  "pdf_preflight": {
+    "available": true,
+    "engine": "PyMuPDF 2.1",
+    "page_count": 96,
+    "predominantly_rotated_text_pages": [
+      {
+        "page": 91,
+        "rotated_text_ratio": 1.0,
+        "dominant_angle_degrees": -90,
+        "current_page_rotation": 0,
+        "suggested_additional_rotation_degrees": 90
+      }
+    ],
+    "likely_image_only_pages": [],
+    "probable_multi_column_pages": [
+      9,
+      10,
+      14,
+      15,
+      16,
+      20,
+      22,
+      23,
+      26,
+      27,
+      28,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      50,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      87,
+      88,
+      89,
+      90,
+      92,
+      93,
+      94,
+      95
+    ]
+  },
+  "applied_page_rotations": [
+    {
+      "page": 91,
+      "previous_rotation": 0,
+      "new_rotation": 90,
+      "applied_rotation_degrees": 90
+    }
+  ],
+  "document_level_warnings": [
+    {
+      "type": "predominantly_rotated_text",
+      "page": 91,
+      "rotated_text_ratio": 1.0,
+      "dominant_angle_degrees": -90,
+      "current_page_rotation": 0,
+      "suggested_additional_rotation_degrees": 90
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 9
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 10
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 14
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 15
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 16
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 20
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 22
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 23
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 26
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 27
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 28
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 30
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 31
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 32
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 33
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 34
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 35
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 36
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 37
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 38
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 40
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 41
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 42
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 43
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 44
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 45
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 46
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 47
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 48
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 50
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 52
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 53
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 54
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 55
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 56
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 57
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 58
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 59
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 62
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 63
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 64
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 65
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 66
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 67
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 68
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 69
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 72
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 73
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 74
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 75
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 76
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 77
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 78
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 79
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 80
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 81
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 82
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 83
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 87
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 88
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 89
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 90
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 92
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 93
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 94
+    },
+    {
+      "type": "probable_multi_column_layout",
+      "page": 95
+    }
+  ],
+  "cleanup": {
+    "heuristic_page_number_deletions": 0,
+    "heuristic_header_footer_deletions": 0,
+    "note": "No arbitrary standalone numbers or content lines are deleted. Docling furniture is handled separately where available."
+  },
+  "skipped_furniture_only_chunks": 0,
+  "excluded_toc_chunks": 1,
+  "excluded_toc_samples": [
+    {
+      "source_chunk": 4,
+      "page_numbers": [
+        5,
+        6,
+        7
+      ],
+      "text": "Contents\n| Preface | ix |\n| - | - |\n| Acknowledgements | x |\n| Abbreviations | xii |\n| 1. Introduction | 13 |\n| 1.1 Background | 14 |\n| 1.2 Purpose and use | 15 |\n| 1.3 Structure and overview | 16 |\n| 2. Planning | 19 |\n| 2.1 Establish the purpose of psychological intervention | 22 |\n| 2.2 Choose psychological interventions | 23 |\n| 2.3 Decide setting for delivery | 28 |\n| 2.4 Organize the system for delivery | 32 |\n| 2.5 Identify associated services | 34 |\n| 2.6 Identify human resource needs | 35 |\n| 2.7 Choose format for delivery | 35 |\n| 3. Adaptation | 39 |\n| - | - |\n| 3.1 Prepare for adaptation | 41 |\n| 3.2 Adapt psychological interventions | 44 |\n| 4. Workforce | 49 |\n| 4.1 Choose the workforce | 50 |\n| 4.2 Train the workforce | 53 |\n| 4.3 Supervise the workforce | 56 |\n| 5. Identification, assessment and delivery | 61 |\n| 5.1 Identify and reach potential beneficiaries | 62 |\n| 5.2 Assess people's needs | 66 |\n| 5.3 Refer people to the right source of support | 67 |\n| 5.4 Follow up after treatment | 68 |\n| 6. Monitoring and evaluation | 71 |\n| - | - |\n| 6.1 Make an M&E plan | 73 |\n| 6.2 Collect and analyse data | 77 |\n| 6.3 Integrate findings | 78 |\n| References | 80 |\n| Further reading | 83 |\n| Annexes | 85 |\n| Annex 1. Checklist for implementing psychological interventions | 86 |\n| Annex 2. Points to consider for remote delivery | 87 |\n| Annex 3. Example adaptation monitoring form | 90 |\n| Annex 4. Example supervision form | 92 |\n| Annex 5. Example measures for screening and assessment | 93 |\n| Annex 6. Example suicide risk form for non-specialists | 94 |"
+    }
+  ],
+  "exact_duplicate_chunks": [],
+  "possible_triplet_serialization_artifact_chunks": [],
+  "warnings": [
+    {
+      "chunk": 0,
+      "source_chunk": 0,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 10,
+      "warnings": [
+        "very_short_chunk_review_context",
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "<!-- image -->"
+    },
+    {
+      "chunk": 1,
+      "source_chunk": 1,
+      "split_part": 0,
+      "page_start": 1,
+      "page_end": 4,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Psychological interventions implementation manual",
+      "token_count": 88,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Psychological interventions implementation manual\nIntegrating evidence-based psychological interventions into existing services\n<!-- image -->\n<!-- image -->\nIntegrating evidence-based psychological interventions into existing services Psychological interventions implementation manual: integrating evidence-based psychological interventions into existing services ISBN 978-92-4-008714-9 (electronic version)\nISBN 978-92-4-008715-6 (print version)"
+    },
+    {
+      "chunk": 4,
+      "source_chunk": 5,
+      "split_part": 0,
+      "page_start": 9,
+      "page_end": 9,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Preface",
+      "token_count": 275,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Preface\nIn all countries, mental health conditions are highly prevalent and cause immense suffering. Most people who experience mental health conditions, including common conditions such as depression and anxiety, cannot access effective care and go untreated.\nTo reduce the vast care gap and progress towards universal health coverage, health and social care planners and practitioners increasingly deploy evidence-based psychological interventions to scale up options for care. The emphasis here is not conventional psychotherapy delivered by specialists but rather manualized psychological interventions that can be delivered by trained and supervised non-specialists and are more likely to be scalable.\nThe number of psychological intervention manuals that are proven to work in low-, middleand high-income settings has grown rapidly in the last two decades. A next step is to increase their actual availability, reach and impact so that more people can benefit from them. Psychological intervention manuals give instructions on how to deliver the intervention but do not typically include guidance on how to design and deliver services that offer psychological interventions.\nThis implementation manual aims to fill that gap. It offers planners and service managers practical guidance on how to make available and implement psychological interventions by integrating them within existing health, social, protection or education services.\n<!-- image -->\n品\nDr Jérôme Salomon Assistant Director-General Universal Health Coverage/Communicable and Noncommunicable Diseases World Health Organization"
+    },
+    {
+      "chunk": 11,
+      "source_chunk": 11,
+      "split_part": 1,
+      "page_start": 10,
+      "page_end": 11,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "External contributors and reviewers (affiliations at time of contribution or review)",
+      "token_count": 4,
+      "warnings": [
+        "very_short_chunk_review_context"
+      ],
+      "text": "York,"
+    },
+    {
+      "chunk": 14,
+      "source_chunk": 14,
+      "split_part": 0,
+      "page_start": 12,
+      "page_end": 13,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Abbreviations",
+      "token_count": 190,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Abbreviations\n| CBT | cognitive behavioural therapy |\n| - | - |\n| CETA | Common Elements Treatment Approach |\n| CIDT | Community Informant Detection Tool |\n| CST | Caregivers Skills Training |\n| EASE | Early Adolescent Skills for Emotions |\n| EQUIP | Ensuring Quality in Psychological Support |\n| IASC | Inter-Agency Standing Committee |\n| IPT | interpersonal therapy |\n| LMICs | low- and middle-income countries |\n| M&E | monitoring and evaluation |\n| mhGAP | WHO's Mental Health Gap Action Programme |\n| MHPSS | mental health and psychosocial support |\n| PM+ | Problem Management Plus |\n| PTSD | post-traumatic stress disorder |\n| SH+ | Self-Help Plus |\n| UNHCR | United Nations High Commissioner for Refugees |\n| UNICEF | United Nations Children's Fund |\n| WHO | World Health Organization |\n1\nIntroduction"
+    },
+    {
+      "chunk": 19,
+      "source_chunk": 19,
+      "split_part": 0,
+      "page_start": 16,
+      "page_end": 16,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "1.2.1 Notes on terminology",
+      "token_count": 162,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "1.2.1 Notes on terminology\n1. In this implementation manual, the term psychological intervention refers to an evidence-based psychological intervention that is manualized. There are many other psychological interventions that are not evidence-based or that are not manualized, which are not covered in this document.\n2. This implementation manual does not use the broader term psychosocial intervention, which refers to all interpersonal or informational activities, techniques, or strategies to improve health, functioning and well-being (see\nFig. 1.1) (5). Psychosocial interventions may or may not be manualized and may or may not be evidence-based.\nThis manual covers the implementation of evidence-based, manualized\nFIG. 1.1 psychological interventions.\n\n<!-- image -->"
+    },
+    {
+      "chunk": 21,
+      "source_chunk": 21,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Planning",
+      "token_count": 33,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Planning\n<!-- image -->\nB\nChoose one or more psychological interventions for a specific setting and plan how to deliver them to a target population."
+    },
+    {
+      "chunk": 22,
+      "source_chunk": 22,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Adaptation",
+      "token_count": 30,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Adaptation\n→△\n<!-- image -->\nAdapt the psychological interventions for use in a specific context, including translating them into local languages."
+    },
+    {
+      "chunk": 23,
+      "source_chunk": 23,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Workforce",
+      "token_count": 32,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Workforce\n<!-- image -->\nPrepare and sustain a competent workforce to deliver the psychological interventions by selecting, training, assessing and supervising providers."
+    },
+    {
+      "chunk": 24,
+      "source_chunk": 24,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Identification, assessment and delivery",
+      "token_count": 37,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Identification, assessment and delivery\n<!-- image -->\nIdentify potential beneficiaries of the psychological interventions and ensure they are directed to the right source of support."
+    },
+    {
+      "chunk": 25,
+      "source_chunk": 25,
+      "split_part": 0,
+      "page_start": 17,
+      "page_end": 19,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Monitoring and evaluation",
+      "token_count": 50,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Monitoring and evaluation\n<!-- image -->\nMonitor and evaluate the outcomes and impacts of the service with integrated psychological interventions.\nCOMMUNITY ENGAGEMENT Engage local communities.\n<!-- image -->\n<!-- image -->"
+    },
+    {
+      "chunk": 27,
+      "source_chunk": 27,
+      "split_part": 0,
+      "page_start": 20,
+      "page_end": 21,
+      "content_type": "figure",
+      "content_subtype": "callout",
+      "heading_path": "KEY MESSAGES",
+      "token_count": 273,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "KEY MESSAGES\nPlanning should be undertaken by a multistakeholder implementation team that contains a broad range of knowledge and skills. This could potentially include service managers, local mental health professionals, community representatives, as well as stakeholders from other non-health sectors (including relevant nongovernment organizations).\nThe implementation team uses situation analyses, evidence reviews and stakeholder engagement to address the seven questions above and develop an implementation plan (see sections 2.1-2.7 below). The team continues to work together throughout implementation, overseeing and facilitating activities.\nFIG. 2.1 Seven key questions to address in an implementation plan.\n\n<!-- image -->\n<!-- image -->\nWhen implementing psychological interventions:\n- Involve community members (e.g. community leaders and people with lived experience of mental health conditions) in decision-making processes to design services that include relevant, accessible and acceptable psychological interventions (including potentially as core members of the implementation team).\n- Inform community members about mental health conditions and the psychological intervention (both before and while the intervention is available) to increase awareness, understanding and uptake of psychological interventions.\n- Collaborate with community members to communicate about and deliver the psychological interventions in a way that meets community needs to maximize the interventions' reach and impact. This may include understanding whether people can access an intervention remotely."
+    },
+    {
+      "chunk": 34,
+      "source_chunk": 34,
+      "split_part": 0,
+      "page_start": 24,
+      "page_end": 25,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of WHO recommendations for psychological treatments.",
+      "token_count": 385,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of WHO recommendations for psychological treatments.\n| PSYCHOLOGICAL TREATMENT a | RECOMMENDED FOR |\n| - | - |\n| Behavioural activation | · Adults with depression · People with dementia with depression |\n| Behavioural intervention | · Children and adolescents with behavioural disorders, including conduct disorder |\n| Brief interventions for hazardous and harmful substance use b | · Adults using cannabis · Adults using psychostimulants · People with hazardous or harmful alcohol use |\n| Brief psychodynamic therapy | · Adults with depression |\n| Caregivers skills training | · Caregivers of children and adolescents with behavioural, emotional or developmental disorders |\n| Cognitive behavioural therapy (CBT) | · Adults and children with epilepsy (adjunct to antiseizure medicine) · Adults, children and adolescents with PTSD · Adults with acute traumatic stress symptoms · Adults with bipolar disorder in remission (adjunct to pharmacological interventions) · Adults with bodily distress complaints c · Adults with depression · Adults with generalized anxiety disorder · Adults with panic disorder · Adults with psychotic disorders (including schizophrenia) in the acute and maintenance phase · Children and adolescents with ADHD · Children and adolescents with autism and anxiety · Children and adolescents with emotional symptoms/disorders · Children and adolescents with somatoform disorder · Children whose parents have mental health conditions · People with alcohol and drug use disorders · People with dementia · People with dementia with depression |\n| Cognitive stimulation therapy | · People with suicidal thoughts · People with dementia |\n| Cognitive training | · People with dementia |\n| Contingency management therapy | · People with alcohol and drug use disorder |\n| Eye movement desensitization and reprocessing (EMDR) | · Adults, children and adolescents with PTSD |\n| Interpersonal therapy / interpersonal psychotherapy | · Adults with depression · People with dementia with depression · Children and adolescents with emotional disorders |\nPSYCHOLOGICAL TREATMENT a RECOMMENDED FOR"
+    },
+    {
+      "chunk": 35,
+      "source_chunk": 35,
+      "split_part": 0,
+      "page_start": 25,
+      "page_end": 25,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of WHO recommendations for psychological treatments.",
+      "token_count": 294,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Summary of WHO recommendations for psychological treatments.\n| Interpersonal skills training | · Adolescents with disruptive/oppositional behaviours |\n| - | - |\n| Motivational enhancement therapy | · People with alcohol and drug use disorder |\n| Problem-solving therapy | · Adults with depression and subthreshold depressive symptoms · Adults with generalized anxiety disorder · Adults with panic disorder · People with suicidal thoughts or with acts of self-harm in the last year |\n| Problem solving skills training | · Adolescents with disruptive/oppositional behaviours |\n| Interventions using cognitive learning techniques to enhance communication and social competencies | · Children and adolescents with neurodevelopmental disabilities |\n| Interventions focused on social skills training and developmental behavioural approaches | · Children and adolescents with autism |\n| Interventions focused on social skills, cognitive and organizational skills training | · Adults with psychosis and bipolar disorder and their carers · Children and adolescents with ADHD |\n| Stress management (including relaxation and mindfulness training) | · Adults with generalized anxiety disorder · Adults with panic disorder · Adults with PTSD or symptoms of anxiety · Adults with epilepsy (adjunct to antiseizure medicine) · People with suicidal thoughts |\n| Third wave therapies d | · Adults with depression · Adults with generalized anxiety disorder · Adults with panic disorder · Carers of people with dementia |\n| Psychological interventions for people with substance use disorders e | · People with alcohol and drug use disorders |"
+    },
+    {
+      "chunk": 38,
+      "source_chunk": 38,
+      "split_part": 0,
+      "page_start": 26,
+      "page_end": 26,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "for different target groups with specific problems in low-resource settings.",
+      "token_count": 392,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "for different target groups with specific problems in low-resource settings.\n| WHO PSYCHOLOGICAL INTERVENTION a,b | FORMAT | TARGET POPULATION |\n| - | - | - |\n| Caregivers Skills Training (CST) | Group | Caregivers of children with developmental disabilities, including autism |\n| Doing What Matters in Times of Stress | Self-help (digital, book) | Adults with psychological distress |\n| Early Adolescent Skills for Emotions (EASE) | Group | Young adolescents with psychological distress |\n| Group Interpersonal Therapy (IPT) | Group | Adults with depressive symptoms |\n| iSupport | Self-help (digital, book) | Carers of people with dementia |\n| Problem Management Plus (PM+) | Individual or group | Adults with depression or anxiety |\n| Self-Help Plus (SH+) | Group/multi-media self-help | Adults with psychological distress |\n| Step-by-Step (SbS) c | Digital self-help | Adults with depression |\n| Thinking Healthy | Individual | Mothers with perinatal depression |\na All these examples are (or will soon be) available to download from the WHO Institutional Repository for Information Sharing (https://apps.who.int/iris/).\nb All the interventions developed by the WHO Department of Mental Health and Substance Use can be found on their page on scalable psychological interventions (https://www.who.int/teams/mental-health-and-substance-use/treatment-care/ innovations-in-psychological-interventions).\nc Carswell K, Harper-Shehadeh M, Watts S, van 't Hof E, Abi Ramia J, Heim E et al. Step-by-Step: a new WHO digital mental health intervention for depression. Mhealth. 2018;4:34. doi:10.21037/mhealth.2018.08.01."
+    },
+    {
+      "chunk": 42,
+      "source_chunk": 42,
+      "split_part": 0,
+      "page_start": 29,
+      "page_end": 29,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "options for integrating psychological interventions.",
+      "token_count": 25,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "options for integrating psychological interventions.\n<!-- image -->\nSource: WHO 2022 (2)."
+    },
+    {
+      "chunk": 43,
+      "source_chunk": 43,
+      "split_part": 0,
+      "page_start": 30,
+      "page_end": 30,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 2.3 Common settings for delivering psychological interventions and their potential benefits and challenges.",
+      "token_count": 420,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 2.3 Common settings for delivering psychological interventions and their potential benefits and challenges.\n| EXAMPLE SETTING | POTENTIAL BENEFITS | POTENTIAL CHALLENGES |\n| - | - | - |\n| Community spaces or homes | · Convenient location for the service user. · Private and confidential space (if the space is not shared). | · Not a necessarily convenient location for the provider. · Lack of privacy (if the space is shared). · Lack of confidentiality and associated risk of stigma. · Risk of interruptions and noise. · Weak links to referral pathways to health and social services if the providers are not part of these services. |\n| Women's centres, youth clubs or similar spaces | · Low stigma setting to help survivors of gender-based violence (if the intervention is just one of many different supports provided at a women's centre). · Accessible to those not enrolled in school (if the intervention is for young people). | · Not accessible to all. · May have weak links to health and social services. |\n| Schools | · Convenient location (for those attending school). · Accessible to many young people. | · Risk of stigma from peers. · Not accessible to those not enrolled in school. · Weak links to referral pathways to health and social services. |\n| Primary health care | · Convenient location. · Can use existing links to other health care services. · Low stigma compared with mental health services. · Intervention can be combined with psychotropic medicine if indicated. | · Private space might not be available. · Typically requires adding human resources to deliver the psychological intervention. · Risk of unnecessary prescription of psychotropic medicine. |\n| Mental health unit in general hospital or community mental health centre | · Convenient location (for those already attending these services). · Private and confidential space. · Well-known and accepted location to receive care. · Access to specialized care. · Intervention can be combined with psychotropic medicine if indicated. | · Usually far away from where people live. · Risk of unnecessary prescription of psychotropic medicine. |"
+    },
+    {
+      "chunk": 44,
+      "source_chunk": 44,
+      "split_part": 0,
+      "page_start": 31,
+      "page_end": 31,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "TABLE 2.3 Common settings for delivering psychological interventions and their potential benefits and challenges.",
+      "token_count": 223,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "TABLE 2.3 Common settings for delivering psychological interventions and their potential benefits and challenges.\n| EXAMPLE SETTING | POTENTIAL BENEFITS | POTENTIAL CHALLENGES |\n| - | - | - |\n| Remote delivery | · Private and confidential space (if the space or device is not shared). · Continuity of care during crises. · Overcomes transport barriers (such as distance, cost or travelling time). · Accessible to people with physical disabilities or other difficulties that make it hard to travel. · Accessible to people in remote communities or other hard-to-reach areas (if they have a phone or internet). | · Fewer non-verbal cues make communication harder. · Harder to manage high-risk situations (such as imminent risk of suicide). · Reliance on technology and telecommunications that may be unreliable. · Not accessible to people without a phone or internet (equity issue). · Potential for major interruptions (e.g. software freezes or crashes), background noise and distractions. · Costs may be incurred through mobile or data plans. · Data privacy concerns and reluctance to share private information online. |"
+    },
+    {
+      "chunk": 56,
+      "source_chunk": 56,
+      "split_part": 0,
+      "page_start": 36,
+      "page_end": 36,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Potential advantages and drawbacks of example delivery formats available for psychological interventions.",
+      "token_count": 288,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Potential advantages and drawbacks of example delivery formats available for psychological interventions.\n| INTERVENTION TYPE | ADVANTAGES | DRAWBACKS |\n| - | - | - |\n| 1. Individual interventions A single service provider delivers the intervention to a single service user. | · More opportunity to build a supportive therapeutic relationship. · Easier to respond to the person's individual situation or needs. · Easier to ensure confidentiality. · Likely more acceptable to people who find it difficult to share their problems with community members. | · Reaches fewer people at a time. · Relatively resource intensive. · Less opportunity to build relationships with or learn from peers with similar lived experiences. · Individual interventions may not be consistent with cultural coping norms. |\n| 2. Group interventions One or two facilitators deliver the intervention to multiple service users at once. | · Reaches multiple people at a time. · Group members can support and learn from each other and feel validated in their feelings and experiences. · People can build supportive peer relationships that may endure even after the intervention is completed. | · Can take longer to set up and difficult to organize outside local communities (because multiple people must get to the same place at the same time). · Confidentiality is harder to ensure. · Some people can find it hard to listen to other people's problems. · Not necessarily acceptable or suitable to all service users. · Dropouts can cause disruption to the group. |"
+    },
+    {
+      "chunk": 57,
+      "source_chunk": 57,
+      "split_part": 0,
+      "page_start": 36,
+      "page_end": 36,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Potential advantages and drawbacks of example delivery formats available for psychological interventions.",
+      "token_count": 225,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Potential advantages and drawbacks of example delivery formats available for psychological interventions.\n| INTERVENTION TYPE | ADVANTAGES | DRAWBACKS |\n| - | - | - |\n| 3. Self-help interventions Individual service users complete the intervention themselves, alone or in groups, with or without guidance from a service provider. | · Requires fewer human resources. · Can be feasibly used as a first intervention in a stepped care system. · Potentially reaches people that cannot access in-person interventions (e.g. those living in hard to reach areas). · Reduces waiting lists and barriers associated with travel. · Except for group self-help, people participate in their own time, at their own pace, and wherever they prefer. · Potentially less stigmatizing. | · Some people may feel they are being offered an inferior service. · Monitoring can be difficult. · People may not use the intervention as intended. · Dropout may be higher and harder to identify. · Written self-help materials may be inaccessible to people who cannot read or write. · Access to digital self-help interventions can be uneven across populations. |"
+    },
+    {
+      "chunk": 59,
+      "source_chunk": 59,
+      "split_part": 0,
+      "page_start": 37,
+      "page_end": 37,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Human resource intensity of different psychological interventions.",
+      "token_count": 180,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Human resource intensity of different psychological interventions.\n<!-- image -->\nHuman resource intensity of intervention required before choosing a format. If one format is too costly for the setting, consider using a lower resource intensity format.\nScale up and impact. Some formats are easier to scale than others and there can be a trade off with effectiveness. For example, unguided self-help likely has a smaller benefit. But it can have far greater reach and is easier to implement compared with guided self-help, which is more resource intensive.\nStill, the potential reach and effectiveness of an intervention are not always related. For example, CBT as guided self-help delivered online has the potential to reach many people (see Box 2.4 Step-by-Step in Lebanon). It has consistently been shown to be as effective as face-to-face CBT (25)."
+    },
+    {
+      "chunk": 60,
+      "source_chunk": 60,
+      "split_part": 0,
+      "page_start": 38,
+      "page_end": 39,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Step-by-Step in Lebanon",
+      "token_count": 249,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Step-by-Step in Lebanon\nStep-by-Step is a WHO psychological intervention for depression. It uses a digital guided self-help format to train people in behavioural activation and other therapeutic techniques such as stress management and positive self-talk.\nIn 2020, amid concurring economic, humanitarian and political crises and the COVID-19 pandemic in Lebanon, a culturally adapted version of Step-by-Step using a guided self-help format was tested with Lebanese citizens and displaced Syrians through two large randomized controlled trials.\nSources: Cuijpers et al, 2022 (26), Cuijpers et al, 2022 (27).\nThe trials showed that the intervention was effective in reducing symptoms of depression and improving functioning and well-being, including at three-month follow-up. The trials also showed it could be delivered safely, with procedures developed to ensure support to people in high-risk situations (e.g. imminent risk of suicide). Step-by-Step has subsequently been scaled up as a national service in Lebanon and is available to anyone in the country. People who completed the programme said it was relevant, acceptable and beneficial.\n<!-- image -->\nAdaptation"
+    },
+    {
+      "chunk": 63,
+      "source_chunk": 63,
+      "split_part": 0,
+      "page_start": 40,
+      "page_end": 41,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Relevant",
+      "token_count": 171,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Relevant\nThe meaning of the concept conveyed does not change.\nAll materials and terminology of the intervention package are understood by users.\nThe intervention is received with approval and acceptance, meaning that it respects the local context, and is something that people will use.\nThe intervention is applicable to the local environment and context.\n<!-- image -->\nLocal community members provide essential insight into whether materials are understandable, acceptable and relevant. Involving local community members in the adaptation process will also increase their engagement with the service.\nAdaptations will be most helpful when diverse members of communities are engaged, including not only people with lived experience but also potentially community workers, mental health professionals, traditional healers and future providers of the adapted intervention.\nIt is important to include representatives from marginalized groups and minority groups for whom equitable access to effective mental health supports is vital."
+    },
+    {
+      "chunk": 65,
+      "source_chunk": 65,
+      "split_part": 0,
+      "page_start": 42,
+      "page_end": 42,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "FIG. 3.2 Examples of cultural adaptation to PM+.",
+      "token_count": 23,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "FIG. 3.2 Examples of cultural adaptation to PM+.\n<!-- image -->"
+    },
+    {
+      "chunk": 70,
+      "source_chunk": 70,
+      "split_part": 0,
+      "page_start": 44,
+      "page_end": 45,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "3.2 Adapt psychological interventions",
+      "token_count": 403,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "3.2 Adapt psychological interventions\nAdaptation comprises eight components that can be categorized as essential or optional, depending on context and resource availability (see Fig. 3.3 and sections 3.2.1 to 3.2.6) (28).\nThese components are not set in stone: both the components themselves and the order in which they are carried out can be modified. In some cases, there may be reason to exclude a component altogether. For example, if stakeholders already understand the language that the intervention package comes in, you do not need to translate materials. Similarly, you can substitute a literature review or rapid qualitative assessment with a wide variety of stakeholder interviews, particularly in areas where the context is already well understood. In some cases, you may choose to repeat components, for example doing multiple rounds of adaptation and re-evaluation with stakeholders for complex media (see Box 3.1. Adapting self-help interventions) or when indicated after pilot testing.\nUltimately, the time and effort given to adaptation will affect the impact and uptake of the intervention so even in low-resource settings, you should aim to do all components.\nDocumenting changes is a cross-cutting component that should be done continuously, throughout the adaptation process. You can use an existing adaptation monitoring form to document changes (see Annex 3 for an example) or you can create a new one. Either way, as a minimum, the form should, for each adaptation, record information on:\n- which part of the intervention is being adapted (e.g. an exercise, illustration, text of storybook or training materials);\n- what the problem with the source content is (e.g. an example is not understood) and how this problem was identified (e.g. user-testing);\n- what the recommended adaptation is (e.g. change an example or term to something that is locally familiar); and\nFIG. 3.3 Multiple components of adaptation.\n\n<!-- image -->"
+    },
+    {
+      "chunk": 78,
+      "source_chunk": 78,
+      "split_part": 0,
+      "page_start": 48,
+      "page_end": 49,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Examples of correct and incorrect adaptations to psychological interventions.",
+      "token_count": 347,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Examples of correct and incorrect adaptations to psychological interventions.\n| COMPONENT TO BE ADAPTED | CORRECT ADAPTATION | INCORRECT ADAPTATION |\n| - | - | - |\n| Slow breathing (for stress management) | Replace the breathing exercise with another effective relaxation exercise such as progressive muscle relaxation or mindfulness meditation. | Replace the breathing exercise with an exercise that has not proven to have an equivalent relaxing effect such as watching television, listening to music, drinking alcohol, smoking etc. |\n| Behavioural activation | Change any metaphors used to explain behavioural activation to be more relevant. | Delete explanation of why behavioural activation works. Change the protocol to only include pleasant or task-oriented activities (protocols should include both). |\n| Problem solving | Change how problem-solving is explained or break problem-solving steps down to make them easier to understand. | Delete or skip problem-solving steps from the protocol. Change the strategy to be used for unsolvable problems. |\n| Seeking social support | Choose locally relevant examples of seeking social support. Add an illustration to show different types of social support. | Leave out guidance about seeking different types of social support. |\n| Case examples | Change the names and activities in case examples to be more relevant in the local context. | Change the case examples in such a way that it is no longer clear how the intervention had an impact. Limit case examples to members of the majority social group. |\n| Illustrations | Show local people in local clothing, homes and community settings. | Delete all illustrations. |\n| Suicide risk management | List locally available referral options for people at imminent risk of suicide. | Remove any suicide risk assessment because it is considered culturally insensitive. |\n4\nWorkforce"
+    },
+    {
+      "chunk": 81,
+      "source_chunk": 81,
+      "split_part": 0,
+      "page_start": 50,
+      "page_end": 51,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "4.1.1 Choosing providers",
+      "token_count": 184,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "4.1.1 Choosing providers\nProviders need to be motivated, compassionate and have various other attitudes, skills and experience to help them excel in their role (see Table 4.1). Some attitudes are harder to change through training than others so it can be useful to evaluate these during the selection process. One way of doing that is to present candidates with case studies and role plays during their interview and observe their reactions and suggested responses.\nProviders need a range of foundational) helping skills (also known as basic helping skills) as well as technique-specific skills to deliver the psychological intervention. It is not essential for people to have prior experience as a provider, as helping skills are teachable (see section 4.2.1 Competency-based training). Nonetheless, it is preferable to choose people with demonstrated foundational helping skills.\n<!-- image -->\nENGAGEMENT\nTABLE 4.1"
+    },
+    {
+      "chunk": 82,
+      "source_chunk": 82,
+      "split_part": 0,
+      "page_start": 51,
+      "page_end": 51,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "AREA OF EXPERTISE EXAMPLES",
+      "token_count": 449,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "AREA OF EXPERTISE EXAMPLES\n| Attitudes and personal characteristics | · Motivation to help others. · Sense of compassion. · Being non-judgemental, especially towards vulnerable individuals. a · Being trustworthy and reliable. · Being mature, insightful, and self-motivated. · Being currently emotionally stable (note that a history of lived experience of a mental health condition can be an asset). |\n| - | - |\n| Knowledge and skills | · Education requirements (e.g. completion of a specified number of years of schooling). · Foundational helping skills. · Organizational skills. · Knowledge of the local context. · Relevant language skills for training and service provision. · Group leadership and facilitation skills (only for group interventions). |\n| Experience | · No history of perpetrating violence, exploitation or abuse. · Previous experience in providing psychological interventions or other psychosocial support. · Previous experience with, current links to, and standing in, the local community. · Previous experience in working with adolescents and children (for interventions with adolescents and children). |\na Including anyone who may be vulnerable or marginalized because of their: ethnicity or nationality, gender, mental health conditions, substance use, exposure to sexual violence or intimate partner violence, child abuse, poverty, disability, sexual orientation or gender identity, legal status (e.g. refugee status), political affiliation, or history of having perpetrated violence or crime, among other things.\nA broad range of community providers (e.g. community workers, volunteers, people with lived experience of mental health conditions, and university graduates in psychology without clinical training) can be trained and supervised to effectively provide psychological interventions (2). These providers may vary substantially by setting. They are often more acceptable and approachable to service users because they tend to share or have deeper knowledge of local attitudes, customs and languages.\nCommunity providers are well-placed to reach out and discuss mental health and psychological interventions with fellow community members. They can help inform and involve community members in planning the psychological interventions (see Chapter 2). Community providers can help identify people with mental health conditions, provide them with care, and connect them to relevant services and resources in the community."
+    },
+    {
+      "chunk": 89,
+      "source_chunk": 89,
+      "split_part": 0,
+      "page_start": 54,
+      "page_end": 55,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "4.2.2 Training model and structure",
+      "token_count": 307,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "4.2.2 Training model and structure\nTraining of non-specialist providers can be given in many ways.\n- Pre-service education (also known as pre-qualification training): training in psychological interventions is integrated into the teaching curricula of formal education programmes for future professionals.\n- In-service training: individuals who are already in the workforce are trained to provide psychological interventions.\n- Apprenticeship training: apprentice providers and supervisors are given some initial training in psychological interventions, followed by on-the-job support to apply and expand their knowledge and skills through supervision, coaching and mutual problem solving (39). This can happen both in pre-service and in in-service settings.\n- Training of trainers: expert trainers (often referred to as master trainers) teach the psychological intervention to a group of locally-based future trainers, who then train providers in either pre-service or in-service settings (see Fig. 4.1).\nThe training of trainers model (also called a cascade model training) is popular for training non-specialist providers in LMICs. It is ideally led by expert trainers who know the interventions very well, have implemented the intervention themselves and have experience in training psychological interventions. In low-resource settings, this model has also been applied to supervision, where an expert supervisor is appointed to supervise a group of local supervisors who in turn supervise individual providers.\nFIG. 4.1 Components of the training of trainers model (which can also be applied to supervision)\n\n<!-- image -->"
+    },
+    {
+      "chunk": 92,
+      "source_chunk": 92,
+      "split_part": 0,
+      "page_start": 56,
+      "page_end": 57,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "4.3.1 Components of supervision",
+      "token_count": 423,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "4.3.1 Components of supervision\nSupervision builds providers' confidence and competence in delivering the intervention. It helps ensure providers adhere to the psychological intervention and provides technical support for, and ethical oversight of, challenging clinical cases. Supervision also serves to protect and promote providers' well-being by providing emotional support and encouragement (but it should never be a replacement for mental health care). Non-specialists with little to no experience in mental health care may find it particularly stressful to deal with the distressing topics raised.\nKey activities undertaken during supervision include (see Fig. 4.2):\n- Intervention support, for example working together to solve problems in providing the intervention. This type of support may also include discussing specific cases to aid decision-making, especially on how to address issues such as imminent risk of harm and when to refer to a mental health specialist service or other support.\n- Skills development, for example through teaching, coaching and support for independent learning so that providers can grow and develop their competencies and improve service delivery. Enabling opportunities for development can also boost job satisfaction and improve staff retention.\n- Quality assurance, specifically by evaluating how the intervention is provided and assessing competence (see section 4.3.3. Assure quality of service provision).\n- Ethical practice, which potentially spans a wide range of issues, including limits to confidentiality, and not requesting or accepting personal favours.\n- Emotional support, for example supporting providers to recognize and manage their own reactions and stressors and, where necessary, referring them to external services and supports.\nFIG. 4.2 Key components of supportive supervision.\n\n<!-- image -->\nThe overall aim of supervision should be to support rather than police providers. It should offer a safe, confidential and collaborative space where providers can openly discuss their difficulties and be recognized for their successes; and where they can work with their supervisors to share experiences, solve problems and improve performance (40). It should provide a neutral and non-judgemental space where providers can learn to recognize and challenge any bias, stigma or prejudice relevant to their work (40)."
+    },
+    {
+      "chunk": 95,
+      "source_chunk": 95,
+      "split_part": 0,
+      "page_start": 58,
+      "page_end": 58,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Examples of different formats for delivering supervision.",
+      "token_count": 434,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Examples of different formats for delivering supervision.\n| FORMAT | KEY CHARACTERISTICS |\n| - | - |\n| Individual supervision | One-to-one meeting between supervisor and provider. · Activities are tailored to the individual and may include discussing specific tools, techniques and issues about the intervention as well as role-play, case presentation, progress review, skill development activities, reflection and self-care. · Particularly useful for helping new providers to consolidate their skills and to support them with difficult cases. |\n| Group supervision | A supervisor meets two or more providers at once. · Activities vary depending on the group composition but, like individual supervision, may include discussions about specific concerns, role-play, case presentation, skill development activities and self-care. · Particularly useful to foster group learning and peer support. · Can be less personal and more challenging to manage in terms of confidentiality and power dynamics. |\n| Direct observation | A supervisor directly observes a provider deliver the intervention and gives constructive feedback on what worked well and what could be improved. · Can be used alongside individual and group formats. · Supervisors will observe the provider's attitudes as well as their technical implementation of the intervention. · Particularly useful for ensuring intervention fidelity, and for supporting new trainees as they begin to see service users. · Requires consent from providers and service users. |\nSource: Adapted from IFRC 2021 (40).\nDecisions about which format to use should be based on local context, resources and need. For example, some first-time providers may benefit from group sessions where they can share experiences with peers, receive encouragement from the group and gain confidence in the process. On the other hand, some first-time providers may be better served through individual sessions where they have more time to review their own cases and discuss specific issues.\nIf resources are limited it may be most costeffective for supervisors to meet multiple providers at once in a group session over the internet. Additional opportunities for communication (e.g. through messaging platforms) outside of organized meetings can also be helpful to providers; these should have processes in place to ensure confidentiality (e.g. not using identifying information)."
+    },
+    {
+      "chunk": 97,
+      "source_chunk": 97,
+      "split_part": 0,
+      "page_start": 59,
+      "page_end": 61,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "4.3.4 Points to consider",
+      "token_count": 402,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "4.3.4 Points to consider\nRoles and responsibilities. Managing expectations is particularly important when trying to establish supportive supervision. Develop clear job descriptions for both supervisors and providers that ensure sufficient and protected time for supervision. It may be useful to establish a supervision agreement with information on roles, responsibilities, boundaries, limits to confidentiality, and availability outside supervision sessions.\nLocation. In-person supervision is preferable but not always possible. It should be provided in a quiet, private space at a convenient location for both supervisor and provider, using a standard structure for each supervision session. See Annex 2 for additional points to consider if training or supervision is being done remotely.\nFrequency. Supervision sessions should take place regularly. Typically, this means every one or two weeks, depending on context and need. Some intervention packages include recommendations on frequency and duration of supervision. In general, the supervision needs of psychological intervention providers will decline with experience. But all providers may at times require extra support when there is a particularly challenging or complex case. So, for example, you may need to develop protocols for contacting supervisors when a service user appears at imminent risk of harm (see Chapter 5).\nTools. Think about what tools and materials supervisors and providers may need to support their work. For example, consent forms are required for any direct observation recordings (video or audio), which are commonly used in pre-service training. These recordings can themselves be a valuable tool for reflective learning if watched together during supervision. Supervision forms can help provide a framework for providing consistent feedback and monitoring progress (see Annex 4 for an example supervision form).\nAdditional support. Consider what additional support providers may need beyond supportive supervision, especially to resolve administrative problems in implementing the psychological intervention. Such support may include, for example: helping to file records; sorting out transportation issues; nurturing a positive team dynamic; addressing interpersonal issues; or fixing any logistical problems with delivering an intervention.\n<!-- image -->\nIdentification, assessment and delivery\n5"
+    },
+    {
+      "chunk": 110,
+      "source_chunk": 110,
+      "split_part": 0,
+      "page_start": 67,
+      "page_end": 68,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "5.3 Refer people to the right source of support",
+      "token_count": 411,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "5.3 Refer people to the right source of support\nAnyone identified as a potential beneficiary needs to be directed, through referral, to the right source of support, which may or may not be a psychological intervention (see Fig. 5.1).\nReferrals can happen at any point of contact with the individual and may involve multiple services alongside the psychological intervention.\nFIG. 5.1 Linking people to the care they need through referrals.\n\n<!-- image -->\nSometimes the assessor should refer the person to another service that is more suited to their needs. This should happen when the person does not meet the inclusion criteria for a psychological intervention, meets the exclusion criteria for the intervention, or requires extra support alongside the intervention.\nBeing able to direct people to the care they need relies on having the right referral options in place. Links to a wide range of multisectoral services should be available because people being assessed for (or receiving) psychological interventions can have complex and varied needs. Some may be at imminent risk of suicide or harm through intimate partner violence or abuse. Others may be struggling to meet basic needs for food and shelter. Some people may have mental health needs that can't be met by the psychological intervention alone. Others may benefit from the intervention but need additional help to access education or find a job. Some people may need medicines to manage a chronic health condition, such as diabetes or cardiovascular disease. Others may need legal support to address human rights issues. Referrals can happen at any point of contact with the individual. As with assessment, informed consent is required for any referrals.\nEstablishing or strengthening referral pathways is an essential component of integrating psychological interventions in existing services. In practice, referral pathways are limited by which services are available in the local setting (see 2.5 Identify associated services). Examples of useful tools include accessible up-to-date lists of contact details for referral services, as well as referral protocols and forms (50)."
+    },
+    {
+      "chunk": 112,
+      "source_chunk": 112,
+      "split_part": 0,
+      "page_start": 69,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Typical follow up options for people who finish or drop out of a psychological",
+      "token_count": 47,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Typical follow up options for people who finish or drop out of a psychological\nFIG. 5.2 intervention.\n\n<!-- image -->\n<!-- image -->\n<!-- image -->"
+    },
+    {
+      "chunk": 113,
+      "source_chunk": 113,
+      "split_part": 0,
+      "page_start": 72,
+      "page_end": 72,
+      "content_type": "figure",
+      "content_subtype": "callout",
+      "heading_path": "KEY MESSAGES",
+      "token_count": 437,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "KEY MESSAGES\n- SUse a mix of output, outcome and goal indicators to monitor and evaluate the effectiveness, acceptability, feasibility and fidelity of psychological interventions.\n- SCollect data continually (monitoring) and at certain points (evaluation) to inform improvements to the service integrating\nThe terms \"monitoring\" and \"evaluation\" are often used together (M&amp;E) but they refer to separate yet related activities. Monitoring involves continuously and systematically collecting and analysing data to assess the service's progress over time and identify challenges or areas for improvement. Evaluation involves periodically assessing specific information at specific times to determine the extent to which a service has met its objectives (51).\nThis chapter focuses on the use of M&amp;E when implementing psychological interventions outside of research studies. 6\n<!-- image -->\n\n6 Various frameworks can be used to monitor and evaluate programmes, depending on how the programme is designed and what the goals and intended outcomes are. This chapter mainly draws on the IASC Common Monitoring and Evaluation Framework for MHPSS (51) in humanitarian settings as this is an inter-agency, consensus-based framework that is also relevant for development settings.\n- psychological interventions and to prevent harm.\n- SInvolve all stakeholders, including from the local community, in monitoring and evaluation activities.\n- SUse means of verification (MoV) that are both appropriate and feasible to collect monitoring and evaluation data.\nIncluding robust M&amp;E systems and processes in services implementing psychological interventions is important to:\n- ensure the intervention is not causing any harm;\n- establish whether the psychological intervention is addressing the target population's mental health needs; and\n- inform adaptations and quality improvement strategies for the current service and future services implementing psychological interventions.\nLocal communities can and should be engaged at all stages of M&amp;E: as planners, data collectors and partners for improvement.\nRegular community or service user consultations can be used to monitor and evaluate the general feasibility and acceptability of the psychological intervention. Such consultations can also be useful forums for sharing M&amp;E results on the impact of implementing psychological interventions and plans for future development."
+    },
+    {
+      "chunk": 116,
+      "source_chunk": 116,
+      "split_part": 0,
+      "page_start": 73,
+      "page_end": 73,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "The three phases of M&E for implementing psychological interventions.",
+      "token_count": 22,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "The three phases of M&E for implementing psychological interventions.\n<!-- image -->"
+    },
+    {
+      "chunk": 118,
+      "source_chunk": 118,
+      "split_part": 0,
+      "page_start": 74,
+      "page_end": 75,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "in services.",
+      "token_count": 414,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "in services.\n<!-- image -->\nSource: based on IASC, 2021 (51).\nGoal indicators reflect the goals of offering psychological interventions to people across a defined population in a clinic, programme or geographical area. These goals often focus on reduced suffering and improved mental health and psychosocial well-being, and they are often referred to as impact indicators. Goal indicators (measured before and after the intervention is made available) potentially include:\n- average reduction in distress/mental health symptoms of one (or more) mental health conditions across service users;\n- number and percentage of service users reporting a clinically meaningful response (e.g. at least 50% decrease in symptoms) or remission (e.g. scoring below cut off);\n- number and percentage of service users with a specific mental health condition reporting reduced symptoms;\n- presence or absence of a mental health condition among service users;\n- reduced prevalence of the mental health condition across service users;\n- average improvement in functioning across service users;\n- number and percentage of service users whose functioning improved;\n- average improvement in subjective well-being across service users;\n- number and percentage of service users whose subjective well-being improved; and\n- number and percentage of service users who improved on personally-defined problems.\nFor each indicator listed in the M&amp;E plan, the tools and/or data sources required to measure the indicator (i.e. the means of verification) should be identified (see Table 6.1). The plan should also indicate when these measures are to be used (i.e. the timing of monitoring and evaluation activities) to encourage timely M&amp;E that is done as part of implementing integrated psychological interventions; and who will use them.\nMeans of verification are wide ranging. They can be for individuals, groups or whole populations. And they may be quantitative (e.g. health records, measures of clinical outcomes) or qualitative (e.g. interviews, open surveys and focus group discussions) (51)."
+    },
+    {
+      "chunk": 120,
+      "source_chunk": 120,
+      "split_part": 0,
+      "page_start": 76,
+      "page_end": 76,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Example means of verification for indicators.",
+      "token_count": 339,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Example means of verification for indicators.\n| EXAMPLE INDICATOR | EXAMPLE INDICATOR | EXAMPLE MEANS OF VERIFICATION |\n| - | - | - |\n| Output | Number of supervision sessions per provider | · Weekly supervision records |\n| Output | Percentage of providers that score competent on a competency measure | · ENACT (EQUIP) (37) |\n| Outcome | Number of people who receive the intervention | · Service use records from information systems |\n| Outcome | Percentage and number of facilities with staff trained on psychological interventions | · Facility records |\n| Outcome | Number of people that have completed intervention | · Facility records |\n| Outcome | Level of satisfaction of people regarding the intervention they have received | · Patient satisfaction questionnaire |\n| Goal | Improved subjective well-being | · WHO Well-being index (WHO-5) (52) · Service user interviews (including focus groups) |\n| Goal | Improved functioning | · WHO Disability Assessment Schedule 2.0 (WHODAS-12) (53) |\n| Goal | Decreases in personally defined problems | · Psychological Outcome Profiles (PSYCHLOPS) (54) |\n| Goal | Decreased symptoms of depression | · Patient Health Questionnaire (PHQ-9) (55) |\n| Goal | Number of people with a mental health condition (eg depressive disorder) | · Score above the validated threshold for likely mental disorder on a symptom measure (eg. the PHQ-9 for depressive disorder) |\n| Goal | Number of individuals with depression reporting reduced symptoms | · Health-care facility records · Patient records with relevant questionnaires · Patient Health Questionnaire (PHQ-9) (55) |"
+    },
+    {
+      "chunk": 126,
+      "source_chunk": 126,
+      "split_part": 0,
+      "page_start": 79,
+      "page_end": 79,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "improvement.",
+      "token_count": 293,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "improvement.\n| EXAMPLE FINDING | EXAMPLE RECOMMENDATION |\n| - | - |\n| High dropout rates mean too many people are not completing their treatment. | · Investigate why people are not coming back for sessions and address root causes. |\n| Attendance records show a gender disparity in people receiving treatment. | · Investigate root causes, including through community engagement. · Adapt the intervention to be more relevant and acceptable to the excluded group. |\n| Service user feedback forms show people find the sessions too long. | · Shorten the length of individual sessions without losing the key components of the intervention. · Adjust session scheduling to provide shorter but more frequent sessions. |\n| Measures of clinical outcomes do not show a decrease in symptoms of anxiety. | · Add extra sessions to the intervention that repeat previously covered coping strategies for anxiety. |\n| Service user interviews show people are feeling isolated or socially disconnected. | · Add optional group sessions to the intervention to create opportunities for peer support and social connections. · Establish links and referral pathways to social initiatives that service users can be directed to for additional support. |\n| Fidelity and competency checks show that providers don't follow and are not competent in the treatment protocol. | · Offer refreshment training and regular supervision sessions to improve competency and fidelity to the treatment protocol. · Use EQUIP (see section 4.2.1 Competency-based training) as part of supervision to improve providers competence. |"
+    },
+    {
+      "chunk": 146,
+      "source_chunk": 146,
+      "split_part": 0,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Develop an implementation plan",
+      "token_count": 185,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Develop an implementation plan\n- [ ] ☐ Appoint a multistakeholder implementation team with clear roles and responsibilities.\n- [ ] ☐ Identify local mental health needs and capacities.\n- [ ] ☐ Specify target mental health conditions and populations, and expected outcomes.\n- [ ] ☐ Choose evidence-based psychological interventions.\n- [ ] ☐ Decide setting for delivery, ideally within an existing community-based service.\n- [ ] ☐ Organize the system for delivery, e.g. collaborative or stepped care.\n- [ ] ☐ Identify and coordinate all associated services and referral options for care across sectors.\n- [ ] ☐ Identify human resource needs and specify groups of workers to deliver, train and supervise psychological interventions in practice.\n- [ ] ☐ Choose format for delivery, e.g. individual, group or self-help, delivered in person or remotely.\n- [ ] ☐ Establish a budget and secure resources for all implementation activities."
+    },
+    {
+      "chunk": 147,
+      "source_chunk": 147,
+      "split_part": 0,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Adapt the intervention materials",
+      "token_count": 84,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Adapt the intervention materials\n- [ ] ☐ Set parameters of adaptation.\n- [ ] ☐ Review the literature.\n- [ ] ☐ Do a rapid qualitative assessment.\n- [ ] ☐ Translate the intervention and do an expert read-through.\n- [ ] ☐ Review materials with stakeholders.\n- [ ] ☐ Agree on adaptations.\n- [ ] ☐ Re-evaluate, test in training and pilot the adapted intervention."
+    },
+    {
+      "chunk": 148,
+      "source_chunk": 148,
+      "split_part": 0,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Prepare the workforce",
+      "token_count": 160,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Prepare the workforce\n- [ ] ☐ Specify criteria and process for selecting providers, supervisors and trainers.\n- [ ] ☐ Appoint providers, supervisors and trainers.\n- [ ] ☐ Choose a model for training providers (and if needs be supervisors), e.g. training of trainers.\n- [ ] ☐ Define how the training will be structured and how the impact of training will be measured.\n- [ ] ☐ Train the workforce using a competency-based approach.\n- [ ] ☐ Clarify supervisors and providers' roles and responsibilities for supportive supervision.\n- [ ] ☐ Define the structure, frequency and format of supervision sessions.\n- [ ] ☐ Prepare tools and materials for supportive supervision, e.g. supervision forms.\n- [ ] ☐ Secure human resources to give providers administrative and other additional support."
+    },
+    {
+      "chunk": 149,
+      "source_chunk": 149,
+      "split_part": 0,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Deploy the intervention",
+      "token_count": 83,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Deploy the intervention\n- [ ] ☐ Specify roles and responsibilities for case detection and assessment.\n- [ ] ☐ Select screening and assessment measures to use when identifying potential beneficiaries.\n- [ ] ☐ Develop tools to refer people to the right source of support, e.g. referral protocols and contact lists.\n- [ ] ☐ Establish a protocol for follow up after drop out or when treatment ends."
+    },
+    {
+      "chunk": 150,
+      "source_chunk": 150,
+      "split_part": 0,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Monitor and evaluate",
+      "token_count": 71,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Monitor and evaluate\n- [ ] ☐ Make an M&amp;E plan.\n- [ ] ☐ Identify output, outcome and goal impact indicators and measures.\n- [ ] ☐ Collect and analyse data.\n- [ ] ☐ Produce an M&amp;E report with recommendations for improvement.\n- [ ] ☐ Integrate findings using a collaborative process."
+    },
+    {
+      "chunk": 154,
+      "source_chunk": 153,
+      "split_part": 1,
+      "page_start": 87,
+      "page_end": 88,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Points to consider for remote delivery",
+      "token_count": 4,
+      "warnings": [
+        "very_short_chunk_review_context"
+      ],
+      "text": "to:"
+    },
+    {
+      "chunk": 158,
+      "source_chunk": 157,
+      "split_part": 0,
+      "page_start": 90,
+      "page_end": 91,
+      "content_type": "table",
+      "content_subtype": "form",
+      "heading_path": "Annex 3. Example adaptation monitoring form",
+      "token_count": 280,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure",
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Annex 3. Example adaptation monitoring form\nThis is an example of a monitoring form that can be used when adapting interventions. The actual content of the form will vary depending on the intervention and type of adaptation. This form can be adapted to include other aspects such as adaptations to the delivery model.\n| STAGE OF ADAPTATION | TEXT OR ILLUSTRATION CODE | PROBLEM WITH SOURCE CONTENT | PROPOSED CHANGE | JUSTIFICATION FOR CHANGING ORIGINAL CONTENT | NOTES | CHANGE AGREED | DOCS UPDATED |\n| - | - | - | - | - | - | - | - |\n| ☐ Literature review and qualitative assessment ☐ Translation and expert read-through ☐ Review with stakeholders ☐ Evaluation during provider training ☐ Pilot testing | | | | ☐ Not accurate ☐ Not understandable ☐ Not acceptable ☐ Not relevant ☐ Other | | ☐ Yes ☐ No | ☐ Done |\n| ☐ Literature review and qualitative assessment ☐ Translation and expert read-through ☐ Review with stakeholders ☐ Evaluation during provider training ☐ Pilot testing | | | | ☐ Not accurate ☐ Not understandable ☐ Not acceptable ☐ Not relevant ☐ Other | | ☐ Yes ☐ No | ☐ Done |\n| ☐ Literature review and qualitative assessment ☐ Translation and expert read-through ☐ Review with stakeholders ☐ Evaluation during provider training ☐ Pilot testing | | | | ☐ Not accurate ☐ Not understandable ☐ Not acceptable ☐ Not relevant ☐ Other | | ☐ Yes ☐ No | ☐ Done |"
+    },
+    {
+      "chunk": 163,
+      "source_chunk": 162,
+      "split_part": 0,
+      "page_start": 93,
+      "page_end": 93,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Annex 5. Example measures for screening and assessment",
+      "token_count": 233,
+      "warnings": [
+        "table_not_serialized_as_recognizable_markdown_review_structure"
+      ],
+      "text": "Annex 5. Example measures for screening and assessment\n| EXAMPLE FINDING | EXAMPLE RECOMMENDATION |\n| - | - |\n| 6-11 years | Child Psychosocial Distress Screener (CPDS) |\n| 6-11 years | Strengths and Difficulties Questionnaire (SDQ) |\n| 6-11 years | Revised Child Anxiety and Depression Scale-25 (RCADS-25) |\n| 12-17 years | Child Psychosocial Distress Screener (CPDS) |\n| 12-17 years | Strengths and Difficulties Questionnaire (SDQ) |\n| 12-17 years | Alcohol Use Disorders Identification Test (AUDIT) |\n| 12-17 years | Revised Child Anxiety and Depression Scale-25 (RCADS-25) |\n| 18 + years | Alcohol, Smoking and Substance Involvement Screening Test (ASSIST) |\n| 18 + years | Patient Health Questionnaire (PHQ-9) |\n| 18 + years | Generalized Anxiety Disorder (GAD-7) |\n| 18 + years | PTSD Checklist for the DSM-5 (PCL-5) |\n| 18 + years | Psychological Outcome Profiles (PSYCHLOPS) |"
+    },
+    {
+      "chunk": 166,
+      "source_chunk": 165,
+      "split_part": 0,
+      "page_start": 94,
+      "page_end": 95,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Guidance for asking about suicide or self-harm",
+      "token_count": 346,
+      "warnings": [
+        "form_like_content_review_fields_and_checkbox_relationships"
+      ],
+      "text": "Guidance for asking about suicide or self-harm\nAsk direct, clear questions:\n- When asking questions about suicide, avoid using less direct words that could be misunderstood.\n- Direct questions help the person feel that they are not being judged for having thoughts or plans of suicide or for having made suicide attempts or self-harmed in the past.\n- Some people may feel uncomfortable talking with you about suicide, but you can tell them that it is very important for you to clearly understand their level of safety.\n- Asking questions about suicide will not cause the person to take action to end their life, but often helps them feel understood and less distressed.\n1 In the past month, have you had serious thoughts of ending your life, or a plan to end your life? Or have you taken any actions to end your life in the past year?\n- [ ] ☐ YES\n- [ ] ☐ NO\nIf yes, ask the person to describe their thoughts, plans or actions taken. Write details here:\nIf the person answers \"no\" to Question 1, thank them for answering your questions and you can end the assessment.\nIf the person answers \"yes\" to Question 1, please continue with Question 2.\n2 Are you currently thinking of ending your life, do you have a plan of ending your life, or are you currently taking any steps to end your life?\n- [ ] ☐ YES\n- [ ] ☐ NO\n- [ ] ☐ UNSURE\nIf \"yes\" or the person is \"unsure\", ask the person to describe their thoughts, plan, or actions to you. Write details here:\nIf the person answers \"yes\" or \"unsure\" to Question 2, they may end their life in the near future. Follow the steps below."
+    },
+    {
+      "chunk": 168,
+      "source_chunk": 167,
+      "split_part": 0,
+      "page_start": 95,
+      "page_end": 96,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Steps to immediately take if the person may end their life in the near future:",
+      "token_count": 308,
+      "warnings": [
+        "figure_chunk_has_no_extracted_caption_or_text_description"
+      ],
+      "text": "Steps to immediately take if the person may end their life in the near future:\n- You must always contact your supervisor immediately. Explain this to the participant. For example: From what you have described to me, I am concerned about your safety. As I mentioned before, if I believe that you are at risk of ending your life, I must contact my supervisor. This is very important, so we can get you the best kind of help for these problems as soon as possible. I am going to do this now, okay?\n- Stay with the person at all times, or have another facilitator stay with the person.\n- Contact someone the person trusts. For example, you could say: I would also like to contact someone in your community to ensure that you can be kept safe. Who would that be?\n- Create a secure and supportive environment. If possible, offer a quiet space while waiting for a supervisor or trusted person to arrive.\n- Ask the person if they have access to any means of self-harm. Discuss ways to remove these items from their home environment.\n- Attend to the person's mental state and emotional distress.\n- Explore reasons and ways to stay alive.\n- Focus on the person's strengths by encouraging them to talk about how earlier problems have been resolved.\nDepartment of Mental Health and Substance Use World Health Organization 20 Avenue Appia 1211 Geneva 27, Switzerland https://www.who.int/health-topics/mental-health\n<!-- image -->"
+    }
+  ],
+  "review_notes": [
+    "A Transformers sequence-length warning during HybridChunker table measurement can be a false alarm; final stored chunk token counts below are authoritative.",
+    "Markdown table serialization preserves visible row/column relationships better than triplet serialization for tables without row headers.",
+    "Markdown cannot fully represent merged-cell spans; inspect complex merged headers and forms in the source PDF.",
+    "Pages with predominantly rotated text are normalized in a temporary PDF copy before Docling extraction; the source PDF is never modified.",
+    "Docling's reading order is retained; multi-column pages and callout title/body association still need representative visual review.",
+    "Pages without chunks are reported individually; a blank or image-only page is not automatically an extraction failure."
+  ],
+  "sample_chunks": [
+    {
+      "chunk": 0,
+      "page_start": 1,
+      "page_end": 1,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Unspecified",
+      "token_count": 10,
+      "text": "<!-- image -->"
+    },
+    {
+      "chunk": 2,
+      "page_start": 4,
+      "page_end": 4,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "© World Health Organization 2024",
+      "token_count": 405,
+      "text": "© World Health Organization 2024\nSome rights reserved. This work is available under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 IGO licence (CC BY-NC-SA 3.0 IGO; https://creativecommons.org/licenses/by-nc-sa/3.0/igo).\nUnder the terms of this licence, you may copy, redistribute and adapt the work for non-commercial purposes, provided the work is appropriately cited, as indicated below. In any use of this work, there should be no suggestion that WHO endorses any specific organization, products or services. The use of the WHO logo is not permitted. If you adapt the work, then you must license your work under the same or equivalent Creative Commons licence. If you create a translation of this work, you should add the following disclaimer along with the suggested citation: \"This translation was not created by the World Health Organization (WHO). WHO is not responsible for the content or accuracy of this translation. The original English edition shall be the binding and authentic edition\".\nAny mediation relating to disputes arising under the licence shall be conducted in accordance with the mediation rules of the World Intellectual Property Organization (http://www.wipo.int/ amc/en/mediation/rules/).\nSuggested citation. Psychological interventions implementation manual: integrating evidence-based psychological interventions into existing services. Geneva: World Health Organization; 2024. Licence: CC BY-NC-SA 3.0 IGO.\nCataloguing-in-Publication (CIP) data. CIP data are available at https://iris.who.int/.\nSales, rights and licensing. To purchase WHO publications, see https://www.who.int/ publications/book-orders. To submit requests for commercial use and queries on rights and licensing, see https://www.who.int/copyright."
+    },
+    {
+      "chunk": 11,
+      "page_start": 10,
+      "page_end": 11,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "External contributors and reviewers (affiliations at time of contribution or review)",
+      "token_count": 4,
+      "text": "York,"
+    },
+    {
+      "chunk": 14,
+      "page_start": 12,
+      "page_end": 13,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Abbreviations",
+      "token_count": 190,
+      "text": "Abbreviations\n| CBT | cognitive behavioural therapy |\n| - | - |\n| CETA | Common Elements Treatment Approach |\n| CIDT | Community Informant Detection Tool |\n| CST | Caregivers Skills Training |\n| EASE | Early Adolescent Skills for Emotions |\n| EQUIP | Ensuring Quality in Psychological Support |\n| IASC | Inter-Agency Standing Committee |\n| IPT | interpersonal therapy |\n| LMICs | low- and middle-income countries |\n| M&E | monitoring and evaluation |\n| mhGAP | WHO's Mental Health Gap Action Programme |\n| MHPSS | mental health and psychosocial support |\n| PM+ | Problem Management Plus |\n| PTSD | post-traumatic stress disorder |\n| SH+ | Self-Help Plus |\n| UNHCR | United Nations High Commissioner for Refugees |\n| UNICEF | United Nations Children's Fund |\n| WHO | World Health Organization |\n1\nIntroduction"
+    },
+    {
+      "chunk": 15,
+      "page_start": 14,
+      "page_end": 14,
+      "content_type": "list",
+      "content_subtype": "callout",
+      "heading_path": "KEY MESSAGES",
+      "token_count": 66,
+      "text": "KEY MESSAGES\n- SEvidence-based psychological interventions to treat mental health conditions can help address the mental health care gap that exists in all countries.\n- SMany manualized psychological interventions have good evidence for effectiveness in different settings and with different target populations, including in low- and middle-income countries (LMICs)."
+    },
+    {
+      "chunk": 22,
+      "page_start": 17,
+      "page_end": 17,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Adaptation",
+      "token_count": 30,
+      "text": "Adaptation\n→△\n<!-- image -->\nAdapt the psychological interventions for use in a specific context, including translating them into local languages."
+    },
+    {
+      "chunk": 34,
+      "page_start": 24,
+      "page_end": 25,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Summary of WHO recommendations for psychological treatments.",
+      "token_count": 385,
+      "text": "Summary of WHO recommendations for psychological treatments.\n| PSYCHOLOGICAL TREATMENT a | RECOMMENDED FOR |\n| - | - |\n| Behavioural activation | · Adults with depression · People with dementia with depression |\n| Behavioural intervention | · Children and adolescents with behavioural disorders, including conduct disorder |\n| Brief interventions for hazardous and harmful substance use b | · Adults using cannabis · Adults using psychostimulants · People with hazardous or harmful alcohol use |\n| Brief psychodynamic therapy | · Adults with depression |\n| Caregivers skills training | · Caregivers of children and adolescents with behavioural, emotional or developmental disorders |\n| Cognitive behavioural therapy (CBT) | · Adults and children with epilepsy (adjunct to antiseizure medicine) · Adults, children and adolescents with PTSD · Adults with acute traumatic stress symptoms · Adults with bipolar disorder in remission (adjunct to pharmacological interventions) · Adults with bodily distress complaints c · Adults with depression · Adults with generalized anxiety disorder · Adults with panic disorder · Adults with psychotic disorders (including schizophrenia) in the acute and maintenance phase · Children and adolescents with ADHD · Children and adolescents with autism and anxiety · Children and adolescents with emotional symptoms/disorders · Children and adolescents with somatoform disorder · Children whose parents have mental health conditions · People with alcohol and drug use disorders · People with dementia · People with dementia with depression |\n| Cognitive stimulation therapy | · People with suicidal thoughts · People with dementia |\n| Cognitive training | · People with dementia |\n| Contingency management therapy | · People with alcohol and drug use disorder |\n| Eye movement desensitization and reprocessing (EMDR) | · Adults, children and adolescents with PTSD |\n| Interpersonal therapy / interpersonal psychotherapy | · Adults with depression · People with dementia with depression · Children and adolescents with emotional disorders |\nPSYCHOLOGICAL TREATMENT a RECOMMENDED FOR"
+    },
+    {
+      "chunk": 45,
+      "page_start": 31,
+      "page_end": 31,
+      "content_type": "list",
+      "content_subtype": null,
+      "heading_path": "2.3.1 Points to consider",
+      "token_count": 313,
+      "text": "2.3.1 Points to consider\nAccessibility. The target population should be able to access the intervention easily and affordably. For each potential delivery setting, consider:\n- how far the proposed location is from the target population;\n- whether or not people already go to that location;\n- the extent to which there is stigma attached to the location; and\n- what other barriers may prevent people from wanting or being able to get there.\nTalk to local communities to gain insight to people's likely attitudes and behaviour; people are less likely to attend a setting that they believe stigmatizes them.\nExisting services. Before choosing a setting for delivery consider the quality and sustainability of existing services. This includes the potential capacity of staff (in terms of skills and workloads) to deliver or supervise psychological interventions. Potential settings can also be assessed on the strength of their links to associated services and on the extent to which other relevant benefits or supports (such as health care, economic support, nutrition programmes or social activities) are provided there.\nSafety and security. Consider whether the setting for delivery is safe and secure for both service users and providers. The setting for delivery should have:\n- a private space for confidential conversations;\n- appropriate on-site physical security measures for staff and service users; and\n- adequate data security for any private information, including service user files.\nIf you are implementing a digital intervention, consider any additional requirements such as data protection and operating procedures to ensure safety (16).\nRemote delivery. See Annex 2 for additional points to consider for remote delivery."
+    },
+    {
+      "chunk": 56,
+      "page_start": 36,
+      "page_end": 36,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Potential advantages and drawbacks of example delivery formats available for psychological interventions.",
+      "token_count": 288,
+      "text": "Potential advantages and drawbacks of example delivery formats available for psychological interventions.\n| INTERVENTION TYPE | ADVANTAGES | DRAWBACKS |\n| - | - | - |\n| 1. Individual interventions A single service provider delivers the intervention to a single service user. | · More opportunity to build a supportive therapeutic relationship. · Easier to respond to the person's individual situation or needs. · Easier to ensure confidentiality. · Likely more acceptable to people who find it difficult to share their problems with community members. | · Reaches fewer people at a time. · Relatively resource intensive. · Less opportunity to build relationships with or learn from peers with similar lived experiences. · Individual interventions may not be consistent with cultural coping norms. |\n| 2. Group interventions One or two facilitators deliver the intervention to multiple service users at once. | · Reaches multiple people at a time. · Group members can support and learn from each other and feel validated in their feelings and experiences. · People can build supportive peer relationships that may endure even after the intervention is completed. | · Can take longer to set up and difficult to organize outside local communities (because multiple people must get to the same place at the same time). · Confidentiality is harder to ensure. · Some people can find it hard to listen to other people's problems. · Not necessarily acceptable or suitable to all service users. · Dropouts can cause disruption to the group. |"
+    },
+    {
+      "chunk": 67,
+      "page_start": 43,
+      "page_end": 43,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "3.1.2 Set parameters for adaptation",
+      "token_count": 187,
+      "text": "3.1.2 Set parameters for adaptation\nSetting parameters for adaptation is about identifying which parts of the intervention package will be adapted. Key questions follow.\nWho is going to use the materials? Different materials in the intervention package are designed for use by different groups of people, such as trainers, supervisors or service users. A nuanced approach based on likely user groups is important in multilingual settings.\nHow will the materials be used? Different parts of the intervention package will be used in different ways, which impacts whether and how they should be adapted. Written text and audio recordings are likely to require translating into local languages.\nHow will the materials be delivered? If the intervention will be delivered in a different format to the original, then the materials in the intervention package likely need adapting. For example, a change from in-person to remote delivery will mean the intervention manual and handouts for service users may need to change."
+    },
+    {
+      "chunk": 78,
+      "page_start": 48,
+      "page_end": 49,
+      "content_type": "table",
+      "content_subtype": null,
+      "heading_path": "Examples of correct and incorrect adaptations to psychological interventions.",
+      "token_count": 347,
+      "text": "Examples of correct and incorrect adaptations to psychological interventions.\n| COMPONENT TO BE ADAPTED | CORRECT ADAPTATION | INCORRECT ADAPTATION |\n| - | - | - |\n| Slow breathing (for stress management) | Replace the breathing exercise with another effective relaxation exercise such as progressive muscle relaxation or mindfulness meditation. | Replace the breathing exercise with an exercise that has not proven to have an equivalent relaxing effect such as watching television, listening to music, drinking alcohol, smoking etc. |\n| Behavioural activation | Change any metaphors used to explain behavioural activation to be more relevant. | Delete explanation of why behavioural activation works. Change the protocol to only include pleasant or task-oriented activities (protocols should include both). |\n| Problem solving | Change how problem-solving is explained or break problem-solving steps down to make them easier to understand. | Delete or skip problem-solving steps from the protocol. Change the strategy to be used for unsolvable problems. |\n| Seeking social support | Choose locally relevant examples of seeking social support. Add an illustration to show different types of social support. | Leave out guidance about seeking different types of social support. |\n| Case examples | Change the names and activities in case examples to be more relevant in the local context. | Change the case examples in such a way that it is no longer clear how the intervention had an impact. Limit case examples to members of the majority social group. |\n| Illustrations | Show local people in local clothing, homes and community settings. | Delete all illustrations. |\n| Suicide risk management | List locally available referral options for people at imminent risk of suicide. | Remove any suicide risk assessment because it is considered culturally insensitive. |\n4\nWorkforce"
+    },
+    {
+      "chunk": 90,
+      "page_start": 55,
+      "page_end": 55,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "4.2.2 Training model and structure",
+      "token_count": 348,
+      "text": "4.2.2 Training model and structure\nEach model of training should use a range of training techniques, such as instruction, demonstration, discussion and reflection. Practising the intervention through role-play, both in the classroom and out of it, is particularly important to build providers confidence and competence. The classroom training will need to include being trained in the intervention protocol, but also information about mental health problems, foundational helping skills, and the rationale for each of the strategies used in the intervention. After classroom training, providers need in-field training in the form of practice cases. Supervised practice strengthens helpers' knowledge of and skills in an intervention and is essential to build the necessary confidence. Trained providers should receive ongoing support through supervision and their performance should be regularly monitored and evaluated (see sections 4.3 Supervise providers).\nWhichever model of training is used, consideration will need to be given to how the training is structured and resourced; and how the impact of training will be measured.\nMost psychological intervention packages include example timetables for training, based on what has proven effective in research studies. These may need to be modified for the setting or to match different levels of existing knowledge and skills. Following up with periodic refresher training can be useful, especially when informed by competency assessments that can identify gaps in knowledge and competence.\nWhere and when the training takes place can impact whether trainees are able to attend. Questions to think about include: will the training be done face-to-face or remotely? Is the training location easy and affordable to get to? Will trainees need to take time out of work to attend? Does the location have the space and infrastructure necessary to complete all components of training?"
+    },
+    {
+      "chunk": 101,
+      "page_start": 63,
+      "page_end": 63,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "5.1.1 Case detection",
+      "token_count": 103,
+      "text": "5.1.1 Case detection\nSelective screening. In this method, groups of people that are at higher risk of experiencing mental health conditions are systematically screened. Examples of this approach include: screening women for depression when they receive antenatal care or if they attend a women's shelter; screening people for depression and anxiety if they have a chronic medical condition, such as HIV or diabetes (see Box 5.3 Selective screening in South Africa); or screening people for depression if they recently lost employment."
+    },
+    {
+      "chunk": 112,
+      "page_start": 69,
+      "page_end": 71,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Typical follow up options for people who finish or drop out of a psychological",
+      "token_count": 47,
+      "text": "Typical follow up options for people who finish or drop out of a psychological\nFIG. 5.2 intervention.\n\n<!-- image -->\n<!-- image -->\n<!-- image -->"
+    },
+    {
+      "chunk": 123,
+      "page_start": 77,
+      "page_end": 77,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "6.2.1 Points to consider",
+      "token_count": 75,
+      "text": "6.2.1 Points to consider\nEthical considerations. When collecting and using M&amp;E data on psychological interventions - much of which involves personal information - be considerate of ethical issues and address any concerns, especially around proper use of data, confidentiality and informed consent. Set up secure systems for storing and managing personal data if they do not exist already."
+    },
+    {
+      "chunk": 134,
+      "page_start": 81,
+      "page_end": 81,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "References",
+      "token_count": 408,
+      "text": "References\n35 Mills J-A, Middleton JW, Schafer A, Fitzpatrick S, Short S, Cieza A. Proposing a re-conceptualisation of competency framework terminology for health: a scoping review. Hum Resour Health. 2020;18(1):15. doi:10.1186/s12960-019-0443-8.\n36 Global competency framework for universal health coverage. Geneva: World Health Organization; 2022 (https:// www.who.int/publications/i/item/9789240034686)\n37 EQUIP: Ensuring Quality in Psychological Support [website]. Geneva: Ensuring Quality in Psychological Support; 2022 (https://equipcompetency.org/en-gb).\n38 Jordans MJD, Steen F, Koppenol-Gonzalez GV, El Masri R, Coetzee AR, Chamate S, et al. Evaluation of competency-driven training for facilitators delivering a psychological intervention for children in Lebanon: a proof-of-concept study. Epidemiol Psychiatr Sci. 2022;31:e48. doi:10.1017/S2045796022000348.\n39 Murray LK, Dorsey S, Bolton P, Jordans MJD, Rahman A, Bass J et al. Building capacity in mental health interventions in low resource countries: an apprenticeship model for training local providers. Int J Ment Health Syst. 2011;5:30. doi:10.1186/1752-4458-5-30.\n40 1. Getting started. In: Integrated model for supervision handbook. Copenhagen: International Committee of the Red Cross and Red Crescent Societies Reference Centre for Psychosocial Support; 2021 (https://pscentre.org/?resource=integ rated-model-for-supervision, accessed 20 September 2022)."
+    },
+    {
+      "chunk": 146,
+      "page_start": 86,
+      "page_end": 86,
+      "content_type": "form",
+      "content_subtype": null,
+      "heading_path": "Develop an implementation plan",
+      "token_count": 185,
+      "text": "Develop an implementation plan\n- [ ] ☐ Appoint a multistakeholder implementation team with clear roles and responsibilities.\n- [ ] ☐ Identify local mental health needs and capacities.\n- [ ] ☐ Specify target mental health conditions and populations, and expected outcomes.\n- [ ] ☐ Choose evidence-based psychological interventions.\n- [ ] ☐ Decide setting for delivery, ideally within an existing community-based service.\n- [ ] ☐ Organize the system for delivery, e.g. collaborative or stepped care.\n- [ ] ☐ Identify and coordinate all associated services and referral options for care across sectors.\n- [ ] ☐ Identify human resource needs and specify groups of workers to deliver, train and supervise psychological interventions in practice.\n- [ ] ☐ Choose format for delivery, e.g. individual, group or self-help, delivered in person or remotely.\n- [ ] ☐ Establish a budget and secure resources for all implementation activities."
+    },
+    {
+      "chunk": 157,
+      "page_start": 89,
+      "page_end": 89,
+      "content_type": "text",
+      "content_subtype": null,
+      "heading_path": "Points to consider for remote training and supervision",
+      "token_count": 78,
+      "text": "Points to consider for remote training and supervision\n\"Screen fatigue\". It is important to mitigate risk of screen fatigue. This can be done by including frequent breaks, alternating learning activities and focusing on practical exercises rather than didactic lectures.\nExpectations. In remote training it is essential to set clear expectations about time investment required and often time spent in virtual trainings are perceived as flexible."
+    },
+    {
+      "chunk": 168,
+      "page_start": 95,
+      "page_end": 96,
+      "content_type": "figure",
+      "content_subtype": null,
+      "heading_path": "Steps to immediately take if the person may end their life in the near future:",
+      "token_count": 308,
+      "text": "Steps to immediately take if the person may end their life in the near future:\n- You must always contact your supervisor immediately. Explain this to the participant. For example: From what you have described to me, I am concerned about your safety. As I mentioned before, if I believe that you are at risk of ending your life, I must contact my supervisor. This is very important, so we can get you the best kind of help for these problems as soon as possible. I am going to do this now, okay?\n- Stay with the person at all times, or have another facilitator stay with the person.\n- Contact someone the person trusts. For example, you could say: I would also like to contact someone in your community to ensure that you can be kept safe. Who would that be?\n- Create a secure and supportive environment. If possible, offer a quiet space while waiting for a supervisor or trusted person to arrive.\n- Ask the person if they have access to any means of self-harm. Discuss ways to remove these items from their home environment.\n- Attend to the person's mental state and emotional distress.\n- Explore reasons and ways to stay alive.\n- Focus on the person's strengths by encouraging them to talk about how earlier problems have been resolved.\nDepartment of Mental Health and Substance Use World Health Organization 20 Avenue Appia 1211 Geneva 27, Switzerland https://www.who.int/health-topics/mental-health\n<!-- image -->"
+    }
+  ]
+}
