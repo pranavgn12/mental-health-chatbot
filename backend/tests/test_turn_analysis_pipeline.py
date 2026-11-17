@@ -79,16 +79,30 @@ class TurnAnalyzerTests(unittest.TestCase):
             self.analyzer._validate_reflection("  ", "CONTINUE")
         )
 
-    def test_prompt_includes_generalized_resolution_guidance_and_episode_title(self):
+
+    def test_turn_analyzer_prompt_explains_generalised_resolution(self):
         prompt = self.analyzer.build_prompt(
-            self.active_episode,
-            "I won't procrastinate anymore.",
-            conversation=[],
+            self.active_episode, "I won't keep putting things off.", conversation=[]
         )
-        self.assertIn("Title: Exam Anxiety", prompt)
-        self.assertIn("decisive first-person", prompt)
-        self.assertIn("Procrastination", prompt)
-        self.assertIn("tentative intention", prompt)
+        self.assertIn("ACTIVE EPISODE", prompt)
+        self.assertIn("decisive commitment", prompt)
+        self.assertIn("semantic", prompt.lower())
+
+    def test_llm_close_decision_is_not_overridden_by_phrase_rules(self):
+        response = (
+            '{"episode":{"action":"CLOSE","title":null,'
+            '"reason":"The user states a decisive change.","confidence":0.93},'
+            '"mood":{"label":null,"confidence":0.0,"evidence":""},'
+            '"reflection":null}'
+        )
+        with __import__("unittest").mock.patch(
+            "services.ai.turn_analyzer.generate_response", return_value=response
+        ) as llm:
+            result = self.analyzer.analyze(
+                self.active_episode, "I won't keep putting things off.", conversation=[]
+            )
+        self.assertEqual(result["episode"]["action"], "CLOSE")
+        llm.assert_called_once()
 
     def test_full_turn_analysis_uses_one_llm_request(self):
         response = (

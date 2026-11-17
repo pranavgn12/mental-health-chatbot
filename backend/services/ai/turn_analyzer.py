@@ -2,10 +2,8 @@
 
 import json
 import logging
-import re
 
 from services.llm_provider import generate_response
-from services.ai.episode_detector import EpisodeDetector
 from services.ai.mood_detector import MOOD_LABELS, MIN_CONFIDENCE
 from services.ai.prompts.turn_analyzer_prompt import PROMPT
 
@@ -18,9 +16,6 @@ MAX_REFLECTION_ENTRIES = 5
 
 class TurnAnalyzer:
     """Produce episode, mood, and optional reflection decisions in one call."""
-
-    def __init__(self, episode_detector=None):
-        self.episode_detector = episode_detector or EpisodeDetector()
 
     def analyze(
         self,
@@ -57,20 +52,6 @@ class TurnAnalyzer:
             payload.get("reflection") if isinstance(payload, dict) else None,
             episode_decision["action"],
         )
-
-        # Preserve the pre-existing deterministic explicit-resolution safeguard.
-        if active_episode is not None and self.episode_detector.is_explicit_resolution(
-            active_episode, latest_message
-        ):
-            episode_decision = {
-                "action": "CLOSE",
-                "title": None,
-                "reason": (
-                    "The user explicitly stated that the active issue no longer affects them."
-                ),
-                "confidence": 0.96,
-                "detection_method": "explicit_resolution_rule",
-            }
 
         return {
             "episode": episode_decision,

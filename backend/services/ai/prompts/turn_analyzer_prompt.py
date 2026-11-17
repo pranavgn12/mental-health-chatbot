@@ -35,31 +35,50 @@ Choose exactly one action:
 - CONTINUE: The active issue is still affecting the user, remains unresolved, or the message is an update about it.
 - CLOSE: The user indicates that the active issue has been resolved, no longer affects them, or they have moved past it.
 
+RESOLUTION AND BEHAVIOUR-CHANGE INTERPRETATION
+------------------------------------------------
+Make the episode decision by understanding the meaning of the latest user
+message in relation to the ACTIVE EPISODE title, summary, and recent dialogue.
+Do not rely on fixed keywords or require the user to repeat the episode title.
+Recognise natural paraphrases, indirect references, and topic-specific ways of
+expressing improvement or resolution.
+
+A user can communicate resolution in several ways, including:
+- They explicitly say the issue no longer affects them.
+- They say they have overcome, moved past, or addressed the issue.
+- They say they have stopped the behaviour that defines the active issue.
+- They make a clear, decisive commitment not to continue that behaviour.
+- They describe a meaningful change that makes the original concern no longer
+  an active problem for them.
+
+Interpret these statements relative to the active episode, whatever its topic.
+For example, if the active episode is about procrastination, understand that
+"I won't keep putting things off" may refer to that episode even though the
+word "procrastination" is absent. Apply the same semantic reasoning to other
+issues, such as avoidance, confidence, sleep habits, communication, anxiety,
+or relationship difficulties. These are examples, not a closed vocabulary.
+
+Distinguish decisive change from tentative intention:
+- "I won't procrastinate anymore" can indicate a firm resolution: CLOSE.
+- "I've stopped putting things off and I'm keeping up with my work": CLOSE.
+- "I'll try to procrastinate less" is tentative: normally CONTINUE.
+- "Maybe I can change" or "I hope it gets better": CONTINUE.
+- "I feel a little better today" is only a positive update: normally CONTINUE.
+
+Do not close an episode just because the user discusses an unrelated topic,
+expresses a positive mood, agrees with a suggestion, or describes a plan that
+does not clearly resolve the active concern. If the user introduces a different
+concern while the active issue remains unresolved, keep the active episode
+CONTINUE; do not silently replace it.
+
 Constraints:
 1. If an episode is active, choose only CONTINUE or CLOSE. Never CREATE a second active episode.
 2. If no episode is active, choose only CREATE or NONE.
-3. Do not close merely because the user changes topic or gives a positive update.
-4. Use the user's own words, not the assistant's reassurance, to decide closure.
-5. Uncertainty such as "maybe" or "not sure" favours CONTINUE.
-6. A clear statement that the active issue no longer affects the user is sufficient to CLOSE.
-7. Interpret resolution relative to the active episode title AND summary. The title is the
-   topic anchor; use the summary and recent user context to understand what the title means.
-8. A decisive first-person statement that the user has stopped, overcome, or will no longer
-   engage in the behaviour defining the active issue can count as resolution, even when the
-   user does not literally say "the issue is resolved". Examples:
-   - Active issue: Procrastination. "I won't procrastinate anymore." -> CLOSE.
-   - Active issue: Procrastination. "I have stopped putting things off." -> CLOSE.
-   - Active issue: Fear of public speaking. "I'm comfortable speaking in front of people now." -> CLOSE.
-   - Active issue: Sleep problems. "I've fixed my sleeping schedule." -> CLOSE.
-9. Distinguish decisive change from tentative intention. "I'll try to procrastinate less",
-   "I hope I can change", or "maybe I'll stop" normally means CONTINUE. A firm commitment
-   such as "I won't do this anymore" may mean CLOSE when the context clearly links "this"
-   to the active issue. Do not require proof that the change has lasted over time.
-10. Do not close for a temporary improvement, an unrelated positive statement, or a topic
-    change. If the user describes the same issue recurring, choose CONTINUE even if they
-    express an intention to change it.
-11. For CREATE, provide a concise 2–5 word title. Otherwise title must be null.
-12. Keep the reason brief and grounded in the conversation.
+3. Base closure on semantic understanding of the active episode and user's own words, not keyword matching or assistant reassurance.
+4. A decisive commitment can count as the user's stated resolution; do not claim that the real-world behaviour has been independently verified.
+5. Uncertainty, tentative intentions, or ambiguous references favour CONTINUE.
+6. For CREATE, provide a concise 2–5 word title. Otherwise title must be null.
+7. Keep the reason brief and grounded in the conversation.
 
 MOOD RULES
 ----------

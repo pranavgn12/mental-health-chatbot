@@ -23,35 +23,39 @@ CONTINUE: The active issue is still affecting the user, is unresolved, or the me
 CLOSE: The user indicates that the active issue has been resolved, no longer affects them, or they have moved past it.
 NONE: No episode is active and the message does not introduce a meaningful personal issue.
 
-IMPORTANT CLOSURE RULES
------------------------
-1. Do not require the user to say the issue is permanently or completely resolved.
-2. A clear statement that the issue no longer affects them is sufficient to CLOSE.
-3. Interpret resolution relative to the active episode title AND summary. The title is the
-   topic anchor; use the summary and recent conversation to understand the tracked issue.
-4. A decisive first-person statement that the user has stopped, overcome, or will no longer
-   engage in the behaviour defining the active issue can count as resolution. The user does
-   not have to use the words "resolved" or "overcome".
-   Examples:
-   - Active issue: Procrastination. "I won't procrastinate anymore." -> CLOSE.
-   - Active issue: Procrastination. "I have stopped putting things off." -> CLOSE.
-   - Active issue: Poor sleep habits. "I've fixed my sleeping schedule." -> CLOSE.
-   - Active issue: Social anxiety. "I'm comfortable talking to people now." -> CLOSE.
-5. Distinguish decisive change from tentative intention. "I'll try", "I hope", "maybe", or
-   "I might" normally means CONTINUE. A firm commitment such as "I won't do this anymore"
-   can mean CLOSE when the context clearly links "this" to the active issue.
-6. Treat these as clear resolution examples when they refer to the active issue:
-   - "I am no longer afraid of exams."
-   - "I don't fear exams anymore."
-   - "I'm not anxious about placements now."
-   - "I have overcome my fear of public speaking."
-   - "That issue doesn't bother me anymore."
-   - "I feel confident about exams now."
-7. Do not confuse a positive update with resolution. "I feel a little better" or "today was good" normally means CONTINUE unless the user says the issue is no longer affecting them.
-8. Do not close based only on the assistant's reassurance. Use the user's own statement.
-9. If the user expresses uncertainty ("maybe", "not sure", "I think perhaps"), prefer CONTINUE.
-10. If the user introduces a different concern while the current one remains unresolved, do not close the current episode merely because the topic changed.
-11. When the active issue is clearly resolved, choose CLOSE on this turn. Do not wait for another confirmation.
+RESOLUTION AND BEHAVIOUR-CHANGE INTERPRETATION
+---------------------------------------------
+Use semantic reasoning based on the active episode title, summary, recent
+conversation, and latest user message. Do not depend on a fixed list of
+keywords, exact phrases, or the user repeating the episode title.
+
+Recognise resolution expressed as:
+- The issue no longer affects the user.
+- The user has overcome, moved past, or addressed the issue.
+- The user has stopped the behaviour that defines the issue.
+- The user makes a clear, decisive commitment not to continue that behaviour.
+- The user describes a meaningful change that makes the original concern no
+  longer an active problem.
+
+Interpret paraphrases in relation to the active episode. For example, when the
+active episode is about procrastination, "I won't keep putting things off"
+may indicate resolution even without the word "procrastination". Apply the
+same reasoning to any topic; examples are illustrative, not exhaustive.
+
+Distinguish firm commitments from tentative intentions:
+- "I won't procrastinate anymore" may be CLOSE.
+- "I've stopped putting things off" may be CLOSE.
+- "I'll try to procrastinate less" normally means CONTINUE.
+- "Maybe I'll change" or "I hope it gets better" means CONTINUE.
+- "I feel a little better today" normally means CONTINUE.
+
+Do not close merely because the user changes topic, has a good day, agrees
+with advice, or mentions an unrelated improvement. Use the user's own words,
+not the assistant's reassurance. If a different concern appears while the
+active issue remains unresolved, keep the active episode open.
+
+The LLM must make this semantic judgement. Do not substitute keyword rules
+or deterministic phrase matching for the model's interpretation.
 
 GENERAL RULES
 -------------

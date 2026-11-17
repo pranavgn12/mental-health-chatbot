@@ -85,55 +85,41 @@ class EpisodeDetectionTests(unittest.TestCase):
             episode_id="EP_TEST123", title="Exam Anxiety", status="ACTIVE", summary=None,
         )
 
-    def test_explicit_resolution_closes_immediately(self):
+    @patch("services.ai.episode_detector.generate_response")
+    def test_llm_decides_explicit_resolution(self, llm):
+        llm.return_value = json.dumps({
+            "action": "CLOSE", "title": None,
+            "reason": "The user decisively says the fear is no longer present.",
+            "confidence": 0.94,
+        })
         result = self.detector.detect(self.episode, "I don't fear exams anymore.")
-        self.assertEqual(result["action"], "CLOSE")
-        self.assertEqual(result["detection_method"], "explicit_resolution_rule")
-
-    def test_procrastination_commitment_closes_matching_episode(self):
-        episode = SimpleNamespace(
-            episode_id="EP_PROCRASTINATION", title="Procrastination",
-            status="ACTIVE", summary="Repeatedly delaying important work.",
-        )
-        result = self.detector.detect(episode, "I won't procrastinate anymore.")
-        self.assertEqual(result["action"], "CLOSE")
-        self.assertEqual(result["detection_method"], "explicit_resolution_rule")
-
-    def test_behavior_change_without_title_word_is_reviewed_by_llm(self):
-        episode = SimpleNamespace(
-            episode_id="EP_PROCRASTINATION", title="Procrastination",
-            status="ACTIVE", summary="Repeatedly delaying important work.",
-        )
-        with patch("services.ai.episode_detector.generate_response") as llm:
-            llm.return_value = json.dumps({
-                "action": "CLOSE", "title": None,
-                "reason": "User says they stopped putting work off.", "confidence": 0.9,
-            })
-            result = self.detector.detect(episode, "I have stopped putting things off.")
         self.assertEqual(result["action"], "CLOSE")
         llm.assert_called_once()
 
-    def test_tentative_behavior_change_does_not_force_close(self):
+    @patch("services.ai.episode_detector.generate_response")
+    def test_llm_is_consulted_for_paraphrased_resolution_without_keywords(self, llm):
+        llm.return_value = json.dumps({
+            "action": "CLOSE", "title": None,
+            "reason": "Putting things off refers to the active procrastination issue.",
+            "confidence": 0.91,
+        })
         episode = SimpleNamespace(
-            episode_id="EP_PROCRASTINATION", title="Procrastination",
-            status="ACTIVE", summary="Repeatedly delaying important work.",
+            episode_id="EP_TEST456", title="Procrastination", status="ACTIVE",
+            summary="The user repeatedly delays starting academic work.",
         )
-        self.assertFalse(
-            self.detector.is_explicit_resolution(
-                episode, "Maybe I won't procrastinate anymore."
-            )
-        )
+        result = self.detector.detect(episode, "I won't keep putting things off.")
+        self.assertEqual(result["action"], "CLOSE")
+        llm.assert_called_once()
 
-    def test_unrelated_behavior_change_does_not_close_episode(self):
-        episode = SimpleNamespace(
-            episode_id="EP_EXAM", title="Exam Anxiety",
-            status="ACTIVE", summary="Fear and anxiety around exams.",
-        )
-        self.assertFalse(
-            self.detector.is_explicit_resolution(
-                episode, "I won't procrastinate anymore."
-            )
-        )
+    @patch("services.ai.episode_detector.generate_response")
+    def test_llm_is_consulted_even_without_resolution_keywords(self, llm):
+        llm.return_value = json.dumps({
+            "action": "CONTINUE", "title": None,
+            "reason": "The issue remains unresolved.", "confidence": 0.9,
+        })
+        result = self.detector.detect(self.episode, "I had another difficult day.")
+        self.assertEqual(result["action"], "CONTINUE")
+        llm.assert_called_once()
 
     @patch("services.ai.episode_detector.generate_response")
     def test_mild_improvement_does_not_force_close(self, llm):
@@ -148,26 +134,16 @@ class EpisodeDetectionTests(unittest.TestCase):
         llm.assert_called_once()
 
     @patch("services.ai.episode_detector.generate_response")
-    def test_uncertain_resolution_does_not_force_close(self, llm):
+    def test_uncertain_resolution_is_left_to_llm(self, llm):
         llm.return_value = json.dumps({
             "action": "CONTINUE", "title": None,
-            "reason": "User is unsure", "confidence": 0.9,
+            "reason": "The user is unsure.", "confidence": 0.9,
         })
         result = self.detector.detect(
             self.episode, "I'm not sure if I'm no longer afraid of exams."
         )
         self.assertEqual(result["action"], "CONTINUE")
-
-    @patch("services.ai.episode_detector.generate_response")
-    def test_unrelated_resolution_does_not_close_active_episode(self, llm):
-        llm.return_value = json.dumps({
-            "action": "CONTINUE", "title": None,
-            "reason": "Different topic", "confidence": 0.9,
-        })
-        result = self.detector.detect(
-            self.episode, "I am no longer afraid of dogs."
-        )
-        self.assertEqual(result["action"], "CONTINUE")
+        llm.assert_called_once()
 
 
 class MoodPersistenceTests(unittest.TestCase):
