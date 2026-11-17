@@ -90,6 +90,51 @@ class EpisodeDetectionTests(unittest.TestCase):
         self.assertEqual(result["action"], "CLOSE")
         self.assertEqual(result["detection_method"], "explicit_resolution_rule")
 
+    def test_procrastination_commitment_closes_matching_episode(self):
+        episode = SimpleNamespace(
+            episode_id="EP_PROCRASTINATION", title="Procrastination",
+            status="ACTIVE", summary="Repeatedly delaying important work.",
+        )
+        result = self.detector.detect(episode, "I won't procrastinate anymore.")
+        self.assertEqual(result["action"], "CLOSE")
+        self.assertEqual(result["detection_method"], "explicit_resolution_rule")
+
+    def test_behavior_change_without_title_word_is_reviewed_by_llm(self):
+        episode = SimpleNamespace(
+            episode_id="EP_PROCRASTINATION", title="Procrastination",
+            status="ACTIVE", summary="Repeatedly delaying important work.",
+        )
+        with patch("services.ai.episode_detector.generate_response") as llm:
+            llm.return_value = json.dumps({
+                "action": "CLOSE", "title": None,
+                "reason": "User says they stopped putting work off.", "confidence": 0.9,
+            })
+            result = self.detector.detect(episode, "I have stopped putting things off.")
+        self.assertEqual(result["action"], "CLOSE")
+        llm.assert_called_once()
+
+    def test_tentative_behavior_change_does_not_force_close(self):
+        episode = SimpleNamespace(
+            episode_id="EP_PROCRASTINATION", title="Procrastination",
+            status="ACTIVE", summary="Repeatedly delaying important work.",
+        )
+        self.assertFalse(
+            self.detector.is_explicit_resolution(
+                episode, "Maybe I won't procrastinate anymore."
+            )
+        )
+
+    def test_unrelated_behavior_change_does_not_close_episode(self):
+        episode = SimpleNamespace(
+            episode_id="EP_EXAM", title="Exam Anxiety",
+            status="ACTIVE", summary="Fear and anxiety around exams.",
+        )
+        self.assertFalse(
+            self.detector.is_explicit_resolution(
+                episode, "I won't procrastinate anymore."
+            )
+        )
+
     @patch("services.ai.episode_detector.generate_response")
     def test_mild_improvement_does_not_force_close(self, llm):
         llm.return_value = json.dumps({

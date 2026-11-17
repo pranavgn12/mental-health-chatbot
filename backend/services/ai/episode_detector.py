@@ -18,18 +18,23 @@ _RESOLUTION_PATTERNS = (
     re.compile(r"\b(?:this|that|it|the problem|the issue)\b.{0,35}\b(?:is|has been|feels)\b.{0,25}\b(?:resolved|over|sorted out|behind me)\b", re.I),
     re.compile(r"\b(?:doesn't|does not|no longer)\s+bother me\b", re.I),
     re.compile(r"\b(?:i am|i'm|i feel)\s+(?:now\s+)?(?:confident|comfortable|at ease)\b.{0,50}\b(?:about|with|regarding)\b", re.I),
+    # Decisive first-person behaviour change: "I won't procrastinate anymore",
+    # "I will not put things off again", "I've stopped avoiding people".
+    re.compile(r"\b(?:i\s+)?(?:won't|will not|never)\s+(?:keep\s+)?[a-z][a-z' -]{1,65}\b(?:anymore|any more|again)\b", re.I),
+    re.compile(r"\b(?:i have|i've|i am|i'm)\s+(?:finally\s+)?(?:stopped|quit|given up|overcome|overcame)\s+[a-z][a-z' -]{1,65}", re.I),
+    re.compile(r"\b(?:i have|i've)\s+(?:fixed|changed|sorted out|dealt with)\s+(?:my|the|this|that)\s+[a-z][a-z' -]{1,55}", re.I),
 )
 _UNCERTAINTY_PREFIX = re.compile(
-    r"\b(?:maybe|perhaps|not sure|don't know|do not know|wonder if|whether)\b.{0,55}$",
+    r"\b(?:maybe|perhaps|not sure|don't know|do not know|wonder if|whether|might|may)\b",
     re.I,
 )
 
 _CLOSURE_REVIEW_CUES = re.compile(
-    r"\b(?:resolved|resolution|fixed|sorted|overcame|overcome|got over|"
+    r"\b(?:resolved|resolution|fixed|sorted|stopped|quit|given up|won't|will not|never|overcame|overcome|got over|"
     r"moved on|moving on|past it|behind me|doesn't bother|does not bother|"
     r"no longer|anymore|not anxious|not worried|not afraid|confident|"
     r"comfortable|at ease|better|improved|at peace|accepting it|"
-    r"not an issue|fine now|okay now|another thing|different topic|"
+    r"not an issue|fine now|okay now|again|another thing|different topic|"
     r"different concern|new concern|unrelated)\b",
     re.I,
 )
@@ -117,22 +122,39 @@ class EpisodeDetector:
         summary = (getattr(active_episode, "summary", "") or "").lower()
         episode_text = f"{title} {summary}"
         message_lower = message.lower()
-        topic_groups = {
-            "exam": ("exam", "exams", "test", "tests", "semester", "study", "studying"),
-            "interview": ("interview", "interviews", "placement", "job"),
-            "relationship": ("relationship", "partner", "friend", "family", "breakup"),
-            "sleep": ("sleep", "insomnia", "bedtime"),
-            "social": ("social", "people", "crowd", "speaking"),
-        }
-        matched_topic = False
-        for group, words in topic_groups.items():
-            if any(word in episode_text for word in words) and any(word in message_lower for word in words):
-                matched_topic = True
-                break
 
-        has_anaphora = bool(re.search(r"\b(it|this|that|the issue|the problem)\b", message_lower))
-        has_no_named_topic = not bool(re.search(r"\b(?:of|about|with|regarding)\s+[a-z]{3,}", message_lower))
-        return matched_topic or has_anaphora or has_no_named_topic
+        # Compare meaningful words from the active episode with the message.
+        # Prefix matching handles common forms such as procrastination/procrastinate
+        # without maintaining a topic-specific list of every possible issue.
+        stop_words = {
+            "about", "after", "again", "also", "been", "being", "does", "feel",
+            "from", "have", "into", "issue", "just", "more", "much", "over",
+            "problem", "really", "that", "the", "their", "them", "then", "there",
+            "this", "very", "with", "will", "would", "user", "because", "when",
+            "while", "your", "they", "what", "some", "such", "still", "often",
+        }
+        episode_tokens = {
+            token for token in re.findall(r"[a-z]{4,}", episode_text)
+            if token not in stop_words
+        }
+        message_tokens = {
+            token for token in re.findall(r"[a-z]{4,}", message_lower)
+            if token not in stop_words
+        }
+        matched_topic = any(
+            left == right or left.startswith(right[:4]) or right.startswith(left[:4])
+            for left in episode_tokens
+            for right in message_tokens
+            if min(len(left), len(right)) >= 4
+        )
+
+        # Pronouns are acceptable only when the message explicitly points back
+        # to the tracked concern; this supports concise replies such as "I won't
+        # do that anymore" without treating unrelated commitments as closure.
+        has_anaphora = bool(re.search(
+            r"\b(?:it|this|that|the issue|the problem|the same thing)\b", message_lower
+        ))
+        return matched_topic or has_anaphora
 
     def build_prompt(self, active_episode, latest_message, recent_messages=None):
         if active_episode is None:

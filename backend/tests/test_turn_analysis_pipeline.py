@@ -79,6 +79,17 @@ class TurnAnalyzerTests(unittest.TestCase):
             self.analyzer._validate_reflection("  ", "CONTINUE")
         )
 
+    def test_prompt_includes_generalized_resolution_guidance_and_episode_title(self):
+        prompt = self.analyzer.build_prompt(
+            self.active_episode,
+            "I won't procrastinate anymore.",
+            conversation=[],
+        )
+        self.assertIn("Title: Exam Anxiety", prompt)
+        self.assertIn("decisive first-person", prompt)
+        self.assertIn("Procrastination", prompt)
+        self.assertIn("tentative intention", prompt)
+
     def test_full_turn_analysis_uses_one_llm_request(self):
         response = (
             '{"episode":{"action":"NONE","title":null,"reason":"casual","confidence":0.9},'

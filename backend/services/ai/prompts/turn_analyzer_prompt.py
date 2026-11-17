@@ -42,8 +42,24 @@ Constraints:
 4. Use the user's own words, not the assistant's reassurance, to decide closure.
 5. Uncertainty such as "maybe" or "not sure" favours CONTINUE.
 6. A clear statement that the active issue no longer affects the user is sufficient to CLOSE.
-7. For CREATE, provide a concise 2–5 word title. Otherwise title must be null.
-8. Keep the reason brief and grounded in the conversation.
+7. Interpret resolution relative to the active episode title AND summary. The title is the
+   topic anchor; use the summary and recent user context to understand what the title means.
+8. A decisive first-person statement that the user has stopped, overcome, or will no longer
+   engage in the behaviour defining the active issue can count as resolution, even when the
+   user does not literally say "the issue is resolved". Examples:
+   - Active issue: Procrastination. "I won't procrastinate anymore." -> CLOSE.
+   - Active issue: Procrastination. "I have stopped putting things off." -> CLOSE.
+   - Active issue: Fear of public speaking. "I'm comfortable speaking in front of people now." -> CLOSE.
+   - Active issue: Sleep problems. "I've fixed my sleeping schedule." -> CLOSE.
+9. Distinguish decisive change from tentative intention. "I'll try to procrastinate less",
+   "I hope I can change", or "maybe I'll stop" normally means CONTINUE. A firm commitment
+   such as "I won't do this anymore" may mean CLOSE when the context clearly links "this"
+   to the active issue. Do not require proof that the change has lasted over time.
+10. Do not close for a temporary improvement, an unrelated positive statement, or a topic
+    change. If the user describes the same issue recurring, choose CONTINUE even if they
+    express an intention to change it.
+11. For CREATE, provide a concise 2–5 word title. Otherwise title must be null.
+12. Keep the reason brief and grounded in the conversation.
 
 MOOD RULES
 ----------
