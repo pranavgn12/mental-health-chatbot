@@ -65,20 +65,12 @@ class AIOrchestrator:
 
     @staticmethod
     def _fallback_summary(episode, transcript):
-        lines = []
-        for message in transcript:
-            role = str(message.get("role", "")).strip().capitalize()
-            content = str(message.get("content", "")).strip()
-            if role in {"User", "Assistant"} and content:
-                lines.append(f"{role}: {content}")
-        body = "\\n".join(lines)
-        if len(body) > 6000:
-            body = body[-6000:]
+        # Never save a raw transcript in the summary field. This explicit
+        # fallback prevents pattern detection from treating dialogue as summary.
         title = getattr(episode, "title", None) or "Untitled episode"
         return (
-            f"Episode: {title}\\n\\n"
-            "Conversation record (automatic fallback; not AI-summarized):\\n"
-            f"{body}"
+            f"The episode concerned {title}. "
+            "A concise summary could not be generated for this episode."
         )
 
     @staticmethod

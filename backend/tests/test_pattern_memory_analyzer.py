@@ -334,6 +334,120 @@ class PatternMemoryRedesignTests(unittest.TestCase):
         self.assertNotIn("Mood observation:", prompt)
         self.assertNotIn("Reflection:", prompt)
 
+    def test_pattern_prompt_recognises_cross_episode_cycles_and_paraphrases(self):
+        self.assertIn("connected sequence", PATTERN_PROMPT)
+        self.assertIn("putting work off", PATTERN_PROMPT)
+        self.assertIn("different wording", PATTERN_PROMPT)
+        self.assertIn("assistant suggested it", PATTERN_PROMPT)
+        self.assertIn("Academic workload and approaching exams", PATTERN_PROMPT)
+
+    def test_academic_avoidance_cycle_is_groundable_across_four_episodes(self):
+        scenario_context = {
+            "current_episode_id": "EP4",
+            "summary_by_episode": {
+                "EP1": (
+                    "The user had two assignments due next week, kept thinking about them "
+                    "without starting, and watched videos instead."
+                ),
+                "EP2": (
+                    "The user planned to study but could not get started and felt guilty "
+                    "about wasting the day."
+                ),
+                "EP3": (
+                    "The user felt anxious as exams approached and said they avoid work "
+                    "whenever they have too much to do."
+                ),
+                "EP4": (
+                    "The user postponed pending work again, wasted an evening, and said "
+                    "this happens almost every time exams approach."
+                ),
+            },
+            "episode_dates": {},
+            "existing": [],
+            "existing_by_id": {},
+        }
+        candidate = {
+            "pattern_id": None,
+            "category": "behavior",
+            "description": (
+                "Academic workload and approaching exams repeatedly coincide with "
+                "difficulty starting tasks and task avoidance or procrastination, "
+                "often accompanied by anxiety or guilt."
+            ),
+            "confidence": 0.91,
+            "evidence": [
+                {"episode_id": "EP1", "quote": "without starting, and watched videos instead"},
+                {"episode_id": "EP2", "quote": "could not get started and felt guilty about wasting the day"},
+                {"episode_id": "EP3", "quote": "anxious as exams approached and said they avoid work"},
+                {"episode_id": "EP4", "quote": "postponed pending work again"},
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": None,
+        }
+        result = self.analyzer._validate_pattern_candidate(
+            candidate,
+            scenario_context,
+            SimpleNamespace(episode_id="EP4", user_id=7),
+        )
+        self.assertEqual(result["category"], "behavior")
+        self.assertEqual(result["status"], "ACTIVE")
+        self.assertEqual(
+            {item["episode_id"] for item in result["evidence"]},
+            {"EP1", "EP2", "EP3", "EP4"},
+        )
+        self.assertIn("task avoidance", result["description"])
+
+    def test_episode_summary_prompt_preserves_pattern_signals_without_inference(self):
+        from services.ai.prompts.episode_summary_prompt import PROMPT as EPISODE_PROMPT
+
+        self.assertIn("Behaviour / response", EPISODE_PROMPT)
+        self.assertIn("Consequence / impact", EPISODE_PROMPT)
+        self.assertIn("Explicit recurrence", EPISODE_PROMPT)
+        self.assertIn("Do not turn an assistant suggestion", EPISODE_PROMPT)
+        self.assertIn("Do not merge this episode with other sessions", EPISODE_PROMPT)
+
+    def test_pattern_context_includes_episode_titles_as_context_not_evidence(self):
+        current = SimpleNamespace(
+            episode_id="EP_CURRENT", user_id=7, title="Exam Procrastination",
+            summary="The user postponed work again when exams approached.",
+            closed_at=datetime(2026, 11, 17, 12, 0, 0),
+        )
+        previous = SimpleNamespace(
+            episode_id="EP_PREVIOUS", user_id=7, title="Assignment Stress",
+            summary="The user could not start assignments and watched videos.",
+            closed_at=datetime(2026, 11, 16, 12, 0, 0),
+        )
+
+        class FakeQuery:
+            def filter(self, *args):
+                return self
+
+            def order_by(self, *args):
+                return self
+
+            def limit(self, value):
+                return self
+
+            def all(self):
+                return [previous]
+
+        class FakeDB:
+            def query(self, model):
+                return FakeQuery()
+
+        context = self.analyzer._build_pattern_context(
+            FakeDB(), 7, current, []
+        )
+        self.assertIn("Exam Procrastination", context["episode_summaries"])
+        self.assertIn("Assignment Stress", context["episode_summaries"])
+        self.assertIn("Episode title (context only)", context["episode_summaries"])
+        # Titles are not valid evidence quotes; only summary text is.
+        self.assertIsNone(
+            self.analyzer._validate_summary_quote(
+                "EP_PREVIOUS", "Assignment Stress", context
+            )
+        )
+
     def test_pattern_prompt_uses_episode_summaries_only(self):
         prompt = Template(PATTERN_PROMPT).substitute(
             episode_summaries="CURRENT EPISODE\\nEpisode ID: EP1\\nSummary: test",
