@@ -75,7 +75,7 @@ class LongTermMemory:
         self.pattern_memory_analyzer = PatternMemoryAnalyzer()
         self.profile_generator = Profile()
 
-    def update(self, db: Session, user_id, episode):
+    def update(self, db: Session, user_id, episode, update_patterns=True):
         """Update patterns first, then generate long-term memory from validated data.
 
         Pattern changes are committed separately so a later memory-generation
@@ -97,22 +97,26 @@ class LongTermMemory:
                 if record and isinstance(record.profile_themes, list) else []
             )
 
-            # Savepoint isolates pattern updates from subsequent memory failures.
-            try:
-                with db.begin_nested():
-                    validated_patterns = self.pattern_memory_analyzer.analyze_and_save(
-                        db=db, user_id=user_id, episode=episode,
+            # Pattern analysis is independently switchable from long-term memory.
+            if update_patterns:
+                # Savepoint isolates pattern updates from subsequent memory failures.
+                try:
+                    with db.begin_nested():
+                        validated_patterns = self.pattern_memory_analyzer.analyze_and_save(
+                            db=db, user_id=user_id, episode=episode,
+                        )
+                    db.commit()
+                except Exception:
+                    db.rollback()
+                    logger.exception(
+                        "Pattern update failed; continuing with existing patterns for user=%s.",
+                        user_id,
                     )
-                db.commit()
-            except Exception:
-                db.rollback()
-                logger.exception(
-                    "Pattern update failed; continuing with existing patterns for user=%s.",
-                    user_id,
-                )
-                validated_patterns = self.pattern_memory_analyzer.get_recent_patterns(
-                    db, user_id
-                )
+                    validated_patterns = self.pattern_memory_analyzer.get_recent_patterns(
+                        db, user_id
+                    )
+            else:
+                validated_patterns = []
 
             # The pattern transaction may have expired ORM instances after commit.
             record = self._load_memory_record(db, user_id, lock=True)
