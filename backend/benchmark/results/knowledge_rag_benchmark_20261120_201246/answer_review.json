@@ -1,0 +1,634 @@
+{
+  "answer_generation": {
+    "provider": "Groq API using the configured GROQ_MODEL; same model judges chunks and answers",
+    "judge_model": "openai/gpt-oss-120b",
+    "context": "Top 5 chunks returned by the existing LocalRetriever",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_similarity_mean": 0.7764874299367269,
+    "llm_judgement_counts": {
+      "correct": 37,
+      "incorrect": 1,
+      "partially_correct": 3
+    },
+    "llm_weighted_answer_score": 0.926829268292683,
+    "llm_exact_correct_rate": 0.9024390243902439,
+    "interpretation": "LLM judge grade 0-3; normalized score is grade/3. Embedding cosine similarity is a separate semantic diagnostic."
+  },
+  "reviews": {
+    "Q001": {
+      "reference_answer": "It helps maintain workforce competency.",
+      "generated_answer": "Continuous workforce training is essential because it equips providers with the knowledge, skills, and attitudes they need to deliver psychological interventions safely and effectively. Ongoing training, assessment, and supervision ensure that competencies are durable, measurable, and maintained over time, support providers’ confidence and ethical practice, and help guarantee high‑quality care.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7562345266342163,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly explains that continuous training maintains and builds competency, confidence, and quality of care, which matches the reference and is supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:18:24.056833+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:18:24.057626+00:00"
+    },
+    "Q002": {
+      "reference_answer": "Behavioural activation therapy, brief psychodynamic therapy, cognitive behavioural therapy, interpersonal therapy, problem-solving therapy and third wave therapies.",
+      "generated_answer": "The WHO recommends that adults with moderate‑to‑severe depression receive a structured psychological treatment, choosing from any of the following interventions:\n\n- Behavioural Activation Therapy (BAT)  \n- Brief Psychodynamic Therapy (DYN)  \n- Cognitive‑Behavioural Therapy (CBT)  \n- Interpersonal Therapy (IPT)  \n- Problem‑Solving Therapy (PST)  \n- Third‑wave therapies (e.g., acceptance‑and‑commitment therapy, mindfulness‑based approaches)  \n\nThese are the psychological interventions specifically recommended for this population.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7875567674636841,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly lists all recommended interventions matching the reference and is fully supported by the retrieved WHO mhGAP context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:18:41.369384+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:18:41.370085+00:00"
+    },
+    "Q003": {
+      "reference_answer": "For at least six months after remission.",
+      "generated_answer": "In adults with moderate‑to‑severe depression who have responded to initial antidepressant therapy, continuation of the medication should be considered for **at least six months after remission**.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7901461720466614,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer states the treatment should continue for at least six months after remission, matching the reference and directly supported by the retrieved WHO mhGAP context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:19:01.192258+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:19:01.192938+00:00"
+    },
+    "Q004": {
+      "reference_answer": "Brief, structured psychological interventions based on cognitive behavioural therapy principles.",
+      "generated_answer": "The WHO recommendations list the following psychological interventions for adults with generalized anxiety disorder (GAD) or panic disorder:\n\n* **Brief, structured psychological interventions based on cognitive‑behavioural therapy (CBT)** – strong recommendation.  \n* **Problem‑solving therapy** – recommended for adults with GAD and panic disorder.  \n* **Stress‑management techniques (relaxation and/or mindfulness training)** – conditional recommendation.  \n* **Third‑wave therapies (e.g., acceptance‑based or mindfulness‑based CBT)** – recommended for adults with GAD and panic disorder.  \n* **Structured physical‑exercise programmes** – conditional recommendation (very low certainty of evidence).  \n\nThese interventions may be delivered in various formats (individual or group face‑to‑face, digital/online, guided or unguided self‑help, by specialist or non‑specialist providers) depending on resources and patient preference.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7386252880096436,
+      "llm_judgement": {
+        "grade": 1,
+        "label": "partially_correct",
+        "context_supported": true,
+        "rationale": "The answer includes the correct brief CBT intervention but adds several other interventions not mentioned in the reference answer, making it only partially correct.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:19:26.825721+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:19:26.826177+00:00"
+    },
+    "Q005": {
+      "reference_answer": "Trauma-focused CBT, digital or remote CBT, EMDR and stress management.",
+      "generated_answer": "Psychological interventions that can be considered for adults with post‑traumatic stress disorder (PTSD) include:\n\n- Individual face‑to‑face cognitive‑behavioural therapy (CBT) with a trauma focus  \n- Group face‑to‑face CBT with a trauma focus  \n- Digital/remote CBT with a trauma focus  \n- Eye‑movement desensitisation and reprocessing (EMDR)  \n- Stress‑management programmes",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.8297884464263916,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer lists trauma-focused CBT (individual, group, digital), EMDR, and stress-management, matching the reference and the retrieved WHO guidance.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:19:46.980860+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:19:46.981427+00:00"
+    },
+    "Q006": {
+      "reference_answer": "Safety planning-type interventions, including multicomponent interventions or those supplemented with follow-up or support.",
+      "generated_answer": "Safety‑planning type interventions—multicomponent safety‑planning approaches (often with follow‑up or support)—can be considered for people who have thoughts or plans of self‑harm.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.886907696723938,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer matches the reference, stating safety‑planning type interventions that are multicomponent or include follow‑up/support, which is directly supported by the retrieved WHO mhGAP recommendation.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:20:09.328003+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:20:09.328446+00:00"
+    },
+    "Q007": {
+      "reference_answer": "Symptoms, duration of the disorder, and the impact on personal and social functioning.",
+      "generated_answer": "The severity of depression is judged by looking at several inter‑related elements rather than just a symptom count:\n\n* **Symptoms** – how many depressive symptoms are present and how intense or frequent they are.  \n* **Duration** – how long the depressive episode has lasted and its course.  \n* **Functional impact** – the degree of impairment or disability in personal, social and occupational functioning.\n\nIn addition, a comprehensive assessment should consider:\n\n* Past history of depression and any co‑existing mental or physical disorders.  \n* History of mood elevation (to rule out bipolar disorder).  \n* Previous treatments and responses to them.  \n* Personal strengths, resources and supportive relationships.  \n* Current interpersonal difficulties, lifestyle factors (diet, activity, sleep), and recent stressful or traumatic life events.  \n* Living conditions, substance use, debt, employment status, loneliness and social isolation.  \n\nThese factors together determine whether a case is classified as less severe (sub‑threshold/mild) or more severe (moderate/severe) depression.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7680304050445557,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer includes the three key factors (symptoms, duration, functional impact) cited in the reference and supported by the retrieved context, and adds extra relevant assessment details without contradicting the core answer.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:20:31.962385+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:20:31.963952+00:00"
+    },
+    "Q008": {
+      "reference_answer": "To identify suicidal ideation and intent and assess the risk of self-harm or suicide.",
+      "generated_answer": "Because asking directly about suicidal thoughts lets clinicians assess a person’s risk of self‑harm, arrange appropriate support, and keep the person safe.  Direct, clear questions do not plant suicidal ideas; instead they show the client that the professional is non‑judgmental, understands the seriousness of the situation, and can intervene promptly (for example by providing help, increasing contact, or referring to specialist services).  Without asking, a person with depression may remain alone with dangerous thoughts and miss the help they need.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7394291162490845,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly states that asking about suicidal thoughts allows clinicians to assess risk of self‑harm or suicide, matching the reference and supported by the retrieved guidelines.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:20:58.580074+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:20:58.581025+00:00"
+    },
+    "Q009": {
+      "reference_answer": "Previous mental health history, supportive relationships, lifestyle, stressful life events, living conditions, and social isolation.",
+      "generated_answer": "When assessing a person with possible depression, the clinician should consider a broad range of factors, not just the number of symptoms.  Key elements to include are:\n\n* **Severity, duration and course of the depressive episode** – how intense the symptoms are, how long they have been present and whether the illness is episodic or chronic.  \n* **Functional impact** – the degree of impairment or disability in daily life, work, relationships and social roles.  \n* **Past psychiatric and medical history** – previous episodes of depression, any co‑existing mental health or physical disorders, and any history of mood elevation that might suggest bipolar disorder.  \n* **Previous treatment experience** – what treatments have been tried before and how the person responded.  \n* **Personal strengths and resources** – supportive relationships, coping skills and other protective factors.  \n* **Interpersonal relationships** – current and past difficulties with family, friends or partners.  \n* **Lifestyle factors** – diet, physical activity, sleep patterns, substance use (prescribed or illicit drugs, alcohol).  \n* **Recent or past stressful/traumatic events** – such as redundancy, divorce, bereavement, trauma, or other life changes.  \n* **Living conditions and socioeconomic factors** – housing stability, debt, employment status, loneliness and social isolation.  \n\nIf the person has an acquired cognitive impairment (e.g., dementia), the assessment should also take into account the level of cognitive ability and may involve specialist input, with adjustments to the method or length of the assessment as needed.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.6711710691452026,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer lists all factors from the reference (history, relationships, lifestyle, stressors, living conditions, isolation) and adds related items that are also present in the retrieved guidelines, with no incorrect statements.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:21:29.107875+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:21:29.108451+00:00"
+    },
+    "Q010": {
+      "reference_answer": "Regular physical activity can enhance a person's sense of wellbeing, particularly when performed outdoors.",
+      "generated_answer": "Regular physical activity can improve depression by \n\n* Boosting a person’s sense of wellbeing and mood – activity (especially outdoors) has been shown to enhance wellbeing and break the cycle of inactivity that worsens low mood.  \n* Providing a structured, moderate‑intensity aerobic programme (often in a group) that can give peer support and social contact.  \n* Improving physical health without the side‑effects of medication.  \n\nThus, doing any regular activity such as walking, jogging, swimming, dancing or gardening can help lift mood, increase energy and motivation, and support overall mental health in people with depression.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.8194573521614075,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly states that regular activity boosts wellbeing (especially outdoors) and adds supported details like mood improvement, peer support, and avoiding medication side‑effects, all found in the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:21:55.206651+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:21:55.207374+00:00"
+    },
+    "Q011": {
+      "reference_answer": "It is the least intrusive and least resource-intensive treatment option.",
+      "generated_answer": "Guided self‑help is recommended as a first‑line option for most people with less severe depression because it is the **least intrusive and least resource‑intensive treatment** that still has good evidence of effectiveness and cost‑effectiveness. Offering this low‑intensity, guided approach first allows patients to receive help with minimal disruption and expense, with the option to step up to more intensive therapies if needed.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.6843976974487305,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly states that guided self-help is first-line because it is the least intrusive and least resource‑intensive option, matching the reference and being directly supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:22:25.049969+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:22:25.050154+00:00"
+    },
+    "Q012": {
+      "reference_answer": "The least intrusive, most effective intervention should be offered first.",
+      "generated_answer": "The first intervention offered in the stepped‑care model for GAD is **Step 1: identification and assessment, together with education about GAD and its treatment options and active monitoring**. This is the least intrusive, most effective starting point.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.748132586479187,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer correctly states that the first step is the least intrusive, most effective intervention (identification, assessment, education, monitoring), matching the reference and supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:22:46.412820+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:22:46.413279+00:00"
+    },
+    "Q013": {
+      "reference_answer": "It should consider the degree of distress and functional impairment.",
+      "generated_answer": "A comprehensive GAD assessment should also evaluate the **degree of distress** the symptoms cause and the **functional impairment** in the person’s life, together with factors such as comorbid depressive or other anxiety disorders, substance misuse, medical conditions, past mental‑health history and previous treatment experiences.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.8540155291557312,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly states that distress and functional impairment should be considered, matching the reference, and adds further context‑supported factors without contradicting the source.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:23:14.677279+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:23:14.677629+00:00"
+    },
+    "Q014": {
+      "reference_answer": "Individual non-facilitated self-help, individual guided self-help and psychoeducational groups.",
+      "generated_answer": "The guideline recommends offering one or more of the following low‑intensity psychological interventions:\n\n* **Individual non‑facilitated self‑help** (written/e‑electronic CBT‑based materials with minimal therapist contact)  \n* **Individual guided self‑help** (CBT‑based materials supported by a trained practitioner through brief weekly/fortnightly sessions)  \n* **Psycho‑educational groups** (CBT‑based group sessions led by trained practitioners).",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.8048892021179199,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly lists the three low‑intensity interventions (individual non‑facilitated self‑help, individual guided self‑help, psychoeducational groups) as stated in the reference and supported by the retrieved guideline text.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:23:46.020786+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:23:46.021458+00:00"
+    },
+    "Q015": {
+      "reference_answer": "Cognitive behavioural therapy (CBT) or applied relaxation.",
+      "generated_answer": "When a person with generalized anxiety disorder opts for high‑intensity psychological treatment, the guideline recommends offering **either cognitive‑behavioural therapy (CBT) or applied relaxation**.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.8469570875167847,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer exactly matches the reference answer and is directly supported by the retrieved guideline text stating to offer CBT or applied relaxation.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:24:09.970087+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:24:09.970700+00:00"
+    },
+    "Q016": {
+      "reference_answer": "At least a year, because the likelihood of relapse is high.",
+      "generated_answer": "The guidance states that once the medication is working, the person should keep taking it **after remission** in order to avoid relapse. It does not give a specific number of weeks or months; the recommendation is simply to continue treatment beyond the point of symptom improvement.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.716428279876709,
+      "llm_judgement": {
+        "grade": 1,
+        "label": "partially_correct",
+        "context_supported": true,
+        "rationale": "The answer correctly notes that treatment should continue after remission to avoid relapse, which is supported by the retrieved context. However, it omits the specific duration of at least one year stated in the reference answer, making it incomplete.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:24:40.687738+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:24:40.688299+00:00"
+    },
+    "Q017": {
+      "reference_answer": "Re-experiencing, avoidance, hyperarousal, negative alterations in mood and thinking, emotional numbing, and dissociation.",
+      "generated_answer": "The common symptoms of post‑traumatic stress disorder include:\n\n- **Re‑experiencing** of the trauma (intrusive memories, flashbacks, distressing dreams)  \n- **Avoidance** of trauma‑related thoughts, feelings, or reminders (including social contact)  \n- **Hyperarousal** such as hypervigilance, irritability, anger, sleep disturbance, and concentration problems  \n- **Negative alterations in mood and cognition** (persistent negative beliefs, diminished interest, emotional numbing, feeling worthless)  \n- **Dissociation** and emotional dysregulation  \n- **Interpersonal difficulties** and problems in relationships.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7666553258895874,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer includes all symptoms listed in the reference answer and adds further details that are supported by the retrieved context, without any contradictions.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:25:03.867876+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:25:03.868133+00:00"
+    },
+    "Q018": {
+      "reference_answer": "Physical, psychological, and social needs, along with potential risks.",
+      "generated_answer": "When evaluating a person with PTSD, healthcare professionals should conduct a comprehensive assessment that includes:\n\n* **Physical needs** – any medical or bodily health issues.  \n* **Psychological needs** – the severity of PTSD symptoms and other mental‑health concerns.  \n* **Social needs** – the person’s support network, living situation, work or education circumstances.  \n* **Risk assessment** – potential safety concerns, including risk of self‑harm or harm to others, and the need for an emergency physical or mental‑health assessment.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.7485944628715515,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly lists physical, psychological, social needs and risk assessment, matching the reference and the retrieved guidelines.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:25:27.588702+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:25:27.589512+00:00"
+    },
+    "Q019": {
+      "reference_answer": "An individual trauma-focused cognitive behavioural therapy intervention.",
+      "generated_answer": "Offer an individual trauma‑focused cognitive‑behavioural therapy (CBT) intervention (e.g., cognitive processing therapy, cognitive therapy for PTSD, narrative exposure therapy, or prolonged exposure therapy).",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.8463340997695923,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer matches the reference and is directly supported by the retrieved context, specifying an individual trauma-focused CBT intervention for adults presenting >1 month after trauma.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:25:48.337406+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:25:48.337679+00:00"
+    },
+    "Q020": {
+      "reference_answer": "Typically 8 to 12 sessions, with additional sessions if clinically indicated.",
+      "generated_answer": "Trauma‑focused CBT for adults should typically be delivered over **8 to 12 sessions** (more may be needed if clinically indicated).",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.8362520933151245,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer matches the reference answer exactly, stating 8‑12 sessions with additional sessions if clinically indicated, and this is directly supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:26:14.684330+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:26:14.684617+00:00"
+    },
+    "Q021": {
+      "reference_answer": "They should allow additional time to develop trust and address barriers to treatment engagement.",
+      "generated_answer": "Healthcare professionals should:\n\n* **Prioritise PTSD treatment** – treat the trauma first, unless severe depression makes PTSD work impossible or there is a risk of harm, in which case depression is addressed first.  \n* **Include people with comorbid substance misuse** – do not exclude anyone from trauma‑focused therapy solely because they misuse drugs or alcohol.  \n* **Allow extra time to build trust** – extend the length or number of therapy sessions as needed for people with complex PTSD or additional needs.  \n* **Consider personal safety and stability** – assess housing, financial and other circumstances that could affect engagement and treatment success.  \n* **Address barriers to therapy** – help the person manage substance misuse, dissociation, emotional dysregulation, interpersonal difficulties, or negative self‑perception that may impede trauma‑focused work.  \n* **Plan ongoing support** – arrange follow‑up care for residual PTSD symptoms or comorbidities after formal treatment ends.  \n\nThese steps ensure a comprehensive, person‑centred approach that accommodates the extra challenges faced by people with PTSD and complex needs.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": 0.6662328243255615,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "Generated answer includes allowing extra time to build trust and addressing barriers, matching reference and supported by retrieved context; additional details are accurate and consistent.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:26:37.116361+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:26:37.116970+00:00"
+    },
+    "Q022": {
+      "reference_answer": "Planning, adaptation, workforce preparation, identification and assessment of beneficiaries, and monitoring and evaluation.",
+      "generated_answer": "The manual lists five key steps for implementing psychological interventions within an existing service:\n\n1. **Make an implementation plan**  \n2. **Adapt the intervention for the local context**  \n3. **Prepare the workforce**  \n4. **Identify, assess and support potential beneficiaries**  \n5. **Monitor and evaluate the service**",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer exactly matches the five key steps listed in the reference and is directly supported by the retrieved manual text.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:26:59.029582+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:26:59.029852+00:00"
+    },
+    "Q023": {
+      "reference_answer": "It helps identify and overcome barriers to help-seeking and secure the buy-in of potential service users.",
+      "generated_answer": "Community engagement is crucial because it ensures that psychological interventions are designed and delivered in ways that are relevant, accessible, and acceptable to the people they are meant to serve. Involving community leaders and people with lived experience helps identify local needs and barriers to help‑seeking, increases awareness and understanding of mental‑health conditions and the interventions, and secures the buy‑in and uptake of services. This collaboration maximizes the reach, impact, and sustainability of the interventions.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "Generated answer includes both key points from reference—identifying barriers to help‑seeking and securing buy‑in—and is fully supported by the retrieved context stating community engagement is important to identify/overcome barriers and secure buy‑in.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:27:24.140102+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:27:24.140408+00:00"
+    },
+    "Q024": {
+      "reference_answer": "Providers should receive competency-based training and ongoing supervision.",
+      "generated_answer": "Providers should be prepared by building a competent workforce: select appropriate individuals (specialists or non‑specialists), train them in the manualized intervention, assess their skills, and provide ongoing supervision and support. They must have the right attitudes, be able to deliver multiple sessions, and have sustainable incentives and backing over time.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer includes competency-based training and ongoing supervision as in the reference, and adds details (selection, attitudes, incentives) that are all supported by the retrieved implementation manual.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:27:42.241992+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:27:42.242282+00:00"
+    },
+    "Q025": {
+      "reference_answer": "It builds providers' confidence and competence, promotes safe and ethical practice, and encourages self-care.",
+      "generated_answer": "Ongoing supportive supervision is needed because it \n\n* builds and maintains providers’ confidence and competence in delivering the intervention,  \n* ensures they adhere to the programme and receive technical and ethical guidance for difficult cases,  \n* provides quality‑assurance checks on how the intervention is being delivered, and  \n* protects and promotes the providers’ own well‑being by offering emotional support, stress management and referral to external care when needed.  \n\nWithout regular supervision, providers may lack the skills, oversight and support required to deliver safe, effective psychological care.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer accurately states that supervision builds confidence and competence, ensures safe/ethical practice, and supports provider well‑being/self‑care, matching the reference and fully supported by the retrieved manual.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:28:10.187321+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:28:10.188220+00:00"
+    },
+    "Q026": {
+      "reference_answer": "To ensure interventions are not causing harm, assess whether they address mental health needs, and inform service improvements.",
+      "generated_answer": "Monitoring and evaluation are used to continuously collect and analyse data on a psychological intervention so that implementers can:\n\n* Verify that the intervention is not causing harm.  \n* Determine whether it is meeting the mental‑health needs of the target population.  \n* Assess its effectiveness, acceptability, feasibility and fidelity.  \n* Identify challenges and inform adaptations, quality‑improvement actions and future planning.  \n\nIn short, M&E ensures the intervention works as intended and guides improvements.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer restates the purpose (prevent harm, assess needs, guide improvements) and adds compatible details; these are directly supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:28:28.346356+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:28:28.346737+00:00"
+    },
+    "Q027": {
+      "reference_answer": "Associated coexisting conditions and the psychosocial assessment should be considered.",
+      "generated_answer": "When planning treatment after self‑harm, professionals should consider:\n\n* **The method used** – identify the means of self‑harm and, if the person can access it, discuss removing it in a collaborative way.  \n* **Capacity, competence and consent** – assess any concerns about the person’s ability to consent and involve senior or specialist support as needed, respecting the person’s own view.  \n* **Current safety and urgency** – determine the severity of the injury, the immediacy of medical treatment required, the person’s emotional state, level of distress, any immediate safety or safeguarding concerns, and whether a care plan already exists.  \n* **Support network and coping** – discuss the person’s existing support (family, carers, friends) and any safety plan or coping strategies they use.  \n* **Referral needs** – decide if referral to a specialist mental‑health service is required.  \n* **Treatment approach** – use therapeutic, non‑punitive interventions; avoid aversive or criminal‑justice measures. Safety‑planning interventions (multicomponent plans with follow‑up support) can be considered as part of treatment.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 1,
+        "label": "partially_correct",
+        "context_supported": true,
+        "rationale": "The answer includes many relevant considerations and reflects the psychosocial assessment from the context, but it omits the key point about associated co‑existing conditions mentioned in the reference answer.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:28:53.336268+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:28:53.337651+00:00"
+    },
+    "Q028": {
+      "reference_answer": "A structured, person-centred, CBT-informed psychological intervention.",
+      "generated_answer": "A structured, person‑centred, CBT‑informed psychological intervention (such as cognitive‑behavioural therapy or problem‑solving therapy) that is specifically tailored for adults who self‑harm should be offered.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer matches the reference answer, stating a structured, person‑centred, CBT‑informed intervention, and the retrieved NICE guideline excerpt directly supports this recommendation.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:29:20.259527+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:29:20.260072+00:00"
+    },
+    "Q029": {
+      "reference_answer": "Triggers, warning signs, coping strategies, social contacts and support.",
+      "generated_answer": "A safety plan should identify the person’s warning signs and triggers, the means they might use, individualized coping strategies (including problem‑solving barriers), and the social contacts—family, friends or other supports—who can help distract or assist during a crisis.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer includes all items from the reference (triggers, warning signs, coping strategies, social contacts/support) and is fully supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:29:42.301972+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:29:42.302576+00:00"
+    },
+    "Q030": {
+      "reference_answer": "Within 48 hours of the psychosocial assessment.",
+      "generated_answer": "Initial after‑care should be provided within 48 hours of the psychosocial assessment when there are ongoing safety concerns.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer correctly states that initial aftercare should be provided within 48 hours of the psychosocial assessment when there are ongoing safety concerns, matching the reference and supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:30:06.320986+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:30:06.321343+00:00"
+    },
+    "Q031": {
+      "reference_answer": "Compassionate care, ongoing skill development, reflective practice, confidence and competence.",
+      "generated_answer": "Regular supervision should promote the delivery of compassionate care and build staff confidence and competence—supporting ongoing skill development, reflective practice and emotional wellbeing when working with people who self‑harm.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer lists compassionate care, ongoing skill development, reflective practice, and confidence/competence, matching the reference and the retrieved guideline; the added mention of emotional wellbeing is consistent with the context’s emphasis on emotional impact.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:30:38.373728+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:30:38.374258+00:00"
+    },
+    "Q032": {
+      "reference_answer": "It is used to help helpers and clients understand that even when problems are difficult or impossible to fully solve, there may still be ways to provide relief from their impact.",
+      "generated_answer": "The manual chooses the wording “problem management” rather than “problem‑solving counselling” because many of the problems clients face (e.g., war, communal violence, chronic poverty) are often beyond their control and may be impossible to fully solve. By using “management” the authors want helpers and clients to understand that, even when a problem cannot be solved, there are still ways to manage or lessen its impact and provide relief.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer restates the manual's reason for using 'problem management'—that many client issues are hard to solve, so management emphasizes relief—matching the reference and supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:31:01.515954+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:31:01.517081+00:00"
+    },
+    "Q033": {
+      "reference_answer": "They must complete at least 80 hours (10 full days) of classroom training conducted by a competent mental health professional, followed by supervised in-field practice with at least two clients.",
+      "generated_answer": "Helpers who are not mental‑health professionals must meet minimum education and skill criteria rather than clinical qualifications.  The guidelines specify that they should:\n\n* Have completed a specified number of years of schooling (e.g., secondary education or a university degree such as a psychology graduate) — but no formal clinical training is required.  \n* Receive training in **foundational helping skills**, including basic counseling, active listening, empathy, and non‑judgmental attitudes.  \n* Be taught **organizational and group‑facilitation skills** (for group interventions) and how to use the specific psychological intervention protocol.  \n* Gain knowledge of the **local context**, including cultural norms, language(s) used in the community, and relevant referral pathways.  \n\nThese community providers (e.g., community workers, volunteers, peers, people with lived experience, or university graduates in psychology without clinical training) are then supervised while delivering the interventions.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 0,
+        "label": "incorrect",
+        "context_supported": false,
+        "rationale": "The generated answer does not state the required 80 hours of classroom training and supervised practice with two clients as in the reference; it provides unrelated education and skill criteria not supported by the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:31:27.840296+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:31:27.841527+00:00"
+    },
+    "Q034": {
+      "reference_answer": "The PM+ intervention consists of five 90-minute individual sessions, typically held once a week.",
+      "generated_answer": "The PM+ intervention consists of **five weekly sessions**, and each session lasts **about 90 minutes**.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer accurately states five weekly sessions of about 90 minutes, matching the reference and the retrieved WHO document.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:31:59.225170+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:31:59.225618+00:00"
+    },
+    "Q035": {
+      "reference_answer": "If a client relies on the helper's advice, they are unlikely to develop the ability to manage their own problems in the future once the intervention is over.",
+      "generated_answer": "Helpers should avoid giving direct advice because it can create client dependence on the helper and prevent the client from learning to generate and use their own solutions. If clients rely on the helper’s advice, they are less likely to be able to manage their problems independently after the PM + intervention ends.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer restates the reference answer accurately, explaining that giving direct advice creates client dependence and hampers future self‑management; the retrieved WHO PM+ documents explicitly state this reason.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:32:24.769335+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:32:24.770074+00:00"
+    },
+    "Q036": {
+      "reference_answer": "It aims to break the cycle of inactivity and improve the client's mood by encouraging them to re-engage in pleasant and task-oriented activities regardless of their current mood.",
+      "generated_answer": "The main goal of the “Get Going, Keep Doing” strategy is to break the cycle of low mood, fatigue and inactivity by getting the client back into pleasant and task‑oriented activities, thereby improving their mood and motivation.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer accurately restates the main goal as breaking low mood/inactivity cycle and improving mood through pleasant and task‑oriented activities, matching the reference and supported by the retrieved WHO text.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:32:49.551224+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:32:49.551947+00:00"
+    },
+    "Q037": {
+      "reference_answer": "Deciding which interventions will be provided, why, where, how and when.",
+      "generated_answer": "Planning establishes the rationale for introducing a psychological intervention by analysing local mental‑health needs, capacities and priorities, and then decides which interventions will be provided, why, where, how and when. It ensures that the chosen, evidence‑based interventions are relevant to the setting, that the implementation plan is comprehensive, specific and properly resourced, and that the resulting services will reach the intended population and be useful.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The generated answer includes the core purpose of planning—deciding which interventions, why, where, how, and when—and adds supported details about rationale and relevance, matching the reference and context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:33:12.864525+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:33:12.865718+00:00"
+    },
+    "Q038": {
+      "reference_answer": "By adapting the psychological interventions for use in a specific context, including translating them into local languages.",
+      "generated_answer": "Psychological interventions should be modified to fit the local setting — for example, translating manuals into the community’s language and adjusting content to reflect cultural norms and the specific adversities people face. Planners should first check whether evidence shows the intervention works in similar contexts; if it does, only minor tweaks may be needed. The adaptation process also involves engaging local stakeholders (government, NGOs, community members, people with lived experience) to identify barriers, ensure acceptability, and secure buy‑in. In short, adapt the intervention’s language, cultural relevance, and delivery model to the target context before implementation.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer states that interventions should be adapted to the local context, including translation and cultural tailoring, and adds stakeholder engagement, all of which are supported by the retrieved passages.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:33:33.372498+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:33:33.372991+00:00"
+    },
+    "Q039": {
+      "reference_answer": "By selecting, training, assessing and supervising providers.",
+      "generated_answer": "A competent workforce is prepared by first identifying the human‑resource needs and then deliberately selecting the right people—mental‑health specialists, general health staff, or non‑specialist community providers—who can serve as providers, trainers, or supervisors. Those selected are given competency‑based training that equips them with the knowledge, skills and attitudes needed to deliver interventions safely and effectively; trainers and supervisors receive training as well. After training, their competencies are assessed, and ongoing supervision is provided to sustain performance. This systematic process of selection, training, assessment and supervision ensures a capable workforce for psychological interventions.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer correctly states that a competent workforce is prepared by selecting, training, assessing, and supervising providers, matching both the reference answer and the retrieved context.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:33:49.352061+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:33:49.353023+00:00"
+    },
+    "Q040": {
+      "reference_answer": "To build providers’ confidence and competence, promote safe and ethical practice, provide support for challenging cases and encourage providers’ self-care.",
+      "generated_answer": "Supportive supervision is essential because it helps psychological‑intervention providers deliver high‑quality, safe care.  Through regular, collaborative supervision providers:\n\n* Build confidence and competence in the intervention, ensuring they adhere to the model and develop their skills.  \n* Receive technical and ethical guidance for handling difficult or high‑risk cases.  \n* Obtain emotional support that helps them manage the stress and distress that can arise from working with challenging topics, protecting their own well‑being.  \n\nThus, supportive supervision both safeguards the quality of the intervention for service users and promotes the providers’ professional growth and mental health.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "The answer restates the reference points—building confidence/competence, ensuring safe/ethical practice, supporting challenging cases, and promoting self‑care—and these are all supported by the retrieved implementation manual excerpts.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:34:16.283106+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:34:16.291070+00:00"
+    },
+    "Q041": {
+      "reference_answer": "Make an M&E plan, collect and analyse data, and integrate findings.",
+      "generated_answer": "The three major steps are:\n\n1. Develop a monitoring and evaluation (M&E) plan that is aligned with the intervention’s goals.  \n2. Carry out the monitoring activities outlined in the plan (collecting data on implementation and performance).  \n3. Evaluate the collected data to assess outcomes and identify improvements.",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "embedding_cosine_similarity": null,
+      "llm_judgement": {
+        "grade": 3,
+        "label": "correct",
+        "context_supported": true,
+        "rationale": "Generated answer correctly lists the three steps—plan, collect/monitor data, and evaluate/integrate findings—and matches the reference; the retrieved context explicitly mentions these three steps.",
+        "judge_model": "openai/gpt-oss-120b",
+        "judged_at_utc": "2026-11-20T15:34:33.439637+00:00"
+      },
+      "judged_at_utc": "2026-11-20T15:34:33.439994+00:00"
+    }
+  }
+}

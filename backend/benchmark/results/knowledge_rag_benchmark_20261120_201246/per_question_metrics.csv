@@ -1,0 +1,42 @@
+question_id,question,ground_truth_relevant_count,ground_truth_weak_count,retrieved_count,first_relevant_rank,evaluated,answer_embedding_similarity,answer_llm_grade,answer_llm_label,precision@3,recall@3,ndcg@3,precision@5,recall@5,ndcg@5,precision@10,recall@10,ndcg@10,mrr@10
+Q001,Why is continuous workforce training important?,0,0,10,,False,0.7562345266342163,3,correct,,,,,,,,,,
+Q002,Which psychological interventions are recommended for adults with moderate-to-severe depression?,6,4,10,1,True,0.7875567674636841,3,correct,0.3333333333333333,0.16666666666666666,0.4692787260227565,0.2,0.16666666666666666,0.3666495063604039,0.1,0.16666666666666666,0.3271132408420142,1.0
+Q003,How long should antidepressant treatment continue after remission in adults with moderate-to-severe depression?,4,2,10,1,True,0.7901461720466614,3,correct,0.6666666666666666,0.5,0.7039180890341348,0.4,0.5,0.573203646997251,0.2,0.5,0.5813446693849889,1.0
+Q004,Which psychological interventions are recommended for adults with generalized anxiety disorder or panic disorder?,5,2,10,2,True,0.7386252880096436,1,partially_correct,0.3333333333333333,0.2,0.3296018199674907,0.4,0.4,0.4154266805679881,0.3,0.6,0.5269962927240233,0.5
+Q005,Which psychological interventions can be considered for adults with post-traumatic stress disorder?,5,2,10,1,True,0.8297884464263916,3,correct,0.3333333333333333,0.2,0.5027986350243819,0.4,0.4,0.5877087346771827,0.2,0.4,0.5652680051129815,1.0
+Q006,What intervention can be considered for individuals with thoughts or plans of self-harm?,4,0,10,1,True,0.886907696723938,3,correct,0.3333333333333333,0.25,0.4692787260227565,0.2,0.25,0.3903800499921017,0.2,0.5,0.5294362295028774,1.0
+Q007,What are the key factors considered when determining the severity of depression?,4,3,10,1,True,0.7680304050445557,3,correct,0.6666666666666666,0.5,0.8838695436828513,0.4,0.5,0.811707273259134,0.3,0.75,0.837006017996871,1.0
+Q008,Why should healthcare professionals ask people with depression about suicidal thoughts?,3,1,10,5,True,0.7394291162490845,3,correct,0.0,0.0,0.0,0.2,0.3333333333333333,0.20288695215575275,0.1,0.3333333333333333,0.20288695215575275,0.2
+Q009,What factors should be considered when assessing a person with depression?,2,5,10,1,True,0.6711710691452026,3,correct,0.3333333333333333,0.5,0.7452525342261976,0.2,0.5,0.7277614764279109,0.2,1.0,0.7797621974000427,1.0
+Q010,How can regular physical activity help people with depression?,5,2,10,1,True,0.8194573521614075,3,correct,1.0,0.6,0.6497722977469499,0.6,0.6,0.5460821546146496,0.3,0.6,0.5226339768120124,1.0
+Q011,Why is guided self-help considered as a first-line treatment for less severe depression?,5,2,10,2,True,0.6843976974487305,3,correct,0.3333333333333333,0.2,0.3296018199674907,0.4,0.4,0.4154266805679881,0.3,0.6,0.45149837024119877,0.5
+Q012,What intervention should be offered first in the stepped-care model for GAD?,5,3,10,1,True,0.748132586479187,3,correct,1.0,0.6,0.8659203639934981,0.8,0.8,0.8352618319893308,0.4,0.8,0.8067446408322874,1.0
+Q013,"What should a comprehensive assessment of GAD consider besides the number, severity and duration of symptoms?",9,1,10,2,True,0.8540155291557312,3,correct,0.3333333333333333,0.1111111111111111,0.146540320372639,0.4,0.2222222222222222,0.3193112365742215,0.4,0.4444444444444444,0.40667250882708367,0.5
+Q014,Which low-intensity psychological interventions are recommended for people with GAD whose symptoms have not improved after education and active monitoring?,5,4,10,1,True,0.8048892021179199,3,correct,0.6666666666666666,0.4,0.7271926019583823,0.8,0.8,0.871410280887656,0.4,0.8,0.803159385800993,1.0
+Q015,What psychological interventions should be offered when a person with GAD chooses high-intensity psychological treatment?,3,7,10,1,True,0.8469570875167847,3,correct,0.3333333333333333,0.3333333333333333,0.5907889029375734,0.4,0.6666666666666666,0.7751300774683447,0.2,0.6666666666666666,0.6944725631439117,1.0
+Q016,How long should a person with GAD continue taking medication if the drug treatment is effective?,2,6,10,1,True,0.716428279876709,1,partially_correct,0.3333333333333333,0.5,0.38656565720663316,0.2,0.5,0.3556137557076395,0.2,1.0,0.5317958780808171,1.0
+Q017,What are the common symptoms associated with post-traumatic stress disorder?,2,4,10,1,True,0.7666553258895874,3,correct,0.6666666666666666,1.0,0.9467676761267002,0.4,1.0,0.8709609941113844,0.2,1.0,0.9325227918036865,1.0
+Q018,What should healthcare professionals assess when evaluating a person with PTSD?,1,3,10,1,True,0.7485944628715515,3,correct,0.3333333333333333,1.0,0.8609101556836468,0.2,1.0,0.8176035833928884,0.1,1.0,0.8176035833928884,1.0
+Q019,What treatment is recommended for adults with PTSD who present more than one month after a traumatic event?,4,5,10,1,True,0.8463340997695923,3,correct,0.3333333333333333,0.25,0.511576141875023,0.2,0.25,0.4400897274753225,0.2,0.5,0.5329092213725105,1.0
+Q020,How long should trauma-focused CBT typically be provided to adults with PTSD?,6,3,10,1,True,0.8362520933151245,3,correct,0.6666666666666666,0.3333333333333333,0.7653606369886218,0.4,0.3333333333333333,0.5531464700081437,0.3,0.5,0.6225729644913823,1.0
+Q021,How should healthcare professionals support people with PTSD and complex needs?,7,1,10,2,True,0.6662328243255615,3,correct,0.3333333333333333,0.14285714285714285,0.2960819109658653,0.2,0.14285714285714285,0.23133008269506616,0.1,0.14285714285714285,0.2056496132244511,0.5
+Q022,What are the five key steps for implementing psychological interventions within an existing service?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q023,Why is community engagement important during the implementation of psychological interventions?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q024,How should providers be prepared to deliver psychological interventions?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q025,Why is ongoing supportive supervision necessary for psychological intervention providers?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q026,What is the purpose of monitoring and evaluation when implementing psychological interventions?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q027,What should be considered when planning treatment following self-harm?,0,0,10,,False,,1,partially_correct,,,,,,,,,,
+Q028,What type of psychological intervention should be offered to adults who self-harm?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q029,What should a safety plan identify to help prevent further self-harm?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q030,When should initial aftercare be provided if there are ongoing safety concerns?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q031,What should regular staff supervision promote when working with people who self-harm?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q032,Why does the manual use the term 'problem management' instead of 'problem-solving counselling'?,3,7,10,,True,,3,correct,0.0,0.0,0.03871015210571621,0.0,0.0,0.06457334910978474,0.0,0.0,0.0578540564617559,0.0
+Q033,What are the training requirements for helpers who are not mental health professionals?,1,0,10,9,True,,0,incorrect,0.0,0.0,0.0,0.0,0.0,0.0,0.1,1.0,0.3010299956639812,0.1111111111111111
+Q034,How many sessions make up the Problem Management Plus (PM+) intervention and how long does each session last?,8,6,10,1,True,,3,correct,0.6666666666666666,0.25,0.49720136497561807,0.8,0.5,0.6882123236462421,0.5,0.625,0.6171062968091054,1.0
+Q035,Why should helpers generally avoid giving direct advice to clients during PM+?,2,4,10,5,True,,3,correct,0.0,0.0,0.08391719931063304,0.2,0.5,0.3250065945788297,0.1,0.5,0.31616262822275254,0.2
+Q036,"What is the main goal of the 'Get Going, Keep Doing' strategy?",13,2,10,1,True,,3,correct,0.6666666666666666,0.15384615384615385,0.435758817021131,0.8,0.3076923076923077,0.5922079036805489,0.7,0.5384615384615384,0.5635735796745676,1.0
+Q037,What is the purpose of planning when implementing psychological interventions?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q038,How should psychological interventions be adapted for a specific context?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q039,How can a competent workforce be prepared to deliver psychological interventions?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q040,Why is supportive supervision important for psychological intervention providers?,0,0,10,,False,,3,correct,,,,,,,,,,
+Q041,What are the three major steps involved in monitoring and evaluating psychological interventions?,0,0,10,,False,,3,correct,,,,,,,,,,

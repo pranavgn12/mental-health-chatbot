@@ -1,0 +1,35 @@
+{
+  "benchmark_version": "knowledge_rag_benchmark_v3",
+  "benchmark_mode": "answer_only",
+  "dataset_name": "knowledge_rag_benchmark",
+  "question_count": 41,
+  "judged_question_count": 41,
+  "generation_completed_count": 41,
+  "generation_failed_count": 0,
+  "answer_judgement_failed_count": 0,
+  "judge_model": "openai/gpt-oss-120b",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_device": "cuda",
+  "embedding_similarity_mean": 0.757183816374802,
+  "llm_judgement_counts": {
+    "correct": 35,
+    "mostly_correct": 2,
+    "partially_correct": 2,
+    "incorrect": 2
+  },
+  "llm_exact_correct_rate": 0.8536585365853658,
+  "llm_weighted_answer_score": 0.9024390243902439,
+  "score_mapping": {
+    "grade_3": 1.0,
+    "grade_2": 0.6667,
+    "grade_1": 0.3333,
+    "grade_0": 0.0
+  },
+  "note": "Answer-only evaluation using the saved retrieval_results.json from the selected run; retrieval and relevance review were not rerun.",
+  "created_at_utc": "2026-11-20T18:27:06.575903+00:00",
+  "groq_usage_this_answer_only_run": {
+    "successful_completion_calls": 82,
+    "api_key_switches": 0,
+    "skipped_requests": 0
+  }
+}

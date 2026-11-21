@@ -1,0 +1,698 @@
+{
+  "dataset_name": "knowledge_rag_benchmark",
+  "dataset_path": "/home/pranavgn/Desktop/mental-health-chatbot/backend/benchmark/datasets/knowledge_rag_q.json",
+  "created_at_utc": "2026-11-20T16:26:41.857315+00:00",
+  "dataset_question_ids": [
+    "Q001",
+    "Q002",
+    "Q003",
+    "Q004",
+    "Q005",
+    "Q006",
+    "Q007",
+    "Q008",
+    "Q009",
+    "Q010",
+    "Q011",
+    "Q012",
+    "Q013",
+    "Q014",
+    "Q015",
+    "Q016",
+    "Q017",
+    "Q018",
+    "Q019",
+    "Q020",
+    "Q021",
+    "Q022",
+    "Q023",
+    "Q024",
+    "Q025",
+    "Q026",
+    "Q027",
+    "Q028",
+    "Q029",
+    "Q030",
+    "Q031",
+    "Q032",
+    "Q033",
+    "Q034",
+    "Q035",
+    "Q036",
+    "Q037",
+    "Q038",
+    "Q039",
+    "Q040",
+    "Q041"
+  ],
+  "benchmark_mode": "knowledge_rag_benchmark_v3",
+  "annotations": {
+    "Q001": {
+      "question_id": "Q001",
+      "question": "Why is continuous workforce training important?",
+      "reference_answer": "It helps maintain workforce competency.",
+      "source_document": "example_document.pdf",
+      "evidence_phrases": [
+        "Continuous professional development helps maintain workforce competency."
+      ],
+      "relevant_chunks": {
+        "7e8350864e9c3003000fd3b25c1aa95999eef92d10c2a9ed88f68648fac34b3e": {
+          "relevance": 3,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 17,
+          "page_end": 17,
+          "heading_path": "Workforce",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "The chunk explicitly states the need to prepare and sustain a competent workforce, directly aligning with the importance of continuous training to maintain competency."
+        },
+        "27feed1ac8b6aa9d0d435cf2b79dc0f0fee6fd5a05f8978d814ef62e18378f06": {
+          "relevance": 3,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 53,
+          "page_end": 53,
+          "heading_path": "4.2 Train the workforce",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "It describes training as a means to equip the workforce with needed competencies, directly supporting why continuous training is important for maintaining competency."
+        },
+        "e82903c7d1a2c1ba79c6734731ea6910992f55e9b1ba12d082acc82d455cde9c": {
+          "relevance": 3,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 50,
+          "page_end": 50,
+          "heading_path": "KEY MESSAGES",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "It emphasizes the need for competency‑based training, ongoing supervision, and regular assessment, directly supporting the importance of continuous training for workforce competency."
+        },
+        "b0b467024e88e3eebbade0396314697a76571f30f7856af9fb267a271660cceb": {
+          "relevance": 1,
+          "source": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757.pdf",
+          "page_start": 62,
+          "page_end": 63,
+          "heading_path": "Why the committee made the recommendations",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "The passage discusses continuity of personnel and its benefits for service engagement, which is tangentially related but does not directly address why continuous training is important, offering only limited support."
+        },
+        "1f226f0ef93efbc6bf5c2407652db101176d066a3c76e81004d097d718180a11": {
+          "relevance": 3,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 54,
+          "page_end": 54,
+          "heading_path": "4.2.1 Competency-based training",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Describes competency‑based training, assessment, and how it improves and maintains trainee competencies, directly supporting the answer."
+        },
+        "be500b8d470ae47ea540fa884914efedbc0ed4442501e5d44121476532af95fc": {
+          "relevance": 2,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 53,
+          "page_end": 54,
+          "heading_path": "4.2.1 Competency-based training",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Discusses competency‑based training and the need for foundational and technique‑specific skills, providing useful supporting context for maintaining competency."
+        },
+        "f6dfc0f5a4aea539d9947be909304fc49e587c07d065e795dc6fafdd522d8846": {
+          "relevance": 1,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 78,
+          "page_end": 79,
+          "heading_path": "6.3 Integrate findings",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Mentions monitoring and evaluation to improve programs, including training issues, but does not directly address why continuous training is important."
+        },
+        "e9001d495978df832ef244b905cd4db05fdbbcc5bb8326e24efdb1cff22d9819": {
+          "relevance": 2,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 58,
+          "page_end": 59,
+          "heading_path": "4.3.3 Assure quality of service provision",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Discusses ongoing assessment of competence during training and supervision, implying that continuous training maintains workforce competency, which aligns with the reference answer."
+        },
+        "2551d27292586da3d877456d8bb25f41c3e603f8dbca5f6f5488b4c94d2dbc11": {
+          "relevance": 2,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 86,
+          "page_end": 86,
+          "heading_path": "Prepare the workforce",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Outlines steps for preparing and training the workforce using a competency‑based approach, supporting the idea that continuous training sustains competency."
+        },
+        "957d1c6943ff704b1992018791401138720a3401955f1c0f04377983228bc860": {
+          "relevance": 2,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 50,
+          "page_end": 50,
+          "heading_path": "4.1 Choose the workforce",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Mentions selecting and developing workforce, indicating the need for training to build necessary knowledge and skills, which relates to maintaining competency."
+        },
+        "c64be5e6125efb38c99cdb7553f7a9a25667e1c01c59a980018b72624e92c74c": {
+          "relevance": 2,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 35,
+          "page_end": 35,
+          "heading_path": "2.6.1 Points to consider",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Highlights sustainability and the need for ongoing training and support to keep providers competent over time."
+        },
+        "ecaf635c0a7d4f8c26a77e42dc21be6a9f9f423812e21c08e3a515be82b49e1a": {
+          "relevance": 2,
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 56,
+          "page_end": 56,
+          "heading_path": "4.3 Supervise the workforce",
+          "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "judge_rationale": "Emphasizes supportive supervision as a continuous element of training to ensure providers retain and develop competencies."
+        }
+      },
+      "decisions": {
+        "7e8350864e9c3003000fd3b25c1aa95999eef92d10c2a9ed88f68648fac34b3e": {
+          "accepted": true,
+          "relevance_grade": 3,
+          "embedding_distance": 0.5274102687835693,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 17,
+          "page_end": 17,
+          "heading_path": "Workforce",
+          "content": "Workforce\n<!-- image -->\nPrepare and sustain a competent workforce to deliver the psychological interventions by selecting, training, assessing and supervising providers.",
+          "llm_judgement": {
+            "relevance_grade": 3,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "The chunk explicitly states the need to prepare and sustain a competent workforce, directly aligning with the importance of continuous training to maintain competency.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:58.125538+00:00"
+          }
+        },
+        "27feed1ac8b6aa9d0d435cf2b79dc0f0fee6fd5a05f8978d814ef62e18378f06": {
+          "accepted": true,
+          "relevance_grade": 3,
+          "embedding_distance": 0.5794880390167236,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 53,
+          "page_end": 53,
+          "heading_path": "4.2 Train the workforce",
+          "content": "4.2 Train the workforce\nTraining is used to equip the workforce with the competencies they need to deliver psychological interventions safely and effectively. Competency has been defined as the observable ability of a person, integrating knowledge, skills and attitudes in their performance of tasks. Competencies are durable, trainable and, through the expression of behaviours, measurable (35). Supervisors and trainers also need training, especially if they are non-specialists themselves.\nMany psychological intervention packages come with training materials.",
+          "llm_judgement": {
+            "relevance_grade": 3,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "It describes training as a means to equip the workforce with needed competencies, directly supporting why continuous training is important for maintaining competency.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:58.125554+00:00"
+          }
+        },
+        "07b191be3406491abb64d1bf9c66a7d6e8e8e1b006704260a516bc49f4ea0536": {
+          "accepted": false,
+          "relevance_grade": 0,
+          "embedding_distance": 0.6053516864776611,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 81,
+          "page_end": 81,
+          "heading_path": "References",
+          "content": "References\n35 Mills J-A, Middleton JW, Schafer A, Fitzpatrick S, Short S, Cieza A. Proposing a re-conceptualisation of competency framework terminology for health: a scoping review. Hum Resour Health. 2020;18(1):15. doi:10.1186/s12960-019-0443-8.\n36 Global competency framework for universal health coverage. Geneva: World Health Organization; 2022 (https:// www.who.int/publications/i/item/9789240034686)\n37 EQUIP: Ensuring Quality in Psychological Support [website]. Geneva: Ensuring Quality in Psychological Support; 2022 (https://equipcompetency.org/en-gb).\n38 Jordans MJD, Steen F, Koppenol-Gonzalez GV, El Masri R, Coetzee AR, Chamate S, et al. Evaluation of competency-driven training for facilitators delivering a psychological intervention for children in Lebanon: a proof-of-concept study. Epidemiol Psychiatr Sci. 2022;31:e48. doi:10.1017/S2045796022000348.\n39 Murray LK, Dorsey S, Bolton P, Jordans MJD, Rahman A, Bass J et al. Building capacity in mental health interventions in low resource countries: an apprenticeship model for training local providers. Int J Ment Health Syst. 2011;5:30. doi:10.1186/1752-4458-5-30.\n40 1. Getting started. In: Integrated model for supervision handbook. Copenhagen: International Committee of the Red Cross and Red Crescent Societies Reference Centre for Psychosocial Support; 2021 (https://pscentre.org/?resource=integ rated-model-for-supervision, accessed 20 September 2022).",
+          "llm_judgement": {
+            "relevance_grade": 0,
+            "supports_answer": false,
+            "source_match": false,
+            "rationale": "The excerpt is a list of references without substantive discussion of workforce training importance, thus irrelevant.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:58.125558+00:00"
+          }
+        },
+        "e82903c7d1a2c1ba79c6734731ea6910992f55e9b1ba12d082acc82d455cde9c": {
+          "accepted": true,
+          "relevance_grade": 3,
+          "embedding_distance": 0.6178959608078003,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 50,
+          "page_end": 50,
+          "heading_path": "KEY MESSAGES",
+          "content": "KEY MESSAGES\n- SSelect providers based on attitudes, personal characteristics (e.g. compassion), knowledge, skills and experience (e.g. in helping roles) in the community.\n- SEquip providers with the right skills through competency-based training.\nThe main resource required to deliver psychological interventions is people, so developing a competent and confident workforce is key. The groups of workers that will provide the intervention should have been identified during planning (see section 2.6 Identify human resource needs).\n- SEnsure ongoing supportive supervision from appropriately experienced people to build providers' confidence and competence, promote safe and ethical practice, provide support for challenging cases and encourage providers' self-care.\n- SUse regular assessments of fidelity, competency and attendance throughout training and in supervision to assure quality of care.\nimportant to ensure they are properly trained, regularly assessed for competency when they start delivering interventions, and continually supervised and supported throughout the time they provide interventions. The need for quality training, supervision and support of non-specialist providers is often underestimated.\nIn many cases, especially in LMICs, these providers will likely be non-specialists. It is",
+          "llm_judgement": {
+            "relevance_grade": 3,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "It emphasizes the need for competency‑based training, ongoing supervision, and regular assessment, directly supporting the importance of continuous training for workforce competency.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:58.125561+00:00"
+          }
+        },
+        "b0b467024e88e3eebbade0396314697a76571f30f7856af9fb267a271660cceb": {
+          "accepted": false,
+          "relevance_grade": 1,
+          "embedding_distance": 0.6350967288017273,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757.pdf",
+          "page_start": 62,
+          "page_end": 63,
+          "heading_path": "Why the committee made the recommendations",
+          "content": "Why the committee made the recommendations\nThere was limited evidence that continuity of personnel has a positive effect on service engagement and repeat self-harm. The committee agreed, based on their experience, that continuity of personnel from initial assessment to aftercare allows people to gain familiarity with particular professionals, improving satisfaction and service engagement, and reducing the risk of distress or hopelessness. Evidence from the review on models of care showed that a continuity chain protocol has a possible important benefit in terms of engagement with services compared with usual care. The committee agreed that this is most important for people who have received treatment from a mental health service, based on their knowledge that the person who had self-harmed would have spent more time with mental health staff and may have built up trust with particular staff members, as well as evidence from the review on models of care, which showed that specialist community mental health follow-up has an important benefit in terms of self-harm repetition over 12 months.",
+          "llm_judgement": {
+            "relevance_grade": 1,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "The passage discusses continuity of personnel and its benefits for service engagement, which is tangentially related but does not directly address why continuous training is important, offering only limited support.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:58.125562+00:00"
+          }
+        },
+        "485701e3d2cf7b19dcefc58956c6c85d76b3e6903426e36afffb0ea090f23b4d": {
+          "accepted": false,
+          "relevance_grade": 0,
+          "embedding_distance": 0.6404784321784973,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 83,
+          "page_end": 83,
+          "heading_path": "Chapter 4. Workforce",
+          "content": "Chapter 4. Workforce\n- [Integrated model of supervision handbook. Copenhagen: International Committee of the Red Cross and Red Crescent Societies Reference Centre for Psychosocial Support; 2021.](https://pscentre.org/?resource=integrated-model-for-supervision)\n- [Resources. In: Ensuring Quality in Psychological Support (EQUIP) [website] Geneva: World Health Organization; 2017.](https://equipcompetency.org/en-gb/resources)\n- [mhGAP operations manual. Geneva: World Health Organization; 2018.](https://apps.who.int/iris/handle/10665/275386)\n- [Scaling up care for mental, neurological, and substance use disorders: mhGAP. In: WHO [website]. Geneva: World Health Organization; 2023.](https://www.who.int/activities/scaling-up-mental-health-care)",
+          "llm_judgement": {
+            "relevance_grade": 0,
+            "supports_answer": false,
+            "source_match": false,
+            "rationale": "Chunk only lists references and resources; does not discuss why continuous workforce training is important.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:59.967899+00:00"
+          }
+        },
+        "1f226f0ef93efbc6bf5c2407652db101176d066a3c76e81004d097d718180a11": {
+          "accepted": true,
+          "relevance_grade": 3,
+          "embedding_distance": 0.6429907083511353,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 54,
+          "page_end": 54,
+          "heading_path": "4.2.1 Competency-based training",
+          "content": "4.2.1 Competency-based training\n- structured role plays that allow for providers' skills and behaviours to be measured in a pretend session; and\n- direct observation during live or recorded sessions with real people receiving the intervention to measure how well providers perform skills after training.\nA key feature of EQUIP and other competency-based training is to assess and provide feedback on skills and competencies before, during and after training. Doing a baseline competency assessment at the start of training can help ensure that the training is pitched at the right level to meet trainees' needs. Regular assessments throughout training (and beyond) enable trainers and supervisors to chart progress in skill development over time, identify strengths and weaknesses in performance and customize training and supervision to fill gaps in skills and knowledge.\nEQUIP assessments have been developed specifically for use with non-specialists. They are a critical ingredient of quality assurance (see section 4.3.3. Assure quality of service provision). They can also be complemented by additional tests for measuring knowledge and attitudes.\nEQUIP-based training has been proven to reduce harmful behaviours and increase competencies of trainees compared with conventional training methods (38).",
+          "llm_judgement": {
+            "relevance_grade": 3,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "Describes competency‑based training, assessment, and how it improves and maintains trainee competencies, directly supporting the answer.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:59.967934+00:00"
+          }
+        },
+        "0728f218738e3b705e42a2dd0c5e006b1e3e6153178c54284b700ef1339ec321": {
+          "accepted": false,
+          "relevance_grade": 0,
+          "embedding_distance": 0.6464074850082397,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757.pdf",
+          "page_start": 58,
+          "page_end": 58,
+          "heading_path": "Assessment and care by professionals from other sectors",
+          "content": "Assessment and care by professionals from other sectors\nRecommendations 1.8.1 to 1.8.12",
+          "llm_judgement": {
+            "relevance_grade": 0,
+            "supports_answer": false,
+            "source_match": false,
+            "rationale": "Content is unrelated to workforce training importance.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:59.967947+00:00"
+          }
+        },
+        "be500b8d470ae47ea540fa884914efedbc0ed4442501e5d44121476532af95fc": {
+          "accepted": true,
+          "relevance_grade": 2,
+          "embedding_distance": 0.6658071279525757,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 53,
+          "page_end": 54,
+          "heading_path": "4.2.1 Competency-based training",
+          "content": "4.2.1 Competency-based training\nWHO promotes a competency-based training and education of health care providers (36). Providers of psychological interventions need two types of competencies to do their job. Foundational helping skills are generally applicable to all interventions and typically include building a warm and trustworthy relationship with the person receiving the intervention. They also include, for example, building rapport, using verbal and non-verbal communication skills, demonstrating these may be mental health specialists, care managers, or community providers.\nManaging expectations. Before they commit to the role of provider, people must understand what will be expected of them before, during, and after the training. Clearly communicate the required time commitments and any financial compensation to all prospective providers and make sure they are well understood.\ngenuineness, protecting confidentiality, and ensuring non-discrimination and inclusion.\nAs well as foundational helping skills, providers will typically also need technique-specific skills, which may include problem solving, cognitive or motivational enhancement techniques among others, depending on which psychological intervention is being implemented. They may require additional competencies if they are delivering the intervention to individual adults, children or families, or to a group.\nFor supervisors, other areas for training may include how to deliver constructive feedback, how to manage challenging situations when treating people, and how to manage any context-specific issues.\nEnsuring Quality in Psychological Support (EQUIP) is a WHO initiative that supports competency-based training and assessment (37). It includes a range of competency assessment tools that cover both:\n- foundational helping skills for working with adults (ENACT) or children and adolescents (WeACT) or for facilitating groups (GroupACT); and\n- technique-specific skills, including in behavioural activation, cognitive behavioural therapy, interpersonal techniques, motivational enhancement, problem solving, and stress management.\nCompetencies for providing psychological interventions can be assessed by measuring providers' attitudes and knowledge as well as, importantly, their ability to perform required skills in controlled or real-world settings as measured using competency assessment tools. This can be achieved in different ways, including:",
+          "llm_judgement": {
+            "relevance_grade": 2,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "Discusses competency‑based training and the need for foundational and technique‑specific skills, providing useful supporting context for maintaining competency.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:59.967958+00:00"
+          }
+        },
+        "f6dfc0f5a4aea539d9947be909304fc49e587c07d065e795dc6fafdd522d8846": {
+          "accepted": false,
+          "relevance_grade": 1,
+          "embedding_distance": 0.6773784160614014,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 78,
+          "page_end": 79,
+          "heading_path": "6.3 Integrate findings",
+          "content": "6.3 Integrate findings\nM&amp;E findings can support learning, contextualisation, adaptation and accountability that can be used to drive continuous improvement and sustainability.\nAll M&amp;E data, whether collected through routine care or as a separate activity, should be routinely analysed, reported and integrated through a collaborative process that involves relevant stakeholders, including local communities.\nMake someone responsible for reporting. This person should be competent to analyse and interpret quantitative and qualitative data, and to draw conclusions and recommendations using participatory processes with local stakeholders. In some cases, personnel may require training in M&amp;E, including in data collection, management, and analysis to integrate results and improve programming.\nWhere possible, M&amp;E reports should identify specific problems that might ultimately compromise the quality of psychological interventions being delivered. This may include problems with the content of the psychological interventions (e.g. language or imagery) or the logistics of how they are provided (e.g. timing, location, staff, length of sessions etc). Problems may also be identified with how providers are trained or supervised.\nReports should provide concrete recommendations for addressing those problems to achieve continuous improvement (see Table 6.2).\nShare M&amp;E findings with relevant stakeholders, potentially including service managers, supervisors and providers, advocates and civil society, service users and communities. This may be a summary of monitoring results, or a time-specific evaluation report. Ensure that M&amp;E information is presented in a way that is relevant and understandable for the target audience. This may mean reporting the same information in different ways, such as one way for professionals, another way for community providers and yet another way for people with lived experience or others in the community. Good M&amp;E reports are excellent tools to support learning and accountability. They provide:\n- transparency on the service's performance;\n- a roadmap for action to improve the service;\n- a real-world case to advocate for investment; and\n- a wealth of data and experience for others to learn from.\nTABLE 6.2 Example M&amp;E findings of problems with the service; and recommendations for",
+          "llm_judgement": {
+            "relevance_grade": 1,
+            "supports_answer": false,
+            "source_match": false,
+            "rationale": "Mentions monitoring and evaluation to improve programs, including training issues, but does not directly address why continuous training is important.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:26:59.967968+00:00"
+          }
+        },
+        "e9001d495978df832ef244b905cd4db05fdbbcc5bb8326e24efdb1cff22d9819": {
+          "accepted": true,
+          "relevance_grade": 2,
+          "embedding_distance": 0.6804358959197998,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 58,
+          "page_end": 59,
+          "heading_path": "4.3.3 Assure quality of service provision",
+          "content": "4.3.3 Assure quality of service provision\nQuality assurance is about making sure that psychological interventions are delivered safely and effectively. It is an ongoing process of systematic assessment that starts during training and continues through supervision, often declining in frequency over time. It can involve assessment of three indicators (42):\n- Attendance: the extent to which the individual turns up to sessions to receive the psychological intervention (a high dropout rate from a multi-session intervention can indicate a problem in how the intervention is being delivered).\n- Fidelity (or adherence): the extent to which the psychological intervention delivered by a provider matches the intervention manual.\n- Competence: the extent to which the provider can perform required competencies and activities to a defined standard.\nAssessment of all three indicators is required to assure quality of care. For example, a provider can be very competent but if they do not sufficiently adhere to the intervention manual then the positive outcomes associated with the intervention cannot be assumed. Yet even if a provider adheres to the techniques described in the intervention manual, if they are not sufficiently competent then positive outcomes again cannot be assumed. And if the provider is competent and demonstrates good fidelity, the person receiving the psychological intervention can only benefit if they consistently participate in care.\nFidelity can be assessed during training and supervision through observation and feedback on practice or real cases. The trainer or supervisor observes the provider deliver an intervention and assesses the extent to which providers follow the intervention protocols, especially around the therapeutic components. Some intervention packages come with specific fidelity checklists (43).\nCompetency can similarly be assessed during training and supervision, also through structured role plays or direct observation, for example using EQUIP (see section 4.2.1 Competency-based training) (37).\nAttendance can be assessed through attendance records, which are often included in programmatic monitoring and evaluation (see Chapter 6 Monitoring and evaluation).",
+          "llm_judgement": {
+            "relevance_grade": 2,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "Discusses ongoing assessment of competence during training and supervision, implying that continuous training maintains workforce competency, which aligns with the reference answer.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:01.780759+00:00"
+          }
+        },
+        "2551d27292586da3d877456d8bb25f41c3e603f8dbca5f6f5488b4c94d2dbc11": {
+          "accepted": true,
+          "relevance_grade": 2,
+          "embedding_distance": 0.6839801669120789,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 86,
+          "page_end": 86,
+          "heading_path": "Prepare the workforce",
+          "content": "Prepare the workforce\n- [ ] ☐ Specify criteria and process for selecting providers, supervisors and trainers.\n- [ ] ☐ Appoint providers, supervisors and trainers.\n- [ ] ☐ Choose a model for training providers (and if needs be supervisors), e.g. training of trainers.\n- [ ] ☐ Define how the training will be structured and how the impact of training will be measured.\n- [ ] ☐ Train the workforce using a competency-based approach.\n- [ ] ☐ Clarify supervisors and providers' roles and responsibilities for supportive supervision.\n- [ ] ☐ Define the structure, frequency and format of supervision sessions.\n- [ ] ☐ Prepare tools and materials for supportive supervision, e.g. supervision forms.\n- [ ] ☐ Secure human resources to give providers administrative and other additional support.",
+          "llm_judgement": {
+            "relevance_grade": 2,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "Outlines steps for preparing and training the workforce using a competency‑based approach, supporting the idea that continuous training sustains competency.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:01.780817+00:00"
+          }
+        },
+        "957d1c6943ff704b1992018791401138720a3401955f1c0f04377983228bc860": {
+          "accepted": true,
+          "relevance_grade": 2,
+          "embedding_distance": 0.6954492926597595,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 50,
+          "page_end": 50,
+          "heading_path": "4.1 Choose the workforce",
+          "content": "4.1 Choose the workforce\nProviders, trainers and supervisors require different levels of knowledge, skills and experience. In many cases, the planned psychological interventions will be delivered by a limited group of existing staff in a service, and it will be clear exactly who will do what. In other cases, the workforce for psychological interventions will need to be developed by carefully choosing specific people from existing personnel to serve as providers, trainers or supervisors; or by recruiting new workers.",
+          "llm_judgement": {
+            "relevance_grade": 2,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "Mentions selecting and developing workforce, indicating the need for training to build necessary knowledge and skills, which relates to maintaining competency.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:01.780827+00:00"
+          }
+        },
+        "c64be5e6125efb38c99cdb7553f7a9a25667e1c01c59a980018b72624e92c74c": {
+          "accepted": true,
+          "relevance_grade": 2,
+          "embedding_distance": 0.7112138867378235,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 35,
+          "page_end": 35,
+          "heading_path": "2.6.1 Points to consider",
+          "content": "2.6.1 Points to consider\nSuitability of providers When specifying groups of non-specialist providers, consider their ability to provide multiple sessions of psychological interventions. Providers can be trained, supervised and supported to develop the necessary skills but they, like their trainers and supervisors, also need the appropriate attitudes to undertake the work (see section 4.1 Choose the workforce).\nSustainability. To ensure that psychological interventions can be provided over the long term, think about how providers and supervisors will remain incentivized and supported over time. The use of volunteers or project-funded staff is usually difficult to sustain.",
+          "llm_judgement": {
+            "relevance_grade": 2,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "Highlights sustainability and the need for ongoing training and support to keep providers competent over time.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:01.780835+00:00"
+          }
+        },
+        "ecaf635c0a7d4f8c26a77e42dc21be6a9f9f423812e21c08e3a515be82b49e1a": {
+          "accepted": true,
+          "relevance_grade": 2,
+          "embedding_distance": 0.7134538888931274,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+          "source": "Psychological\ninterventions\nimplementation\nmanual.pdf",
+          "page_start": 56,
+          "page_end": 56,
+          "heading_path": "4.3 Supervise the workforce",
+          "content": "4.3 Supervise the workforce\nSupportive supervision (also called clinical supervision) is required to ensure providers use their learning to provide quality interventions. It is also an opportunity for providers to continue developing and refining their skills.\nOrganizing supportive supervision is not an option. In the apprenticeship model of supervision, local supervisors are themselves supervised by an expert supervisor (39).",
+          "llm_judgement": {
+            "relevance_grade": 2,
+            "supports_answer": true,
+            "source_match": false,
+            "rationale": "Emphasizes supportive supervision as a continuous element of training to ensure providers retain and develop competencies.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:01.780842+00:00"
+          }
+        }
+      },
+      "question_fingerprint": "37b29ac837f9b9fbfe7009ac82f12c767927e03318bb6117bc0cac537cd16977",
+      "source_resolution": {
+        "expected_sources": [
+          "example_document.pdf"
+        ],
+        "matched_sources": [],
+        "used_global_fallback": true,
+        "fallback_reasons": [
+          "Expected source 'example_document.pdf' is not present in indexed metadata; searched the full collection."
+        ],
+        "status": "unmatched_source_global_fallback"
+      },
+      "candidate_count": 15,
+      "candidate_ids": [
+        "7e8350864e9c3003000fd3b25c1aa95999eef92d10c2a9ed88f68648fac34b3e",
+        "27feed1ac8b6aa9d0d435cf2b79dc0f0fee6fd5a05f8978d814ef62e18378f06",
+        "07b191be3406491abb64d1bf9c66a7d6e8e8e1b006704260a516bc49f4ea0536",
+        "e82903c7d1a2c1ba79c6734731ea6910992f55e9b1ba12d082acc82d455cde9c",
+        "b0b467024e88e3eebbade0396314697a76571f30f7856af9fb267a271660cceb",
+        "485701e3d2cf7b19dcefc58956c6c85d76b3e6903426e36afffb0ea090f23b4d",
+        "1f226f0ef93efbc6bf5c2407652db101176d066a3c76e81004d097d718180a11",
+        "0728f218738e3b705e42a2dd0c5e006b1e3e6153178c54284b700ef1339ec321",
+        "be500b8d470ae47ea540fa884914efedbc0ed4442501e5d44121476532af95fc",
+        "f6dfc0f5a4aea539d9947be909304fc49e587c07d065e795dc6fafdd522d8846",
+        "e9001d495978df832ef244b905cd4db05fdbbcc5bb8326e24efdb1cff22d9819",
+        "2551d27292586da3d877456d8bb25f41c3e603f8dbca5f6f5488b4c94d2dbc11",
+        "957d1c6943ff704b1992018791401138720a3401955f1c0f04377983228bc860",
+        "c64be5e6125efb38c99cdb7553f7a9a25667e1c01c59a980018b72624e92c74c",
+        "ecaf635c0a7d4f8c26a77e42dc21be6a9f9f423812e21c08e3a515be82b49e1a"
+      ],
+      "candidate_discovery_version": "source_resolved_evidence_pool_v2",
+      "candidate_top_n": 15,
+      "candidate_collection_count": 1737,
+      "reviewed_at_utc": "2026-11-20T16:26:56.539035+00:00",
+      "failed_candidates": {},
+      "reviewed_candidate_count": 15,
+      "review_complete": true,
+      "review_status": "completed",
+      "review_pending_count": 0,
+      "positive_ground_truth_count": 10
+    },
+    "Q002": {
+      "question_id": "Q002",
+      "question": "Which psychological interventions are recommended for adults with moderate-to-severe depression?",
+      "reference_answer": "Behavioural activation therapy, brief psychodynamic therapy, cognitive behavioural therapy, interpersonal therapy, problem-solving therapy and third wave therapies.",
+      "source_document": "WHO mhGAP.pdf",
+      "evidence_phrases": [
+        "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV)."
+      ],
+      "relevant_chunks": {
+        "4b34ec032f0656fba5188d97aeab8529fd513f407615dba7da5275a42f7215eb": {
+          "relevance": 3,
+          "source": "WHO mhGAP.pdf",
+          "page_start": 93,
+          "page_end": 93,
+          "heading_path": "DEP3. Is brief, structured psychological treatment better than (more effective than/as safe as) treatment as usual in adults with depressive episode/disorder?",
+          "evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "judge_rationale": "Chunk directly lists all recommended interventions (BAT, DYN, CBT, IPT, PST, 3WV) matching reference answer."
+        },
+        "a48e6fb9f7f22db226d9d033e32edb409e9d9766a0ba7bd83143f55f8e1a8e7d": {
+          "relevance": 3,
+          "source": "WHO mhGAP.pdf",
+          "page_start": 93,
+          "page_end": 93,
+          "heading_path": "Remarks",
+          "evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "judge_rationale": "Provides the same comprehensive list of interventions and clarifies their inclusion, directly supporting the answer."
+        },
+        "915de3fd98492c8c5625172b282e53b9bea604f08d7b356d52128ee748ef6214": {
+          "relevance": 2,
+          "source": "WHO mhGAP.pdf",
+          "page_start": 85,
+          "page_end": 85,
+          "heading_path": "Implementation considerations",
+          "evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "judge_rationale": "Mentions CBT, IPT, and BAT as recommended, but omits several interventions; offers partial support."
+        },
+        "91fa84982191366ee3cc0d5f9b0ea69e6deccba4b212416088015cdcf78a2fcd": {
+          "relevance": 3,
+          "source": "WHO mhGAP.pdf",
+          "page_start": 95,
+          "page_end": 95,
+          "heading_path": "Remarks",
+          "evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "judge_rationale": "Explicitly lists all six interventions (BAT, DYN, CBT, IPT, PST, 3WV) matching the reference answer."
+        }
+      },
+      "decisions": {
+        "4b34ec032f0656fba5188d97aeab8529fd513f407615dba7da5275a42f7215eb": {
+          "accepted": true,
+          "relevance_grade": 3,
+          "embedding_distance": 0.13356825709342957,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "source": "WHO mhGAP.pdf",
+          "page_start": 93,
+          "page_end": 93,
+          "heading_path": "DEP3. Is brief, structured psychological treatment better than (more effective than/as safe as) treatment as usual in adults with depressive episode/disorder?",
+          "content": "DEP3. Is brief, structured psychological treatment better than (more effective than/as safe as) treatment as usual in adults with depressive episode/disorder?\nRecommendation (update): Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV). 7\nStrength of recommendation:\nStrong\nCertainty of evidence:\nModerate",
+          "llm_judgement": {
+            "relevance_grade": 3,
+            "supports_answer": true,
+            "source_match": true,
+            "rationale": "Chunk directly lists all recommended interventions (BAT, DYN, CBT, IPT, PST, 3WV) matching reference answer.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:06.836824+00:00"
+          }
+        },
+        "a48e6fb9f7f22db226d9d033e32edb409e9d9766a0ba7bd83143f55f8e1a8e7d": {
+          "accepted": true,
+          "relevance_grade": 3,
+          "embedding_distance": 0.21777410805225372,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "source": "WHO mhGAP.pdf",
+          "page_start": 93,
+          "page_end": 93,
+          "heading_path": "Remarks",
+          "content": "Remarks\n- y The term \"depression\" covers moderate to severe depressive episode or disorder.\n7 Third wave therapies included in the review are: mindfulness-based interventions, acceptance and commitment therapy, metacognitive therapy and dialectical behavioural therapy.\n8 Brief psychological treatments included in this review are: CBT: cognitive behavioural therapy; iCBT: internet-based cognitive behavioural therapy; BAT: behavioural activation therapy; PST: problem-solving therapy; 3WV: third wave therapies; IPT: interpersonal therapy; DYN: brief psychodynamic therapy; SUP: non-directive support counselling; LRT: life review therapy.\n- y The brief structured psychological interventions included in the review delivered an average of 8-10 sessions (with a range of 1-20 sessions).\n- y Brief psychological interventions can be delivered effectively in different modalities (e.g. individual and group formats, internet-based) and through task sharing approaches. However, guided iCBT was more effective than unguided iCBT for people with moderate-to-severe depression.\n- y Promotion of the person's psychological skills (e.g. emotional, interpersonal, behavioural and cognitive skills) is a component of many brief psychological treatments for depressive episode/disorder. This has value beyond the reduction of depression.\n- y It is of value to include a range of brief psychological interventions in a non-specialized health-care package covering the treatment of depression to be able to respond to people's preferences.",
+          "llm_judgement": {
+            "relevance_grade": 3,
+            "supports_answer": true,
+            "source_match": true,
+            "rationale": "Provides the same comprehensive list of interventions and clarifies their inclusion, directly supporting the answer.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:06.836871+00:00"
+          }
+        },
+        "915de3fd98492c8c5625172b282e53b9bea604f08d7b356d52128ee748ef6214": {
+          "accepted": true,
+          "relevance_grade": 2,
+          "embedding_distance": 0.22384248673915863,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "source": "WHO mhGAP.pdf",
+          "page_start": 85,
+          "page_end": 85,
+          "heading_path": "Implementation considerations",
+          "content": "Implementation considerations\nPsychological interventions - namely cognitive behavioural therapy (CBT), interpersonal therapy (IPT), structured counselling and behavioural activation therapy (BAT) - should be considered for people living with dementia and mild-to-moderate depression.\nStrength of recommendation:\nConditional\nCertainty of evidence:\nLow",
+          "llm_judgement": {
+            "relevance_grade": 2,
+            "supports_answer": true,
+            "source_match": true,
+            "rationale": "Mentions CBT, IPT, and BAT as recommended, but omits several interventions; offers partial support.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:06.836888+00:00"
+          }
+        },
+        "91fa84982191366ee3cc0d5f9b0ea69e6deccba4b212416088015cdcf78a2fcd": {
+          "accepted": true,
+          "relevance_grade": 3,
+          "embedding_distance": 0.3447863757610321,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "source": "WHO mhGAP.pdf",
+          "page_start": 95,
+          "page_end": 95,
+          "heading_path": "Remarks",
+          "content": "Remarks\n- y The term \"combined treatment\" refers to psychological interventions provided together with antidepressant medicines.\n- y Psychological interventions include BAT, DYN, CBT, IPT, PST and 3WV. The review focused on psychological interventions delivered by mental health professionals.\n- y Antidepressants include SSRIs (e.g. citalopram, escitalopram, fluoxetine, fluvoxamine, paroxetine or sertraline) and TCAs (e.g. amitriptyline and clomipramine).",
+          "llm_judgement": {
+            "relevance_grade": 3,
+            "supports_answer": true,
+            "source_match": true,
+            "rationale": "Explicitly lists all six interventions (BAT, DYN, CBT, IPT, PST, 3WV) matching the reference answer.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:06.836900+00:00"
+          }
+        },
+        "ab281fff12c68491576151ad6eac5e9fb7b9c8da79a166f6042b479e95a89f7a": {
+          "accepted": false,
+          "relevance_grade": 0,
+          "embedding_distance": 0.3882371783256531,
+          "matched_evidence_id": "E001",
+          "matched_evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+          "source": "WHO mhGAP.pdf",
+          "page_start": 52,
+          "page_end": 52,
+          "heading_path": "ANX2. Is brief, structured psychological treatment (e.g. cognitive behavioural therapy [CBT], problem-solving therapy [PST]) better than treatment as usual in people with anxiety disorders (excluding social anxiety disorder and specific phobias)?",
+          "content": "ANX2. Is brief, structured psychological treatment (e.g. cognitive behavioural therapy [CBT], problem-solving therapy [PST]) better than treatment as usual in people with anxiety disorders (excluding social anxiety disorder and specific phobias)?\nRecommendation (new):\nBrief, structured psychological interventions based on principles of cognitive behavioural therapy (CBT) should be offered for adults with generalized anxiety disorder (GAD) and/or panic disorder\nStrength of recommendation:\nStrong\nCertainty of evidence:\nModerate",
+          "llm_judgement": {
+            "relevance_grade": 0,
+            "supports_answer": false,
+            "source_match": true,
+            "rationale": "Discusses anxiety treatments, not depression; does not provide relevant interventions for the question.",
+            "judge_model": "openai/gpt-oss-120b",
+            "judged_at_utc": "2026-11-20T16:27:06.836913+00:00"
+          }
+        }
+      },
+      "question_fingerprint": "997224d6cc0707f7b11a7d99788fa14eee64709e0e8d09aa18e6e6c01cd8049c",
+      "source_resolution": {
+        "expected_sources": [
+          "WHO mhGAP.pdf"
+        ],
+        "matched_sources": [
+          "WHO mhGAP.pdf"
+        ],
+        "used_global_fallback": false,
+        "fallback_reasons": [],
+        "status": "matched"
+      },
+      "candidate_count": 15,
+      "candidate_ids": [
+        "4b34ec032f0656fba5188d97aeab8529fd513f407615dba7da5275a42f7215eb",
+        "a48e6fb9f7f22db226d9d033e32edb409e9d9766a0ba7bd83143f55f8e1a8e7d",
+        "915de3fd98492c8c5625172b282e53b9bea604f08d7b356d52128ee748ef6214",
+        "91fa84982191366ee3cc0d5f9b0ea69e6deccba4b212416088015cdcf78a2fcd",
+        "ab281fff12c68491576151ad6eac5e9fb7b9c8da79a166f6042b479e95a89f7a",
+        "31d1ead212006d10c6b8085d7940869a42793a778d836ccf57c396aba3c0b269",
+        "622d2f276b7f07af062caf783ff5a3d613aab38ec84c36aa6ee9c08508da0b78",
+        "89620323b00da9b522ec76f3267801175019630c2f929b50c5f5c402b882194e",
+        "8e9e298ab44d56f85a5419a1387a01efa5bfac42ce350737c3db6a390a8be995",
+        "6131d185ca384a2e63513e9f8a1fc0b47bc1e8a01b366c538f2ac7527ed67cce",
+        "60df0cc23cd8e8d530eeba9646ba652804d9f4119281636c51c2fb6700936e7a",
+        "b9e54c1ca584554635ba0bd6eb969cb3cd2fb75b344fc7b24d6e248df5b91b03",
+        "fd9b2bb9aa16c16fad23a18f6628e22788630e71e4ab4b538c0d4e20454ea9ef",
+        "84ade0709a15a352ad1401c2447f16354b6b2484c4cd3cfdcc1024ee5af357e9",
+        "a06fb88562c99a6f7b011658dc6400fc75d257ad74e265026009d8dd29e023ee"
+      ],
+      "candidate_discovery_version": "source_resolved_evidence_pool_v2",
+      "candidate_top_n": 15,
+      "candidate_collection_count": 1737,
+      "reviewed_at_utc": "2026-11-20T16:27:01.874010+00:00",
+      "failed_candidates": {}
+    }
+  },
+  "answer_reviews": {},
+  "updated_at_utc": "2026-11-20T16:27:27.005356+00:00"
+}

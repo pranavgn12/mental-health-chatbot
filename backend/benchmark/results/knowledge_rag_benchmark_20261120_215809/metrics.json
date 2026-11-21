@@ -1,0 +1,97 @@
+{
+  "benchmark_version": "knowledge_rag_benchmark_v3",
+  "answer_benchmark_enabled": true,
+  "dataset_name": "knowledge_rag_benchmark",
+  "created_at_utc": "2026-11-20T17:39:54.899197+00:00",
+  "retriever": "services.ai.rag.local_retriever.LocalRetriever",
+  "retrieval_scope": "Production local hybrid retriever: Chroma vector search + BM25 + RRF, one original question per retrieval call, with production query ranking. No web or RAG context selector added.",
+  "ground_truth": {
+    "candidate_discovery": "Chroma vector query using evidence phrases; exact metadata source values are resolved through normalized source labels; global fallback used when the expected source is absent.",
+    "judge_model": "openai/gpt-oss-120b",
+    "relevance_grades": {
+      "0": "irrelevant",
+      "1": "related but insufficient",
+      "2": "useful supporting evidence",
+      "3": "directly supports the answer"
+    },
+    "binary_relevant_threshold": 2
+  },
+  "question_count": 41,
+  "reported_question_count": 41,
+  "retrieval_evaluable_question_count": 39,
+  "graded_ndcg_evaluable_question_count": 39,
+  "not_retrieval_evaluable_question_count": 2,
+  "evaluation_status_counts": {
+    "evaluated_with_positive_ground_truth": 39,
+    "incomplete_ground_truth_review": 2
+  },
+  "k_values": [
+    3,
+    5,
+    10
+  ],
+  "macro_average": {
+    "precision@3": 0.4444444444444444,
+    "recall@3": 0.30965167311321157,
+    "ndcg@3": 0.49067511872418923,
+    "precision@5": 0.358974358974359,
+    "recall@5": 0.417605400297708,
+    "ndcg@5": 0.49827250359265396,
+    "precision@10": 0.24615384615384614,
+    "recall@10": 0.5791801503339965,
+    "ndcg@10": 0.5323327924491469,
+    "mrr@10": 0.7878917378917379
+  },
+  "metric_definitions": {
+    "precision_at_k": "Relevant retrieved chunks in top K divided by K.",
+    "recall_at_k": "Relevant retrieved chunks in top K divided by all grade-2/3 judged relevant chunks in that question's evidence candidate pool.",
+    "mrr": "Reciprocal rank of first grade-2/3 chunk through rank 10.",
+    "ndcg": "Graded nDCG with gain 2^grade - 1; grades 1, 2 and 3 contribute.",
+    "aggregation": "Every dataset question appears in per_question_metrics. Precision, recall and MRR macro averages use questions with a completed review and at least one grade-2/3 chunk. Graded nDCG also includes completed questions with grade-1-only evidence. Questions with no candidates, only grade-0 labels, or incomplete judgments remain visible with an explicit status instead of being silently dropped."
+  },
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "collection": "knowledge",
+  "rrf_k": 60,
+  "groq_usage": {
+    "model": "openai/gpt-oss-120b",
+    "successful_completion_calls": 123,
+    "api_key_switches": 11,
+    "skipped_requests": 0,
+    "api_key_values_saved": false
+  },
+  "answer_generation": {
+    "benchmark_version": "knowledge_rag_benchmark_v3",
+    "benchmark_mode": "answer_only",
+    "dataset_name": "knowledge_rag_benchmark",
+    "question_count": 41,
+    "judged_question_count": 41,
+    "generation_completed_count": 41,
+    "generation_failed_count": 0,
+    "answer_judgement_failed_count": 0,
+    "judge_model": "openai/gpt-oss-120b",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_device": "cuda",
+    "embedding_similarity_mean": 0.757183816374802,
+    "llm_judgement_counts": {
+      "correct": 35,
+      "mostly_correct": 2,
+      "partially_correct": 2,
+      "incorrect": 2
+    },
+    "llm_exact_correct_rate": 0.8536585365853658,
+    "llm_weighted_answer_score": 0.9024390243902439,
+    "score_mapping": {
+      "grade_3": 1.0,
+      "grade_2": 0.6667,
+      "grade_1": 0.3333,
+      "grade_0": 0.0
+    },
+    "note": "Answer-only evaluation using the saved retrieval_results.json from the selected run; retrieval and relevance review were not rerun.",
+    "created_at_utc": "2026-11-20T18:27:06.575903+00:00",
+    "groq_usage_this_answer_only_run": {
+      "successful_completion_calls": 82,
+      "api_key_switches": 0,
+      "skipped_requests": 0
+    }
+  }
+}

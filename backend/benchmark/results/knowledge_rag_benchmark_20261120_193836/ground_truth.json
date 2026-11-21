@@ -1,0 +1,18 @@
+{
+  "dataset_name": "knowledge_rag_benchmark",
+  "created_at_utc": "2026-11-20T14:08:36.954167+00:00",
+  "questions": {
+    "Q001": {
+      "question_id": "Q001",
+      "question": "Why is continuous workforce training important?",
+      "reference_answer": "It helps maintain workforce competency.",
+      "source_document": "example_document.pdf",
+      "evidence_phrases": [
+        "Continuous professional development helps maintain workforce competency."
+      ],
+      "relevant_chunks": {},
+      "decisions": {},
+      "review_complete": true
+    }
+  }
+}

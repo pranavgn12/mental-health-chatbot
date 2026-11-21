@@ -1,0 +1,71 @@
+{
+  "dataset_name": "knowledge_rag_benchmark",
+  "created_at_utc": "2026-11-20T15:34:33.475319+00:00",
+  "retriever": "services.ai.rag.local_retriever.LocalRetriever",
+  "retrieval_scope": "local hybrid retrieval: Chroma vector + BM25 + RRF; one original question per call; no web, query expansion, LLM reranker, or context selector",
+  "ground_truth_judging": {
+    "candidate_discovery": "BGE embedding similarity against evidence phrases, using the configured Chroma collection embedding function",
+    "candidate_limit_per_evidence_phrase": "configured by --top-n",
+    "judge_model": "openai/gpt-oss-120b",
+    "relevance_grades": {
+      "0": "irrelevant",
+      "1": "related but insufficient",
+      "2": "useful supporting evidence",
+      "3": "directly supports the answer"
+    },
+    "binary_relevant_threshold": 2
+  },
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "collection": "knowledge",
+  "rrf_k": 60,
+  "k_values": [
+    3,
+    5,
+    10
+  ],
+  "mrr_cutoff": 10,
+  "answer_generation": {
+    "provider": "Groq API using the configured GROQ_MODEL; same model judges chunks and answers",
+    "judge_model": "openai/gpt-oss-120b",
+    "context": "Top 5 chunks returned by the existing LocalRetriever",
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_similarity_mean": 0.7764874299367269,
+    "llm_judgement_counts": {
+      "correct": 37,
+      "incorrect": 1,
+      "partially_correct": 3
+    },
+    "llm_weighted_answer_score": 0.926829268292683,
+    "llm_exact_correct_rate": 0.9024390243902439,
+    "interpretation": "LLM judge grade 0-3; normalized score is grade/3. Embedding cosine similarity is a separate semantic diagnostic."
+  },
+  "question_count": 41,
+  "evaluated_question_count": 25,
+  "excluded_question_count": 16,
+  "metric_definitions": {
+    "precision_at_k": "Relevant retrieved chunks in top K divided by K.",
+    "recall_at_k": "Relevant retrieved chunks in top K divided by all LLM-judged relevant chunks for that question.",
+    "mrr": "Mean reciprocal rank of the first relevant chunk, measured through rank 10 (MRR@10).",
+    "ndcg_at_k": "Graded nDCG with gain 2^relevance_grade - 1; accepted grades 1, 2, 3 are used. Unjudged chunks receive grade 0.",
+    "binary_relevance_threshold": "Grades 2 and 3 count as relevant for Precision, Recall, and MRR. Grade 1 is weakly related and only contributes to graded nDCG.",
+    "aggregation": "Macro-average across questions with at least one LLM-judged grade-2-or-3 chunk in the evidence-phrase candidate pool."
+  },
+  "macro_average": {
+    "precision@3": 0.42666666666666664,
+    "recall@3": 0.32764590964590967,
+    "ndcg@3": 0.48946656372866765,
+    "precision@5": 0.36800000000000005,
+    "recall@5": 0.4429108669108669,
+    "ndcg@5": 0.5110836546778306,
+    "precision@10": 0.244,
+    "recall@10": 0.5986971916971917,
+    "ndcg@10": 0.5413510263989975,
+    "mrr@10": 0.7804444444444445
+  },
+  "groq_usage": {
+    "model": "openai/gpt-oss-120b",
+    "successful_completion_calls": 458,
+    "api_key_switches": 2,
+    "api_key_values_saved": false
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "dataset_name": "knowledge_rag_benchmark",
+  "questions": [
+    {
+      "question": "Why is continuous workforce training important?",
+      "reference_answer": "It helps maintain workforce competency.",
+      "evidence_phrase": "Continuous professional development helps maintain workforce competency.",
+      "source_document": "example_document.pdf"
+    },
+    {
+    "question": "Which psychological interventions are recommended for adults with moderate-to-severe depression?",
+    "reference_answer": "Behavioural activation therapy, brief psychodynamic therapy, cognitive behavioural therapy, interpersonal therapy, problem-solving therapy and third wave therapies.",
+    "evidence_phrase": "Structured psychological interventions should be offered for the treatment of adults with moderate-to-severe depression, namely behavioural activation therapy (BAT), brief psychodynamic therapy (DYN), cognitive behavioural therapy (CBT), interpersonal therapy (IPT), problem-solving therapy (PST) and third wave therapies (3WV).",
+    "source_document": "WHO mhGAP.pdf"
+  },
+  {
+    "question": "How long should antidepressant treatment continue after remission in adults with moderate-to-severe depression?",
+    "reference_answer": "For at least six months after remission.",
+    "evidence_phrase": "continuation of the antidepressant treatment should be considered for at least six months after remission.",
+    "source_document": "WHO mhGAP.pdf"
+  },
+  {
+    "question": "Which psychological interventions are recommended for adults with generalized anxiety disorder or panic disorder?",
+    "reference_answer": "Brief, structured psychological interventions based on cognitive behavioural therapy principles.",
+    "evidence_phrase": "Brief, structured psychological interventions based on principles of cognitive behavioural therapy (CBT) should be offered for adults with generalized anxiety disorder (GAD) and/or panic disorder.",
+    "source_document": "WHO mhGAP.pdf"
+  },
+  {
+    "question": "Which psychological interventions can be considered for adults with post-traumatic stress disorder?",
+    "reference_answer": "Trauma-focused CBT, digital or remote CBT, EMDR and stress management.",
+    "evidence_phrase": "Psychological interventions should be considered for adults with post-traumatic stress disorder (PTSD). Namely, these include: individual face-to-face cognitive behavioural therapy (CBT) with a trauma focus; group face-to-face CBT with a trauma focus; digital/remote CBT with a trauma focus; eye movement desensitization and reprocessing (EMDR); stress management.",
+    "source_document": "WHO mhGAP.pdf"
+  },
+  {
+    "question": "What intervention can be considered for individuals with thoughts or plans of self-harm?",
+    "reference_answer": "Safety planning-type interventions, including multicomponent interventions or those supplemented with follow-up or support.",
+    "evidence_phrase": "Safety planning type-interventions, i.e. interventions based on principles of safety planning which are multicomponent or supplemented with follow-up or support, can be considered.",
+    "source_document": "WHO mhGAP.pdf"
+  },
+  {
+    "question": "What are the key factors considered when determining the severity of depression?",
+    "reference_answer": "Symptoms, duration of the disorder, and the impact on personal and social functioning.",
+    "evidence_phrase": "Severity of depression is therefore a consequence of the contribution of all of these elements.",
+    "source_document": "depression-in-adults-treatment-and-management-pdf-66143832307909.pdf"
+  },
+  {
+    "question": "Why should healthcare professionals ask people with depression about suicidal thoughts?",
+    "reference_answer": "To identify suicidal ideation and intent and assess the risk of self-harm or suicide.",
+    "evidence_phrase": "Always ask people with depression directly about suicidal ideation and intent.",
+    "source_document": "depression-in-adults-treatment-and-management-pdf-66143832307909.pdf"
+  },
+  {
+    "question": "What factors should be considered when assessing a person with depression?",
+    "reference_answer": "Previous mental health history, supportive relationships, lifestyle, stressful life events, living conditions, and social isolation.",
+    "evidence_phrase": "Discuss with the person how the factors below may have affected the development, course and severity of their depression.",
+    "source_document": "depression-in-adults-treatment-and-management-pdf-66143832307909.pdf"
+  },
+  {
+    "question": "How can regular physical activity help people with depression?",
+    "reference_answer": "Regular physical activity can enhance a person's sense of wellbeing, particularly when performed outdoors.",
+    "evidence_phrase": "The benefits can be greater if this activity is outdoors.",
+    "source_document": "depression-in-adults-treatment-and-management-pdf-66143832307909.pdf"
+  },
+  {
+    "question": "Why is guided self-help considered as a first-line treatment for less severe depression?",
+    "reference_answer": "It is the least intrusive and least resource-intensive treatment option.",
+    "evidence_phrase": "consider the least intrusive and least resource intensive treatment first (guided self-help)",
+    "source_document": "depression-in-adults-treatment-and-management-pdf-66143832307909.pdf"
+  },
+  {
+    "question": "What intervention should be offered first in the stepped-care model for GAD?",
+    "reference_answer": "The least intrusive, most effective intervention should be offered first.",
+    "evidence_phrase": "Follow the stepped-care model, offering the least intrusive, most effective intervention first.",
+    "source_document": "generalised-anxiety-disorder-and-panic-disorder-in-adults-management-pdf-35109387756997.pdf"
+  },
+  {
+    "question": "What should a comprehensive assessment of GAD consider besides the number, severity and duration of symptoms?",
+    "reference_answer": "It should consider the degree of distress and functional impairment.",
+    "evidence_phrase": "conduct a comprehensive assessment that does not rely solely on the number, severity and duration of symptoms, but also considers the degree of distress and functional impairment.",
+    "source_document": "generalised-anxiety-disorder-and-panic-disorder-in-adults-management-pdf-35109387756997.pdf"
+  },
+  {
+    "question": "Which low-intensity psychological interventions are recommended for people with GAD whose symptoms have not improved after education and active monitoring?",
+    "reference_answer": "Individual non-facilitated self-help, individual guided self-help and psychoeducational groups.",
+    "evidence_phrase": "individual non-facilitated self-help; individual guided self-help; psychoeducational groups.",
+    "source_document": "generalised-anxiety-disorder-and-panic-disorder-in-adults-management-pdf-35109387756997.pdf"
+  },
+  {
+    "question": "What psychological interventions should be offered when a person with GAD chooses high-intensity psychological treatment?",
+    "reference_answer": "Cognitive behavioural therapy (CBT) or applied relaxation.",
+    "evidence_phrase": "If a person with GAD chooses a high-intensity psychological intervention, offer either CBT or applied relaxation.",
+    "source_document": "generalised-anxiety-disorder-and-panic-disorder-in-adults-management-pdf-35109387756997.pdf"
+  },
+  {
+    "question": "How long should a person with GAD continue taking medication if the drug treatment is effective?",
+    "reference_answer": "At least a year, because the likelihood of relapse is high.",
+    "evidence_phrase": "If the drug is effective, advise the person to continue taking it for at least a year as the likelihood of relapse is high.",
+    "source_document": "generalised-anxiety-disorder-and-panic-disorder-in-adults-management-pdf-35109387756997.pdf"
+  },
+  {
+    "question": "What are the common symptoms associated with post-traumatic stress disorder?",
+    "reference_answer": "Re-experiencing, avoidance, hyperarousal, negative alterations in mood and thinking, emotional numbing, and dissociation.",
+    "evidence_phrase": "re-experiencing, avoidance, hyperarousal (including hypervigilance, anger and irritability), negative alterations in mood and thinking, emotional numbing, dissociation",
+    "source_document": "posttraumatic-stress-disorder-pdf-66141601777861.pdf"
+  },
+  {
+    "question": "What should healthcare professionals assess when evaluating a person with PTSD?",
+    "reference_answer": "Physical, psychological, and social needs, along with potential risks.",
+    "evidence_phrase": "Assessment of people with PTSD should be comprehensive, including an assessment of physical, psychological and social needs and a risk assessment.",
+    "source_document": "posttraumatic-stress-disorder-pdf-66141601777861.pdf"
+  },
+  {
+    "question": "What treatment is recommended for adults with PTSD who present more than one month after a traumatic event?",
+    "reference_answer": "An individual trauma-focused cognitive behavioural therapy intervention.",
+    "evidence_phrase": "Offer an individual trauma-focused CBT intervention to adults with a diagnosis of PTSD or clinically important symptoms of PTSD who have presented more than 1 month after a traumatic event.",
+    "source_document": "posttraumatic-stress-disorder-pdf-66141601777861.pdf"
+  },
+  {
+    "question": "How long should trauma-focused CBT typically be provided to adults with PTSD?",
+    "reference_answer": "Typically 8 to 12 sessions, with additional sessions if clinically indicated.",
+    "evidence_phrase": "typically be provided over 8 to 12 sessions, but more if clinically indicated, for example if they have experienced multiple traumas",
+    "source_document": "posttraumatic-stress-disorder-pdf-66141601777861.pdf"
+  },
+  {
+    "question": "How should healthcare professionals support people with PTSD and complex needs?",
+    "reference_answer": "They should allow additional time to develop trust and address barriers to treatment engagement.",
+    "evidence_phrase": "build in extra time to develop trust with the person, by increasing the duration or the number of therapy sessions according to the person's needs",
+    "source_document": "posttraumatic-stress-disorder-pdf-66141601777861.pdf"
+  },
+  {
+    "question": "What are the five key steps for implementing psychological interventions within an existing service?",
+    "reference_answer": "Planning, adaptation, workforce preparation, identification and assessment of beneficiaries, and monitoring and evaluation.",
+    "evidence_phrase": "make an implementation plan; adapt for context; prepare the workforce; identify, assess and support potential beneficiaries; and monitor and evaluate the service",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "Why is community engagement important during the implementation of psychological interventions?",
+    "reference_answer": "It helps identify and overcome barriers to help-seeking and secure the buy-in of potential service users.",
+    "evidence_phrase": "community engagement is important to identify and overcome barriers to help-seeking and secure the buy-in of potential service users.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "How should providers be prepared to deliver psychological interventions?",
+    "reference_answer": "Providers should receive competency-based training and ongoing supervision.",
+    "evidence_phrase": "Equip providers with the right skills through competency-based training.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "Why is ongoing supportive supervision necessary for psychological intervention providers?",
+    "reference_answer": "It builds providers' confidence and competence, promotes safe and ethical practice, and encourages self-care.",
+    "evidence_phrase": "Ensure ongoing supportive supervision from appropriately experienced people to build providers’ confidence and competence, promote safe and ethical practice, provide support for challenging cases and encourage providers’ self-care.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "What is the purpose of monitoring and evaluation when implementing psychological interventions?",
+    "reference_answer": "To ensure interventions are not causing harm, assess whether they address mental health needs, and inform service improvements.",
+    "evidence_phrase": "ensure the intervention is not causing any harm; establish whether the psychological intervention is addressing the target population’s mental health needs; and inform adaptations and quality improvement strategies for the current service and future services implementing psychological interventions.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "What should be considered when planning treatment following self-harm?",
+    "reference_answer": "Associated coexisting conditions and the psychosocial assessment should be considered.",
+    "evidence_phrase": "When planning treatment following self-harm, take into account any associated coexisting conditions and the psychosocial assessment.",
+    "source_document": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757(1).pdf"
+  },
+  {
+    "question": "What type of psychological intervention should be offered to adults who self-harm?",
+    "reference_answer": "A structured, person-centred, CBT-informed psychological intervention.",
+    "evidence_phrase": "Offer a structured, person-centred, cognitive behavioural therapy (CBT)-informed psychological intervention (for example, CBT or problem-solving therapy) that is specifically tailored for adults who self-harm.",
+    "source_document": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757(1).pdf"
+  },
+  {
+    "question": "What should a safety plan identify to help prevent further self-harm?",
+    "reference_answer": "Triggers, warning signs, coping strategies, social contacts and support.",
+    "evidence_phrase": "recognise the triggers and warning signs of increased distress, further self-harm or a suicidal crisis",
+    "source_document": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757(1).pdf"
+  },
+  {
+    "question": "When should initial aftercare be provided if there are ongoing safety concerns?",
+    "reference_answer": "Within 48 hours of the psychosocial assessment.",
+    "evidence_phrase": "should provide initial aftercare within 48 hours of the psychosocial assessment.",
+    "source_document": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757(1).pdf"
+  },
+  {
+    "question": "What should regular staff supervision promote when working with people who self-harm?",
+    "reference_answer": "Compassionate care, ongoing skill development, reflective practice, confidence and competence.",
+    "evidence_phrase": "promote the delivery of compassionate care",
+    "source_document": "selfharm-assessment-management-and-preventing-recurrence-pdf-66143837346757(1).pdf"
+  },
+  {
+    "question": "Why does the manual use the term 'problem management' instead of 'problem-solving counselling'?",
+    "reference_answer": "It is used to help helpers and clients understand that even when problems are difficult or impossible to fully solve, there may still be ways to provide relief from their impact.",
+    "evidence_phrase": "By using the term \"management\", we hope that helpers and clients understand that when problems are challenging to solve there may still be ways to provide relief from their impact.",
+    "source_document": "WHO_MSD_MER_18.5_eng.pdf"
+  },
+  {
+    "question": "What are the training requirements for helpers who are not mental health professionals?",
+    "reference_answer": "They must complete at least 80 hours (10 full days) of classroom training conducted by a competent mental health professional, followed by supervised in-field practice with at least two clients.",
+    "evidence_phrase": "The classroom training should be at least 80 hours (10 full days).",
+    "source_document": "WHO_MSD_MER_18.5_eng.pdf"
+  },
+  {
+    "question": "How many sessions make up the Problem Management Plus (PM+) intervention and how long does each session last?",
+    "reference_answer": "The PM+ intervention consists of five 90-minute individual sessions, typically held once a week.",
+    "evidence_phrase": "PM+ is made up of five 90-minute individual sessions.",
+    "source_document": "WHO_MSD_MER_18.5_eng.pdf"
+  },
+  {
+    "question": "Why should helpers generally avoid giving direct advice to clients during PM+?",
+    "reference_answer": "If a client relies on the helper's advice, they are unlikely to develop the ability to manage their own problems in the future once the intervention is over.",
+    "evidence_phrase": "If the client has been relying on your advice, they are unlikely to be able to manage their own problems in the future, when they have completed the PM+ intervention.",
+    "source_document": "WHO_MSD_MER_18.5_eng.pdf"
+  },
+  {
+    "question": "What is the main goal of the 'Get Going, Keep Doing' strategy?",
+    "reference_answer": "It aims to break the cycle of inactivity and improve the client's mood by encouraging them to re-engage in pleasant and task-oriented activities regardless of their current mood.",
+    "evidence_phrase": "Get Going, Keep Doing aims to break this cycle and improve the client's mood by encouraging them to get involved again in pleasant and task-oriented activities in spite of their mood.",
+    "source_document": "WHO_MSD_MER_18.5_eng.pdf"
+  },
+  {
+    "question": "What is the purpose of planning when implementing psychological interventions?",
+    "reference_answer": "Deciding which interventions will be provided, why, where, how and when.",
+    "evidence_phrase": "It involves deciding which interventions will be provided, why, where, how and when.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "How should psychological interventions be adapted for a specific context?",
+    "reference_answer": "By adapting the psychological interventions for use in a specific context, including translating them into local languages.",
+    "evidence_phrase": "Adapt the psychological interventions for use in a specific context, including translating them into local languages.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "How can a competent workforce be prepared to deliver psychological interventions?",
+    "reference_answer": "By selecting, training, assessing and supervising providers.",
+    "evidence_phrase": "Prepare and sustain a competent workforce to deliver the psychological interventions by selecting, training, assessing and supervising providers.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "Why is supportive supervision important for psychological intervention providers?",
+    "reference_answer": "To build providers’ confidence and competence, promote safe and ethical practice, provide support for challenging cases and encourage providers’ self-care.",
+    "evidence_phrase": "Ensure ongoing supportive supervision from appropriately experienced people to build providers’ confidence and competence, promote safe and ethical practice, provide support for challenging cases and encourage providers’ self-care.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  },
+  {
+    "question": "What are the three major steps involved in monitoring and evaluating psychological interventions?",
+    "reference_answer": "Make an M&E plan, collect and analyse data, and integrate findings.",
+    "evidence_phrase": "The process for monitoring and evaluating the integration of psychological interventions in existing services typically comprises three major steps: make an M&E plan based on the goals of integration; collect and analyse monitoring and/or evaluation data; and integrate findings to improve services or share lessons learned.",
+    "source_document": "Psychological interventions implementation manual.pdf"
+  }
+  ]
+}

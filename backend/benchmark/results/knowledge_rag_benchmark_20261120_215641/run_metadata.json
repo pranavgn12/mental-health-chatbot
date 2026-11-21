@@ -1,0 +1,21 @@
+{
+  "dataset_path": "/home/pranavgn/Desktop/mental-health-chatbot/backend/benchmark/datasets/knowledge_rag_q.json",
+  "question_count": 41,
+  "k_values": [
+    3,
+    5,
+    10
+  ],
+  "candidate_top_n": 15,
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "collection": "knowledge",
+  "created_at_utc": "2026-11-20T16:26:41.857315+00:00",
+  "dataset_sha256": "843501fe4b5f3126430ec65c62d56d390d8333898807940a700f6fc9083f205e",
+  "benchmark_version": "knowledge_rag_benchmark_v3",
+  "groq_model": "openai/gpt-oss-120b",
+  "ground_truth_judge": "openai/gpt-oss-120b",
+  "answer_generation_model": "openai/gpt-oss-120b",
+  "answer_judge": "openai/gpt-oss-120b",
+  "api_key_value_saved": false,
+  "source_filename_matching": "Unicode/case/whitespace normalized; raw Chroma values used for where filters; global fallback when unmatched."
+}
