@@ -1,0 +1,3132 @@
+{
+  "benchmark": "PatternMemoryAnalyzer",
+  "dataset": "/home/pranavgn/Desktop/mental-health-chatbot/backend/benchmark/datasets/pattern_benchmark.json",
+  "model": "openai/gpt-oss-120b",
+  "judge_model": "openai/gpt-oss-120b",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_device": "cuda",
+  "similarity_threshold": 0.55,
+  "judge_threshold": 0.75,
+  "total_samples": 50,
+  "completed": 47,
+  "failed": 3,
+  "runtime_seconds": 241.9,
+  "metrics": {
+    "micro_precision": 0.8,
+    "micro_recall": 0.8649,
+    "micro_f1": 0.8312,
+    "macro_case_f1": 0.7234,
+    "evidence_quote_validity": 1.0,
+    "evidence_episode_coverage": 0.7518,
+    "lifecycle_accuracy": 0.96875,
+    "pattern_id_accuracy": 1.0,
+    "negative_case_false_positive_rate": 0.8,
+    "duplicate_prediction_pairs": 0
+  },
+  "by_scenario": {
+    "existing_pattern_update": {
+      "samples": 7,
+      "mean_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "new_pattern": {
+      "samples": 15,
+      "mean_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "no_pattern": {
+      "samples": 10,
+      "mean_f1": 0.2,
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    "pattern_reactivation": {
+      "samples": 5,
+      "mean_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "pattern_resolution": {
+      "samples": 7,
+      "mean_f1": 0.4286,
+      "precision": 1.0,
+      "recall": 0.4286
+    },
+    "semantic_merge": {
+      "samples": 3,
+      "mean_f1": 0.6667,
+      "precision": 1.0,
+      "recall": 0.6667
+    }
+  },
+  "cases": [
+    {
+      "case_id": "PAT_001",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_7928883923",
+          "category": "behavior",
+          "description": "The user repeatedly delays starting intended work, opting for unrelated tasks instead of the planned primary task.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_001_C",
+              "detail": "spent the afternoon reorganizing files instead"
+            },
+            {
+              "episode_id": "EP_001_P2",
+              "detail": "kept finding smaller chores to do and never started the revision"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user repeatedly delays starting planned academic or project work by shifting to smaller, easier activities.",
+          "confidence": 0.94,
+          "evidence": [
+            {
+              "episode_id": "EP_001_P1",
+              "quote": "switching to videos whenever it was time to write the introduction"
+            },
+            {
+              "episode_id": "EP_001_P2",
+              "quote": "kept finding smaller chores to do and never started the revision"
+            },
+            {
+              "episode_id": "EP_001_C",
+              "quote": "put off the first section despite having the material ready"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9307,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9481,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9313,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of repeatedly postponing primary academic or project work by switching to smaller, easier, unrelated tasks."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_002",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_040DAFB00A",
+          "category": "behavior",
+          "description": "The user repeatedly seeks external confirmation after making a decision, contacting others for reassurance multiple times.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_002_C",
+              "detail": "asked whether choosing either one would be a mistake"
+            },
+            {
+              "episode_id": "EP_002_P1",
+              "detail": "asked two classmates to confirm that the chosen course was the right one"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user repeatedly seeks other people's confirmation after making personal choices, even when they have already reached a decision.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_002_P1",
+              "quote": "asked two classmates to confirm that the chosen course was the right one"
+            },
+            {
+              "episode_id": "EP_002_P2",
+              "quote": "sought reassurance again later that evening"
+            },
+            {
+              "episode_id": "EP_002_C",
+              "quote": "returned to the friend for confirmation"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.968,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.976,
+          "judge_score": 0.96,
+          "judge_equivalent": true,
+          "combined_score": 0.9704,
+          "accepted_match": true,
+          "judge_reason": "Both statements describe the same pattern of repeatedly seeking others' confirmation after making personal decisions, indicating semantic equivalence."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_003",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_683BAC9D0D",
+          "category": "behavior",
+          "description": "The user repeatedly avoids directly addressing interpersonal concerns, opting to stay silent or change the subject, which prolongs the issue.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_003_C",
+              "detail": "kept the topic to themselves for another week"
+            },
+            {
+              "episode_id": "EP_003_P2",
+              "detail": "changed the subject whenever an opportunity to discuss it came up"
+            },
+            {
+              "episode_id": "EP_003_P1",
+              "detail": "stayed silent during the meeting and later sent a neutral message instead of explaining the concern"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user avoids initiating direct conversations about concerns or boundaries, allowing unresolved issues to remain unspoken.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_003_P1",
+              "quote": "stayed silent during the meeting and later sent a neutral message instead of explaining the concern"
+            },
+            {
+              "episode_id": "EP_003_P2",
+              "quote": "changed the subject whenever an opportunity to discuss it came up"
+            },
+            {
+              "episode_id": "EP_003_C",
+              "quote": "kept the topic to themselves for another week"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9345,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9509,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9331,
+          "accepted_match": true,
+          "judge_reason": "Both describe the user's avoidance of direct conversation about concerns or boundaries, resulting in unresolved issues."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_004",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_5E808DCB1C",
+          "category": "coping",
+          "description": "The user repeatedly takes short walks outdoors after stressful or demanding situations, reporting that the movement helps them clear their mind and feel more settled.",
+          "confidence": 0.93,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_004_C",
+              "detail": "went for a short walk around the block and said the movement helped them return to the remaining tasks with a clearer head"
+            },
+            {
+              "episode_id": "EP_004_P2",
+              "detail": "stepped out for a walk after a stressful phone conversation and said it gave them enough space to think before responding"
+            },
+            {
+              "episode_id": "EP_004_P1",
+              "detail": "took a twenty-minute walk outside and reported feeling more settled before joining the call"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "coping",
+          "description": "The user uses short walks after stressful or overwhelming periods to settle themselves and regain perspective.",
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "episode_id": "EP_004_P1",
+              "quote": "took a twenty-minute walk outside and reported feeling more settled"
+            },
+            {
+              "episode_id": "EP_004_P2",
+              "quote": "stepped out for a walk after a stressful phone conversation"
+            },
+            {
+              "episode_id": "EP_004_C",
+              "quote": "went for a short walk around the block"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9494,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9621,
+          "judge_score": 0.95,
+          "judge_equivalent": true,
+          "combined_score": 0.9579,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same coping pattern of taking short walks after stressful periods to clear the mind and regain perspective."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_005",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_B77E8EFE7E",
+          "category": "behavior",
+          "description": "After receiving critical feedback, the user doubts their ability to complete the work and struggles to continue the task.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_005_C",
+              "detail": "questioning whether they were capable of the assignment and found it difficult to continue editing"
+            },
+            {
+              "episode_id": "EP_005_P2",
+              "detail": "feeling unsure of their ability to complete the task"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "trigger",
+          "description": "Critical or corrective feedback is repeatedly followed by the user questioning their capability and struggling to continue the task.",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "episode_id": "EP_005_P1",
+              "quote": "After a supervisor pointed out several gaps in the slides"
+            },
+            {
+              "episode_id": "EP_005_P2",
+              "quote": "received a list of requested code changes and reported feeling unsure of their ability"
+            },
+            {
+              "episode_id": "EP_005_C",
+              "quote": "Following comments that the draft needed substantial changes"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9587,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.969,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9448,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of critical feedback leading to self‑doubt and difficulty continuing the task; wording differs but meaning aligns."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_006",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_347A8C573D",
+          "category": "mood",
+          "description": "Extended work periods are associated with increased irritability or short temper in routine home interactions.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_006_C",
+              "detail": "feeling unusually irritable during routine interactions at home and said small interruptions were getting on their nerves"
+            },
+            {
+              "episode_id": "EP_006_P2",
+              "detail": "feeling unusually short-tempered in ordinary conversations once they returned home"
+            },
+            {
+              "episode_id": "EP_006_P1",
+              "detail": "feeling on edge and easily annoyed with family members after working through most of the weekend"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "mood",
+          "description": "The user repeatedly experiences irritability in everyday interactions during or after periods of extended work demands.",
+          "confidence": 0.88,
+          "evidence": [
+            {
+              "episode_id": "EP_006_P1",
+              "quote": "feeling on edge and easily annoyed with family members after working through most of the weekend"
+            },
+            {
+              "episode_id": "EP_006_P2",
+              "quote": "feeling unusually short-tempered in ordinary conversations"
+            },
+            {
+              "episode_id": "EP_006_C",
+              "quote": "feeling unusually irritable during routine interactions at home"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.918,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9385,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.925,
+          "accepted_match": true,
+          "judge_reason": "Both describe irritability in everyday/home interactions that occurs during or after extended work periods, capturing the same pattern."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_007",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_3CB8DCEC0C",
+          "category": "behavior",
+          "description": "The user tends to stay on the periphery of social gatherings and withdraw early when uncertain about how to join the conversation.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_007_C",
+              "detail": "stayed near the entrance and left before the informal discussion because they were unsure how to join the group"
+            },
+            {
+              "episode_id": "EP_007_P1",
+              "detail": "spent most of the time alone and left early, saying they could not find a comfortable way into the conversations"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user tends to withdraw or leave social gatherings when unsure how to enter conversations with a group.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_007_P1",
+              "quote": "spent most of the time alone and left early"
+            },
+            {
+              "episode_id": "EP_007_P2",
+              "quote": "mostly listened without joining in and declined the suggestion to stay for coffee afterward"
+            },
+            {
+              "episode_id": "EP_007_C",
+              "quote": "stayed near the entrance and left before the informal discussion"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9471,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9603,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9392,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of withdrawing from social gatherings when uncertain about how to join conversations."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_008",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_082F6EC332",
+          "category": "behavior",
+          "description": "The user repeatedly takes on additional commitments despite already having plans or a full workload, resulting in overcommitment and loss of personal time.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_008_C",
+              "detail": "they accepted an additional volunteer shift after being asked and later realized they had no free time left"
+            },
+            {
+              "episode_id": "EP_008_P2",
+              "detail": "The user accepted another family errand despite having plans, then rearranged the day to fit it in rather than declining the request"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user repeatedly agrees to additional requests despite existing commitments, then sacrifices their own planned time to accommodate them.",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "episode_id": "EP_008_P1",
+              "quote": "agreed to take on a teammate's unfinished task even though their own workload was already full"
+            },
+            {
+              "episode_id": "EP_008_P2",
+              "quote": "accepted another family errand despite having plans"
+            },
+            {
+              "episode_id": "EP_008_C",
+              "quote": "accepted an additional volunteer shift after being asked"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9143,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9357,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9232,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of repeatedly accepting extra requests despite existing commitments, leading to loss of personal time."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_009",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_727D866676",
+          "category": "behavior",
+          "description": "The user repeatedly re‑reads brief or delayed messages and ruminates about possible offense, leading to frequent checking of the conversation.",
+          "confidence": 0.95,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_009_C",
+              "detail": "friend replied with only a brief acknowledgement, and the user spent much of the evening rereading it and wondering whether the friend was upset with them"
+            },
+            {
+              "episode_id": "EP_009_P1",
+              "detail": "After receiving a one-word response from a colleague, the user repeatedly checked the chat and considered whether their earlier message had sounded rude"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user repeatedly revisits brief or delayed messages and speculates that the other person may be upset with them.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_009_P1",
+              "quote": "repeatedly checked the chat and considered whether their earlier message had sounded rude"
+            },
+            {
+              "episode_id": "EP_009_P2",
+              "quote": "kept revisiting the conversation and imagining that something in their message had caused offence"
+            },
+            {
+              "episode_id": "EP_009_C",
+              "quote": "spent much of the evening rereading it and wondering whether the friend was upset with them"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9522,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9642,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9417,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of repeatedly revisiting brief or delayed messages and worrying that the other person is upset, indicating rumination and checking behavior."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_010",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_0556E5A692",
+          "category": "behavior",
+          "description": "User tends to postpone or avoid required administrative tasks when they anticipate the process to be confusing or complicated, resulting in delayed completion.",
+          "confidence": 0.93,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_010_C",
+              "detail": "left the insurance form unopened for several days because they expected the process to be confusing"
+            },
+            {
+              "episode_id": "EP_010_P2",
+              "detail": "delayed updating a utility account because the online process looked complicated"
+            },
+            {
+              "episode_id": "EP_010_P1",
+              "detail": "put aside a bank letter that required action and kept meaning to read it later"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user postpones administrative tasks when they anticipate a confusing or unpleasant process, often acting only after a reminder or deadline.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_010_P1",
+              "quote": "kept meaning to read it later, eventually opening it only when a reminder arrived"
+            },
+            {
+              "episode_id": "EP_010_P2",
+              "quote": "delayed updating a utility account because the online process looked complicated"
+            },
+            {
+              "episode_id": "EP_010_C",
+              "quote": "left the insurance form unopened for several days"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9334,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9501,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9326,
+          "accepted_match": true,
+          "judge_reason": "Both describe postponing administrative tasks due to anticipated confusion/unpleasantness and acting only after a reminder or deadline, capturing the same pattern."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_011",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_4B22C264C9",
+          "category": "coping",
+          "description": "When feeling overwhelmed by multiple tasks or deadlines, the user creates a short written list or plan, which they report makes the situation feel more manageable.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_011_C",
+              "detail": "wrote each task and its next step on paper, and said the list made the day feel more manageable"
+            },
+            {
+              "episode_id": "EP_011_P1",
+              "detail": "made a short written plan and said having the steps in front of them reduced the sense of chaos"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "coping",
+          "description": "The user uses brief written plans or ordered task lists when overwhelmed to organize next steps and make activities feel manageable.",
+          "confidence": 0.94,
+          "evidence": [
+            {
+              "episode_id": "EP_011_P1",
+              "quote": "made a short written plan and said having the steps in front of them reduced the sense of chaos"
+            },
+            {
+              "episode_id": "EP_011_P2",
+              "quote": "wrote a simple order for the topics and reported that following it helped them settle into the session"
+            },
+            {
+              "episode_id": "EP_011_C",
+              "quote": "wrote each task and its next step on paper"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9463,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9597,
+          "judge_score": 0.95,
+          "judge_equivalent": true,
+          "combined_score": 0.9563,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same coping pattern of creating brief written lists or plans when feeling overwhelmed to organize tasks and make them feel manageable."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_012",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.6667,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_A7ABFC513B",
+          "category": "mood",
+          "description": "The user experiences loneliness or feeling isolated during unplanned or free days when friends have other arrangements.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_012_C",
+              "detail": "felt lonely while spending another weekend without plans and noticed that most friends had already made arrangements with others"
+            },
+            {
+              "episode_id": "EP_012_P2",
+              "detail": "felt left out when there were no shared plans and said the empty days made the lack of contact more noticeable"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "trigger",
+          "description": "Unplanned weekends with little social contact are repeatedly associated with the user's feelings of loneliness and being left out.",
+          "confidence": 0.89,
+          "evidence": [
+            {
+              "episode_id": "EP_012_P1",
+              "quote": "feeling isolated on Saturday night after realizing they had not arranged to meet anyone"
+            },
+            {
+              "episode_id": "EP_012_P2",
+              "quote": "felt left out when there were no shared plans"
+            },
+            {
+              "episode_id": "EP_012_C",
+              "quote": "felt lonely while spending another weekend without plans"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9461,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9595,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9387,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same recurring pattern of feeling lonely and left out on unplanned/free weekends due to lack of social contact."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_013",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_9A5E4C117A",
+          "category": "behavior",
+          "description": "The user repeatedly reopens or revisits a completed task's confirmation page to verify details, even when no changes have occurred.",
+          "confidence": 0.93,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_013_C",
+              "detail": "reopened the confirmation several times to check the date and seat"
+            },
+            {
+              "episode_id": "EP_013_P2",
+              "detail": "reopened it several times to verify the time and recipient list"
+            },
+            {
+              "episode_id": "EP_013_P1",
+              "detail": "checked the upload page repeatedly to make sure the correct file was attached"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user repeatedly rechecks completed submissions or arrangements after receiving confirmation that they were completed successfully.",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "episode_id": "EP_013_P1",
+              "quote": "checked the upload page repeatedly to make sure the correct file was attached"
+            },
+            {
+              "episode_id": "EP_013_P2",
+              "quote": "reopened it several times to verify the time and recipient list despite seeing the confirmation"
+            },
+            {
+              "episode_id": "EP_013_C",
+              "quote": "reopened the confirmation several times to check the date and seat"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.8857,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9143,
+          "judge_score": 0.95,
+          "judge_equivalent": true,
+          "combined_score": 0.9268,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of repeatedly revisiting or rechecking a completed task's confirmation despite it being already confirmed."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_014",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_1926338A83",
+          "category": "behavior",
+          "description": "When expectations or instructions are unclear, the user tends to delay starting the task and wait for clarification.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_014_C",
+              "detail": "The project brief did not specify the expected format, and the user spent most of the afternoon waiting for clarification rather than drafting a possible outline."
+            },
+            {
+              "episode_id": "EP_014_P2",
+              "detail": "When the event instructions left the user's role unclear, they did not begin contacting participants and waited for a more detailed plan."
+            },
+            {
+              "episode_id": "EP_014_P1",
+              "detail": "The user was unsure what the manager expected from a new task and held off on starting until someone could explain the requirements."
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user delays taking an initial step when expectations or instructions are ambiguous, preferring to wait for clarification.",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "episode_id": "EP_014_P1",
+              "quote": "held off on starting until someone could explain the requirements"
+            },
+            {
+              "episode_id": "EP_014_P2",
+              "quote": "did not begin contacting participants and waited for a more detailed plan"
+            },
+            {
+              "episode_id": "EP_014_C",
+              "quote": "spent most of the afternoon waiting for clarification rather than drafting a possible outline"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.957,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9678,
+          "judge_score": 0.95,
+          "judge_equivalent": true,
+          "combined_score": 0.9616,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of delaying action until clarification when instructions are ambiguous."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_015",
+      "scenario": "new_pattern",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_5CFF7857BB",
+          "category": "behavior",
+          "description": "The user tends to withdraw or become minimally responsive during interpersonal disagreements, often going quiet or giving only short answers.",
+          "confidence": 0.94,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_015_C",
+              "detail": "the user stopped explaining their view and gave short answers until the conversation ended"
+            },
+            {
+              "episode_id": "EP_015_P2",
+              "detail": "the user withdrew from the discussion and responded only when directly asked a question"
+            },
+            {
+              "episode_id": "EP_015_P1",
+              "detail": "the user went quiet midway through the discussion and said very little even though they still had concerns"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user tends to become quiet and stop expressing their perspective during tense or conflictual discussions.",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "episode_id": "EP_015_P1",
+              "quote": "went quiet midway through the discussion and said very little even though they still had concerns"
+            },
+            {
+              "episode_id": "EP_015_P2",
+              "quote": "withdrew from the discussion and responded only when directly asked a question"
+            },
+            {
+              "episode_id": "EP_015_C",
+              "quote": "stopped explaining their view and gave short answers until the conversation ended"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9291,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9468,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9304,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of becoming quiet and withdrawing from expressing perspective during conflictual or tense discussions."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_016",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_6869D94754",
+          "category": "coping",
+          "description": "When facing academic time pressure or looming deadlines, the user reports feeling anxiety or frustration and responds by organizing or seeking external help (e.g., creating a schedule, redistributing tasks, requesting extensions).",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_016_C",
+              "detail": "pressed for time before a lab submission and asked the instructor for an extension because the equipment had been unavailable"
+            },
+            {
+              "episode_id": "EP_016_P2",
+              "detail": "frustrated when a teammate missed a meeting and redistributed the remaining tasks with the group"
+            },
+            {
+              "episode_id": "EP_016_P1",
+              "detail": "felt nervous before an exam but prepared a revision timetable and followed it across the week"
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_017",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_68FB58CD01",
+          "category": "coping",
+          "description": "The user experiences anticipatory anxiety before upcoming events and responds by seeking reassurance or information (e.g., checking details, rehearsing, asking about duration).",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_017_C",
+              "detail": "felt anxious about missing a flight and checked the departure board twice before boarding early"
+            },
+            {
+              "episode_id": "EP_017_P2",
+              "detail": "was nervous before speaking at a community event but completed the talk after rehearsing once with a friend"
+            },
+            {
+              "episode_id": "EP_017_P1",
+              "detail": "felt uneasy before a routine appointment and asked the receptionist how long the visit would take"
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_018",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_9C27862C0F",
+          "category": "behavior",
+          "description": "The user reports feeling physical fatigue after various triggers (e.g., travel, prolonged reading, noise) and responds by seeking rest or a quieter environment.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_018_C",
+              "detail": "tired after a long bus journey and went to bed early after unpacking"
+            },
+            {
+              "episode_id": "EP_018_P1",
+              "detail": "tired eyes after spending several hours reading small text and took a screen break"
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_019",
+      "scenario": "no_pattern",
+      "predicted_count": 0,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 0,
+      "evidence_quotes_valid": 0,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_020",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_C27444BF99",
+          "category": "coping",
+          "description": "User frequently acknowledges coping suggestions such as journaling but reports not trying them, instead reverting to usual routines",
+          "confidence": 0.85,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_020_C",
+              "detail": "suggested journaling after the meeting, but the user said they had not tried it and instead went back to their usual evening routine"
+            },
+            {
+              "episode_id": "EP_020_P1",
+              "detail": "listened while a friend described how journaling had helped them"
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_021",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_037591DEE4",
+          "category": "coping",
+          "description": "The user reports using intentional coping actions (e.g., listening to music, reorganizing schedule) to reduce stress or improve mood after a triggering event.",
+          "confidence": 0.78,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_021_C",
+              "detail": "listened to music for half an hour and said it helped them feel calmer"
+            },
+            {
+              "episode_id": "EP_021_P1",
+              "detail": "reorganized the calendar to make room for a family commitment"
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_022",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_9322B64CF7",
+          "category": "behavior",
+          "description": "When a partner's actions disrupt shared plans or communication, the user experiences disappointment or hurt and responds by directly addressing the issue or proposing an alternative.",
+          "confidence": 0.85,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_022_C",
+              "detail": "felt disappointed when a partner cancelled dinner because of an unexpected work shift"
+            },
+            {
+              "episode_id": "EP_022_P2",
+              "detail": "was hurt that a partner forgot to pass along a message and raised the issue directly"
+            },
+            {
+              "episode_id": "EP_022_P1",
+              "detail": "disagreed about holiday plans and agreed to discuss the budget before deciding"
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_023",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_1219268E1B",
+          "category": "behavior",
+          "description": "When receiving feedback from others, the user tends to respond by planning or taking a concrete follow‑up action.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_023_C",
+              "detail": "welcomed a client's positive feedback and saved the comments for a portfolio update"
+            },
+            {
+              "episode_id": "EP_023_P1",
+              "detail": "felt disappointed by a manager's request to revise a report and scheduled time to make the changes"
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_024",
+      "scenario": "no_pattern",
+      "predicted_count": 0,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 0,
+      "evidence_quotes_valid": 0,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_025",
+      "scenario": "no_pattern",
+      "predicted_count": 1,
+      "expected_count": 0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_89F8490545",
+          "category": "mood",
+          "description": "External situational events often coincide with an immediate emotional reaction such as irritation, sadness, or happiness.",
+          "confidence": 0.8,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_025_C",
+              "detail": "The user felt surprised and happy when a neighbour brought over a cake for the building celebration."
+            },
+            {
+              "episode_id": "EP_025_P2",
+              "detail": "The user felt sad when a relative left after a short visit and arranged another call for the following week."
+            },
+            {
+              "episode_id": "EP_025_P1",
+              "detail": "The user was irritated by a traffic jam and listened to a podcast until the road cleared."
+            }
+          ]
+        }
+      ],
+      "expected": [],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_026",
+      "scenario": "existing_pattern_update",
+      "error": "Analyzer swallowed an internal failure: Pattern analysis failed; preserving existing patterns for user=26 episode=EP_026_C.",
+      "failed": true
+    },
+    {
+      "case_id": "PAT_027",
+      "scenario": "existing_pattern_update",
+      "error": "Analyzer swallowed an internal failure: Pattern analysis failed; preserving existing patterns for user=27 episode=EP_027_C.",
+      "failed": true
+    },
+    {
+      "case_id": "PAT_028",
+      "scenario": "existing_pattern_update",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_BREATH_03",
+          "category": "coping",
+          "description": "The user uses slow, deliberate breathing before stressful events to steady their attention.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_028_C",
+              "detail": "noticed their breathing becoming quick before the interview, paused to take several slow breaths and said this helped them focus"
+            },
+            {
+              "episode_id": "EP_028_P2",
+              "detail": "took several slow breaths before a presentation and said the pause helped them collect their thoughts"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_BREATH_03",
+          "category": "coping",
+          "description": "The user uses slow, deliberate breathing before stressful events to steady their attention.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_028_P1",
+              "quote": "took a few slow breaths in the parked car and felt ready to begin"
+            },
+            {
+              "episode_id": "EP_028_C",
+              "quote": "paused to take several slow breaths"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description and category"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_029",
+      "scenario": "existing_pattern_update",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_GROUP_04",
+          "category": "trigger",
+          "description": "Being asked to speak unexpectedly in a large group is associated with the user's discomfort.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_029_C",
+              "detail": "the user felt tense when asked to speak without warning and struggled to organize an answer in front of the group"
+            },
+            {
+              "episode_id": "EP_029_P2",
+              "detail": "the user felt uncomfortable when asked without warning to explain their work"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_GROUP_04",
+          "category": "trigger",
+          "description": "Being asked to speak unexpectedly in a large group is associated with the user's discomfort.",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "episode_id": "EP_029_P1",
+              "quote": "became uncomfortable when unexpectedly asked to give an update in front of several colleagues"
+            },
+            {
+              "episode_id": "EP_029_C",
+              "quote": "felt tense when asked to speak without warning"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description and category; semantics identical"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_030",
+      "scenario": "existing_pattern_update",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_LOW_05",
+          "category": "mood",
+          "description": "The user reports a recurring low or flat mood after consecutive long work shifts.",
+          "confidence": 0.85,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_030_C",
+              "detail": "feeling flat and having little interest in their usual evening activities"
+            },
+            {
+              "episode_id": "EP_030_P2",
+              "detail": "feeling flat and skipped an activity they normally enjoy"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_LOW_05",
+          "category": "mood",
+          "description": "The user reports a recurring low or flat mood after consecutive long work shifts.",
+          "confidence": 0.88,
+          "evidence": [
+            {
+              "episode_id": "EP_030_P1",
+              "quote": "felt unusually low after working two consecutive long shifts"
+            },
+            {
+              "episode_id": "EP_030_C",
+              "quote": "described feeling flat and having little interest in their usual evening activities"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description and category"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_031",
+      "scenario": "existing_pattern_update",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_ADMIN_06",
+          "category": "behavior",
+          "description": "The user postpones administrative paperwork when it appears tedious or complicated.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_031_C",
+              "detail": "kept moving the tax document upload to the next day because the instructions looked tedious"
+            },
+            {
+              "episode_id": "EP_031_P1",
+              "detail": "put off starting the passport renewal form"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_ADMIN_06",
+          "category": "behavior",
+          "description": "The user postpones administrative paperwork when it appears tedious or complicated.",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "episode_id": "EP_031_P1",
+              "quote": "put off starting the passport renewal form"
+            },
+            {
+              "episode_id": "EP_031_C",
+              "quote": "kept moving the tax document upload to the next day"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "The predicted and expected descriptions are identical, both stating that the user postpones administrative paperwork when it appears tedious or complicated."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_032",
+      "scenario": "existing_pattern_update",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_MESSAGE_07",
+          "category": "behavior",
+          "description": "The user seeks another person's approval of routine messages before sending them.",
+          "confidence": 0.89,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_032_C",
+              "detail": "asked a colleague to read it twice before sending"
+            },
+            {
+              "episode_id": "EP_032_P2",
+              "detail": "asked a friend to review a brief client message before sending"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_MESSAGE_07",
+          "category": "behavior",
+          "description": "The user seeks another person's approval of routine messages before sending them.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_032_P1",
+              "quote": "asked whether the wording sounded appropriate before sending it"
+            },
+            {
+              "episode_id": "EP_032_C",
+              "quote": "asked a colleague to read it twice before sending"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "The descriptions are identical, representing the same behavior."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_033",
+      "scenario": "existing_pattern_update",
+      "error": "Analyzer swallowed an internal failure: Pattern analysis failed; preserving existing patterns for user=33 episode=EP_033_C.",
+      "failed": true
+    },
+    {
+      "case_id": "PAT_034",
+      "scenario": "existing_pattern_update",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_COMPARE_09",
+          "category": "behavior",
+          "description": "The user compares their progress with peers' curated online updates and then feels behind.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_034_C",
+              "detail": "the user compared their own progress with the posts and felt behind"
+            },
+            {
+              "episode_id": "EP_034_P2",
+              "detail": "The user compared their own progress with former classmates' online career announcements and felt behind."
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_COMPARE_09",
+          "category": "behavior",
+          "description": "The user compares their progress with peers' curated online updates and then feels behind.",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "episode_id": "EP_034_P1",
+              "quote": "began measuring their own progress against the milestones shown there"
+            },
+            {
+              "episode_id": "EP_034_C",
+              "quote": "compared their own progress with the posts and felt behind"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description and category"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_035",
+      "scenario": "existing_pattern_update",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_ROUTINE_10",
+          "category": "behavior",
+          "description": "The user prepares clothes and a brief task list the night before to support a smoother morning.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_035_C",
+              "detail": "returned to preparing clothes and a to-do list the night before"
+            },
+            {
+              "episode_id": "EP_035_P2",
+              "detail": "prepared clothes and a short priority list the night before"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_ROUTINE_10",
+          "category": "behavior",
+          "description": "The user prepares clothes and a brief task list the night before to support a smoother morning.",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "episode_id": "EP_035_P1",
+              "quote": "laid out work clothes and wrote a short list before bed"
+            },
+            {
+              "episode_id": "EP_035_C",
+              "quote": "returned to preparing clothes and a to-do list the night before"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description and category"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_036",
+      "scenario": "pattern_resolution",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_01",
+          "category": "behavior",
+          "description": "The user delays starting study tasks by switching to unrelated activities.",
+          "confidence": 0.88,
+          "status": "RESOLVED",
+          "evidence": [
+            {
+              "episode_id": "EP_036_P1",
+              "detail": "postponed beginning revision by checking messages and tidying the desk"
+            },
+            {
+              "episode_id": "EP_036_P2",
+              "detail": "putting off practice questions until late evening on several study days"
+            },
+            {
+              "episode_id": "EP_036_C",
+              "detail": "they no longer put off starting revision and have begun the planned study block on time for the past three weeks",
+              "kind": "resolution"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_01",
+          "category": "behavior",
+          "description": "The user delays starting study tasks by switching to unrelated activities.",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "episode_id": "EP_036_P1",
+              "quote": "postponed beginning revision by checking messages and tidying the desk instead"
+            },
+            {
+              "episode_id": "EP_036_P2",
+              "quote": "putting off practice questions until late evening on several study days"
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": {
+            "episode_id": "EP_036_C",
+            "quote": "they no longer put off starting revision and have begun the planned study block on time for the past three weeks"
+          }
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description; both state the same delay behavior."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_037",
+      "scenario": "pattern_resolution",
+      "predicted_count": 0,
+      "expected_count": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 0,
+      "evidence_quotes_valid": 0,
+      "evidence_episode_coverage": 0.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_02",
+          "category": "behavior",
+          "description": "The user repeatedly seeks confirmation from others after making personal decisions.",
+          "confidence": 0.94,
+          "evidence": [
+            {
+              "episode_id": "EP_037_P1",
+              "quote": "asked several classmates whether the selected course was the right option"
+            },
+            {
+              "episode_id": "EP_037_P2",
+              "quote": "repeatedly asked a sibling to confirm that the dates were sensible"
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": {
+            "episode_id": "EP_037_C",
+            "quote": "have stopped asking friends to approve routine personal decisions"
+          }
+        }
+      ],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_038",
+      "scenario": "pattern_resolution",
+      "predicted_count": 0,
+      "expected_count": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 0,
+      "evidence_quotes_valid": 0,
+      "evidence_episode_coverage": 0.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_03",
+          "category": "behavior",
+          "description": "The user avoids direct conversations about concerns and boundaries.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_038_P1",
+              "quote": "kept quiet about noise affecting their sleep"
+            },
+            {
+              "episode_id": "EP_038_P2",
+              "quote": "changed the subject several times rather than telling a relative"
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": {
+            "episode_id": "EP_038_C",
+            "quote": "they no longer avoid raising concerns with their housemates"
+          }
+        }
+      ],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_039",
+      "scenario": "pattern_resolution",
+      "predicted_count": 0,
+      "expected_count": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 0,
+      "evidence_quotes_valid": 0,
+      "evidence_episode_coverage": 0.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_04",
+          "category": "behavior",
+          "description": "The user repeatedly rereads brief or delayed messages and interprets them as possible signs of annoyance.",
+          "confidence": 0.94,
+          "evidence": [
+            {
+              "episode_id": "EP_039_P1",
+              "quote": "reread a colleague's short response many times and worried that the colleague was irritated"
+            },
+            {
+              "episode_id": "EP_039_P2",
+              "quote": "repeatedly checked the chat and wondered whether they had said something wrong"
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": {
+            "episode_id": "EP_039_C",
+            "quote": "have stopped rereading short replies to guess whether someone is annoyed"
+          }
+        }
+      ],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_040",
+      "scenario": "pattern_resolution",
+      "predicted_count": 0,
+      "expected_count": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 0,
+      "evidence_quotes_valid": 0,
+      "evidence_episode_coverage": 0.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_05",
+          "category": "behavior",
+          "description": "The user withdraws from communication after disagreements.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_040_P1",
+              "quote": "stopped responding to the group chat for the rest of the day"
+            },
+            {
+              "episode_id": "EP_040_P2",
+              "quote": "left the call without explaining their view and did not rejoin the discussion"
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": {
+            "episode_id": "EP_040_C",
+            "quote": "they no longer disappear from group conversations after disagreements"
+          }
+        }
+      ],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_041",
+      "scenario": "pattern_resolution",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 0.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_06",
+          "category": "behavior",
+          "description": "The user postpones administrative forms until reminders or deadlines force action.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_041_C",
+              "detail": "they no longer leave official forms until reminders arrive and have submitted each required document before its deadline over the last two months"
+            },
+            {
+              "episode_id": "EP_041_P2",
+              "detail": "delayed completing a reimbursement form because the process seemed tedious and submitted it near the cutoff"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_06",
+          "category": "behavior",
+          "description": "The user postpones administrative forms until reminders or deadlines force action.",
+          "confidence": 0.94,
+          "evidence": [
+            {
+              "episode_id": "EP_041_P1",
+              "quote": "opened it only after a second reminder"
+            },
+            {
+              "episode_id": "EP_041_P2",
+              "quote": "delayed completing a reimbursement form because the process seemed tedious"
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": {
+            "episode_id": "EP_041_C",
+            "quote": "no longer leave official forms until reminders arrive"
+          }
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact same description, indicating identical recurring behavior."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_042",
+      "scenario": "pattern_resolution",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 3,
+      "evidence_quotes_valid": 3,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_07",
+          "category": "behavior",
+          "description": "The user repeatedly rechecks completed submissions and bookings after confirmation.",
+          "confidence": 0.85,
+          "status": "RESOLVED",
+          "evidence": [
+            {
+              "episode_id": "EP_042_P1",
+              "detail": "the user refreshed the assignment upload page several times after seeing the successful submission message"
+            },
+            {
+              "episode_id": "EP_042_P2",
+              "detail": "reopened the confirmation repeatedly to verify the dates even though they were correct"
+            },
+            {
+              "episode_id": "EP_042_C",
+              "detail": "they have stopped reopening completed submissions to verify them repeatedly and now check the final file once before submitting",
+              "kind": "resolution"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_RESOLVE_07",
+          "category": "behavior",
+          "description": "The user repeatedly rechecks completed submissions and bookings after confirmation.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_042_P1",
+              "quote": "refreshed the assignment upload page several times after seeing the successful submission message"
+            },
+            {
+              "episode_id": "EP_042_P2",
+              "quote": "reopened the confirmation repeatedly to verify the dates even though they were correct"
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": {
+            "episode_id": "EP_042_C",
+            "quote": "they have stopped reopening completed submissions to verify them repeatedly"
+          }
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_043",
+      "scenario": "pattern_reactivation",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_REACT_01",
+          "category": "behavior",
+          "description": "The user delays starting important work by shifting to smaller unrelated activities.",
+          "confidence": 0.88,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_043_C",
+              "detail": "spent the available time renaming folders and left the first paragraph unwritten"
+            },
+            {
+              "episode_id": "EP_043_P2",
+              "detail": "put off drafting a proposal by reorganizing reference files instead of writing"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_REACT_01",
+          "category": "behavior",
+          "description": "The user delays starting important work by shifting to smaller unrelated activities.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_043_P2",
+              "quote": "put off drafting a proposal by reorganizing reference files instead of writing"
+            },
+            {
+              "episode_id": "EP_043_C",
+              "quote": "spent the available time renaming folders and left the first paragraph unwritten"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact same description"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_044",
+      "scenario": "pattern_reactivation",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_REACT_02",
+          "category": "behavior",
+          "description": "The user repeatedly seeks others' confirmation after making personal decisions.",
+          "confidence": 0.88,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_044_C",
+              "detail": "repeatedly called a friend to ask whether the choice was definitely right"
+            },
+            {
+              "episode_id": "EP_044_P2",
+              "detail": "messaged two relatives several times asking whether they had made the correct choice"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_REACT_02",
+          "category": "behavior",
+          "description": "The user repeatedly seeks others' confirmation after making personal decisions.",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "episode_id": "EP_044_P2",
+              "quote": "messaged two relatives several times asking whether they had made the correct choice"
+            },
+            {
+              "episode_id": "EP_044_C",
+              "quote": "repeatedly called a friend to ask whether the choice was definitely right"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "The predicted description exactly matches the ground‑truth description, indicating the same recurring behavior of seeking confirmation after personal decisions."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_045",
+      "scenario": "pattern_reactivation",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_REACT_03",
+          "category": "behavior",
+          "description": "The user avoids direct conversations about concerns instead of raising them with the people involved.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_045_C",
+              "detail": "avoided bringing it up and told themselves it was easier to stay quiet"
+            },
+            {
+              "episode_id": "EP_045_P2",
+              "detail": "kept postponing the conversation and hoped the flatmate would raise it first"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_REACT_03",
+          "category": "behavior",
+          "description": "The user avoids direct conversations about concerns instead of raising them with the people involved.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_045_P2",
+              "quote": "kept postponing the conversation and hoped the flatmate would raise it first"
+            },
+            {
+              "episode_id": "EP_045_C",
+              "quote": "avoided bringing it up and told themselves it was easier to stay quiet"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description; same underlying pattern"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_046",
+      "scenario": "pattern_reactivation",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 0.5,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_REACT_04",
+          "category": "behavior",
+          "description": "The user repeatedly rereads brief replies and interprets them as possible signs that someone is annoyed.",
+          "confidence": 0.9,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_046_C",
+              "detail": "A colleague replied with 'noted' to the user's update, and the user reread the message several times while wondering whether it sounded annoyed."
+            },
+            {
+              "episode_id": "EP_046_P1",
+              "detail": "The user had previously spent long periods rereading short messages and worrying that friends were upset, before reporting that this had eased."
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_REACT_04",
+          "category": "behavior",
+          "description": "The user repeatedly rereads brief replies and interprets them as possible signs that someone is annoyed.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_046_P2",
+              "quote": "repeatedly checked a relative's brief reply and wondered if they had caused offence"
+            },
+            {
+              "episode_id": "EP_046_C",
+              "quote": "reread the message several times while wondering whether it sounded annoyed"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Identical descriptions, same behavior"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_047",
+      "scenario": "pattern_reactivation",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 2,
+      "evidence_quotes_valid": 2,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": 1.0,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PATTERN_REACT_05",
+          "category": "behavior",
+          "description": "The user repeatedly rechecks completed online transactions or submissions after receiving confirmation.",
+          "confidence": 0.92,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_047_C",
+              "detail": "reopened the portal several times to confirm that the receipt was attached"
+            },
+            {
+              "episode_id": "EP_047_P2",
+              "detail": "reopened an event ticket confirmation repeatedly to check the date and seat"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": "PATTERN_REACT_05",
+          "category": "behavior",
+          "description": "The user repeatedly rechecks completed online transactions or submissions after receiving confirmation.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_047_P2",
+              "quote": "reopened an event ticket confirmation repeatedly to check the date and seat"
+            },
+            {
+              "episode_id": "EP_047_C",
+              "quote": "reopened the portal several times to confirm that the receipt was attached"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 1.0,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 1.0,
+          "judge_score": 1.0,
+          "judge_equivalent": true,
+          "combined_score": 1.0,
+          "accepted_match": true,
+          "judge_reason": "Exact match of description; same recurring behavior"
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_048",
+      "scenario": "semantic_merge",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 4,
+      "evidence_quotes_valid": 4,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_9090ECDA6B",
+          "category": "behavior",
+          "description": "The user repeatedly avoids directly expressing concerns or requests, opting for vague, postponed, or topic‑shifting communication.",
+          "confidence": 0.95,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_048_C",
+              "detail": "sent a vague check-in instead, leaving the actual concern unspoken"
+            },
+            {
+              "episode_id": "EP_048_P3",
+              "detail": "held back a concern during a planning meeting and later said they had not found a way to raise it"
+            },
+            {
+              "episode_id": "EP_048_P2",
+              "detail": "kept postponing a conversation about weekend commitments and hoped the other person would understand without a direct request"
+            },
+            {
+              "episode_id": "EP_048_P1",
+              "detail": "disagreed with a friend but changed the subject rather than explaining what had bothered them"
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user avoids direct communication about concerns by changing the subject, withholding the point or relying on indirect messages.",
+          "confidence": 0.94,
+          "evidence": [
+            {
+              "episode_id": "EP_048_P1",
+              "quote": "changed the subject rather than explaining what had bothered them"
+            },
+            {
+              "episode_id": "EP_048_P2",
+              "quote": "hoped the other person would understand without a direct request"
+            },
+            {
+              "episode_id": "EP_048_P3",
+              "quote": "held back a concern during a planning meeting"
+            },
+            {
+              "episode_id": "EP_048_C",
+              "quote": "sent a vague check-in instead, leaving the actual concern unspoken"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9259,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9444,
+          "judge_score": 0.9,
+          "judge_equivalent": true,
+          "combined_score": 0.9289,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of avoiding direct communication by being vague, postponing, or shifting topics."
+        }
+      ]
+    },
+    {
+      "case_id": "PAT_049",
+      "scenario": "semantic_merge",
+      "predicted_count": 0,
+      "expected_count": 1,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 0,
+      "evidence_quotes_valid": 0,
+      "evidence_episode_coverage": 0.0,
+      "lifecycle_accuracy": null,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "coping",
+          "description": "The user deliberately takes a brief quiet break, sometimes by walking or sitting outside, to settle after demanding or overstimulating situations.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_049_P1",
+              "quote": "stepped outside for a short walk after a noisy gathering"
+            },
+            {
+              "episode_id": "EP_049_P2",
+              "quote": "sat quietly on a bench for a few minutes after work"
+            },
+            {
+              "episode_id": "EP_049_P3",
+              "quote": "took a brief walk around the building between demanding tasks"
+            },
+            {
+              "episode_id": "EP_049_C",
+              "quote": "spent fifteen minutes in a quiet park before going home"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": []
+    },
+    {
+      "case_id": "PAT_050",
+      "scenario": "semantic_merge",
+      "predicted_count": 1,
+      "expected_count": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "evidence_quote_validity": 1.0,
+      "evidence_quotes_total": 4,
+      "evidence_quotes_valid": 4,
+      "evidence_episode_coverage": 1.0,
+      "lifecycle_accuracy": 1.0,
+      "pattern_id_accuracy": null,
+      "duplicate_prediction_pairs": 0,
+      "predictions": [
+        {
+          "pattern_id": "PAT_E33020FE22",
+          "category": "behavior",
+          "description": "The user tends to postpone initiating a task until they receive explicit clarification or detailed instructions about the expected outcome.",
+          "confidence": 0.95,
+          "status": "ACTIVE",
+          "evidence": [
+            {
+              "episode_id": "EP_050_C",
+              "detail": "The user did not know what the client expected from the first draft and waited for a detailed example instead of preparing an initial version."
+            },
+            {
+              "episode_id": "EP_050_P3",
+              "detail": "The user delayed making an outline because the assignment criteria seemed open to interpretation and they wanted someone to explain them first."
+            },
+            {
+              "episode_id": "EP_050_P2",
+              "detail": "The user waited for a clearer description of their role before contacting the event participants, although a basic introduction could have been sent."
+            },
+            {
+              "episode_id": "EP_050_P1",
+              "detail": "The user held off on the first step of a new responsibility until the manager clarified exactly what the finished result should look like."
+            }
+          ]
+        }
+      ],
+      "expected": [
+        {
+          "pattern_id": null,
+          "category": "behavior",
+          "description": "The user delays beginning tasks when requirements are uncertain, waiting for detailed clarification or an example before taking an initial step.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_050_P1",
+              "quote": "held off on the first step of a new responsibility until the manager clarified exactly what the finished result should look like"
+            },
+            {
+              "episode_id": "EP_050_P2",
+              "quote": "waited for a clearer description of their role before contacting the event participants"
+            },
+            {
+              "episode_id": "EP_050_P3",
+              "quote": "delayed making an outline because the assignment criteria seemed open to interpretation"
+            },
+            {
+              "episode_id": "EP_050_C",
+              "quote": "waited for a detailed example instead of preparing an initial version"
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "pairwise_similarity": [
+        {
+          "predicted_index": 0,
+          "expected_index": 0,
+          "embedding_cosine": 0.9246,
+          "bm25_normalized": 1.0,
+          "hybrid_similarity": 0.9435,
+          "judge_score": 0.95,
+          "judge_equivalent": true,
+          "combined_score": 0.9458,
+          "accepted_match": true,
+          "judge_reason": "Both describe the same pattern of delaying task initiation until clear, detailed instructions or examples are provided."
+        }
+      ]
+    }
+  ]
+}

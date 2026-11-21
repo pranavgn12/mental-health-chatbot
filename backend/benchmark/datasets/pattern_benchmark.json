@@ -1,0 +1,2666 @@
+{
+  "dataset_name": "PatternMemoryAnalyzer Synthetic Benchmark",
+  "version": "1.0",
+  "total_cases": 50,
+  "cases": [
+    {
+      "case_id": "PAT_001",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests task avoidance expressed through delaying, postponing and difficulty beginning work."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_001_C",
+          "title": "Project Milestone",
+          "summary": "The user had planned to begin the project report after lunch but spent the afternoon reorganizing files instead. They acknowledged that they had again put off the first section despite having the material ready."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_001_P1",
+            "title": "Unstarted Lab Report",
+            "summary": "The user described opening the lab document several times during the evening but switching to videos whenever it was time to write the introduction.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_001_P2",
+            "title": "Missed Study Block",
+            "summary": "The user intended to revise two chapters before dinner, yet kept finding smaller chores to do and never started the revision.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user repeatedly delays starting planned academic or project work by shifting to smaller, easier activities.",
+            "confidence": 0.94,
+            "evidence": [
+              {
+                "episode_id": "EP_001_P1",
+                "quote": "switching to videos whenever it was time to write the introduction"
+              },
+              {
+                "episode_id": "EP_001_P2",
+                "quote": "kept finding smaller chores to do and never started the revision"
+              },
+              {
+                "episode_id": "EP_001_C",
+                "quote": "put off the first section despite having the material ready"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_002",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests reassurance-seeking across separate personal decisions rather than generic discussion of uncertainty."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_002_C",
+          "title": "Choosing an Internship",
+          "summary": "The user shortlisted two internships but repeatedly sent the options to a friend and asked whether choosing either one would be a mistake. Even after receiving a clear opinion, they returned to the friend for confirmation."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_002_P1",
+            "title": "Course Selection",
+            "summary": "The user had compared elective courses for several days and asked two classmates to confirm that the chosen course was the right one before submitting the form.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_002_P2",
+            "title": "Weekend Plans",
+            "summary": "After deciding to attend a workshop, the user called a sibling to ask whether the decision made sense and sought reassurance again later that evening.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user repeatedly seeks other people's confirmation after making personal choices, even when they have already reached a decision.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_002_P1",
+                "quote": "asked two classmates to confirm that the chosen course was the right one"
+              },
+              {
+                "episode_id": "EP_002_P2",
+                "quote": "sought reassurance again later that evening"
+              },
+              {
+                "episode_id": "EP_002_C",
+                "quote": "returned to the friend for confirmation"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_003",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests communication avoidance across different difficult conversations."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_003_C",
+          "title": "Household Expenses",
+          "summary": "The user was uncomfortable discussing the shared expenses with a roommate and kept the topic to themselves for another week. They said the unresolved issue was becoming harder to bring up with each passing day."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_003_P1",
+            "title": "Team Disagreement",
+            "summary": "The user disagreed with a teammate's allocation of work but stayed silent during the meeting and later sent a neutral message instead of explaining the concern.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_003_P2",
+            "title": "Unclear Boundary",
+            "summary": "The user wanted to tell a relative that last-minute visits were difficult, but changed the subject whenever an opportunity to discuss it came up.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user avoids initiating direct conversations about concerns or boundaries, allowing unresolved issues to remain unspoken.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_003_P1",
+                "quote": "stayed silent during the meeting and later sent a neutral message instead of explaining the concern"
+              },
+              {
+                "episode_id": "EP_003_P2",
+                "quote": "changed the subject whenever an opportunity to discuss it came up"
+              },
+              {
+                "episode_id": "EP_003_C",
+                "quote": "kept the topic to themselves for another week"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_004",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests a coping strategy only where the user reports actually using it in multiple episodes."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_004_C",
+          "title": "Overwhelming Afternoon",
+          "summary": "After several demanding meetings, the user went for a short walk around the block and said the movement helped them return to the remaining tasks with a clearer head."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_004_P1",
+            "title": "Tense Morning",
+            "summary": "The user felt wound up before a presentation, took a twenty-minute walk outside and reported feeling more settled before joining the call.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_004_P2",
+            "title": "After a Difficult Call",
+            "summary": "The user stepped out for a walk after a stressful phone conversation and said it gave them enough space to think before responding.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "coping",
+            "description": "The user uses short walks after stressful or overwhelming periods to settle themselves and regain perspective.",
+            "confidence": 0.96,
+            "evidence": [
+              {
+                "episode_id": "EP_004_P1",
+                "quote": "took a twenty-minute walk outside and reported feeling more settled"
+              },
+              {
+                "episode_id": "EP_004_P2",
+                "quote": "stepped out for a walk after a stressful phone conversation"
+              },
+              {
+                "episode_id": "EP_004_C",
+                "quote": "went for a short walk around the block"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_005",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests a recurring situational trigger linked to self-doubt without asserting causation beyond the summaries."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_005_C",
+          "title": "Design Review",
+          "summary": "Following comments that the draft needed substantial changes, the user began questioning whether they were capable of the assignment and found it difficult to continue editing."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_005_P1",
+            "title": "Presentation Feedback",
+            "summary": "After a supervisor pointed out several gaps in the slides, the user spent the evening wondering whether they were good enough to present the topic.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_005_P2",
+            "title": "Code Review",
+            "summary": "The user received a list of requested code changes and reported feeling unsure of their ability to complete the task, despite having handled similar work before.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "trigger",
+            "description": "Critical or corrective feedback is repeatedly followed by the user questioning their capability and struggling to continue the task.",
+            "confidence": 0.9,
+            "evidence": [
+              {
+                "episode_id": "EP_005_P1",
+                "quote": "After a supervisor pointed out several gaps in the slides"
+              },
+              {
+                "episode_id": "EP_005_P2",
+                "quote": "received a list of requested code changes and reported feeling unsure of their ability"
+              },
+              {
+                "episode_id": "EP_005_C",
+                "quote": "Following comments that the draft needed substantial changes"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_006",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests a recurring mood tendency in a specific context, supported by separate episodes."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_006_C",
+          "title": "Late Shift",
+          "summary": "After another late shift, the user described feeling unusually irritable during routine interactions at home and said small interruptions were getting on their nerves."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_006_P1",
+            "title": "Busy Weekend",
+            "summary": "The user reported feeling on edge and easily annoyed with family members after working through most of the weekend.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_006_P2",
+            "title": "Deadline Week",
+            "summary": "During a week of extended work hours, the user noticed feeling unusually short-tempered in ordinary conversations once they returned home.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "mood",
+            "description": "The user repeatedly experiences irritability in everyday interactions during or after periods of extended work demands.",
+            "confidence": 0.88,
+            "evidence": [
+              {
+                "episode_id": "EP_006_P1",
+                "quote": "feeling on edge and easily annoyed with family members after working through most of the weekend"
+              },
+              {
+                "episode_id": "EP_006_P2",
+                "quote": "feeling unusually short-tempered in ordinary conversations"
+              },
+              {
+                "episode_id": "EP_006_C",
+                "quote": "feeling unusually irritable during routine interactions at home"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_007",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests social withdrawal when the user is uncertain about belonging in a group."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_007_C",
+          "title": "New Club Meeting",
+          "summary": "At the club meeting, the user knew a few attendees but stayed near the entrance and left before the informal discussion because they were unsure how to join the group."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_007_P1",
+            "title": "Department Gathering",
+            "summary": "The user attended a department gathering but spent most of the time alone and left early, saying they could not find a comfortable way into the conversations.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_007_P2",
+            "title": "Friends of a Friend",
+            "summary": "At a dinner with unfamiliar people, the user mostly listened without joining in and declined the suggestion to stay for coffee afterward.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user tends to withdraw or leave social gatherings when unsure how to enter conversations with a group.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_007_P1",
+                "quote": "spent most of the time alone and left early"
+              },
+              {
+                "episode_id": "EP_007_P2",
+                "quote": "mostly listened without joining in and declined the suggestion to stay for coffee afterward"
+              },
+              {
+                "episode_id": "EP_007_C",
+                "quote": "stayed near the entrance and left before the informal discussion"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_008",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests difficulty declining requests across work and personal commitments."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_008_C",
+          "title": "Weekend Volunteer Shift",
+          "summary": "Although the user had reserved the weekend to rest, they accepted an additional volunteer shift after being asked and later realized they had no free time left."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_008_P1",
+            "title": "Extra Team Task",
+            "summary": "The user agreed to take on a teammate's unfinished task even though their own workload was already full, explaining that they found it awkward to say no.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_008_P2",
+            "title": "Family Errand",
+            "summary": "The user accepted another family errand despite having plans, then rearranged the day to fit it in rather than declining the request.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user repeatedly agrees to additional requests despite existing commitments, then sacrifices their own planned time to accommodate them.",
+            "confidence": 0.92,
+            "evidence": [
+              {
+                "episode_id": "EP_008_P1",
+                "quote": "agreed to take on a teammate's unfinished task even though their own workload was already full"
+              },
+              {
+                "episode_id": "EP_008_P2",
+                "quote": "accepted another family errand despite having plans"
+              },
+              {
+                "episode_id": "EP_008_C",
+                "quote": "accepted an additional volunteer shift after being asked"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_009",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests rumination after ambiguous digital communication across separate relationships."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_009_C",
+          "title": "Unread Message",
+          "summary": "A friend replied with only a brief acknowledgement, and the user spent much of the evening rereading it and wondering whether the friend was upset with them."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_009_P1",
+            "title": "Short Work Reply",
+            "summary": "After receiving a one-word response from a colleague, the user repeatedly checked the chat and considered whether their earlier message had sounded rude.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_009_P2",
+            "title": "Delayed Family Reply",
+            "summary": "When a family member took several hours to respond, the user kept revisiting the conversation and imagining that something in their message had caused offence.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user repeatedly revisits brief or delayed messages and speculates that the other person may be upset with them.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_009_P1",
+                "quote": "repeatedly checked the chat and considered whether their earlier message had sounded rude"
+              },
+              {
+                "episode_id": "EP_009_P2",
+                "quote": "kept revisiting the conversation and imagining that something in their message had caused offence"
+              },
+              {
+                "episode_id": "EP_009_C",
+                "quote": "spent much of the evening rereading it and wondering whether the friend was upset with them"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_010",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests avoidance of administrative tasks that involve uncertainty or possible unpleasant outcomes."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_010_C",
+          "title": "Insurance Form",
+          "summary": "The user left the insurance form unopened for several days because they expected the process to be confusing, then had to complete it close to the deadline."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_010_P1",
+            "title": "Bank Letter",
+            "summary": "The user put aside a bank letter that required action and kept meaning to read it later, eventually opening it only when a reminder arrived.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_010_P2",
+            "title": "Utility Account",
+            "summary": "The user delayed updating a utility account because the online process looked complicated and completed it only after a second notice.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user postpones administrative tasks when they anticipate a confusing or unpleasant process, often acting only after a reminder or deadline.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_010_P1",
+                "quote": "kept meaning to read it later, eventually opening it only when a reminder arrived"
+              },
+              {
+                "episode_id": "EP_010_P2",
+                "quote": "delayed updating a utility account because the online process looked complicated"
+              },
+              {
+                "episode_id": "EP_010_C",
+                "quote": "left the insurance form unopened for several days"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_011",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests structured planning as a repeatedly used coping strategy, not merely a suggested technique."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_011_C",
+          "title": "Competing Deadlines",
+          "summary": "The user felt overwhelmed by several deadlines, wrote each task and its next step on paper, and said the list made the day feel more manageable."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_011_P1",
+            "title": "Busy Monday",
+            "summary": "With several errands competing for attention, the user made a short written plan and said having the steps in front of them reduced the sense of chaos.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_011_P2",
+            "title": "Exam Preparation",
+            "summary": "The user felt stuck about where to begin studying, wrote a simple order for the topics and reported that following it helped them settle into the session.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "coping",
+            "description": "The user uses brief written plans or ordered task lists when overwhelmed to organize next steps and make activities feel manageable.",
+            "confidence": 0.94,
+            "evidence": [
+              {
+                "episode_id": "EP_011_P1",
+                "quote": "made a short written plan and said having the steps in front of them reduced the sense of chaos"
+              },
+              {
+                "episode_id": "EP_011_P2",
+                "quote": "wrote a simple order for the topics and reported that following it helped them settle into the session"
+              },
+              {
+                "episode_id": "EP_011_C",
+                "quote": "wrote each task and its next step on paper"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_012",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests a recurring weekend trigger associated with loneliness and reduced social contact."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_012_C",
+          "title": "Quiet Sunday",
+          "summary": "On Sunday afternoon, the user felt lonely while spending another weekend without plans and noticed that most friends had already made arrangements with others."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_012_P1",
+            "title": "Saturday Evening",
+            "summary": "The user described feeling isolated on Saturday night after realizing they had not arranged to meet anyone and had spent the day at home.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_012_P2",
+            "title": "Long Weekend",
+            "summary": "During the long weekend, the user felt left out when there were no shared plans and said the empty days made the lack of contact more noticeable.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "trigger",
+            "description": "Unplanned weekends with little social contact are repeatedly associated with the user's feelings of loneliness and being left out.",
+            "confidence": 0.89,
+            "evidence": [
+              {
+                "episode_id": "EP_012_P1",
+                "quote": "feeling isolated on Saturday night after realizing they had not arranged to meet anyone"
+              },
+              {
+                "episode_id": "EP_012_P2",
+                "quote": "felt left out when there were no shared plans"
+              },
+              {
+                "episode_id": "EP_012_C",
+                "quote": "felt lonely while spending another weekend without plans"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_013",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests repeated overchecking of completed work across different responsibilities."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_013_C",
+          "title": "Travel Booking",
+          "summary": "After booking the train, the user reopened the confirmation several times to check the date and seat, even though the details had not changed."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_013_P1",
+            "title": "Submitted Assignment",
+            "summary": "The user had already submitted the assignment but checked the upload page repeatedly to make sure the correct file was attached.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_013_P2",
+            "title": "Meeting Invite",
+            "summary": "After sending a calendar invitation, the user reopened it several times to verify the time and recipient list despite seeing the confirmation.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user repeatedly rechecks completed submissions or arrangements after receiving confirmation that they were completed successfully.",
+            "confidence": 0.92,
+            "evidence": [
+              {
+                "episode_id": "EP_013_P1",
+                "quote": "checked the upload page repeatedly to make sure the correct file was attached"
+              },
+              {
+                "episode_id": "EP_013_P2",
+                "quote": "reopened it several times to verify the time and recipient list despite seeing the confirmation"
+              },
+              {
+                "episode_id": "EP_013_C",
+                "quote": "reopened the confirmation several times to check the date and seat"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_014",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests difficulty proceeding when instructions or expectations are unclear across two settings."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_014_C",
+          "title": "Ambiguous Project Brief",
+          "summary": "The project brief did not specify the expected format, and the user spent most of the afternoon waiting for clarification rather than drafting a possible outline."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_014_P1",
+            "title": "New Work Assignment",
+            "summary": "The user was unsure what the manager expected from a new task and held off on starting until someone could explain the requirements.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_014_P2",
+            "title": "Event Planning",
+            "summary": "When the event instructions left the user's role unclear, they did not begin contacting participants and waited for a more detailed plan.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user delays taking an initial step when expectations or instructions are ambiguous, preferring to wait for clarification.",
+            "confidence": 0.9,
+            "evidence": [
+              {
+                "episode_id": "EP_014_P1",
+                "quote": "held off on starting until someone could explain the requirements"
+              },
+              {
+                "episode_id": "EP_014_P2",
+                "quote": "did not begin contacting participants and waited for a more detailed plan"
+              },
+              {
+                "episode_id": "EP_014_C",
+                "quote": "spent most of the afternoon waiting for clarification rather than drafting a possible outline"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_015",
+      "evaluation": {
+        "scenario": "new_pattern",
+        "description": "Tests emotional shutdown during tense discussions across family and peer contexts."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_015_C",
+          "title": "Roommate Disagreement",
+          "summary": "When the discussion about cleaning became tense, the user stopped explaining their view and gave short answers until the conversation ended."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_015_P1",
+            "title": "Parent Conversation",
+            "summary": "During a disagreement with a parent, the user went quiet midway through the discussion and said very little even though they still had concerns.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_015_P2",
+            "title": "Group Project Conflict",
+            "summary": "As teammates debated a missed deadline, the user withdrew from the discussion and responded only when directly asked a question.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user tends to become quiet and stop expressing their perspective during tense or conflictual discussions.",
+            "confidence": 0.92,
+            "evidence": [
+              {
+                "episode_id": "EP_015_P1",
+                "quote": "went quiet midway through the discussion and said very little even though they still had concerns"
+              },
+              {
+                "episode_id": "EP_015_P2",
+                "quote": "withdrew from the discussion and responded only when directly asked a question"
+              },
+              {
+                "episode_id": "EP_015_C",
+                "quote": "stopped explaining their view and gave short answers until the conversation ended"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_016",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "Two academic episodes involve pressure but show unrelated responses rather than a recurring tendency."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_016_C",
+          "title": "Lab Deadline",
+          "summary": "The user felt pressed for time before a lab submission and asked the instructor for an extension because the equipment had been unavailable."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_016_P1",
+            "title": "Exam Week",
+            "summary": "The user felt nervous before an exam but prepared a revision timetable and followed it across the week.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_016_P2",
+            "title": "Group Assignment",
+            "summary": "The user was frustrated when a teammate missed a meeting and redistributed the remaining tasks with the group.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_017",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "Anxiety appears in separate episodes, but the situations and reported responses do not form one recurring pattern."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_017_C",
+          "title": "Airport Journey",
+          "summary": "The user felt anxious about missing a flight and checked the departure board twice before boarding early."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_017_P1",
+            "title": "Medical Appointment",
+            "summary": "The user felt uneasy before a routine appointment and asked the receptionist how long the visit would take.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_017_P2",
+            "title": "Public Speaking",
+            "summary": "The user was nervous before speaking at a community event but completed the talk after rehearsing once with a friend.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_018",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "Repeated use of a broad word does not establish the same mood or behaviour because the contexts differ."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_018_C",
+          "title": "Tired After Travel",
+          "summary": "The user felt tired after a long bus journey and went to bed early after unpacking."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_018_P1",
+            "title": "Tired Eyes",
+            "summary": "The user mentioned tired eyes after spending several hours reading small text and took a screen break.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_018_P2",
+            "title": "Tired of Noise",
+            "summary": "The user said they were tired of the construction noise outside and moved to a quieter room to work.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_019",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "A single instance of delaying a task is insufficient because the other episodes do not show similar avoidance."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_019_C",
+          "title": "Delayed Application",
+          "summary": "The user postponed completing a scholarship application for two days because they were unsure which documents were required."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_019_P1",
+            "title": "Morning Routine",
+            "summary": "The user woke early and completed the planned exercise session before breakfast.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_019_P2",
+            "title": "Course Registration",
+            "summary": "The user reviewed the course options, selected the preferred subjects and submitted the registration on the same day.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_020",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "A coping technique suggested by another person is not evidence that the user adopted or repeatedly used it."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_020_C",
+          "title": "Stressful Meeting",
+          "summary": "A colleague suggested journaling after the meeting, but the user said they had not tried it and instead went back to their usual evening routine."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_020_P1",
+            "title": "Exam Worry",
+            "summary": "The user discussed feeling worried about exams and listened while a friend described how journaling had helped them.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_020_P2",
+            "title": "Difficult Feedback",
+            "summary": "The user received feedback at work and spoke with a mentor about the next steps, without mentioning any journaling practice.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_021",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "One reported use of a coping activity is not enough to establish recurrence across episodes."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_021_C",
+          "title": "Calming Down",
+          "summary": "After an argument, the user listened to music for half an hour and said it helped them feel calmer that evening."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_021_P1",
+            "title": "Busy Schedule",
+            "summary": "The user described a crowded week and reorganized the calendar to make room for a family commitment.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_021_P2",
+            "title": "Uncertain Decision",
+            "summary": "The user compared two options and chose one after reviewing the costs and travel time.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_022",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "Relationship concerns recur as a topic, but the episodes describe different issues with no shared response pattern."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_022_C",
+          "title": "Cancelled Dinner",
+          "summary": "The user felt disappointed when a partner cancelled dinner because of an unexpected work shift and suggested another date."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_022_P1",
+            "title": "Different Priorities",
+            "summary": "The user and partner disagreed about holiday plans and agreed to discuss the budget before deciding.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_022_P2",
+            "title": "Forgotten Message",
+            "summary": "The user was hurt that a partner forgot to pass along a message and raised the issue directly that evening.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_023",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "The same setting label appears, but the user responds differently and no stable trigger-response pattern is supported."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_023_C",
+          "title": "Feedback from Client",
+          "summary": "The user welcomed a client's positive feedback and saved the comments for a portfolio update."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_023_P1",
+            "title": "Feedback from Manager",
+            "summary": "The user felt disappointed by a manager's request to revise a report and scheduled time to make the changes.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_023_P2",
+            "title": "Feedback from Friend",
+            "summary": "The user laughed at a friend's suggestion about a recipe and decided to try the alternative ingredients.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_024",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "Only the current episode contains avoidance; earlier episodes show different, unrelated work behaviours."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_024_C",
+          "title": "Unsent Email",
+          "summary": "The user drafted an email about a billing issue but avoided sending it because they expected a difficult exchange."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_024_P1",
+            "title": "Team Presentation",
+            "summary": "The user volunteered to present the team's findings and prepared speaking notes the evening before.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_024_P2",
+            "title": "Office Move",
+            "summary": "The user coordinated the packing schedule and checked that the shared equipment was labelled correctly.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_025",
+      "evaluation": {
+        "scenario": "no_pattern",
+        "description": "Several emotional states are mentioned, but they arise in unrelated contexts and do not support one recurring mood pattern."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_025_C",
+          "title": "Unexpected Gift",
+          "summary": "The user felt surprised and happy when a neighbour brought over a cake for the building celebration."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_025_P1",
+            "title": "Traffic Delay",
+            "summary": "The user was irritated by a traffic jam and listened to a podcast until the road cleared.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_025_P2",
+            "title": "Family Visit",
+            "summary": "The user felt sad when a relative left after a short visit and arranged another call for the following week.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": []
+      }
+    },
+    {
+      "case_id": "PAT_026",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests updating an active task-avoidance pattern with another current occurrence and preserving its ID."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_026_C",
+          "title": "Research Notes",
+          "summary": "The user set aside an hour to organize research notes but instead adjusted the folder names and never began reviewing the material."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_026_P1",
+            "title": "Report Draft",
+            "summary": "The user delayed writing the report opening by doing minor formatting changes first.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_026_P2",
+            "title": "Earlier Project Start",
+            "summary": "The user spent a planned work period adjusting slide layouts and postponed writing the project summary.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_TASK_01",
+            "category": "behavior",
+            "description": "The user delays starting important work by switching to smaller tasks.",
+            "confidence": 0.84,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_TASK_01",
+            "category": "behavior",
+            "description": "The user delays starting important work by switching to smaller tasks.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_026_P1",
+                "quote": "delayed writing the report opening by doing minor formatting changes first"
+              },
+              {
+                "episode_id": "EP_026_C",
+                "quote": "adjusted the folder names and never began reviewing the material"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_027",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests maintaining a reassurance-seeking pattern after a new decision, without creating a duplicate."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_027_C",
+          "title": "Buying a Laptop",
+          "summary": "The user compared laptop models, chose one within budget, then asked a cousin several times whether it was definitely the sensible choice."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_027_P1",
+            "title": "Choosing an Elective",
+            "summary": "After selecting an elective, the user messaged a classmate to make sure the choice was not a mistake.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_027_P2",
+            "title": "Selecting a Workshop",
+            "summary": "After choosing a workshop, the user asked a friend twice whether it was the right option.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_REASSURE_02",
+            "category": "behavior",
+            "description": "The user repeatedly asks others to confirm decisions after choosing an option.",
+            "confidence": 0.82,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_REASSURE_02",
+            "category": "behavior",
+            "description": "The user repeatedly asks others to confirm decisions after choosing an option.",
+            "confidence": 0.9,
+            "evidence": [
+              {
+                "episode_id": "EP_027_P1",
+                "quote": "messaged a classmate to make sure the choice was not a mistake"
+              },
+              {
+                "episode_id": "EP_027_C",
+                "quote": "asked a cousin several times whether it was definitely the sensible choice"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_028",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests an established coping pattern supported by the user's actual use of breathing pauses."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_028_C",
+          "title": "Before the Interview",
+          "summary": "The user noticed their breathing becoming quick before the interview, paused to take several slow breaths and said this helped them focus on the first question."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_028_P1",
+            "title": "Driving Test",
+            "summary": "Before the driving test, the user took a few slow breaths in the parked car and felt ready to begin.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_028_P2",
+            "title": "Before a Presentation",
+            "summary": "The user took several slow breaths before a presentation and said the pause helped them collect their thoughts.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_BREATH_03",
+            "category": "coping",
+            "description": "The user uses slow, deliberate breathing before stressful events to steady their attention.",
+            "confidence": 0.85,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_BREATH_03",
+            "category": "coping",
+            "description": "The user uses slow, deliberate breathing before stressful events to steady their attention.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_028_P1",
+                "quote": "took a few slow breaths in the parked car and felt ready to begin"
+              },
+              {
+                "episode_id": "EP_028_C",
+                "quote": "paused to take several slow breaths"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_029",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests an active situational trigger pattern when another group meeting produces the same response."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_029_C",
+          "title": "Weekly Stand-up",
+          "summary": "During the large weekly stand-up, the user felt tense when asked to speak without warning and struggled to organize an answer in front of the group."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_029_P1",
+            "title": "Department Review",
+            "summary": "At the department review, the user became uncomfortable when unexpectedly asked to give an update in front of several colleagues.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_029_P2",
+            "title": "Unexpected Question",
+            "summary": "At a large team meeting, the user felt uncomfortable when asked without warning to explain their work.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_GROUP_04",
+            "category": "trigger",
+            "description": "Being asked to speak unexpectedly in a large group is associated with the user's discomfort.",
+            "confidence": 0.8,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_GROUP_04",
+            "category": "trigger",
+            "description": "Being asked to speak unexpectedly in a large group is associated with the user's discomfort.",
+            "confidence": 0.9,
+            "evidence": [
+              {
+                "episode_id": "EP_029_P1",
+                "quote": "became uncomfortable when unexpectedly asked to give an update in front of several colleagues"
+              },
+              {
+                "episode_id": "EP_029_C",
+                "quote": "felt tense when asked to speak without warning"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_030",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests updating a recurring low-mood tendency in the same context without claiming a clinical condition."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_030_C",
+          "title": "After a Double Shift",
+          "summary": "After another pair of back-to-back shifts, the user described feeling flat and having little interest in their usual evening activities."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_030_P1",
+            "title": "Two Shifts in a Row",
+            "summary": "The user said they felt unusually low after working two consecutive long shifts and skipped their usual game night.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_030_P2",
+            "title": "Long Workday",
+            "summary": "After an extended workday, the user described feeling flat and skipped an activity they normally enjoy.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_LOW_05",
+            "category": "mood",
+            "description": "The user reports a recurring low or flat mood after consecutive long work shifts.",
+            "confidence": 0.79,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_LOW_05",
+            "category": "mood",
+            "description": "The user reports a recurring low or flat mood after consecutive long work shifts.",
+            "confidence": 0.88,
+            "evidence": [
+              {
+                "episode_id": "EP_030_P1",
+                "quote": "felt unusually low after working two consecutive long shifts"
+              },
+              {
+                "episode_id": "EP_030_C",
+                "quote": "described feeling flat and having little interest in their usual evening activities"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_031",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests a persistent delay pattern around personal administration and preserves the stored description."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_031_C",
+          "title": "Tax Documents",
+          "summary": "The user kept moving the tax document upload to the next day because the instructions looked tedious, and only opened the portal after a reminder."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_031_P1",
+            "title": "Passport Renewal",
+            "summary": "The user put off starting the passport renewal form and returned to it only after receiving a notification about the deadline.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_031_P2",
+            "title": "Vehicle Renewal",
+            "summary": "The user delayed reading a vehicle registration notice and acted only after a deadline reminder arrived.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_ADMIN_06",
+            "category": "behavior",
+            "description": "The user postpones administrative paperwork when it appears tedious or complicated.",
+            "confidence": 0.83,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_ADMIN_06",
+            "category": "behavior",
+            "description": "The user postpones administrative paperwork when it appears tedious or complicated.",
+            "confidence": 0.92,
+            "evidence": [
+              {
+                "episode_id": "EP_031_P1",
+                "quote": "put off starting the passport renewal form"
+              },
+              {
+                "episode_id": "EP_031_C",
+                "quote": "kept moving the tax document upload to the next day"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_032",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests repeated requests for review of messages before sending them."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_032_C",
+          "title": "Message to Supervisor",
+          "summary": "The user drafted a routine update to the supervisor and asked a colleague to read it twice before sending, despite the message being straightforward."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_032_P1",
+            "title": "Email to Landlord",
+            "summary": "The user showed a simple maintenance email to a friend and asked whether the wording sounded appropriate before sending it.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_032_P2",
+            "title": "Short Client Reply",
+            "summary": "The user asked a friend to review a brief client message before sending it, although the wording was clear.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_MESSAGE_07",
+            "category": "behavior",
+            "description": "The user seeks another person's approval of routine messages before sending them.",
+            "confidence": 0.81,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_MESSAGE_07",
+            "category": "behavior",
+            "description": "The user seeks another person's approval of routine messages before sending them.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_032_P1",
+                "quote": "asked whether the wording sounded appropriate before sending it"
+              },
+              {
+                "episode_id": "EP_032_C",
+                "quote": "asked a colleague to read it twice before sending"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_033",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests an active withdrawal pattern after interpersonal disagreement."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_033_C",
+          "title": "Planning Discussion",
+          "summary": "After disagreeing with a friend about the trip budget, the user stopped replying in the group chat for the rest of the evening rather than continuing the discussion."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_033_P1",
+            "title": "Shared Project",
+            "summary": "Following a disagreement with a teammate, the user left the project chat unanswered until the next afternoon.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_033_P2",
+            "title": "Friend Disagreement",
+            "summary": "After a disagreement with a friend, the user stopped responding to messages until the following day.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_WITHDRAW_08",
+            "category": "behavior",
+            "description": "The user withdraws from communication after disagreements instead of continuing the discussion.",
+            "confidence": 0.84,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_WITHDRAW_08",
+            "category": "behavior",
+            "description": "The user withdraws from communication after disagreements instead of continuing the discussion.",
+            "confidence": 0.92,
+            "evidence": [
+              {
+                "episode_id": "EP_033_P1",
+                "quote": "left the project chat unanswered until the next afternoon"
+              },
+              {
+                "episode_id": "EP_033_C",
+                "quote": "stopped replying in the group chat for the rest of the evening"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_034",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests a repeated self-comparison tendency linked to social-media browsing."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_034_C",
+          "title": "Portfolio Browsing",
+          "summary": "After browsing former classmates' career updates, the user compared their own progress with the posts and felt behind despite having completed several recent projects."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_034_P1",
+            "title": "Graduation Updates",
+            "summary": "The user looked through classmates' graduation posts and began measuring their own progress against the milestones shown there.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_034_P2",
+            "title": "Career Comparison",
+            "summary": "The user compared their own progress with former classmates' online career announcements and felt behind.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_COMPARE_09",
+            "category": "behavior",
+            "description": "The user compares their progress with peers' curated online updates and then feels behind.",
+            "confidence": 0.8,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_COMPARE_09",
+            "category": "behavior",
+            "description": "The user compares their progress with peers' curated online updates and then feels behind.",
+            "confidence": 0.9,
+            "evidence": [
+              {
+                "episode_id": "EP_034_P1",
+                "quote": "began measuring their own progress against the milestones shown there"
+              },
+              {
+                "episode_id": "EP_034_C",
+                "quote": "compared their own progress with the posts and felt behind"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_035",
+      "evaluation": {
+        "scenario": "existing_pattern_update",
+        "description": "Tests maintenance of a positive routine pattern after a temporary schedule disruption."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_035_C",
+          "title": "Morning Reset",
+          "summary": "After two disrupted mornings, the user returned to preparing clothes and a to-do list the night before, which helped them leave home on time."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_035_P1",
+            "title": "Prepared Evening",
+            "summary": "The user laid out work clothes and wrote a short list before bed, then reported that the morning felt less rushed.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_035_P2",
+            "title": "Evening Preparation",
+            "summary": "The user prepared clothes and a short priority list the night before and said this made the morning easier.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_ROUTINE_10",
+            "category": "behavior",
+            "description": "The user prepares clothes and a brief task list the night before to support a smoother morning.",
+            "confidence": 0.82,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_ROUTINE_10",
+            "category": "behavior",
+            "description": "The user prepares clothes and a brief task list the night before to support a smoother morning.",
+            "confidence": 0.9,
+            "evidence": [
+              {
+                "episode_id": "EP_035_P1",
+                "quote": "laid out work clothes and wrote a short list before bed"
+              },
+              {
+                "episode_id": "EP_035_C",
+                "quote": "returned to preparing clothes and a to-do list the night before"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_036",
+      "evaluation": {
+        "scenario": "pattern_resolution",
+        "description": "Tests explicit resolution of an established task-starting avoidance pattern; silence or one good day is not used."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_036_C",
+          "title": "Consistent Study Routine",
+          "summary": "The user reported that they no longer put off starting revision and have begun the planned study block on time for the past three weeks."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_036_P1",
+            "title": "Delayed Revision",
+            "summary": "The user repeatedly postponed beginning revision by checking messages and tidying the desk instead.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_036_P2",
+            "title": "Unstarted Practice",
+            "summary": "The user described putting off practice questions until late evening on several study days.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_01",
+            "category": "behavior",
+            "description": "The user delays starting study tasks by switching to unrelated activities.",
+            "confidence": 0.88,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_01",
+            "category": "behavior",
+            "description": "The user delays starting study tasks by switching to unrelated activities.",
+            "confidence": 0.95,
+            "evidence": [
+              {
+                "episode_id": "EP_036_P1",
+                "quote": "postponed beginning revision by checking messages and tidying the desk instead"
+              },
+              {
+                "episode_id": "EP_036_P2",
+                "quote": "putting off practice questions until late evening on several study days"
+              }
+            ],
+            "status": "RESOLVED",
+            "resolution_evidence": {
+              "episode_id": "EP_036_C",
+              "quote": "they no longer put off starting revision and have begun the planned study block on time for the past three weeks"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_037",
+      "evaluation": {
+        "scenario": "pattern_resolution",
+        "description": "Tests explicit cessation of reassurance-seeking after repeated historical occurrences."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_037_C",
+          "title": "Independent Choice",
+          "summary": "The user said they have stopped asking friends to approve routine personal decisions and now feel comfortable making those choices without checking again."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_037_P1",
+            "title": "Course Choice",
+            "summary": "The user asked several classmates whether the selected course was the right option even after registration.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_037_P2",
+            "title": "Holiday Booking",
+            "summary": "After choosing travel dates, the user repeatedly asked a sibling to confirm that the dates were sensible.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_02",
+            "category": "behavior",
+            "description": "The user repeatedly seeks confirmation from others after making personal decisions.",
+            "confidence": 0.86,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_02",
+            "category": "behavior",
+            "description": "The user repeatedly seeks confirmation from others after making personal decisions.",
+            "confidence": 0.94,
+            "evidence": [
+              {
+                "episode_id": "EP_037_P1",
+                "quote": "asked several classmates whether the selected course was the right option"
+              },
+              {
+                "episode_id": "EP_037_P2",
+                "quote": "repeatedly asked a sibling to confirm that the dates were sensible"
+              }
+            ],
+            "status": "RESOLVED",
+            "resolution_evidence": {
+              "episode_id": "EP_037_C",
+              "quote": "have stopped asking friends to approve routine personal decisions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_038",
+      "evaluation": {
+        "scenario": "pattern_resolution",
+        "description": "Tests resolution of avoiding direct conversations, with explicit sustained improvement in the current summary."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_038_C",
+          "title": "Clear Conversation",
+          "summary": "The user reported that they no longer avoid raising concerns with their housemates and have discussed two recent problems directly as they arose."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_038_P1",
+            "title": "Unspoken Concern",
+            "summary": "The user kept quiet about noise affecting their sleep and hoped the housemates would notice without being told.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_038_P2",
+            "title": "Avoided Boundary",
+            "summary": "The user changed the subject several times rather than telling a relative that repeated visits were inconvenient.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_03",
+            "category": "behavior",
+            "description": "The user avoids direct conversations about concerns and boundaries.",
+            "confidence": 0.85,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_03",
+            "category": "behavior",
+            "description": "The user avoids direct conversations about concerns and boundaries.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_038_P1",
+                "quote": "kept quiet about noise affecting their sleep"
+              },
+              {
+                "episode_id": "EP_038_P2",
+                "quote": "changed the subject several times rather than telling a relative"
+              }
+            ],
+            "status": "RESOLVED",
+            "resolution_evidence": {
+              "episode_id": "EP_038_C",
+              "quote": "they no longer avoid raising concerns with their housemates"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_039",
+      "evaluation": {
+        "scenario": "pattern_resolution",
+        "description": "Tests resolution of recurring post-message rumination using explicit current evidence."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_039_C",
+          "title": "Less Message Checking",
+          "summary": "The user said they have stopped rereading short replies to guess whether someone is annoyed and now leave the conversation alone unless a real issue is raised."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_039_P1",
+            "title": "Brief Reply",
+            "summary": "The user reread a colleague's short response many times and worried that the colleague was irritated.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_039_P2",
+            "title": "Delayed Response",
+            "summary": "After a friend replied late, the user repeatedly checked the chat and wondered whether they had said something wrong.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_04",
+            "category": "behavior",
+            "description": "The user repeatedly rereads brief or delayed messages and interprets them as possible signs of annoyance.",
+            "confidence": 0.87,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_04",
+            "category": "behavior",
+            "description": "The user repeatedly rereads brief or delayed messages and interprets them as possible signs of annoyance.",
+            "confidence": 0.94,
+            "evidence": [
+              {
+                "episode_id": "EP_039_P1",
+                "quote": "reread a colleague's short response many times and worried that the colleague was irritated"
+              },
+              {
+                "episode_id": "EP_039_P2",
+                "quote": "repeatedly checked the chat and wondered whether they had said something wrong"
+              }
+            ],
+            "status": "RESOLVED",
+            "resolution_evidence": {
+              "episode_id": "EP_039_C",
+              "quote": "have stopped rereading short replies to guess whether someone is annoyed"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_040",
+      "evaluation": {
+        "scenario": "pattern_resolution",
+        "description": "Tests resolution of using withdrawal after disagreements, rather than inferring it from one positive interaction."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_040_C",
+          "title": "Staying in the Discussion",
+          "summary": "The user reported that they no longer disappear from group conversations after disagreements and have recently stayed to talk through differences until a plan was agreed."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_040_P1",
+            "title": "Unanswered Chat",
+            "summary": "After an argument about a shared purchase, the user stopped responding to the group chat for the rest of the day.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_040_P2",
+            "title": "Left the Meeting",
+            "summary": "During a disagreement about task ownership, the user left the call without explaining their view and did not rejoin the discussion.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_05",
+            "category": "behavior",
+            "description": "The user withdraws from communication after disagreements.",
+            "confidence": 0.84,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_05",
+            "category": "behavior",
+            "description": "The user withdraws from communication after disagreements.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_040_P1",
+                "quote": "stopped responding to the group chat for the rest of the day"
+              },
+              {
+                "episode_id": "EP_040_P2",
+                "quote": "left the call without explaining their view and did not rejoin the discussion"
+              }
+            ],
+            "status": "RESOLVED",
+            "resolution_evidence": {
+              "episode_id": "EP_040_C",
+              "quote": "they no longer disappear from group conversations after disagreements"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_041",
+      "evaluation": {
+        "scenario": "pattern_resolution",
+        "description": "Tests explicit resolution of postponing administrative paperwork."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_041_C",
+          "title": "Paperwork Up to Date",
+          "summary": "The user said they no longer leave official forms until reminders arrive and have submitted each required document before its deadline over the last two months."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_041_P1",
+            "title": "Renewal Notice",
+            "summary": "The user ignored a renewal notice for several days and opened it only after a second reminder.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_041_P2",
+            "title": "Reimbursement Form",
+            "summary": "The user delayed completing a reimbursement form because the process seemed tedious and submitted it near the cutoff.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_06",
+            "category": "behavior",
+            "description": "The user postpones administrative forms until reminders or deadlines force action.",
+            "confidence": 0.86,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_06",
+            "category": "behavior",
+            "description": "The user postpones administrative forms until reminders or deadlines force action.",
+            "confidence": 0.94,
+            "evidence": [
+              {
+                "episode_id": "EP_041_P1",
+                "quote": "opened it only after a second reminder"
+              },
+              {
+                "episode_id": "EP_041_P2",
+                "quote": "delayed completing a reimbursement form because the process seemed tedious"
+              }
+            ],
+            "status": "RESOLVED",
+            "resolution_evidence": {
+              "episode_id": "EP_041_C",
+              "quote": "no longer leave official forms until reminders arrive"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_042",
+      "evaluation": {
+        "scenario": "pattern_resolution",
+        "description": "Tests explicit improvement in overchecking completed work, with historical recurrence retained as evidence."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_042_C",
+          "title": "Submitting Without Rechecking",
+          "summary": "The user reported that they have stopped reopening completed submissions to verify them repeatedly and now check the final file once before submitting."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_042_P1",
+            "title": "Repeated Upload Checks",
+            "summary": "The user refreshed the assignment upload page several times after seeing the successful submission message.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_042_P2",
+            "title": "Repeated Booking Checks",
+            "summary": "After booking a hotel, the user reopened the confirmation repeatedly to verify the dates even though they were correct.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_07",
+            "category": "behavior",
+            "description": "The user repeatedly rechecks completed submissions and bookings after confirmation.",
+            "confidence": 0.85,
+            "status": "ACTIVE"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_RESOLVE_07",
+            "category": "behavior",
+            "description": "The user repeatedly rechecks completed submissions and bookings after confirmation.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_042_P1",
+                "quote": "refreshed the assignment upload page several times after seeing the successful submission message"
+              },
+              {
+                "episode_id": "EP_042_P2",
+                "quote": "reopened the confirmation repeatedly to verify the dates even though they were correct"
+              }
+            ],
+            "status": "RESOLVED",
+            "resolution_evidence": {
+              "episode_id": "EP_042_C",
+              "quote": "they have stopped reopening completed submissions to verify them repeatedly"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_043",
+      "evaluation": {
+        "scenario": "pattern_reactivation",
+        "description": "Tests reactivation of previously resolved task avoidance with recurrence in a recent closed episode and the current episode."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_043_C",
+          "title": "Avoided Draft Again",
+          "summary": "The user planned to begin a funding proposal but spent the available time renaming folders and left the first paragraph unwritten."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_043_P1",
+            "title": "Earlier Study Delay",
+            "summary": "The user used to postpone study sessions by switching to unrelated chores, a pattern that had later improved.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_043_P2",
+            "title": "Recent Proposal Delay",
+            "summary": "Last week the user put off drafting a proposal by reorganizing reference files instead of writing.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_01",
+            "category": "behavior",
+            "description": "The user delays starting important work by shifting to smaller unrelated activities.",
+            "confidence": 0.86,
+            "status": "RESOLVED"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_01",
+            "category": "behavior",
+            "description": "The user delays starting important work by shifting to smaller unrelated activities.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_043_P2",
+                "quote": "put off drafting a proposal by reorganizing reference files instead of writing"
+              },
+              {
+                "episode_id": "EP_043_C",
+                "quote": "spent the available time renaming folders and left the first paragraph unwritten"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_044",
+      "evaluation": {
+        "scenario": "pattern_reactivation",
+        "description": "Tests return of reassurance-seeking after a pattern had been marked resolved."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_044_C",
+          "title": "Second Opinion on Move",
+          "summary": "The user decided to move apartments but repeatedly called a friend to ask whether the choice was definitely right, even after confirming the budget and commute."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_044_P1",
+            "title": "Earlier Course Decisions",
+            "summary": "Before the pattern improved, the user often asked classmates to validate course selections after submitting them.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_044_P2",
+            "title": "New Phone Purchase",
+            "summary": "The user recently chose a phone and then messaged two relatives several times asking whether they had made the correct choice.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_02",
+            "category": "behavior",
+            "description": "The user repeatedly seeks others' confirmation after making personal decisions.",
+            "confidence": 0.84,
+            "status": "RESOLVED"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_02",
+            "category": "behavior",
+            "description": "The user repeatedly seeks others' confirmation after making personal decisions.",
+            "confidence": 0.92,
+            "evidence": [
+              {
+                "episode_id": "EP_044_P2",
+                "quote": "messaged two relatives several times asking whether they had made the correct choice"
+              },
+              {
+                "episode_id": "EP_044_C",
+                "quote": "repeatedly called a friend to ask whether the choice was definitely right"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_045",
+      "evaluation": {
+        "scenario": "pattern_reactivation",
+        "description": "Tests reactivation of direct-conversation avoidance after an earlier period of improvement."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_045_C",
+          "title": "Unraised Concern",
+          "summary": "The user was unhappy with a teammate's repeated late changes but avoided bringing it up and told themselves it was easier to stay quiet."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_045_P1",
+            "title": "Earlier Boundary Issues",
+            "summary": "The user previously avoided telling friends when plans did not work for them, leaving the frustration unspoken.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_045_P2",
+            "title": "Recent Flatmate Issue",
+            "summary": "In a recent episode, the user wanted to discuss shared expenses but kept postponing the conversation and hoped the flatmate would raise it first.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_03",
+            "category": "behavior",
+            "description": "The user avoids direct conversations about concerns instead of raising them with the people involved.",
+            "confidence": 0.86,
+            "status": "RESOLVED"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_03",
+            "category": "behavior",
+            "description": "The user avoids direct conversations about concerns instead of raising them with the people involved.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_045_P2",
+                "quote": "kept postponing the conversation and hoped the flatmate would raise it first"
+              },
+              {
+                "episode_id": "EP_045_C",
+                "quote": "avoided bringing it up and told themselves it was easier to stay quiet"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_046",
+      "evaluation": {
+        "scenario": "pattern_reactivation",
+        "description": "Tests recurrence of message-related rumination after the stored pattern had been resolved."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_046_C",
+          "title": "Ambiguous Reply",
+          "summary": "A colleague replied with 'noted' to the user's update, and the user reread the message several times while wondering whether it sounded annoyed."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_046_P1",
+            "title": "Earlier Chat Worry",
+            "summary": "The user had previously spent long periods rereading short messages and worrying that friends were upset, before reporting that this had eased.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_046_P2",
+            "title": "Recent Family Text",
+            "summary": "Last week the user repeatedly checked a relative's brief reply and wondered if they had caused offence.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_04",
+            "category": "behavior",
+            "description": "The user repeatedly rereads brief replies and interprets them as possible signs that someone is annoyed.",
+            "confidence": 0.85,
+            "status": "RESOLVED"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_04",
+            "category": "behavior",
+            "description": "The user repeatedly rereads brief replies and interprets them as possible signs that someone is annoyed.",
+            "confidence": 0.91,
+            "evidence": [
+              {
+                "episode_id": "EP_046_P2",
+                "quote": "repeatedly checked a relative's brief reply and wondered if they had caused offence"
+              },
+              {
+                "episode_id": "EP_046_C",
+                "quote": "reread the message several times while wondering whether it sounded annoyed"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_047",
+      "evaluation": {
+        "scenario": "pattern_reactivation",
+        "description": "Tests return of overchecking behaviour after resolution, supported by two distinct episodes."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_047_C",
+          "title": "Repeated Confirmation",
+          "summary": "After submitting a travel reimbursement, the user reopened the portal several times to confirm that the receipt was attached, although the submission status already showed complete."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_047_P1",
+            "title": "Earlier Submission Checks",
+            "summary": "The user previously rechecked uploaded assignments multiple times after successful submission, before saying the habit had stopped.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_047_P2",
+            "title": "Recent Ticket Purchase",
+            "summary": "The user recently reopened an event ticket confirmation repeatedly to check the date and seat despite the details being visible.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_05",
+            "category": "behavior",
+            "description": "The user repeatedly rechecks completed online transactions or submissions after receiving confirmation.",
+            "confidence": 0.87,
+            "status": "RESOLVED"
+          }
+        ]
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": "PATTERN_REACT_05",
+            "category": "behavior",
+            "description": "The user repeatedly rechecks completed online transactions or submissions after receiving confirmation.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_047_P2",
+                "quote": "reopened an event ticket confirmation repeatedly to check the date and seat"
+              },
+              {
+                "episode_id": "EP_047_C",
+                "quote": "reopened the portal several times to confirm that the receipt was attached"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_048",
+      "evaluation": {
+        "scenario": "semantic_merge",
+        "description": "Tests merging varied descriptions of the same avoidance of direct communication into one coherent pattern."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_048_C",
+          "title": "Uncomfortable Follow-up",
+          "summary": "The user wanted to ask a teammate about an unresolved task but sent a vague check-in instead, leaving the actual concern unspoken."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_048_P1",
+            "title": "Missed Opportunity to Clarify",
+            "summary": "The user disagreed with a friend but changed the subject rather than explaining what had bothered them.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_048_P2",
+            "title": "Delayed Boundary",
+            "summary": "The user kept postponing a conversation about weekend commitments and hoped the other person would understand without a direct request.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_048_P3",
+            "title": "Quiet Meeting",
+            "summary": "The user held back a concern during a planning meeting and later said they had not found a way to raise it.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user avoids direct communication about concerns by changing the subject, withholding the point or relying on indirect messages.",
+            "confidence": 0.94,
+            "evidence": [
+              {
+                "episode_id": "EP_048_P1",
+                "quote": "changed the subject rather than explaining what had bothered them"
+              },
+              {
+                "episode_id": "EP_048_P2",
+                "quote": "hoped the other person would understand without a direct request"
+              },
+              {
+                "episode_id": "EP_048_P3",
+                "quote": "held back a concern during a planning meeting"
+              },
+              {
+                "episode_id": "EP_048_C",
+                "quote": "sent a vague check-in instead, leaving the actual concern unspoken"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_049",
+      "evaluation": {
+        "scenario": "semantic_merge",
+        "description": "Tests recognizing different reported forms of the same self-regulation strategy as one coping pattern without splitting it by activity."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_049_C",
+          "title": "Reset After Work",
+          "summary": "After a demanding day, the user spent fifteen minutes in a quiet park before going home and said the pause helped them settle."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_049_P1",
+            "title": "After a Crowded Event",
+            "summary": "The user stepped outside for a short walk after a noisy gathering and said the break helped them feel more settled.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_049_P2",
+            "title": "After a Difficult Shift",
+            "summary": "The user sat quietly on a bench for a few minutes after work and reported that the pause helped them regain composure.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_049_P3",
+            "title": "Busy Morning",
+            "summary": "The user took a brief walk around the building between demanding tasks and returned feeling calmer.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "coping",
+            "description": "The user deliberately takes a brief quiet break, sometimes by walking or sitting outside, to settle after demanding or overstimulating situations.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_049_P1",
+                "quote": "stepped outside for a short walk after a noisy gathering"
+              },
+              {
+                "episode_id": "EP_049_P2",
+                "quote": "sat quietly on a bench for a few minutes after work"
+              },
+              {
+                "episode_id": "EP_049_P3",
+                "quote": "took a brief walk around the building between demanding tasks"
+              },
+              {
+                "episode_id": "EP_049_C",
+                "quote": "spent fifteen minutes in a quiet park before going home"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PAT_050",
+      "evaluation": {
+        "scenario": "semantic_merge",
+        "description": "Tests consolidating several paraphrases of waiting for clarity before acting into one behaviour pattern rather than separate micro-patterns."
+      },
+      "input": {
+        "current_episode": {
+          "episode_id": "EP_050_C",
+          "title": "Unclear Instructions",
+          "summary": "The user did not know what the client expected from the first draft and waited for a detailed example instead of preparing an initial version."
+        },
+        "previous_episodes": [
+          {
+            "episode_id": "EP_050_P1",
+            "title": "New Responsibility",
+            "summary": "The user held off on the first step of a new responsibility until the manager clarified exactly what the finished result should look like.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_050_P2",
+            "title": "Volunteer Brief",
+            "summary": "The user waited for a clearer description of their role before contacting the event participants, although a basic introduction could have been sent.",
+            "status": "CLOSED"
+          },
+          {
+            "episode_id": "EP_050_P3",
+            "title": "Course Assignment",
+            "summary": "The user delayed making an outline because the assignment criteria seemed open to interpretation and they wanted someone to explain them first.",
+            "status": "CLOSED"
+          }
+        ],
+        "existing_patterns": []
+      },
+      "expected": {
+        "patterns": [
+          {
+            "pattern_id": null,
+            "category": "behavior",
+            "description": "The user delays beginning tasks when requirements are uncertain, waiting for detailed clarification or an example before taking an initial step.",
+            "confidence": 0.93,
+            "evidence": [
+              {
+                "episode_id": "EP_050_P1",
+                "quote": "held off on the first step of a new responsibility until the manager clarified exactly what the finished result should look like"
+              },
+              {
+                "episode_id": "EP_050_P2",
+                "quote": "waited for a clearer description of their role before contacting the event participants"
+              },
+              {
+                "episode_id": "EP_050_P3",
+                "quote": "delayed making an outline because the assignment criteria seemed open to interpretation"
+              },
+              {
+                "episode_id": "EP_050_C",
+                "quote": "waited for a detailed example instead of preparing an initial version"
+              }
+            ],
+            "status": "ACTIVE",
+            "resolution_evidence": null
+          }
+        ]
+      }
+    }
+  ]
+}
