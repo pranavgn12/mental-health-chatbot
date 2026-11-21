@@ -1,0 +1,2353 @@
+{
+  "benchmark": "turn_analyzer_benchmark_v1",
+  "model": "openai/gpt-oss-120b",
+  "production_code_fingerprint": "8c35fb08b7d078d41dc31a89abc6cf26f6e9b9ffc0c90120df82e194c4af779c",
+  "dataset_file": "turn_analyzer_dataset.json",
+  "dataset_fingerprint": "2d7d890a139d5fc2eb1270682909078e44f84c48252a004167615c1d09d3c767",
+  "dataset_sample_count": 50,
+  "recorded_sample_count": 50,
+  "remaining_sample_count": 0,
+  "started_at_utc": "2026-11-21T10:03:11.519912+00:00",
+  "updated_at_utc": "2026-11-21T10:12:22.036578+00:00",
+  "output_file": "turn_analyzer_results.json",
+  "summary": {
+    "total_samples": 50,
+    "completed_samples": 49,
+    "failed_samples": 1,
+    "skipped_samples": 0,
+    "mood": {
+      "evaluated_samples": 49,
+      "correct": 34,
+      "incorrect": 15,
+      "accuracy": 0.6938775510204082,
+      "macro_precision": 0.8154761904761905,
+      "macro_recall": 0.7736394557823129,
+      "macro_f1": 0.6941840838899662,
+      "null_label_display": "<null>",
+      "per_class": {
+        "<null>": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "angry": {
+          "support": 7,
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571,
+          "f1": 0.8571428571428571
+        },
+        "disgust": {
+          "support": 5,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889
+        },
+        "fear": {
+          "support": 8,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1": 0.9411764705882353
+        },
+        "happy": {
+          "support": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "neutral": {
+          "support": 12,
+          "precision": 1.0,
+          "recall": 0.08333333333333333,
+          "f1": 0.15384615384615385
+        },
+        "sad": {
+          "support": 8,
+          "precision": 0.7777777777777778,
+          "recall": 0.875,
+          "f1": 0.823529411764706
+        },
+        "surprise": {
+          "support": 5,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889
+        }
+      },
+      "confusion_matrix": {
+        "<null>": {
+          "<null>": 0,
+          "angry": 0,
+          "disgust": 0,
+          "fear": 0,
+          "happy": 0,
+          "neutral": 0,
+          "sad": 0,
+          "surprise": 0
+        },
+        "angry": {
+          "<null>": 1,
+          "angry": 6,
+          "disgust": 0,
+          "fear": 0,
+          "happy": 0,
+          "neutral": 0,
+          "sad": 0,
+          "surprise": 0
+        },
+        "disgust": {
+          "<null>": 0,
+          "angry": 1,
+          "disgust": 4,
+          "fear": 0,
+          "happy": 0,
+          "neutral": 0,
+          "sad": 0,
+          "surprise": 0
+        },
+        "fear": {
+          "<null>": 0,
+          "angry": 0,
+          "disgust": 0,
+          "fear": 8,
+          "happy": 0,
+          "neutral": 0,
+          "sad": 0,
+          "surprise": 0
+        },
+        "happy": {
+          "<null>": 0,
+          "angry": 0,
+          "disgust": 0,
+          "fear": 0,
+          "happy": 4,
+          "neutral": 0,
+          "sad": 0,
+          "surprise": 0
+        },
+        "neutral": {
+          "<null>": 9,
+          "angry": 0,
+          "disgust": 0,
+          "fear": 0,
+          "happy": 0,
+          "neutral": 1,
+          "sad": 2,
+          "surprise": 0
+        },
+        "sad": {
+          "<null>": 0,
+          "angry": 0,
+          "disgust": 0,
+          "fear": 1,
+          "happy": 0,
+          "neutral": 0,
+          "sad": 7,
+          "surprise": 0
+        },
+        "surprise": {
+          "<null>": 1,
+          "angry": 0,
+          "disgust": 0,
+          "fear": 0,
+          "happy": 0,
+          "neutral": 0,
+          "sad": 0,
+          "surprise": 4
+        }
+      }
+    },
+    "reflection_detection": {
+      "evaluated_samples": 49,
+      "true_positive": 8,
+      "false_positive": 8,
+      "false_negative": 0,
+      "true_negative": 33,
+      "accuracy": 0.8367346938775511,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "quality_note": "Textual reflection quality is not scored automatically; inspect the expected/predicted reflection pairs in the sample results."
+    },
+    "episode": {
+      "evaluated_samples": 0,
+      "accuracy": null,
+      "note": "Add expected_output.episode.action to score episode decisions."
+    },
+    "by_category": {
+      "angry": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 0.8,
+        "reflection_detection_f1": null
+      },
+      "disgust": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 0.8,
+        "reflection_detection_f1": null
+      },
+      "fear": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 1.0,
+        "reflection_detection_f1": null
+      },
+      "happy": {
+        "samples": 5,
+        "completed": 4,
+        "mood_accuracy": 1.0,
+        "reflection_detection_f1": 1.0
+      },
+      "meaningful_reflection": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 0.2,
+        "reflection_detection_f1": 0.888888888888889
+      },
+      "mixed": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 1.0,
+        "reflection_detection_f1": 0.0
+      },
+      "neutral": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 0.0,
+        "reflection_detection_f1": 1.0
+      },
+      "no_meaningful_reflection": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 0.4,
+        "reflection_detection_f1": null
+      },
+      "sad": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 1.0,
+        "reflection_detection_f1": 0.0
+      },
+      "surprise": {
+        "samples": 5,
+        "completed": 5,
+        "mood_accuracy": 0.8,
+        "reflection_detection_f1": 0.0
+      }
+    }
+  },
+  "groq_usage": {
+    "model": "openai/gpt-oss-120b",
+    "api_key_switches": 0,
+    "request_attempts": 50,
+    "successful_requests": 50,
+    "skipped_requests": 0,
+    "api_key_values_saved": false,
+    "token_usage": {
+      "successful_usage_records": 50,
+      "prompt_tokens": 70474,
+      "completion_tokens": 10535,
+      "total_tokens": 81009,
+      "cached_prompt_tokens": 0
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "sample_001",
+      "conversation_id": "conv_001",
+      "category": "happy",
+      "sample_fingerprint": "c48fbee711667ab88717daf278817496a992699ce0a00290f1eef450c8b540ca",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "happy",
+          "evidence": "I'm so relieved and happy."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User shares relief and happiness about completing a project, which is a casual update rather than introducing a new personal concern.",
+          "confidence": 0.98
+        },
+        "mood": {
+          "label": "happy",
+          "confidence": 0.96,
+          "evidence": "User says \"I'm so relieved and happy.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_002",
+      "conversation_id": "conv_002",
+      "category": "happy",
+      "sample_fingerprint": "6348f3bedeb265ebfbaad58b41af631e7e07bb5c2970b57ba639a05e99d60b05",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "happy",
+          "evidence": "I actually scored higher than I expected!"
+        },
+        "reflection": "The user realizes that their negative self-assessment may not accurately reflect their actual abilities."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports a better-than-expected exam score and recognizes they may have been underestimating themselves, indicating progress but not a definitive resolution of confidence concerns.",
+          "confidence": 0.92
+        },
+        "mood": {
+          "label": "happy",
+          "confidence": 0.85,
+          "evidence": "User says \"I actually scored higher than I expected!\" expressing surprise and satisfaction."
+        },
+        "reflection": "You’ve noticed that your previous self‑assessment may have been too harsh, and the recent exam result shows you’re capable of more than you thought."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_003",
+      "conversation_id": "conv_003",
+      "category": "happy",
+      "sample_fingerprint": "cfe9aaf72c918ac54aa0ed91bc85cb66ae210ab6de2bff4641bbcb6705d3de6b",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "happy",
+          "evidence": "I genuinely haven't felt this good in ages."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User shares a positive, casual update about spending time with sister and feeling good, without introducing a personal concern.",
+          "confidence": 1.0
+        },
+        "mood": {
+          "label": "happy",
+          "confidence": 0.96,
+          "evidence": "\"I genuinely haven't felt this good in ages.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_004",
+      "conversation_id": "conv_004",
+      "category": "happy",
+      "sample_fingerprint": "90f5ea8a79db1eaa062df3c34092841569c9022d76936cb281c58ecac4db5bbe",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "happy",
+          "evidence": "Four days in a row! I'm actually enjoying it."
+        },
+        "reflection": "The user realizes that sustainable progress does not require pushing themselves to exhaustion."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports ongoing progress (four consecutive days) and enjoyment, indicating the habit-building issue is still active but improving.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "happy",
+          "confidence": 0.92,
+          "evidence": "I'm actually enjoying it."
+        },
+        "reflection": "You’ve realized that modest, consistent workouts can feel rewarding without needing to exhaust yourself."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_005",
+      "conversation_id": "conv_005",
+      "category": "happy",
+      "sample_fingerprint": "3bc1d5361c399ac12f7d1c49715ece84335943e582ecef1e55a27e556f98dd5a",
+      "status": "failed",
+      "request": {
+        "status": "failed",
+        "attempts": 1,
+        "http_status": null,
+        "error": {
+          "type": "MalformedJSON",
+          "message": "TurnAnalyzer returned malformed JSON."
+        }
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "happy",
+          "evidence": "Such a lovely little surprise to an otherwise ordinary day."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": ""
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": null
+    },
+    {
+      "sample_id": "sample_006",
+      "conversation_id": "conv_006",
+      "category": "sad",
+      "sample_fingerprint": "6e8ffc18002408284a0b7f07fb6ad2369777b1877fbd794d2c9241525a98c627",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "It feels like nobody would notice if I stopped showing up."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports ongoing feelings of isolation and belief that no one would notice their absence, indicating the issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.94,
+          "evidence": "User says \"It feels like nobody would notice if I stopped showing up,\" expressing sadness and hopelessness."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_007",
+      "conversation_id": "conv_007",
+      "category": "sad",
+      "sample_fingerprint": "840d9b4d7d3b7145af85363173b3aac61c74c0a431abc010b6c3d050fe4adacb",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "I miss how things used to be."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User continues to express longing and the sense of loss about the former partner, indicating the issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.93,
+          "evidence": "\"I miss how things used to be... someone who was once part of every day is now practically a stranger\""
+        },
+        "reflection": "You’re recognizing how someone who was once integral to your daily life now feels like a stranger, underscoring the depth of your sense of loss."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_008",
+      "conversation_id": "conv_008",
+      "category": "sad",
+      "sample_fingerprint": "85c5e5c2c21297cc28f49af63f49187a879d94fd34c7726b780718e8a63cbcda",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "I just wish someone at home would notice that I'm having a difficult time."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "The user still feels unseen and wishes family would notice their struggle without explanation, indicating the issue remains unresolved.",
+          "confidence": 0.94
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.88,
+          "evidence": "User expresses longing for someone at home to notice their difficulty without having to explain, indicating feelings of sadness and disappointment."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_009",
+      "conversation_id": "conv_009",
+      "category": "sad",
+      "sample_fingerprint": "ff7a7c5116fdda0c686a81029ecf550ab77f004909704f0c3fc6233f9b8bf609",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "Right now I just feel like all that effort was pointless."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports failing the exam and feeling the effort was pointless, indicating the academic disappointment remains unresolved.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.9,
+          "evidence": "\"I didn't pass... I just feel like all that effort was pointless.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_010",
+      "conversation_id": "conv_010",
+      "category": "sad",
+      "sample_fingerprint": "6672d3c5d4ae0e1d5ffa41666fb26b32900e76e5e2e0d59c7d0347a592f11a0a",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "I feel strangely empty."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports still unable to draw and feeling empty, indicating the emotional withdrawal persists.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.92,
+          "evidence": "User says they \"couldn't bring myself to draw anything\" and \"feel strangely empty\"."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_011",
+      "conversation_id": "conv_011",
+      "category": "angry",
+      "sample_fingerprint": "01b7888306f2ddbb1fe8fa0327e831cc544799e88174154a5ac8305df61c6ef4",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "angry",
+          "evidence": "I'm honestly furious that nobody even mentioned my work."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User expresses ongoing anger that their contribution was ignored, indicating the issue remains unresolved.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "angry",
+          "confidence": 0.93,
+          "evidence": "User says \"I'm honestly furious that nobody even mentioned my work.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_012",
+      "conversation_id": "conv_012",
+      "category": "angry",
+      "sample_fingerprint": "43849304ec4cf4309e1204d99c283385a641f3732d240c08242aee2f051372bc",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "angry",
+          "evidence": "I'm tired of always adjusting my schedule for them."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports ongoing frustration about repeatedly adjusting schedule, indicating the conflict remains unresolved.",
+          "confidence": 0.97
+        },
+        "mood": {
+          "label": "angry",
+          "confidence": 0.96,
+          "evidence": "\"I'm tired of always adjusting my schedule for them. Apparently my time is worth nothing.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_013",
+      "conversation_id": "conv_013",
+      "category": "angry",
+      "sample_fingerprint": "a796d5d6d7534ab65c6fa2a38c582471408a3f9df03e554b1be4ef585bade553",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "angry",
+          "evidence": "Twenty minutes of waiting just for it to restart. Brilliant engineering. Absolutely brilliant."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User is expressing frustration about a laptop update delay, which is a casual factual complaint rather than a meaningful personal concern.",
+          "confidence": 0.97
+        },
+        "mood": {
+          "label": "angry",
+          "confidence": 0.86,
+          "evidence": "User says \"Twenty minutes of waiting just for it to restart. Brilliant engineering. Absolutely brilliant,\" indicating sarcasm and irritation."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_014",
+      "conversation_id": "conv_014",
+      "category": "angry",
+      "sample_fingerprint": "5765b88a2dd899f6b5367778c1616d56cbd59e48615d5c52b410e75df226a8d5",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "angry",
+          "evidence": "I'm so annoyed that I have to keep repeating something this basic."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports repeated boundary violation (roommate used headphones again) and expresses annoyance, indicating the issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "angry",
+          "confidence": 0.94,
+          "evidence": "User says \"I'm so annoyed that I have to keep repeating something this basic.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_015",
+      "conversation_id": "conv_015",
+      "category": "angry",
+      "sample_fingerprint": "66a7ac48b9cc5aff32ae0ccbca795c9d74d5b05f98f7e5c5ad5e0c486cf15f9b",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "angry",
+          "evidence": "What's the point of explaining anything when they've already decided I'm wrong?"
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User says they stopped talking because family already decides they're wrong, indicating the conflict remains unresolved.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_016",
+      "conversation_id": "conv_016",
+      "category": "fear",
+      "sample_fingerprint": "5fc323c552ea3ccb95b0e8912bb61bbefbb4e34e9e36f1dbea7f1b02834a6cfa",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "What if I freeze when they ask something unexpected?"
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User expresses ongoing anxiety about freezing during unexpected interview questions, indicating the career uncertainty concern remains unresolved.",
+          "confidence": 0.9
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.85,
+          "evidence": "User says, \"What if I freeze when they ask something unexpected? I've been thinking about that every night.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_017",
+      "conversation_id": "conv_017",
+      "category": "fear",
+      "sample_fingerprint": "2f3ce7ab942824db43d62df935d4e9f836387adc080c0a21b173d69e2d07f78a",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "I'm scared they might find something serious."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User expresses ongoing fear of a serious diagnosis and acknowledges avoidance won't help, indicating the health anxiety remains unresolved.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.92,
+          "evidence": "User says \"I'm scared they might find something serious\" and imagines the worst."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_018",
+      "conversation_id": "conv_018",
+      "category": "fear",
+      "sample_fingerprint": "3290138e6cbe887ff851ee97d9ff14d57d3fe4bf63551c2a5cba8243d31fc0c4",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "I keep imagining everyone staring at me when I walk in."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User describes ongoing anxiety about being stared at and physical discomfort, indicating the social anxiety issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.95,
+          "evidence": "\"I keep imagining everyone staring at me when I walk in. The thought alone makes my stomach turn.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_019",
+      "conversation_id": "conv_019",
+      "category": "fear",
+      "sample_fingerprint": "1c0d87c04669a978217631670910c9e555c4b92ce643b97389e9d4791841eb75",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "I'm afraid of proving my own doubts right."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User expresses ongoing fear of failure and concern about being judged, indicating the issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.94,
+          "evidence": "\"If I mess this up, everyone will know I wasn't capable... I'm afraid of proving my own doubts right.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_020",
+      "conversation_id": "conv_020",
+      "category": "fear",
+      "sample_fingerprint": "cb6efcd7cb7816ba776a0ba4b6d80b7a621e961d9f021d12815c2aa01eec9a6c",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "I'm still nervous about missing the train."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CREATE",
+          "title": "Travel anxiety",
+          "reason": "User expresses nervousness about missing the train despite preparation, indicating a personal concern.",
+          "confidence": 0.92
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.88,
+          "evidence": "still nervous about missing the train"
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_021",
+      "conversation_id": "conv_021",
+      "category": "disgust",
+      "sample_fingerprint": "90fe1296078e0289da6828cbfc3f1f996de7c691c678f1491bb344ddc93e07f3",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "disgust",
+          "evidence": "I genuinely felt sick looking at it."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CREATE",
+          "title": "Unpleasant soup incident",
+          "reason": "User described an unpleasant object in their soup that made them feel sick, indicating a personal concern needing attention.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "disgust",
+          "confidence": 0.9,
+          "evidence": "There was something unpleasant floating in my soup. I genuinely felt sick looking at it."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_022",
+      "conversation_id": "conv_022",
+      "category": "disgust",
+      "sample_fingerprint": "137ac8a62b9b746c6094bc959f47929d0301c4d6e67e3b9e4aacc1b59b8fa1da",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "disgust",
+          "evidence": "Watching someone exploit another person's effort like that is disgusting."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User describes ongoing distress about colleague exploiting work, no indication of resolution.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "disgust",
+          "confidence": 0.96,
+          "evidence": "User says the situation is \"disgusting\" and leaves a \"bad taste\" in their mouth."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_023",
+      "conversation_id": "conv_023",
+      "category": "disgust",
+      "sample_fingerprint": "57cdc27d824b2913a614ad72ffc518b12dcc931153b7af25b2c97d15577a0950",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "disgust",
+          "evidence": "The cruelty made me feel physically nauseated."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CREATE",
+          "title": "Distress from animal cruelty",
+          "reason": "User reports strong physical nausea caused by witnessing animal cruelty, indicating a personal concern needing attention.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "disgust",
+          "confidence": 0.9,
+          "evidence": "the cruelty made me feel physically nauseated"
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_024",
+      "conversation_id": "conv_024",
+      "category": "disgust",
+      "sample_fingerprint": "ac4b1f77da35076633b4caa4ea1ce2322f98a758c1405af4f5c8989bed84f117",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "disgust",
+          "evidence": "That's vile."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User is reacting to a political scandal without introducing a personal concern.",
+          "confidence": 0.98
+        },
+        "mood": {
+          "label": "disgust",
+          "confidence": 0.92,
+          "evidence": "\"That's vile.\" expresses strong disgust toward the corrupt behavior."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_025",
+      "conversation_id": "conv_025",
+      "category": "disgust",
+      "sample_fingerprint": "cb45187de28c0cc7fcd00a6086af7b8021f8713cbb84b203acda38e998012a6e",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "disgust",
+          "evidence": "It's repulsive how casually they humiliate people."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User describes another humiliating comment, indicating the disrespectful behavior persists and still bothers them.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "angry",
+          "confidence": 0.92,
+          "evidence": "User says \"It's repulsive how casually they humiliate people\" expressing strong displeasure."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_026",
+      "conversation_id": "conv_026",
+      "category": "surprise",
+      "sample_fingerprint": "f560c4631190e2359676327490c3c14b5a05b6ef171eabc93e9ac7f76bde2bd5",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "surprise",
+          "evidence": "I genuinely wasn't expecting that at all."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User shared unexpected good news about receiving a scholarship, which does not introduce a personal concern.",
+          "confidence": 1.0
+        },
+        "mood": {
+          "label": "surprise",
+          "confidence": 0.9,
+          "evidence": "\"I genuinely wasn't expecting that at all\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_027",
+      "conversation_id": "conv_027",
+      "category": "surprise",
+      "sample_fingerprint": "f51e91b2ba5e90da55b35cbe6c61af7f2c6f54be01c8d679c0454dbcfaa6dee5",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "surprise",
+          "evidence": "They messaged me this morning out of nowhere."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports an unexpected message from the friend, indicating the situation is still ongoing and unresolved.",
+          "confidence": 0.92
+        },
+        "mood": {
+          "label": "surprise",
+          "confidence": 0.86,
+          "evidence": "\"They messaged me this morning out of nowhere. I had absolutely no idea they still wanted to talk.\""
+        },
+        "reflection": "You’ve realized that your friend still wants to reconnect, which opens a possibility for rebuilding the relationship."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_028",
+      "conversation_id": "conv_028",
+      "category": "surprise",
+      "sample_fingerprint": "53d52440f9584b8375cf1ecf7c40d60b20e33a175f4e2e62ce470075a10f1f3e",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "surprise",
+          "evidence": "I thought there was a mistake."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User shares a factual, celebratory update without introducing a personal concern.",
+          "confidence": 0.99
+        },
+        "mood": {
+          "label": "surprise",
+          "confidence": 0.92,
+          "evidence": "User says they had to read the announcement twice because they thought there was a mistake, indicating surprise."
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_029",
+      "conversation_id": "conv_029",
+      "category": "surprise",
+      "sample_fingerprint": "57502dab4cfdac01f926842f626aac2087d13561f19260023ef68844fdfe178d",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "surprise",
+          "evidence": "I didn't expect him to notice that we'd drifted apart."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports that his brother called unexpectedly, showing a positive update but the underlying distance in the relationship remains unresolved.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "surprise",
+          "confidence": 0.85,
+          "evidence": "\"He called me today just to ask how I was doing. I didn't expect him to notice that we'd drifted apart.\""
+        },
+        "reflection": "You recognized that a simple check‑in from your brother can signal care and may help bridge the distance between you."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_030",
+      "conversation_id": "conv_030",
+      "category": "surprise",
+      "sample_fingerprint": "ee6c67309235ab99fae329a3ce80247f0694f82d94156f1a9c5e4ad8cd573da2",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "surprise",
+          "evidence": "I had no idea they changed the timings."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User shares a factual update about library hours without expressing a personal concern.",
+          "confidence": 1.0
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_031",
+      "conversation_id": "conv_031",
+      "category": "neutral",
+      "sample_fingerprint": "4038c3a4d97e3b48d3d9aeff19a8ebc1f07f7c856f45bab14652cee8acea69d7",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "Around five in the evening. Then I take the bus back home."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User provided a factual update about their routine without introducing a personal concern.",
+          "confidence": 1.0
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_032",
+      "conversation_id": "conv_032",
+      "category": "neutral",
+      "sample_fingerprint": "656bd210170eb580cc06b8f8abd3d16c4fb281163f2aea04ab5ab64fe9f3d385",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "I think the problem isn't that I have too little time."
+        },
+        "reflection": "The user realizes that their difficulty with morning productivity comes partly from postponing planning until the workday begins."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User identifies the underlying cause (spending the first hour deciding instead of planning the night before) but does not indicate the issue is resolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": "You’ve recognized that the bottleneck isn’t a lack of time but the habit of using morning minutes to decide on tasks instead of planning them the night before."
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_033",
+      "conversation_id": "conv_033",
+      "category": "neutral",
+      "sample_fingerprint": "c6ae1cfd360d8d70e2d0b76dc1074de4fc1c081a3ca766c33211e5bc192213b3",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "Can you also explain what reinforcement learning is?"
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User requested a factual explanation of reinforcement learning without introducing a personal concern.",
+          "confidence": 0.99
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_034",
+      "conversation_id": "conv_034",
+      "category": "neutral",
+      "sample_fingerprint": "540b26f2040fce308b668ab312b0affa4c9a6d7e00b0012e83858d458262ecdb",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "Since there's always another task, I rarely actually rest."
+        },
+        "reflection": "The user recognizes that treating rest as a reward for completing all tasks makes rest difficult to prioritize."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "The user acknowledges the ongoing pattern of treating rest as a reward and notes they still rarely rest, indicating the issue remains unresolved.",
+          "confidence": 0.92
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.78,
+          "evidence": "I realized I treat rest as something I earn after finishing every task. Since there's always another task, I rarely actually rest."
+        },
+        "reflection": "You’ve recognized that viewing rest as a reward you must earn is keeping you from actually taking breaks."
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_035",
+      "conversation_id": "conv_035",
+      "category": "neutral",
+      "sample_fingerprint": "50c474bc4c14a511cfef037e041b5f7638fcdee6dc1972c7bc722efe94771137",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "I need the information for a psychology assignment."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User provided factual information about taking notes for an assignment without expressing a personal concern.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_036",
+      "conversation_id": "conv_036",
+      "category": "mixed",
+      "sample_fingerprint": "350412def1164d82b3d53931486df663124812444121719d0767d4508b4b6ceb",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "I'm terrified I'll embarrass myself during the interview."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User expresses excitement mixed with terror about performing poorly in the interview, indicating the concern remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.93,
+          "evidence": "User says they are \"terrified I'll embarrass myself during the interview.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_037",
+      "conversation_id": "conv_037",
+      "category": "mixed",
+      "sample_fingerprint": "1b2bfacb0609b4aa5a1a4eb8f77041ac107d41769237d96d05554e39e3ef551d",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "I cried because things won't be the same anymore."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User expresses mixed emotions—joy at the celebration but tears about the upcoming change—indicating the friendship transition is still affecting them.",
+          "confidence": 0.9
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.95,
+          "evidence": "User says they cried when they got home because things won't be the same anymore."
+        },
+        "reflection": "You noticed that you can feel both genuine happiness for your friend’s opportunity and deep sadness about the shift in your relationship."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_038",
+      "conversation_id": "conv_038",
+      "category": "mixed",
+      "sample_fingerprint": "b8d9da96c1e3e2a4639516c04d7ba53ac05a6d41d60f523227ab4bbe42571331",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "I feel guilty for being jealous."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User still feels uncomfortable jealousy and guilt about the internship, indicating the issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.88,
+          "evidence": "User expresses \"uncomfortable jealousy\" and \"feel guilty\" about the situation."
+        },
+        "reflection": "You’ve become aware that your genuine happiness for your classmate is tangled with jealousy and guilt, highlighting an inner conflict between celebrating others and wanting the same opportunity."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_039",
+      "conversation_id": "conv_039",
+      "category": "mixed",
+      "sample_fingerprint": "e98d4728b59ec199eeaeb2af1df76ebafde40c1d0beb0eab57b8e5e93d6c7bae",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "angry",
+          "evidence": "I'm also irritated that they made me feel guilty for having my own responsibilities."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports feeling relieved for setting a boundary but still irritated by the guilt imposed by the friend, indicating the issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "angry",
+          "confidence": 0.78,
+          "evidence": "User says \"I'm also irritated that they made me feel guilty\" indicating irritation."
+        },
+        "reflection": "You recognized that the guilt others try to impose can quickly turn into irritation, highlighting the tension between honoring your own responsibilities and managing others' expectations."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_040",
+      "conversation_id": "conv_040",
+      "category": "mixed",
+      "sample_fingerprint": "7d687d085a11b945c371fc70f995981a47b398390aeb69a9616735c401fde418",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "Another part is frightened of being away from everyone I know."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User expresses both excitement and fear about moving, indicating the concern about relocating remains unresolved.",
+          "confidence": 0.92
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.78,
+          "evidence": "User says \"another part is frightened of being away from everyone I know\" indicating fear."
+        },
+        "reflection": "You recognize that you’re simultaneously eager for the new opportunity and anxious about leaving familiar people behind."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_041",
+      "conversation_id": "conv_041",
+      "category": "meaningful_reflection",
+      "sample_fingerprint": "094e775063290cc69946cdf96e92c0bf69b54c003c3d044186bd823f7a621169",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "Sometimes people are simply busy, and I shouldn't make assumptions so quickly."
+        },
+        "reflection": "The user realizes that interpreting delayed replies as evidence of rejection can lead to unnecessary negative assumptions about their friendships."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User acknowledges a pattern of interpreting unanswered messages as lack of care and notes they may be making assumptions, indicating the issue remains unresolved.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": "neutral",
+          "confidence": 0.78,
+          "evidence": "User reflects on their thinking style without expressing strong sadness or happiness."
+        },
+        "reflection": "You’ve recognized that interpreting unanswered messages as proof of others not caring may be an assumption, and that people might simply be busy."
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_042",
+      "conversation_id": "conv_042",
+      "category": "meaningful_reflection",
+      "sample_fingerprint": "119a72c100f8c525d3361876ff7b012c35cc488ef4220a02e84ac095aaa23d08",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "I could learn more by actually starting."
+        },
+        "reflection": "The user realizes that waiting for complete certainty before beginning a task can become a form of avoiding mistakes, while starting provides opportunities to learn."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User acknowledges that waiting to know everything is avoidance and sees starting as a way to learn, but has not yet taken action to resolve the perfectionism-driven delay.",
+          "confidence": 0.97
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": "You’ve recognized that postponing work to achieve perfect knowledge is actually a form of avoidance, and that beginning the task itself can be a valuable learning experience."
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_043",
+      "conversation_id": "conv_043",
+      "category": "meaningful_reflection",
+      "sample_fingerprint": "d791ff095022fe74f6fbf9ee07002b7499d4db5b5d3d96ae5d08c2df23e45340",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "Maybe I should communicate instead of assuming they can read my mind."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User acknowledges the pattern of expecting others to read their mind and considers communicating instead, indicating the issue remains unresolved.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": "You’ve recognized that assuming others will notice your needs without expressing them keeps you feeling unheard, and you’re open to trying direct communication."
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": false,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_044",
+      "conversation_id": "conv_044",
+      "category": "meaningful_reflection",
+      "sample_fingerprint": "d98606c0227bb0d07f58bdd308b16e5ff4726ec4c5a2ff0c9013dfd0e18fc468",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "I don't really consider the effort I put in or the person I'm becoming outside of achievements."
+        },
+        "reflection": "The user realizes that they have been making their self-worth dependent on measurable achievements while overlooking personal growth and effort."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User still links self‑worth to achievements and notes they don't value effort or personal growth, indicating the issue remains unresolved.",
+          "confidence": 0.92
+        },
+        "mood": {
+          "label": "sad",
+          "confidence": 0.85,
+          "evidence": "User says they only seem to value themselves when they accomplish something and don't consider their effort or personal development."
+        },
+        "reflection": "You’ve become aware that your sense of worth is tied mainly to outcomes, overlooking the importance of the effort you put in and the person you’re becoming."
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_045",
+      "conversation_id": "conv_045",
+      "category": "meaningful_reflection",
+      "sample_fingerprint": "10dee42793a2aa768900965134e46f733bd4673e69dea4d1223aa6c452fcfe70",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "I can care about people without accepting every responsibility they give me."
+        },
+        "reflection": "The user realizes that being supportive does not require being constantly available or accepting every request."
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User acknowledges the difference between being helpful and being constantly available, indicating insight but not a decisive change.",
+          "confidence": 0.96
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": "You’ve recognized that caring for others doesn’t require taking on every request, separating your desire to help from the need to be constantly available."
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": true,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_046",
+      "conversation_id": "conv_046",
+      "category": "no_meaningful_reflection",
+      "sample_fingerprint": "6ab64a6161b712a33fb276a7cac5a468323ae808ccfafe4c9f9b81e1ef2c828d",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "sad",
+          "evidence": "I'm exhausted and stressed."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports being exhausted and stressed with no sense of how to finish, indicating the academic stress remains unresolved.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.9,
+          "evidence": "\"I'm exhausted and stressed. I have no idea how I'm going to finish everything.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_047",
+      "conversation_id": "conv_047",
+      "category": "no_meaningful_reflection",
+      "sample_fingerprint": "f3832dff3f41bc1c5229848585f246d4f02a39a415287a153bafe7b73be7f06b",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "angry",
+          "evidence": "It's incredibly irritating when nobody respects my time."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports ongoing interruptions and irritation, indicating the issue remains unresolved.",
+          "confidence": 0.97
+        },
+        "mood": {
+          "label": "angry",
+          "confidence": 0.96,
+          "evidence": "User says \"It's incredibly irritating when nobody respects my time.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_048",
+      "conversation_id": "conv_048",
+      "category": "no_meaningful_reflection",
+      "sample_fingerprint": "7ae1476401ef677d8b6822b9f092d6d77eb5a77efeecd90a4c3b4617579a93cb",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "It described how frightening the physical symptoms can feel."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User is sharing factual reaction to a documentary without introducing a personal concern.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_049",
+      "conversation_id": "conv_049",
+      "category": "no_meaningful_reflection",
+      "sample_fingerprint": "e4a73218bf2758b8c1e0b2776c6b81bcb3acdd671a8262a89cb99a779605af2d",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "neutral",
+          "evidence": "The keys feel slightly different from my old one."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "NONE",
+          "title": null,
+          "reason": "User provided a casual factual comment about the new keyboard feeling different, without introducing a personal concern.",
+          "confidence": 0.95
+        },
+        "mood": {
+          "label": null,
+          "confidence": null,
+          "evidence": null
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": false,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    },
+    {
+      "sample_id": "sample_050",
+      "conversation_id": "conv_050",
+      "category": "no_meaningful_reflection",
+      "sample_fingerprint": "58ab3fe7892aa5345452cd3db971f0f75fb134a193a184bf33606fcfbfa05533",
+      "status": "completed",
+      "request": {
+        "status": "ok",
+        "attempts": 1,
+        "http_status": null,
+        "error": null
+      },
+      "expected": {
+        "episode": null,
+        "mood": {
+          "label": "fear",
+          "evidence": "I'm really nervous. My hands start shaking whenever I imagine standing in front of everyone."
+        },
+        "reflection": null
+      },
+      "predicted": {
+        "episode": {
+          "action": "CONTINUE",
+          "title": null,
+          "reason": "User reports ongoing nervousness and physical symptoms, indicating the anxiety about public speaking persists.",
+          "confidence": 0.99
+        },
+        "mood": {
+          "label": "fear",
+          "confidence": 0.96,
+          "evidence": "User says \"I'm really nervous. My hands start shaking whenever I imagine standing in front of everyone.\""
+        },
+        "reflection": null
+      },
+      "evaluation": {
+        "mood_correct": true,
+        "reflection_detection_correct": true,
+        "reflection_text_review_required": false,
+        "episode_correct": null,
+        "reflection_quality_score": null
+      }
+    }
+  ]
+}

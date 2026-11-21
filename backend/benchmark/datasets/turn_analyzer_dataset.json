@@ -1,0 +1,2202 @@
+[
+  {
+    "conversation_id": "conv_001",
+    "sample_id": "sample_001",
+    "category": "happy",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I finally submitted my project. I've been working on it for weeks."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a significant milestone. How do you feel about finishing it?"
+        }
+      ],
+      "latest_message": "Honestly, I'm so relieved and happy. I didn't think I would manage to finish everything before the deadline.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T10:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T11:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "happy",
+        "evidence": "I'm so relieved and happy."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_002",
+    "sample_id": "sample_002",
+    "category": "happy",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_002",
+        "title": "Academic Confidence",
+        "status": "ACTIVE",
+        "summary": "The user has been struggling with confidence in their academic abilities."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I always feel like everyone understands things faster than me."
+        },
+        {
+          "role": "assistant",
+          "content": "That comparison can make it difficult to recognize your own progress. Has anything changed recently?"
+        },
+        {
+          "role": "user",
+          "content": "I got my exam results yesterday."
+        },
+        {
+          "role": "assistant",
+          "content": "How did they turn out?"
+        }
+      ],
+      "latest_message": "I actually scored higher than I expected! Maybe I've been underestimating myself all this time.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T14:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T09:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that comparing their progress with others negatively affects their confidence.",
+          "created_at": "2026-11-19T14:30:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "happy",
+        "evidence": "I actually scored higher than I expected!"
+      },
+      "reflection": "The user realizes that their negative self-assessment may not accurately reflect their actual abilities."
+    }
+  },
+  {
+    "conversation_id": "conv_003",
+    "sample_id": "sample_003",
+    "category": "happy",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My sister visited today after almost six months."
+        }
+      ],
+      "latest_message": "We spent the entire afternoon talking and laughing. I genuinely haven't felt this good in ages.",
+      "previous_moods": [],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "happy",
+        "evidence": "I genuinely haven't felt this good in ages."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_004",
+    "sample_id": "sample_004",
+    "category": "happy",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_004",
+        "title": "Building Healthy Habits",
+        "status": "ACTIVE",
+        "summary": "The user has been trying to establish a consistent exercise routine."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I keep starting workouts and abandoning them after a few days."
+        },
+        {
+          "role": "assistant",
+          "content": "What would make the routine easier to maintain?"
+        },
+        {
+          "role": "user",
+          "content": "Maybe I should stop aiming for an hour every day."
+        },
+        {
+          "role": "assistant",
+          "content": "That sounds like a more manageable starting point."
+        },
+        {
+          "role": "user",
+          "content": "I tried exercising for just fifteen minutes this week."
+        },
+        {
+          "role": "assistant",
+          "content": "How did that go?"
+        }
+      ],
+      "latest_message": "Four days in a row! I'm actually enjoying it. Turns out I don't need to exhaust myself to feel accomplished.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-18T09:00:00"
+        },
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T09:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that unrealistic workout expectations have contributed to abandoning routines.",
+          "created_at": "2026-11-19T10:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "happy",
+        "evidence": "Four days in a row! I'm actually enjoying it."
+      },
+      "reflection": "The user realizes that sustainable progress does not require pushing themselves to exhaustion."
+    }
+  },
+  {
+    "conversation_id": "conv_005",
+    "sample_id": "sample_005",
+    "category": "happy",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I went to a small bookstore this morning."
+        },
+        {
+          "role": "assistant",
+          "content": "Find anything interesting?"
+        }
+      ],
+      "latest_message": "Found a book I've wanted for years, and the owner gave me a discount. Such a lovely little surprise to an otherwise ordinary day.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T08:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "happy",
+        "evidence": "Such a lovely little surprise to an otherwise ordinary day."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_006",
+    "sample_id": "sample_006",
+    "category": "sad",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_006",
+        "title": "Social Isolation",
+        "status": "ACTIVE",
+        "summary": "The user has been experiencing loneliness and difficulty maintaining social connections."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Everyone seems to have their own group of friends."
+        },
+        {
+          "role": "assistant",
+          "content": "Does that make it difficult to connect with people?"
+        }
+      ],
+      "latest_message": "I came back from college and realized I hadn't spoken to anyone properly today. It feels like nobody would notice if I stopped showing up.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T12:00:00"
+        },
+        {
+          "mood": "sad",
+          "created_at": "2026-11-20T12:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that waiting for others to initiate conversations contributes to their isolation.",
+          "created_at": "2026-11-19T13:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "It feels like nobody would notice if I stopped showing up."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_007",
+    "sample_id": "sample_007",
+    "category": "sad",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_007",
+        "title": "Relationship Loss",
+        "status": "ACTIVE",
+        "summary": "The user is struggling with the end of an important relationship."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I deleted our old pictures yesterday."
+        },
+        {
+          "role": "assistant",
+          "content": "Was that difficult for you?"
+        },
+        {
+          "role": "user",
+          "content": "A little. I kept looking at them before deleting them."
+        },
+        {
+          "role": "assistant",
+          "content": "What did seeing those pictures bring up for you?"
+        }
+      ],
+      "latest_message": "I miss how things used to be. It's strange knowing someone who was once part of every day is now practically a stranger.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-18T18:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "I miss how things used to be."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_008",
+    "sample_id": "sample_008",
+    "category": "sad",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_008",
+        "title": "Family Disconnection",
+        "status": "ACTIVE",
+        "summary": "The user feels disconnected from family members."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My parents rarely ask how things are going."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you tried telling them that you would appreciate more interest?"
+        },
+        {
+          "role": "user",
+          "content": "Not really. I don't want to seem demanding."
+        }
+      ],
+      "latest_message": "Sometimes I just wish someone at home would notice that I'm having a difficult time without me having to explain everything.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T20:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "I just wish someone at home would notice that I'm having a difficult time."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_009",
+    "sample_id": "sample_009",
+    "category": "sad",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_009",
+        "title": "Academic Disappointment",
+        "status": "ACTIVE",
+        "summary": "The user is disappointed about not meeting their academic expectations."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I studied consistently for the examination."
+        },
+        {
+          "role": "assistant",
+          "content": "Did you get your results?"
+        }
+      ],
+      "latest_message": "I didn't pass. I know one exam doesn't define me, but right now I just feel like all that effort was pointless.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-18T10:00:00"
+        },
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T10:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that their self-worth should not depend entirely on academic performance.",
+          "created_at": "2026-11-18T11:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "Right now I just feel like all that effort was pointless."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_010",
+    "sample_id": "sample_010",
+    "category": "sad",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_010",
+        "title": "Emotional Withdrawal",
+        "status": "ACTIVE",
+        "summary": "The user has been withdrawing from activities and relationships."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I used to enjoy drawing after classes."
+        },
+        {
+          "role": "assistant",
+          "content": "Do you still make time for it?"
+        },
+        {
+          "role": "user",
+          "content": "Not much lately. I usually just scroll on my phone."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you thought about what changed?"
+        },
+        {
+          "role": "user",
+          "content": "I suppose I stopped making time for things I enjoyed."
+        }
+      ],
+      "latest_message": "I opened my sketchbook today and couldn't bring myself to draw anything. I feel strangely empty.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-20T09:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that neglecting enjoyable activities has reduced opportunities for positive experiences.",
+          "created_at": "2026-11-20T10:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "I feel strangely empty."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_011",
+    "sample_id": "sample_011",
+    "category": "angry",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_011",
+        "title": "Unfair Treatment",
+        "status": "ACTIVE",
+        "summary": "The user feels repeatedly overlooked in group activities."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I completed most of the group assignment."
+        },
+        {
+          "role": "assistant",
+          "content": "Did the others acknowledge your contribution?"
+        }
+      ],
+      "latest_message": "Of course they presented it as if they did everything themselves. I'm honestly furious that nobody even mentioned my work.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T15:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "angry",
+        "evidence": "I'm honestly furious that nobody even mentioned my work."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_012",
+    "sample_id": "sample_012",
+    "category": "angry",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_012",
+        "title": "Communication Conflict",
+        "status": "ACTIVE",
+        "summary": "The user has been experiencing recurring disagreements with a close friend."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My friend cancelled our plans again."
+        },
+        {
+          "role": "assistant",
+          "content": "Has this happened before?"
+        },
+        {
+          "role": "user",
+          "content": "Three times this month."
+        },
+        {
+          "role": "assistant",
+          "content": "How have you responded so far?"
+        }
+      ],
+      "latest_message": "I'm tired of always adjusting my schedule for them. Apparently my time is worth nothing.",
+      "previous_moods": [
+        {
+          "mood": "angry",
+          "created_at": "2026-11-20T13:00:00"
+        },
+        {
+          "mood": "angry",
+          "created_at": "2026-11-20T14:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "angry",
+        "evidence": "I'm tired of always adjusting my schedule for them."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_013",
+    "sample_id": "sample_013",
+    "category": "angry",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My laptop updated right before my presentation."
+        },
+        {
+          "role": "assistant",
+          "content": "Did it cause any problems?"
+        }
+      ],
+      "latest_message": "Twenty minutes of waiting just for it to restart. Brilliant engineering. Absolutely brilliant.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T08:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "angry",
+        "evidence": "Twenty minutes of waiting just for it to restart. Brilliant engineering. Absolutely brilliant."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_014",
+    "sample_id": "sample_014",
+    "category": "angry",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_014",
+        "title": "Boundary Setting",
+        "status": "ACTIVE",
+        "summary": "The user struggles to communicate personal boundaries with friends."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My roommate keeps borrowing my things without asking."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you told them that it bothers you?"
+        },
+        {
+          "role": "user",
+          "content": "I mentioned it once, but nothing changed."
+        },
+        {
+          "role": "assistant",
+          "content": "What would you like to happen differently?"
+        },
+        {
+          "role": "user",
+          "content": "I want them to respect my belongings."
+        }
+      ],
+      "latest_message": "They used my headphones again. I'm so annoyed that I have to keep repeating something this basic.",
+      "previous_moods": [
+        {
+          "mood": "angry",
+          "created_at": "2026-11-19T17:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "angry",
+        "evidence": "I'm so annoyed that I have to keep repeating something this basic."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_015",
+    "sample_id": "sample_015",
+    "category": "angry",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_015",
+        "title": "Family Conflict",
+        "status": "ACTIVE",
+        "summary": "The user feels frustrated about not being heard during family discussions."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Whenever I try explaining my decisions, my family interrupts."
+        },
+        {
+          "role": "assistant",
+          "content": "What happens when you try to finish explaining?"
+        }
+      ],
+      "latest_message": "I eventually stopped talking. What's the point of explaining anything when they've already decided I'm wrong?",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-20T18:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "angry",
+        "evidence": "What's the point of explaining anything when they've already decided I'm wrong?"
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_016",
+    "sample_id": "sample_016",
+    "category": "fear",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_016",
+        "title": "Career Uncertainty",
+        "status": "ACTIVE",
+        "summary": "The user is anxious about upcoming career and placement opportunities."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My placement interviews start next week."
+        },
+        {
+          "role": "assistant",
+          "content": "How prepared do you feel?"
+        },
+        {
+          "role": "user",
+          "content": "I've revised most subjects, but interviews are different."
+        }
+      ],
+      "latest_message": "What if I freeze when they ask something unexpected? I've been thinking about that every night.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T10:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T10:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "What if I freeze when they ask something unexpected?"
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_017",
+    "sample_id": "sample_017",
+    "category": "fear",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_017",
+        "title": "Health Anxiety",
+        "status": "ACTIVE",
+        "summary": "The user has been worrying about possible health problems."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I've noticed a strange sensation recently."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you considered discussing it with a healthcare professional?"
+        },
+        {
+          "role": "user",
+          "content": "I'm thinking about booking an appointment."
+        },
+        {
+          "role": "assistant",
+          "content": "What is making the decision difficult?"
+        }
+      ],
+      "latest_message": "I'm scared they might find something serious. I know avoiding the appointment won't help, but I keep imagining the worst.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T09:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that avoiding medical uncertainty does not resolve their concern.",
+          "created_at": "2026-11-19T10:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "I'm scared they might find something serious."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_018",
+    "sample_id": "sample_018",
+    "category": "fear",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_018",
+        "title": "Social Anxiety",
+        "status": "ACTIVE",
+        "summary": "The user experiences discomfort and anxiety in unfamiliar social situations."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "There's a club event this weekend."
+        },
+        {
+          "role": "assistant",
+          "content": "Are you planning to attend?"
+        },
+        {
+          "role": "user",
+          "content": "I want to, but I don't know anyone there."
+        }
+      ],
+      "latest_message": "I keep imagining everyone staring at me when I walk in. The thought alone makes my stomach turn.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-18T15:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "I keep imagining everyone staring at me when I walk in."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_019",
+    "sample_id": "sample_019",
+    "category": "fear",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_019",
+        "title": "Fear of Failure",
+        "status": "ACTIVE",
+        "summary": "The user has difficulty taking opportunities because of concerns about failure."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got an opportunity to lead a small project."
+        },
+        {
+          "role": "assistant",
+          "content": "Does the responsibility feel manageable?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure I can handle it."
+        },
+        {
+          "role": "assistant",
+          "content": "What concerns you most?"
+        }
+      ],
+      "latest_message": "If I mess this up, everyone will know I wasn't capable in the first place. I'm afraid of proving my own doubts right.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T11:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T11:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "I'm afraid of proving my own doubts right."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_020",
+    "sample_id": "sample_020",
+    "category": "fear",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I have to travel alone tomorrow for the first time."
+        },
+        {
+          "role": "assistant",
+          "content": "Is there anything about the journey that worries you?"
+        },
+        {
+          "role": "user",
+          "content": "Mostly navigating the station."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you checked the route beforehand?"
+        }
+      ],
+      "latest_message": "I saved the maps and tickets, but I'm still nervous about missing the train.",
+      "previous_moods": [
+        {
+          "mood": "happy",
+          "created_at": "2026-11-18T12:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "I'm still nervous about missing the train."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_021",
+    "sample_id": "sample_021",
+    "category": "disgust",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I went to a restaurant with my friends yesterday."
+        },
+        {
+          "role": "assistant",
+          "content": "How was the food?"
+        }
+      ],
+      "latest_message": "There was something unpleasant floating in my soup. I genuinely felt sick looking at it.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T12:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "disgust",
+        "evidence": "I genuinely felt sick looking at it."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_022",
+    "sample_id": "sample_022",
+    "category": "disgust",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_022",
+        "title": "Workplace Values",
+        "status": "ACTIVE",
+        "summary": "The user has been uncomfortable with unethical behavior in their working environment."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "A colleague took credit for another person's work."
+        },
+        {
+          "role": "assistant",
+          "content": "How did the rest of the team react?"
+        },
+        {
+          "role": "user",
+          "content": "Nobody challenged them."
+        }
+      ],
+      "latest_message": "The whole thing left a bad taste in my mouth. Watching someone exploit another person's effort like that is disgusting.",
+      "previous_moods": [
+        {
+          "mood": "angry",
+          "created_at": "2026-11-19T13:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "disgust",
+        "evidence": "Watching someone exploit another person's effort like that is disgusting."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_023",
+    "sample_id": "sample_023",
+    "category": "disgust",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Someone showed me a video of an animal being mistreated."
+        }
+      ],
+      "latest_message": "I couldn't even finish watching it. The cruelty made me feel physically nauseated.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-18T17:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "disgust",
+        "evidence": "The cruelty made me feel physically nauseated."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_024",
+    "sample_id": "sample_024",
+    "category": "disgust",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I read about a politician involved in a corruption scandal."
+        },
+        {
+          "role": "assistant",
+          "content": "What about the story stood out to you?"
+        }
+      ],
+      "latest_message": "Taking money meant for public hospitals while people struggle to get treatment. That's vile.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T09:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "disgust",
+        "evidence": "That's vile."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_025",
+    "sample_id": "sample_025",
+    "category": "disgust",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_025",
+        "title": "Interpersonal Discomfort",
+        "status": "ACTIVE",
+        "summary": "The user is uncomfortable with repeated disrespectful behavior from an acquaintance."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "Someone in my class keeps making inappropriate jokes about other people."
+        },
+        {
+          "role": "assistant",
+          "content": "How does that affect you?"
+        },
+        {
+          "role": "user",
+          "content": "I usually just leave the conversation."
+        }
+      ],
+      "latest_message": "Yesterday they made another comment about someone's appearance. It's repulsive how casually they humiliate people.",
+      "previous_moods": [
+        {
+          "mood": "angry",
+          "created_at": "2026-11-20T14:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "disgust",
+        "evidence": "It's repulsive how casually they humiliate people."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_026",
+    "sample_id": "sample_026",
+    "category": "surprise",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I applied for a scholarship a few months ago."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you heard anything back?"
+        }
+      ],
+      "latest_message": "I just received an email saying I got it! I genuinely wasn't expecting that at all.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T12:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "surprise",
+        "evidence": "I genuinely wasn't expecting that at all."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_027",
+    "sample_id": "sample_027",
+    "category": "surprise",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_027",
+        "title": "Relationship Reconciliation",
+        "status": "ACTIVE",
+        "summary": "The user has been dealing with a strained friendship."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I haven't spoken to an old friend in almost a year."
+        },
+        {
+          "role": "assistant",
+          "content": "Do you still think about reconnecting?"
+        },
+        {
+          "role": "user",
+          "content": "Sometimes, but I assumed they had moved on."
+        }
+      ],
+      "latest_message": "They messaged me this morning out of nowhere. I had absolutely no idea they still wanted to talk.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-18T15:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "surprise",
+        "evidence": "They messaged me this morning out of nowhere."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_028",
+    "sample_id": "sample_028",
+    "category": "surprise",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My professor announced the project results today."
+        },
+        {
+          "role": "assistant",
+          "content": "Were you expecting a particular outcome?"
+        }
+      ],
+      "latest_message": "Apparently our group ranked first. I actually had to read the announcement twice because I thought there was a mistake.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T10:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "surprise",
+        "evidence": "I thought there was a mistake."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_029",
+    "sample_id": "sample_029",
+    "category": "surprise",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_029",
+        "title": "Family Relationships",
+        "status": "ACTIVE",
+        "summary": "The user has been concerned about distance in a family relationship."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My brother and I barely talk anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Has anything happened between you?"
+        },
+        {
+          "role": "user",
+          "content": "No major argument. We just became busy."
+        },
+        {
+          "role": "assistant",
+          "content": "Do you think either of you would reach out?"
+        }
+      ],
+      "latest_message": "He called me today just to ask how I was doing. I didn't expect him to notice that we'd drifted apart.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T18:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "surprise",
+        "evidence": "I didn't expect him to notice that we'd drifted apart."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_030",
+    "sample_id": "sample_030",
+    "category": "surprise",
+    "input": {
+      "active_episode": null,
+      "conversation": [],
+      "latest_message": "Wait, the library is open until midnight now? I had no idea they changed the timings.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T11:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "surprise",
+        "evidence": "I had no idea they changed the timings."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_031",
+    "sample_id": "sample_031",
+    "category": "neutral",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I usually study in the library after lunch."
+        },
+        {
+          "role": "assistant",
+          "content": "What time do you normally leave?"
+        }
+      ],
+      "latest_message": "Around five in the evening. Then I take the bus back home.",
+      "previous_moods": [
+        {
+          "mood": "happy",
+          "created_at": "2026-11-20T09:00:00"
+        },
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T12:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "Around five in the evening. Then I take the bus back home."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_032",
+    "sample_id": "sample_032",
+    "category": "neutral",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_032",
+        "title": "Daily Routine",
+        "status": "ACTIVE",
+        "summary": "The user is examining how their daily routine affects their productivity."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I've been trying to understand why my mornings are unproductive."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you noticed a pattern?"
+        },
+        {
+          "role": "user",
+          "content": "I usually start working without deciding what to do first."
+        },
+        {
+          "role": "assistant",
+          "content": "What do you think might help?"
+        }
+      ],
+      "latest_message": "I think the problem isn't that I have too little time. I spend the first hour deciding what I should have planned the night before.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T08:00:00"
+        },
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-20T09:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that their mornings become less productive when they begin without a clear task list.",
+          "created_at": "2026-11-19T09:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "I think the problem isn't that I have too little time."
+      },
+      "reflection": "The user realizes that their difficulty with morning productivity comes partly from postponing planning until the workday begins."
+    }
+  },
+  {
+    "conversation_id": "conv_033",
+    "sample_id": "sample_033",
+    "category": "neutral",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "What is the difference between supervised and unsupervised learning?"
+        },
+        {
+          "role": "assistant",
+          "content": "Supervised learning uses labeled data, whereas unsupervised learning finds patterns in unlabeled data."
+        }
+      ],
+      "latest_message": "Got it. Can you also explain what reinforcement learning is?",
+      "previous_moods": [],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "Can you also explain what reinforcement learning is?"
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_034",
+    "sample_id": "sample_034",
+    "category": "neutral",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_034",
+        "title": "Work-Life Balance",
+        "status": "ACTIVE",
+        "summary": "The user is reconsidering how they allocate time between work and personal activities."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I spend most weekends finishing tasks that I couldn't complete during the week."
+        },
+        {
+          "role": "assistant",
+          "content": "What would you prefer your weekends to look like?"
+        },
+        {
+          "role": "user",
+          "content": "I'd like to have time for hobbies."
+        }
+      ],
+      "latest_message": "I realized I treat rest as something I earn after finishing every task. Since there's always another task, I rarely actually rest.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-18T11:00:00"
+        },
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T11:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that unfinished tasks often prevent them from making time for hobbies.",
+          "created_at": "2026-11-19T12:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "Since there's always another task, I rarely actually rest."
+      },
+      "reflection": "The user recognizes that treating rest as a reward for completing all tasks makes rest difficult to prioritize."
+    }
+  },
+  {
+    "conversation_id": "conv_035",
+    "sample_id": "sample_035",
+    "category": "neutral",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I watched a documentary about anxiety yesterday."
+        },
+        {
+          "role": "assistant",
+          "content": "Was there anything particularly interesting in it?"
+        }
+      ],
+      "latest_message": "It explained how anxiety can affect decision-making. I was taking notes because I need the information for a psychology assignment.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T20:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "I need the information for a psychology assignment."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_036",
+    "sample_id": "sample_036",
+    "category": "mixed",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_036",
+        "title": "Career Opportunity",
+        "status": "ACTIVE",
+        "summary": "The user is preparing for a career opportunity while managing uncertainty."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I received an interview invitation from a company I really wanted to join."
+        },
+        {
+          "role": "assistant",
+          "content": "That's an important opportunity. What is going through your mind?"
+        },
+        {
+          "role": "user",
+          "content": "I'm excited, but I also feel completely unprepared."
+        }
+      ],
+      "latest_message": "I'm thrilled that they selected me, but I'm terrified I'll embarrass myself during the interview.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T10:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T10:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "I'm terrified I'll embarrass myself during the interview."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_037",
+    "sample_id": "sample_037",
+    "category": "mixed",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_037",
+        "title": "Changing Friendships",
+        "status": "ACTIVE",
+        "summary": "The user is experiencing a complicated change in an important friendship."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My closest friend is moving to another city."
+        },
+        {
+          "role": "assistant",
+          "content": "How are you feeling about the move?"
+        },
+        {
+          "role": "user",
+          "content": "I'm happy for them because it's a great opportunity."
+        }
+      ],
+      "latest_message": "We celebrated together yesterday and I was genuinely happy. But when I got home, I cried because things won't be the same anymore.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T17:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "I cried because things won't be the same anymore."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_038",
+    "sample_id": "sample_038",
+    "category": "mixed",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_038",
+        "title": "Academic Competition",
+        "status": "ACTIVE",
+        "summary": "The user has been struggling with comparisons and competition among classmates."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "My classmate got selected for a research internship."
+        },
+        {
+          "role": "assistant",
+          "content": "What was your reaction?"
+        },
+        {
+          "role": "user",
+          "content": "I congratulated them, obviously."
+        },
+        {
+          "role": "assistant",
+          "content": "And how did you feel privately?"
+        }
+      ],
+      "latest_message": "I'm genuinely glad for them, but there's this uncomfortable jealousy because I wanted that opportunity too. Then I feel guilty for being jealous.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-18T12:00:00"
+        },
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T12:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "I feel guilty for being jealous."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_039",
+    "sample_id": "sample_039",
+    "category": "mixed",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_039",
+        "title": "Personal Boundaries",
+        "status": "ACTIVE",
+        "summary": "The user is learning to communicate personal boundaries without feeling guilty."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I finally told my friend I couldn't help them with their assignment."
+        },
+        {
+          "role": "assistant",
+          "content": "How did they respond?"
+        },
+        {
+          "role": "user",
+          "content": "They seemed disappointed."
+        },
+        {
+          "role": "assistant",
+          "content": "And how did that make you feel?"
+        }
+      ],
+      "latest_message": "I feel relieved that I said no, but I'm also irritated that they made me feel guilty for having my own responsibilities.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T16:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that agreeing to every request can interfere with their own responsibilities.",
+          "created_at": "2026-11-19T17:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "angry",
+        "evidence": "I'm also irritated that they made me feel guilty for having my own responsibilities."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_040",
+    "sample_id": "sample_040",
+    "category": "mixed",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_040",
+        "title": "Moving Away",
+        "status": "ACTIVE",
+        "summary": "The user is considering relocating for an educational opportunity."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got accepted into a university in another state."
+        },
+        {
+          "role": "assistant",
+          "content": "That's a major development. What are your thoughts?"
+        },
+        {
+          "role": "user",
+          "content": "I've always wanted to study there, but leaving home is difficult."
+        }
+      ],
+      "latest_message": "Part of me can't wait to start a new chapter, while another part is frightened of being away from everyone I know.",
+      "previous_moods": [
+        {
+          "mood": "happy",
+          "created_at": "2026-11-18T13:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T13:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "Another part is frightened of being away from everyone I know."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_041",
+    "sample_id": "sample_041",
+    "category": "meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_041",
+        "title": "Social Isolation",
+        "status": "ACTIVE",
+        "summary": "The user has been feeling lonely and waiting for others to initiate contact."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I feel like my friends never contact me first."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you tried reaching out to them?"
+        },
+        {
+          "role": "user",
+          "content": "Sometimes, but I usually wait because I want to know whether they care enough to message me."
+        },
+        {
+          "role": "assistant",
+          "content": "What would happen if you reached out without waiting for that reassurance?"
+        },
+        {
+          "role": "user",
+          "content": "I don't know. I guess I worry that I'll look needy."
+        },
+        {
+          "role": "assistant",
+          "content": "What does initiating a conversation mean to you?"
+        }
+      ],
+      "latest_message": "Maybe I've been treating every unanswered message as proof that people don't care. Sometimes people are simply busy, and I shouldn't make assumptions so quickly.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T14:00:00"
+        },
+        {
+          "mood": "sad",
+          "created_at": "2026-11-20T14:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that waiting for others to initiate conversations contributes to their social isolation.",
+          "created_at": "2026-11-19T15:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "Sometimes people are simply busy, and I shouldn't make assumptions so quickly."
+      },
+      "reflection": "The user realizes that interpreting delayed replies as evidence of rejection can lead to unnecessary negative assumptions about their friendships."
+    }
+  },
+  {
+    "conversation_id": "conv_042",
+    "sample_id": "sample_042",
+    "category": "meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_042",
+        "title": "Perfectionism",
+        "status": "ACTIVE",
+        "summary": "The user frequently delays starting tasks because they want their work to be perfect."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I haven't started my assignment even though the deadline is approaching."
+        },
+        {
+          "role": "assistant",
+          "content": "What's making it difficult to begin?"
+        },
+        {
+          "role": "user",
+          "content": "I want the final result to be really good."
+        },
+        {
+          "role": "assistant",
+          "content": "Does that expectation make starting easier or harder?"
+        },
+        {
+          "role": "user",
+          "content": "Harder, because I keep planning instead of doing."
+        }
+      ],
+      "latest_message": "I think waiting until I know exactly how to do everything is just another way of avoiding the possibility of making mistakes. I could learn more by actually starting.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T10:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that high expectations make it difficult to begin unfamiliar tasks.",
+          "created_at": "2026-11-19T11:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "I could learn more by actually starting."
+      },
+      "reflection": "The user realizes that waiting for complete certainty before beginning a task can become a form of avoiding mistakes, while starting provides opportunities to learn."
+    }
+  },
+  {
+    "conversation_id": "conv_043",
+    "sample_id": "sample_043",
+    "category": "meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_043",
+        "title": "Relationship Communication",
+        "status": "ACTIVE",
+        "summary": "The user struggles to communicate needs directly in close relationships."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I got upset because my partner didn't notice I was having a bad day."
+        },
+        {
+          "role": "assistant",
+          "content": "Did you tell them that you needed support?"
+        },
+        {
+          "role": "user",
+          "content": "No. I thought they should have noticed."
+        },
+        {
+          "role": "assistant",
+          "content": "What do you think you expected them to understand?"
+        },
+        {
+          "role": "user",
+          "content": "That I wanted someone to listen."
+        }
+      ],
+      "latest_message": "I realize I expect people to understand what I need without telling them. Maybe I should communicate instead of assuming they can read my mind.",
+      "previous_moods": [
+        {
+          "mood": "angry",
+          "created_at": "2026-11-20T18:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that expecting others to notice their emotional needs without communicating them can cause disappointment.",
+          "created_at": "2026-11-20T19:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "Maybe I should communicate instead of assuming they can read my mind."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_044",
+    "sample_id": "sample_044",
+    "category": "meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_044",
+        "title": "Self-Worth and Achievement",
+        "status": "ACTIVE",
+        "summary": "The user often evaluates their personal worth through academic and professional achievements."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I feel like I'm falling behind everyone else."
+        },
+        {
+          "role": "assistant",
+          "content": "What makes you feel that way?"
+        },
+        {
+          "role": "user",
+          "content": "People around me are getting internships and winning competitions."
+        },
+        {
+          "role": "assistant",
+          "content": "What do those achievements mean to you?"
+        },
+        {
+          "role": "user",
+          "content": "They make me feel like I'm not doing enough."
+        }
+      ],
+      "latest_message": "When I think about it, I only seem to value myself when I accomplish something. I don't really consider the effort I put in or the person I'm becoming outside of achievements.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-19T16:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T16:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that comparing their achievements with those of peers negatively affects their confidence.",
+          "created_at": "2026-11-19T17:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "I don't really consider the effort I put in or the person I'm becoming outside of achievements."
+      },
+      "reflection": "The user realizes that they have been making their self-worth dependent on measurable achievements while overlooking personal growth and effort."
+    }
+  },
+  {
+    "conversation_id": "conv_045",
+    "sample_id": "sample_045",
+    "category": "meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_045",
+        "title": "Stress Management",
+        "status": "ACTIVE",
+        "summary": "The user experiences stress from taking on too many responsibilities."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I've been exhausted lately."
+        },
+        {
+          "role": "assistant",
+          "content": "Has your schedule been particularly demanding?"
+        },
+        {
+          "role": "user",
+          "content": "I'm handling college work, club activities, and helping friends with their projects."
+        },
+        {
+          "role": "assistant",
+          "content": "Which of these responsibilities are difficult to manage?"
+        },
+        {
+          "role": "user",
+          "content": "I don't want to disappoint anyone."
+        },
+        {
+          "role": "assistant",
+          "content": "What happens when you prioritize everyone else's requests?"
+        }
+      ],
+      "latest_message": "I think I've been confusing being helpful with being available all the time. I can care about people without accepting every responsibility they give me.",
+      "previous_moods": [
+        {
+          "mood": "sad",
+          "created_at": "2026-11-18T18:00:00"
+        },
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T18:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that taking on too many commitments leaves insufficient time for their own responsibilities.",
+          "created_at": "2026-11-19T19:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "I can care about people without accepting every responsibility they give me."
+      },
+      "reflection": "The user realizes that being supportive does not require being constantly available or accepting every request."
+    }
+  },
+  {
+    "conversation_id": "conv_046",
+    "sample_id": "sample_046",
+    "category": "no_meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_046",
+        "title": "Academic Stress",
+        "status": "ACTIVE",
+        "summary": "The user is experiencing stress due to upcoming examinations."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I have three examinations next week."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you started preparing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, but there is still a lot left."
+        }
+      ],
+      "latest_message": "I'm exhausted and stressed. I have no idea how I'm going to finish everything.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T08:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T08:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "sad",
+        "evidence": "I'm exhausted and stressed."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_047",
+    "sample_id": "sample_047",
+    "category": "no_meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_047",
+        "title": "Workplace Frustration",
+        "status": "ACTIVE",
+        "summary": "The user is frustrated by repeated interruptions during work."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I couldn't complete my tasks yesterday because people kept interrupting me."
+        },
+        {
+          "role": "assistant",
+          "content": "Has the same thing happened today?"
+        }
+      ],
+      "latest_message": "Yes, again. It's incredibly irritating when nobody respects my time.",
+      "previous_moods": [
+        {
+          "mood": "angry",
+          "created_at": "2026-11-20T09:00:00"
+        },
+        {
+          "mood": "angry",
+          "created_at": "2026-11-20T15:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that interruptions make it harder to complete planned tasks.",
+          "created_at": "2026-11-19T15:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "angry",
+        "evidence": "It's incredibly irritating when nobody respects my time."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_048",
+    "sample_id": "sample_048",
+    "category": "no_meaningful_reflection",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I watched a documentary about people who experience panic attacks."
+        },
+        {
+          "role": "assistant",
+          "content": "What did you learn from it?"
+        }
+      ],
+      "latest_message": "It described how frightening the physical symptoms can feel. I hadn't realized how intense those experiences could be for someone.",
+      "previous_moods": [
+        {
+          "mood": "neutral",
+          "created_at": "2026-11-19T13:00:00"
+        }
+      ],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "It described how frightening the physical symptoms can feel."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_049",
+    "sample_id": "sample_049",
+    "category": "no_meaningful_reflection",
+    "input": {
+      "active_episode": null,
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I received a package this afternoon."
+        },
+        {
+          "role": "assistant",
+          "content": "Was it what you ordered?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, it was a new keyboard."
+        }
+      ],
+      "latest_message": "The keys feel slightly different from my old one. I'll probably get used to it after a few days.",
+      "previous_moods": [],
+      "previous_reflections": []
+    },
+    "expected_output": {
+      "mood": {
+        "label": "neutral",
+        "evidence": "The keys feel slightly different from my old one."
+      },
+      "reflection": null
+    }
+  },
+  {
+    "conversation_id": "conv_050",
+    "sample_id": "sample_050",
+    "category": "no_meaningful_reflection",
+    "input": {
+      "active_episode": {
+        "episode_id": "ep_050",
+        "title": "Fear of Public Speaking",
+        "status": "ACTIVE",
+        "summary": "The user experiences anxiety when speaking in front of groups."
+      },
+      "conversation": [
+        {
+          "role": "user",
+          "content": "I have to give a presentation tomorrow."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you practiced it?"
+        },
+        {
+          "role": "user",
+          "content": "Twice, but I keep worrying about making mistakes."
+        },
+        {
+          "role": "assistant",
+          "content": "What worries you most about the presentation?"
+        },
+        {
+          "role": "user",
+          "content": "People noticing if I forget something."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you experienced that before?"
+        }
+      ],
+      "latest_message": "I'm really nervous. My hands start shaking whenever I imagine standing in front of everyone.",
+      "previous_moods": [
+        {
+          "mood": "fear",
+          "created_at": "2026-11-19T20:00:00"
+        },
+        {
+          "mood": "fear",
+          "created_at": "2026-11-20T20:00:00"
+        }
+      ],
+      "previous_reflections": [
+        {
+          "reflection": "The user recognizes that imagining negative audience reactions increases their public-speaking anxiety.",
+          "created_at": "2026-11-19T21:00:00"
+        }
+      ]
+    },
+    "expected_output": {
+      "mood": {
+        "label": "fear",
+        "evidence": "I'm really nervous. My hands start shaking whenever I imagine standing in front of everyone."
+      },
+      "reflection": null
+    }
+  }
+]
