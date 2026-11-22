@@ -1,0 +1,1851 @@
+{
+  "benchmark": "TurnAnalyzer episode lifecycle benchmark",
+  "created_at": "2026-11-22T04:33:07.664173+00:00",
+  "model": "openai/gpt-oss-120b",
+  "source_logic": {
+    "prompt": "services.ai.prompts.turn_analyzer_prompt.PROMPT",
+    "analyzer": "services.ai.turn_analyzer.TurnAnalyzer.analyze/build_prompt/_validate_episode",
+    "orchestrator": "AIOrchestrator._prepare_episode post-analyzer safeguards"
+  },
+  "metrics": {
+    "total_samples": 50,
+    "completed_samples": 50,
+    "failed_samples": 0,
+    "accuracy": 0.94,
+    "correct": 47,
+    "macro_f1": 0.9415,
+    "raw_model_action_accuracy": 0.9592,
+    "raw_model_action_samples": 49,
+    "per_action": {
+      "CREATE": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9474,
+        "support": 10
+      },
+      "NONE": {
+        "precision": 0.9091,
+        "recall": 1.0,
+        "f1": 0.9524,
+        "support": 10
+      },
+      "CONTINUE": {
+        "precision": 0.8824,
+        "recall": 1.0,
+        "f1": 0.9375,
+        "support": 15
+      },
+      "CLOSE": {
+        "precision": 1.0,
+        "recall": 0.8667,
+        "f1": 0.9286,
+        "support": 15
+      }
+    },
+    "confusion_matrix": {
+      "CREATE": {
+        "CREATE": 9,
+        "NONE": 1,
+        "CONTINUE": 0,
+        "CLOSE": 0
+      },
+      "NONE": {
+        "CREATE": 0,
+        "NONE": 10,
+        "CONTINUE": 0,
+        "CLOSE": 0
+      },
+      "CONTINUE": {
+        "CREATE": 0,
+        "NONE": 0,
+        "CONTINUE": 15,
+        "CLOSE": 0
+      },
+      "CLOSE": {
+        "CREATE": 0,
+        "NONE": 0,
+        "CONTINUE": 2,
+        "CLOSE": 13
+      }
+    },
+    "accuracy_by_difficulty": {
+      "easy": {
+        "correct": 15,
+        "total": 15,
+        "accuracy": 1.0
+      },
+      "hard": {
+        "correct": 13,
+        "total": 15,
+        "accuracy": 0.8667
+      },
+      "medium": {
+        "correct": 19,
+        "total": 20,
+        "accuracy": 0.95
+      }
+    },
+    "accuracy_by_category": {
+      "academic_stress": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "ambiguous_distress": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "ambiguous_phrase": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "ambiguous_positive": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "anxiety": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "behavioral_concern": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "behavioral_resolution": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "casual_preference": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "clear_acceptance_after_repeated_distress": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "decisive_commitment_with_action": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "desire_vs_achievement": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "emotional_acceptance": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "emotional_distress": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "explicit_emotional_resolution": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "explicit_resolution": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "factual_question": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "general_knowledge": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "general_planning": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "greeting": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "implicit_practical_resolution": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "indirect_academic_issue": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "indirect_resolution": {
+        "correct": 0,
+        "total": 1,
+        "accuracy": 0.0
+      },
+      "light_humor": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "long_term_pattern_change": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "low_self_worth": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "mixed_emotional_concern": {
+        "correct": 0,
+        "total": 1,
+        "accuracy": 0.0
+      },
+      "mixed_progress": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "neutral_update": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "partial_behavior_change": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "partial_progress": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "partial_resolution_with_trigger": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "personal_but_not_problem": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "practical_resolution": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "recurring_problem": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "relationship_difficulty": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "relationship_repair": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "resolution_of_specific_active_issue": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "resolution_without_keyword": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "sleep_difficulty": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "sustained_improvement": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "sustained_social_change": {
+        "correct": 0,
+        "total": 1,
+        "accuracy": 0.0
+      },
+      "technical_help": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "temporary_acceptance": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "temporary_improvement": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "temporary_symptom_relief": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "tentative_commitment": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "tentative_intention": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "unclear_scope_of_resolution": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "unrelated_topic_shift": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      },
+      "unresolved_recurrence": {
+        "correct": 1,
+        "total": 1,
+        "accuracy": 1.0
+      }
+    },
+    "mean_latency_seconds": 18.665
+  },
+  "api_usage": {
+    "successful_requests": 50,
+    "prompt_tokens": 123245,
+    "completion_tokens": 10485,
+    "total_tokens": 133730,
+    "key_rotations": 0
+  },
+  "results": [
+    {
+      "sample_id": "EP001",
+      "category": "emotional_distress",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Persistent Loneliness",
+      "predicted_title": "Loneliness despite company",
+      "reason": "User states they have been feeling really lonely even when around friends, indicating a personal emotional difficulty.",
+      "confidence": 0.95,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": "sad",
+        "confidence": 0.9,
+        "evidence": "I've been feeling really lonely lately, even when I'm around my friends."
+      },
+      "reflection": "You recognize that being with friends doesn’t automatically eliminate the sense of loneliness you’re experiencing.",
+      "usage": {
+        "prompt_tokens": 2438,
+        "completion_tokens": 277,
+        "total_tokens": 2715,
+        "duration_seconds": 1.409
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Loneliness despite company\",\n    \"reason\": \"User states they have been feeling really lonely even when around friends, indicating a personal emotional difficulty.\",\n    \"confidence\": 0.95\n  },\n  \"mood\": {\n    \"label\": \"sad\",\n    \"confidence\": 0.9,\n    \"evidence\": \"I've been feeling really lonely lately, even when I'm around my friends.\"\n  },\n  \"reflection\": \"You recognize that being with friends doesn’t automatically eliminate the sense of loneliness you’re experiencing.\"\n}"
+    },
+    {
+      "sample_id": "EP002",
+      "category": "academic_stress",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Exam Stress",
+      "predicted_title": "Exam Stress Overwhelm",
+      "reason": "User reports feeling overwhelmed by exams and unable to keep up with studying, indicating a personal difficulty needing ongoing support.",
+      "confidence": 0.93,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": "sad",
+        "confidence": 0.78,
+        "evidence": "I'm overwhelmed by my exams and can't seem to keep up with studying."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2438,
+        "completion_tokens": 220,
+        "total_tokens": 2658,
+        "duration_seconds": 1.075
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Exam Stress Overwhelm\",\n    \"reason\": \"User reports feeling overwhelmed by exams and unable to keep up with studying, indicating a personal difficulty needing ongoing support.\",\n    \"confidence\": 0.93\n  },\n  \"mood\": {\n    \"label\": \"sad\",\n    \"confidence\": 0.78,\n    \"evidence\": \"I'm overwhelmed by my exams and can't seem to keep up with studying.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP003",
+      "category": "relationship_difficulty",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Friendship Conflict",
+      "predicted_title": "Friendship Conflict",
+      "reason": "User describes a serious argument with their best friend and expresses uncertainty about repairing the relationship, indicating a meaningful interpersonal difficulty.",
+      "confidence": 0.95,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2443,
+        "completion_tokens": 245,
+        "total_tokens": 2688,
+        "duration_seconds": 0.868
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Friendship Conflict\",\n    \"reason\": \"User describes a serious argument with their best friend and expresses uncertainty about repairing the relationship, indicating a meaningful interpersonal difficulty.\",\n    \"confidence\": 0.95\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP004",
+      "category": "sleep_difficulty",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Disrupted Sleep",
+      "predicted_title": "Sleep Deprivation Impact",
+      "reason": "User reports being exhausted during the day and that it is affecting their classes, indicating a personal difficulty affecting daily functioning.",
+      "confidence": 0.96,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2453,
+        "completion_tokens": 210,
+        "total_tokens": 2663,
+        "duration_seconds": 20.126
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Sleep Deprivation Impact\",\n    \"reason\": \"User reports being exhausted during the day and that it is affecting their classes, indicating a personal difficulty affecting daily functioning.\",\n    \"confidence\": 0.96\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP005",
+      "category": "anxiety",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Public Speaking Anxiety",
+      "predicted_title": "Public Speaking Anxiety",
+      "reason": "User reports feeling nervous and experiencing a blank mind when speaking in front of people, indicating a recurring personal difficulty.",
+      "confidence": 0.95,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": "fear",
+        "confidence": 0.9,
+        "evidence": "User says \"I get nervous and my mind goes blank\" when speaking in front of people."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2443,
+        "completion_tokens": 243,
+        "total_tokens": 2686,
+        "duration_seconds": 19.205
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Public Speaking Anxiety\",\n    \"reason\": \"User reports feeling nervous and experiencing a blank mind when speaking in front of people, indicating a recurring personal difficulty.\",\n    \"confidence\": 0.95\n  },\n  \"mood\": {\n    \"label\": \"fear\",\n    \"confidence\": 0.9,\n    \"evidence\": \"User says \\\"I get nervous and my mind goes blank\\\" when speaking in front of people.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP006",
+      "category": "behavioral_concern",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Task Avoidance",
+      "predicted_title": "Overwhelming Assignment Procrastination",
+      "reason": "User describes feeling overwhelmed by an assignment and ending up scrolling for hours, indicating a recurring difficulty with starting tasks.",
+      "confidence": 0.94,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": "fear",
+        "confidence": 0.78,
+        "evidence": "User says they feel overwhelmed when opening the assignment."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2455,
+        "completion_tokens": 269,
+        "total_tokens": 2724,
+        "duration_seconds": 20.127
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Overwhelming Assignment Procrastination\",\n    \"reason\": \"User describes feeling overwhelmed by an assignment and ending up scrolling for hours, indicating a recurring difficulty with starting tasks.\",\n    \"confidence\": 0.94\n  },\n  \"mood\": {\n    \"label\": \"fear\",\n    \"confidence\": 0.78,\n    \"evidence\": \"User says they feel overwhelmed when opening the assignment.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP007",
+      "category": "low_self_worth",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Negative Self-Comparison",
+      "predicted_title": "Feeling Behind Others",
+      "reason": "User reports distress from comparing themselves to others and feeling they are falling behind in life.",
+      "confidence": 0.95,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": "sad",
+        "confidence": 0.9,
+        "evidence": "\"I keep comparing myself with everyone else and feel like I'm falling behind in life.\""
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2440,
+        "completion_tokens": 229,
+        "total_tokens": 2669,
+        "duration_seconds": 19.202
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Feeling Behind Others\",\n    \"reason\": \"User reports distress from comparing themselves to others and feeling they are falling behind in life.\",\n    \"confidence\": 0.95\n  },\n  \"mood\": {\n    \"label\": \"sad\",\n    \"confidence\": 0.9,\n    \"evidence\": \"\\\"I keep comparing myself with everyone else and feel like I'm falling behind in life.\\\"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP008",
+      "category": "ambiguous_distress",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Feeling Isolated at Home",
+      "predicted_title": "Feeling alone at home",
+      "reason": "User reports dread and loneliness when returning home, indicating a personal emotional difficulty.",
+      "confidence": 0.95,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": "sad",
+        "confidence": 0.9,
+        "evidence": "I keep telling everyone I'm fine, but honestly I dread going home because I feel completely alone there."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2460,
+        "completion_tokens": 244,
+        "total_tokens": 2704,
+        "duration_seconds": 19.948
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Feeling alone at home\",\n    \"reason\": \"User reports dread and loneliness when returning home, indicating a personal emotional difficulty.\",\n    \"confidence\": 0.95\n  },\n  \"mood\": {\n    \"label\": \"sad\",\n    \"confidence\": 0.9,\n    \"evidence\": \"I keep telling everyone I'm fine, but honestly I dread going home because I feel completely alone there.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP009",
+      "category": "indirect_academic_issue",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": "CREATE",
+      "turn_analyzer_action": "CREATE",
+      "predicted_action": "CREATE",
+      "expected_title": "Deadline Avoidance",
+      "predicted_title": "Task avoidance anxiety",
+      "reason": "User describes freezing and avoiding the course portal when faced with a large amount of work, indicating a recurring difficulty affecting their ability to meet deadlines.",
+      "confidence": 0.94,
+      "would_create_episode": true,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": "fear",
+        "confidence": 0.78,
+        "evidence": "User says \"I freeze\" when seeing the amount of work left."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2458,
+        "completion_tokens": 255,
+        "total_tokens": 2713,
+        "duration_seconds": 19.177
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Task avoidance anxiety\",\n    \"reason\": \"User describes freezing and avoiding the course portal when faced with a large amount of work, indicating a recurring difficulty affecting their ability to meet deadlines.\",\n    \"confidence\": 0.94\n  },\n  \"mood\": {\n    \"label\": \"fear\",\n    \"confidence\": 0.78,\n    \"evidence\": \"User says \\\"I freeze\\\" when seeing the amount of work left.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP010",
+      "category": "mixed_emotional_concern",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CREATE",
+      "raw_model_action": null,
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": "Family Comparison",
+      "predicted_title": null,
+      "reason": "",
+      "confidence": null,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2446,
+        "completion_tokens": 287,
+        "total_tokens": 2733,
+        "duration_seconds": 20.125
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CREATE\",\n    \"title\": \"Sibling Praise Inadequacy\",\n    \"reason\": \"User describes feeling inadequate and resentful when family praises their sibling, indicating a personal emotional struggle needing ongoing support.\",\n    \"confidence\": 0. nine\n  },\n  \"mood\": {\n    \"label\": \"angry\",\n    \"confidence\": 0.85,\n    \"evidence\": \"User says they feel \\\"inadequate and resentful\\\" when their sibling is praised.\"\n  },\n  \"reflection\": \"You’ve noticed that your sibling’s praise triggers feelings of inadequacy and resentment, highlighting a pattern of comparing yourself to them.\"\n}"
+    },
+    {
+      "sample_id": "EP011",
+      "category": "greeting",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User only greets with a casual question and does not introduce any personal difficulty or concern.",
+      "confidence": 0.99,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2430,
+        "completion_tokens": 146,
+        "total_tokens": 2576,
+        "duration_seconds": 20.226
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User only greets with a casual question and does not introduce any personal difficulty or concern.\",\n    \"confidence\": 0.99\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP012",
+      "category": "factual_question",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User asks a factual technical question about RAM vs storage, which does not introduce a personal difficulty or emotional concern.",
+      "confidence": 0.99,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2433,
+        "completion_tokens": 116,
+        "total_tokens": 2549,
+        "duration_seconds": 19.0
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User asks a factual technical question about RAM vs storage, which does not introduce a personal difficulty or emotional concern.\",\n    \"confidence\": 0.99\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP013",
+      "category": "casual_preference",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User shares a casual preference for tea over coffee, which is a neutral personal update without a difficulty or concern.",
+      "confidence": 0.93,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2431,
+        "completion_tokens": 123,
+        "total_tokens": 2554,
+        "duration_seconds": 18.894
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User shares a casual preference for tea over coffee, which is a neutral personal update without a difficulty or concern.\",\n    \"confidence\": 0.93\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP014",
+      "category": "light_humor",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User makes a casual complaint about laptop behavior without indicating personal distress or a problem needing support.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2435,
+        "completion_tokens": 195,
+        "total_tokens": 2630,
+        "duration_seconds": 19.37
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User makes a casual complaint about laptop behavior without indicating personal distress or a problem needing support.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP015",
+      "category": "technical_help",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User is asking a technical question about checking list bounds, which is factual assistance, not a personal concern.",
+      "confidence": 1.0,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2460,
+        "completion_tokens": 145,
+        "total_tokens": 2605,
+        "duration_seconds": 18.935
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User is asking a technical question about checking list bounds, which is factual assistance, not a personal concern.\",\n    \"confidence\": 1.0\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP016",
+      "category": "general_planning",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User requests a simple timetable for learning SQL, which is a factual planning request without expressing a personal difficulty or emotional concern.",
+      "confidence": 0.99,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2436,
+        "completion_tokens": 132,
+        "total_tokens": 2568,
+        "duration_seconds": 19.92
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User requests a simple timetable for learning SQL, which is a factual planning request without expressing a personal difficulty or emotional concern.\",\n    \"confidence\": 0.99\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP017",
+      "category": "neutral_update",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User is simply commenting on a TV series (its quality and length) without expressing any personal difficulty or concern.",
+      "confidence": 0.96,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2456,
+        "completion_tokens": 131,
+        "total_tokens": 2587,
+        "duration_seconds": 18.796
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User is simply commenting on a TV series (its quality and length) without expressing any personal difficulty or concern.\",\n    \"confidence\": 0.96\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP018",
+      "category": "general_knowledge",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "The user asks a factual question about why the moon appears larger near the horizon, which does not introduce a personal difficulty or emotional concern.",
+      "confidence": 0.99,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2434,
+        "completion_tokens": 153,
+        "total_tokens": 2587,
+        "duration_seconds": 18.894
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"The user asks a factual question about why the moon appears larger near the horizon, which does not introduce a personal difficulty or emotional concern.\",\n    \"confidence\": 0.99\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP019",
+      "category": "ambiguous_phrase",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User is asking for a planning tip without expressing personal distress or a meaningful concern.",
+      "confidence": 0.0,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2460,
+        "completion_tokens": 113,
+        "total_tokens": 2573,
+        "duration_seconds": 18.901
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User is asking for a planning tip without expressing personal distress or a meaningful concern.\",\n    \"confidence\": 0.0\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP020",
+      "category": "personal_but_not_problem",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "NONE",
+      "raw_model_action": "NONE",
+      "turn_analyzer_action": "NONE",
+      "predicted_action": "NONE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User shares a neutral update about their new apartment and kitchen light without expressing any difficulty or concern.",
+      "confidence": 0.94,
+      "would_create_episode": false,
+      "resulting_episode_id": null,
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2441,
+        "completion_tokens": 134,
+        "total_tokens": 2575,
+        "duration_seconds": 20.018
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"NONE\",\n    \"title\": null,\n    \"reason\": \"User shares a neutral update about their new apartment and kitchen light without expressing any difficulty or concern.\",\n    \"confidence\": 0.94\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP021",
+      "category": "temporary_improvement",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports a brief calm moment but does not indicate that exam anxiety is resolved; the underlying concern remains.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": "neutral",
+        "confidence": 0.78,
+        "evidence": "User says they felt calm during a lecture, describing a mild positive feeling without strong emotion."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2469,
+        "completion_tokens": 235,
+        "total_tokens": 2704,
+        "duration_seconds": 18.998
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports a brief calm moment but does not indicate that exam anxiety is resolved; the underlying concern remains.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": \"neutral\",\n    \"confidence\": 0.78,\n    \"evidence\": \"User says they felt calm during a lecture, describing a mild positive feeling without strong emotion.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP022",
+      "category": "tentative_intention",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User plans to study earlier, indicating the exam anxiety persists and they are taking a step but have not resolved the underlying worry.",
+      "confidence": 0.96,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2466,
+        "completion_tokens": 163,
+        "total_tokens": 2629,
+        "duration_seconds": 20.023
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User plans to study earlier, indicating the exam anxiety persists and they are taking a step but have not resolved the underlying worry.\",\n    \"confidence\": 0.96\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP023",
+      "category": "partial_progress",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports still feeling overwhelmed after studying for twenty minutes, indicating the exam anxiety remains unresolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2472,
+        "completion_tokens": 167,
+        "total_tokens": 2639,
+        "duration_seconds": 18.793
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports still feeling overwhelmed after studying for twenty minutes, indicating the exam anxiety remains unresolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": \"fear\",\n    \"confidence\": 0.71,\n    \"evidence\": \"User says they \\\"still get overwhelmed\\\" after studying, expressing anxiety about the situation.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP024",
+      "category": "recurring_problem",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports repeating the same avoidance behavior by leaving the assignment until the last minute, indicating the concern remains unresolved.",
+      "confidence": 0.97,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2469,
+        "completion_tokens": 147,
+        "total_tokens": 2616,
+        "duration_seconds": 20.022
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports repeating the same avoidance behavior by leaving the assignment until the last minute, indicating the concern remains unresolved.\",\n    \"confidence\": 0.97\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP025",
+      "category": "mixed_progress",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports enjoying a recent outing but still feeling left out on most days, indicating the underlying sense of isolation remains unresolved.",
+      "confidence": 0.96,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": "sad",
+        "confidence": 0.85,
+        "evidence": "User says they \"still feel left out most days\" despite a positive experience."
+      },
+      "reflection": "You notice that occasional enjoyable moments with friends don’t fully lift the persistent feeling of being left out, highlighting that the underlying sense of isolation continues even when you have good interactions.",
+      "usage": {
+        "prompt_tokens": 2480,
+        "completion_tokens": 253,
+        "total_tokens": 2733,
+        "duration_seconds": 18.997
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports enjoying a recent outing but still feeling left out on most days, indicating the underlying sense of isolation remains unresolved.\",\n    \"confidence\": 0.96\n  },\n  \"mood\": {\n    \"label\": \"sad\",\n    \"confidence\": 0.85,\n    \"evidence\": \"User says they \\\"still feel left out most days\\\" despite a positive experience.\"\n  },\n  \"reflection\": \"You notice that occasional enjoyable moments with friends don’t fully lift the persistent feeling of being left out, highlighting that the underlying sense of isolation continues even when you have good interactions.\"\n}"
+    },
+    {
+      "sample_id": "EP026",
+      "category": "temporary_symptom_relief",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that the worrying continues even though they slept well once, indicating the underlying anxiety is still present.",
+      "confidence": 0.96,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2476,
+        "completion_tokens": 156,
+        "total_tokens": 2632,
+        "duration_seconds": 26.885
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports that the worrying continues even though they slept well once, indicating the underlying anxiety is still present.\",\n    \"confidence\": 0.96\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP027",
+      "category": "tentative_commitment",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User acknowledges the ongoing issue of comparing themselves and plans to stop checking updates, indicating the concern remains unresolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": "You’ve identified that limiting how often you look at classmates’ updates could reduce the habit of comparison.",
+      "usage": {
+        "prompt_tokens": 2474,
+        "completion_tokens": 221,
+        "total_tokens": 2695,
+        "duration_seconds": 13.16
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User acknowledges the ongoing issue of comparing themselves and plans to stop checking updates, indicating the concern remains unresolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": \"You’ve identified that limiting how often you look at classmates’ updates could reduce the habit of comparison.\"\n}"
+    },
+    {
+      "sample_id": "EP028",
+      "category": "unresolved_recurrence",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that after a few days of feeling okay, seeing the friend's post triggered the anger again, indicating the conflict remains unresolved.",
+      "confidence": 0.94,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": "angry",
+        "confidence": 0.92,
+        "evidence": "User says \"the anger came back\" after seeing the post."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2481,
+        "completion_tokens": 142,
+        "total_tokens": 2623,
+        "duration_seconds": 19.922
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports that after a few days of feeling okay, seeing the friend's post triggered the anger again, indicating the conflict remains unresolved.\",\n    \"confidence\": 0.94\n  },\n  \"mood\": {\n    \"label\": \"angry\",\n    \"confidence\": 0.92,\n    \"evidence\": \"User says \\\"the anger came back\\\" after seeing the post.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP029",
+      "category": "partial_behavior_change",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that despite asking a question after class, they were still unable to speak up during the lecture, indicating the exam anxiety concern remains unresolved.",
+      "confidence": 0.93,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2479,
+        "completion_tokens": 215,
+        "total_tokens": 2694,
+        "duration_seconds": 20.125
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports that despite asking a question after class, they were still unable to speak up during the lecture, indicating the exam anxiety concern remains unresolved.\",\n    \"confidence\": 0.93\n  },\n  \"mood\": {\n    \"label\": \"fear\",\n    \"confidence\": 0.62,\n    \"evidence\": \"User says they \\\"still couldn't speak up during the lecture,\\\" reflecting ongoing apprehension.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP030",
+      "category": "unrelated_topic_shift",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports a positive outcome (presentation went well) but does not indicate that the underlying exam anxiety or sleep difficulties have been resolved.",
+      "confidence": 0.86,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": "happy",
+        "confidence": 0.92,
+        "evidence": "my project presentation went really well today"
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2471,
+        "completion_tokens": 248,
+        "total_tokens": 2719,
+        "duration_seconds": 19.201
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports a positive outcome (presentation went well) but does not indicate that the underlying exam anxiety or sleep difficulties have been resolved.\",\n    \"confidence\": 0.86\n  },\n  \"mood\": {\n    \"label\": \"happy\",\n    \"confidence\": 0.92,\n    \"evidence\": \"my project presentation went really well today\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP031",
+      "category": "ambiguous_positive",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports a positive dinner but the underlying feeling of disappointing family has not been resolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": "happy",
+        "confidence": 0.78,
+        "evidence": "User says \"Things were actually nice at dinner yesterday. We laughed like we used to.\""
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2474,
+        "completion_tokens": 203,
+        "total_tokens": 2677,
+        "duration_seconds": 20.132
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports a positive dinner but the underlying feeling of disappointing family has not been resolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": \"happy\",\n    \"confidence\": 0.78,\n    \"evidence\": \"User says \\\"Things were actually nice at dinner yesterday. We laughed like we used to.\\\"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP032",
+      "category": "desire_vs_achievement",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User expresses a desire to change their behavior (reach out instead of disappearing), indicating the concern of isolation remains unresolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2471,
+        "completion_tokens": 185,
+        "total_tokens": 2656,
+        "duration_seconds": 20.123
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User expresses a desire to change their behavior (reach out instead of disappearing), indicating the concern of isolation remains unresolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP033",
+      "category": "unclear_scope_of_resolution",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that the anxiety around speaking in class persists (“I still freeze whenever I have to speak”), indicating the original concern remains unresolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": "fear",
+        "confidence": 0.88,
+        "evidence": "User says they \"still freeze\" when speaking, reflecting fear of speaking."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2481,
+        "completion_tokens": 172,
+        "total_tokens": 2653,
+        "duration_seconds": 20.019
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports that the anxiety around speaking in class persists (“I still freeze whenever I have to speak”), indicating the original concern remains unresolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": \"fear\",\n    \"confidence\": 0.88,\n    \"evidence\": \"User says they \\\"still freeze\\\" when speaking, reflecting fear of speaking.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP034",
+      "category": "temporary_acceptance",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports temporary peace but still ruminates on the breakup, indicating the concern remains unresolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2480,
+        "completion_tokens": 217,
+        "total_tokens": 2697,
+        "duration_seconds": 18.898
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports temporary peace but still ruminates on the breakup, indicating the concern remains unresolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": \"sad\",\n    \"confidence\": 0.62,\n    \"evidence\": \"User says they are \\\"back to wondering what I did wrong,\\\" reflecting lingering sadness.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP035",
+      "category": "partial_resolution_with_trigger",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CONTINUE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports continuing to avoid introducing themselves, indicating the exam anxiety/social anxiety concern remains unresolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_01",
+      "mood": {
+        "label": "fear",
+        "confidence": 0.81,
+        "evidence": "User says they still avoid introducing themselves unless someone speaks first, reflecting ongoing nervousness."
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2482,
+        "completion_tokens": 205,
+        "total_tokens": 2687,
+        "duration_seconds": 20.125
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports continuing to avoid introducing themselves, indicating the exam anxiety/social anxiety concern remains unresolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": \"fear\",\n    \"confidence\": 0.81,\n    \"evidence\": \"User says they still avoid introducing themselves unless someone speaks first, reflecting ongoing nervousness.\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP036",
+      "category": "explicit_resolution",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports having submitted all pending assignments and being fully caught up, indicating the procrastination issue is resolved.",
+      "confidence": 0.95,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_02",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2473,
+        "completion_tokens": 185,
+        "total_tokens": 2658,
+        "duration_seconds": 20.028
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports having submitted all pending assignments and being fully caught up, indicating the procrastination issue is resolved.\",\n    \"confidence\": 0.95\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP037",
+      "category": "behavioral_resolution",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports consistently following the morning study routine for a month, indicating the avoidance issue has been resolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_02",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2474,
+        "completion_tokens": 227,
+        "total_tokens": 2701,
+        "duration_seconds": 19.913
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports consistently following the morning study routine for a month, indicating the avoidance issue has been resolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP038",
+      "category": "explicit_emotional_resolution",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User states they have made peace and the issue no longer weighs on them, indicating resolution of the academic procrastination concern.",
+      "confidence": 0.93,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_02",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2475,
+        "completion_tokens": 234,
+        "total_tokens": 2709,
+        "duration_seconds": 20.127
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User states they have made peace and the issue no longer weighs on them, indicating resolution of the academic procrastination concern.\",\n    \"confidence\": 0.93\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP039",
+      "category": "practical_resolution",
+      "difficulty": "easy",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports having submitted the project, indicating the procrastination issue has been resolved.",
+      "confidence": 0.97,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_02",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2472,
+        "completion_tokens": 186,
+        "total_tokens": 2658,
+        "duration_seconds": 20.122
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports having submitted the project, indicating the procrastination issue has been resolved.\",\n    \"confidence\": 0.97\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP040",
+      "category": "sustained_improvement",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports checking the course portal regularly for two months and not missing any deadlines, indicating the avoidance behavior has been resolved.",
+      "confidence": 0.85,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_02",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2477,
+        "completion_tokens": 265,
+        "total_tokens": 2742,
+        "duration_seconds": 19.304
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports checking the course portal regularly for two months and not missing any deadlines, indicating the avoidance behavior has been resolved.\",\n    \"confidence\": 0.85\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP041",
+      "category": "relationship_repair",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that they talked through the argument, apologized, and are now on good terms, indicating the friendship conflict has been resolved.",
+      "confidence": 0.96,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_03",
+      "mood": {
+        "label": "happy",
+        "confidence": 0.85,
+        "evidence": "User says \"We're on good terms again\" after resolving the argument."
+      },
+      "reflection": "You recognized that open communication and mutual apologies can restore a strained friendship.",
+      "usage": {
+        "prompt_tokens": 2482,
+        "completion_tokens": 267,
+        "total_tokens": 2749,
+        "duration_seconds": 21.251
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports that they talked through the argument, apologized, and are now on good terms, indicating the friendship conflict has been resolved.\",\n    \"confidence\": 0.96\n  },\n  \"mood\": {\n    \"label\": \"happy\",\n    \"confidence\": 0.85,\n    \"evidence\": \"User says \\\"We're on good terms again\\\" after resolving the argument.\"\n  },\n  \"reflection\": \"You recognized that open communication and mutual apologies can restore a strained friendship.\"\n}"
+    },
+    {
+      "sample_id": "EP042",
+      "category": "emotional_acceptance",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User states they can recall the relationship without upset, genuinely wish their ex well, and have moved on, indicating the breakup distress is no longer affecting them.",
+      "confidence": 0.93,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_04",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": "You’ve recognized that you can recall the relationship without distress and genuinely wish your ex well, showing a clear shift toward acceptance.",
+      "usage": {
+        "prompt_tokens": 2483,
+        "completion_tokens": 317,
+        "total_tokens": 2800,
+        "duration_seconds": 20.33
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User states they can recall the relationship without upset, genuinely wish their ex well, and have moved on, indicating the breakup distress is no longer affecting them.\",\n    \"confidence\": 0.93\n  },\n  \"mood\": {\n    \"label\": \"neutral\",\n    \"confidence\": 0.72,\n    \"evidence\": \"User says they can remember the relationship without feeling upset and have moved on.\"\n  },\n  \"reflection\": \"You’ve recognized that you can recall the relationship without distress and genuinely wish your ex well, showing a clear shift toward acceptance.\"\n}"
+    },
+    {
+      "sample_id": "EP043",
+      "category": "decisive_commitment_with_action",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports having removed the apps three weeks ago and not returning to late‑night scrolling, indicating a sustained change that resolves the tracked concern.",
+      "confidence": 0.85,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_05",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2484,
+        "completion_tokens": 258,
+        "total_tokens": 2742,
+        "duration_seconds": 20.33
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports having removed the apps three weeks ago and not returning to late‑night scrolling, indicating a sustained change that resolves the tracked concern.\",\n    \"confidence\": 0.85\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP044",
+      "category": "implicit_practical_resolution",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that all coursework has been submitted, indicating the original concern is resolved.",
+      "confidence": 0.9,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_06",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2475,
+        "completion_tokens": 212,
+        "total_tokens": 2687,
+        "duration_seconds": 20.124
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports that all coursework has been submitted, indicating the original concern is resolved.\",\n    \"confidence\": 0.9\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP045",
+      "category": "sustained_social_change",
+      "difficulty": "medium",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports they are now reaching out to friends instead of isolating, indicating ongoing effort but the underlying concern of social isolation remains unresolved.",
+      "confidence": 0.92,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_07",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2480,
+        "completion_tokens": 152,
+        "total_tokens": 2632,
+        "duration_seconds": 19.919
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports they are now reaching out to friends instead of isolating, indicating ongoing effort but the underlying concern of social isolation remains unresolved.\",\n    \"confidence\": 0.92\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP046",
+      "category": "indirect_resolution",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CONTINUE",
+      "turn_analyzer_action": "CONTINUE",
+      "predicted_action": "CONTINUE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports successfully completing a presentation without needing help, indicating progress but not confirming that the underlying fear of public speaking is resolved.",
+      "confidence": 0.86,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_08",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2486,
+        "completion_tokens": 196,
+        "total_tokens": 2682,
+        "duration_seconds": 18.894
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CONTINUE\",\n    \"title\": null,\n    \"reason\": \"User reports successfully completing a presentation without needing help, indicating progress but not confirming that the underlying fear of public speaking is resolved.\",\n    \"confidence\": 0.86\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP047",
+      "category": "resolution_without_keyword",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that the difficult conversation with parents was completed, they were heard, needs were explained, and a mutually comfortable plan was established, indicating the communication issue is resolved.",
+      "confidence": 0.93,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_09",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": "You recognized that openly sharing your needs can lead to understanding and a workable plan with your parents.",
+      "usage": {
+        "prompt_tokens": 2494,
+        "completion_tokens": 241,
+        "total_tokens": 2735,
+        "duration_seconds": 20.234
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports that the difficult conversation with parents was completed, they were heard, needs were explained, and a mutually comfortable plan was established, indicating the communication issue is resolved.\",\n    \"confidence\": 0.93\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": \"You recognized that openly sharing your needs can lead to understanding and a workable plan with your parents.\"\n}"
+    },
+    {
+      "sample_id": "EP048",
+      "category": "long_term_pattern_change",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports a sustained change: for months they correct mistakes without spiraling or calling themselves useless, indicating the negative self‑talk pattern is no longer affecting them.",
+      "confidence": 0.78,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_10",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": "You’ve recognized that you can respond to errors with correction rather than self‑criticism, and you’ve kept this healthier reaction for several months.",
+      "usage": {
+        "prompt_tokens": 2492,
+        "completion_tokens": 409,
+        "total_tokens": 2901,
+        "duration_seconds": 21.492
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports a sustained change: for months they correct mistakes without spiraling or calling themselves useless, indicating the negative self‑talk pattern is no longer affecting them.\",\n    \"confidence\": 0.78\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": \"You’ve recognized that you can respond to errors with correction rather than self‑criticism, and you’ve kept this healthier reaction for several months.\"\n}"
+    },
+    {
+      "sample_id": "EP049",
+      "category": "resolution_of_specific_active_issue",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User reports that all exams are finished and no pending work remains, indicating the source of their preparation anxiety has been resolved.",
+      "confidence": 0.95,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_11",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": null,
+      "usage": {
+        "prompt_tokens": 2485,
+        "completion_tokens": 255,
+        "total_tokens": 2740,
+        "duration_seconds": 21.207
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User reports that all exams are finished and no pending work remains, indicating the source of their preparation anxiety has been resolved.\",\n    \"confidence\": 0.95\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": null\n}"
+    },
+    {
+      "sample_id": "EP050",
+      "category": "clear_acceptance_after_repeated_distress",
+      "difficulty": "hard",
+      "status": "completed",
+      "expected_action": "CLOSE",
+      "raw_model_action": "CLOSE",
+      "turn_analyzer_action": "CLOSE",
+      "predicted_action": "CLOSE",
+      "expected_title": null,
+      "predicted_title": null,
+      "reason": "User states they understand the betrayal, no longer seek an apology, and it no longer affects their self‑view, indicating resolution.",
+      "confidence": 0.96,
+      "would_create_episode": false,
+      "resulting_episode_id": "EP_ACTIVE_12",
+      "mood": {
+        "label": null,
+        "confidence": null,
+        "evidence": null
+      },
+      "reflection": "You’ve realized that releasing the need for an apology lets the past betrayal stop influencing how you see yourself.",
+      "usage": {
+        "prompt_tokens": 2498,
+        "completion_tokens": 285,
+        "total_tokens": 2783,
+        "duration_seconds": 20.328
+      },
+      "error": null,
+      "raw_response": "{\n  \"episode\": {\n    \"action\": \"CLOSE\",\n    \"title\": null,\n    \"reason\": \"User states they understand the betrayal, no longer seek an apology, and it no longer affects their self‑view, indicating resolution.\",\n    \"confidence\": 0.96\n  },\n  \"mood\": {\n    \"label\": null,\n    \"confidence\": 0.0,\n    \"evidence\": \"\"\n  },\n  \"reflection\": \"You’ve realized that releasing the need for an apology lets the past betrayal stop influencing how you see yourself.\"\n}"
+    }
+  ]
+}

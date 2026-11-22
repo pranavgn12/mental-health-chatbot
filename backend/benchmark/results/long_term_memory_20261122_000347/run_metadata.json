@@ -1,0 +1,14 @@
+{
+  "dataset": "/home/pranavgn/Desktop/mental-health-chatbot/backend/benchmark/datasets/long_term_memory_benchmark.json",
+  "model": "openai/gpt-oss-120b",
+  "created_or_resumed_at": "2026-11-22T00:03:47.960499",
+  "generation_prompt": "services.ai.long_term_memory.MEMORY_PROMPT",
+  "generation_parameters": {
+    "max_completion_tokens": 2048,
+    "reasoning_effort": "low",
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "judge_model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,22 @@
+{
+  "LTM_001": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is an architecture student.\\n- They value producing careful, high-quality work.\\n- They tend to delay beginning large academic assignments until deadlines approach.\\n- Delaying tasks causes them anxiety and guilt.\\n- A brief, 20‑minute outlining session helps them feel the task is manageable and facilitates starting.\\n- They recognize that early planning reduces deadline pressure.\\n- This pattern of procrastination is currently active.\"}",
+    "memory": "- The user is an architecture student.\n- They value producing careful, high-quality work.\n- They tend to delay beginning large academic assignments until deadlines approach.\n- Delaying tasks causes them anxiety and guilt.\n- A brief, 20‑minute outlining session helps them feel the task is manageable and facilitates starting.\n- They recognize that early planning reduces deadline pressure.\n- This pattern of procrastination is currently active."
+  },
+  "LTM_002": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- Works in customer support and values clear boundaries between work and personal time.\\n- Frequently takes a brief walk after demanding late shifts to transition out of work mode.\\n- Finds that a 15‑minute walk reduces feeling stuck in work mode and provides relief.\\n- Plans to continue using post‑shift walks as a coping strategy.\\n- Recognizes walking as an effective transition routine between work and personal time.\"}",
+    "memory": "- Works in customer support and values clear boundaries between work and personal time.\n- Frequently takes a brief walk after demanding late shifts to transition out of work mode.\n- Finds that a 15‑minute walk reduces feeling stuck in work mode and provides relief.\n- Plans to continue using post‑shift walks as a coping strategy.\n- Recognizes walking as an effective transition routine between work and personal time."
+  },
+  "LTM_003": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is a postgraduate biology student.\\n- The user prefers having assignment instructions available in writing.\\n- Ambiguous academic instructions trigger worry and cause the user to reread them repeatedly before seeking clarification.\\n- The user experiences fear of looking foolish when considering asking for clarification.\\n- Recognizing that a concise clarification question helps them move forward is an effective coping approach.\\n- The user tends to delay asking questions until they have reread unclear material multiple times.\\n- When the user does ask a focused question, it often resolves their uncertainty and allows progress.\"}",
+    "memory": "- The user is a postgraduate biology student.\n- The user prefers having assignment instructions available in writing.\n- Ambiguous academic instructions trigger worry and cause the user to reread them repeatedly before seeking clarification.\n- The user experiences fear of looking foolish when considering asking for clarification.\n- Recognizing that a concise clarification question helps them move forward is an effective coping approach.\n- The user tends to delay asking questions until they have reread unclear material multiple times.\n- When the user does ask a focused question, it often resolves their uncertainty and allows progress."
+  },
+  "LTM_004": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user values maintaining close friendships.\\n- The user prefers thoughtful communication during difficult conversations.\\n- The user uses a strategy of pausing until calmer and writing down the main point before reaching out after disagreements.\\n- The user finds that pausing and organizing thoughts before messaging helps keep conversations focused.\"}",
+    "memory": "- The user values maintaining close friendships.\n- The user prefers thoughtful communication during difficult conversations.\n- The user uses a strategy of pausing until calmer and writing down the main point before reaching out after disagreements.\n- The user finds that pausing and organizing thoughts before messaging helps keep conversations focused."
+  }
+}

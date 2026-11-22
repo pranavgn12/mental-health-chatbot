@@ -1,0 +1,52 @@
+{
+  "LTM_001": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is an architecture student who values producing careful, high-quality work.\\n- The user tends to delay beginning large academic assignments until deadlines approach.\\n- Delaying tasks causes the user to feel anxious and guilty.\\n- The user finds brief (e.g., 20‑minute) outline sessions helpful for initiating work and making tasks feel manageable.\\n- The user experiences fear related to academic deadlines.\\n- The user recognizes that early planning reduces deadline pressure.\\n- The user’s pattern of procrastination on major assignments is currently active.\\n- The user benefits from structured, short planning sessions as a coping strategy.\"}",
+    "memory": "- The user is an architecture student who values producing careful, high-quality work.\n- The user tends to delay beginning large academic assignments until deadlines approach.\n- Delaying tasks causes the user to feel anxious and guilty.\n- The user finds brief (e.g., 20‑minute) outline sessions helpful for initiating work and making tasks feel manageable.\n- The user experiences fear related to academic deadlines.\n- The user recognizes that early planning reduces deadline pressure.\n- The user’s pattern of procrastination on major assignments is currently active.\n- The user benefits from structured, short planning sessions as a coping strategy."
+  },
+  "LTM_002": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- Works in customer support and values clear boundaries between work and personal time.\\n- Frequently takes a short walk after demanding late shifts to transition out of work mode.\\n- Finds brief walks provide relief and reduce feeling stuck in work mode.\\n- Plans to continue using post‑shift walks as a coping routine.\\n- Recognizes walking as an effective transition strategy between work and personal time.\"}",
+    "memory": "- Works in customer support and values clear boundaries between work and personal time.\n- Frequently takes a short walk after demanding late shifts to transition out of work mode.\n- Finds brief walks provide relief and reduce feeling stuck in work mode.\n- Plans to continue using post‑shift walks as a coping routine.\n- Recognizes walking as an effective transition strategy between work and personal time."
+  },
+  "LTM_003": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is a postgraduate biology student.\\n- The user prefers having assignment instructions available in writing.\\n- Ambiguous academic instructions trigger worry and lead to repeated rereading before seeking clarification.\\n- The user experiences fear of looking foolish when considering asking for clarification.\\n- Asking a single concise clarification question helps the user overcome uncertainty and proceed.\\n- The user recognizes that uncertainty about requirements can cause repeated rereading.\\n- The user has used focused clarification messages as an effective coping approach.\\n- This pattern of delayed clarification in response to unclear rubrics remains active.\"}",
+    "memory": "- The user is a postgraduate biology student.\n- The user prefers having assignment instructions available in writing.\n- Ambiguous academic instructions trigger worry and lead to repeated rereading before seeking clarification.\n- The user experiences fear of looking foolish when considering asking for clarification.\n- Asking a single concise clarification question helps the user overcome uncertainty and proceed.\n- The user recognizes that uncertainty about requirements can cause repeated rereading.\n- The user has used focused clarification messages as an effective coping approach.\n- This pattern of delayed clarification in response to unclear rubrics remains active."
+  },
+  "LTM_004": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user values maintaining close friendships.\\n- The user prefers thoughtful communication during difficult conversations.\\n- The user uses a coping strategy of pausing until calmer before addressing a disagreement.\\n- The user writes down the main point they want to convey before messaging a friend after a conflict.\"}",
+    "memory": "- The user values maintaining close friendships.\n- The user prefers thoughtful communication during difficult conversations.\n- The user uses a coping strategy of pausing until calmer before addressing a disagreement.\n- The user writes down the main point they want to convey before messaging a friend after a conflict."
+  },
+  "LTM_005": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is preparing for a certification exam and feels nervous about it.\\n- The user studies in a quiet morning block before work on weekdays.\\n- The user temporarily studied later in the evenings due to feeling overwhelmed before the exam.\\n- The user is completing a part-time master's degree while working full-time.\\n- The user values staying connected with two close friends.\\n- The user’s usual routine prioritizes quiet morning study time.\"}",
+    "memory": "- The user is preparing for a certification exam and feels nervous about it.\n- The user studies in a quiet morning block before work on weekdays.\n- The user temporarily studied later in the evenings due to feeling overwhelmed before the exam.\n- The user is completing a part-time master's degree while working full-time.\n- The user values staying connected with two close friends.\n- The user’s usual routine prioritizes quiet morning study time."
+  },
+  "LTM_006": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user works as a junior accountant at a small firm.\\n- The user usually prepares weekday meals on Sundays.\\n- The user is training for a 10-kilometre charity run.\\n- The user felt disappointment about missing their usual Sunday meal preparation this week.\\n- The user views the missed preparation as a one-time disruption rather than a change in routine.\"}",
+    "memory": "- The user works as a junior accountant at a small firm.\n- The user usually prepares weekday meals on Sundays.\n- The user is training for a 10-kilometre charity run.\n- The user felt disappointment about missing their usual Sunday meal preparation this week.\n- The user views the missed preparation as a one-time disruption rather than a change in routine."
+  },
+  "LTM_007": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- User began a first-year architecture program in October.\\n- User is no longer preparing for the national architecture entrance examination.\\n- User attends afternoon studio sessions as part of the program.\"}",
+    "memory": "- User began a first-year architecture program in October.\n- User is no longer preparing for the national architecture entrance examination.\n- User attends afternoon studio sessions as part of the program."
+  },
+  "LTM_008": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- Works as a community librarian.\\n- Prefers weekday lunchtime walks as regular exercise.\\n- Stopped morning workouts three months ago.\\n- Finds the lunchtime walk fits their schedule better.\"}",
+    "memory": "- Works as a community librarian.\n- Prefers weekday lunchtime walks as regular exercise.\n- Stopped morning workouts three months ago.\n- Finds the lunchtime walk fits their schedule better."
+  },
+  "LTM_009": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is a first-year law student.\\n- The user enjoys sketching in their free time.\\n- The user experienced anger and sadness after a disagreement with a teammate.\\n- The user recognized a tendency to briefly generalize from a single event.\\n- The user plans to discuss the issue with the teammate after cooling down.\\n- The user views speaking after emotions settle as a helpful coping approach.\"}",
+    "memory": "- The user is a first-year law student.\n- The user enjoys sketching in their free time.\n- The user experienced anger and sadness after a disagreement with a teammate.\n- The user recognized a tendency to briefly generalize from a single event.\n- The user plans to discuss the issue with the teammate after cooling down.\n- The user views speaking after emotions settle as a helpful coping approach."
+  },
+  "LTM_010": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- User is contemplating a potential job opportunity in another city but has not researched the position or decided to apply.\\n- User feels a brief sense of excitement about the imagined change, alongside uncertainty about actually moving.\"}",
+    "memory": "- User is contemplating a potential job opportunity in another city but has not researched the position or decided to apply.\n- User feels a brief sense of excitement about the imagined change, alongside uncertainty about actually moving."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "LTM_001": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is an architecture student who values careful, high-quality work.\\n- The user frequently delays starting large academic assignments until deadlines approach.\\n- Delaying tasks leads to feelings of anxiety and guilt for the user.\\n- A brief, structured outline session (e.g., 20 minutes) helps the user begin tasks and makes them feel more manageable.\\n- The user recognizes that early initiation reduces deadline pressure.\\n- The user experiences fear related to academic deadlines.\\n- The pattern of procrastination on major assignments is currently active.\\n- The user benefits from short, focused planning sessions as a coping strategy.\"}",
+    "memory": "- The user is an architecture student who values careful, high-quality work.\n- The user frequently delays starting large academic assignments until deadlines approach.\n- Delaying tasks leads to feelings of anxiety and guilt for the user.\n- A brief, structured outline session (e.g., 20 minutes) helps the user begin tasks and makes them feel more manageable.\n- The user recognizes that early initiation reduces deadline pressure.\n- The user experiences fear related to academic deadlines.\n- The pattern of procrastination on major assignments is currently active.\n- The user benefits from short, focused planning sessions as a coping strategy."
+  },
+  "LTM_002": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- User works in customer support.\\n- User values maintaining a clear boundary between work and personal time.\\n- User often takes a short walk after demanding late shifts to transition out of work mode.\\n- A 15‑minute walk helps the user feel less stuck in work mode.\\n- User plans to continue using post‑shift walks as a coping routine.\"}",
+    "memory": "- User works in customer support.\n- User values maintaining a clear boundary between work and personal time.\n- User often takes a short walk after demanding late shifts to transition out of work mode.\n- A 15‑minute walk helps the user feel less stuck in work mode.\n- User plans to continue using post‑shift walks as a coping routine."
+  },
+  "LTM_003": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is a postgraduate biology student.\\n- The user prefers having assignment instructions available in writing.\\n- Ambiguous academic instructions trigger worry and cause the user to reread materials repeatedly before seeking clarification.\\n- The user experiences fear of looking foolish when considering asking for clarification.\\n- Recognizing that asking one concise, focused question helps the user move forward.\\n- The user finds sending a brief clarification message an effective coping approach.\\n- This pattern of delayed clarification in response to unclear instructions remains active.\"}",
+    "memory": "- The user is a postgraduate biology student.\n- The user prefers having assignment instructions available in writing.\n- Ambiguous academic instructions trigger worry and cause the user to reread materials repeatedly before seeking clarification.\n- The user experiences fear of looking foolish when considering asking for clarification.\n- Recognizing that asking one concise, focused question helps the user move forward.\n- The user finds sending a brief clarification message an effective coping approach.\n- This pattern of delayed clarification in response to unclear instructions remains active."
+  },
+  "LTM_004": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user values maintaining close friendships.\\n- The user prefers thoughtful communication during difficult conversations.\\n- The user copes with disagreements by waiting until calmer before reaching out.\\n- The user writes down the main point they want to convey before messaging a friend after conflict.\"}",
+    "memory": "- The user values maintaining close friendships.\n- The user prefers thoughtful communication during difficult conversations.\n- The user copes with disagreements by waiting until calmer before reaching out.\n- The user writes down the main point they want to convey before messaging a friend after conflict."
+  },
+  "LTM_005": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is preparing for a certification exam and feels nervous about it.\\n- The user maintains a quiet morning study block before work when their schedule permits.\\n- This week the user studied later in the evenings, which was an unusual but temporary change.\\n- The user is completing a part-time master's degree while working full-time.\\n- The user values staying connected with two close friends.\\n- The user regularly protects quiet morning study time as a recurring behavior.\\n- The user experiences fear related to upcoming certification exams.\\n- The user’s preferred study environment is quiet mornings before work.\"}",
+    "memory": "- The user is preparing for a certification exam and feels nervous about it.\n- The user maintains a quiet morning study block before work when their schedule permits.\n- This week the user studied later in the evenings, which was an unusual but temporary change.\n- The user is completing a part-time master's degree while working full-time.\n- The user values staying connected with two close friends.\n- The user regularly protects quiet morning study time as a recurring behavior.\n- The user experiences fear related to upcoming certification exams.\n- The user’s preferred study environment is quiet mornings before work."
+  },
+  "LTM_006": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- Works as a junior accountant at a small firm\\n- Usually prepares weekday meals on Sundays\\n- Training for a 10-kilometre charity run\\n- Felt disappointment when overtime prevented Sunday meal preparation\\n- Views missed meal preparation as a one-time disruption, not a routine change\"}",
+    "memory": "- Works as a junior accountant at a small firm\n- Usually prepares weekday meals on Sundays\n- Training for a 10-kilometre charity run\n- Felt disappointment when overtime prevented Sunday meal preparation\n- Views missed meal preparation as a one-time disruption, not a routine change"
+  },
+  "LTM_007": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user began a first-year architecture program in October.\\n- The user attends afternoon studio sessions as part of the program.\\n- The user is excited that the architecture program has started.\\n- The user previously prepared for the national architecture entrance examination but no longer does so.\\n- The user received an offer to the architecture program after the entrance exam in August.\"}",
+    "memory": "- The user began a first-year architecture program in October.\n- The user attends afternoon studio sessions as part of the program.\n- The user is excited that the architecture program has started.\n- The user previously prepared for the national architecture entrance examination but no longer does so.\n- The user received an offer to the architecture program after the entrance exam in August."
+  },
+  "LTM_008": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- Works as a community librarian.\\n- Previously exercised before work on weekday mornings.\\n- Currently takes a weekday lunchtime walk consistently.\\n- The lunchtime walk fits the user's schedule better.\\n- The user feels content with the current routine.\"}",
+    "memory": "- Works as a community librarian.\n- Previously exercised before work on weekday mornings.\n- Currently takes a weekday lunchtime walk consistently.\n- The lunchtime walk fits the user's schedule better.\n- The user feels content with the current routine."
+  }
+}

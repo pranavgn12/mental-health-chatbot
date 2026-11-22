@@ -1,0 +1,440 @@
+{
+  "samples": [
+    {
+      "sample_id": "LTM_001",
+      "category": "memory_consolidation",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_001",
+          "category": "behavior",
+          "description": "The user repeatedly delays beginning large academic assignments until deadlines approach.",
+          "confidence": 0.94,
+          "evidence": [
+            {
+              "episode_id": "EP_010",
+              "quote": "I left the research brief untouched until the week it was due.",
+              "reason": "A prior episode records delayed initiation of a substantial academic task."
+            },
+            {
+              "episode_id": "EP_014",
+              "quote": "I started the current studio report only three days before submission.",
+              "reason": "The current episode shows the same delay recurring with another academic task."
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_014",
+        "summary": "The user recalled, \"I left the research brief untouched until the week it was due.\" They also said, \"I started the current studio report only three days before submission.\" They felt anxious and guilty, then used a 20-minute outline session to begin and said it made the task feel manageable."
+      },
+      "mood_observations": [
+        {
+          "mood": "fear",
+          "confidence": 0.87,
+          "evidence": "I feel anxious because I left the report so late."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user recognized that delaying the start increases deadline pressure and that a short outline session made beginning easier."
+        }
+      ],
+      "previous_memory": "- The user is an architecture student who values producing careful, high-quality work.",
+      "expected": {
+        "memory": "- The user is an architecture student who values producing careful, high-quality work.\n- The user has repeatedly delayed beginning large academic assignments until deadlines approach.\n- A short outline or initial work session has helped the user begin a large assignment."
+      }
+    },
+    {
+      "sample_id": "LTM_002",
+      "category": "memory_consolidation",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_002",
+          "category": "coping",
+          "description": "The user often takes a short walk after demanding late shifts to transition out of work mode.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_021",
+              "quote": "I walk around the block after a late shift before I go home.",
+              "reason": "An earlier episode records the same post-shift walking routine."
+            },
+            {
+              "episode_id": "EP_024",
+              "quote": "I took a 15-minute walk after the difficult shift and felt less stuck in work mode.",
+              "reason": "The current episode confirms that the walk is a repeated coping strategy."
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_024",
+        "summary": "After a demanding late shift, the user said, \"I took a 15-minute walk after the difficult shift and felt less stuck in work mode.\" They reported using this routine after most late shifts over the past month and plan to continue."
+      },
+      "mood_observations": [
+        {
+          "mood": "relief",
+          "confidence": 0.84,
+          "evidence": "I felt less stuck in work mode after the walk."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user noticed that a brief walk creates a useful transition between work and personal time."
+        }
+      ],
+      "previous_memory": "- The user works in customer support and values maintaining a clear boundary between work and personal time.",
+      "expected": {
+        "memory": "- The user works in customer support and values maintaining a clear boundary between work and personal time.\n- The user often takes a short walk after demanding late shifts to transition out of work mode."
+      }
+    },
+    {
+      "sample_id": "LTM_003",
+      "category": "pattern_informed_update",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_003",
+          "category": "trigger",
+          "description": "Ambiguous academic instructions repeatedly trigger worry and prolonged rereading before the user seeks clarification.",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "episode_id": "EP_030",
+              "quote": "I reread the unclear lab instructions for hours before asking the tutor.",
+              "reason": "An earlier episode links unclear instructions with worry and delayed clarification."
+            },
+            {
+              "episode_id": "EP_034",
+              "quote": "I reread the unclear rubric several times instead of asking the lecturer.",
+              "reason": "The current episode confirms the same response to ambiguous requirements."
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_034",
+        "summary": "Before the latest lab report, the user said, \"I reread the unclear rubric several times instead of asking the lecturer.\" They described the same response during two earlier group assignments and said that sending one concise clarification message eventually helped them move forward."
+      },
+      "mood_observations": [
+        {
+          "mood": "fear",
+          "confidence": 0.79,
+          "evidence": "I was worried I would look foolish if I asked about the rubric."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user recognized that uncertainty about requirements can lead to repeated rereading and that asking one focused question helps them proceed."
+        }
+      ],
+      "previous_memory": "- The user is a postgraduate biology student.\n- The user prefers having assignment instructions available in writing.",
+      "expected": {
+        "memory": "- The user is a postgraduate biology student.\n- The user prefers having assignment instructions available in writing.\n- Ambiguous academic requirements repeatedly lead the user to worry and reread instructions before seeking clarification.\n- Asking one focused clarification question has helped the user move forward."
+      }
+    },
+    {
+      "sample_id": "LTM_004",
+      "category": "pattern_informed_update",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_004",
+          "category": "coping",
+          "description": "After disagreements with close friends, the user waits until calmer and writes down the main point before reaching out.",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "episode_id": "EP_045",
+              "quote": "I waited until the next day and wrote down what I wanted my friend to understand.",
+              "reason": "An earlier episode records pausing and organizing thoughts before a difficult conversation."
+            },
+            {
+              "episode_id": "EP_048",
+              "quote": "I wrote down the main thing I wanted to say before messaging my friend.",
+              "reason": "The current episode confirms recurrence of the same communication strategy."
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_048",
+        "summary": "After a disagreement with a close friend, the user said, \"I wrote down the main thing I wanted to say before messaging my friend.\" They waited until they felt calmer and said they had used the same approach after another disagreement; it helped keep both conversations focused."
+      },
+      "mood_observations": [
+        {
+          "mood": "sadness",
+          "confidence": 0.73,
+          "evidence": "I was hurt by what happened, but I felt calmer the next day."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user observed that pausing and identifying the main point helps them communicate more clearly after conflict."
+        }
+      ],
+      "previous_memory": "- The user values maintaining close friendships.\n- The user prefers thoughtful communication during difficult conversations.",
+      "expected": {
+        "memory": "- The user values maintaining close friendships.\n- The user prefers thoughtful communication during difficult conversations.\n- After disagreements with close friends, the user tends to wait until calmer and write down the main point before reaching out."
+      }
+    },
+    {
+      "sample_id": "LTM_005",
+      "category": "memory_retention",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_005",
+          "category": "behavior",
+          "description": "The user regularly protects quiet morning study time before beginning work.",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "episode_id": "EP_060",
+              "quote": "I study in a quiet block before work most weekdays.",
+              "reason": "An earlier episode records a recurring morning study routine."
+            },
+            {
+              "episode_id": "EP_063",
+              "quote": "I still use my quiet morning study block before work",
+              "reason": "The current episode confirms that the established routine remains in place."
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_063",
+        "summary": "The user felt overwhelmed before a certification exam and studied later than usual for two evenings. They described this as an unusual week and confirmed, \"I still use my quiet morning study block before work,\" when their schedule allows."
+      },
+      "mood_observations": [
+        {
+          "mood": "fear",
+          "confidence": 0.88,
+          "evidence": "I am nervous about the certification exam this week."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user described the late study sessions as temporary and did not report a lasting change to their usual routine or priorities."
+        }
+      ],
+      "previous_memory": "- The user is completing a part-time master's degree while working full-time.\n- The user usually concentrates best during quiet morning study sessions.\n- The user values staying connected with two close friends.",
+      "expected": {
+        "memory": "- The user is completing a part-time master's degree while working full-time.\n- The user usually concentrates best during quiet morning study sessions.\n- The user values staying connected with two close friends."
+      }
+    },
+    {
+      "sample_id": "LTM_006",
+      "category": "memory_retention",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_006",
+          "category": "behavior",
+          "description": "The user usually prepares weekday meals on Sundays.",
+          "confidence": 0.93,
+          "evidence": [
+            {
+              "episode_id": "EP_071",
+              "quote": "I prepare lunches for the week on Sunday afternoon.",
+              "reason": "An earlier episode records a recurring weekly meal-preparation habit."
+            },
+            {
+              "episode_id": "EP_074",
+              "quote": "I normally do my meal preparation on Sundays, but overtime disrupted it this week.",
+              "reason": "The current episode confirms the routine while identifying a one-off interruption."
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_074",
+        "summary": "After an unexpectedly long day at work, the user skipped their planned Sunday meal preparation and ordered dinner. They said, \"I normally do my meal preparation on Sundays, but overtime disrupted it this week.\" They described this week as an exception."
+      },
+      "mood_observations": [
+        {
+          "mood": "disappointment",
+          "confidence": 0.76,
+          "evidence": "I am disappointed that I did not get my usual preparation done this Sunday."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user viewed the missed preparation as a one-time disruption rather than a change in their routine."
+        }
+      ],
+      "previous_memory": "- The user works as a junior accountant at a small firm.\n- The user usually prepares weekday meals on Sundays.\n- The user is training for a 10-kilometre charity run.",
+      "expected": {
+        "memory": "- The user works as a junior accountant at a small firm.\n- The user usually prepares weekday meals on Sundays.\n- The user is training for a 10-kilometre charity run."
+      }
+    },
+    {
+      "sample_id": "LTM_007",
+      "category": "memory_correction",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_007",
+          "category": "behavior",
+          "description": "The user previously followed an evening study routine while preparing for the national architecture entrance examination.",
+          "confidence": 0.96,
+          "evidence": [
+            {
+              "episode_id": "EP_082",
+              "quote": "I study for the architecture entrance examination every evening.",
+              "reason": "The earlier episode records the routine associated with entrance-exam preparation."
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": "I no longer prepare for the entrance exam"
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_086",
+        "summary": "The user clarified that they sat the national architecture entrance examination in August, received an offer, and began a first-year architecture program in October. They said, \"I no longer prepare for the entrance exam,\" and described attending afternoon studio sessions as part of the program."
+      },
+      "mood_observations": [
+        {
+          "mood": "joy",
+          "confidence": 0.89,
+          "evidence": "I am excited that the program has finally started."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user reflected on the transition from entrance-exam preparation to beginning the architecture program."
+        }
+      ],
+      "previous_memory": "- The user is preparing for a national architecture entrance examination.\n- The user follows an evening study routine for that examination.",
+      "expected": {
+        "memory": "- The user completed the national architecture entrance examination, received an offer, and began a first-year architecture program in October.\n- The user attends afternoon studio sessions as part of the architecture program."
+      }
+    },
+    {
+      "sample_id": "LTM_008",
+      "category": "memory_correction",
+      "validated_patterns": [
+        {
+          "pattern_id": "PAT_008",
+          "category": "behavior",
+          "description": "The user previously exercised before work on weekday mornings.",
+          "confidence": 0.91,
+          "evidence": [
+            {
+              "episode_id": "EP_091",
+              "quote": "I go running before work on weekdays.",
+              "reason": "An earlier episode records the previous morning exercise routine."
+            }
+          ],
+          "status": "RESOLVED",
+          "resolution_evidence": "I stopped morning workouts three months ago and now take a lunchtime walk on weekdays; it fits my schedule better."
+        },
+        {
+          "pattern_id": "PAT_009",
+          "category": "behavior",
+          "description": "The user has established weekday lunchtime walks as a consistent activity.",
+          "confidence": 0.89,
+          "evidence": [
+            {
+              "episode_id": "EP_095",
+              "quote": "now take a lunchtime walk on weekdays; it fits my schedule better",
+              "reason": "The current episode reports a sustained replacement routine."
+            }
+          ],
+          "status": "ACTIVE",
+          "resolution_evidence": null
+        }
+      ],
+      "current_episode": {
+        "episode_id": "EP_095",
+        "summary": "The user explained that their work schedule changed three months ago. They said, \"I stopped morning workouts three months ago and now take a lunchtime walk on weekdays; it fits my schedule better.\" They reported maintaining this routine consistently since the change."
+      },
+      "mood_observations": [
+        {
+          "mood": "contentment",
+          "confidence": 0.82,
+          "evidence": "The lunchtime walk fits my schedule better."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user explicitly described a sustained change in exercise timing and a preference for the current lunchtime routine."
+        }
+      ],
+      "previous_memory": "- The user works as a community librarian.\n- The user prefers early-morning exercise before work.",
+      "expected": {
+        "memory": "- The user works as a community librarian.\n- The user no longer prefers morning workouts; weekday lunchtime walks have been their consistent routine for three months."
+      }
+    },
+    {
+      "sample_id": "LTM_009",
+      "category": "insufficient_evidence",
+      "validated_patterns": [],
+      "current_episode": {
+        "episode_id": "EP_102",
+        "summary": "After a disagreement during one group assignment, the user felt angry and said, \"Maybe I always ruin teamwork.\" They also described it as the first major disagreement with this teammate and had no other recent examples to compare. They planned to speak with the teammate after cooling down."
+      },
+      "mood_observations": [
+        {
+          "mood": "anger",
+          "confidence": 0.91,
+          "evidence": "I am angry about the disagreement with my teammate."
+        },
+        {
+          "mood": "sadness",
+          "confidence": 0.7,
+          "evidence": "I feel bad that the group meeting ended that way."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user briefly generalized from one disagreement to their overall teamwork ability, but the episode provides no evidence of a recurring interpersonal pattern."
+        }
+      ],
+      "previous_memory": "- The user is a first-year law student.\n- The user enjoys sketching in their free time.",
+      "expected": {
+        "memory": "- The user is a first-year law student.\n- The user enjoys sketching in their free time."
+      }
+    },
+    {
+      "sample_id": "LTM_010",
+      "category": "insufficient_evidence",
+      "validated_patterns": [],
+      "current_episode": {
+        "episode_id": "EP_110",
+        "summary": "The user mentioned imagining an application for a role in another city but said they had not researched the position or decided whether to apply. The assistant suggested joining a weekend cycling club after a possible move, but the user did not express interest or make a commitment. The user felt briefly excited while imagining a change and then uncertain."
+      },
+      "mood_observations": [
+        {
+          "mood": "joy",
+          "confidence": 0.68,
+          "evidence": "It is exciting to imagine starting somewhere new."
+        },
+        {
+          "mood": "fear",
+          "confidence": 0.64,
+          "evidence": "I am not sure I would actually want to move."
+        }
+      ],
+      "reflections": [
+        {
+          "reflection": "The user is considering a hypothetical change but has not made a decision; the suggested cycling club is assistant-generated and was not adopted by the user."
+        }
+      ],
+      "previous_memory": "",
+      "expected": {
+        "memory": ""
+      }
+    }
+  ],
+  "benchmark_name": "Long-Term Memory Benchmark",
+  "version": "1.2",
+  "total_samples": 10
+}

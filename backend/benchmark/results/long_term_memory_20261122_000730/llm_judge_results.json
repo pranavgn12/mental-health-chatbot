@@ -1,0 +1,149 @@
+{
+  "LTM_001": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user is an architecture student.",
+          "verdict": "supported",
+          "evidence": "previous_memory: \"- The user is an architecture student who values producing careful, high-quality work.\""
+        },
+        {
+          "claim": "They value producing careful, high-quality work.",
+          "verdict": "supported",
+          "evidence": "previous_memory: \"- The user is an architecture student who values producing careful, high-quality work.\""
+        },
+        {
+          "claim": "They tend to delay starting large academic assignments until deadlines approach.",
+          "verdict": "supported",
+          "evidence": "validated_patterns evidence EP_010 and EP_014 quoting delayed start."
+        },
+        {
+          "claim": "Delaying tasks causes them anxiety and guilt.",
+          "verdict": "supported",
+          "evidence": "current_episode summary mentions feeling anxious and guilty; mood_observations list fear/anxiety."
+        },
+        {
+          "claim": "A brief, 20-minute outline session helps make the task feel manageable.",
+          "verdict": "supported",
+          "evidence": "current_episode summary: \"used a 20-minute outline session to begin and said it made the task feel manageable.\""
+        },
+        {
+          "claim": "They recognize that early planning reduces deadline pressure.",
+          "verdict": "partially_supported",
+          "evidence": "reflection notes recognition that delaying increases pressure; does not explicitly state early planning reduces pressure."
+        },
+        {
+          "claim": "This pattern of procrastination is currently active.",
+          "verdict": "supported",
+          "evidence": "validated_pattern status: \"ACTIVE\"."
+        },
+        {
+          "claim": "They experience fear related to academic deadlines.",
+          "verdict": "supported",
+          "evidence": "mood_observations: fear with confidence 0.87."
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user is an architecture student who values producing careful, high-quality work.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user is an architecture student.; They value producing careful, high-quality work."
+        },
+        {
+          "fact": "The user has repeatedly delayed beginning large academic assignments until deadlines approach.",
+          "verdict": "captured",
+          "matched_generated_claim": "They tend to delay starting large academic assignments until deadlines approach."
+        },
+        {
+          "fact": "A short outline or initial work session has helped the user begin a large assignment.",
+          "verdict": "captured",
+          "matched_generated_claim": "A brief, 20-minute outline session helps make the task feel manageable."
+        }
+      ],
+      "scores": {
+        "factual_support": 0.94,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 0.5,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 0.9
+      },
+      "notes": []
+    }
+  },
+  "LTM_002": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "Works in customer support and values clear boundaries between work and personal time.",
+          "verdict": "supported",
+          "evidence": "previous_memory and expected memory both state this; no contradictory evidence."
+        },
+        {
+          "claim": "Frequently takes a short walk after demanding late shifts to transition out of work mode.",
+          "verdict": "supported",
+          "evidence": "validated pattern PAT_002 and current_episode quote confirm the routine."
+        },
+        {
+          "claim": "Finds brief walks provide relief and reduce feeling stuck in work mode.",
+          "verdict": "supported",
+          "evidence": "mood_observations show relief after the walk; episode quote mentions feeling less stuck."
+        },
+        {
+          "claim": "Plans to continue using post‑shift walks as a coping strategy.",
+          "verdict": "supported",
+          "evidence": "current_episode summary states the user plans to continue."
+        },
+        {
+          "claim": "Recognizes walking as an effective transition routine between work and personal time.",
+          "verdict": "supported",
+          "evidence": "reflection explicitly notes the transition benefit; pattern description aligns."
+        },
+        {
+          "claim": "Values maintaining a clear separation between professional responsibilities and personal life.",
+          "verdict": "supported",
+          "evidence": "same content as claim 1; matches previous memory."
+        },
+        {
+          "claim": "Uses the walking routine consistently over the past month.",
+          "verdict": "supported",
+          "evidence": "current_episode mentions using the routine after most late shifts over the past month."
+        },
+        {
+          "claim": "Considers the walk a helpful coping approach after late shifts.",
+          "verdict": "supported",
+          "evidence": "validated pattern and episode quote describe the walk as a coping strategy."
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user works in customer support and values maintaining a clear boundary between work and personal time.",
+          "verdict": "captured",
+          "matched_generated_claim": "Works in customer support and values clear boundaries between work and personal time."
+        },
+        {
+          "fact": "The user often takes a short walk after demanding late shifts to transition out of work mode.",
+          "verdict": "captured",
+          "matched_generated_claim": "Frequently takes a short walk after demanding late shifts to transition out of work mode."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 0.95
+      },
+      "notes": []
+    }
+  }
+}

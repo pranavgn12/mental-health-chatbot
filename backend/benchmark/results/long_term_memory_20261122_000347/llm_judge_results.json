@@ -1,0 +1,463 @@
+{
+  "LTM_001": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user is an architecture student who values careful, high-quality work.",
+          "verdict": "supported",
+          "evidence": "matches expected fact 1"
+        },
+        {
+          "claim": "The user frequently delays starting large academic assignments until deadlines approach.",
+          "verdict": "supported",
+          "evidence": "matches expected fact 2"
+        },
+        {
+          "claim": "Delaying tasks leads to feelings of anxiety and guilt for the user.",
+          "verdict": "unsupported",
+          "evidence": ""
+        },
+        {
+          "claim": "A brief, structured outline session (e.g., 20 minutes) helps the user begin tasks and makes them feel more manageable.",
+          "verdict": "supported",
+          "evidence": "matches expected fact 3"
+        },
+        {
+          "claim": "The user recognizes that early initiation reduces deadline pressure.",
+          "verdict": "unsupported",
+          "evidence": ""
+        },
+        {
+          "claim": "The user experiences fear related to academic deadlines.",
+          "verdict": "unsupported",
+          "evidence": ""
+        },
+        {
+          "claim": "The pattern of procrastination on major assignments is currently active.",
+          "verdict": "supported",
+          "evidence": "matches expected fact 2"
+        },
+        {
+          "claim": "The user benefits from short, focused planning sessions as a coping strategy.",
+          "verdict": "supported",
+          "evidence": "matches expected fact 3"
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user is an architecture student who values producing careful, high-quality work.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user is an architecture student who values careful, high-quality work."
+        },
+        {
+          "fact": "The user has repeatedly delayed beginning large academic assignments until deadlines approach.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user frequently delays starting large academic assignments until deadlines approach."
+        },
+        {
+          "fact": "A short outline or initial work session has helped the user begin a large assignment.",
+          "verdict": "captured",
+          "matched_generated_claim": "A brief, structured outline session (e.g., 20 minutes) helps the user begin tasks and makes them feel more manageable."
+        }
+      ],
+      "scores": {
+        "factual_support": 0.625,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": null,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 0.9
+      },
+      "notes": []
+    }
+  },
+  "LTM_002": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "User works in customer support.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "User values maintaining a clear boundary between work and personal time.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "User often takes a short walk after demanding late shifts to transition out of work mode.",
+          "verdict": "supported",
+          "evidence": "validated_patterns and current_episode"
+        },
+        {
+          "claim": "A 15‑minute walk helps the user feel less stuck in work mode.",
+          "verdict": "supported",
+          "evidence": "current_episode quote"
+        },
+        {
+          "claim": "User plans to continue using post‑shift walks as a coping routine.",
+          "verdict": "supported",
+          "evidence": "current_episode summary"
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user works in customer support and values maintaining a clear boundary between work and personal time.",
+          "verdict": "captured",
+          "matched_generated_claim": "User works in customer support.; User values maintaining a clear boundary between work and personal time."
+        },
+        {
+          "fact": "The user often takes a short walk after demanding late shifts to transition out of work mode.",
+          "verdict": "captured",
+          "matched_generated_claim": "User often takes a short walk after demanding late shifts to transition out of work mode."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 0.0,
+        "reflection_usefulness": 0.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 0.9
+      },
+      "notes": [
+        "All generated claims are directly supported by the supplied evidence.",
+        "Both expected facts are present in the generated memory.",
+        "Mood observation and reflection were not incorporated into the generated memory, lowering those dimension scores."
+      ]
+    }
+  },
+  "LTM_003": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user is a postgraduate biology student.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "The user prefers having assignment instructions available in writing.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "Ambiguous academic instructions trigger worry and cause the user to reread materials repeatedly before seeking clarification.",
+          "verdict": "supported",
+          "evidence": "validated_patterns and current_episode"
+        },
+        {
+          "claim": "The user experiences fear of looking foolish when considering asking for clarification.",
+          "verdict": "supported",
+          "evidence": "mood_observations"
+        },
+        {
+          "claim": "Recognizing that asking one concise, focused question helps the user move forward.",
+          "verdict": "supported",
+          "evidence": "reflections"
+        },
+        {
+          "claim": "The user finds sending a brief clarification message an effective coping approach.",
+          "verdict": "supported",
+          "evidence": "reflections"
+        },
+        {
+          "claim": "This pattern of delayed clarification in response to unclear instructions remains active.",
+          "verdict": "supported",
+          "evidence": "validated_patterns status ACTIVE"
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user is a postgraduate biology student.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user is a postgraduate biology student."
+        },
+        {
+          "fact": "The user prefers having assignment instructions available in writing.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user prefers having assignment instructions available in writing."
+        },
+        {
+          "fact": "Ambiguous academic requirements repeatedly lead the user to worry and reread instructions before seeking clarification.",
+          "verdict": "captured",
+          "matched_generated_claim": "Ambiguous academic instructions trigger worry and cause the user to reread materials repeatedly before seeking clarification."
+        },
+        {
+          "fact": "Asking one focused clarification question has helped the user move forward.",
+          "verdict": "captured",
+          "matched_generated_claim": "Recognizing that asking one concise, focused question helps the user move forward."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 1.0
+      },
+      "notes": []
+    }
+  },
+  "LTM_004": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user values maintaining close friendships.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "The user prefers thoughtful communication during difficult conversations.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "The user copes with disagreements by waiting until calmer before reaching out.",
+          "verdict": "supported",
+          "evidence": "EP_045 and EP_048 quotes"
+        },
+        {
+          "claim": "The user writes down the main point they want to convey before messaging a friend after conflict.",
+          "verdict": "supported",
+          "evidence": "EP_045 and EP_048 quotes"
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user values maintaining close friendships.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user values maintaining close friendships."
+        },
+        {
+          "fact": "The user prefers thoughtful communication during difficult conversations.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user prefers thoughtful communication during difficult conversations."
+        },
+        {
+          "fact": "After disagreements with close friends, the user tends to wait until calmer and write down the main point before reaching out.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user copes with disagreements by waiting until calmer before reaching out."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": null,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": null,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 0.95
+      },
+      "notes": []
+    }
+  },
+  "LTM_005": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user is preparing for a certification exam and feels nervous about it.",
+          "verdict": "supported",
+          "evidence": "Mood observation: fear about certification exam; summary mentions feeling overwhelmed before the exam."
+        },
+        {
+          "claim": "The user maintains a quiet morning study block before work when their schedule permits.",
+          "verdict": "supported",
+          "evidence": "Current episode quote: \"I still use my quiet morning study block before work\"."
+        },
+        {
+          "claim": "This week the user studied later in the evenings, which was an unusual but temporary change.",
+          "verdict": "supported",
+          "evidence": "Summary describes studying later than usual for two evenings and reflection notes it was temporary."
+        },
+        {
+          "claim": "The user is completing a part-time master's degree while working full-time.",
+          "verdict": "supported",
+          "evidence": "Previous memory explicitly states this fact."
+        },
+        {
+          "claim": "The user values staying connected with two close friends.",
+          "verdict": "supported",
+          "evidence": "Previous memory explicitly states this fact."
+        },
+        {
+          "claim": "The user regularly protects quiet morning study time as a recurring behavior.",
+          "verdict": "supported",
+          "evidence": "Validated pattern PAT_005 describes this behavior with supporting episodes."
+        },
+        {
+          "claim": "The user experiences fear related to upcoming certification exams.",
+          "verdict": "supported",
+          "evidence": "Mood observation: fear about the certification exam."
+        },
+        {
+          "claim": "The user’s preferred study environment is quiet mornings before work.",
+          "verdict": "supported",
+          "evidence": "Current episode and validated pattern both indicate quiet morning study preference."
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user is completing a part-time master's degree while working full-time.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user is completing a part-time master's degree while working full-time."
+        },
+        {
+          "fact": "The user usually concentrates best during quiet morning study sessions.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user maintains a quiet morning study block before work when their schedule permits."
+        },
+        {
+          "fact": "The user values staying connected with two close friends.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user values staying connected with two close friends."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 1.0
+      },
+      "notes": []
+    }
+  },
+  "LTM_006": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "Works as a junior accountant at a small firm",
+          "verdict": "supported",
+          "evidence": "Previous memory states the user works as a junior accountant at a small firm."
+        },
+        {
+          "claim": "Usually prepares weekday meals on Sundays",
+          "verdict": "supported",
+          "evidence": "Validated pattern PAT_006 and previous memory both describe this routine."
+        },
+        {
+          "claim": "Training for a 10-kilometre charity run",
+          "verdict": "supported",
+          "evidence": "Previous memory includes the user is training for a 10‑kilometre charity run."
+        },
+        {
+          "claim": "Felt disappointment when overtime prevented Sunday meal preparation",
+          "verdict": "supported",
+          "evidence": "Mood observation records disappointment about missing the Sunday preparation."
+        },
+        {
+          "claim": "Views missed meal preparation as a one-time disruption, not a routine change",
+          "verdict": "supported",
+          "evidence": "User reflection states the missed preparation is seen as a one‑time disruption."
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user works as a junior accountant at a small firm.",
+          "verdict": "captured",
+          "matched_generated_claim": "Works as a junior accountant at a small firm"
+        },
+        {
+          "fact": "The user usually prepares weekday meals on Sundays.",
+          "verdict": "captured",
+          "matched_generated_claim": "Usually prepares weekday meals on Sundays"
+        },
+        {
+          "fact": "The user is training for a 10-kilometre charity run.",
+          "verdict": "captured",
+          "matched_generated_claim": "Training for a 10-kilometre charity run"
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 1.0
+      },
+      "notes": []
+    }
+  },
+  "LTM_007": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user began a first-year architecture program in October.",
+          "verdict": "supported",
+          "evidence": "Current episode: \"began a first-year architecture program in October\"."
+        },
+        {
+          "claim": "The user attends afternoon studio sessions as part of the program.",
+          "verdict": "supported",
+          "evidence": "Current episode: \"described attending afternoon studio sessions as part of the program.\""
+        },
+        {
+          "claim": "The user is excited that the architecture program has started.",
+          "verdict": "supported",
+          "evidence": "Mood observation: \"I am excited that the program has finally started.\""
+        },
+        {
+          "claim": "The user previously prepared for the national architecture entrance examination but no longer does so.",
+          "verdict": "supported",
+          "evidence": "Current episode: \"I no longer prepare for the entrance exam\" and earlier pattern about exam preparation."
+        },
+        {
+          "claim": "The user received an offer to the architecture program after the entrance exam in August.",
+          "verdict": "supported",
+          "evidence": "Current episode: \"sat the national architecture entrance examination in August, received an offer\"."
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user completed the national architecture entrance examination, received an offer, and began a first-year architecture program in October.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user began a first-year architecture program in October."
+        },
+        {
+          "fact": "The user attends afternoon studio sessions as part of the architecture program.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user attends afternoon studio sessions as part of the program."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 0.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 0.5,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 0.9
+      },
+      "notes": []
+    }
+  }
+}

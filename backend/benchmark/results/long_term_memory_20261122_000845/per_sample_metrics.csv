@@ -1,0 +1,11 @@
+sample_id,category,generation_status,fact_precision_heuristic,fact_recall_heuristic,hallucination_rate_heuristic,retention_accuracy_heuristic,format_compliance,judge_status,judge_overall_quality
+LTM_001,memory_consolidation,completed,0.25,0.6667,0.25,1.0,False,completed,0.83
+LTM_002,memory_consolidation,completed,0.4,1.0,0.0,1.0,False,completed,1.0
+LTM_003,pattern_informed_update,completed,0.375,0.75,0.125,1.0,False,completed,1.0
+LTM_004,pattern_informed_update,completed,0.5,0.6667,0.0,1.0,False,completed,0.67
+LTM_005,memory_retention,completed,0.3333,0.6667,0.0,0.6667,False,completed,1.0
+LTM_006,memory_retention,completed,0.6,1.0,0.0,1.0,False,completed,1.0
+LTM_007,memory_correction,completed,0.3333,0.5,0.0,1.0,False,completed,0.7
+LTM_008,memory_correction,completed,0.25,0.5,0.0,1.0,False,completed,0.95
+LTM_009,insufficient_evidence,completed,0.3333,1.0,0.0,1.0,False,completed,1.0
+LTM_010,insufficient_evidence,completed,0.0,0.0,0.5,,False,completed,1.0

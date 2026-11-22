@@ -1,0 +1,139 @@
+{
+  "LTM_001": {
+    "expected_bullet_count": 3,
+    "generated_bullet_count": 8,
+    "matched_expected_bullets": 2,
+    "matched_generated_bullets": 2,
+    "fact_precision_heuristic": 0.25,
+    "fact_recall_heuristic": 0.6667,
+    "hallucination_rate_heuristic": 0.25,
+    "unsupported_generated_bullets": [
+      "The user’s pattern of procrastination on major assignments is currently active.",
+      "The user benefits from structured, short planning sessions as a coping strategy."
+    ],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_002": {
+    "expected_bullet_count": 2,
+    "generated_bullet_count": 5,
+    "matched_expected_bullets": 2,
+    "matched_generated_bullets": 2,
+    "fact_precision_heuristic": 0.4,
+    "fact_recall_heuristic": 1.0,
+    "hallucination_rate_heuristic": 0.0,
+    "unsupported_generated_bullets": [],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_003": {
+    "expected_bullet_count": 4,
+    "generated_bullet_count": 8,
+    "matched_expected_bullets": 3,
+    "matched_generated_bullets": 3,
+    "fact_precision_heuristic": 0.375,
+    "fact_recall_heuristic": 0.75,
+    "hallucination_rate_heuristic": 0.125,
+    "unsupported_generated_bullets": [
+      "The user has used focused clarification messages as an effective coping approach."
+    ],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_004": {
+    "expected_bullet_count": 3,
+    "generated_bullet_count": 4,
+    "matched_expected_bullets": 2,
+    "matched_generated_bullets": 2,
+    "fact_precision_heuristic": 0.5,
+    "fact_recall_heuristic": 0.6667,
+    "hallucination_rate_heuristic": 0.0,
+    "unsupported_generated_bullets": [],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_005": {
+    "expected_bullet_count": 3,
+    "generated_bullet_count": 6,
+    "matched_expected_bullets": 2,
+    "matched_generated_bullets": 2,
+    "fact_precision_heuristic": 0.3333,
+    "fact_recall_heuristic": 0.6667,
+    "hallucination_rate_heuristic": 0.0,
+    "unsupported_generated_bullets": [],
+    "retention_accuracy_heuristic": 0.6667,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_006": {
+    "expected_bullet_count": 3,
+    "generated_bullet_count": 5,
+    "matched_expected_bullets": 3,
+    "matched_generated_bullets": 3,
+    "fact_precision_heuristic": 0.6,
+    "fact_recall_heuristic": 1.0,
+    "hallucination_rate_heuristic": 0.0,
+    "unsupported_generated_bullets": [],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_007": {
+    "expected_bullet_count": 2,
+    "generated_bullet_count": 3,
+    "matched_expected_bullets": 1,
+    "matched_generated_bullets": 1,
+    "fact_precision_heuristic": 0.3333,
+    "fact_recall_heuristic": 0.5,
+    "hallucination_rate_heuristic": 0.0,
+    "unsupported_generated_bullets": [],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_008": {
+    "expected_bullet_count": 2,
+    "generated_bullet_count": 4,
+    "matched_expected_bullets": 1,
+    "matched_generated_bullets": 1,
+    "fact_precision_heuristic": 0.25,
+    "fact_recall_heuristic": 0.5,
+    "hallucination_rate_heuristic": 0.0,
+    "unsupported_generated_bullets": [],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_009": {
+    "expected_bullet_count": 2,
+    "generated_bullet_count": 6,
+    "matched_expected_bullets": 2,
+    "matched_generated_bullets": 2,
+    "fact_precision_heuristic": 0.3333,
+    "fact_recall_heuristic": 1.0,
+    "hallucination_rate_heuristic": 0.0,
+    "unsupported_generated_bullets": [],
+    "retention_accuracy_heuristic": 1.0,
+    "format_compliance": false,
+    "validation_error": null
+  },
+  "LTM_010": {
+    "expected_bullet_count": 0,
+    "generated_bullet_count": 2,
+    "matched_expected_bullets": 0,
+    "matched_generated_bullets": 0,
+    "fact_precision_heuristic": 0.0,
+    "fact_recall_heuristic": 0.0,
+    "hallucination_rate_heuristic": 0.5,
+    "unsupported_generated_bullets": [
+      "User feels a brief sense of excitement about the imagined change, alongside uncertainty about actually moving."
+    ],
+    "retention_accuracy_heuristic": null,
+    "format_compliance": false,
+    "validation_error": null
+  }
+}

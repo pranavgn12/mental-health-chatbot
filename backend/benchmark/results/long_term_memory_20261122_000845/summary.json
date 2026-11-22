@@ -1,0 +1,63 @@
+{
+  "total_samples": 10,
+  "generation_completed": 10,
+  "generation_failed": 0,
+  "rule_based_completed": 10,
+  "judge_completed": 10,
+  "rule_based_aggregate": {
+    "fact_precision_heuristic": {
+      "macro_average": 0.3375,
+      "n": 10
+    },
+    "fact_recall_heuristic": {
+      "macro_average": 0.675,
+      "n": 10
+    },
+    "hallucination_rate_heuristic": {
+      "macro_average": 0.0875,
+      "n": 10
+    },
+    "retention_accuracy_heuristic": {
+      "macro_average": 0.963,
+      "n": 9
+    }
+  },
+  "llm_judge_aggregate": {
+    "factual_support": {
+      "macro_average": 0.981,
+      "n": 10
+    },
+    "expected_fact_coverage": {
+      "macro_average": 0.95,
+      "n": 10
+    },
+    "preservation_of_previous_memory": {
+      "macro_average": 0.94,
+      "n": 10
+    },
+    "explicit_correction_handling": {
+      "macro_average": 1.0,
+      "n": 8
+    },
+    "validated_pattern_handling": {
+      "macro_average": 1.0,
+      "n": 10
+    },
+    "temporary_mood_handling": {
+      "macro_average": 0.8,
+      "n": 10
+    },
+    "reflection_usefulness": {
+      "macro_average": 0.8,
+      "n": 10
+    },
+    "resolved_pattern_handling": {
+      "macro_average": 0.8889,
+      "n": 9
+    },
+    "overall_quality": {
+      "macro_average": 0.915,
+      "n": 10
+    }
+  }
+}

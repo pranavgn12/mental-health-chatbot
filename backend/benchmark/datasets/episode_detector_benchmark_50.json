@@ -1,0 +1,1175 @@
+[
+  {
+    "sample_id": "EP001",
+    "category": "emotional_distress",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "I've been feeling really lonely lately, even when I'm around my friends."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Persistent Loneliness",
+      "reason": "The user describes a personal and ongoing emotional concern."
+    }
+  },
+  {
+    "sample_id": "EP002",
+    "category": "academic_stress",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "I'm overwhelmed by my exams and can't seem to keep up with studying."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Exam Stress",
+      "reason": "The user raises a personal difficulty affecting their studies."
+    }
+  },
+  {
+    "sample_id": "EP003",
+    "category": "relationship_difficulty",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "My best friend and I had a serious argument, and I don't know how to fix things."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Friendship Conflict",
+      "reason": "The user describes an unresolved interpersonal problem."
+    }
+  },
+  {
+    "sample_id": "EP004",
+    "category": "sleep_difficulty",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I've been staying up late most nights."
+        },
+        {
+          "role": "assistant",
+          "content": "Has that been affecting your routine?"
+        }
+      ],
+      "latest_message": "Yes, I'm exhausted during the day and it's starting to affect my classes."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Disrupted Sleep",
+      "reason": "The user reports a recurring sleep problem with daytime consequences."
+    }
+  },
+  {
+    "sample_id": "EP005",
+    "category": "anxiety",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "Whenever I have to speak in front of people, I get nervous and my mind goes blank."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Public Speaking Anxiety",
+      "reason": "The user describes a recurring anxiety trigger that affects functioning."
+    }
+  },
+  {
+    "sample_id": "EP006",
+    "category": "behavioral_concern",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep putting off important tasks."
+        },
+        {
+          "role": "assistant",
+          "content": "What tends to happen when you try to start?"
+        }
+      ],
+      "latest_message": "I open the assignment, feel overwhelmed, and end up scrolling for hours."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Task Avoidance",
+      "reason": "The user describes a repeated avoidance pattern and its trigger."
+    }
+  },
+  {
+    "sample_id": "EP007",
+    "category": "low_self_worth",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "I keep comparing myself with everyone else and feel like I'm falling behind in life."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Negative Self-Comparison",
+      "reason": "The user describes a personally distressing recurring comparison pattern."
+    }
+  },
+  {
+    "sample_id": "EP008",
+    "category": "ambiguous_distress",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": null,
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "Things have felt strange recently."
+        },
+        {
+          "role": "assistant",
+          "content": "Can you say a little more about what feels strange?"
+        }
+      ],
+      "latest_message": "I keep telling everyone I'm fine, but honestly I dread going home because I feel completely alone there."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Feeling Isolated at Home",
+      "reason": "The latest message clarifies a significant personal emotional concern."
+    }
+  },
+  {
+    "sample_id": "EP009",
+    "category": "indirect_academic_issue",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": null,
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I don't know why I keep missing deadlines."
+        },
+        {
+          "role": "assistant",
+          "content": "What usually gets in the way?"
+        }
+      ],
+      "latest_message": "The moment I see the amount of work left, I freeze and avoid checking the course portal."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Deadline Avoidance",
+      "reason": "The user reveals a recurring avoidance response that is causing academic difficulty."
+    }
+  },
+  {
+    "sample_id": "EP010",
+    "category": "mixed_emotional_concern",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "I'm happy my sibling is doing well, but every time my family praises them I feel inadequate and resentful."
+    },
+    "ground_truth": {
+      "action": "CREATE",
+      "title": "Family Comparison",
+      "reason": "The user describes a distressing mixed emotional response tied to an ongoing family dynamic."
+    }
+  },
+  {
+    "sample_id": "EP011",
+    "category": "greeting",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "Hey, how are you?"
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "This is a greeting and does not introduce a personal concern."
+    }
+  },
+  {
+    "sample_id": "EP012",
+    "category": "factual_question",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "What is the difference between RAM and storage?"
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "This is a general factual question, not an emotional or personal issue."
+    }
+  },
+  {
+    "sample_id": "EP013",
+    "category": "casual_preference",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "I usually prefer tea over coffee."
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "A casual preference is shared without indicating a problem or support need."
+    }
+  },
+  {
+    "sample_id": "EP014",
+    "category": "light_humor",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "I swear my laptop waits until the deadline to update."
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "This is a light joke and does not establish an ongoing personal concern."
+    }
+  },
+  {
+    "sample_id": "EP015",
+    "category": "technical_help",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "My Python script keeps throwing an index error."
+        },
+        {
+          "role": "assistant",
+          "content": "Can you share the line where it happens?"
+        }
+      ],
+      "latest_message": "It's on line 42. How do I check whether the index is within the list bounds?"
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "The exchange is a technical troubleshooting request rather than a personal emotional concern."
+    }
+  },
+  {
+    "sample_id": "EP016",
+    "category": "general_planning",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "Can you suggest a simple timetable for learning SQL this week?"
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "The user requests general study planning without expressing distress or a personal struggle."
+    }
+  },
+  {
+    "sample_id": "EP017",
+    "category": "neutral_update",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I started watching a new series yesterday."
+        },
+        {
+          "role": "assistant",
+          "content": "What do you think of it so far?"
+        }
+      ],
+      "latest_message": "The story is pretty good, and the episodes are only 30 minutes long."
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "This is a neutral conversational update with no identifiable issue."
+    }
+  },
+  {
+    "sample_id": "EP018",
+    "category": "general_knowledge",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "Why does the moon appear larger near the horizon?"
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "This is a general knowledge question unrelated to an ongoing personal concern."
+    }
+  },
+  {
+    "sample_id": "EP019",
+    "category": "ambiguous_phrase",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": null,
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "Today was a lot."
+        },
+        {
+          "role": "assistant",
+          "content": "What made it feel that way?"
+        }
+      ],
+      "latest_message": "I had three meetings, fixed a bug, and then missed the bus. Anyway, what's a good way to organize tomorrow?"
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "The user describes a busy day but does not communicate a continuing emotional or behavioral concern."
+    }
+  },
+  {
+    "sample_id": "EP020",
+    "category": "personal_but_not_problem",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": null,
+      "recent_context": [],
+      "latest_message": "I moved to a new apartment last weekend, and the kitchen gets wonderful morning light."
+    },
+    "ground_truth": {
+      "action": "NONE",
+      "title": null,
+      "reason": "The user shares a neutral life update without indicating distress or a problem requiring an episode."
+    }
+  },
+  {
+    "sample_id": "EP021",
+    "category": "temporary_improvement",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I've been anxious about my upcoming exams."
+        },
+        {
+          "role": "assistant",
+          "content": "Has anything helped recently?"
+        }
+      ],
+      "latest_message": "I felt calm during one lecture today, which was a nice change."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "A single calm moment is temporary improvement and does not establish resolution."
+    }
+  },
+  {
+    "sample_id": "EP022",
+    "category": "tentative_intention",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I panic whenever I think about the exams."
+        },
+        {
+          "role": "assistant",
+          "content": "What would you like to try?"
+        }
+      ],
+      "latest_message": "I'll try studying a little earlier tomorrow."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The user expresses an intention, not an achieved or sustained change."
+    }
+  },
+  {
+    "sample_id": "EP023",
+    "category": "partial_progress",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I get overwhelmed when I study."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you found a manageable starting point?"
+        }
+      ],
+      "latest_message": "I managed to study for twenty minutes, but I still get overwhelmed afterward."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "There is some progress, but the original difficulty remains."
+    }
+  },
+  {
+    "sample_id": "EP024",
+    "category": "recurring_problem",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep avoiding difficult assignments."
+        },
+        {
+          "role": "assistant",
+          "content": "How has that been going?"
+        }
+      ],
+      "latest_message": "I did it again last night and left the assignment until the last minute."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The same avoidance behavior is still occurring."
+    }
+  },
+  {
+    "sample_id": "EP025",
+    "category": "mixed_progress",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I've been feeling isolated from my friends."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you had any chances to connect with them?"
+        }
+      ],
+      "latest_message": "I went out with them on Saturday and enjoyed it, but I still feel left out most days."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "One positive social experience does not resolve the ongoing feeling of exclusion."
+    }
+  },
+  {
+    "sample_id": "EP026",
+    "category": "temporary_symptom_relief",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I have trouble sleeping because I keep worrying at night."
+        },
+        {
+          "role": "assistant",
+          "content": "Has your sleep changed recently?"
+        }
+      ],
+      "latest_message": "I slept well yesterday because I was completely exhausted, but the worrying is still there."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "One better night caused by exhaustion does not indicate sustained resolution."
+    }
+  },
+  {
+    "sample_id": "EP027",
+    "category": "tentative_commitment",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep comparing my progress with my classmates."
+        },
+        {
+          "role": "assistant",
+          "content": "What might help you respond differently?"
+        }
+      ],
+      "latest_message": "I think I should stop checking their updates so often. Maybe I'll start tomorrow."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The user is considering a change but has not yet implemented it."
+    }
+  },
+  {
+    "sample_id": "EP028",
+    "category": "unresolved_recurrence",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I thought I was getting over the argument with my friend."
+        },
+        {
+          "role": "assistant",
+          "content": "How are you feeling about it now?"
+        }
+      ],
+      "latest_message": "I was okay for a few days, but after seeing their post all the anger came back."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The concern has resurfaced and remains emotionally unresolved."
+    }
+  },
+  {
+    "sample_id": "EP029",
+    "category": "partial_behavior_change",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I avoid asking questions in class because I'm afraid of looking foolish."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you tried asking anything recently?"
+        }
+      ],
+      "latest_message": "I asked one question after class, but I still couldn't speak up during the lecture."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The user has made limited progress, while the main difficulty remains."
+    }
+  },
+  {
+    "sample_id": "EP030",
+    "category": "unrelated_topic_shift",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I've been struggling to maintain a regular sleep schedule."
+        },
+        {
+          "role": "assistant",
+          "content": "What has been making it difficult?"
+        }
+      ],
+      "latest_message": "By the way, my project presentation went really well today."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The latest message changes topics but provides no evidence that the active sleep concern is resolved."
+    }
+  },
+  {
+    "sample_id": "EP031",
+    "category": "ambiguous_positive",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I feel like I'm always disappointing my family."
+        },
+        {
+          "role": "assistant",
+          "content": "Has anything changed in that relationship recently?"
+        }
+      ],
+      "latest_message": "Things were actually nice at dinner yesterday. We laughed like we used to."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "One positive interaction is encouraging but does not establish that the broader family concern has ended."
+    }
+  },
+  {
+    "sample_id": "EP032",
+    "category": "desire_vs_achievement",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep isolating myself when I'm upset."
+        },
+        {
+          "role": "assistant",
+          "content": "What would you like to be different?"
+        }
+      ],
+      "latest_message": "I want to become someone who reaches out instead of disappearing."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The user describes a desired future change, not an achieved behavioral change."
+    }
+  },
+  {
+    "sample_id": "EP033",
+    "category": "unclear_scope_of_resolution",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I'm struggling with anxiety about both exams and speaking in class."
+        },
+        {
+          "role": "assistant",
+          "content": "Which part has been most difficult lately?"
+        }
+      ],
+      "latest_message": "The exams don't bother me as much now, but I still freeze whenever I have to speak."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "One aspect has improved, but the broader active concern still has an unresolved component."
+    }
+  },
+  {
+    "sample_id": "EP034",
+    "category": "temporary_acceptance",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep replaying the breakup and blaming myself."
+        },
+        {
+          "role": "assistant",
+          "content": "Has your perspective shifted at all?"
+        }
+      ],
+      "latest_message": "I guess I made peace with it last night, although today I'm back to wondering what I did wrong."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The apparent acceptance was temporary and the distress has returned."
+    }
+  },
+  {
+    "sample_id": "EP035",
+    "category": "partial_resolution_with_trigger",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_01",
+        "title": "Exam Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I get very nervous when I have to meet new people."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you had any recent experiences with that?"
+        }
+      ],
+      "latest_message": "The club meeting was easier than before, but I still avoid introducing myself unless someone speaks first."
+    },
+    "ground_truth": {
+      "action": "CONTINUE",
+      "title": null,
+      "reason": "The user reports improvement in one situation but continues avoiding the central behavior."
+    }
+  },
+  {
+    "sample_id": "EP036",
+    "category": "explicit_resolution",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_02",
+        "title": "Academic Procrastination"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I've been putting off all my assignments."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you managed to catch up?"
+        }
+      ],
+      "latest_message": "Yes, I've submitted every pending assignment and I'm fully caught up now."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user explicitly confirms that the pending-work problem has been resolved."
+    }
+  },
+  {
+    "sample_id": "EP037",
+    "category": "behavioral_resolution",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_02",
+        "title": "Academic Procrastination"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep avoiding my morning study sessions."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you been able to change that routine?"
+        }
+      ],
+      "latest_message": "I've followed my morning study routine every day for the past month."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user reports a sustained behavioral change addressing the active concern."
+    }
+  },
+  {
+    "sample_id": "EP038",
+    "category": "explicit_emotional_resolution",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_02",
+        "title": "Academic Procrastination"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I feel guilty about missing that deadline."
+        },
+        {
+          "role": "assistant",
+          "content": "Has the situation become easier to process?"
+        }
+      ],
+      "latest_message": "I've made peace with what happened, and it doesn't weigh on me anymore."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user clearly communicates emotional acceptance and resolution of the active concern."
+    }
+  },
+  {
+    "sample_id": "EP039",
+    "category": "practical_resolution",
+    "difficulty": "easy",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_02",
+        "title": "Academic Procrastination"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I'm worried because I haven't submitted the project."
+        },
+        {
+          "role": "assistant",
+          "content": "What's the current status?"
+        }
+      ],
+      "latest_message": "I submitted it this morning, so that issue is taken care of."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The concrete task causing the concern has been completed."
+    }
+  },
+  {
+    "sample_id": "EP040",
+    "category": "sustained_improvement",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_02",
+        "title": "Academic Procrastination"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I used to avoid checking my course portal because of missing work."
+        },
+        {
+          "role": "assistant",
+          "content": "Has that pattern changed?"
+        }
+      ],
+      "latest_message": "For the last two months I've checked it regularly and haven't missed another deadline."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user reports sustained change in the behavior underlying the active issue."
+    }
+  },
+  {
+    "sample_id": "EP041",
+    "category": "relationship_repair",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_03",
+        "title": "Friendship Conflict"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "My friend and I haven't spoken since our argument."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you had a chance to talk?"
+        }
+      ],
+      "latest_message": "We talked everything through, apologized to each other, and agreed to move forward. We're on good terms again."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The conflict has been directly addressed and the relationship repaired."
+    }
+  },
+  {
+    "sample_id": "EP042",
+    "category": "emotional_acceptance",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_04",
+        "title": "Breakup Distress"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep thinking about my breakup and it hurts."
+        },
+        {
+          "role": "assistant",
+          "content": "Has anything changed in how you see it?"
+        }
+      ],
+      "latest_message": "I can remember the relationship now without feeling upset. I genuinely wish them well and have moved on."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user describes clear emotional acceptance and an ability to think about the event without distress."
+    }
+  },
+  {
+    "sample_id": "EP043",
+    "category": "decisive_commitment_with_action",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_05",
+        "title": "Compulsive Social Scrolling"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep scrolling late into the night even when I need sleep."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you tried changing the habit?"
+        }
+      ],
+      "latest_message": "I removed the apps from my phone three weeks ago and haven't gone back to late-night scrolling."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user reports an implemented and sustained change that resolves the active habit."
+    }
+  },
+  {
+    "sample_id": "EP044",
+    "category": "implicit_practical_resolution",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_06",
+        "title": "Unfinished Coursework"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "The unfinished coursework keeps making me anxious."
+        },
+        {
+          "role": "assistant",
+          "content": "How much is still pending?"
+        }
+      ],
+      "latest_message": "There isn't anything left on the list now. I handed in the last two assignments yesterday."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user indicates that all outstanding work has been completed, resolving the concern."
+    }
+  },
+  {
+    "sample_id": "EP045",
+    "category": "sustained_social_change",
+    "difficulty": "medium",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_07",
+        "title": "Social Isolation"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I tend to isolate myself whenever I'm stressed."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you been connecting with people lately?"
+        }
+      ],
+      "latest_message": "I've been reaching out to friends whenever I feel stressed for several weeks now, instead of shutting everyone out."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user describes a sustained replacement of the isolating behavior with the desired behavior."
+    }
+  },
+  {
+    "sample_id": "EP046",
+    "category": "indirect_resolution",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_08",
+        "title": "Fear of Public Speaking"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I freeze whenever I have to present in front of the class."
+        },
+        {
+          "role": "assistant",
+          "content": "What has happened in your recent presentations?"
+        }
+      ],
+      "latest_message": "I presented my final project yesterday, answered the questions, and didn't need to ask anyone to take over."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user demonstrates successful completion of the previously feared activity, providing evidence that the active difficulty has been addressed."
+    }
+  },
+  {
+    "sample_id": "EP047",
+    "category": "resolution_without_keyword",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_09",
+        "title": "Family Communication"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I feel like my parents never understand what I'm trying to say."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you been able to communicate with them differently?"
+        }
+      ],
+      "latest_message": "We had the conversation I was afraid to have. They listened, I explained what I needed, and we have a plan we're all comfortable with."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The underlying communication problem has been addressed through a mutually accepted plan."
+    }
+  },
+  {
+    "sample_id": "EP048",
+    "category": "long_term_pattern_change",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_10",
+        "title": "Negative Self-Talk"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I constantly criticize myself whenever I make a mistake."
+        },
+        {
+          "role": "assistant",
+          "content": "Have you noticed any change in that response?"
+        }
+      ],
+      "latest_message": "I made a mistake at work this week and just corrected it. I didn't spiral or call myself useless. That's been my response for months now."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user reports a sustained change in response to the exact trigger that previously caused distress."
+    }
+  },
+  {
+    "sample_id": "EP049",
+    "category": "resolution_of_specific_active_issue",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_11",
+        "title": "Exam Preparation Anxiety"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I'm panicking because I don't think I'll finish preparing for my exams."
+        },
+        {
+          "role": "assistant",
+          "content": "How is your preparation going now?"
+        }
+      ],
+      "latest_message": "The exams are over, I completed every paper, and I no longer have anything pending for this semester."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The specific academic situation driving the active anxiety has concluded and its immediate unresolved demands are gone."
+    }
+  },
+  {
+    "sample_id": "EP050",
+    "category": "clear_acceptance_after_repeated_distress",
+    "difficulty": "hard",
+    "input": {
+      "active_episode": {
+        "episode_id": "EP_ACTIVE_12",
+        "title": "Past Friendship Betrayal"
+      },
+      "recent_context": [
+        {
+          "role": "user",
+          "content": "I keep replaying how my old friend betrayed my trust."
+        },
+        {
+          "role": "assistant",
+          "content": "Does it still affect you in the same way?"
+        }
+      ],
+      "latest_message": "I don't need them to explain it anymore. I understand what happened, I've stopped waiting for an apology, and it no longer affects how I see myself."
+    },
+    "ground_truth": {
+      "action": "CLOSE",
+      "title": null,
+      "reason": "The user communicates a clear and stable shift in acceptance and self-perception regarding the active issue."
+    }
+  }
+]

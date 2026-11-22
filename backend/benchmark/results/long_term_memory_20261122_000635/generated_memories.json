@@ -1,0 +1,22 @@
+{
+  "LTM_001": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is an architecture student.\\n- They value producing careful, high-quality work.\\n- They tend to delay beginning large academic assignments until deadlines approach.\\n- Delaying tasks causes them anxiety and guilt.\\n- A brief, 20‑minute outline session helps make the task feel manageable and facilitates starting.\\n- They recognize that early planning reduces deadline pressure.\\n- This pattern of procrastination is currently active.\\n- They experience fear related to academic deadlines.\"}",
+    "memory": "- The user is an architecture student.\n- They value producing careful, high-quality work.\n- They tend to delay beginning large academic assignments until deadlines approach.\n- Delaying tasks causes them anxiety and guilt.\n- A brief, 20‑minute outline session helps make the task feel manageable and facilitates starting.\n- They recognize that early planning reduces deadline pressure.\n- This pattern of procrastination is currently active.\n- They experience fear related to academic deadlines."
+  },
+  "LTM_002": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user works in customer support.\\n- The user values maintaining a clear boundary between work and personal time.\\n- The user often takes a short walk after demanding late shifts to transition out of work mode.\\n- The user finds a 15‑minute walk helpful for feeling less stuck in work mode.\\n- The user plans to continue using post‑shift walks as a coping routine.\"}",
+    "memory": "- The user works in customer support.\n- The user values maintaining a clear boundary between work and personal time.\n- The user often takes a short walk after demanding late shifts to transition out of work mode.\n- The user finds a 15‑minute walk helpful for feeling less stuck in work mode.\n- The user plans to continue using post‑shift walks as a coping routine."
+  },
+  "LTM_003": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user is a postgraduate biology student.\\n- The user prefers having assignment instructions available in writing.\\n- Ambiguous academic instructions trigger worry and cause the user to reread materials repeatedly before seeking clarification.\\n- The user experiences fear of looking foolish when considering asking for clarification.\\n- Asking a single concise clarification question helps the user overcome uncertainty and proceed with tasks.\\n- The user recognizes that uncertainty about requirements leads to repeated rereading.\\n- The user has used this approach successfully in multiple group assignments.\\n- This pattern of delayed clarification in response to unclear instructions remains active.\"}",
+    "memory": "- The user is a postgraduate biology student.\n- The user prefers having assignment instructions available in writing.\n- Ambiguous academic instructions trigger worry and cause the user to reread materials repeatedly before seeking clarification.\n- The user experiences fear of looking foolish when considering asking for clarification.\n- Asking a single concise clarification question helps the user overcome uncertainty and proceed with tasks.\n- The user recognizes that uncertainty about requirements leads to repeated rereading.\n- The user has used this approach successfully in multiple group assignments.\n- This pattern of delayed clarification in response to unclear instructions remains active."
+  },
+  "LTM_004": {
+    "status": "completed",
+    "raw_response": "{\"memory\":\"- The user values maintaining close friendships.\\n- The user prefers thoughtful communication during difficult conversations.\\n- After disagreements, the user waits until feeling calmer before reaching out.\\n- The user writes down the main point they want to convey before messaging a friend.\\n- This written‑before‑messaging approach helps keep conversations focused.\\n- The user reports feeling sadness after conflicts but feels calmer the following day.\"}",
+    "memory": "- The user values maintaining close friendships.\n- The user prefers thoughtful communication during difficult conversations.\n- After disagreements, the user waits until feeling calmer before reaching out.\n- The user writes down the main point they want to convey before messaging a friend.\n- This written‑before‑messaging approach helps keep conversations focused.\n- The user reports feeling sadness after conflicts but feels calmer the following day."
+  }
+}

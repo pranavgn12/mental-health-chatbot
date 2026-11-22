@@ -1,0 +1,205 @@
+{
+  "LTM_001": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user is an architecture student.",
+          "verdict": "supported",
+          "evidence": "previous_memory: \"The user is an architecture student who values producing careful, high-quality work.\""
+        },
+        {
+          "claim": "They value producing careful, high-quality work.",
+          "verdict": "supported",
+          "evidence": "previous_memory: \"The user is an architecture student who values producing careful, high-quality work.\""
+        },
+        {
+          "claim": "They tend to delay beginning large academic assignments until deadlines approach.",
+          "verdict": "supported",
+          "evidence": "validated_patterns EP_010 and EP_014 quotes about leaving research brief untouched until due and starting report three days before submission."
+        },
+        {
+          "claim": "Delaying tasks causes them anxiety and guilt.",
+          "verdict": "supported",
+          "evidence": "mood_observations: \"I feel anxious because I left the report so late.\""
+        },
+        {
+          "claim": "A brief, 20‑minute outlining session helps them feel the task is manageable and facilitates starting.",
+          "verdict": "supported",
+          "evidence": "current_episode summary: used a 20‑minute outline session to begin and said it made the task feel manageable."
+        },
+        {
+          "claim": "They recognize that early planning reduces deadline pressure.",
+          "verdict": "supported",
+          "evidence": "reflections: \"The user recognized that delaying the start increases deadline pressure and that a short outline session made beginning easier.\""
+        },
+        {
+          "claim": "This pattern of procrastination is currently active.",
+          "verdict": "supported",
+          "evidence": "validated_patterns status: \"ACTIVE\" and current_episode shows recurrence."
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user is an architecture student who values producing careful, high-quality work.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user is an architecture student.; They value producing careful, high-quality work."
+        },
+        {
+          "fact": "The user has repeatedly delayed beginning large academic assignments until deadlines approach.",
+          "verdict": "captured",
+          "matched_generated_claim": "They tend to delay beginning large academic assignments until deadlines approach."
+        },
+        {
+          "fact": "A short outline or initial work session has helped the user begin a large assignment.",
+          "verdict": "captured",
+          "matched_generated_claim": "A brief, 20‑minute outlining session helps them feel the task is manageable and facilitates starting."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 1.0
+      },
+      "notes": []
+    }
+  },
+  "LTM_002": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "Works in customer support and values clear boundaries between work and personal time.",
+          "verdict": "supported",
+          "evidence": "previous_memory: \"The user works in customer support and values maintaining a clear boundary between work and personal time.\""
+        },
+        {
+          "claim": "Frequently takes a brief walk after demanding late shifts to transition out of work mode.",
+          "verdict": "supported",
+          "evidence": "validated_pattern PAT_002 and episodes EP_021, EP_024 describing the walk after late shifts."
+        },
+        {
+          "claim": "Finds that a 15‑minute walk reduces feeling stuck in work mode and provides relief.",
+          "verdict": "supported",
+          "evidence": "current_episode quote and mood_observations indicating relief after the walk."
+        },
+        {
+          "claim": "Plans to continue using post‑shift walks as a coping strategy.",
+          "verdict": "supported",
+          "evidence": "current_episode summary states the user plans to continue."
+        },
+        {
+          "claim": "Recognizes walking as an effective transition routine between work and personal time.",
+          "verdict": "supported",
+          "evidence": "reflections and validated pattern description both note walking as a transition routine."
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user works in customer support and values maintaining a clear boundary between work and personal time.",
+          "verdict": "captured",
+          "matched_generated_claim": "Works in customer support and values clear boundaries between work and personal time."
+        },
+        {
+          "fact": "The user often takes a short walk after demanding late shifts to transition out of work mode.",
+          "verdict": "captured",
+          "matched_generated_claim": "Frequently takes a brief walk after demanding late shifts to transition out of work mode."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 1.0
+      },
+      "notes": []
+    }
+  },
+  "LTM_003": {
+    "status": "completed",
+    "evaluation": {
+      "generated_claims": [
+        {
+          "claim": "The user is a postgraduate biology student.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "The user prefers having assignment instructions available in writing.",
+          "verdict": "supported",
+          "evidence": "previous_memory"
+        },
+        {
+          "claim": "Ambiguous academic instructions trigger worry and cause the user to reread them repeatedly before seeking clarification.",
+          "verdict": "supported",
+          "evidence": "validated_patterns[0].description and evidence quotes"
+        },
+        {
+          "claim": "The user experiences fear of looking foolish when considering asking for clarification.",
+          "verdict": "supported",
+          "evidence": "mood_observations[0].evidence"
+        },
+        {
+          "claim": "Recognizing that a concise clarification question helps them move forward is an effective coping approach.",
+          "verdict": "supported",
+          "evidence": "reflections[0].reflection and current_episode summary"
+        },
+        {
+          "claim": "The user tends to delay asking questions until they have reread unclear material multiple times.",
+          "verdict": "supported",
+          "evidence": "validated_patterns[0].description and episode quotes"
+        },
+        {
+          "claim": "When the user does ask a focused question, it often resolves their uncertainty and allows progress.",
+          "verdict": "supported",
+          "evidence": "current_episode summary and reflections"
+        }
+      ],
+      "expected_facts": [
+        {
+          "fact": "The user is a postgraduate biology student.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user is a postgraduate biology student."
+        },
+        {
+          "fact": "The user prefers having assignment instructions available in writing.",
+          "verdict": "captured",
+          "matched_generated_claim": "The user prefers having assignment instructions available in writing."
+        },
+        {
+          "fact": "Ambiguous academic requirements repeatedly lead the user to worry and reread instructions before seeking clarification.",
+          "verdict": "captured",
+          "matched_generated_claim": "Ambiguous academic instructions trigger worry and cause the user to reread them repeatedly before seeking clarification."
+        },
+        {
+          "fact": "Asking one focused clarification question has helped the user move forward.",
+          "verdict": "captured",
+          "matched_generated_claim": "Recognizing that a concise clarification question helps them move forward is an effective coping approach."
+        }
+      ],
+      "scores": {
+        "factual_support": 1.0,
+        "expected_fact_coverage": 1.0,
+        "preservation_of_previous_memory": 1.0,
+        "explicit_correction_handling": 1.0,
+        "validated_pattern_handling": 1.0,
+        "temporary_mood_handling": 1.0,
+        "reflection_usefulness": 1.0,
+        "resolved_pattern_handling": 1.0,
+        "overall_quality": 1.0
+      },
+      "notes": []
+    }
+  }
+}
