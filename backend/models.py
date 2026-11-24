@@ -8,7 +8,8 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     JSON,
-    Float
+    Float,
+    Date
 )
 
 from database import Base
@@ -39,6 +40,39 @@ class User(Base):
 
     password_hash = Column(
         String(255)
+    )
+
+
+# =========================================================
+# USER PROFILE (one-to-one with users)
+# =========================================================
+
+class Profile(Base):
+    __tablename__ = "profile"
+
+    user_id = Column(
+        Integer,
+        ForeignKey("users.id", ondelete="CASCADE"),
+        primary_key=True
+    )
+
+    name = Column(String(100), nullable=True)
+    date_of_birth = Column(Date, nullable=True)
+    gender = Column(String(30), nullable=True)
+    occupation_status = Column(String(20), nullable=True)
+    degree = Column(String(100), nullable=True)
+    branch = Column(String(150), nullable=True)
+    study_year = Column(String(30), nullable=True)
+    job_title = Column(String(150), nullable=True)
+    city = Column(String(100), nullable=True)
+    state = Column(String(100), nullable=True)
+    country = Column(String(100), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(
+        DateTime,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+        nullable=False
     )
 
 

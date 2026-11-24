@@ -4,7 +4,7 @@ from services.llm_provider import MODEL
 from database import engine
 from models import Base
 from auth_utils import get_current_user
-from routers import auth, chats, messages, memory, documents
+from routers import auth, chats, messages, memory, documents, profile
 
 # Create tables automatically
 Base.metadata.create_all(bind=engine)
@@ -23,6 +23,7 @@ app.add_middleware(
 )
 
 app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
+app.include_router(profile.router, prefix="/profile", tags=["Profile"])
 app.include_router(chats.router, prefix="/chats", tags=["Chats"])
 app.include_router(messages.router, prefix="/messages", tags=["Messages"])
 app.include_router(memory.router, prefix="/memory", tags=["Memory"])

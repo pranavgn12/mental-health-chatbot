@@ -64,16 +64,6 @@ class AIOrchestrator:
         return f"Title: {episode.title or 'Untitled'}\\nSummary: {episode.summary or 'Not yet summarized'}"
 
     @staticmethod
-    def _fallback_summary(episode, transcript):
-        # Never save a raw transcript in the summary field. This explicit
-        # fallback prevents pattern detection from treating dialogue as summary.
-        title = getattr(episode, "title", None) or "Untitled episode"
-        return (
-            f"The episode concerned {title}. "
-            "A concise summary could not be generated for this episode."
-        )
-
-    @staticmethod
     def _reload_episode(db, episode_id):
         return db.query(Episode).filter(Episode.episode_id == episode_id).one_or_none()
 
@@ -120,32 +110,39 @@ class AIOrchestrator:
             transcript = []
         transcript.append({"role": "assistant", "content": reply or ""})
 
-        # Summary generation failure falls back to a deterministic transcript.
+        # A failed/invalid summary must never be replaced with a generic placeholder
+        # and then fed into pattern analysis or long-term memory consolidation.
+        summary_saved = False
         try:
             summary = self.episode_summarizer.summarize(transcript)
             if not isinstance(summary, str) or not summary.strip():
-                raise ValueError("Empty episode summary.")
+                raise ValueError("Episode summarizer returned an empty summary.")
             summary = summary.strip()
-        except Exception:
-            logger.exception("Summary generation failed for %s; using fallback.", episode_id)
-            summary = self._fallback_summary(episode, transcript)
-
-        try:
             episode = self._reload_episode(db, episode_id) or episode
             self.episode_summarizer.save(db, episode, summary)
+            summary_saved = True
         except Exception:
             db.rollback()
-            logger.exception("Summary persistence failed for %s; continuing to closure.", episode_id)
+            logger.exception(
+                "Episode summary generation/persistence failed for %s; "
+                "skipping long-term memory consolidation.",
+                episode_id,
+            )
 
         old_memory = None
         memory_updated = False
-        try:
-            old_memory = self.long_term_memory.retrieve(db, user_id)
-            updated_memory = self.long_term_memory.update(db, user_id, self._reload_episode(db, episode_id) or episode)
-            memory_updated = bool(updated_memory and updated_memory.strip() and updated_memory != old_memory)
-        except Exception:
-            db.rollback()
-            logger.exception("Memory consolidation failed for %s; continuing to closure.", episode_id)
+        if summary_saved:
+            try:
+                old_memory = self.long_term_memory.retrieve(db, user_id)
+                updated_memory = self.long_term_memory.update(
+                    db, user_id, self._reload_episode(db, episode_id) or episode
+                )
+                memory_updated = bool(
+                    updated_memory and updated_memory.strip() and updated_memory != old_memory
+                )
+            except Exception:
+                db.rollback()
+                logger.exception("Memory consolidation failed for %s; continuing to closure.", episode_id)
 
         # Separate final transaction: optional LLM operations above cannot veto closure.
         try:
