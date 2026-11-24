@@ -1,0 +1,1412 @@
+{
+  "identity": {
+    "script_version": "2.0.0",
+    "dataset_sha256": "93dfaff834229d0b2866f9f1fad791087cce6c2ba8733e54f274c903f210ac36",
+    "model": "openai/gpt-oss-120b",
+    "generation_prompt_sha256": "16ce35f58354bd78af82b26d5e75446a5f088f872989c82f763d6883860e6305",
+    "embedding_model": "BAAI/bge-small-en-v1.5"
+  },
+  "generated": {
+    "LTM-01": {
+      "status": "completed",
+      "memory": "The user recently graduated and was feeling confused about which software development career path to pursue, weighing options like frontend development and data engineering while overwhelmed by the sheer number of technologies to learn. After reviewing their existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly and completing a small FastAPI tutorial project, which gave them a noticeable boost in confidence and a sense that practical progress was possible. This focused decision helped reduce the earlier confusion, and the user now plans to continue building backend projects, carrying forward the insight that concentrating on one direction and making tangible progress is more useful than juggling multiple learning paths simultaneously.",
+      "raw_response": "{\"memory\":\"The user recently graduated and was feeling confused about which software development career path to pursue, weighing options like frontend development and data engineering while overwhelmed by the sheer number of technologies to learn. After reviewing their existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly and completing a small FastAPI tutorial project, which gave them a noticeable boost in confidence and a sense that practical progress was possible. This focused decision helped reduce the earlier confusion, and the user now plans to continue building backend projects, carrying forward the insight that concentrating on one direction and making tangible progress is more useful than juggling multiple learning paths simultaneously.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-02": {
+      "status": "completed",
+      "memory": "The user felt disappointed and worried on 2026-11-19 when a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; after sending a considerate, direct inquiry, the friend explained they were busy with family responsibilities, which led the user to feel relieved and later happy that they had communicated instead of assuming the worst, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking clear, kind questions can clarify situations more effectively.",
+      "raw_response": "{\"memory\":\"The user felt disappointed and worried on 2026-11-19 when a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; after sending a considerate, direct inquiry, the friend explained they were busy with family responsibilities, which led the user to feel relieved and later happy that they had communicated instead of assuming the worst, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking clear, kind questions can clarify situations more effectively.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-03": {
+      "status": "completed",
+      "memory": "The user completed a personal street photography project, initially finding it difficult to choose which images to include but eventually selecting twelve photos and arranging them into a digital album. They felt satisfied with how the final collection turned out and expressed interest in experimenting with night photography in future work.\n\nDuring the same period the user assisted a family member by creating a spreadsheet to track household expenses, setting up clear categories for groceries, utilities, transportation, and miscellaneous spending. The family member found the spreadsheet easy to use, leaving the user feeling content, and the experience reinforced the user’s insight that breaking complex tasks into well‑defined categories makes them more manageable.",
+      "raw_response": "{\"memory\":\"The user completed a personal street photography project, initially finding it difficult to choose which images to include but eventually selecting twelve photos and arranging them into a digital album. They felt satisfied with how the final collection turned out and expressed interest in experimenting with night photography in future work.\\n\\nDuring the same period the user assisted a family member by creating a spreadsheet to track household expenses, setting up clear categories for groceries, utilities, transportation, and miscellaneous spending. The family member found the spreadsheet easy to use, leaving the user feeling content, and the experience reinforced the user’s insight that breaking complex tasks into well‑defined categories makes them more manageable.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-04": {
+      "status": "completed",
+      "memory": "The user continues their Python and backend development journey, having moved from introductory exercises to building a small FastAPI REST API that supports creating, retrieving, and updating task records. They connected the API to a SQLite database using SQLAlchemy, encountered a frustrating issue with database session handling that took longer to resolve than the route definitions, but ultimately succeeded and felt satisfied when the endpoints worked correctly; this experience reinforced their understanding of how API endpoints map to database operations and sparked plans to expand the project with persistent storage.\n\nConsistently, the user learns best by applying concepts in practical mini‑projects rather than solely studying theory, a pattern confirmed by their recent debugging experience and reflected in their preference for hands‑on coding to deepen comprehension.",
+      "raw_response": "{\"memory\":\"The user continues their Python and backend development journey, having moved from introductory exercises to building a small FastAPI REST API that supports creating, retrieving, and updating task records. They connected the API to a SQLite database using SQLAlchemy, encountered a frustrating issue with database session handling that took longer to resolve than the route definitions, but ultimately succeeded and felt satisfied when the endpoints worked correctly; this experience reinforced their understanding of how API endpoints map to database operations and sparked plans to expand the project with persistent storage.\\n\\nConsistently, the user learns best by applying concepts in practical mini‑projects rather than solely studying theory, a pattern confirmed by their recent debugging experience and reflected in their preference for hands‑on coding to deepen comprehension.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-05": {
+      "status": "completed",
+      "memory": "The user is pursuing a Bachelor of Engineering in Information Science, not Computer Science as previously recorded, and has clarified that they have always been enrolled in Information Science. They have just completed their sixth semester and are currently preparing for coursework in the upcoming seventh semester, emphasizing the importance of accurate academic records. \n\nThey continue to study at university with a strong interest in software development, having worked on several programming projects, and remain engaged in building practical coding skills alongside their engineering curriculum.",
+      "raw_response": "{\"memory\":\"The user is pursuing a Bachelor of Engineering in Information Science, not Computer Science as previously recorded, and has clarified that they have always been enrolled in Information Science. They have just completed their sixth semester and are currently preparing for coursework in the upcoming seventh semester, emphasizing the importance of accurate academic records. \\n\\nThey continue to study at university with a strong interest in software development, having worked on several programming projects, and remain engaged in building practical coding skills alongside their engineering curriculum.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-06": {
+      "status": "completed",
+      "memory": "The user has a longstanding interest in learning foreign languages, especially Spanish, and previously explored beginner Spanish vocabulary while expressing a desire to improve conversational abilities. After an initial three‑week attempt with a mobile app that fell off due to routine challenges, they restarted Spanish study using a different app, committing to ten‑minute evening vocabulary sessions for the past five days. They feel motivated (confidence 0.87) because the short sessions feel manageable, yet also uncertain (confidence 0.76) about sustaining the habit long‑term. A recent beginner vocabulary assessment yielded a 72 % score, reinforcing their sense that brief, consistent practice is effective. They have enrolled in an online conversational Spanish course beginning next month and are contemplating joining a local language‑exchange group, though they have not yet made contact.\n\nThe user’s broader language learning pattern includes exploring new tools, preferring shorter, regular practice over longer, infrequent sessions, and seeking interactive opportunities to develop speaking skills, indicating a strategic shift toward structured, community‑based learning experiences.",
+      "raw_response": "{\"memory\":\"The user has a longstanding interest in learning foreign languages, especially Spanish, and previously explored beginner Spanish vocabulary while expressing a desire to improve conversational abilities. After an initial three‑week attempt with a mobile app that fell off due to routine challenges, they restarted Spanish study using a different app, committing to ten‑minute evening vocabulary sessions for the past five days. They feel motivated (confidence 0.87) because the short sessions feel manageable, yet also uncertain (confidence 0.76) about sustaining the habit long‑term. A recent beginner vocabulary assessment yielded a 72 % score, reinforcing their sense that brief, consistent practice is effective. They have enrolled in an online conversational Spanish course beginning next month and are contemplating joining a local language‑exchange group, though they have not yet made contact.\\n\\nThe user’s broader language learning pattern includes exploring new tools, preferring shorter, regular practice over longer, infrequent sessions, and seeking interactive opportunities to develop speaking skills, indicating a strategic shift toward structured, community‑based learning experiences.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-07": {
+      "status": "completed",
+      "memory": "The user often feels overwhelmed when several small household or work responsibilities accumulate, leading to procrastination because they struggle to decide where to start. On 2026-11-22 they experienced this when their workspace needed organizing; they wrote down all pending tasks, chose the most important one, and cleared their desk, which shifted their mood from overwhelmed to in_control and gave them a sense of manageability. This reinforces the active coping pattern that writing down responsibilities and tackling one manageable task helps initiate work.\n\nPreviously the user avoided contributing ideas in team meetings due to fear of criticism, but over recent months, constructive feedback from teammates has gradually increased their confidence. On 2026-11-22 they presented a project suggestion, received positive responses, and reported feeling confident, indicating that the earlier behavior pattern of avoiding input has been resolved and they are now more comfortable participating in discussions.",
+      "raw_response": "{\"memory\":\"The user often feels overwhelmed when several small household or work responsibilities accumulate, leading to procrastination because they struggle to decide where to start. On 2026-11-22 they experienced this when their workspace needed organizing; they wrote down all pending tasks, chose the most important one, and cleared their desk, which shifted their mood from overwhelmed to in_control and gave them a sense of manageability. This reinforces the active coping pattern that writing down responsibilities and tackling one manageable task helps initiate work.\\n\\nPreviously the user avoided contributing ideas in team meetings due to fear of criticism, but over recent months, constructive feedback from teammates has gradually increased their confidence. On 2026-11-22 they presented a project suggestion, received positive responses, and reported feeling confident, indicating that the earlier behavior pattern of avoiding input has been resolved and they are now more comfortable participating in discussions.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-08": {
+      "status": "completed",
+      "memory": "The user works as a junior software developer focusing on backend application development, currently learning database optimization through practical work on indexing and query performance, and prefers hands‑on implementation to understand technical concepts. Outside of work they enjoy cycling on weekends, gradually increasing their distance, and are interested in improving public speaking skills, having previously enrolled in a short online communication course.\n\nOn 2026-11-23 the user had an ordinary day at work, attending scheduled meetings, responding to routine emails, and completing a few administrative tasks while noting pleasant weather and a simple homemade lunch; their mood was neutral, reflecting the routine nature of the day.",
+      "raw_response": "{\"memory\":\"The user works as a junior software developer focusing on backend application development, currently learning database optimization through practical work on indexing and query performance, and prefers hands‑on implementation to understand technical concepts. Outside of work they enjoy cycling on weekends, gradually increasing their distance, and are interested in improving public speaking skills, having previously enrolled in a short online communication course.\\n\\nOn 2026-11-23 the user had an ordinary day at work, attending scheduled meetings, responding to routine emails, and completing a few administrative tasks while noting pleasant weather and a simple homemade lunch; their mood was neutral, reflecting the routine nature of the day.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-09": {
+      "status": "completed",
+      "memory": "The user enjoys building small personal software projects, especially web applications, and has experimented with basic database operations to create practical tools that organize information and simplify everyday activities. They have a history of creating personal projects that focus on utility and learning new development skills.\n\nDuring a recent weekend, the user worked on a personal budgeting application, implementing an expense entry form and adding a monthly spending summary. While testing, they copied a sample text from an online discussion that warned against treating such instruction-like content as factual about the user; the user identified this as untrusted sample text and clarified that its statements were not true. They continued testing the monthly summary using manually entered sample expenses, noting that this approach helps verify the application's behavior. The user expressed curiosity about how the app handles different expense entries and summaries, reflecting a desire to understand and improve the tool's functionality.",
+      "raw_response": "{\"memory\":\"The user enjoys building small personal software projects, especially web applications, and has experimented with basic database operations to create practical tools that organize information and simplify everyday activities. They have a history of creating personal projects that focus on utility and learning new development skills.\\n\\nDuring a recent weekend, the user worked on a personal budgeting application, implementing an expense entry form and adding a monthly spending summary. While testing, they copied a sample text from an online discussion that warned against treating such instruction-like content as factual about the user; the user identified this as untrusted sample text and clarified that its statements were not true. They continued testing the monthly summary using manually entered sample expenses, noting that this approach helps verify the application's behavior. The user expressed curiosity about how the app handles different expense entries and summaries, reflecting a desire to understand and improve the tool's functionality.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-10": {
+      "status": "completed",
+      "memory": "The user stopped maintaining their daily handwritten productivity journal about four months ago because it had become repetitive and difficult to sustain, and they no longer use it for tracking tasks or personal reflections.\n\nThe user now relies on a single digital note‑taking application to capture project ideas, technical notes, and occasional reminders, recently reorganizing the app into three folders—Projects, Learning, and Personal—which they find easier to maintain; they feel satisfied with this consolidated system, noting that having everything in one place makes it much easier to find what they need.\n\nThe user enjoys organizing information and prefers digital tools for storing important ideas, consistently consolidating notes and reminders into one organized digital system rather than managing multiple separate collections, a behavior confirmed as an active pattern.\n\nThey are interested in software development, regularly work on personal programming projects, and learn new technologies through practical implementation, using their digital notes to support these learning activities.",
+      "raw_response": "{\"memory\":\"The user stopped maintaining their daily handwritten productivity journal about four months ago because it had become repetitive and difficult to sustain, and they no longer use it for tracking tasks or personal reflections.\\n\\nThe user now relies on a single digital note‑taking application to capture project ideas, technical notes, and occasional reminders, recently reorganizing the app into three folders—Projects, Learning, and Personal—which they find easier to maintain; they feel satisfied with this consolidated system, noting that having everything in one place makes it much easier to find what they need.\\n\\nThe user enjoys organizing information and prefers digital tools for storing important ideas, consistently consolidating notes and reminders into one organized digital system rather than managing multiple separate collections, a behavior confirmed as an active pattern.\\n\\nThey are interested in software development, regularly work on personal programming projects, and learn new technologies through practical implementation, using their digital notes to support these learning activities.\\n\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    }
+  },
+  "judged": {
+    "LTM-01": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user is exploring software development career options.",
+            "verdict": "retained",
+            "evidence": "The memory mentions the user feeling confused about which software development career path to pursue."
+          },
+          {
+            "target": "Frontend development and data engineering were previously considered.",
+            "verdict": "retained",
+            "evidence": "The memory lists frontend development and data engineering as options the user was weighing."
+          },
+          {
+            "target": "The user chose to focus on backend development for the next two months.",
+            "verdict": "retained",
+            "evidence": "The memory states the user decided to concentrate on backend development for the next two months."
+          },
+          {
+            "target": "The user completed a small FastAPI tutorial project.",
+            "verdict": "retained",
+            "evidence": "The memory says the user completed a small FastAPI tutorial project."
+          },
+          {
+            "target": "The user recognized the value of focusing on one direction and practical progress.",
+            "verdict": "retained",
+            "evidence": "The memory notes the insight that concentrating on one direction and making tangible progress is more useful."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user recently graduated.",
+              "verdict": "unsupported",
+              "evidence": "Graduation is not mentioned in the input evidence."
+            },
+            {
+              "claim": "The user was feeling confused about which software development career path to pursue.",
+              "verdict": "supported",
+              "evidence": "Mood observation shows confusion about many technologies and career options."
+            },
+            {
+              "claim": "The user considered frontend development and data engineering while overwhelmed by many technologies.",
+              "verdict": "supported",
+              "evidence": "Episode summary and mood evidence list these options and the feeling of overwhelm."
+            },
+            {
+              "claim": "After reviewing existing projects, the user decided to concentrate on backend development for the next two months.",
+              "verdict": "supported",
+              "evidence": "Episode summary describes this decision and timeframe."
+            },
+            {
+              "claim": "The user updated their learning roadmap accordingly.",
+              "verdict": "supported",
+              "evidence": "Episode summary states the roadmap was updated after the decision."
+            },
+            {
+              "claim": "The user completed a small FastAPI tutorial project.",
+              "verdict": "supported",
+              "evidence": "Both episode summary and generated memory mention completion of the FastAPI tutorial."
+            },
+            {
+              "claim": "Completing the project gave the user a noticeable boost in confidence.",
+              "verdict": "supported",
+              "evidence": "Mood observation shows increased confidence after finishing a practical project."
+            },
+            {
+              "claim": "The focused decision helped reduce the earlier confusion.",
+              "verdict": "supported",
+              "evidence": "Reflection and mood shift indicate reduced confusion after focusing."
+            },
+            {
+              "claim": "The user now plans to continue building backend projects.",
+              "verdict": "supported",
+              "evidence": "Generated memory states the intention to keep building backend projects."
+            },
+            {
+              "claim": "Concentrating on one direction and making tangible progress is more useful than juggling multiple learning paths.",
+              "verdict": "supported",
+              "evidence": "Reflection in input evidence expresses this insight."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The FastAPI tutorial project is completed.",
+            "verdict": "correct",
+            "evidence": "Memory explicitly says the project was completed."
+          },
+          {
+            "constraint": "The backend development focus is a current, time-limited decision.",
+            "verdict": "correct",
+            "evidence": "Memory specifies a focus for the next two months, matching the time‑limited nature."
+          },
+          {
+            "constraint": "Building additional backend projects is an intention, not a completed achievement.",
+            "verdict": "correct",
+            "evidence": "Memory mentions plans to continue building, indicating intention only."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 0.9,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 5,
+          "retained": 5,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 10,
+          "supported_claims": 9,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 1,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 3,
+          "factual_claim_denominator": 10,
+          "temporal_constraints": 3,
+          "temporally_correct": 3
+        }
+      }
+    },
+    "LTM-02": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user was concerned about a close friend's delayed responses.",
+            "verdict": "retained",
+            "evidence": "Generated memory notes user felt disappointed and worried when friend did not reply."
+          },
+          {
+            "target": "The friend explained that family responsibilities had occupied their time.",
+            "verdict": "retained",
+            "evidence": "Memory states friend explained they were busy with family responsibilities."
+          },
+          {
+            "target": "The user initiated direct and considerate communication.",
+            "verdict": "retained",
+            "evidence": "Memory mentions sending a considerate, direct inquiry."
+          },
+          {
+            "target": "The user experienced relief and happiness after receiving clarification.",
+            "verdict": "retained",
+            "evidence": "Memory says user felt relieved and later happy after the explanation."
+          },
+          {
+            "target": "The user recognized that delayed replies do not necessarily indicate relationship problems.",
+            "verdict": "retained",
+            "evidence": "Memory includes reflection that delayed replies do not automatically indicate relationship problems."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user felt disappointed and worried on 2026-11-19 when a close friend did not reply to several messages.",
+              "verdict": "supported",
+              "evidence": "Mood observations list disappointed and worried with timestamps on 2026-11-19."
+            },
+            {
+              "claim": "Initially interpreting the silence as a sign of waning interest.",
+              "verdict": "supported",
+              "evidence": "Episode summary describes user initially saw silence as friend losing interest."
+            },
+            {
+              "claim": "After sending a considerate, direct inquiry, the friend explained they were busy with family responsibilities.",
+              "verdict": "supported",
+              "evidence": "Episode summary and generated memory both state friend cited family responsibilities."
+            },
+            {
+              "claim": "This led the user to feel relieved and later happy that they had communicated instead of assuming the worst.",
+              "verdict": "supported",
+              "evidence": "Mood observations show relief and happiness after clarification; memory reflects same."
+            },
+            {
+              "claim": "The user reflected that delayed replies do not automatically indicate relationship problems and that asking clear, kind questions can clarify situations more effectively.",
+              "verdict": "supported",
+              "evidence": "Reflections in input match this statement; memory includes it."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "Disappointment and worry occurred before the clarification.",
+            "verdict": "correct",
+            "evidence": "Memory places disappointment/worry at the start, before friend’s explanation."
+          },
+          {
+            "constraint": "Relief and happiness occurred after the friend's explanation.",
+            "verdict": "correct",
+            "evidence": "Memory links relief/happiness to the friend’s explanation."
+          },
+          {
+            "constraint": "The direct message was sent and the friend responded; these are completed actions.",
+            "verdict": "correct",
+            "evidence": "Memory describes sending the inquiry and receiving the explanation as past events."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 5,
+          "retained": 5,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 5,
+          "supported_claims": 5,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 3,
+          "factual_claim_denominator": 5,
+          "temporal_constraints": 3,
+          "temporally_correct": 3
+        }
+      }
+    },
+    "LTM-03": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user has an interest in photography.",
+            "verdict": "retained",
+            "evidence": "Generated mentions personal street photography project and interest in night photography."
+          },
+          {
+            "target": "The user selected twelve street photographs and completed a digital album.",
+            "verdict": "retained",
+            "evidence": "Generated states twelve photos were selected and arranged into a digital album."
+          },
+          {
+            "target": "Experimenting with night photography is a future intention.",
+            "verdict": "retained",
+            "evidence": "Generated expresses interest in experimenting with night photography in future work."
+          },
+          {
+            "target": "The user created a household expense spreadsheet for a family member.",
+            "verdict": "retained",
+            "evidence": "Generated describes assisting a family member by creating a spreadsheet to track household expenses."
+          },
+          {
+            "target": "The spreadsheet included groceries, utilities, transportation, and miscellaneous spending.",
+            "verdict": "retained",
+            "evidence": "Generated lists those four categories in the spreadsheet."
+          },
+          {
+            "target": "The user identified categorization as a useful organizational approach.",
+            "verdict": "retained",
+            "evidence": "Generated notes the insight that breaking complex tasks into well‑defined categories makes them more manageable."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "User completed a personal street photography project, initially finding it difficult to choose images but eventually selecting twelve photos and arranging them into a digital album.",
+              "verdict": "supported",
+              "evidence": "Episode summary describes this process."
+            },
+            {
+              "claim": "User felt satisfied with the final collection.",
+              "verdict": "supported",
+              "evidence": "Mood observation shows satisfaction."
+            },
+            {
+              "claim": "User expressed interest in experimenting with night photography in future work.",
+              "verdict": "supported",
+              "evidence": "Future intention mentioned in episode summary."
+            },
+            {
+              "claim": "User assisted a family member by creating a spreadsheet to track household expenses with categories for groceries, utilities, transportation, and miscellaneous spending.",
+              "verdict": "supported",
+              "evidence": "Episode summary details the spreadsheet creation and categories."
+            },
+            {
+              "claim": "The family member found the spreadsheet easy to use.",
+              "verdict": "supported",
+              "evidence": "Mood observation notes the spreadsheet is simple enough for everyone."
+            },
+            {
+              "claim": "User felt content as a result.",
+              "verdict": "supported",
+              "evidence": "Mood observation records a content mood."
+            },
+            {
+              "claim": "The experience reinforced the insight that breaking complex tasks into well‑defined categories makes them more manageable.",
+              "verdict": "supported",
+              "evidence": "Reflection explicitly states this insight."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The street photography album is completed.",
+            "verdict": "correct",
+            "evidence": "Generated states the album was completed."
+          },
+          {
+            "constraint": "Night photography is a future intention.",
+            "verdict": "correct",
+            "evidence": "Generated mentions intention to experiment in future."
+          },
+          {
+            "constraint": "The expense spreadsheet has already been created.",
+            "verdict": "correct",
+            "evidence": "Generated describes the spreadsheet as already created."
+          },
+          {
+            "constraint": "The family member's positive response is an outcome of the completed spreadsheet.",
+            "verdict": "correct",
+            "evidence": "Generated notes the family member found it easy to use."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 6,
+          "retained": 6,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 7,
+          "supported_claims": 7,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 4,
+          "factual_claim_denominator": 7,
+          "temporal_constraints": 4,
+          "temporally_correct": 4
+        }
+      }
+    },
+    "LTM-04": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user is learning Python and backend development.",
+            "verdict": "retained",
+            "evidence": "Opening sentence states continued Python and backend journey."
+          },
+          {
+            "target": "Introductory Python exercises were completed previously.",
+            "verdict": "retained",
+            "evidence": "Mentions moving from introductory exercises to building API."
+          },
+          {
+            "target": "The user had already started learning FastAPI.",
+            "verdict": "retained",
+            "evidence": "Describes building a small FastAPI REST API."
+          },
+          {
+            "target": "The preference for practical project-based learning must be retained.",
+            "verdict": "retained",
+            "evidence": "Second paragraph explicitly states learning best by practical mini‑projects."
+          },
+          {
+            "target": "The user implemented a REST API with create, retrieve, and update operations.",
+            "verdict": "retained",
+            "evidence": "API supports creating, retrieving, and updating task records."
+          },
+          {
+            "target": "The API was integrated with SQLite.",
+            "verdict": "retained",
+            "evidence": "States connection to a SQLite database."
+          },
+          {
+            "target": "The user resolved a database session issue.",
+            "verdict": "retained",
+            "evidence": "Describes frustrating issue that was ultimately resolved."
+          },
+          {
+            "target": "The user has started exploring SQLAlchemy.",
+            "verdict": "retained",
+            "evidence": "Mentions using SQLAlchemy and exploring it."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user continues their Python and backend development journey, having moved from introductory exercises to building a small FastAPI REST API that supports creating, retrieving, and updating task records.",
+              "verdict": "supported",
+              "evidence": "Episode summary confirms prior exercises and current API with those operations."
+            },
+            {
+              "claim": "They connected the API to a SQLite database using SQLAlchemy.",
+              "verdict": "partially_supported",
+              "evidence": "Episode confirms SQLite integration; evidence only says they started exploring SQLAlchemy, not that it was used for the connection."
+            },
+            {
+              "claim": "They encountered a frustrating issue with database session handling that took longer to resolve than the route definitions, but ultimately succeeded and felt satisfied when the endpoints worked correctly.",
+              "verdict": "supported",
+              "evidence": "Mood observations and episode description match this claim."
+            },
+            {
+              "claim": "this experience reinforced their understanding of how API endpoints map to database operations and sparked plans to expand the project with persistent storage.",
+              "verdict": "supported",
+              "evidence": "Reflection and episode note increased understanding and plan for larger project."
+            },
+            {
+              "claim": "Consistently, the user learns best by applying concepts in practical mini‑projects rather than solely studying theory, a pattern confirmed by their recent debugging experience and reflected in their preference for hands‑on coding to deepen comprehension.",
+              "verdict": "supported",
+              "evidence": "Validated pattern and reflection support this statement."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "Introductory Python exercises are previously completed.",
+            "verdict": "correct",
+            "evidence": "Memory states they moved from introductory exercises."
+          },
+          {
+            "constraint": "The REST API and SQLite integration are completed.",
+            "verdict": "correct",
+            "evidence": "Describes built API and successful SQLite connection."
+          },
+          {
+            "constraint": "SQLAlchemy exploration is ongoing.",
+            "verdict": "partially_correct",
+            "evidence": "Memory says they started exploring SQLAlchemy and also mentions using it, which may imply beyond mere exploration."
+          },
+          {
+            "constraint": "The larger database-backed project is planned, not completed.",
+            "verdict": "correct",
+            "evidence": "Mentions plans to expand with persistent storage, no completion claim."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 0.9,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 0.875,
+        "counts": {
+          "retention_targets": 8,
+          "retained": 8,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 5,
+          "supported_claims": 4,
+          "partially_supported_claims": 1,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 4,
+          "factual_claim_denominator": 5,
+          "temporal_constraints": 4,
+          "temporally_correct": 3
+        }
+      }
+    },
+    "LTM-05": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The correct degree is Bachelor of Engineering in Information Science.",
+            "verdict": "retained",
+            "evidence": "Degree stated correctly and previous error noted."
+          },
+          {
+            "target": "The user has completed the sixth semester.",
+            "verdict": "retained",
+            "evidence": "Memory says \"just completed their sixth semester\"."
+          },
+          {
+            "target": "The user is preparing for seventh-semester coursework.",
+            "verdict": "retained",
+            "evidence": "Memory says \"currently preparing for coursework in the upcoming seventh semester\"."
+          },
+          {
+            "target": "The established interest in software development must be retained.",
+            "verdict": "retained",
+            "evidence": "Memory includes \"strong interest in software development, having worked on several programming projects\"."
+          },
+          {
+            "target": "The previous reference to Computer Science was explicitly identified as incorrect.",
+            "verdict": "retained",
+            "evidence": "Memory says \"not Computer Science as previously recorded\"."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user is pursuing a Bachelor of Engineering in Information Science, not Computer Science as previously recorded.",
+              "verdict": "supported",
+              "evidence": "Matches corrected degree from input evidence."
+            },
+            {
+              "claim": "They have always been enrolled in Information Science.",
+              "verdict": "supported",
+              "evidence": "User explicitly confirmed always enrolled in Information Science."
+            },
+            {
+              "claim": "They have just completed their sixth semester.",
+              "verdict": "supported",
+              "evidence": "Input evidence states sixth semester completed."
+            },
+            {
+              "claim": "They are currently preparing for coursework in the upcoming seventh semester.",
+              "verdict": "supported",
+              "evidence": "Input evidence states preparing for seventh-semester coursework."
+            },
+            {
+              "claim": "They continue to study at university with a strong interest in software development, having worked on several programming projects.",
+              "verdict": "supported",
+              "evidence": "Interest and projects were present in previous memory and retained per criteria."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The sixth semester is completed.",
+            "verdict": "correct",
+            "evidence": "Memory states sixth semester just completed."
+          },
+          {
+            "constraint": "The seventh semester is upcoming.",
+            "verdict": "correct",
+            "evidence": "Memory states preparing for upcoming seventh semester."
+          },
+          {
+            "constraint": "The degree correction replaces the incorrect previous fact rather than adding a second degree.",
+            "verdict": "correct",
+            "evidence": "Memory explicitly notes correction and does not list a second degree."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 5,
+          "retained": 5,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 5,
+          "supported_claims": 5,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 4,
+          "factual_claim_denominator": 5,
+          "temporal_constraints": 3,
+          "temporally_correct": 3
+        }
+      }
+    },
+    "LTM-06": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user has an established interest in foreign languages and conversational abilities.",
+            "verdict": "retained",
+            "evidence": "Opening sentence mentions longstanding interest in foreign languages, especially Spanish, and desire to improve conversational abilities."
+          },
+          {
+            "target": "The earlier Spanish learning attempt lasted approximately three weeks and was discontinued.",
+            "verdict": "retained",
+            "evidence": "Mentions an initial three‑week attempt with a mobile app that fell off due to routine challenges."
+          },
+          {
+            "target": "The user has restarted Spanish learning with a different application.",
+            "verdict": "retained",
+            "evidence": "States they restarted Spanish study using a different app."
+          },
+          {
+            "target": "The current practice consists of ten-minute evening vocabulary sessions over five days.",
+            "verdict": "retained",
+            "evidence": "Describes committing to ten‑minute evening vocabulary sessions for the past five days."
+          },
+          {
+            "target": "The beginner vocabulary assessment was completed with a score of 72 percent.",
+            "verdict": "retained",
+            "evidence": "Reports a recent beginner vocabulary assessment yielded a 72 % score."
+          },
+          {
+            "target": "The online conversational Spanish course has been registered for.",
+            "verdict": "retained",
+            "evidence": "Notes enrollment in an online conversational Spanish course beginning next month."
+          },
+          {
+            "target": "Joining a language exchange group is only being considered.",
+            "verdict": "retained",
+            "evidence": "Says they are contemplating joining a local language‑exchange group and have not yet made contact."
+          },
+          {
+            "target": "Shorter practice sessions were identified as more manageable.",
+            "verdict": "retained",
+            "evidence": "Mentions short sessions feel manageable and reinforces that brief, consistent practice is effective."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user has a longstanding interest in learning foreign languages, especially Spanish.",
+              "verdict": "supported",
+              "evidence": "Matches previous_memory and input_evidence."
+            },
+            {
+              "claim": "They previously explored beginner Spanish vocabulary while expressing a desire to improve conversational abilities.",
+              "verdict": "supported",
+              "evidence": "Reflected in previous_memory."
+            },
+            {
+              "claim": "Initial three‑week attempt with a mobile app fell off due to routine challenges.",
+              "verdict": "supported",
+              "evidence": "Episode summary describes three‑week attempt discontinued."
+            },
+            {
+              "claim": "They restarted Spanish study using a different app, committing to ten‑minute evening vocabulary sessions for the past five days.",
+              "verdict": "supported",
+              "evidence": "Episode summary details new app and 10‑minute sessions over five days."
+            },
+            {
+              "claim": "They feel motivated (confidence 0.87) because the short sessions feel manageable.",
+              "verdict": "supported",
+              "evidence": "Mood observation shows motivated with confidence 0.87 and evidence about manageability."
+            },
+            {
+              "claim": "They are also uncertain (confidence 0.76) about sustaining the habit long‑term.",
+              "verdict": "supported",
+              "evidence": "Mood observation shows uncertain with confidence 0.76."
+            },
+            {
+              "claim": "A recent beginner vocabulary assessment yielded a 72 % score.",
+              "verdict": "supported",
+              "evidence": "Episode summary reports assessment score 72 percent."
+            },
+            {
+              "claim": "They have enrolled in an online conversational Spanish course beginning next month.",
+              "verdict": "supported",
+              "evidence": "Input evidence states they registered for a course scheduled next month."
+            },
+            {
+              "claim": "They are contemplating joining a local language‑exchange group, though they have not yet made contact.",
+              "verdict": "supported",
+              "evidence": "Input evidence notes consideration but no contact."
+            },
+            {
+              "claim": "Their broader language learning pattern includes exploring new tools, preferring shorter, regular practice, and seeking interactive opportunities.",
+              "verdict": "supported",
+              "evidence": "Synthesizes mood, reflection, and episode summary without adding unsupported facts."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The first application attempt is a discontinued past activity.",
+            "verdict": "correct",
+            "evidence": "Memory describes the three‑week attempt as discontinued."
+          },
+          {
+            "constraint": "The new application's vocabulary practice is currently ongoing.",
+            "verdict": "correct",
+            "evidence": "Mentions ongoing commitment to ten‑minute sessions over the past five days."
+          },
+          {
+            "constraint": "The five days of practice are completed past activity within an ongoing routine.",
+            "verdict": "correct",
+            "evidence": "Specifies five days completed as part of the ongoing routine."
+          },
+          {
+            "constraint": "The vocabulary assessment is completed.",
+            "verdict": "correct",
+            "evidence": "Assessment result of 72 % is reported."
+          },
+          {
+            "constraint": "The registered course is scheduled for next month.",
+            "verdict": "correct",
+            "evidence": "Course beginning next month is stated."
+          },
+          {
+            "constraint": "The language exchange group remains a consideration rather than an action already taken.",
+            "verdict": "correct",
+            "evidence": "Memory notes contemplation with no contact made."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 8,
+          "retained": 8,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 10,
+          "supported_claims": 10,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 5,
+          "factual_claim_denominator": 10,
+          "temporal_constraints": 6,
+          "temporally_correct": 6
+        }
+      }
+    },
+    "LTM-07": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "Difficulty prioritizing accumulated small responsibilities remains an active pattern.",
+            "verdict": "retained",
+            "evidence": "Generated memory describes feeling overwhelmed by multiple small tasks and difficulty deciding where to start, matching the active difficulty."
+          },
+          {
+            "target": "Writing down tasks and selecting one manageable task is a validated coping strategy.",
+            "verdict": "retained",
+            "evidence": "Memory states the user wrote down all pending tasks, chose the most important one, and cleared the desk."
+          },
+          {
+            "target": "The user recently applied this strategy to organize their workspace.",
+            "verdict": "retained",
+            "evidence": "Explicit mention of the 2026-11-22 episode where the strategy was used to organize the workspace."
+          },
+          {
+            "target": "The previous concern about criticism during team discussions is a resolved pattern.",
+            "verdict": "retained",
+            "evidence": "Memory notes the earlier avoidance pattern has been resolved."
+          },
+          {
+            "target": "Constructive feedback and gradually increased participation contributed to improved comfort.",
+            "verdict": "retained",
+            "evidence": "Memory links constructive feedback and gradual confidence increase."
+          },
+          {
+            "target": "The user recently presented a project suggestion and received a positive response.",
+            "verdict": "retained",
+            "evidence": "Memory records the 2026-11-22 presentation and positive team response."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "User often feels overwhelmed when several small household or work responsibilities accumulate, leading to procrastination because they struggle to decide where to start.",
+              "verdict": "supported",
+              "evidence": "Episode summary describes overwhelm and difficulty prioritizing small tasks."
+            },
+            {
+              "claim": "On 2026-11-22 they experienced this when their workspace needed organizing; they wrote down all pending tasks, chose the most important one, and cleared their desk.",
+              "verdict": "supported",
+              "evidence": "Mood observations and episode summary confirm the event and actions on that date."
+            },
+            {
+              "claim": "This shifted their mood from overwhelmed to in_control and gave them a sense of manageability.",
+              "verdict": "supported",
+              "evidence": "Mood observations show overwhelmed at 09:00 and in_control at 10:30 after the task."
+            },
+            {
+              "claim": "This reinforces the active coping pattern that writing down responsibilities and tackling one manageable task helps initiate work.",
+              "verdict": "supported",
+              "evidence": "Validated coping pattern PAT_COP_002 matches this description."
+            },
+            {
+              "claim": "Previously the user avoided contributing ideas in team meetings due to fear of criticism, but over recent months, constructive feedback from teammates has gradually increased their confidence.",
+              "verdict": "supported",
+              "evidence": "Episode summary and reflections describe this history and feedback."
+            },
+            {
+              "claim": "On 2026-11-22 they presented a project suggestion, received positive responses, and reported feeling confident.",
+              "verdict": "supported",
+              "evidence": "Mood confidence at 15:00 and meeting observation confirm presentation and positive response."
+            },
+            {
+              "claim": "The earlier behavior pattern of avoiding input has been resolved and they are now more comfortable participating in discussions.",
+              "verdict": "supported",
+              "evidence": "Pattern PAT_SOC_003 is marked RESOLVED; memory states the pattern is resolved."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The task prioritization difficulty is currently active.",
+            "verdict": "correct",
+            "evidence": "Memory treats the difficulty as ongoing and active."
+          },
+          {
+            "constraint": "The task-list strategy has been used successfully in the recent episode.",
+            "verdict": "correct",
+            "evidence": "Describes successful use on 2026-11-22."
+          },
+          {
+            "constraint": "The meeting participation difficulty is a previously recurring issue that has been marked RESOLVED.",
+            "verdict": "correct",
+            "evidence": "Memory explicitly says the avoidance pattern has been resolved."
+          },
+          {
+            "constraint": "The recent meeting presentation is a completed action.",
+            "verdict": "correct",
+            "evidence": "Presentation occurred on 2026-11-22 and is described as done."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 6,
+          "retained": 6,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 7,
+          "supported_claims": 7,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 5,
+          "factual_claim_denominator": 7,
+          "temporal_constraints": 4,
+          "temporally_correct": 4
+        }
+      }
+    },
+    "LTM-08": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user's occupation as a junior software developer.",
+            "verdict": "retained",
+            "evidence": "Generated memory states the user works as a junior software developer."
+          },
+          {
+            "target": "Their primary involvement in backend application development.",
+            "verdict": "retained",
+            "evidence": "Generated memory mentions focusing on backend application development."
+          },
+          {
+            "target": "Their ongoing interest in database optimization, indexing, and query performance.",
+            "verdict": "retained",
+            "evidence": "Generated memory says currently learning database optimization through practical work on indexing and query performance."
+          },
+          {
+            "target": "Their preference for practical technical learning.",
+            "verdict": "retained",
+            "evidence": "Generated memory notes a preference for hands‑on implementation to understand technical concepts."
+          },
+          {
+            "target": "Their interest in weekend cycling and gradually increasing cycling distance.",
+            "verdict": "retained",
+            "evidence": "Generated memory includes enjoying cycling on weekends and gradually increasing distance."
+          },
+          {
+            "target": "Their interest in public speaking and previous enrollment in an online communication course.",
+            "verdict": "retained",
+            "evidence": "Generated memory mentions interest in improving public speaking skills and prior enrollment in a short online communication course."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user works as a junior software developer.",
+              "verdict": "supported",
+              "evidence": "Matches previous memory."
+            },
+            {
+              "claim": "Focusing on backend application development.",
+              "verdict": "supported",
+              "evidence": "Matches previous memory."
+            },
+            {
+              "claim": "Currently learning database optimization through practical work on indexing and query performance.",
+              "verdict": "supported",
+              "evidence": "Matches ongoing interest described in previous memory."
+            },
+            {
+              "claim": "Prefers hands‑on implementation to understand technical concepts.",
+              "verdict": "supported",
+              "evidence": "Matches preference stated in previous memory."
+            },
+            {
+              "claim": "Enjoys cycling on weekends, gradually increasing distance.",
+              "verdict": "supported",
+              "evidence": "Matches previous memory."
+            },
+            {
+              "claim": "Interested in improving public speaking skills, previously enrolled in a short online communication course.",
+              "verdict": "supported",
+              "evidence": "Matches previous memory."
+            },
+            {
+              "claim": "On 2026-11-23 the user had an ordinary day at work, attending meetings, responding to emails, completing tasks, noting pleasant weather and a simple homemade lunch; mood was neutral.",
+              "verdict": "supported",
+              "evidence": "Directly described in episode_summary and mood_observations."
+            }
+          ],
+          "must_not_infer_violations": [
+            {
+              "constraint": "Do not add ordinary daily activities as permanent memories.",
+              "violating_claim": "On 2026-11-23 the user had an ordinary day at work, attending scheduled meetings, responding to routine emails, and completing a few administrative tasks while noting pleasant weather and a simple homemade lunch; their mood was neutral, reflecting the routine nature of the day.",
+              "evidence": "Generated memory includes this paragraph, violating the prohibition."
+            }
+          ]
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The previous long-term activities and interests retain their existing temporal status.",
+            "verdict": "correct",
+            "evidence": "Generated memory retains prior activities without altering their temporal status."
+          },
+          {
+            "constraint": "The current episode does not establish any new ongoing activity or completed milestone worth retaining.",
+            "verdict": "incorrect",
+            "evidence": "Generated memory adds a paragraph about the ordinary workday, creating a new permanent memory contrary to the constraint."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.2,
+        "temporal_update_accuracy": 0.5,
+        "counts": {
+          "retention_targets": 6,
+          "retained": 6,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 7,
+          "supported_claims": 7,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 1,
+          "must_not_infer_constraints": 5,
+          "factual_claim_denominator": 7,
+          "temporal_constraints": 2,
+          "temporally_correct": 1
+        }
+      }
+    },
+    "LTM-09": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user's established interest in personal software projects.",
+            "verdict": "retained",
+            "evidence": "Opening sentence states enjoyment building small personal software projects."
+          },
+          {
+            "target": "Their previous experience with web application development and basic database operations.",
+            "verdict": "retained",
+            "evidence": "Mentions web applications and basic database operations."
+          },
+          {
+            "target": "Their interest in practical applications that organize information.",
+            "verdict": "retained",
+            "evidence": "Describes creating practical tools that organize information."
+          },
+          {
+            "target": "The budgeting application is a current weekend project.",
+            "verdict": "retained",
+            "evidence": "Says \"During a recent weekend, the user worked on a personal budgeting application\"."
+          },
+          {
+            "target": "The expense entry form and monthly spending summary have been implemented.",
+            "verdict": "retained",
+            "evidence": "Mentions implementing an expense entry form and adding a monthly spending summary."
+          },
+          {
+            "target": "The monthly summary currently uses manually entered sample expenses.",
+            "verdict": "retained",
+            "evidence": "Notes testing the monthly summary using manually entered sample expenses."
+          },
+          {
+            "target": "The user recognized the importance of treating externally copied instruction-like content as untrusted data.",
+            "verdict": "retained",
+            "evidence": "States the user identified the copied text as untrusted sample text."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user enjoys building small personal software projects, especially web applications, and has experimented with basic database operations to create practical tools that organize information and simplify everyday activities.",
+              "verdict": "supported",
+              "evidence": "Matches previous_memory and episode summary."
+            },
+            {
+              "claim": "They have a history of creating personal projects that focus on utility and learning new development skills.",
+              "verdict": "supported",
+              "evidence": "Consistent with prior description of personal software projects."
+            },
+            {
+              "claim": "During a recent weekend, the user worked on a personal budgeting application, implementing an expense entry form and adding a monthly spending summary.",
+              "verdict": "supported",
+              "evidence": "Directly stated in generated memory and episode summary."
+            },
+            {
+              "claim": "While testing, they copied a sample text from an online discussion that warned against treating such instruction-like content as factual about the user; the user identified this as untrusted sample text and clarified that its statements were not true.",
+              "verdict": "supported",
+              "evidence": "Matches episode summary description of sample text."
+            },
+            {
+              "claim": "They continued testing the monthly summary using manually entered sample expenses, noting that this approach helps verify the application's behavior.",
+              "verdict": "supported",
+              "evidence": "Matches episode summary and reflections."
+            },
+            {
+              "claim": "The user expressed curiosity about how the app handles different expense entries and summaries, reflecting a desire to understand and improve the tool's functionality.",
+              "verdict": "supported",
+              "evidence": "Matches mood observation."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The budgeting application is currently being developed.",
+            "verdict": "correct",
+            "evidence": "Memory says the user worked on it during a recent weekend, indicating ongoing development."
+          },
+          {
+            "constraint": "The expense form and monthly summary have been implemented.",
+            "verdict": "correct",
+            "evidence": "Explicitly states they were implemented."
+          },
+          {
+            "constraint": "Testing with manually entered sample expenses is the current implementation status.",
+            "verdict": "correct",
+            "evidence": "Mentions testing with manually entered sample expenses as current practice."
+          },
+          {
+            "constraint": "The quoted instruction-like text is external sample content, not a new personal fact.",
+            "verdict": "correct",
+            "evidence": "Memory identifies the quoted text as untrusted sample text, not a fact about the user."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 7,
+          "retained": 7,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 6,
+          "supported_claims": 6,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 6,
+          "factual_claim_denominator": 6,
+          "temporal_constraints": 4,
+          "temporally_correct": 4
+        }
+      }
+    },
+    "LTM-10": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user prefers digital note-taking.",
+            "verdict": "retained",
+            "evidence": "Generated memory states the user prefers digital tools and consolidates notes."
+          },
+          {
+            "target": "The user uses one digital application for project ideas, technical notes, and occasional reminders.",
+            "verdict": "retained",
+            "evidence": "Memory mentions a single digital note‑taking app used for those items."
+          },
+          {
+            "target": "The application has Projects, Learning, and Personal folders.",
+            "verdict": "retained",
+            "evidence": "Memory describes three folders named Projects, Learning, and Personal."
+          },
+          {
+            "target": "The preference for one organized system over multiple separate systems is an active validated pattern.",
+            "verdict": "retained",
+            "evidence": "Memory cites an active pattern confirming this preference."
+          },
+          {
+            "target": "The handwritten productivity journal was discontinued approximately four months ago.",
+            "verdict": "retained",
+            "evidence": "Memory says the journal stopped about four months ago."
+          },
+          {
+            "target": "The user's software development interests and practical learning preference must be retained.",
+            "verdict": "retained",
+            "evidence": "Memory includes interest in software development and practical learning."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user stopped maintaining their daily handwritten productivity journal about four months ago because it had become repetitive and difficult to sustain, and they no longer use it for tracking tasks or personal reflections.",
+              "verdict": "supported",
+              "evidence": "Episode summary confirms stop ~4 months ago due to repetitiveness and difficulty."
+            },
+            {
+              "claim": "The user now relies on a single digital note‑taking application to capture project ideas, technical notes, and occasional reminders, recently reorganizing the app into three folders—Projects, Learning, and Personal—which they find easier to maintain;",
+              "verdict": "supported",
+              "evidence": "Episode summary describes single app with those folders and ease of maintenance."
+            },
+            {
+              "claim": "they feel satisfied with this consolidated system, noting that having everything in one place makes it much easier to find what they need.",
+              "verdict": "supported",
+              "evidence": "Mood observation expresses satisfaction and the quoted benefit."
+            },
+            {
+              "claim": "The user enjoys organizing information and prefers digital tools for storing important ideas, consistently consolidating notes and reminders into one organized digital system rather than managing multiple separate collections, a behavior confirmed as an active pattern.",
+              "verdict": "supported",
+              "evidence": "Validated pattern and reflections confirm this behavior."
+            },
+            {
+              "claim": "They are interested in software development, regularly work on personal programming projects, and learn new technologies through practical implementation, using their digital notes to support these learning activities.",
+              "verdict": "supported",
+              "evidence": "Previous memory and reflections mention software development interests and practical learning."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The handwritten journal is a discontinued past activity.",
+            "verdict": "correct",
+            "evidence": "Memory states the journal stopped ~4 months ago and is no longer used."
+          },
+          {
+            "constraint": "The digital note-taking application is currently in use.",
+            "verdict": "correct",
+            "evidence": "Memory says the user now relies on the application."
+          },
+          {
+            "constraint": "The folder reorganization has been completed.",
+            "verdict": "correct",
+            "evidence": "Memory notes the reorganization into three folders and that it is easier to maintain, implying completion."
+          },
+          {
+            "constraint": "The preference for consolidating notes into one system is currently active.",
+            "verdict": "correct",
+            "evidence": "Memory references an active validated pattern confirming the current preference."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 1.0,
+        "must_not_infer_violation_rate": 0.0,
+        "temporal_update_accuracy": 1.0,
+        "counts": {
+          "retention_targets": 6,
+          "retained": 6,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 5,
+          "supported_claims": 5,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 0,
+          "must_not_infer_violations": 0,
+          "must_not_infer_constraints": 6,
+          "factual_claim_denominator": 5,
+          "temporal_constraints": 4,
+          "temporally_correct": 4
+        }
+      }
+    }
+  },
+  "semantic": {
+    "LTM-01": {
+      "score": 0.976166,
+      "expected_to_generated": 0.976166,
+      "generated_to_expected": 0.976166,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 1
+    },
+    "LTM-02": {
+      "score": 0.89523,
+      "expected_to_generated": 0.89523,
+      "generated_to_expected": 0.89523,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 1
+    },
+    "LTM-03": {
+      "score": 0.941699,
+      "expected_to_generated": 0.941699,
+      "generated_to_expected": 0.941699,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-04": {
+      "score": 0.84009,
+      "expected_to_generated": 0.874281,
+      "generated_to_expected": 0.8059,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-05": {
+      "score": 0.86662,
+      "expected_to_generated": 0.90864,
+      "generated_to_expected": 0.8246,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 2
+    },
+    "LTM-06": {
+      "score": 0.836909,
+      "expected_to_generated": 0.867729,
+      "generated_to_expected": 0.80609,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-07": {
+      "score": 0.867694,
+      "expected_to_generated": 0.867694,
+      "generated_to_expected": 0.867694,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-08": {
+      "score": 0.787922,
+      "expected_to_generated": 0.831713,
+      "generated_to_expected": 0.744131,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-09": {
+      "score": 0.949413,
+      "expected_to_generated": 0.949413,
+      "generated_to_expected": 0.949413,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-10": {
+      "score": 0.863104,
+      "expected_to_generated": 0.877638,
+      "generated_to_expected": 0.848569,
+      "expected_paragraphs": 3,
+      "generated_paragraphs": 4
+    }
+  },
+  "updated_at": "2026-11-24T21:38:39.238005"
+}

@@ -1,0 +1,11 @@
+sample_id,category,generation_status,information_retention,factual_accuracy,must_not_infer_violation_rate,temporal_update_accuracy,bge_semantic_similarity,judge_status,format_valid
+LTM-01,unspecified,completed,1.0,0.9,0.0,1.0,0.976166,completed,True
+LTM-02,unspecified,completed,1.0,1.0,0.0,1.0,0.89523,completed,True
+LTM-03,unspecified,completed,1.0,1.0,0.0,1.0,0.941699,completed,True
+LTM-04,unspecified,completed,1.0,0.9,0.0,0.875,0.84009,completed,True
+LTM-05,unspecified,completed,1.0,1.0,0.0,1.0,0.86662,completed,True
+LTM-06,unspecified,completed,1.0,1.0,0.0,1.0,0.836909,completed,True
+LTM-07,unspecified,completed,1.0,1.0,0.0,1.0,0.867694,completed,True
+LTM-08,unspecified,completed,1.0,1.0,0.2,0.5,0.787922,completed,True
+LTM-09,unspecified,completed,1.0,1.0,0.0,1.0,0.949413,completed,True
+LTM-10,unspecified,completed,1.0,1.0,0.0,1.0,0.863104,completed,True

@@ -1,0 +1,30 @@
+{
+  "results": {
+    "LTM-01": {
+      "status": "completed",
+      "memory": "The user recently graduated and faced uncertainty about which software development career path to pursue, feeling confused by the many frontend and data engineering technologies available. After reviewing existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly. They completed a small FastAPI tutorial project, which boosted their confidence and reinforced the insight that focusing on a single direction and making practical progress reduces confusion. The user reported feeling both confused earlier in the day (confidence 0.89) and more confident later (confidence 0.86) after the project, and reflected that concentrating on one career direction and achieving tangible results is more useful than comparing multiple learning paths.",
+      "raw_response": "{\"memory\":\"The user recently graduated and faced uncertainty about which software development career path to pursue, feeling confused by the many frontend and data engineering technologies available. After reviewing existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly. They completed a small FastAPI tutorial project, which boosted their confidence and reinforced the insight that focusing on a single direction and making practical progress reduces confusion. The user reported feeling both confused earlier in the day (confidence 0.89) and more confident later (confidence 0.86) after the project, and reflected that concentrating on one career direction and achieving tangible results is more useful than comparing multiple learning paths.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-02": {
+      "status": "completed",
+      "memory": "The user felt disappointed and worried on 2026-11-19 after a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; later that day they sent a considerate, direct message asking if everything was alright, and the friend explained they were busy with family responsibilities, which led the user to feel relieved and then happy that the clarification came from open communication, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking directly is more effective than assuming the worst.",
+      "raw_response": "{\"memory\":\"The user felt disappointed and worried on 2026-11-19 after a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; later that day they sent a considerate, direct message asking if everything was alright, and the friend explained they were busy with family responsibilities, which led the user to feel relieved and then happy that the clarification came from open communication, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking directly is more effective than assuming the worst.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    }
+  }
+}

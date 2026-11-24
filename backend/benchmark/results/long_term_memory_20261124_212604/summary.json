@@ -1,0 +1,36 @@
+{
+  "benchmark": "Long-Term Memory Generation",
+  "total_cases": 10,
+  "generation_completed": 2,
+  "generation_failed": 8,
+  "judge_completed": 1,
+  "headline_metrics": {
+    "information_retention": {
+      "score": 1.0,
+      "percentage": 100.0,
+      "numerator_weighted": 5.0,
+      "denominator": 5
+    },
+    "factual_accuracy": {
+      "score": 0.8889,
+      "percentage": 88.89,
+      "numerator_weighted": 8.0,
+      "denominator": 9
+    },
+    "temporal_update_accuracy": {
+      "score": 0.6667,
+      "percentage": 66.67,
+      "numerator_weighted": 2.0,
+      "denominator": 3
+    },
+    "bge_semantic_similarity": {
+      "mean": null,
+      "cases": 0
+    }
+  },
+  "interpretation": {
+    "llm_judge": "The judge labels atomic facts/claims/constraints; Python computes micro-averaged metrics.",
+    "semantic_similarity": "Symmetric mean of paragraph-level best-match cosine similarities; diagnostic only, not factual correctness.",
+    "not_applicable": "Temporal accuracy is null when no temporal constraints were specified in evaluated cases."
+  }
+}

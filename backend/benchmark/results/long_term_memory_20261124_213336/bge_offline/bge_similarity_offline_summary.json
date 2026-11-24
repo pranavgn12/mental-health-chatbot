@@ -1,0 +1,29 @@
+{
+  "benchmark": "Offline BGE Long-Term Memory Similarity",
+  "created_at": "2026-11-24T17:00:54.149137+00:00",
+  "model": "BAAI/bge-small-en-v1.5",
+  "device": "cpu",
+  "max_seq_length": 512,
+  "special_tokens_per_input": 2,
+  "content_token_capacity_per_chunk": 510,
+  "chunk_overlap_tokens": 48,
+  "total_dataset_cases_selected": 10,
+  "cases_evaluated": 10,
+  "cases_missing_generated_output": [],
+  "cases_with_generation_failure": [],
+  "bge_semantic_similarity": {
+    "mean": 0.882485,
+    "cases": 10,
+    "aggregation": "Mean of per-case symmetric paragraph best-match scores; each long-paragraph pair uses symmetric chunk-coverage cosine."
+  },
+  "truncation_safeguard": {
+    "paragraphs_total": 38,
+    "paragraphs_over_single_input_limit": 0,
+    "paragraphs_split_into_multiple_chunks": 0,
+    "embedding_chunks_total": 38,
+    "largest_embedded_chunk_tokens_including_specials": 167,
+    "all_embedding_chunks_within_model_limit": true,
+    "silent_model_truncation_expected": false,
+    "method": "Tokenizer offset-based overlapping chunks; every exact chunk is retokenized with special tokens and checked against model.max_seq_length before encoding."
+  }
+}

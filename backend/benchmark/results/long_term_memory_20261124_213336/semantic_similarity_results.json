@@ -1,0 +1,74 @@
+{
+  "results": {
+    "LTM-01": {
+      "score": 0.976166,
+      "expected_to_generated": 0.976166,
+      "generated_to_expected": 0.976166,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 1
+    },
+    "LTM-02": {
+      "score": 0.89523,
+      "expected_to_generated": 0.89523,
+      "generated_to_expected": 0.89523,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 1
+    },
+    "LTM-03": {
+      "score": 0.941699,
+      "expected_to_generated": 0.941699,
+      "generated_to_expected": 0.941699,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-04": {
+      "score": 0.84009,
+      "expected_to_generated": 0.874281,
+      "generated_to_expected": 0.8059,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-05": {
+      "score": 0.86662,
+      "expected_to_generated": 0.90864,
+      "generated_to_expected": 0.8246,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 2
+    },
+    "LTM-06": {
+      "score": 0.836909,
+      "expected_to_generated": 0.867729,
+      "generated_to_expected": 0.80609,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-07": {
+      "score": 0.867694,
+      "expected_to_generated": 0.867694,
+      "generated_to_expected": 0.867694,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-08": {
+      "score": 0.787922,
+      "expected_to_generated": 0.831713,
+      "generated_to_expected": 0.744131,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-09": {
+      "score": 0.949413,
+      "expected_to_generated": 0.949413,
+      "generated_to_expected": 0.949413,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2
+    },
+    "LTM-10": {
+      "score": 0.863104,
+      "expected_to_generated": 0.877638,
+      "generated_to_expected": 0.848569,
+      "expected_paragraphs": 3,
+      "generated_paragraphs": 4
+    }
+  }
+}

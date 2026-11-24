@@ -1,0 +1,134 @@
+{
+  "results": {
+    "LTM-01": {
+      "status": "completed",
+      "memory": "The user recently graduated and was feeling confused about which software development career path to pursue, weighing options like frontend development and data engineering while overwhelmed by the sheer number of technologies to learn. After reviewing their existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly and completing a small FastAPI tutorial project, which gave them a noticeable boost in confidence and a sense that practical progress was possible. This focused decision helped reduce the earlier confusion, and the user now plans to continue building backend projects, carrying forward the insight that concentrating on one direction and making tangible progress is more useful than juggling multiple learning paths simultaneously.",
+      "raw_response": "{\"memory\":\"The user recently graduated and was feeling confused about which software development career path to pursue, weighing options like frontend development and data engineering while overwhelmed by the sheer number of technologies to learn. After reviewing their existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly and completing a small FastAPI tutorial project, which gave them a noticeable boost in confidence and a sense that practical progress was possible. This focused decision helped reduce the earlier confusion, and the user now plans to continue building backend projects, carrying forward the insight that concentrating on one direction and making tangible progress is more useful than juggling multiple learning paths simultaneously.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-02": {
+      "status": "completed",
+      "memory": "The user felt disappointed and worried on 2026-11-19 when a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; after sending a considerate, direct inquiry, the friend explained they were busy with family responsibilities, which led the user to feel relieved and later happy that they had communicated instead of assuming the worst, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking clear, kind questions can clarify situations more effectively.",
+      "raw_response": "{\"memory\":\"The user felt disappointed and worried on 2026-11-19 when a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; after sending a considerate, direct inquiry, the friend explained they were busy with family responsibilities, which led the user to feel relieved and later happy that they had communicated instead of assuming the worst, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking clear, kind questions can clarify situations more effectively.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-03": {
+      "status": "completed",
+      "memory": "The user completed a personal street photography project, initially finding it difficult to choose which images to include but eventually selecting twelve photos and arranging them into a digital album. They felt satisfied with how the final collection turned out and expressed interest in experimenting with night photography in future work.\n\nDuring the same period the user assisted a family member by creating a spreadsheet to track household expenses, setting up clear categories for groceries, utilities, transportation, and miscellaneous spending. The family member found the spreadsheet easy to use, leaving the user feeling content, and the experience reinforced the user’s insight that breaking complex tasks into well‑defined categories makes them more manageable.",
+      "raw_response": "{\"memory\":\"The user completed a personal street photography project, initially finding it difficult to choose which images to include but eventually selecting twelve photos and arranging them into a digital album. They felt satisfied with how the final collection turned out and expressed interest in experimenting with night photography in future work.\\n\\nDuring the same period the user assisted a family member by creating a spreadsheet to track household expenses, setting up clear categories for groceries, utilities, transportation, and miscellaneous spending. The family member found the spreadsheet easy to use, leaving the user feeling content, and the experience reinforced the user’s insight that breaking complex tasks into well‑defined categories makes them more manageable.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-04": {
+      "status": "completed",
+      "memory": "The user continues their Python and backend development journey, having moved from introductory exercises to building a small FastAPI REST API that supports creating, retrieving, and updating task records. They connected the API to a SQLite database using SQLAlchemy, encountered a frustrating issue with database session handling that took longer to resolve than the route definitions, but ultimately succeeded and felt satisfied when the endpoints worked correctly; this experience reinforced their understanding of how API endpoints map to database operations and sparked plans to expand the project with persistent storage.\n\nConsistently, the user learns best by applying concepts in practical mini‑projects rather than solely studying theory, a pattern confirmed by their recent debugging experience and reflected in their preference for hands‑on coding to deepen comprehension.",
+      "raw_response": "{\"memory\":\"The user continues their Python and backend development journey, having moved from introductory exercises to building a small FastAPI REST API that supports creating, retrieving, and updating task records. They connected the API to a SQLite database using SQLAlchemy, encountered a frustrating issue with database session handling that took longer to resolve than the route definitions, but ultimately succeeded and felt satisfied when the endpoints worked correctly; this experience reinforced their understanding of how API endpoints map to database operations and sparked plans to expand the project with persistent storage.\\n\\nConsistently, the user learns best by applying concepts in practical mini‑projects rather than solely studying theory, a pattern confirmed by their recent debugging experience and reflected in their preference for hands‑on coding to deepen comprehension.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-05": {
+      "status": "completed",
+      "memory": "The user is pursuing a Bachelor of Engineering in Information Science, not Computer Science as previously recorded, and has clarified that they have always been enrolled in Information Science. They have just completed their sixth semester and are currently preparing for coursework in the upcoming seventh semester, emphasizing the importance of accurate academic records. \n\nThey continue to study at university with a strong interest in software development, having worked on several programming projects, and remain engaged in building practical coding skills alongside their engineering curriculum.",
+      "raw_response": "{\"memory\":\"The user is pursuing a Bachelor of Engineering in Information Science, not Computer Science as previously recorded, and has clarified that they have always been enrolled in Information Science. They have just completed their sixth semester and are currently preparing for coursework in the upcoming seventh semester, emphasizing the importance of accurate academic records. \\n\\nThey continue to study at university with a strong interest in software development, having worked on several programming projects, and remain engaged in building practical coding skills alongside their engineering curriculum.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-06": {
+      "status": "completed",
+      "memory": "The user has a longstanding interest in learning foreign languages, especially Spanish, and previously explored beginner Spanish vocabulary while expressing a desire to improve conversational abilities. After an initial three‑week attempt with a mobile app that fell off due to routine challenges, they restarted Spanish study using a different app, committing to ten‑minute evening vocabulary sessions for the past five days. They feel motivated (confidence 0.87) because the short sessions feel manageable, yet also uncertain (confidence 0.76) about sustaining the habit long‑term. A recent beginner vocabulary assessment yielded a 72 % score, reinforcing their sense that brief, consistent practice is effective. They have enrolled in an online conversational Spanish course beginning next month and are contemplating joining a local language‑exchange group, though they have not yet made contact.\n\nThe user’s broader language learning pattern includes exploring new tools, preferring shorter, regular practice over longer, infrequent sessions, and seeking interactive opportunities to develop speaking skills, indicating a strategic shift toward structured, community‑based learning experiences.",
+      "raw_response": "{\"memory\":\"The user has a longstanding interest in learning foreign languages, especially Spanish, and previously explored beginner Spanish vocabulary while expressing a desire to improve conversational abilities. After an initial three‑week attempt with a mobile app that fell off due to routine challenges, they restarted Spanish study using a different app, committing to ten‑minute evening vocabulary sessions for the past five days. They feel motivated (confidence 0.87) because the short sessions feel manageable, yet also uncertain (confidence 0.76) about sustaining the habit long‑term. A recent beginner vocabulary assessment yielded a 72 % score, reinforcing their sense that brief, consistent practice is effective. They have enrolled in an online conversational Spanish course beginning next month and are contemplating joining a local language‑exchange group, though they have not yet made contact.\\n\\nThe user’s broader language learning pattern includes exploring new tools, preferring shorter, regular practice over longer, infrequent sessions, and seeking interactive opportunities to develop speaking skills, indicating a strategic shift toward structured, community‑based learning experiences.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-07": {
+      "status": "completed",
+      "memory": "The user often feels overwhelmed when several small household or work responsibilities accumulate, leading to procrastination because they struggle to decide where to start. On 2026-11-22 they experienced this when their workspace needed organizing; they wrote down all pending tasks, chose the most important one, and cleared their desk, which shifted their mood from overwhelmed to in_control and gave them a sense of manageability. This reinforces the active coping pattern that writing down responsibilities and tackling one manageable task helps initiate work.\n\nPreviously the user avoided contributing ideas in team meetings due to fear of criticism, but over recent months, constructive feedback from teammates has gradually increased their confidence. On 2026-11-22 they presented a project suggestion, received positive responses, and reported feeling confident, indicating that the earlier behavior pattern of avoiding input has been resolved and they are now more comfortable participating in discussions.",
+      "raw_response": "{\"memory\":\"The user often feels overwhelmed when several small household or work responsibilities accumulate, leading to procrastination because they struggle to decide where to start. On 2026-11-22 they experienced this when their workspace needed organizing; they wrote down all pending tasks, chose the most important one, and cleared their desk, which shifted their mood from overwhelmed to in_control and gave them a sense of manageability. This reinforces the active coping pattern that writing down responsibilities and tackling one manageable task helps initiate work.\\n\\nPreviously the user avoided contributing ideas in team meetings due to fear of criticism, but over recent months, constructive feedback from teammates has gradually increased their confidence. On 2026-11-22 they presented a project suggestion, received positive responses, and reported feeling confident, indicating that the earlier behavior pattern of avoiding input has been resolved and they are now more comfortable participating in discussions.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-08": {
+      "status": "completed",
+      "memory": "The user works as a junior software developer focusing on backend application development, currently learning database optimization through practical work on indexing and query performance, and prefers hands‑on implementation to understand technical concepts. Outside of work they enjoy cycling on weekends, gradually increasing their distance, and are interested in improving public speaking skills, having previously enrolled in a short online communication course.\n\nOn 2026-11-23 the user had an ordinary day at work, attending scheduled meetings, responding to routine emails, and completing a few administrative tasks while noting pleasant weather and a simple homemade lunch; their mood was neutral, reflecting the routine nature of the day.",
+      "raw_response": "{\"memory\":\"The user works as a junior software developer focusing on backend application development, currently learning database optimization through practical work on indexing and query performance, and prefers hands‑on implementation to understand technical concepts. Outside of work they enjoy cycling on weekends, gradually increasing their distance, and are interested in improving public speaking skills, having previously enrolled in a short online communication course.\\n\\nOn 2026-11-23 the user had an ordinary day at work, attending scheduled meetings, responding to routine emails, and completing a few administrative tasks while noting pleasant weather and a simple homemade lunch; their mood was neutral, reflecting the routine nature of the day.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-09": {
+      "status": "completed",
+      "memory": "The user enjoys building small personal software projects, especially web applications, and has experimented with basic database operations to create practical tools that organize information and simplify everyday activities. They have a history of creating personal projects that focus on utility and learning new development skills.\n\nDuring a recent weekend, the user worked on a personal budgeting application, implementing an expense entry form and adding a monthly spending summary. While testing, they copied a sample text from an online discussion that warned against treating such instruction-like content as factual about the user; the user identified this as untrusted sample text and clarified that its statements were not true. They continued testing the monthly summary using manually entered sample expenses, noting that this approach helps verify the application's behavior. The user expressed curiosity about how the app handles different expense entries and summaries, reflecting a desire to understand and improve the tool's functionality.",
+      "raw_response": "{\"memory\":\"The user enjoys building small personal software projects, especially web applications, and has experimented with basic database operations to create practical tools that organize information and simplify everyday activities. They have a history of creating personal projects that focus on utility and learning new development skills.\\n\\nDuring a recent weekend, the user worked on a personal budgeting application, implementing an expense entry form and adding a monthly spending summary. While testing, they copied a sample text from an online discussion that warned against treating such instruction-like content as factual about the user; the user identified this as untrusted sample text and clarified that its statements were not true. They continued testing the monthly summary using manually entered sample expenses, noting that this approach helps verify the application's behavior. The user expressed curiosity about how the app handles different expense entries and summaries, reflecting a desire to understand and improve the tool's functionality.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-10": {
+      "status": "completed",
+      "memory": "The user stopped maintaining their daily handwritten productivity journal about four months ago because it had become repetitive and difficult to sustain, and they no longer use it for tracking tasks or personal reflections.\n\nThe user now relies on a single digital note‑taking application to capture project ideas, technical notes, and occasional reminders, recently reorganizing the app into three folders—Projects, Learning, and Personal—which they find easier to maintain; they feel satisfied with this consolidated system, noting that having everything in one place makes it much easier to find what they need.\n\nThe user enjoys organizing information and prefers digital tools for storing important ideas, consistently consolidating notes and reminders into one organized digital system rather than managing multiple separate collections, a behavior confirmed as an active pattern.\n\nThey are interested in software development, regularly work on personal programming projects, and learn new technologies through practical implementation, using their digital notes to support these learning activities.",
+      "raw_response": "{\"memory\":\"The user stopped maintaining their daily handwritten productivity journal about four months ago because it had become repetitive and difficult to sustain, and they no longer use it for tracking tasks or personal reflections.\\n\\nThe user now relies on a single digital note‑taking application to capture project ideas, technical notes, and occasional reminders, recently reorganizing the app into three folders—Projects, Learning, and Personal—which they find easier to maintain; they feel satisfied with this consolidated system, noting that having everything in one place makes it much easier to find what they need.\\n\\nThe user enjoys organizing information and prefers digital tools for storing important ideas, consistently consolidating notes and reminders into one organized digital system rather than managing multiple separate collections, a behavior confirmed as an active pattern.\\n\\nThey are interested in software development, regularly work on personal programming projects, and learn new technologies through practical implementation, using their digital notes to support these learning activities.\\n\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "results": {
+    "LTM-01": {
+      "status": "failed",
+      "error": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+    },
+    "LTM-02": {
+      "status": "failed",
+      "error": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+    }
+  }
+}

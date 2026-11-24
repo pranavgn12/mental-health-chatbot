@@ -1,0 +1,25 @@
+{
+  "script_version": "2.0.0",
+  "dataset_sha256": "93dfaff834229d0b2866f9f1fad791087cce6c2ba8733e54f274c903f210ac36",
+  "model": "openai/gpt-oss-120b",
+  "generation_prompt_sha256": "16ce35f58354bd78af82b26d5e75446a5f088f872989c82f763d6883860e6305",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "dataset_path": "/home/pranavgn/Desktop/mental-health-chatbot/backend/benchmark/datasets/long_term_memeory_dataset.json",
+  "dataset_cases": 10,
+  "generation_parameters": {
+    "max_completion_tokens": 3000,
+    "reasoning_effort": "low",
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "judge_parameters": {
+    "max_completion_tokens": 3000,
+    "reasoning_effort": "low",
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "api_keys_saved": false,
+  "started_or_resumed_at": "2026-11-24T21:33:36.282731"
+}

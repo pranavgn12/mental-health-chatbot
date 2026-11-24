@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "script_version": "2.0.0",
+    "dataset_sha256": "93dfaff834229d0b2866f9f1fad791087cce6c2ba8733e54f274c903f210ac36",
+    "model": "openai/gpt-oss-120b",
+    "generation_prompt_sha256": "16ce35f58354bd78af82b26d5e75446a5f088f872989c82f763d6883860e6305",
+    "embedding_model": "BAAI/bge-small-en-v1.5"
+  },
+  "generated": {
+    "LTM-01": {
+      "status": "completed",
+      "memory": "The user recently graduated and faced uncertainty about which software development career path to pursue, feeling confused by the many frontend and data engineering technologies available. After reviewing existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly. They completed a small FastAPI tutorial project, which boosted their confidence and reinforced the insight that focusing on a single direction and making practical progress reduces confusion. The user reported feeling both confused earlier in the day (confidence 0.89) and more confident later (confidence 0.86) after the project, and reflected that concentrating on one career direction and achieving tangible results is more useful than comparing multiple learning paths.",
+      "raw_response": "{\"memory\":\"The user recently graduated and faced uncertainty about which software development career path to pursue, feeling confused by the many frontend and data engineering technologies available. After reviewing existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly. They completed a small FastAPI tutorial project, which boosted their confidence and reinforced the insight that focusing on a single direction and making practical progress reduces confusion. The user reported feeling both confused earlier in the day (confidence 0.89) and more confident later (confidence 0.86) after the project, and reflected that concentrating on one career direction and achieving tangible results is more useful than comparing multiple learning paths.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    },
+    "LTM-02": {
+      "status": "completed",
+      "memory": "The user felt disappointed and worried on 2026-11-19 after a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; later that day they sent a considerate, direct message asking if everything was alright, and the friend explained they were busy with family responsibilities, which led the user to feel relieved and then happy that the clarification came from open communication, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking directly is more effective than assuming the worst.",
+      "raw_response": "{\"memory\":\"The user felt disappointed and worried on 2026-11-19 after a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; later that day they sent a considerate, direct message asking if everything was alright, and the friend explained they were busy with family responsibilities, which led the user to feel relieved and then happy that the clarification came from open communication, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking directly is more effective than assuming the worst.\"}",
+      "structural_checks": {
+        "json_valid": true,
+        "exact_memory_schema": true,
+        "memory_is_string": true,
+        "within_production_character_limit": true,
+        "paragraph_format_no_list_syntax": true,
+        "validation_error": null
+      }
+    }
+  },
+  "judged": {
+    "LTM-01": {
+      "status": "completed",
+      "evaluation": {
+        "information_retention": [
+          {
+            "target": "The user is exploring software development career options.",
+            "verdict": "retained",
+            "evidence": "Episode summary mentions uncertainty about which software development career path to pursue."
+          },
+          {
+            "target": "Frontend development and data engineering were previously considered.",
+            "verdict": "retained",
+            "evidence": "Generated memory references \"many frontend and data engineering technologies\" matching the prior consideration."
+          },
+          {
+            "target": "The user chose to focus on backend development for the next two months.",
+            "verdict": "retained",
+            "evidence": "Memory states \"concentrate on backend development for the next two months\"."
+          },
+          {
+            "target": "The user completed a small FastAPI tutorial project.",
+            "verdict": "retained",
+            "evidence": "Memory says \"They completed a small FastAPI tutorial project\"."
+          },
+          {
+            "target": "The user recognized the value of focusing on one direction and practical progress.",
+            "verdict": "retained",
+            "evidence": "Memory includes reflection about focusing on a single direction and practical progress reducing confusion."
+          }
+        ],
+        "factual_accuracy": {
+          "claims": [
+            {
+              "claim": "The user recently graduated.",
+              "verdict": "unsupported",
+              "evidence": "Graduation is not mentioned in the input evidence."
+            },
+            {
+              "claim": "The user faced uncertainty about which software development career path to pursue.",
+              "verdict": "supported",
+              "evidence": "Episode summary describes uncertainty about career path."
+            },
+            {
+              "claim": "The user felt confused by the many frontend and data engineering technologies available.",
+              "verdict": "supported",
+              "evidence": "Mood observation shows confusion about many technologies."
+            },
+            {
+              "claim": "After reviewing existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap.",
+              "verdict": "supported",
+              "evidence": "Episode summary states the decision to focus on backend for two months and roadmap update."
+            },
+            {
+              "claim": "They completed a small FastAPI tutorial project.",
+              "verdict": "supported",
+              "evidence": "Episode summary notes completion of a FastAPI tutorial project."
+            },
+            {
+              "claim": "The project boosted their confidence.",
+              "verdict": "supported",
+              "evidence": "Mood observation later shows increased confidence after the project."
+            },
+            {
+              "claim": "It reinforced the insight that focusing on a single direction and making practical progress reduces confusion.",
+              "verdict": "supported",
+              "evidence": "Reflection highlights the value of focusing on one direction."
+            },
+            {
+              "claim": "The user reported feeling both confused earlier in the day (confidence 0.89) and more confident later (confidence 0.86) after the project.",
+              "verdict": "supported",
+              "evidence": "Mood observations provide those confidence scores and timestamps."
+            },
+            {
+              "claim": "They reflected that concentrating on one career direction and achieving tangible results is more useful than comparing multiple learning paths.",
+              "verdict": "supported",
+              "evidence": "Reflection matches this statement."
+            }
+          ],
+          "must_not_infer_violations": []
+        },
+        "temporal_update_accuracy": [
+          {
+            "constraint": "The FastAPI tutorial project is completed.",
+            "verdict": "correct",
+            "evidence": "Memory explicitly says the project was completed."
+          },
+          {
+            "constraint": "The backend development focus is a current, time-limited decision.",
+            "verdict": "correct",
+            "evidence": "Memory states the focus is for the next two months, indicating a current limited timeframe."
+          },
+          {
+            "constraint": "Building additional backend projects is an intention, not a completed achievement.",
+            "verdict": "unclear",
+            "evidence": "Memory does not mention building additional backend projects, so the intention status cannot be confirmed."
+          }
+        ],
+        "notes": []
+      },
+      "metrics": {
+        "information_retention": 1.0,
+        "factual_accuracy": 0.8889,
+        "temporal_update_accuracy": 0.6667,
+        "counts": {
+          "retention_targets": 5,
+          "retained": 5,
+          "partially_retained": 0,
+          "missing": 0,
+          "generated_claims": 9,
+          "supported_claims": 8,
+          "partially_supported_claims": 0,
+          "unsupported_or_contradicted_claims": 1,
+          "must_not_infer_violations": 0,
+          "factual_claim_denominator": 9,
+          "temporal_constraints": 3,
+          "temporally_correct": 2
+        }
+      }
+    }
+  },
+  "semantic": {
+    "LTM-01": {
+      "status": "failed",
+      "error": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+    },
+    "LTM-02": {
+      "status": "failed",
+      "error": "The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()"
+    }
+  },
+  "updated_at": "2026-11-24T21:26:23.886215"
+}

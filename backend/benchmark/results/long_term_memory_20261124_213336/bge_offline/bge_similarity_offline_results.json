@@ -1,0 +1,885 @@
+{
+  "metadata": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "device": "cpu",
+    "max_seq_length": 512,
+    "chunk_overlap_tokens": 48,
+    "dataset": "/home/pranavgn/Desktop/mental-health-chatbot/backend/benchmark/datasets/long_term_memeory_dataset.json",
+    "generated_memories": "/home/pranavgn/Desktop/mental-health-chatbot/backend/benchmark/results/long_term_memory_20261124_213336/generated_memories.json"
+  },
+  "results": {
+    "LTM-01": {
+      "status": "completed",
+      "score": 0.976166,
+      "expected_to_generated": 0.976166,
+      "generated_to_expected": 0.976166,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 1,
+      "paragraph_pair_scores": [
+        [
+          0.976166
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user is exploring software development career opportunities and has considered frontend development and data engineering. They recently decided to focus on backend development for the next two months after feeling overwhelmed by trying to choose between multiple learning paths. They updated their learning roadmap and completed a small FastAPI tutorial project, which increased their confidence. They recognized that focusing on one direction and making practical progress helps reduce career-related confusion. They intend to continue building backend projects.",
+            "source_tokens_without_specials": 94,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 94,
+                "model_tokens_including_specials": 96,
+                "source_token_start": 0,
+                "source_token_end": 94
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user recently graduated and was feeling confused about which software development career path to pursue, weighing options like frontend development and data engineering while overwhelmed by the sheer number of technologies to learn. After reviewing their existing programming projects, they decided to concentrate on backend development for the next two months, updating their learning roadmap accordingly and completing a small FastAPI tutorial project, which gave them a noticeable boost in confidence and a sense that practical progress was possible. This focused decision helped reduce the earlier confusion, and the user now plans to continue building backend projects, carrying forward the insight that concentrating on one direction and making tangible progress is more useful than juggling multiple learning paths simultaneously.",
+            "source_tokens_without_specials": 139,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 139,
+                "model_tokens_including_specials": 141,
+                "source_token_start": 0,
+                "source_token_end": 139
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-02": {
+      "status": "completed",
+      "score": 0.895231,
+      "expected_to_generated": 0.895231,
+      "generated_to_expected": 0.895231,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 1,
+      "paragraph_pair_scores": [
+        [
+          0.895231
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user values maintaining close friendships and can feel disappointed or worried when someone does not respond to messages for an extended period. In a recent situation, they initially wondered whether a friend's delayed replies indicated a problem in their relationship. After sending a considerate direct message, they learned that the friend had been occupied with family responsibilities. The clarification brought relief and happiness. The user recognized that delayed communication does not necessarily indicate reduced interest and that asking directly can be more helpful than making assumptions.",
+            "source_tokens_without_specials": 99,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 99,
+                "model_tokens_including_specials": 101,
+                "source_token_start": 0,
+                "source_token_end": 99
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user felt disappointed and worried on 2026-11-19 when a close friend did not reply to several messages, initially interpreting the silence as a sign of waning interest; after sending a considerate, direct inquiry, the friend explained they were busy with family responsibilities, which led the user to feel relieved and later happy that they had communicated instead of assuming the worst, and the user reflected that delayed replies do not automatically indicate relationship problems and that asking clear, kind questions can clarify situations more effectively.",
+            "source_tokens_without_specials": 101,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 101,
+                "model_tokens_including_specials": 103,
+                "source_token_start": 0,
+                "source_token_end": 101
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-03": {
+      "status": "completed",
+      "score": 0.941699,
+      "expected_to_generated": 0.941699,
+      "generated_to_expected": 0.941699,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2,
+      "paragraph_pair_scores": [
+        [
+          0.928432,
+          0.566585
+        ],
+        [
+          0.567742,
+          0.954967
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user enjoys photography and recently completed a street photography collection by selecting twelve photographs and organizing them into a digital album. They were satisfied with the result and intend to experiment with night photography in the future.",
+            "source_tokens_without_specials": 40,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 40,
+                "model_tokens_including_specials": 42,
+                "source_token_start": 0,
+                "source_token_end": 40
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "The user has experience organizing household expenses in a spreadsheet, creating categories for groceries, utilities, transportation, and miscellaneous spending. The spreadsheet was found easy to use by the family member it was created for. The user recognized that dividing information into clear categories makes complicated tasks easier to manage.",
+            "source_tokens_without_specials": 60,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 60,
+                "model_tokens_including_specials": 62,
+                "source_token_start": 0,
+                "source_token_end": 60
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user completed a personal street photography project, initially finding it difficult to choose which images to include but eventually selecting twelve photos and arranging them into a digital album. They felt satisfied with how the final collection turned out and expressed interest in experimenting with night photography in future work.",
+            "source_tokens_without_specials": 54,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 54,
+                "model_tokens_including_specials": 56,
+                "source_token_start": 0,
+                "source_token_end": 54
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "During the same period the user assisted a family member by creating a spreadsheet to track household expenses, setting up clear categories for groceries, utilities, transportation, and miscellaneous spending. The family member found the spreadsheet easy to use, leaving the user feeling content, and the experience reinforced the user’s insight that breaking complex tasks into well‑defined categories makes them more manageable.",
+            "source_tokens_without_specials": 78,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 78,
+                "model_tokens_including_specials": 80,
+                "source_token_start": 0,
+                "source_token_end": 78
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-04": {
+      "status": "completed",
+      "score": 0.84009,
+      "expected_to_generated": 0.874281,
+      "generated_to_expected": 0.8059,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2,
+      "paragraph_pair_scores": [
+        [
+          0.791422,
+          0.65466
+        ],
+        [
+          0.95714,
+          0.460228
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user is learning Python and exploring backend development, with an interest in building backend applications. They completed introductory Python exercises and began learning FastAPI. They prefer understanding programming concepts through practical implementation rather than relying exclusively on theoretical study, and this approach has been identified as a recurring learning pattern.",
+            "source_tokens_without_specials": 60,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 60,
+                "model_tokens_including_specials": 62,
+                "source_token_start": 0,
+                "source_token_end": 60
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "They recently built a small FastAPI REST API supporting creation, retrieval, and updating of task records, integrated it with SQLite, and tested its endpoints. Database session management was initially challenging, but they resolved the issue and gained a clearer understanding of how API endpoints interact with database operations. They have started exploring SQLAlchemy and plan to build a larger project using persistent database storage.",
+            "source_tokens_without_specials": 81,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 81,
+                "model_tokens_including_specials": 83,
+                "source_token_start": 0,
+                "source_token_end": 81
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user continues their Python and backend development journey, having moved from introductory exercises to building a small FastAPI REST API that supports creating, retrieving, and updating task records. They connected the API to a SQLite database using SQLAlchemy, encountered a frustrating issue with database session handling that took longer to resolve than the route definitions, but ultimately succeeded and felt satisfied when the endpoints worked correctly; this experience reinforced their understanding of how API endpoints map to database operations and sparked plans to expand the project with persistent storage.",
+            "source_tokens_without_specials": 110,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 110,
+                "model_tokens_including_specials": 112,
+                "source_token_start": 0,
+                "source_token_end": 110
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "Consistently, the user learns best by applying concepts in practical mini‑projects rather than solely studying theory, a pattern confirmed by their recent debugging experience and reflected in their preference for hands‑on coding to deepen comprehension.",
+            "source_tokens_without_specials": 45,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 45,
+                "model_tokens_including_specials": 47,
+                "source_token_start": 0,
+                "source_token_end": 45
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-05": {
+      "status": "completed",
+      "score": 0.86662,
+      "expected_to_generated": 0.90864,
+      "generated_to_expected": 0.8246,
+      "expected_paragraphs": 1,
+      "generated_paragraphs": 2,
+      "paragraph_pair_scores": [
+        [
+          0.90864,
+          0.740559
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user is pursuing a Bachelor of Engineering in Information Science. They have completed their sixth semester and are preparing for seventh-semester coursework. They are interested in software development and have worked on several programming projects.",
+            "source_tokens_without_specials": 42,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 42,
+                "model_tokens_including_specials": 44,
+                "source_token_start": 0,
+                "source_token_end": 42
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user is pursuing a Bachelor of Engineering in Information Science, not Computer Science as previously recorded, and has clarified that they have always been enrolled in Information Science. They have just completed their sixth semester and are currently preparing for coursework in the upcoming seventh semester, emphasizing the importance of accurate academic records.",
+            "source_tokens_without_specials": 60,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 60,
+                "model_tokens_including_specials": 62,
+                "source_token_start": 0,
+                "source_token_end": 60
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "They continue to study at university with a strong interest in software development, having worked on several programming projects, and remain engaged in building practical coding skills alongside their engineering curriculum.",
+            "source_tokens_without_specials": 34,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 34,
+                "model_tokens_including_specials": 36,
+                "source_token_start": 0,
+                "source_token_end": 34
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-06": {
+      "status": "completed",
+      "score": 0.836909,
+      "expected_to_generated": 0.867729,
+      "generated_to_expected": 0.80609,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2,
+      "paragraph_pair_scores": [
+        [
+          0.938559,
+          0.673621
+        ],
+        [
+          0.796899,
+          0.654283
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user is interested in learning foreign languages, particularly Spanish, and improving conversational abilities. They previously attempted to learn Spanish through a mobile application but stopped after approximately three weeks. They recently restarted using a different application and have been practicing vocabulary for ten minutes each evening for five consecutive days. They completed a beginner vocabulary assessment with a score of 72 percent. They recognized that shorter practice sessions are easier to fit into daily life, although they are unsure whether they can maintain the routine long term.",
+            "source_tokens_without_specials": 98,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 98,
+                "model_tokens_including_specials": 100,
+                "source_token_start": 0,
+                "source_token_end": 98
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "The user has registered for an online conversational Spanish course scheduled to begin next month. They are also considering joining a local language exchange group but have not contacted one.",
+            "source_tokens_without_specials": 33,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 33,
+                "model_tokens_including_specials": 35,
+                "source_token_start": 0,
+                "source_token_end": 33
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user has a longstanding interest in learning foreign languages, especially Spanish, and previously explored beginner Spanish vocabulary while expressing a desire to improve conversational abilities. After an initial three‑week attempt with a mobile app that fell off due to routine challenges, they restarted Spanish study using a different app, committing to ten‑minute evening vocabulary sessions for the past five days. They feel motivated (confidence 0.87) because the short sessions feel manageable, yet also uncertain (confidence 0.76) about sustaining the habit long‑term. A recent beginner vocabulary assessment yielded a 72 % score, reinforcing their sense that brief, consistent practice is effective. They have enrolled in an online conversational Spanish course beginning next month and are contemplating joining a local language‑exchange group, though they have not yet made contact.",
+            "source_tokens_without_specials": 165,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 165,
+                "model_tokens_including_specials": 167,
+                "source_token_start": 0,
+                "source_token_end": 165
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "The user’s broader language learning pattern includes exploring new tools, preferring shorter, regular practice over longer, infrequent sessions, and seeking interactive opportunities to develop speaking skills, indicating a strategic shift toward structured, community‑based learning experiences.",
+            "source_tokens_without_specials": 49,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 49,
+                "model_tokens_including_specials": 51,
+                "source_token_start": 0,
+                "source_token_end": 49
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-07": {
+      "status": "completed",
+      "score": 0.867694,
+      "expected_to_generated": 0.867694,
+      "generated_to_expected": 0.867694,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2,
+      "paragraph_pair_scores": [
+        [
+          0.859102,
+          0.656155
+        ],
+        [
+          0.700665,
+          0.876285
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user sometimes delays starting household or organizational responsibilities when several small tasks accumulate and it becomes difficult to decide where to begin. This remains an active pattern. Writing down the responsibilities, prioritizing them, and completing one manageable task at a time helps the user initiate work and feel more in control. They recently used this approach to organize their workspace successfully.",
+            "source_tokens_without_specials": 72,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 72,
+                "model_tokens_including_specials": 74,
+                "source_token_start": 0,
+                "source_token_end": 72
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "The user previously felt uncomfortable sharing ideas during team meetings because they were concerned about criticism. This difficulty has improved over several months through constructive feedback and gradually increased participation. They recently presented a project suggestion during a meeting and received a positive response. The previously validated avoidance pattern is considered resolved, although this should not be interpreted as proof that the user will never experience similar discomfort again.",
+            "source_tokens_without_specials": 75,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 75,
+                "model_tokens_including_specials": 77,
+                "source_token_start": 0,
+                "source_token_end": 75
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user often feels overwhelmed when several small household or work responsibilities accumulate, leading to procrastination because they struggle to decide where to start. On 2026-11-22 they experienced this when their workspace needed organizing; they wrote down all pending tasks, chose the most important one, and cleared their desk, which shifted their mood from overwhelmed to in_control and gave them a sense of manageability. This reinforces the active coping pattern that writing down responsibilities and tackling one manageable task helps initiate work.",
+            "source_tokens_without_specials": 105,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 105,
+                "model_tokens_including_specials": 107,
+                "source_token_start": 0,
+                "source_token_end": 105
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "Previously the user avoided contributing ideas in team meetings due to fear of criticism, but over recent months, constructive feedback from teammates has gradually increased their confidence. On 2026-11-22 they presented a project suggestion, received positive responses, and reported feeling confident, indicating that the earlier behavior pattern of avoiding input has been resolved and they are now more comfortable participating in discussions.",
+            "source_tokens_without_specials": 74,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 74,
+                "model_tokens_including_specials": 76,
+                "source_token_start": 0,
+                "source_token_end": 74
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-08": {
+      "status": "completed",
+      "score": 0.787922,
+      "expected_to_generated": 0.831713,
+      "generated_to_expected": 0.744131,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2,
+      "paragraph_pair_scores": [
+        [
+          0.945099,
+          0.543162
+        ],
+        [
+          0.718328,
+          0.542719
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user works as a junior software developer and primarily contributes to backend application development. They are currently learning database optimization, including indexing and query performance. They prefer understanding technical concepts through practical implementation.",
+            "source_tokens_without_specials": 40,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 40,
+                "model_tokens_including_specials": 42,
+                "source_token_start": 0,
+                "source_token_end": 40
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "Outside work, they enjoy cycling on weekends and have been gradually increasing their cycling distance. They are also interested in improving their public speaking skills and previously enrolled in a short online communication course.",
+            "source_tokens_without_specials": 37,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 37,
+                "model_tokens_including_specials": 39,
+                "source_token_start": 0,
+                "source_token_end": 37
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user works as a junior software developer focusing on backend application development, currently learning database optimization through practical work on indexing and query performance, and prefers hands‑on implementation to understand technical concepts. Outside of work they enjoy cycling on weekends, gradually increasing their distance, and are interested in improving public speaking skills, having previously enrolled in a short online communication course.",
+            "source_tokens_without_specials": 73,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 73,
+                "model_tokens_including_specials": 75,
+                "source_token_start": 0,
+                "source_token_end": 73
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "On 2026-11-23 the user had an ordinary day at work, attending scheduled meetings, responding to routine emails, and completing a few administrative tasks while noting pleasant weather and a simple homemade lunch; their mood was neutral, reflecting the routine nature of the day.",
+            "source_tokens_without_specials": 54,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 54,
+                "model_tokens_including_specials": 56,
+                "source_token_start": 0,
+                "source_token_end": 54
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-09": {
+      "status": "completed",
+      "score": 0.949413,
+      "expected_to_generated": 0.949413,
+      "generated_to_expected": 0.949413,
+      "expected_paragraphs": 2,
+      "generated_paragraphs": 2,
+      "paragraph_pair_scores": [
+        [
+          0.959903,
+          0.728671
+        ],
+        [
+          0.704683,
+          0.938923
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user enjoys building small personal software projects and has experience experimenting with web application development and basic database operations. They are interested in creating practical applications that organize information and simplify everyday activities.",
+            "source_tokens_without_specials": 37,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 37,
+                "model_tokens_including_specials": 39,
+                "source_token_start": 0,
+                "source_token_end": 37
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "They are currently developing a personal budgeting application as a weekend project. They recently implemented an expense entry form and a monthly spending summary, which currently works with manually entered sample expenses. They recognized the value of testing with sample data to verify application behavior and noted that instruction-like text copied from external sources should be treated as untrusted content rather than factual information or genuine instructions.",
+            "source_tokens_without_specials": 76,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 76,
+                "model_tokens_including_specials": 78,
+                "source_token_start": 0,
+                "source_token_end": 76
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user enjoys building small personal software projects, especially web applications, and has experimented with basic database operations to create practical tools that organize information and simplify everyday activities. They have a history of creating personal projects that focus on utility and learning new development skills.",
+            "source_tokens_without_specials": 51,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 51,
+                "model_tokens_including_specials": 53,
+                "source_token_start": 0,
+                "source_token_end": 51
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "During a recent weekend, the user worked on a personal budgeting application, implementing an expense entry form and adding a monthly spending summary. While testing, they copied a sample text from an online discussion that warned against treating such instruction-like content as factual about the user; the user identified this as untrusted sample text and clarified that its statements were not true. They continued testing the monthly summary using manually entered sample expenses, noting that this approach helps verify the application's behavior. The user expressed curiosity about how the app handles different expense entries and summaries, reflecting a desire to understand and improve the tool's functionality.",
+            "source_tokens_without_specials": 127,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 127,
+                "model_tokens_including_specials": 129,
+                "source_token_start": 0,
+                "source_token_end": 127
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "LTM-10": {
+      "status": "completed",
+      "score": 0.863104,
+      "expected_to_generated": 0.877638,
+      "generated_to_expected": 0.848569,
+      "expected_paragraphs": 3,
+      "generated_paragraphs": 4,
+      "paragraph_pair_scores": [
+        [
+          0.524204,
+          0.844415,
+          0.761361,
+          0.666194
+        ],
+        [
+          0.937525,
+          0.595674,
+          0.593106,
+          0.484811
+        ],
+        [
+          0.513974,
+          0.697164,
+          0.713276,
+          0.850975
+        ]
+      ],
+      "paragraph_diagnostics": {
+        "expected": [
+          {
+            "paragraph_index": 0,
+            "text": "The user enjoys organizing information and prefers using one digital note-taking application to store project ideas, technical notes, and occasional reminders. They recently organized their application into Projects, Learning, and Personal folders and find this arrangement easier to maintain. They prefer a single organized digital system over maintaining multiple separate note-taking systems.",
+            "source_tokens_without_specials": 65,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 65,
+                "model_tokens_including_specials": 67,
+                "source_token_start": 0,
+                "source_token_end": 65
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "The user previously maintained a daily handwritten productivity journal but discontinued it approximately four months ago because it became repetitive and difficult to maintain. This is no longer a current routine.",
+            "source_tokens_without_specials": 34,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 34,
+                "model_tokens_including_specials": 36,
+                "source_token_start": 0,
+                "source_token_end": 34
+              }
+            ]
+          },
+          {
+            "paragraph_index": 2,
+            "text": "The user is interested in software development and regularly works on personal programming projects. They enjoy learning new technologies through practical implementation.",
+            "source_tokens_without_specials": 24,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 24,
+                "model_tokens_including_specials": 26,
+                "source_token_start": 0,
+                "source_token_end": 24
+              }
+            ]
+          }
+        ],
+        "generated": [
+          {
+            "paragraph_index": 0,
+            "text": "The user stopped maintaining their daily handwritten productivity journal about four months ago because it had become repetitive and difficult to sustain, and they no longer use it for tracking tasks or personal reflections.",
+            "source_tokens_without_specials": 37,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 37,
+                "model_tokens_including_specials": 39,
+                "source_token_start": 0,
+                "source_token_end": 37
+              }
+            ]
+          },
+          {
+            "paragraph_index": 1,
+            "text": "The user now relies on a single digital note‑taking application to capture project ideas, technical notes, and occasional reminders, recently reorganizing the app into three folders—Projects, Learning, and Personal—which they find easier to maintain; they feel satisfied with this consolidated system, noting that having everything in one place makes it much easier to find what they need.",
+            "source_tokens_without_specials": 76,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 76,
+                "model_tokens_including_specials": 78,
+                "source_token_start": 0,
+                "source_token_end": 76
+              }
+            ]
+          },
+          {
+            "paragraph_index": 2,
+            "text": "The user enjoys organizing information and prefers digital tools for storing important ideas, consistently consolidating notes and reminders into one organized digital system rather than managing multiple separate collections, a behavior confirmed as an active pattern.",
+            "source_tokens_without_specials": 43,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 43,
+                "model_tokens_including_specials": 45,
+                "source_token_start": 0,
+                "source_token_end": 43
+              }
+            ]
+          },
+          {
+            "paragraph_index": 3,
+            "text": "They are interested in software development, regularly work on personal programming projects, and learn new technologies through practical implementation, using their digital notes to support these learning activities.",
+            "source_tokens_without_specials": 32,
+            "chunk_count": 1,
+            "chunked": false,
+            "chunks": [
+              {
+                "chunk_index": 0,
+                "content_tokens": 32,
+                "model_tokens_including_specials": 34,
+                "source_token_start": 0,
+                "source_token_end": 32
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "benchmark": "Offline BGE Long-Term Memory Similarity",
+    "created_at": "2026-11-24T17:00:54.149137+00:00",
+    "model": "BAAI/bge-small-en-v1.5",
+    "device": "cpu",
+    "max_seq_length": 512,
+    "special_tokens_per_input": 2,
+    "content_token_capacity_per_chunk": 510,
+    "chunk_overlap_tokens": 48,
+    "total_dataset_cases_selected": 10,
+    "cases_evaluated": 10,
+    "cases_missing_generated_output": [],
+    "cases_with_generation_failure": [],
+    "bge_semantic_similarity": {
+      "mean": 0.882485,
+      "cases": 10,
+      "aggregation": "Mean of per-case symmetric paragraph best-match scores; each long-paragraph pair uses symmetric chunk-coverage cosine."
+    },
+    "truncation_safeguard": {
+      "paragraphs_total": 38,
+      "paragraphs_over_single_input_limit": 0,
+      "paragraphs_split_into_multiple_chunks": 0,
+      "embedding_chunks_total": 38,
+      "largest_embedded_chunk_tokens_including_specials": 167,
+      "all_embedding_chunks_within_model_limit": true,
+      "silent_model_truncation_expected": false,
+      "method": "Tokenizer offset-based overlapping chunks; every exact chunk is retokenized with special tokens and checked against model.max_seq_length before encoding."
+    }
+  }
+}

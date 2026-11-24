@@ -1,466 +1,272 @@
-import importlib
-import json
-import sys
-import tempfile
-import types
+import importlib.util
 import unittest
 from pathlib import Path
-from unittest.mock import patch
 
-BACKEND_ROOT = Path(__file__).resolve().parents[2]
-if str(BACKEND_ROOT) not in sys.path:
-    sys.path.insert(0, str(BACKEND_ROOT))
+import numpy as np
 
-from benchmark.long_term_memory_benchmark import (
-    DEFAULT_DATASET,
-    BenchmarkAborted,
-    build_judge_prompt,
-    call_with_recovery,
-    dataset_fingerprint,
-    evaluate_rules,
-    is_key_or_quota_error,
-    normalize_judge_result,
-    parse_json_response,
-    production_input,
-    rotate_backend_key,
-    run_benchmark,
-    token_similarity,
-    validate_dataset,
-)
+SCRIPT = Path(__file__).resolve().parents[1] / "long_term_memory_benchmark.py"
+spec = importlib.util.spec_from_file_location("ltm_benchmark", SCRIPT)
+bench = importlib.util.module_from_spec(spec)
+assert spec and spec.loader
+spec.loader.exec_module(bench)
 
 
-class LongTermMemoryBenchmarkTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        # Stub only external integration boundaries. The production ORM and
-        # LongTermMemory Python source are still imported from the real backend.
-        groq_stub = types.ModuleType("groq")
-        class StubGroq:
-            def __init__(self, api_key=None, **_kwargs):
-                self.api_key = api_key
-        groq_stub.Groq = StubGroq
-        sys.modules["groq"] = groq_stub
+class FakeChromaEngine:
+    def score_paragraphs(self, expected, generated):
+        if not expected and not generated:
+            return {"score": 1.0, "expected_to_generated": 1.0, "generated_to_expected": 1.0,
+                    "expected_paragraphs": 0, "generated_paragraphs": 0}
+        if not expected or not generated:
+            return {"score": 0.0, "expected_to_generated": 0.0, "generated_to_expected": 0.0,
+                    "expected_paragraphs": len(expected), "generated_paragraphs": len(generated)}
+        vocab = ["study", "morning", "walk", "project", "completed"]
+        def encode(texts):
+            vectors = []
+            for text in texts:
+                words = set(__import__("re").sub(r"[^a-z]+", " ", text.lower()).split())
+                vector = np.array([1.0 if term in words else 0.0 for term in vocab], dtype=float)
+                norm = np.linalg.norm(vector)
+                vectors.append(vector / norm if norm else vector)
+            return np.vstack(vectors)
+        e, g = encode(expected), encode(generated)
+        sim = e @ g.T
+        a, b = float(sim.max(axis=1).mean()), float(sim.max(axis=0).mean())
+        return {"score": (a+b)/2, "expected_to_generated": a, "generated_to_expected": b,
+                "expected_paragraphs": len(expected), "generated_paragraphs": len(generated)}
 
-        from sqlalchemy.orm import declarative_base
-        database_stub = types.ModuleType("database")
-        database_stub.Base = declarative_base()
-        sys.modules["database"] = database_stub
 
-        for name in list(sys.modules):
-            if name == "models" or name.startswith("services"):
-                del sys.modules[name]
+class FakeGroq:
+    def __init__(self, api_key=None):
+        self.api_key = api_key
 
-        cls.ltm_module = importlib.import_module("services.ai.long_term_memory")
-        cls.models = importlib.import_module("models")
 
-    @classmethod
-    def tearDownClass(cls):
-        for name in list(sys.modules):
-            if name in {"models", "database", "groq"} or name.startswith("services"):
-                del sys.modules[name]
+class FakeProvider:
+    def __init__(self):
+        self.client = None
 
-    def setUp(self):
-        self.dataset = json.loads(DEFAULT_DATASET.read_text(encoding="utf-8"))
-        validate_dataset(self.dataset)
 
-    def case(self, sample_id):
-        return next(item for item in self.dataset["samples"] if item["sample_id"] == sample_id)
-
-    @staticmethod
-    def make_evaluation_sample(
-        *, category="insufficient_evidence_noise", previous_memory="", expected_memory="",
-        mood_observations=None, reflections=None, validated_patterns=None,
-    ):
-        return {
-            "sample_id": "LTM_TEST",
-            "category": category,
-            "validated_patterns": validated_patterns or [],
-            "current_episode": {"episode_id": "EP_TEST", "summary": "A synthetic test episode."},
-            "mood_observations": mood_observations or [],
-            "reflections": reflections or [],
-            "previous_memory": previous_memory,
-            "expected": {"memory": expected_memory},
+class BenchmarkTests(unittest.TestCase):
+    def test_normalizes_new_cases_schema(self):
+        data = {
+            "benchmark_name": "LTM",
+            "cases": [{
+                "case_id": "LTM_001",
+                "input": {
+                    "episode_summary": "The user completed a project.",
+                    "mood_observations": [{"mood": "relieved", "confidence": 0.9, "evidence": "It is done."}],
+                    "reflections": [{"reflection": "Planning helped."}],
+                    "validated_patterns": [],
+                    "previous_memory": None,
+                },
+                "expected_output": {"memory": "The user completed a project."},
+                "evaluation_criteria": {
+                    "must_preserve": ["The user completed a project."],
+                    "must_not_infer": [],
+                    "temporal_constraints": ["Do not describe the project as planned."],
+                    "paragraph_expectations": [],
+                },
+            }],
         }
+        cases = bench.validate_dataset(data)
+        self.assertEqual(cases[0]["sample_id"], "LTM_001")
+        self.assertEqual(cases[0]["current_episode"]["summary"], "The user completed a project.")
+        self.assertEqual(cases[0]["previous_memory"], "")
+        self.assertEqual(bench.retention_targets(cases[0]), ["The user completed a project."])
 
-    def test_dataset_has_exact_distribution_and_valid_shapes(self):
-        self.assertEqual(self.dataset["total_samples"], 10)
-        self.assertEqual(self.dataset["benchmark_name"], "Long-Term Memory Benchmark")
-        self.assertEqual(self.dataset["version"], "1.2")
-        self.assertNotIn("cases", self.dataset)
-        self.assertEqual(len(self.dataset["samples"]), 10)
-        validate_dataset(self.dataset)
+    def test_normalizes_project_samples_schema(self):
+        data = {"samples": [{
+            "sample_id": "LTM_S1",
+            "category": "memory_update",
+            "current_episode": {"episode_id": "EP1", "summary": "The user began a report."},
+            "mood_observations": [],
+            "reflections": [],
+            "validated_patterns": [],
+            "previous_memory": "",
+            "expected": {"memory": "The user began a report."},
+        }]}
+        cases = bench.validate_dataset(data)
+        self.assertEqual(len(cases), 1)
+        self.assertEqual(bench.retention_targets(cases[0]), ["The user began a report."])
 
-    def test_original_schema_does_not_require_created_at(self):
-        # Explicitly remove optional timestamps and prove the flat schema remains valid.
-        import copy
-        without_timestamps = copy.deepcopy(self.dataset)
-        for sample in without_timestamps["samples"]:
-            for mood in sample["mood_observations"]:
-                mood.pop("created_at", None)
-            for reflection in sample["reflections"]:
-                reflection.pop("created_at", None)
-        validate_dataset(without_timestamps)
+    def test_accepts_legacy_case_input_current_episode(self):
+        data = {"cases": [{
+            "case_id": "LTM_OLD",
+            "input": {"current_episode": {"episode_id": "EP2", "summary": "The user tried a short walk."},
+                      "mood_observations": [], "reflections": [], "validated_patterns": [], "previous_memory": ""},
+            "expected": {"memory": "The user tried a short walk."},
+        }]}
+        cases = bench.validate_dataset(data)
+        self.assertEqual(cases[0]["current_episode"]["episode_id"], "EP2")
 
-    def test_validator_rejects_new_cases_input_schema(self):
-        invalid = {
-            "benchmark_name": "Long-Term Memory Benchmark",
-            "version": "1.2",
-            "total_samples": 10,
-            "cases": [],
-        }
-        with self.assertRaises(ValueError):
-            validate_dataset(invalid)
-
-    def test_parse_json_accepts_plain_json_and_fence(self):
-        self.assertEqual(parse_json_response('{"memory": ""}'), {"memory": ""})
-        self.assertEqual(parse_json_response('```json\n{"memory": "- fact"}\n```'), {"memory": "- fact"})
-
-    def test_parse_json_rejects_invalid_json(self):
-        with self.assertRaises(json.JSONDecodeError):
-            parse_json_response("not json")
-
-    def test_similarity_understands_delay_paraphrases(self):
-        score = token_similarity(
-            "The user repeatedly postpones starting important work.",
-            "The user has a recurring tendency to procrastinate on important tasks.",
-        )
-        self.assertGreaterEqual(score, 0.38)
-
-    def test_similarity_rejects_explicit_negation_conflict(self):
-        score = token_similarity(
-            "The user prefers working late at night.",
-            "The user prefers early mornings and does not prefer late-night work.",
-        )
-        self.assertEqual(score, 0.0)
-
-    def test_correction_rule_detects_replaced_stale_fact(self):
-        case = self.make_evaluation_sample(
-            category="memory_correction",
-            previous_memory="- The user is a violinist.",
-            expected_memory="- The user owns a green bicycle.",
-        )
-        result = evaluate_rules(case, case["expected"]["memory"])
-        self.assertEqual(result["fact_recall"], 1.0)
-        self.assertEqual(result["stale_previous_facts"], 1)
-        self.assertEqual(result["stale_previous_facts_omitted"], 1)
-        self.assertEqual(result["correction_accuracy"], 1.0)
-
-    def test_empty_expected_memory_penalizes_new_claims(self):
-        case = self.make_evaluation_sample(expected_memory="", previous_memory="")
-        empty_result = evaluate_rules(case, "")
-        hallucinated_result = evaluate_rules(case, "- The user has a stable anxiety condition.")
-        self.assertEqual(empty_result["fact_precision"], 1.0)
-        self.assertEqual(hallucinated_result["fact_precision"], 0.0)
-        self.assertEqual(hallucinated_result["hallucination_rate_proxy"], 1.0)
-
-    def test_failed_generation_is_not_given_factuality_scores(self):
-        case = self.make_evaluation_sample(expected_memory="", previous_memory="")
-        result = evaluate_rules(case, None, generation_status="failed")
-        self.assertIsNone(result["fact_precision"])
-        self.assertIsNone(result["fact_recall"])
-        self.assertIsNone(result["heuristic_composite"])
-
-    def test_single_episode_mood_is_not_promoted_to_memory(self):
-        case = self.make_evaluation_sample(
-            expected_memory="",
-            previous_memory="",
-            mood_observations=[{"mood": "fear", "confidence": 0.9, "evidence": "I feel anxious."}],
-        )
-        result = evaluate_rules(case, "- The user is anxious and has a stable anxiety problem.")
-        self.assertEqual(result["mood_handling_accuracy"], 0.0)
-        self.assertGreaterEqual(len(result["transient_mood_trait_leaks"]), 1)
-
-    def test_reflection_supported_expected_fact_is_counted(self):
-        case = self.make_evaluation_sample(
-            expected_memory="- The user finds short walks helpful after work.",
-            reflections=[{"reflection": "The user finds short walks helpful after work."}],
-        )
-        result = evaluate_rules(case, case["expected"]["memory"])
-        self.assertEqual(result["reflection_utilization"], 1.0)
-
-    def test_resume_requires_existing_checkpoint(self):
-        provider, fake_module, orm_models = self._fake_runner_dependencies()
-        with tempfile.TemporaryDirectory() as directory:
-            with self.assertRaises(FileNotFoundError):
-                run_benchmark(
-                    self.dataset,
-                    run_dir=Path(directory) / "missing-run",
-                    provider=provider,
-                    ltm_module=fake_module,
-                    orm_models=orm_models,
-                    resume=True,
-                )
-
-    def test_judge_result_schema_validation(self):
-        valid = {
-            "scores": {
-                name: 4 for name in (
-                    "factual_accuracy", "completeness", "retention", "correction_handling",
-                    "pattern_handling", "conservatism", "format_compliance", "overall",
-                )
-            },
-            "unsupported_claims": [],
-            "missed_expected_facts": [],
-            "retained_or_corrected_facts": [],
-            "rationale": "Supported and concise.",
-        }
-        normalized = normalize_judge_result(json.dumps(valid))
-        self.assertEqual(normalized["scores"]["overall"], 4.0)
-        valid["scores"]["overall"] = 6
-        with self.assertRaises(ValueError):
-            normalize_judge_result(json.dumps(valid))
-        valid["scores"]["overall"] = 4
-        del valid["unsupported_claims"]
-        with self.assertRaises(ValueError):
-            normalize_judge_result(json.dumps(valid))
-
-    def test_judge_prompt_contains_sample_and_expected_memory(self):
-        sample = self.dataset["samples"][0]
-        prompt = build_judge_prompt(sample, "- The user prefers morning study.")
-        self.assertIn(sample["sample_id"], prompt)
-        self.assertIn("expected_memory", prompt)
-        self.assertIn("generated_memory", prompt)
-
-    def test_user_provided_flat_sample_shape_is_accepted(self):
-        import copy
-        sample = copy.deepcopy(self.dataset["samples"][0])
-        sample.update({
-            "sample_id": "LTM_SCHEMA_CHECK",
-            "category": "memory_consolidation",
-            "validated_patterns": [{
-                "pattern_id": "PAT_001",
-                "category": "behavior",
-                "description": "The user repeatedly postpones academic tasks, resulting in deadline-related anxiety.",
-                "confidence": 0.92,
-                "evidence": [
-                    {"episode_id": "EP_001", "quote": "The user repeatedly postponed starting the assignment.", "reason": "Evidence of task avoidance."},
-                    {"episode_id": "EP_003", "quote": "The user delayed starting the project until the deadline was close.", "reason": "Shows recurrence of task avoidance."},
+    def test_judge_metric_formulas(self):
+        result = {
+            "information_retention": [
+                {"target": "A", "verdict": "retained"},
+                {"target": "B", "verdict": "partial"},
+                {"target": "C", "verdict": "missing"},
+            ],
+            "factual_accuracy": {
+                "claims": [
+                    {"claim": "supported", "verdict": "supported"},
+                    {"claim": "partial", "verdict": "partially_supported"},
+                    {"claim": "unsupported", "verdict": "unsupported"},
                 ],
-                "status": "ACTIVE",
-                "resolution_evidence": None,
-            }],
-            "current_episode": {
-                "episode_id": "EP_003",
-                "summary": "The user postponed starting a project until the deadline was close. They reported feeling anxious and guilty about delaying the work.",
+                "must_not_infer_violations": [{"constraint": "No diagnosis", "violating_claim": "The user has a diagnosis."}],
             },
-            "mood_observations": [{
-                "mood": "fear", "confidence": 0.86,
-                "evidence": "I am anxious about the approaching deadline.",
-            }],
-            "reflections": [{
-                "reflection": "The user recognizes that postponing tasks increases deadline-related stress."
-            }],
-            "previous_memory": "- The user values academic achievement and completing responsibilities.",
-            "expected": {"memory": "- The user values academic achievement and completing responsibilities.\n- The user has repeatedly reported difficulty initiating academic tasks.\n- Delaying academic tasks has been associated with deadline-related anxiety."},
-        })
-        dataset_with_example = copy.deepcopy(self.dataset)
-        dataset_with_example["samples"][0] = sample
-        validate_dataset(dataset_with_example)
-        db, episode = production_input(sample, self.models.EpisodeMood, self.models.EpisodeReflection)
-        self.assertEqual(episode.episode_id, "EP_003")
-        self.assertIn(self.models.EpisodeMood, db._rows)
-        self.assertEqual(db._rows[self.models.EpisodeMood][0].created_at, None)
+            "temporal_update_accuracy": [
+                {"constraint": "planned", "verdict": "correct"},
+                {"constraint": "completed", "verdict": "incorrect"},
+            ],
+            "notes": [],
+        }
+        metrics = bench.calculate_judge_metrics(result)
+        self.assertEqual(metrics["information_retention"], 0.5)
+        self.assertEqual(metrics["factual_accuracy"], 0.5)
+        self.assertEqual(metrics["temporal_update_accuracy"], 0.5)
 
-    def test_key_quota_error_detection(self):
-        for status in (401, 403, 429):
-            with self.subTest(status=status):
-                error = RuntimeError("Groq request rejected")
-                error.status_code = status
-                self.assertTrue(is_key_or_quota_error(error))
-        self.assertTrue(is_key_or_quota_error(RuntimeError("insufficient_quota")))
-        self.assertFalse(is_key_or_quota_error(ValueError("invalid output format")))
+    def test_prohibited_inference_rate_is_reported_separately(self):
+        case = bench.validate_dataset({"cases": [{
+            "case_id": "LTM_SAFETY",
+            "input": {"episode_summary": "The user felt anxious before a presentation.",
+                      "mood_observations": [], "reflections": [], "validated_patterns": [],
+                      "previous_memory": ""},
+            "expected_output": {"memory": "The user felt anxious before a presentation."},
+            "evaluation_criteria": {
+                "must_preserve": ["The user felt anxious before a presentation."],
+                "must_not_infer": ["Do not infer a diagnosis.", "Do not infer a recurring condition."],
+                "temporal_constraints": [], "paragraph_expectations": []
+            }
+        }]})[0]
+        result = {
+            "information_retention": [{"target": "The user felt anxious before a presentation.", "verdict": "retained"}],
+            "factual_accuracy": {
+                "claims": [{"claim": "The user felt anxious before a presentation.", "verdict": "supported"}],
+                "must_not_infer_violations": [{"constraint": "Do not infer a diagnosis.",
+                                               "violating_claim": "The user has an anxiety disorder."}]
+            },
+            "temporal_update_accuracy": [], "notes": []
+        }
+        metrics = bench.calculate_judge_metrics(result, case)
+        self.assertEqual(metrics["factual_accuracy"], 1.0)
+        self.assertEqual(metrics["must_not_infer_violation_rate"], 0.5)
+        self.assertEqual(metrics["counts"]["must_not_infer_constraints"], 2)
 
-    def test_real_rotation_helper_replaces_provider_client(self):
-        provider = types.SimpleNamespace(client=None)
-        rotate_backend_key(provider, "replacement-key")
-        self.assertEqual(provider.client.api_key, "replacement-key")
-
-    def test_dataset_fingerprint_is_stable_and_sensitive_to_changes(self):
-        import copy
-        original = self.dataset
-        reordered = {key: original[key] for key in reversed(list(original))}
-        self.assertEqual(dataset_fingerprint(original), dataset_fingerprint(reordered))
-        changed = copy.deepcopy(original)
-        changed["samples"][0]["expected"]["memory"] += "\n- changed fact"
-        self.assertNotEqual(dataset_fingerprint(original), dataset_fingerprint(changed))
-
-    def test_key_rotation_retries_failed_operation(self):
-        class FakeProvider:
-            current_key = "old"
-        provider = FakeProvider()
-        calls = {"n": 0}
-        def operation():
-            calls["n"] += 1
-            if provider.current_key == "old":
-                error = RuntimeError("quota exceeded")
-                error.status_code = 429
-                raise error
-            return "ok"
-        def rotate(_provider, key):
-            provider.current_key = key
-        result = call_with_recovery(
-            operation,
-            description="test",
-            provider=provider,
-            prompt_for_key=lambda _prompt: "new-key",
-            rotate_key=rotate,
-            sleep=lambda _delay: None,
+    def test_bge_paragraph_similarity(self):
+        model = FakeChromaEngine()
+        result = bench.paragraph_similarity_score(
+            "The user studies in the morning.\n\nThe user completed the project.",
+            "The user likes morning study.\n\nThe project was completed.",
+            model,
         )
-        self.assertEqual(result, "ok")
-        self.assertEqual(calls["n"], 2)
+        self.assertGreaterEqual(result["score"], 0.5)
+        self.assertEqual(result["expected_paragraphs"], 2)
+        self.assertEqual(result["generated_paragraphs"], 2)
 
-    def test_production_memory_method_builds_prompt_and_returns_generated_memory(self):
-        case = next(sample for sample in self.dataset["samples"] if sample["validated_patterns"])
-        db, episode = production_input(case, self.models.EpisodeMood, self.models.EpisodeReflection)
-        captured = {}
-        response = json.dumps({"memory": case["expected"]["memory"]})
-        with patch.object(self.ltm_module, "generate_response", side_effect=lambda prompt, **kwargs: captured.update({"prompt": prompt, "kwargs": kwargs}) or response):
-            instance = self.ltm_module.LongTermMemory.__new__(self.ltm_module.LongTermMemory)
-            generated = instance._generate_memory(
-                db=db,
-                episode=episode,
-                previous_memory=case["previous_memory"],
-                validated_patterns=case["validated_patterns"],
-            )
-        self.assertEqual(generated, case["expected"]["memory"])
-        self.assertIn("VALIDATED PATTERNS", captured["prompt"])
-        self.assertIn(case["validated_patterns"][0]["pattern_id"], captured["prompt"])
-        self.assertEqual(captured["kwargs"]["max_completion_tokens"], 2048)
-        self.assertEqual(captured["kwargs"]["reasoning_effort"], "low")
-        self.assertEqual(captured["kwargs"]["response_format"], {"type": "json_object"})
+    def test_empty_embedding_cases(self):
+        model = FakeChromaEngine()
+        self.assertEqual(bench.paragraph_similarity_score("", "", model)["score"], 1.0)
+        self.assertEqual(bench.paragraph_similarity_score("expected", "", model)["score"], 0.0)
 
-    def test_production_memory_rejects_more_than_eight_bullets(self):
-        memory = "\n".join(f"- fact {index}" for index in range(9))
-        with self.assertRaises(ValueError):
-            self.ltm_module.LongTermMemory._validate_memory_shape(memory)
+    def test_key_rotation_retries_same_operation(self):
+        provider = FakeProvider()
+        manager = bench.APIKeyManager(provider, FakeGroq, ["key-one", "key-two"])
+        attempts = {"count": 0}
+        def operation():
+            attempts["count"] += 1
+            if provider.client.api_key == "key-one":
+                exc = RuntimeError("429 rate limit")
+                exc.status_code = 429
+                raise exc
+            return "success"
+        value = bench.call_with_key_rotation(operation, "unit test", manager)
+        self.assertEqual(value, "success")
+        self.assertEqual(attempts["count"], 2)
+        self.assertEqual(provider.client.api_key, "key-two")
 
-    def test_production_memory_rejects_non_bullet_line(self):
-        with self.assertRaises(ValueError):
-            self.ltm_module.LongTermMemory._validate_memory_shape("A heading\n- a fact")
 
-    def _fake_runner_dependencies(self, fail_judge=False):
-        dataset = self.dataset
-        memory_by_episode = {
-            case["current_episode"]["episode_id"]: case["expected"]["memory"]
-            for case in dataset["samples"]
+    def test_prompts_for_replacement_key_after_pool_is_exhausted(self):
+        from unittest.mock import patch
+        provider = FakeProvider()
+        manager = bench.APIKeyManager(provider, FakeGroq, ["first-key"])
+        failure = RuntimeError("429 Too Many Requests")
+        failure.status_code = 429
+        with patch.object(bench.getpass, "getpass", return_value="replacement-key"):
+            manager.rotate("generation", failure)
+        self.assertEqual(provider.client.api_key, "replacement-key")
+        self.assertEqual(manager.current_key, "replacement-key")
+
+    def test_key_error_detection(self):
+        exc = RuntimeError("quota exceeded")
+        self.assertTrue(bench.is_key_or_quota_error(exc))
+        self.assertFalse(bench.is_key_or_quota_error(ValueError("invalid JSON")))
+
+
+    def test_chroma_engine_uses_temporary_collection_and_exact_cosine(self):
+        import types
+        from unittest.mock import patch
+        calls = {"created": None, "deleted": None}
+        class Collection:
+            def add(self, **kwargs):
+                calls["added"] = kwargs
+            def get(self, **kwargs):
+                ids = kwargs["ids"]
+                vectors = {
+                    "expected_0": [1.0, 0.0],
+                    "expected_1": [0.0, 1.0],
+                    "generated_0": [0.8, 0.6],
+                }
+                return {"ids": ids, "embeddings": np.asarray([vectors[item_id] for item_id in ids], dtype=np.float32)}
+        class Client:
+            def create_collection(self, **kwargs):
+                calls["created"] = kwargs
+                return Collection()
+            def delete_collection(self, **kwargs):
+                calls["deleted"] = kwargs
+        chromadb = types.ModuleType("chromadb")
+        chromadb.EphemeralClient = lambda: Client()
+        utils = types.ModuleType("chromadb.utils")
+        embedding_functions = types.ModuleType("chromadb.utils.embedding_functions")
+        class EmbeddingFunction:
+            def __init__(self, model_name):
+                calls["model_name"] = model_name
+        embedding_functions.SentenceTransformerEmbeddingFunction = EmbeddingFunction
+        with patch.dict("sys.modules", {"chromadb": chromadb, "chromadb.utils": utils,
+                                          "chromadb.utils.embedding_functions": embedding_functions}):
+            engine = bench.ChromaSimilarityEngine("BAAI/bge-small-en-v1.5")
+            result = engine.score_paragraphs(["e1", "e2"], ["g1"])
+        self.assertAlmostEqual(result["expected_to_generated"], 0.7)
+        self.assertAlmostEqual(result["generated_to_expected"], 0.8)
+        self.assertAlmostEqual(result["score"], 0.75)
+        self.assertEqual(calls["created"]["metadata"], {"hnsw:space": "cosine"})
+        self.assertEqual(calls["model_name"], "BAAI/bge-small-en-v1.5")
+        self.assertEqual(calls["deleted"]["name"], calls["created"]["name"])
+
+    def test_judge_result_validation_checks_target_counts(self):
+        case = bench.validate_dataset({"cases": [{
+            "case_id": "LTM_J", "input": {"episode_summary": "The user completed a task.",
+                "mood_observations": [], "reflections": [], "validated_patterns": [], "previous_memory": ""},
+            "expected_output": {"memory": "The user completed a task."},
+            "evaluation_criteria": {"must_preserve": ["The user completed a task."],
+                "must_not_infer": [], "temporal_constraints": ["Do not call it planned."], "paragraph_expectations": []}
+        }]})[0]
+        evaluation = {
+            "information_retention": [{"target": "The user completed a task.", "verdict": "retained", "evidence": "It is stated as complete."}],
+            "factual_accuracy": {"claims": [{"claim": "The user completed a task.", "verdict": "supported", "evidence": "episode summary"}], "must_not_infer_violations": []},
+            "temporal_update_accuracy": [{"constraint": "Do not call it planned.", "verdict": "correct", "evidence": "It is complete."}],
+            "notes": []
         }
-        judge_payload = {
-            "scores": {
-                name: 4 for name in (
-                    "factual_accuracy", "completeness", "retention", "correction_handling",
-                    "pattern_handling", "conservatism", "format_compliance", "overall",
-                )
-            },
-            "unsupported_claims": [],
-            "missed_expected_facts": [],
-            "retained_or_corrected_facts": [],
-            "rationale": "synthetic test judge",
+        checked = bench.validate_judge_result(evaluation, case)
+        self.assertEqual(bench.calculate_judge_metrics(checked)["information_retention"], 1.0)
+
+    def test_rejects_duplicate_case_ids(self):
+        case = {
+            "case_id": "DUP",
+            "input": {"episode_summary": "Some summary.", "mood_observations": [], "reflections": [],
+                      "validated_patterns": [], "previous_memory": ""},
+            "expected_output": {"memory": ""},
         }
-
-        class FakeProvider:
-            MODEL = "openai/gpt-oss-120b-test"
-            def __init__(self):
-                self.calls = 0
-            def generate_response(self, contents, **kwargs):
-                self.calls += 1
-                if isinstance(contents, str) and contents.startswith("GEN:"):
-                    episode_id = contents.split(":", 1)[1]
-                    return json.dumps({"memory": memory_by_episode[episode_id]})
-                if fail_judge:
-                    error = RuntimeError("429 Too Many Requests")
-                    error.status_code = 429
-                    raise error
-                return json.dumps(judge_payload)
-
-        class FakeLTM:
-            def _generate_memory(_self, db, episode, previous_memory, validated_patterns):
-                raw = fake_module.generate_response(f"GEN:{episode.episode_id}")
-                return json.loads(raw)["memory"]
-
-        fake_provider = FakeProvider()
-        fake_module = types.SimpleNamespace(LongTermMemory=FakeLTM, generate_response=None)
-        class DummyMood:
-            pass
-        class DummyReflection:
-            pass
-        return fake_provider, fake_module, (DummyMood, DummyReflection)
-
-    def test_full_runner_writes_separate_outputs_and_resume_skips_completed_work(self):
-        provider, fake_module, orm_models = self._fake_runner_dependencies()
-        with tempfile.TemporaryDirectory() as directory:
-            run_dir = Path(directory) / "run"
-            state = run_benchmark(
-                self.dataset,
-                run_dir=run_dir,
-                provider=provider,
-                ltm_module=fake_module,
-                orm_models=orm_models,
-                prompt_for_key=lambda _prompt: "new-key",
-            )
-            self.assertEqual(len(state["generated"]), 10)
-            self.assertEqual(len(state["judged"]), 10)
-            self.assertEqual(json.loads((run_dir / "generated_memories.json").read_text())["results"].__len__(), 10)
-            self.assertTrue((run_dir / "rule_based_results.json").exists())
-            self.assertTrue((run_dir / "llm_judge_results.json").exists())
-            self.assertTrue((run_dir / "summary.json").exists())
-            self.assertTrue((run_dir / "report.txt").exists())
-            calls_after_first_run = provider.calls
-
-            resumed = run_benchmark(
-                self.dataset,
-                run_dir=run_dir,
-                provider=provider,
-                ltm_module=fake_module,
-                orm_models=orm_models,
-                resume=True,
-                prompt_for_key=lambda _prompt: "new-key",
-            )
-            self.assertEqual(provider.calls, calls_after_first_run)
-            self.assertEqual(len(resumed["generated"]), 10)
-            self.assertEqual(len(resumed["judged"]), 10)
-
-    def test_resume_rejects_changed_dataset_or_model(self):
-        import copy
-        provider, fake_module, orm_models = self._fake_runner_dependencies()
-        with tempfile.TemporaryDirectory() as directory:
-            run_dir = Path(directory) / "run"
-            run_benchmark(
-                self.dataset, run_dir=run_dir, provider=provider,
-                ltm_module=fake_module, orm_models=orm_models,
-            )
-
-            changed_dataset = copy.deepcopy(self.dataset)
-            changed_dataset["samples"][0]["expected"]["memory"] += "\n- changed fact"
-            with self.assertRaisesRegex(ValueError, "does not match"):
-                run_benchmark(
-                    changed_dataset, run_dir=run_dir, provider=provider,
-                    ltm_module=fake_module, orm_models=orm_models, resume=True,
-                )
-
-            provider.MODEL = "different-model"
-            with self.assertRaisesRegex(ValueError, "does not match"):
-                run_benchmark(
-                    self.dataset, run_dir=run_dir, provider=provider,
-                    ltm_module=fake_module, orm_models=orm_models, resume=True,
-                )
-
-    def test_generated_sample_is_checkpointed_before_judge_key_prompt(self):
-        provider, fake_module, orm_models = self._fake_runner_dependencies(fail_judge=True)
-        with tempfile.TemporaryDirectory() as directory:
-            run_dir = Path(directory) / "run"
-            with self.assertRaises(BenchmarkAborted):
-                run_benchmark(
-                    self.dataset,
-                    run_dir=run_dir,
-                    provider=provider,
-                    ltm_module=fake_module,
-                    orm_models=orm_models,
-                    prompt_for_key=lambda _prompt: "",
-                )
-            checkpoint = json.loads((run_dir / "checkpoint.json").read_text())
-            first_sample_id = self.dataset["samples"][0]["sample_id"]
-            self.assertEqual(checkpoint["generated"][first_sample_id]["generation_status"], "success")
-            self.assertNotIn(first_sample_id, checkpoint["judged"])
+        with self.assertRaisesRegex(ValueError, "Duplicate"):
+            bench.validate_dataset({"cases": [case, case]})
 
 
 if __name__ == "__main__":
