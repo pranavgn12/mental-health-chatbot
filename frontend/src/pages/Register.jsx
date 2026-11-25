@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Register.css";
+import ProfileForm, { emptyProfile } from "../components/ProfileForm";
 
 const API_BASE = (
     import.meta.env.VITE_API_URL || "http://localhost:8000"
@@ -19,6 +20,7 @@ export default function Register() {
         confirmPassword: "",
     });
 
+    const [profile, setProfile] = useState(emptyProfile());
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -82,6 +84,11 @@ export default function Register() {
 
                 throw new Error(message);
             }
+
+            // Keep the optional profile draft in this browser until the profile API
+            // is added. The backend registration endpoint currently accepts only
+            // account credentials; the next backend change will persist this data.
+            sessionStorage.setItem("pending_profile", JSON.stringify(profile));
 
             navigate("/login", {
                 state: {
@@ -168,6 +175,18 @@ export default function Register() {
                             required
                         />
                     </label>
+
+                    <div className="register-profile-section">
+                        <div className="register-profile-heading">
+                            <h2>Personal details</h2>
+                            <p>Optional for now. You can update these details later.</p>
+                        </div>
+                        <ProfileForm
+                            value={profile}
+                            onChange={setProfile}
+                            showActions={false}
+                        />
+                    </div>
 
                     <label className="auth-show-password">
                         <input

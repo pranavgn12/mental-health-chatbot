@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import ChatWindow from "../components/ChatWindow";
 import MessageInput from "../components/MessageInput";
+import ProfileForm, { emptyProfile, normalizeProfile } from "../components/ProfileForm";
 
 import {
     X,
@@ -17,6 +18,7 @@ import {
     LoaderCircle,
     RefreshCw,
     Clock3,
+    Contact,
 } from "lucide-react";
 
 import "../styles/chat.css";
@@ -36,6 +38,7 @@ const MEMORY_TABS = [
     { id: "reflections", label: "Reflections", icon: Brain },
     { id: "long-term-memory", label: "Long Term Memory", icon: FileText },
     { id: "patterns", label: "Patterns", icon: GitBranch },
+    { id: "personal-details", label: "Personal Details", icon: Contact },
 ];
 
 const RESOURCE_CONFIG = {
@@ -301,6 +304,9 @@ function UserMemoryPanel({ onClose }) {
     });
 
     const [profileData, setProfileData] = useState(null);
+    const [personalDetails, setPersonalDetails] = useState(emptyProfile());
+    const [editingPersonalDetails, setEditingPersonalDetails] = useState(false);
+    const [savingPersonalDetails, setSavingPersonalDetails] = useState(false);
 
     // Detected-pattern data and editor state. These must be declared
     // before loadPatterns and the JSX that references them.
@@ -444,11 +450,75 @@ function UserMemoryPanel({ onClose }) {
 
 
     // -----------------------------------------------------
+    // LOAD USER-PROVIDED PERSONAL DETAILS
+    // Backend contract planned for the next stage: GET/PUT /profile/me.
+    // Until that endpoint exists, use the registration draft in this tab.
+    // -----------------------------------------------------
+
+    const loadPersonalDetails = useCallback(async () => {
+        setLoading(true);
+        setError("");
+        try {
+            const payload = await requestJson("/profile/me");
+            const details = normalizeProfile(payload?.profile || payload || {});
+            setPersonalDetails(details);
+            sessionStorage.setItem("pending_profile", JSON.stringify(details));
+        } catch (err) {
+            try {
+                const draft = sessionStorage.getItem("pending_profile");
+                if (draft) {
+                    setPersonalDetails(normalizeProfile(JSON.parse(draft)));
+                    setNotice("Showing the profile details saved during registration. Backend profile storage will be connected next.");
+                    return;
+                }
+            } catch {
+                // Ignore malformed browser draft and show the empty form.
+            }
+            setPersonalDetails(emptyProfile());
+            if (!String(err.message || "").includes("404")) {
+                setError(err.message || "Could not load personal details.");
+            }
+        } finally {
+            setLoading(false);
+        }
+    }, []);
+
+    const handleSavePersonalDetails = async () => {
+        setSavingPersonalDetails(true);
+        setError("");
+        setNotice("");
+        try {
+            const payload = await requestJson("/profile/me", {
+                method: "PUT",
+                body: JSON.stringify(personalDetails),
+            });
+            const saved = normalizeProfile(payload?.profile || payload || personalDetails);
+            setPersonalDetails(saved);
+            sessionStorage.setItem("pending_profile", JSON.stringify(saved));
+            setEditingPersonalDetails(false);
+            setNotice("Personal details saved.");
+        } catch (err) {
+            // Frontend can be merged before the profile endpoints are added.
+            if (String(err.message || "").includes("404")) {
+                sessionStorage.setItem("pending_profile", JSON.stringify(personalDetails));
+                setEditingPersonalDetails(false);
+                setNotice("Saved in this browser for now. Backend profile storage will be connected in the next step.");
+            } else {
+                setError(err.message || "Could not save personal details.");
+            }
+        } finally {
+            setSavingPersonalDetails(false);
+        }
+    };
+
+    // -----------------------------------------------------
     // LOAD DATA WHEN TAB CHANGES
     // -----------------------------------------------------
 
     useEffect(() => {
-        if (
+        if (activeTab === "personal-details") {
+            loadPersonalDetails();
+        } else if (
             activeTab === "profile" ||
             activeTab === "long-term-memory"
         ) {
@@ -458,7 +528,7 @@ function UserMemoryPanel({ onClose }) {
         } else {
             loadTabData(activeTab);
         }
-    }, [activeTab, loadProfile, loadPatterns, loadTabData]);
+    }, [activeTab, loadPersonalDetails, loadProfile, loadPatterns, loadTabData]);
 
 
     // Keep the editor synchronized with fetched memory unless the
@@ -784,8 +854,8 @@ function UserMemoryPanel({ onClose }) {
                             </h2>
 
                             <p>
-                                Manage your profile, episodes, moods,
-                                reflections, and long-term memory
+                                Manage personal details, episodes, moods,
+                                reflections, patterns, and long-term memory
                             </p>
                         </div>
                     </div>
@@ -859,6 +929,7 @@ function UserMemoryPanel({ onClose }) {
                         {(
                             activeTab === "profile" ||
                             activeTab === "long-term-memory" ||
+                            activeTab === "personal-details" ||
                             activeTab === "patterns" ||
                             RESOURCE_CONFIG[activeTab]
                         ) && (
@@ -866,7 +937,9 @@ function UserMemoryPanel({ onClose }) {
                                 type="button"
                                 className="memory-refresh-button"
                                 onClick={() => {
-                                    if (
+                                    if (activeTab === "personal-details") {
+                                        loadPersonalDetails();
+                                    } else if (
                                         activeTab === "profile" ||
                                         activeTab === "long-term-memory"
                                     ) {
@@ -879,8 +952,9 @@ function UserMemoryPanel({ onClose }) {
                                 }}
                                 disabled={loading || savingMemory || Boolean(savingPatternId)}
                                 title={
-                                    activeTab === "profile" ||
-                                    activeTab === "long-term-memory"
+                                    activeTab === "personal-details"
+                                        ? "Refresh personal details"
+                                        : activeTab === "profile" || activeTab === "long-term-memory"
                                         ? "Refresh long-term memory"
                                         : "Refresh records"
                                 }
@@ -904,7 +978,9 @@ function UserMemoryPanel({ onClose }) {
                             <button
                                 type="button"
                                 onClick={() => {
-                                    if (
+                                    if (activeTab === "personal-details") {
+                                        loadPersonalDetails();
+                                    } else if (
                                         activeTab === "profile" ||
                                         activeTab === "long-term-memory"
                                     ) {
@@ -935,7 +1011,74 @@ function UserMemoryPanel({ onClose }) {
                         PROFILE TAB
                     ================================================= */}
 
-                    {activeTab === "profile" ? (
+                    {activeTab === "personal-details" ? (
+                        <section className="memory-personal-details" aria-label="Personal details">
+                            <div className="memory-personal-details-intro">
+                                <div>
+                                    <span className="memory-profile-eyebrow">USER-PROVIDED INFORMATION</span>
+                                    <h4>Your personal details</h4>
+                                    <p>Basic information you choose to share. These details are separate from AI-generated memories.</p>
+                                </div>
+                                {!editingPersonalDetails && (
+                                    <button
+                                        type="button"
+                                        className="memory-refresh-button"
+                                        onClick={() => setEditingPersonalDetails(true)}
+                                    >
+                                        Edit details
+                                    </button>
+                                )}
+                            </div>
+
+                            {loading ? (
+                                <div className="memory-status-state" role="status">
+                                    <LoaderCircle size={24} className="memory-spinner" />
+                                    <span>Loading personal details…</span>
+                                </div>
+                            ) : editingPersonalDetails ? (
+                                <ProfileForm
+                                    value={personalDetails}
+                                    onChange={setPersonalDetails}
+                                    disabled={savingPersonalDetails}
+                                    submitLabel={savingPersonalDetails ? "Saving…" : "Save changes"}
+                                    onSubmit={handleSavePersonalDetails}
+                                    onCancel={() => {
+                                        setEditingPersonalDetails(false);
+                                        loadPersonalDetails();
+                                    }}
+                                />
+                            ) : (
+                                <div className="memory-personal-details-grid">
+                                    {[
+                                        ["Name", personalDetails.name],
+                                        ["Date of birth", personalDetails.date_of_birth],
+                                        ["Gender", personalDetails.gender],
+                                        ["Occupation", personalDetails.occupation_status],
+                                        ["Degree", personalDetails.degree],
+                                        ["Branch", personalDetails.branch],
+                                        ["Year", personalDetails.study_year],
+                                        ["Job title", personalDetails.job_title],
+                                        ["City", personalDetails.city],
+                                        ["State", personalDetails.state],
+                                        ["Country", personalDetails.country],
+                                    ].filter(([, value]) => value).map(([label, value]) => (
+                                        <div className="memory-personal-detail" key={label}>
+                                            <span>{label}</span>
+                                            <strong>{value}</strong>
+                                        </div>
+                                    ))}
+                                    {!Object.values(personalDetails).some(value => typeof value === "string" && value.trim()) && (
+                                        <div className="memory-profile-empty">
+                                            <div className="memory-profile-empty-icon"><Contact size={24} /></div>
+                                            <h4>No personal details added</h4>
+                                            <p>Add a few basic details to help personalize new conversations.</p>
+                                            <button type="button" className="memory-refresh-button" onClick={() => setEditingPersonalDetails(true)}>Add details</button>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </section>
+                    ) : activeTab === "profile" ? (
 
                         (loading || (!profileData && !error)) ? (
 
