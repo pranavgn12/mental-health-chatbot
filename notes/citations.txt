@@ -1,0 +1,42 @@
+Guangfu Hao, Yuhan Zhang, Guoqing Ma, Yang Chen, Frédéric Alexandre, et al.. Large Language Models
+need Episodic Memory. IJCNN 2025 - International Joint Conference on Neural Networks, Jun 2025, Rome,
+Italy. ⟨hal-05202747⟩
+
+
+@article{JEWELL2026,
+title = {From Personalization to Therapeutic Continuity: Framework for Memory in AI-Powered Mental Health Systems},
+journal = {JMIR AI},
+volume = {5},
+year = {2026},
+issn = {2817-1705},
+doi = {https://doi.org/10.2196/99950},
+url = {https://www.sciencedirect.com/science/article/pii/S2817170526001377},
+author = {Courtney Jewell and Kelsey McAlister and Tara Deliberto and Tanner Wallis and Grant Winns and Jennifer Huberty},
+keywords = {artificial intelligence, AI safety, mental health, memory, therapeutic continuity, conversational agents, digital mental health intervention, longitudinal care, personalization, case formulation},
+abstract = {AI-powered mental health tools are increasingly deployed to support users across multiple sessions, yet the field lacks a principled framework for how memory in these systems should be structured and applied. In most current implementations, memory functions primarily as a personalization mechanism, optimizing for conversational continuity and user engagement without distinguishing between types of information that have fundamentally different clinical relevance. We propose a framework organizing memory in AI-powered mental health systems into 4 functionally distinct types. Episodic memory captures discrete, time-bound experiences tied to specific events and context. Pattern memory, adapted from the concept of procedural memory in cognitive psychology, tracks recurring patterns in cognition, emotion, and behavior across sessions. Semantic memory captures stable, personally relevant background context about the user. State-responsive memory represents the user’s current emotional and psychological condition in real time, taking priority over the other 3 types when acute distress or risk is signaled. Each type corresponds to a distinct therapeutically relevant function, and together they are designed to support the kind of cumulative, longitudinal understanding that effective mental health care requires. We term this framework “therapeutically informed memory,” drawing on established memory systems research and applying it to the clinical requirements of AI-powered mental health support. The aim of this viewpoint paper is to give AI developers, clinicians, and mental health organizations a shared vocabulary and design framework for organizing memory around therapeutic function rather than personalization alone. This paper is intended primarily for AI product and engineering teams, clinical advisors to digital mental health companies, and researchers evaluating AI-powered mental health tools. We describe the design requirements and clinical rationale for each memory type, discuss how the types interact and how priority should be assigned across them, and use Yuna, an AI-powered digital mental health intervention developed with clinical input, as an illustrative example of how this framework can be applied in practice. We conclude with design implications for the field and identify open questions regarding memory quality metrics, outcome validation, and the ethical dimensions of persistent memory as priorities for future research.}
+}
+
+
+Cite BERT encoder classifer for emotions also
+
+
+[9] J. L. Fulmer et al., “Effectiveness of a Mental Health Chatbot for Peo- ple
+With Chronic Conditions: A Randomized Controlled Trial,” JMIR Form.
+Res., vol. 8, p. e50025, Jul. 2024. doi: 10.2196/50025.
+[10] H. Liu, H. Peng, X. Song, C. Xu, and M. Zhang,. Using AI chatbots to
+provide self-help depression interventions for university students: A
+randomized trial of effectiveness. Internet Interv., vol. 27, 2022.
+[11] K. F. Kathleen, A. Darcy, and M. Vierhile. Delivering cognitive behavior
+therapy to young adults with symptoms of depression and anxiety using a
+fully automated conversational agent (Woebot): A randomized controlled
+trial. JMIR Mental Health, vol. 4, no. 2, 2017.
+
+
+Zhong et al. introduced MemoryBank, a long-term memory mechanism that enables LLMs to retain conversational history, retrieve relevant memories, and develop evolving user profiles. While their approach focuses on memory retention, retrieval, and personality understanding, our system extends personalized conversational memory through explicit mood tracking, reflection analysis, recurring behavioral pattern detection, and integration with an external psychological knowledge retrieval pipeline.
+
+
+Open ai model card gpt oss 120b
+
+
+
+
